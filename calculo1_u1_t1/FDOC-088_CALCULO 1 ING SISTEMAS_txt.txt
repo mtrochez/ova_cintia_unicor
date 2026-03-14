@@ -1,0 +1,93 @@
+1. IDENTIFICACIÓN DEL CURSOFacultadPrograma AcadémicoNivel de FormaciónÁrea de formaciónPregradoPosgradoINGENIERIAS ING. DE SISTEMAS XBÁSICACursoCódigoCréditosCÁLCULO 14110703Lugar(es) de DesarrolloAñoPeriodo AcadémicoSemestreLORICA2025PERIODO 1 - 20251ModalidadesPresencialA DistanciaHoras de acompañamiento docenteHoras de trabajo independienteHoras trabajo tutorial presencialHoras trabajo autónomoHoras trabajo tutoría virtualHoras trabajo Colaborativo4832
+2. JUSTIFICACIÓN El curso de Cálculo Diferencial es fundamental para todos los estudiantes que inician estudios en ciencias e ingeniería. Esta asignatura permite unificar y estandarizar los conceptos fundamentales de los números reales, funciones, límites de funciones y derivadas. Además, este curso da soporte matemático a otras asignaturas e inicia al estudiante en la comprensión, formulación y solución de algunos problemas prácticos mediante el empleo de herramientas del cálculo diferencial.
+
+3. OBJETIVO DEL CURSO Estudiar los conceptos básicos de funciones, límites de funciones, la continuidad y la derivada de una función. Todo esto enmarcado en el ámbito de funciones de una variable real y utilizar estas ideas en la solución de problemas de optimización, trazado de curvas y razón de cambio.
+
+> COMPETENCIAS TRANSVERSALES > Lee   comprensivamente   distintos   tipos   de   textos,   mediante   la   aplicación    de estrategias comunicativas y lingüísticas.
+> Se expresa oralmente usando apropiadamente el lenguaje científico.
+> Elabora material escrito de diversos tipos con coherencia, claridad y precisión, reconociendo la intención comunicativa y el público al que va dirigido.
+> Comprende    las    ideas    principales     de     textos     en     inglés     estándar     en situaciones conocidas de trabajo y de estudio.
+> Analiza,    modela    y    elabora    diferentes    representaciones    de     una     situación problema e identifica alternativas de solución y sustenta su selección con criterio profesional.
+> Busca,     analiza     y     procesa     información      especializada      obtenida      por      medio de la Internet para incorporarla en la ejecución de tareas específicas.
+> Emplea     el     computador     para     producir     material     en     diferentes      formatos (texto, gráficos, videos, hipertextos).
+> Utiliza   ética   y   responsablemente   las   tecnologías   de   la   información   y    la comunicación.
+> Reconoce su responsabilidad profesional y personal en la sociedad, y la dimensión estética y funcional en las diversas manifestaciones de las culturas humanas.
+> Analiza   y   propone    estrategias    de    trabajo    en    equipo    para    enfrentar    una situación o resolver conflictos en el grupo
+Reconoce dilemas y situaciones asociadas a problemas contemporáneos (ambientales, sociales, culturales, económicos), adopta una actitud tolerante y conciliadora proponiendo soluciones a estos. 
+
+4. ALINEACIÓN CURRICULAR Competencias del perfil de egresoResultados de Aprendizaje del ProgramaCompetencia del cursoUnidades de AprendizajeResultado de Aprendizaje de la Unidad> Define los conceptos de límite, continuidad y diferenciación de funciones reales.
+Resuelve problemas con modelos matemáticos, usando el concepto de función Definir y resolver problemas con funciones 1Define y resuelve problemas con funciones > Interpreta geométricamente el significado de la derivada.
+Resuelve problemas con modelos matemáticos, usando la interpretación geométrica de la derivadaInterpretar y resolver problemas con funciones 2Interpreta y resuelve problemas con funciones a través de la derivada > Calcula derivadas de funciones reales usando correctamente las propiedades.
+Propone una solución usando las propiedades de la derivadaCalcular y proponer soluciones de problemas con funciones, sus límites y derivadas  2 y 3Calcula y propone soluciones usando las propiedades de la derivada > Resuelve problemas de tipo práctico mediante el uso de la diferenciación.Obtiene la gráfica por medio de la derivada y así establece una predicción Resolver y obtener la grafica de una función a través de los conceptos de límites y derivadas  3Resuelve y obtiene la gráfica de una función por medio de los conceptos de la derivada 
+5. ALINEACIÓN DEL CURSONombre de la Unidad de AprendizajeFunciones, Gráficas y Limite de FuncionesNúmero de semanas6Niveles de comprensión esperadoMultiestructural y  abstracto ampliadoResultado de Aprendizaje de la UnidadContenidosMetodología de la enseñanzaActividadesCriterios de evaluación (indicadores)Evidencias e instrumentos (conocimiento, desempeño y producto)Acompañamiento docenteTrabajo IndependienteDefinir y resolver problemas con funcioneso Cuatro maneras de representar una función.
+o Funciones y gráficas.
+o Funciones definidas a tramos.
+o Catálogo de funciones básicas
+o Transformaciones de funciones
+o Álgebra de funciones.
+o Composición de funciones.
+o Funciones exponenciales.
+o Modelación con funciones.
+o Función inversa.
+o Funciones logarítmicas.
+o Funciones trigonométricas inversas.
+o Límite de una función
+o Cálculo de límites.
+o Continuidad.
+o Límites que comprenden el infinito.
+
+Clase magistral y explicaciones con retroalimentación 4 horas semanales 8 horas Quiz, taller y parcial Quiz
+Taller
+Parcial
+Nombre de la unidad de aprendizajeDerivadas y Reglas de DerivaciónNúmero de semanas6Niveles de comprensión esperadoMultiestructural y  abstracto ampliadoResultado de Aprendizaje de la UnidadContenidosMetodología de la enseñanzaActividadesCriterios de evaluación (indicadores)Evidencias e instrumentos (conocimiento, desempeño y producto)Acompañamiento docenteTrabajo IndependienteDefinir el concepto de derivada y calcular la derivada de funciones mediante las distintas reglas de derivacióno Definición de la derivada de una función
+o ¿Qué dice f’ acerca de f? ¿Qué dice f’’ acerca de f?
+o Derivadas de polinomios y de funciones exponenciales
+o Las reglas del producto y del cociente
+o Derivación de funciones trigonométricas
+o La regla de la cadena
+o Derivación implícita
+o Derivada de las funciones trigonométricas inversas
+o Derivada de funciones logarítmicas
+Derivación logarítmicaClase magistral y explicaciones con retroalimentación4 horas semanales8 horasQuiz, taller y parcialQuiz, taller y parcial
+Nombre de la unidad de aprendizajeAplicaciones de la derivadaNúmero de semanas6Niveles de comprensión esperadoMultiestructural y  abstracto ampliadoResultado de Aprendizaje de la UnidadContenidosMetodología de la enseñanzaActividadesCriterios de evaluación (indicadores)Evidencias e instrumentos (conocimiento, desempeño y producto)Acompañamiento docenteTrabajo IndependienteAplicar el concepto de derivada para el trazado de curvas, en la solución de problemas de razones de cambio, optimización y para el cálculo de límites indeterminados
+o Razones de cambio de variables relacionadas
+o Valores máximo y mínimo absolutos de una función 
+o Extremos relativos de una función
+o Teorema de valor extremo
+o Teorema de Fermat
+o Valores críticos de una función
+o Terorema del valor medio
+o Crecimiento, concavidad, trazado de curvas
+o Formas indeterminadas y regla de L’Hospital
+o Problemas de optimizaciónClase magistral y explicaciones con retroalimentación4 horas semanales8 horasQuiz, taller y parcialQuiz, taller y parcial
+
+6. RÚBRICA DE EVALUACIÓNEscala de valoraciónUnidadCriterios de evaluación (indicadores)Abstracto ampliado 
+(4.6 – 5.0)Relacional 
+(3.8 – 4.5)Multiestructural
+(3.0 – 3.7)Uniestructural
+(2.1-2.9)Prestructural
+(0.0 – 2.0)1Sabe calcular de manera correcta en una función el dominio, rango, gráfica, límite y sus asíntotas Sabe calcular de manera correcta y argumenta muy bien  en una función el dominio, rango, gráfica, límite y sus asíntotasSabe calcular de manera correcta y propone una solución en una función el dominio, rango, gráfica, límite y sus asíntotasSabe calcular de manera correcta en una función el dominio, rango, gráfica, límite y sus asíntotasPresenta dificultad para calcular de manera correcta en una función el dominio, rango, gráfica, límite y sus asíntotasNo se evidencia que sabe calcular de manera correcta en una función el dominio, rango, gráfica, límite y sus asíntotas2Sabe calcular de manera correcta la derivada de una función mediante la definición de límites y mediante el uso de las reglas de derivaciónSabe calcular de manera correcta y argumentada la derivada de una función mediante la definición de límites y mediante el uso de las reglas de derivaciónSabe calcular de manera correcta, salvo algunos detalles  la derivada de una función mediante la definición de límites y mediante el uso de las reglas de derivaciónSabe calcular de manera correcta algunas derivadas de  funciones mediante la definición de límites y mediante el uso de las reglas de derivaciónPresenta dificultad para calcular de manera correcta y argumentada la derivada de una función mediante la definición de límites y mediante el uso de las reglas de derivaciónNo se evidencia que sabe calcular de manera correcta y argumentada la derivada de una función mediante la definición de límites y mediante el uso de las reglas de derivación3Sabe aplicar el concepto de derivada para resolver problemas prácticos de optimización, razones de cambio y del trazado de curvasSabe aplicar correctamente  el concepto de derivada para resolver problemas prácticos de optimización, razones de cambio y del trazado de curvasSabe aplicar el concepto de derivada, salvo pequeños detalles, para resolver problemas prácticos de optimización, razones de cambio y del trazado de curvasSabe aplicar el concepto de derivada para resolver algunos  problemas prácticos de optimización, razones de cambio y del trazado de curvasPresenta dificultad para aplicar el concepto de derivada para resolver problemas prácticos de optimización, razones de cambio y del trazado de curvasNo se evidencia que sabe aplicar el concepto de derivada para resolver problemas prácticos de optimización, razones de cambio y del trazado de curvas4…
+7. BIBLIOGRAFÍA
+Stewart, James. Cálculo de una variable: trascendentes tempranas. 7 ed. México DF: Cengage Learning Editores, S.A., 2012. (Texto guía)
+? Leithold, Louis. El Cálculo. 7 ed. México DF: Oxford University Press., 1999.
+? Stewart, James. Cálculo de una variable: trascendentes tempranas. 6 ed. México DF: Cengage Learning Editores, S.A., 2008.
+? Purcell, Edwin J., Varberg, Dale y Rigdon, Steven E. Cálculo. 9 ed. México, DF: Pearson Educación de México, 2007.
+? Thomas, George B. Cálculo: Una variable. 12 ed. México DF: Addison-Wesley., 2010.
+? Larson, Ron y Edwards, Bruce H. Cálculo 1: de Una Variable. 9 ed. México DF: Mc Graw Hill., 2010.
+? Swokowski, Earl W. Cálculo con geometría analítica. 2 ed. México DF: Grupo editorial Iberoamérica, S. A., 1989.
+? Stein, Sherman K. y Barcellos, Anthony. Cálculo y Geometría Analítica. Vol II. 5ed. McGraw-Hill., 1997.
+? Edwards, Charles Henry y Jr. Penney, David E. Calculus with Analytic Geometry 4 ed. México DF: Prentice-Hall, Inc., Pearson Educación., 1997.
+
+Elaborado por:Departamento de Matemáticas y EstadísticaFecha de aprobación del Comité de Acreditación y Currículo del Programa:
+UNIVERSIDAD DE CÓRDOBACÓDIGO: 
+FDOC-088
+VERSIÓN: 05
+EMISIÓN: 
+10/04/2024
+PÁGINA
+2 DE 9PLAN DE CURSO
+
+“Si usted ha accedido a este formato a través de un medio diferente al sitio web del Sistema de Control Documental del SIGEC,
+asegúrese que ésta es la versión vigente”
+
+

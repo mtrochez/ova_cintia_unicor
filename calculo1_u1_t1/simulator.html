@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Gráfico Interactivo - Cálculo 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .quiz-option {
+            transition: all 0.3s ease;
+        }
+        .quiz-option:hover {
+            transform: translateX(5px);
+        }
+        .quiz-option.selected {
+            background-color: #0066CC;
+            color: white;
+            border-color: #0066CC;
+        }
+        #function-canvas {
+            cursor: crosshair;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <div class="bg-white rounded-2xl shadow-xl p-6 inline-block">
+                <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 mb-2">
+                    🎮 Simulador Gráfico Interactivo
+                </h1>
+                <p class="text-gray-600 text-lg">Cálculo 1 - Funciones y Gráficas</p>
+                <p class="text-sm text-gray-500 mt-2">Universidad de Córdoba - Ingeniería de Sistemas</p>
+            </div>
+        </header>
+
+        <!-- Simulador Principal -->
+        <main class="space-y-6">
+            <div class="bg-white rounded-2xl shadow-xl p-6">
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <!-- Panel de Control Izquierdo -->
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
+                            <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                                <span class="mr-2">📝</span> Editor de Funciones
+                            </h3>
+                            
+                            <!-- Input de Función -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Ingresa tu función f(x):
+                                </label>
+                                <div class="flex gap-2">
+                                    <input type="text" 
+                                           id="function-input" 
+                                           class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                           placeholder="Ej: x^2, sin(x), sqrt(x)"
+                                           value="x^2">
+                                    <button onclick="plotFunction()" 
+                                            class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-md hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg">
+                                        📊 Graficar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Funciones Predefinidas -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Funciones de ejemplo:
+                                </label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="setFunction('x^2')" 
+                                            class="px-3 py-2 bg-white border border-blue-300 text-blue-700 rounded-lg hover:bg-blue-50 hover:border-blue-500 text-sm transition-all duration-200">
+                                        y = x²
+                                    </button>
+                                    <button onclick="setFunction('x^3')" 
+                                            class="px-3 py-2 bg-white border border-blue-300 text-blue-700 rounded-lg hover:bg-blue-50 hover:border-blue-500 text-sm transition-all duration-200">
+                                        y = x³
+                                    </button>
+                                    <button onclick="setFunction('sqrt(x)')" 
+                                            class="px-3 py-2 bg-white border border-blue-300 text-blue-700 rounded-lg hover:bg-blue-50 hover:border-blue-500 text-sm transition-all duration-200">
+                                        y = √x
+                                    </button>
+                                    <button onclick="setFunction('1/x')" 
+                                            class="px-3 py-2 bg-white border border-blue-300 text-blue-700 rounded-lg hover:bg-blue-50 hover:border-blue-500 text-sm transition-all duration-200">
+                                        y = 1/x
+                                    </button>
+                                    <button onclick="setFunction('sin(x)')" 
+                                            class="px-3 py-2 bg-white border border-blue-300 text-blue-700 rounded-lg hover:bg-blue-50 hover:border-blue-500 text-sm transition-all duration-200">
+                                        y = sin(x)
+                                    </button>
+                                    <button onclick="setFunction('abs(x)')" 
+                                            class="px-3 py-2 bg-white border border-blue-300 text-blue-700 rounded-lg hover:bg-blue-50 hover:border-blue-500 text-sm transition-all duration-200">
+                                        y = |x|
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Controles de Gráfica -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Rango de visualización:
+                                </label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label class="text-xs text-gray-600">X mín:</label>
+                                        <input type="number" id="x-min" value="-10" 
+                                               class="w-full px-2 py-1 border rounded text-sm focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-gray-600">X máx:</label>
+                                        <input type="number" id="x-max" value="10" 
+                                               class="w-full px-2 py-1 border rounded text-sm focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-gray-600">Y mín:</label>
+                                        <input type="number" id="y-min" value="-10" 
+                                               class="w-full px-2 py-1 border rounded text-sm focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-gray-600">Y máx:</label>
+                                        <input type="number" id="y-max" value="10" 
+                                               class="w-full px-2 py-1 border rounded text-sm focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Herramientas de Análisis -->
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Herramientas de análisis:
+                                </label>
+                                <div class="space-y-2">
+                                    <button onclick="toggleVerticalLine()" 
+                                            class="w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm transition-all duration-300 shadow">
+                                        📏 Prueba de Recta Vertical
+                                    </button>
+                                    <button onclick="analyzeSymmetry()" 
+                                            class="w-full px-3 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:from-blue-600 hover:to-blue-700 text-sm transition-all duration-300 shadow">
+                                        🔄 Analizar Simetría
+                                    </button>
+                                    <button onclick="findExtremes()" 
+                                            class="w-full px-3 py-2 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-lg hover:from-blue-500 hover:to-blue-600 text-sm transition-all duration-300 shadow">
+                                        📈 Encontrar Extremos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel de Gráfica Derecho -->
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
+                            <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                                <span class="mr-2">📊</span> Gráfica de la Función
+                            </h3>
+                            <div class="bg-white rounded-xl border-2 border-gray-300 shadow-inner" style="height: 400px; position: relative;">
+                                <canvas id="function-canvas" width="400" height="400" class="w-full h-full"></canvas>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <span id="function-display" class="text-sm font-mono bg-gray-100 px-3 py-1 rounded-lg border border-gray-300">
+                                    f(x) = x²
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Panel de Resultados -->
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
+                            <h3 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                                <span class="mr-2">🔍</span> Análisis de la Función
+                            </h3>
+                            <div id="analysis-results" class="space-y-2 text-sm">
+                                <div class="flex justify-between bg-white rounded-lg px-3 py-2">
+                                    <span class="font-medium text-gray-700">Dominio:</span>
+                                    <span id="domain-result" class="font-mono text-blue-600">(-∞, ∞)</span>
+                                </div>
+                                <div class="flex justify-between bg-white rounded-lg px-3 py-2">
+                                    <span class="font-medium text-gray-700">Rango:</span>
+                                    <span id="range-result" class="font-mono text-blue-600">[0, ∞)</span>
+                                </div>
+                                <div class="flex justify-between bg-white rounded-lg px-3 py-2">
+                                    <span class="font-medium text-gray-700">Simetría:</span>
+                                    <span id="symmetry-result" class="font-mono text-purple-600">Par</span>
+                                </div>
+                                <div class="flex justify-between bg-white rounded-lg px-3 py-2">
+                                    <span class="font-medium text-gray-700">Crecimiento:</span>
+                                    <span id="growth-result" class="font-mono text-green-600">[0, ∞)</span>
+                                </div>
+                                <div class="flex justify-between bg-white rounded-lg px-3 py-2">
+                                    <span class="font-medium text-gray-700">Decrecimiento:</span>
+                                    <span id="decay-result" class="font-mono text-red-600">(-∞, 0]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Aprendizaje Interactivo -->
+            <div class="bg-white rounded-2xl shadow-xl p-6">
+                <h3 class="text-2xl font-bold text-blue-800 mb-6 flex items-center">
+                    <span class="mr-3">🎓</span> Actividades Guiadas
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <!-- Actividad 1 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200 hover:shadow-lg transition-all duration-300">
+                        <h4 class="font-bold text-blue-800 mb-2 flex items-center">
+                            <span class="mr-2">📚</span> Desafío 1: Dominio y Rango
+                        </h4>
+                        <p class="text-sm text-gray-700 mb-3">
+                            Encuentra el dominio y rango de f(x) = √(9-x²). Usa el simulador para verificar tu respuesta.
+                        </p>
+                        <button onclick="startChallenge(1)" 
+                                class="w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm transition-all duration-300 shadow">
+                            Comenzar Desafío
+                        </button>
+                    </div>
+
+                    <!-- Actividad 2 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200 hover:shadow-lg transition-all duration-300">
+                        <h4 class="font-bold text-blue-800 mb-2 flex items-center">
+                            <span class="mr-2">🔄</span> Desafío 2: Simetría
+                        </h4>
+                        <p class="text-sm text-gray-700 mb-3">
+                            Determina si f(x) = x³ - 3x es par, impar o ninguna. Usa la herramienta de análisis.
+                        </p>
+                        <button onclick="startChallenge(2)" 
+                                class="w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm transition-all duration-300 shadow">
+                            Comenzar Desafío
+                        </button>
+                    </div>
+
+                    <!-- Actividad 3 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200 hover:shadow-lg transition-all duration-300">
+                        <h4 class="font-bold text-blue-800 mb-2 flex items-center">
+                            <span class="mr-2">📈</span> Desafío 3: Aplicación
+                        </h4>
+                        <p class="text-sm text-gray-700 mb-3">
+                            Modela el área de un rectángulo con perímetro 20. ¿Qué dimensiones maximizan el área?
+                        </p>
+                        <button onclick="startChallenge(3)" 
+                                class="w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm transition-all duration-300 shadow">
+                            Comenzar Desafío
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Progreso -->
+            <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-2xl p-6 border border-blue-300 shadow-xl">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-blue-800 text-lg flex items-center">
+                            <span class="mr-2">🏆</span> Tu Progreso
+                        </h4>
+                        <p class="text-sm text-blue-700">Completa los desafíos para mejorar tu comprensión</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-blue-800" id="progress-score">0/3</div>
+                        <div class="text-xs text-blue-600">Desafíos completados</div>
+                    </div>
+                </div>
+                <div class="mt-4 bg-white rounded-full h-3 shadow-inner">
+                    <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-500 shadow" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="text-center py-6 text-gray-600">
+                <p class="text-sm">
+                    🌸 <strong>OVA Cálculo 1</strong> - Universidad de Córdoba<br>
+                    Desarrollado para el curso de Ingeniería de Sistemas
+                </p>
+                <div class="mt-2">
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 underline text-sm">
+                        ← Volver al OVA completo
+                    </a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/simulator.js"></script>
+</body>
+</html>
