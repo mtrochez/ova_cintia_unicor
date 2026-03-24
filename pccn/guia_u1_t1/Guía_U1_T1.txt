@@ -1,49 +1,0 @@
-GUÍA DE APRENDIZAJE: TEMA 1.1
-
-ProgramaMaestría en Didáctica de las Ciencias NaturalesCursoProcesos Curriculares en las Ciencias NaturalesUnidadCampo de Investigación Curricular: Conceptos y AplicaciónRARA1. Definir los conceptos básicos de la teoría curricularTema1.1. Fundamentos teóricos-conceptuales del currículoObjetivoAnalizar y comprender los fundamentos epistemológicos, históricos y teóricos que sustentan el campo del currículo, identificando las principales corrientes de pensamiento y autores que han moldeado la enseñanza de las ciencias naturales.
-2. Introducción
-El estudio de los fundamentos teóricos-conceptuales del currículo constituye la piedra angular de la formación de un Magíster en Didáctica de las Ciencias, pues permite comprender que el currículo no es un objeto neutro o puramente técnico, sino una construcción social, histórica y política,. En el contexto de la educación científica, estos fundamentos determinan cómo se transita de una enseñanza basada en la simple transmisión de datos hacia perspectivas orientadas a la indagación, el uso de evidencias y la construcción de modelos multidisciplinarios, respondiendo a las demandas de organismos internacionales como la UNESCO y la OCDE.
-Para el docente investigador, dominar estos fundamentos implica reconocer las tensiones entre las diversas escuelas de pensamiento que han definido "qué es ciencia escolar" a lo largo de los siglos. Desde el racionalismo de la tradición clásica hasta la pedagogía crítica contemporánea, la base teórica-conceptual ofrece las herramientas necesarias para que el profesorado diseñe contextos de aprendizaje donde el estudiante construya significado desde su propia experiencia e historia, apoyándose en operaciones de pensamiento científico como la comparación, la diferenciación y el análisis.
-
-3. Desarrollo Robusto: Genealogía y Teorías del Currículo
-La construcción del campo curricular se fundamenta en un debate dialéctico entre diferentes enfoques y autores que han intentado sistematizar la experiencia educativa.
-A. Evolución y Enfoques Técnicos: El currículo moderno nace bajo el imperativo de la eficiencia social. Autores como Franklin Bobbitt (1918) y Ralph Tyler (1949) sentaron las bases de un modelo técnico-instrumental donde el currículo se concibe como un plan de instrucción orientado a resultados medibles,. Tyler propuso un esquema racional basado en cuatro preguntas fundamentales sobre propósitos, experiencias, organización y evaluación, que aún hoy influye en la planeación curricular por objetivos. En ciencias naturales, este enfoque se tradujo históricamente en la enseñanza de habilidades prácticas y experimentación básica bajo la lógica del taylorismo industrial.
-B. El Giro hacia la Estructura Disciplinar y la Práctica: Frente a la rigidez técnica, surge la escuela del currículo como práctica, donde Joseph Schwab propone las ciencias como una forma de "deliberación" y no solo como un "producto" terminado,. Simultáneamente, Jerome Bruner (1960) revoluciona la didáctica de las ciencias al introducir la espiral curricular, argumentando que cualquier tema puede enseñarse de forma honesta si se respeta la estructura de la disciplina y se ajusta su complejidad al desarrollo del niño,. Este período enfatiza el descubrimiento y el método científico como ejes del aprendizaje.
-C. Reconceptualización y Perspectiva Crítica: La teoría curricular contemporánea está marcada por la pedagogía crítica de Michael Apple y Henry Giroux, quienes definen el currículo como una "selección cultural" cargada de poder e ideología,,. Apple sostiene que el currículo no es neutral y que el conocimiento científico escolar a menudo refleja los intereses de los grupos dominantes,. En América Latina, esta visión se complementa con la pedagogía dialógica de Paulo Freire, que entiende el currículo como una práctica de libertad y concientización social, fundamental para una educación científica liberadora,.
-
-4. Ejemplos de Aplicación
-Ejemplo #1.1: Aplicación de la Espiral Curricular en Química Siguiendo a Bruner, el concepto de "materia" se introduce en primaria mediante la observación de estados físicos; en secundaria se profundiza a través de modelos atómicos; y en media técnica se analiza mediante la termodinámica y el enlace químico. Esta secuencia espiral asegura que el conocimiento científico se revisite con complejidad creciente sin perder la estructura de la disciplina,.
-Ejemplo #1.2: El Currículo como Deliberación Práctica en el Aula Un docente que, en lugar de seguir un libro de texto lineal, organiza su curso de biología a partir de una problemática ambiental local (ej. la contaminación de una fuente hídrica), está aplicando el enfoque de Schwab y Stenhouse. Aquí, el currículo es un espacio de deliberación práctica donde la teoría se construye a partir de la reflexión sobre la acción,.
-
-5. Actividad Interactiva: Análisis de Tensiones Teóricas
-Instrucción: El estudiante de maestría realizará un ejercicio de reflexión crítica de forma independiente.
-1. Seleccione un estándar de aprendizaje de ciencias naturales de su institución.
-2. Identifique en dicho estándar huellas del enfoque técnico de Tyler (ej. objetivos conductuales) y huellas del enfoque por indagación de Bruner.
-3. Redacte una propuesta de ajuste a dicho estándar desde la perspectiva crítica de Michael Apple, incorporando un elemento de justicia social o relevancia cultural local que el estándar original haya omitido.
-
-6. Evaluación de Selección Múltiple
-1. Situación-Problema: Un coordinador académico exige que todos los planes de área de ciencias naturales se redacten bajo el esquema de "objetivos de conducta medibles", asegurando la eficiencia del aprendizaje. Esta postura es una herencia directa de: A) La pedagogía dialógica de Paulo Freire. B) El enfoque técnico de Bobbitt y Tyler. C) El movimiento de reconceptualización de Pinar. D) La estructura disciplinar de Jerome Bruner.
-2. Situación-Problema: Al analizar por qué los estudiantes no comprenden la relevancia de la física en su vida cotidiana, un docente decide que el currículo debe basarse en la resolución de problemas sociales reales. ¿Qué autores fundamentan esta visión del currículo como reconstrucción social? A) Thorndike y Skinner. B) Dewey, Rugg y Counts. C) Bloom y Gagné. D) Bobbitt y Charters.
-3. Situación-Problema: El concepto de "espiral curricular", que permite revisitar contenidos científicos con progresiva complejidad, fue propuesto por: A) Joseph Schwab. B) Michael Apple. C) Jerome Bruner. D) Franklin Bobbitt.
-4. Situación-Problema: Un investigador afirma que el currículo de ciencias naturales es una "selección cultural" que a menudo ignora los saberes ancestrales de las comunidades. Esta crítica se alinea con la perspectiva de: A) Ralph Tyler. B) Michael Apple. C) Edward Thorndike. D) John Dewey.
-5. Situación-Problema: ¿Cuál de las siguientes dimensiones del currículo se encarga de analizar la naturaleza del conocimiento científico y su validación? A) Dimensión Política. B) Dimensión Epistemológica. C) Dimensión Psicomotora. D) Dimensión Afectiva.
-Clave de Respuestas y Justificación:
-1. B. Justificación: Bobbitt y Tyler son los padres del enfoque técnico basado en la eficiencia y objetivos conductuales,.
-2. B. Justificación: Dewey y los reconstruccionistas sociales propusieron que el currículo debe centrarse en problemas sociales y la experiencia,.
-3. C. Justificación: Bruner introdujo la espiral curricular en su obra "The Process of Education",.
-4. B. Justificación: Apple define el currículo como una selección cultural cargada de poder,.
-5. B. Justificación: La dimensión epistemológica aborda la naturaleza, construcción y validación del conocimiento científico.
-
-7. Bibliografía (Fuentes FDOC-088)
-* Apple, M. (1979). Ideology and Curriculum. Routledge & Kegan Paul.
-* Bruner, J. (1960). The Process of Education. Harvard University Press.
-* Coll, C. (2006). Lo básico en la educación básica. Trasatlántica de la Educación.
-* Díaz Barriga, Á. (2003). Currículum. Tensiones conceptuales y prácticas. Revista REDIE.
-* Gimeno Sacristán, J. (1988). Aproximación al concepto currículo. Editorial Popular.
-* Goodson, I. (1991). La construcción social del currículum. Revista de Educación.
-* Schwab, J. (1978). Science, Curriculum and Liberal Education. University of Chicago Press.
-* Tyler, R. (1949). Basic Principles of Curriculum and Instruction. University of Chicago Press.
-
-2
-
-
