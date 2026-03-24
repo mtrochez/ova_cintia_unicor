@@ -1,0 +1,51 @@
+
+GUÍA DE APRENDIZAJE: TEMA 2.1
+ProgramaMaestría en Didáctica de las Ciencias NaturalesCursoProcesos Curriculares en las Ciencias NaturalesUnidadEl Currículo Escolar y Universitario y Escolar de Ciencias NaturalesRARA2. Dominar los saberes de las diferentes tipologías curriculares escolaresTema2.1. El currículo escolar de ciencias naturalesObjetivoAnalizar y comprender las características específicas del currículo escolar de ciencias naturales, incluyendo su estructura, organización, metodologías y dimensiones, con el fin de desarrollar competencias para el diseño, implementación y evaluación de propuestas curriculares contextualizadas y pertinentes.
+2. Introducción
+El diseño y análisis del currículo escolar de ciencias naturales representa uno de los desafíos más complejos para el Magíster en Didáctica, pues exige trascender la visión del currículo como una simple lista de contenidos temáticos para entenderlo como un modelo  pedagógico intencionado. En el marco de las exigencias globales de organismos como la UNESCO y la OCDE, el currículo de ciencias se posiciona como un imperativo formativo que no solo busca la transferencia de conocimiento técnico, sino la consolidación de una alfabetización científica que permita a los ciudadanos comprender y actuar sobre el impacto del desarrollo tecnocientífico en su territorio.
+Desde una perspectiva académica profunda, este tema aborda la tensión entre la rigurosidad disciplinar y la necesidad de una formación multidisciplinaria que responda a fenómenos complejos. Para un investigador educativo, comprender cómo se articulan las dimensiones cognoscitivas, afectivas y psicomotoras, junto con los principios de secuenciación espiral, es fundamental para intervenir las brechas entre el currículo prescrito y el currículo real, garantizando que la ciencia escolar sea una herramienta de pensamiento crítico y no solo un ejercicio de memorización de datos.
+
+3. Estructura y Tensiones en el Currículo de Ciencias
+El currículo de ciencias naturales se distingue por su naturaleza epistemológica única: es un conocimiento construido socialmente, provisional y fundamentado en evidencias. Su desarrollo teórico se articula en tres ejes fundamentales:
+A. La Secuenciación Espiral de Contenidos: Basada en la premisa de Jerome Bruner (1960), la espiral curricular sostiene que cualquier concepto científico puede enseñarse de forma honesta en cualquier etapa del desarrollo si se ajusta su complejidad. En ciencias naturales, esto implica que conceptos como "materia" o "energía" no se agotan en un solo grado, sino que se revisitan con una profundidad creciente. Esta visión se opone al modelo técnico de Bobbitt, que veía el currículo como una serie de tareas lineales y terminales; por el contrario, Bruner y autores como Harlen (2010) proponen que el currículo debe estructurarse en torno a "grandes ideas" que se conectan verticalmente a lo largo de la escolaridad.
+B. Correlación Horizontal y Vertical: La coherencia curricular se mide por su capacidad de articulación. La correlación vertical asegura que no existan rupturas conceptuales entre primaria, secundaria y media. Por su parte, la correlación horizontal es la que permite la interdisciplinariedad, integrando las ciencias con las matemáticas y la tecnología (enfoque STEM/STEAM) para abordar problemas reales. Aquí surge el debate con la pedagogía crítica de Michael Apple, quien advierte que una correlación excesivamente orientada a estándares internacionales (como PISA o TIMSS) puede despojar al currículo de su pertinencia cultural y local, convirtiéndolo en un instrumento de homogenización.
+C. Dimensiones del Currículo: Más allá del Saber Conocer: El currículo contemporáneo de ciencias debe equilibrar tres dimensiones interrelacionadas:
+1. Cognoscitiva: Abarca el conocimiento declarativo y procedimental, pero enfatiza el pensamiento crítico y la metacognición.
+2. Afectiva: Reconoce que la ciencia no es emocionalmente neutra. Incluye la motivación, la curiosidad y los valores éticos frente al impacto ambiental.
+3. Psicomotora: Se centra en las habilidades experimentales y la manipulación de modelos, aspectos que Stenhouse y Schwab defenderían como la "ciencia como práctica" frente a la "ciencia como producto".
+
+
+4. Ejemplos de Aplicación
+Ejemplo #2.1: Diseño de una Secuencia Espiral para el Concepto de 'Ecosistema' En el ciclo inicial (1°-3°), el currículo se enfoca en la observación de seres vivos en su entorno inmediato (curiosidad). En el ciclo intermedio (4°-5°), se introducen las relaciones de alimentación y cadenas tróficas (modelos básicos). En el nivel avanzado (10°-11°), el estudiante analiza la termodinámica de los ecosistemas y el impacto de políticas globales en la biodiversidad (transferencia compleja).
+Ejemplo #2.2: Correlación Horizontal en un Proyecto sobre Energías Renovables Un currículo bien diseñado integra en un mismo grado el estudio físico de la energía (Ciencias Naturales), el cálculo de eficiencia de paneles solares (Matemáticas), el diseño de prototipos (Tecnología) y el debate sobre la justicia energética en comunidades rurales (Ética y Sociales), superando la fragmentación disciplinar tradicional.
+
+
+5. Actividad Interactiva: Auditoría de Coherencia Curricular
+
+Instrucción: El estudiante de maestría realizará un análisis técnico de un Plan de Área de Ciencias Naturales real utilizando la siguiente metodología:
+1. Rastreo de la Espiral: Seleccione un concepto (ej. Célula o Materia) y documente cómo se transforma su complejidad desde grado 1° hasta 11°. Determine si existe una progresión lógica o si hay repeticiones superficiales.
+2. Análisis de Dimensiones: Evalúe el sistema de evaluación del plan de área. ¿Qué porcentaje de las evidencias de aprendizaje corresponden a la dimensión afectiva y psicomotora? Justifique si el currículo es equilibrado o puramente cognoscitivista.
+3. Matriz de Correlación: Diseñe una propuesta de integración horizontal para un tema del grado 9°, conectando los Derechos Básicos de Aprendizaje (DBA) de ciencias con al menos otra área del conocimiento, fundamentándose en el enfoque STEM.
+
+6. Evaluación de Selección Múltiple
+1. Situación-Problema: Una institución educativa presenta altos niveles de deserción en química de 10°. Al revisar el currículo, se observa que los conceptos de enlace químico se presentan como fórmulas abstractas sin conexión con lo visto en grados anteriores. Según la teoría de Jerome Bruner, el fallo principal radica en: A) La falta de herramientas digitales en el laboratorio. B) Una ruptura en la secuencia espiral que impide la construcción progresiva del conocimiento. C) La ausencia de objetivos conductuales claros según el modelo de Bobbitt. D) La excesiva carga de la dimensión afectiva en el currículo.
+2. Situación-Problema: Un docente de ciencias naturales decide que la evaluación final de su curso será un debate sobre los dilemas éticos de la edición genética, valorando la argumentación y la empatía del estudiante. ¿Qué dimensiones curriculares está priorizando? A) Exclusivamente la dimensión cognoscitiva y psicomotora. B) Las dimensiones cognoscitiva y afectiva. C) Únicamente el cumplimiento de estándares técnicos de la OCDE. D) La dimensión psicomotora y la eficiencia social de Taylor.
+3. Situación-Problema: En el diseño de un currículo de ciencias bajo el enfoque Ciencia-Tecnología-Sociedad (CTS), se busca que el estudiante no solo aprenda física, sino que comprenda el impacto social de las hidroeléctricas. Este enfoque se alinea con la visión de: A) El currículo como plan de instrucción técnica de Tyler. B) El currículo como construcción social y política de la escuela crítica. C) La tradición clásica del racionalismo cartesiano. D) El modelo de objetivos de rendimiento de Thorndike.
+4. Situación-Problema: Al integrar los Derechos Básicos de Aprendizaje (DBA) con proyectos de investigación local, una institución busca que el currículo sea "pertinente". Según Gimeno Sacristán, esta acción es necesaria porque: A) El currículo debe ser una copia exacta de los estándares internacionales. B) El currículo es la expresión de un proyecto educativo de una sociedad concreta y su contexto. C) La eficiencia industrial exige que todos los estudiantes aprendan lo mismo. D) El docente no debe tener autonomía en la interpretación curricular.
+5. Situación-Problema: La correlación horizontal en un currículo de ciencias de 6° grado se evidencia cuando: A) Se repiten los mismos temas de 5° grado para asegurar el aprendizaje. B) Se establecen conexiones entre el tema del ciclo del agua, el clima en geografía y la estadística en matemáticas. C) El docente de ciencias trabaja de forma aislada para evitar confusiones. D) Se eliminan las prácticas de laboratorio para ganar tiempo teórico.
+Clave de Respuestas y Justificación:
+1. B. Justificación: La espiral curricular exige que los conceptos se revisiten con complejidad creciente para garantizar la comprensión profunda.
+2. B. Justificación: El debate integra el saber conocer (cognoscitivo) con los valores y posturas éticas (afectivo).
+3. B. Justificación: El enfoque STS reconoce la dimensión política y social del conocimiento científico.
+4. B. Justificación: Sacristán enfatiza la relación intrínseca entre currículo, cultura y contexto social.
+5. B. Justificación: La correlación horizontal busca la integración interdisciplinaria dentro de un mismo nivel educativo.
+
+7. Bibliografía (Basada en FDOC-088)
+* Bruner, J. (1960). The Process of Education. Harvard University Press.
+* Bybee, R. (2015). The BSCS 5E Instructional Model. NSTA Press.
+* Coll, C. y Taylor, S. (2012). Reflexiones sobre el currículo en la educación básica.
+* Gimeno Sacristán, J. (1988). Aproximación al concepto currículo. Editorial Popular.
+* Ministerio de Educación Nacional (2015). Lineamientos Curriculares para Ciencias Naturales.
+* OECD (2015). PISA 2015 Results: Excellence and Equity in Education.
+* Porlán, R. (1998). Pasado, presente y futuro de la didáctica de las ciencias. Enseñanza de las Ciencias.
+
