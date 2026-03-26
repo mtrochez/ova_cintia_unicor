@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2.1: El currículo escolar de ciencias naturales</title>
+    <meta name="description" content="Guía interactiva de diseño curricular">
+    <meta name="version" content="1.0">
+    <meta name="ultima-modificacion" content="">
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        #ova-embed {
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+        }
+        #ova-embed *,
+        #ova-embed *::before,
+        #ova-embed *::after {
+            box-sizing: border-box;
+        }
+        #ova-embed .content-stage {
+            position: relative;
+        }
+        #ova-embed .content-pane {
+            opacity: 0;
+            transform: translateY(12px);
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            visibility: hidden;
+            width: 100%;
+            z-index: 0;
+            transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+        }
+        #ova-embed .content-pane.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            position: relative;
+            visibility: visible;
+            z-index: 1;
+            transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s;
+        }
+        #ova-embed .sidebar-link.active {
+            background-color: #dcfce7;
+            color: #166534;
+            border-left: 4px solid #22c55e;
+            font-weight: 600;
+        }
+        #ova-embed .sidebar-link {
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+        #ova-embed .sidebar-link:hover {
+            background-color: #f0fdf4;
+            transform: translateX(2px);
+        }
+        #ova-embed .sidebar-link:focus-visible {
+            outline: 2px solid #22c55e;
+            outline-offset: 2px;
+        }
+        #ova-embed summary {
+            list-style: none;
+        }
+        #ova-embed summary::-webkit-details-marker {
+            display: none;
+        }
+        #ova-embed details[open] .accordion-toggle {
+            transform: rotate(45deg);
+            background-color: #dcfce7;
+            border-color: #22c55e;
+        }
+        #ova-embed .speech-controls button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #ova-embed * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        /* Botones estilo SUE Caribe - Solo para pestaña Recursos */
+        .btn-sue {
+            background-color: #22c55e !important;
+            color: #fff !important;
+            border: none !important;
+            padding: 12px 24px !important;
+            border-radius: 6px !important;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex !important;
+            align-items: center !important;
+            box-shadow: 0 2px 4px rgba(0, 86, 179, 0.2) !important;
+            margin: 8px 4px;
+        }
+        .btn-sue:hover {
+            background-color: #16a34a !important;
+            color: #fff !important;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3) !important;
+            transform: translateY(-1px);
+        }
+        .btn-sue:focus {
+            outline: 2px solid #22c55e;
+            outline-offset: 2px;
+        }
+        .btn-sue i {
+            margin-right: 8px;
+        }
+        #ova-embed #recursos .btn-sue {
+            background-color: #22c55e !important;
+            color: #fff !important;
+            border: none !important;
+            text-decoration: none !important;
+            background-image: none !important;
+            appearance: none !important;
+            -webkit-appearance: none !important;
+        }
+        #ova-embed #recursos .btn-sue:hover {
+            background-color: #16a34a !important;
+            color: #fff !important;
+            text-decoration: none !important;
+        }
+        #ova-embed #recursos .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 28px;
+            margin-top: 22px;
+        }
+        #ova-embed #recursos .resource-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 26px 26px;
+            text-align: left;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
+            border: 1px solid #f1f5f9;
+            border-left: 6px solid #22c55e;
+        }
+        #ova-embed #recursos .resource-card:hover {
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+            transform: translateY(-2px);
+        }
+        #ova-embed #recursos .resource-icon {
+            display: none;
+        }
+        #ova-embed #recursos .resource-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #15803d;
+            margin-bottom: 10px;
+        }
+        #ova-embed #recursos .resource-description {
+            color: #334155;
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="ova-embed">
+        <div class="flex bg-slate-50">
+            <!-- Sidebar -->
+            <aside class="w-64 bg-white shadow-lg flex-shrink-0 hidden md:flex md:flex-col md:sticky md:top-0 md:h-screen md:self-start">
+                <div class="p-4">
+                    <div style="width: 150px; height: 150px;" class="p-2 mx-auto flex items-center justify-center bg-white rounded-full shadow-lg border-2 border-green-500 transition-shadow duration-300 hover:shadow-green-400">
+                        <img src="LOGO MAESTRIA (1).jpg.jpeg" alt="Logo Maestría" class="w-5/6 h-5/6 object-contain" loading="lazy">
+                    </div>
+                </div>
+                <nav class="mt-6 flex-1 overflow-y-auto" aria-label="Secciones">
+                    <a href="#introduccion" class="sidebar-link active flex items-center py-3 px-6 font-medium text-slate-700" data-target="introduccion" aria-controls="introduccion" aria-current="page">Introducción</a>
+                    <a href="#desarrollo" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="desarrollo" aria-controls="desarrollo">Desarrollo</a>
+                    <a href="#ejemplos" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="ejemplos" aria-controls="ejemplos">Ejemplos</a>
+                    <a href="#actividad" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="actividad" aria-controls="actividad">Actividades</a>
+                    <a href="#evaluacion" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="evaluacion" aria-controls="evaluacion">Autoevaluación</a>
+                    <a href="#recursos" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="recursos" aria-controls="recursos">Recursos</a>
+                    <a href="#bibliografia" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="bibliografia" aria-controls="bibliografia">Bibliografía</a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 p-4 sm:p-6 md:p-10 bg-gray-50">
+                <!-- Mobile Header -->
+                <div class="md:hidden mb-6 flex flex-col items-center">
+                    <div style="width: 100px; height: 100px;" class="p-2 flex items-center justify-center bg-white rounded-full shadow-lg transition-shadow duration-300 hover:shadow-green-400 mb-2">
+                        <img src="LOGO MAESTRIA (1).jpg.jpeg" alt="Logo Maestría" class="w-5/6 h-5/6 object-contain rounded-full" loading="lazy">
+                    </div>
+                    <select id="mobile-nav" class="w-full mt-2 p-2 border rounded-md bg-white shadow-sm" aria-label="Secciones">
+                        <option value="introduccion">Introducción</option>
+                        <option value="desarrollo">Desarrollo</option>
+                        <option value="ejemplos">Ejemplos</option>
+                        <option value="actividad">Actividades</option>
+                        <option value="evaluacion">Autoevaluación</option>
+                        <option value="recursos">Recursos</option>
+                        <option value="bibliografia">Bibliografía</option>
+                    </select>
+                </div>
+
+                <div id="content-stage" class="content-stage">
+
+            <!-- Introducción -->
+                    <div id="introduccion" class="content-pane active">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-4">El currículo escolar de ciencias naturales</h2>
+                        <p class="text-slate-700 leading-relaxed mb-4">
+                            El diseño y análisis del currículo escolar de ciencias naturales representa uno de los desafíos más complejos para el Magíster en Didáctica, pues exige trascender la visión del currículo como una simple lista de contenidos temáticos para entenderlo como un modelo pedagógico intencionado. En el marco de las exigencias globales de organismos como la UNESCO y la OCDE, el currículo de ciencias se posiciona como un imperativo formativo que no solo busca la transferencia de conocimiento técnico, sino la consolidación de una alfabetización científica que permita a los ciudadanos comprender y actuar sobre el impacto del desarrollo tecnocientífico en su territorio.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed mb-4">
+                            Desde una perspectiva académica profunda, este tema aborda la tensión entre la rigurosidad disciplinar y la necesidad de una formación multidisciplinaria que responda a fenómenos complejos. Para un investigador educativo, comprender cómo se articulan las dimensiones cognoscitivas, afectivas y psicomotoras, junto con los principios de secuenciación espiral, es fundamental para intervenir las brechas entre el currículo prescrito y el currículo real, garantizando que la ciencia escolar sea una herramienta de pensamiento crítico y no solo un ejercicio de memorización de datos.
+                        </p>
+                        <div class="mt-6 p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
+                            <p class="text-green-800 font-semibold">Pregunta orientadora</p>
+                            <p class="text-green-800 mt-2">¿Cómo se articulan la secuenciación espiral, la correlación curricular y las dimensiones cognoscitiva, afectiva y psicomotora para cerrar brechas entre el currículo prescrito y el currículo real en ciencias naturales?</p>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="introduccion">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Desarrollo -->
+                    <div id="desarrollo" class="content-pane">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-4">Estructura y tensiones en el currículo de ciencias</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">
+                            El currículo de ciencias naturales se distingue por su naturaleza epistemológica única: es un conocimiento construido socialmente, provisional y fundamentado en evidencias. Su desarrollo teórico se articula en tres ejes fundamentales.
+                        </p>
+                        <div class="grid gap-5">
+                            <details class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                    <span>Secuenciación espiral de contenidos</span>
+                                    <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                </summary>
+                                <div class="mt-4 text-slate-700 space-y-3">
+                                    <p>Basada en la premisa de <strong>Jerome Bruner (1960)</strong>, la espiral curricular sostiene que cualquier concepto científico puede enseñarse de forma honesta en cualquier etapa del desarrollo si se ajusta su complejidad. En ciencias naturales, esto implica que conceptos como &quot;materia&quot; o &quot;energía&quot; no se agotan en un solo grado, sino que se revisitan con una profundidad creciente. Esta visión se opone al modelo técnico de Bobbitt, que veía el currículo como una serie de tareas lineales y terminales; por el contrario, Bruner y autores como <strong>Harlen (2010)</strong> proponen que el currículo debe estructurarse en torno a &quot;grandes ideas&quot; que se conectan verticalmente a lo largo de la escolaridad.</p>
+                                    <p class="text-sm text-slate-500">Autores referenciales: Jerome Bruner, Harlen.</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>Los conceptos se revisitan con complejidad creciente.</li>
+                                        <li>Se organiza en torno a &quot;grandes ideas&quot; con continuidad vertical.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                    <span>Correlación horizontal y vertical</span>
+                                    <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                </summary>
+                                <div class="mt-4 text-slate-700 space-y-3">
+                                    <p>La coherencia curricular se mide por su capacidad de articulación. La correlación vertical asegura que no existan rupturas conceptuales entre primaria, secundaria y media. Por su parte, la correlación horizontal es la que permite la interdisciplinariedad, integrando las ciencias con las matemáticas y la tecnología (enfoque STEM/STEAM) para abordar problemas reales. Aquí surge el debate con la pedagogía crítica de <strong>Michael Apple</strong>, quien advierte que una correlación excesivamente orientada a estándares internacionales (como PISA o TIMSS) puede despojar al currículo de su pertinencia cultural y local, convirtiéndolo en un instrumento de homogenización.</p>
+                                    <p class="text-sm text-slate-500">Autores referenciales: Michael Apple.</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>La correlación vertical evita rupturas conceptuales.</li>
+                                        <li>La correlación horizontal impulsa integración STEM/STEAM en el mismo nivel.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                    <span>Dimensiones del currículo: más allá del saber conocer</span>
+                                    <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                </summary>
+                                <div class="mt-4 text-slate-700 space-y-3">
+                                    <p>Más allá del saber conocer, el currículo contemporáneo de ciencias debe equilibrar tres dimensiones interrelacionadas.</p>
+                                    <ul class="list-disc pl-5">
+                                        <li><strong>Cognoscitiva:</strong> conocimiento declarativo y procedimental, con énfasis en pensamiento crítico y metacognición.</li>
+                                        <li><strong>Afectiva:</strong> motivación, curiosidad y valores éticos frente al impacto ambiental.</li>
+                                        <li><strong>Psicomotora:</strong> habilidades experimentales y manipulación de modelos (ciencia como práctica).</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="desarrollo">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Ejemplos -->
+                    <div id="ejemplos" class="content-pane">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-4">Ejemplos de Aplicación</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">
+                            Explora ejemplos concretos de cómo la secuenciación espiral y la correlación curricular se aplican en contextos educativos reales.
+                        </p>
+                        <div class="grid gap-6 md:grid-cols-2">
+                            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500">
+                                <h3 class="font-semibold text-green-700 text-lg">Ejemplo 1: Secuencia espiral del concepto de &quot;ecosistema&quot;</h3>
+                                <p class="text-slate-700 mt-2">En el ciclo inicial (1°-3°), el currículo se enfoca en la observación de seres vivos en su entorno inmediato (curiosidad). En el ciclo intermedio (4°-5°), se introducen las relaciones de alimentación y cadenas tróficas (modelos básicos). En el nivel avanzado (10°-11°), el estudiante analiza la termodinámica de los ecosistemas y el impacto de políticas globales en la biodiversidad (transferencia compleja).</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500">
+                                <h3 class="font-semibold text-green-700 text-lg">Ejemplo 2: Correlación horizontal en energías renovables</h3>
+                                <p class="text-slate-700 mt-2">Un currículo bien diseñado integra en un mismo grado el estudio físico de la energía (Ciencias Naturales), el cálculo de eficiencia de paneles solares (Matemáticas), el diseño de prototipos (Tecnología) y el debate sobre la justicia energética en comunidades rurales (Ética y Sociales), superando la fragmentación disciplinar tradicional.</p>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="ejemplos">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Laboratorio de Investigación Curricular -->
+                    <div id="actividad" class="content-pane">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-4">🔬 Taller de Diseño Curricular en Ciencias</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">
+                            <strong>Misión:</strong> Diseña un currículo de Ciencias Naturales que integre secuenciación espiral, correlación interdisciplinaria y las tres dimensiones del aprendizaje científico.
+                        </p>
+
+                        <!-- Acordeón del taller (Módulos 1-4) -->
+                        <div id="taller-accordion" class="space-y-3">
+                            <!-- Módulo 1: Análisis del Contexto -->
+                            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden relative" style="z-index: 100; position: relative;" data-acc-item="contexto">
+                                <div id="trigger-contexto" class="p-4 flex items-center justify-between gap-3 cursor-pointer" data-acc-trigger="contexto" role="button" tabindex="0" aria-expanded="true" aria-controls="panel-contexto">
+                                    <div class="flex items-center">
+                                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mr-2">1</span>
+                                        <span class="font-bold text-blue-800 text-lg">Análisis del Contexto</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" data-help="contexto" aria-label="Ayuda: Análisis del Contexto" class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-blue-200 text-blue-700 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300">i</button>
+                                        <span class="text-slate-400 select-none" aria-hidden="true">▾</span>
+                                    </div>
+                                </div>
+                                <div id="panel-contexto" class="p-6 pt-2" data-acc-panel="contexto" role="region" aria-labelledby="trigger-contexto">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-700 mb-2">Brechas entre DBA de Ciencias y PEI institucional</label>
+                                            <textarea id="brechas-contexto" maxlength="2000" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200" rows="5" placeholder="Identifica las principales brechas entre los Derechos Básicos de Aprendizaje de Ciencias Naturales y el Proyecto Educativo Institucional..."></textarea>
+                                            <div class="mt-1 text-xs text-gray-500">
+                                                <span id="brechas-contexto-count">0</span>/2000 caracteres
+                                            </div>
+                                        </div>
+                                        <button onclick="analizarContexto()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                            📋 Analizar Contexto
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Módulo 2: Secuenciación Espiral -->
+                            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden" data-acc-item="espiral">
+                                <div id="trigger-espiral" class="p-4 flex items-center justify-between gap-3 cursor-pointer" data-acc-trigger="espiral" role="button" tabindex="0" aria-expanded="false" aria-controls="panel-espiral">
+                                    <div class="flex items-center">
+                                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mr-2">2</span>
+                                        <span class="font-bold text-green-800 text-lg">Secuenciación Espiral</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" data-help="espiral" aria-label="Ayuda: Secuenciación Espiral" class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-green-200 text-green-700 bg-green-50 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-300">i</button>
+                                        <span class="text-slate-400 select-none" aria-hidden="true">▾</span>
+                                    </div>
+                                </div>
+                                <div id="panel-espiral" class="p-6 pt-2 hidden" data-acc-panel="espiral" role="region" aria-labelledby="trigger-espiral">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-700 mb-2">Concepto científico a secuenciar</label>
+                                            <input type="text" id="concepto-cientifico" maxlength="200" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200" placeholder="Ej: Ecosistema, Materia, Energía, Ciclo del agua...">
+                                            <div class="mt-1 text-xs text-gray-500">
+                                                <span id="concepto-cientifico-count">0</span>/200 caracteres
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-700 mb-2">Diseño de espiral 1°-11°</label>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                                                <div>
+                                                    <strong>Primaria (1°-5°):</strong>
+                                                    <input type="text" id="primaria-espiral" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="Observación y exploración...">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="primaria-espiral-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <strong>Secundaria (6°-9°):</strong>
+                                                    <input type="text" id="secundaria-espiral" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="Conceptos básicos y modelos...">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="secundaria-espiral-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <strong>Media (10°-11°):</strong>
+                                                    <input type="text" id="media-espiral" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="Aplicaciones complejas...">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="media-espiral-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <strong>Justificación (Bruner):</strong>
+                                                    <input type="text" id="justificacion-espiral" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="¿Por qué esta progresión?">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="justificacion-espiral-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button onclick="disenarEspiral()" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                            🔄 Diseñar Espiral
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Módulo 3: Correlación Interdisciplinaria -->
+                            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden" data-acc-item="correlacion">
+                                <div id="trigger-correlacion" class="p-4 flex items-center justify-between gap-3 cursor-pointer" data-acc-trigger="correlacion" role="button" tabindex="0" aria-expanded="false" aria-controls="panel-correlacion">
+                                    <div class="flex items-center">
+                                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm mr-2">3</span>
+                                        <span class="font-bold text-purple-800 text-lg">Correlación Interdisciplinaria</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" data-help="correlacion" aria-label="Ayuda: Correlación Interdisciplinaria" class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-purple-200 text-purple-700 bg-purple-50 hover:bg-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-300">i</button>
+                                        <span class="text-slate-400 select-none" aria-hidden="true">▾</span>
+                                    </div>
+                                </div>
+                                <div id="panel-correlacion" class="p-6 pt-2 hidden" data-acc-panel="correlacion" role="region" aria-labelledby="trigger-correlacion">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-700 mb-2">Tema integrador STEAM</label>
+                                            <input type="text" id="tema-integrador" maxlength="200" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200" placeholder="Ej: Energías renovables, Cambio climático, Biotecnología...">
+                                            <div class="mt-1 text-xs text-gray-500">
+                                                <span id="tema-integrador-count">0</span>/200 caracteres
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-700 mb-2">Matriz de correlación</label>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                                                <div>
+                                                    <strong>Ciencias Naturales:</strong>
+                                                    <input type="text" id="ciencias-correlacion" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="Contenido científico...">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="ciencias-correlacion-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <strong>Matemáticas:</strong>
+                                                    <input type="text" id="matematicas-correlacion" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="Aplicación matemática...">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="matematicas-correlacion-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <strong>Tecnología:</strong>
+                                                    <input type="text" id="tecnologia-correlacion" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="Uso tecnológico...">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="tecnologia-correlacion-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <strong>Sociales/Humanidades:</strong>
+                                                    <input type="text" id="sociales-correlacion" maxlength="300" class="w-full p-2 border rounded-lg" placeholder="Impacto social...">
+                                                    <div class="mt-1 text-xs text-gray-500">
+                                                        <span id="sociales-correlacion-count">0</span>/300 caracteres
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button onclick="crearCorrelacion()" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                                            🔗 Crear Correlación
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Módulo 4: Dimensiones del Aprendizaje -->
+                            <div class="bg-white border border-gray-200 rounded-xl overflow-hidden" data-acc-item="dimensiones">
+                                <div id="trigger-dimensiones" class="p-4 flex items-center justify-between gap-3 cursor-pointer" data-acc-trigger="dimensiones" role="button" tabindex="0" aria-expanded="false" aria-controls="panel-dimensiones">
+                                    <div class="flex items-center">
+                                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm mr-2">4</span>
+                                        <span class="font-bold text-orange-800 text-lg">Dimensiones del Aprendizaje Científico</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" data-help="dimensiones" aria-label="Ayuda: Dimensiones del Aprendizaje" class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-orange-200 text-orange-700 bg-orange-50 hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-300">i</button>
+                                        <span class="text-slate-400 select-none" aria-hidden="true">▾</span>
+                                    </div>
+                                </div>
+                                <div id="panel-dimensiones" class="p-6 pt-2 hidden" data-acc-panel="dimensiones" role="region" aria-labelledby="trigger-dimensiones">
+                                    <div class="space-y-4">
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-semibold text-slate-700 mb-2">Cognoscitiva</label>
+                                                <textarea id="dimension-cognitiva" maxlength="2000" class="w-full h-28 resize-none p-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200" rows="2" placeholder="Conceptos, procedimientos, pensamiento crítico..."></textarea>
+                                                <div class="mt-1 text-xs text-gray-500">
+                                                    <span id="dimension-cognitiva-count">0</span>/2000 caracteres
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-slate-700 mb-2">Afectiva</label>
+                                                <textarea id="dimension-afectiva" maxlength="2000" class="w-full h-28 resize-none p-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200" rows="2" placeholder="Curiosidad, ética ambiental, valores..."></textarea>
+                                                <div class="mt-1 text-xs text-gray-500">
+                                                    <span id="dimension-afectiva-count">0</span>/2000 caracteres
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-slate-700 mb-2">Psicomotora</label>
+                                                <textarea id="dimension-psicomotora" maxlength="2000" class="w-full h-28 resize-none p-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200" rows="2" placeholder="Experimentación, manipulación, seguridad..."></textarea>
+                                                <div class="mt-1 text-xs text-gray-500">
+                                                    <span id="dimension-psicomotora-count">0</span>/2000 caracteres
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button onclick="equilibrarDimensiones()" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                            ⚖️ Equilibrar Dimensiones
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel de Progreso y Acciones -->
+                        <div class="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-600 rounded-xl p-6 mb-6">
+                            <div class="mb-4">
+                                <h3 class="font-bold text-green-800 text-lg mb-3">🎓 Tu Portafolio Curricular</h3>
+                            </div>
+                            
+                            <!-- Barra de Progreso Separada -->
+                            <div class="bg-white border border-gray-200 rounded-lg p-4">
+                                <div class="flex justify-between text-sm text-slate-600 mb-2">
+                                    <span>Progreso del Taller</span>
+                                    <span id="progreso-taller">0%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div id="progress-bar-taller" class="bg-gradient-to-r from-green-500 to-green-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de Acción (Fuera del contenedor de progreso) -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+                            <h3 class="font-bold text-slate-800 text-lg mb-4">🔧 Acciones del Portafolio</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <button onclick="guardarPortafolio()" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                    💾 Guardar
+                                </button>
+                                <button onclick="recuperarPortafolio()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                                    📂 Recuperar
+                                </button>
+                                <details class="relative">
+                                    <summary class="list-none bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors cursor-pointer">
+                                        📤 Exportar
+                                    </summary>
+                                    <div class="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-50">
+                                        <button type="button" onclick="generarReportePortafolio(); this.closest('details').removeAttribute('open');" class="w-full text-left px-3 py-2 rounded-md hover:bg-gray-50">
+                                            📄 Reporte (TXT)
+                                        </button>
+                                        <button type="button" onclick="exportarPortafolio(); this.closest('details').removeAttribute('open');" class="w-full text-left px-3 py-2 rounded-md hover:bg-gray-50">
+                                            🌐 Documento (HTML)
+                                        </button>
+                                        <button type="button" onclick="exportarPortafolioWord(); this.closest('details').removeAttribute('open');" class="w-full text-left px-3 py-2 rounded-md hover:bg-gray-50">
+                                            📝 Word (DOC)
+                                        </button>
+                                        <button type="button" onclick="exportarPortafolioPDF(); this.closest('details').removeAttribute('open');" class="w-full text-left px-3 py-2 rounded-md hover:bg-gray-50">
+                                            🖨️ PDF (Imprimir)
+                                        </button>
+                                    </div>
+                                </details>
+                                <button onclick="limpiarPortafolio()" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                                    🗑️ Limpiar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="actividad">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Autoevaluación -->
+                    <div id="evaluacion" class="content-pane">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-4">Autoevaluación</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">
+                            Responde las siguientes preguntas de selección múltiple. Selecciona la opción correcta y luego presiona "Verificar".
+                        </p>
+                        <div class="space-y-5">
+                            <div class="quiz-question bg-white p-5 rounded-xl shadow-sm border border-green-200">
+                                <p class="font-semibold text-slate-800 mb-3">1. Situación-Problema: Una institución educativa presenta altos niveles de deserción en química de 10°. Al revisar el currículo, se observa que los conceptos de enlace químico se presentan como fórmulas abstractas sin conexión con lo visto en grados anteriores. Según la teoría de Jerome Bruner, el fallo principal radica en:</p>
+                                <div class="space-y-2 text-slate-700">
+                                    <label class="block"><input type="radio" name="q1" value="wrong" class="mr-2">La falta de herramientas digitales en el laboratorio.</label>
+                                    <label class="block"><input type="radio" name="q1" value="correct" class="mr-2">Una ruptura en la secuencia espiral que impide la construcción progresiva del conocimiento.</label>
+                                    <label class="block"><input type="radio" name="q1" value="wrong" class="mr-2">La ausencia de objetivos conductuales claros según el modelo de Bobbitt.</label>
+                                    <label class="block"><input type="radio" name="q1" value="wrong" class="mr-2">La excesiva carga de la dimensión afectiva en el currículo.</label>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question bg-white p-5 rounded-xl shadow-sm border border-green-200">
+                                <p class="font-semibold text-slate-800 mb-3">2. Situación-Problema: Un docente de ciencias naturales decide que la evaluación final de su curso será un debate sobre los dilemas éticos de la edición genética, valorando la argumentación y la empatía del estudiante. ¿Qué dimensiones curriculares está priorizando?</p>
+                                <div class="space-y-2 text-slate-700">
+                                    <label class="block"><input type="radio" name="q2" value="wrong" class="mr-2">Exclusivamente la dimensión cognoscitiva y psicomotora.</label>
+                                    <label class="block"><input type="radio" name="q2" value="correct" class="mr-2">Las dimensiones cognoscitiva y afectiva.</label>
+                                    <label class="block"><input type="radio" name="q2" value="wrong" class="mr-2">Únicamente el cumplimiento de estándares técnicos de la OCDE.</label>
+                                    <label class="block"><input type="radio" name="q2" value="wrong" class="mr-2">La dimensión psicomotora y la eficiencia social de Taylor.</label>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question bg-white p-5 rounded-xl shadow-sm border border-green-200">
+                                <p class="font-semibold text-slate-800 mb-3">3. Situación-Problema: En el diseño de un currículo de ciencias bajo el enfoque Ciencia-Tecnología-Sociedad (CTS), se busca que el estudiante no solo aprenda física, sino que comprenda el impacto social de las hidroeléctricas. Este enfoque se alinea con la visión de:</p>
+                                <div class="space-y-2 text-slate-700">
+                                    <label class="block"><input type="radio" name="q3" value="wrong" class="mr-2">El currículo como plan de instrucción técnica de Tyler.</label>
+                                    <label class="block"><input type="radio" name="q3" value="correct" class="mr-2">El currículo como construcción social y política de la escuela crítica.</label>
+                                    <label class="block"><input type="radio" name="q3" value="wrong" class="mr-2">La tradición clásica del racionalismo cartesiano.</label>
+                                    <label class="block"><input type="radio" name="q3" value="wrong" class="mr-2">El modelo de objetivos de rendimiento de Thorndike.</label>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question bg-white p-5 rounded-xl shadow-sm border border-green-200">
+                                <p class="font-semibold text-slate-800 mb-3">4. Situación-Problema: Al integrar los Derechos Básicos de Aprendizaje (DBA) con proyectos de investigación local, una institución busca que el currículo sea &quot;pertinente&quot;. Según Gimeno Sacristán, esta acción es necesaria porque:</p>
+                                <div class="space-y-2 text-slate-700">
+                                    <label class="block"><input type="radio" name="q4" value="wrong" class="mr-2">El currículo debe ser una copia exacta de los estándares internacionales.</label>
+                                    <label class="block"><input type="radio" name="q4" value="correct" class="mr-2">El currículo es la expresión de un proyecto educativo de una sociedad concreta y su contexto.</label>
+                                    <label class="block"><input type="radio" name="q4" value="wrong" class="mr-2">La eficiencia industrial exige que todos los estudiantes aprendan lo mismo.</label>
+                                    <label class="block"><input type="radio" name="q4" value="wrong" class="mr-2">El docente no debe tener autonomía en la interpretación curricular.</label>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question bg-white p-5 rounded-xl shadow-sm border border-green-200">
+                                <p class="font-semibold text-slate-800 mb-3">5. Situación-Problema: La correlación horizontal en un currículo de ciencias de 6° grado se evidencia cuando:</p>
+                                <div class="space-y-2 text-slate-700">
+                                    <label class="block"><input type="radio" name="q5" value="wrong" class="mr-2">Se repiten los mismos temas de 5° grado para asegurar el aprendizaje.</label>
+                                    <label class="block"><input type="radio" name="q5" value="correct" class="mr-2">Se establecen conexiones entre el tema del ciclo del agua, el clima en geografía y la estadística en matemáticas.</label>
+                                    <label class="block"><input type="radio" name="q5" value="wrong" class="mr-2">El docente de ciencias trabaja de forma aislada para evitar confusiones.</label>
+                                    <label class="block"><input type="radio" name="q5" value="wrong" class="mr-2">Se eliminan las prácticas de laboratorio para ganar tiempo teórico.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                            <button id="submit-quiz-btn" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Verificar</button>
+                            <button onclick="limpiarAutoevaluacion()" type="button" class="bg-red-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-red-700 transition-colors">Limpiar</button>
+                            <p id="quiz-result" class="text-sm font-medium"></p>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="evaluacion">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Recursos -->
+                    <div id="recursos" class="content-pane">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-4">Recursos</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">
+                            Materiales complementarios para profundizar en el currículo escolar de ciencias naturales, su secuenciación espiral, correlación curricular y dimensiones.
+                        </p>
+
+                        <div class="resource-grid">
+                            <div class="resource-card">
+                                <div class="resource-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <h3 class="resource-title">Lecturas guía</h3>
+                                <p class="resource-description">Textos introductorios sobre fundamentos curriculares para fortalecer conceptos clave y vocabulario académico.</p>
+                            </div>
+
+                            <div class="resource-card">
+                                <div class="resource-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <h3 class="resource-title">Estudios de caso</h3>
+                                <p class="resource-description">Situaciones reales de aula para analizar cómo influyen las corrientes curriculares en la práctica pedagógica.</p>
+                            </div>
+
+                            <div class="resource-card">
+                                <div class="resource-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3 class="resource-title">Guía de discusión</h3>
+                                <p class="resource-description">Preguntas orientadoras para debates en seminarios o grupos de investigación docente.</p>
+                            </div>
+
+                            <div class="resource-card">
+                                <div class="resource-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <h3 class="resource-title">Mapa conceptual</h3>
+                                <p class="resource-description">Síntesis gráfica de las relaciones entre racionalismo, empirismo y corrientes derivadas.</p>
+                            </div>
+                        </div>
+
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="recursos">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Bibliografía -->
+                    <div id="bibliografia" class="content-pane">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-6">Bibliografía</h2>
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Bruner, J. (1960). <em>The Process of Education</em>. Harvard University Press.</span>
+                                <p class="text-slate-500 text-sm mt-2">Base para la secuenciación espiral en el currículo de ciencias.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Bybee, R. (2015). <em>The BSCS 5E Instructional Model</em>. NSTA Press.</span>
+                                <p class="text-slate-500 text-sm mt-2">Modelo de enseñanza para ciencias basado en indagación.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Coll, C. y Taylor, S. (2012). <em>Reflexiones sobre el currículo en la educación básica</em>.</span>
+                                <p class="text-slate-500 text-sm mt-2">Reflexiones contemporáneas sobre currículo escolar.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Gimeno Sacristán, J. (1988). <em>Aproximación al concepto currículo</em>. Editorial Popular.</span>
+                                <p class="text-slate-500 text-sm mt-2">Pertinencia, cultura y contexto del currículo.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Ministerio de Educación Nacional (2015). <em>Lineamientos Curriculares para Ciencias Naturales</em>.</span>
+                                <p class="text-slate-500 text-sm mt-2">Orientaciones curriculares nacionales para ciencias.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">OECD (2015). <em>PISA 2015 Results: Excellence and Equity in Education</em>.</span>
+                                <p class="text-slate-500 text-sm mt-2">Marco internacional de evaluación y estándares.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Porlán, R. (1998). <em>Pasado, presente y futuro de la didáctica de las ciencias</em>. Enseñanza de las Ciencias.</span>
+                                <p class="text-slate-500 text-sm mt-2">Perspectivas sobre la didáctica de las ciencias.</p>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="bibliografia">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="section-nav" class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border border-green-200 rounded-xl p-4 shadow-sm">
+                    <button id="prev-section" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Anterior</button>
+                    <div id="section-indicator" class="text-sm text-slate-600 font-medium">Sección 1 de 7</div>
+                    <button id="next-section" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Siguiente</button>
+                </div>
+
+                <!-- Footer -->
+                <footer class="mt-12 pt-6 border-t-2 border-slate-200 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+        <script>
+        const initOvaEmbed = () => {
+            const root = document.getElementById('ova-embed');
+            if (!root) return;
+
+            const sidebarLinks = root.querySelectorAll('.sidebar-link');
+            const mobileNav = root.querySelector('#mobile-nav');
+            const contentPanes = root.querySelectorAll('.content-pane');
+            const prevBtn = root.querySelector('#prev-section');
+            const nextBtn = root.querySelector('#next-section');
+            const sectionIndicator = root.querySelector('#section-indicator');
+            const main = root.querySelector('main');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const speechSupported = 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined';
+
+            const sectionOrder = Array.from(sidebarLinks)
+                .map(link => link.dataset.target)
+                .filter(Boolean);
+            const sectionLabels = {};
+            sidebarLinks.forEach(link => {
+                const target = link.dataset.target;
+                if (target) {
+                    sectionLabels[target] = link.textContent.trim();
+                }
+            });
+
+            contentPanes.forEach(pane => {
+                pane.setAttribute('role', 'region');
+                const label = sectionLabels[pane.id];
+                if (label) {
+                    pane.setAttribute('aria-label', label);
+                }
+            });
+
+            function scrollToMainTop() {
+                if (!main) return;
+                main.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+            }
+
+            function updateSectionNav(targetId) {
+                if (!prevBtn || !nextBtn || !sectionIndicator) return;
+                const index = sectionOrder.indexOf(targetId);
+                const prevTarget = sectionOrder[index - 1] || '';
+                const nextTarget = sectionOrder[index + 1] || '';
+
+                prevBtn.disabled = index <= 0;
+                nextBtn.disabled = index >= sectionOrder.length - 1;
+                prevBtn.dataset.target = prevTarget;
+                nextBtn.dataset.target = nextTarget;
+                sectionIndicator.textContent = `Sección ${index + 1} de ${sectionOrder.length}`;
+            }
+
+            function updateHistory(targetId, pushHistory) {
+                const hash = `#${targetId}`;
+                if (pushHistory) {
+                    if (window.location.hash !== hash) {
+                        history.pushState({ targetId }, '', hash);
+                    }
+                } else if (window.location.hash !== hash) {
+                    history.replaceState({ targetId }, '', hash);
+                }
+            }
+
+            function switchPane(targetId, options = {}) {
+                if (!sectionOrder.includes(targetId)) return;
+                const { pushHistory = true, focusHeading = true, scroll = true } = options;
+
+                if (speechSupported) {
+                    window.speechSynthesis.cancel();
+                }
+
+                contentPanes.forEach(pane => {
+                    const isActive = pane.id === targetId;
+                    pane.classList.toggle('active', isActive);
+                    pane.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+                });
+
+                sidebarLinks.forEach(link => {
+                    const isActive = link.dataset.target === targetId;
+                    link.classList.toggle('active', isActive);
+                    if (isActive) {
+                        link.setAttribute('aria-current', 'page');
+                    } else {
+                        link.removeAttribute('aria-current');
+                    }
+                });
+
+                if (mobileNav && mobileNav.value !== targetId) {
+                    mobileNav.value = targetId;
+                }
+
+                updateSectionNav(targetId);
+                updateHistory(targetId, pushHistory);
+
+                const activePane = root.querySelector(`#${targetId}`);
+                if (focusHeading && activePane) {
+                    const heading = activePane.querySelector('h2');
+                    if (heading) {
+                        heading.setAttribute('tabindex', '-1');
+                        heading.focus({ preventScroll: true });
+                    }
+                }
+
+                if (scroll) {
+                    scrollToMainTop();
+                }
+            }
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchPane(link.dataset.target);
+                });
+            });
+
+            if (mobileNav) {
+                mobileNav.addEventListener('change', () => {
+                    switchPane(mobileNav.value);
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (prevBtn.dataset.target) {
+                        switchPane(prevBtn.dataset.target);
+                    }
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    if (nextBtn.dataset.target) {
+                        switchPane(nextBtn.dataset.target);
+                    }
+                });
+            }
+
+            function getTargetFromHash() {
+                const hash = window.location.hash.replace('#', '');
+                return sectionOrder.includes(hash) ? hash : null;
+            }
+
+            const initialTarget = getTargetFromHash() || sectionOrder[0];
+            if (initialTarget) {
+                switchPane(initialTarget, { pushHistory: false, focusHeading: false, scroll: false });
+            }
+
+            window.addEventListener('popstate', () => {
+                const target = getTargetFromHash() || sectionOrder[0];
+                if (target) {
+                    switchPane(target, { pushHistory: false, focusHeading: false });
+                }
+            });
+
+            const speechControls = root.querySelectorAll('.speech-controls');
+            let currentUtterance = null;
+
+            speechControls.forEach(control => {
+                const playBtn = control.querySelector('.play-btn');
+                const pauseBtn = control.querySelector('.pause-btn');
+                const stopBtn = control.querySelector('.stop-btn');
+                const targetId = control.dataset.target;
+                const contentElement = root.querySelector(`#${targetId}`);
+
+                function updateControlsState(isSpeaking, isPaused) {
+                    playBtn.disabled = isSpeaking && !isPaused;
+                    pauseBtn.disabled = !isSpeaking || isPaused;
+                    stopBtn.disabled = !isSpeaking && !isPaused;
+                }
+
+                if (!speechSupported) {
+                    playBtn.disabled = true;
+                    pauseBtn.disabled = true;
+                    stopBtn.disabled = true;
+                    return;
+                }
+
+                playBtn.addEventListener('click', () => {
+                    if (!contentElement) return;
+
+                    if (window.speechSynthesis.paused && currentUtterance) {
+                        window.speechSynthesis.resume();
+                    } else {
+                        window.speechSynthesis.cancel();
+                        const textToRead = contentElement.innerText;
+                        currentUtterance = new SpeechSynthesisUtterance(textToRead);
+                        currentUtterance.lang = 'es-ES';
+
+                        currentUtterance.onstart = () => updateControlsState(true, false);
+                        currentUtterance.onpause = () => updateControlsState(true, true);
+                        currentUtterance.onresume = () => updateControlsState(true, false);
+                        currentUtterance.onend = () => updateControlsState(false, false);
+                        currentUtterance.onerror = () => updateControlsState(false, false);
+
+                        window.speechSynthesis.speak(currentUtterance);
+                    }
+                });
+
+                pauseBtn.addEventListener('click', () => {
+                    if (window.speechSynthesis.speaking) {
+                        window.speechSynthesis.pause();
+                    }
+                });
+
+                stopBtn.addEventListener('click', () => {
+                    window.speechSynthesis.cancel();
+                    updateControlsState(false, false);
+                });
+            });
+
+            const submitQuizBtn = root.querySelector('#submit-quiz-btn');
+            const quizResult = root.querySelector('#quiz-result');
+            const quizQuestions = root.querySelectorAll('.quiz-question');
+
+            if (submitQuizBtn) {
+                submitQuizBtn.addEventListener('click', () => {
+                    let score = 0;
+                    quizQuestions.forEach(question => {
+                        const selected = question.querySelector('input[type="radio"]:checked');
+                        question.querySelectorAll('label').forEach(label => label.classList.remove('text-green-700', 'text-red-700', 'font-bold'));
+
+                        if (selected) {
+                            if (selected.value === 'correct') {
+                                score++;
+                                selected.parentElement.classList.add('text-green-700', 'font-bold');
+                            } else {
+                                selected.parentElement.classList.add('text-red-700');
+                                const correct = question.querySelector('input[value="correct"]');
+                                if (correct) {
+                                    correct.parentElement.classList.add('text-green-700', 'font-bold');
+                                }
+                            }
+                        }
+                    });
+
+                    quizResult.classList.remove('text-green-700', 'text-red-700');
+                    if (score === quizQuestions.length) {
+                        quizResult.textContent = `¡Excelente! Obtuviste ${score} de ${quizQuestions.length} respuestas correctas.`;
+                        quizResult.classList.add('text-green-700');
+                    } else {
+                        quizResult.textContent = `Tu puntuación es ${score} de ${quizQuestions.length}. Repasa el contenido y vuelve a intentarlo.`;
+                        quizResult.classList.add('text-red-700');
+                    }
+                });
+            }
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initOvaEmbed);
+        } else {
+            initOvaEmbed();
+        }
+
+    // Funciones del Laboratorio de Investigación Curricular
+    function guardarProgreso() {
+        const proyectoData = {
+            contexto: document.querySelector('textarea[placeholder="Describe tu institución, nivel educativo, características del alumnado..."]').value,
+            problematica: document.querySelector('textarea[placeholder="¿Qué problema curricular quieres investigar?"]').value,
+            justificacion: document.querySelector('textarea[placeholder="Fundamenta tu problema con autores y enfoques estudiados..."]').value,
+            preguntaCentral: document.querySelector('input[placeholder="¿Cómo...? ¿En qué medida...? ¿Cuál es el impacto de...?"]').value,
+            subpreguntas: Array.from(document.querySelectorAll('input[placeholder^="Subpregunta"]')).map(input => input.value),
+            metodo: document.querySelector('input[name="metodo"]:checked')?.value || '',
+            instrumentos: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.nextElementSibling.textContent.trim()),
+            fecha: new Date().toISOString(),
+            progreso: calcularProgreso()
+        };
+
+        // Guardar en localStorage
+        localStorage.setItem('proyectoInvestigacion', JSON.stringify(proyectoData));
+        
+        // Actualizar barra de progreso
+        actualizarBarraProgreso(progresoData.progreso);
+        
+        // Mostrar confirmación
+        mostrarNotificacion('Progreso guardado exitosamente', 'success');
+    }
+
+    function generarReporte() {
+        const proyectoData = JSON.parse(localStorage.getItem('proyectoInvestigacion') || '{}');
+        
+        if (!proyectoData.contexto) {
+            mostrarNotificacion('Debes completar al menos el diagnóstico institucional', 'warning');
+            return;
+        }
+
+        const reporteHTML = `
+            <html>
+            <head>
+                <style>
+                    body { font-family: 'Arial', sans-serif; margin: 30px; line-height: 1.8; color: #333; }
+                    .header { text-align: center; border-bottom: 3px solid #22c55e; padding-bottom: 20px; margin-bottom: 30px; }
+                    .section { margin: 25px 0; padding: 20px; background: #f9fafb; border-left: 4px solid #22c55e; border-radius: 5px; }
+                    .section h2 { color: #16a34a; margin-bottom: 15px; }
+                    .subsection { margin: 15px 0; }
+                    .subsection h3 { color: #15803d; margin-bottom: 10px; }
+                    .footer { text-align: center; margin-top: 40px; color: #666; font-size: 12px; }
+                    .badge { background: #22c55e; color: white; padding: 5px 10px; border-radius: 15px; font-size: 12px; }
+                </style>
+            </head>
+            <body>
+                <div class="header">
+                    <h1>🔬 REPORTE DE PROYECTO DE INVESTIGACIÓN CURRICULAR</h1>
+                    <p><span class="badge">Nivel Maestría</span></p>
+                    <p><strong>Fecha:</strong> ${new Date().toLocaleDateString()}</p>
+                    <p><strong>Progreso:</strong> ${proyectoData.progreso || 0}%</p>
+                </div>
+
+                <div class="section">
+                    <h2>📋 ANÁLISIS CONTEXTUAL</h2>
+                    <div class="subsection">
+                        <h3>Contexto Educativo</h3>
+                        <p>${proyectoData.contexto || 'No especificado'}</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Problemática Identificada</h3>
+                        <p>${proyectoData.problematica || 'No especificada'}</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Justificación Teórica</h3>
+                        <p>${proyectoData.justificacion || 'No especificada'}</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🎯 PREGUNTA DE INVESTIGACIÓN</h2>
+                    <div class="subsection">
+                        <h3>Pregunta Central</h3>
+                        <p>${proyectoData.preguntaCentral || 'No especificada'}</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Subpreguntas</h3>
+                        <ul>${proyectoData.subpreguntas?.filter(sp => sp).map(sp => `<li>${sp}</li>`).join('') || '<li>No especificadas</li>'}</ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🔍 DISEÑO METODOLÓGICO</h2>
+                    <div class="subsection">
+                        <h3>Enfoque Metodológico</h3>
+                        <p>${proyectoData.metodo ? proyectoData.metodo.charAt(0).toUpperCase() + proyectoData.metodo.slice(1) : 'No especificado'}</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Instrumentos de Recolección</h3>
+                        <ul>${proyectoData.instrumentos?.length ? proyectoData.instrumentos.map(inst => `<li>${inst}</li>`).join('') : '<li>No especificados</li>'}</ul>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>Generado con Laboratorio de Investigación Curricular - OVA Fundamentos Teóricos-Conceptuales del Currículo</p>
+                    <p>Universidad de Córdoba - Maestría en Didáctica de las Ciencias</p>
+                </div>
+            </body>
+            </html>
+        `;
+
+        // Crear y descargar el reporte
+        const blob = new Blob([reporteHTML], { type: 'text/html' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `reporte_investigacion_${new Date().toISOString().split('T')[0]}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        
+        mostrarNotificacion('Reporte generado exitosamente', 'success');
+    }
+
+    function exportarProyecto() {
+        const proyectoData = JSON.parse(localStorage.getItem('proyectoInvestigacion') || '{}');
+        
+        if (!proyectoData.contexto) {
+            mostrarNotificacion('Debes guardar el progreso primero', 'warning');
+            return;
+        }
+
+        // Crear contenido académico detallado
+        const contenidoProyecto = `
+PROYECTO DE INVESTIGACIÓN CURRICULAR
+Nivel: Maestría en Didáctica de las Ciencias
+Fecha: ${new Date().toLocaleDateString()}
+===============================================
+
+1. ANÁLISIS CONTEXTUAL AVANZADO
+-----------------------------------------------
+Contexto Educativo:
+${proyectoData.contexto || 'No especificado'}
+
+Problemática Identificada:
+${proyectoData.problematica || 'No especificada'}
+
+Justificación Teórica:
+${proyectoData.justificacion || 'No especificada'}
+
+2. PREGUNTA DE INVESTIGACIÓN
+-----------------------------------------------
+Pregunta Central:
+${proyectoData.preguntaCentral || 'No especificada'}
+
+Subpreguntas:
+${proyectoData.subpreguntas?.filter(sp => sp).map((sp, i) => `${i + 1}. ${sp}`).join('\n') || 'No especificadas'}
+
+3. DISEÑO METODOLÓGICO
+-----------------------------------------------
+Enfoque Metodológico: ${proyectoData.metodo ? proyectoData.metodo.charAt(0).toUpperCase() + proyectoData.metodo.slice(1) : 'No especificado'}
+
+Instrumentos de Recolección:
+${proyectoData.instrumentos?.length ? proyectoData.instrumentos.map((inst, i) => `${i + 1}. ${inst}`).join('\n') : 'No especificados'}
+
+4. PLAN DE ACCIÓN
+-----------------------------------------------
+Estado Actual: ${proyectoData.progreso}% completado
+Próximos Pasos:
+${proyectoData.progreso < 25 ? '- Completar diagnóstico institucional\n- Formular pregunta de investigación' : ''}
+${proyectoData.progreso >= 25 && proyectoData.progreso < 50 ? '- Definir enfoque metodológico\n- Seleccionar instrumentos' : ''}
+${proyectoData.progreso >= 50 && proyectoData.progreso < 75 ? '- Implementar piloto\n- Recolectar datos' : ''}
+${proyectoData.progreso >= 75 ? '- Analizar resultados\n- Preparar diseminación académica' : ''}
+
+5. REFERENCIAS TEÓRICAS
+-----------------------------------------------
+Basado en los fundamentos estudiados en:
+- Enfoque Técnico: Bobbitt, Tyler
+- Enfoque Práctico: Schwab, Bruner  
+- Enfoque Crítico: Apple, Freire
+- Enfoque Mixto: Combinación estratégica
+
+===============================================
+Generado con Laboratorio de Investigación Curricular
+OVA Fundamentos Teóricos-Conceptuales del Currículo
+Universidad de Córdoba - Maestría en Didáctica de las Ciencias
+        `;
+
+        // Descargar como archivo de texto
+        const blob = new Blob([contenidoProyecto], { type: 'text/plain;charset=utf-8' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `proyecto_investigacion_${new Date().toISOString().split('T')[0]}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        
+        mostrarNotificacion('Proyecto exportado exitosamente', 'success');
+    }
+
+    function solicitarRevision() {
+        const proyectoData = JSON.parse(localStorage.getItem('proyectoInvestigacion') || '{}');
+        
+        if (!proyectoData.contexto || !proyectoData.problematica) {
+            mostrarNotificacion('Debes completar el diagnóstico institucional y la problemática antes de solicitar revisión', 'warning');
+            return;
+        }
+
+        // Simular envío a revisión
+        const revisionData = {
+            proyecto: proyectoData,
+            fechaSolicitud: new Date().toISOString(),
+            estado: 'pendiente',
+            codigoRevision: 'REV-' + Date.now()
+        };
+
+        // Guardar solicitud de revisión
+        localStorage.setItem('solicitudRevision', JSON.stringify(revisionData));
+        
+        mostrarNotificacion(`Solicitud de revisión enviada. Código: ${revisionData.codigoRevision}`, 'success');
+        
+        // Simular respuesta después de 2 segundos
+        setTimeout(() => {
+            mostrarNotificacion('Revisión recibida. Un asesor académico responderá pronto.', 'info');
+        }, 2000);
+    }
+
+    function calcularProgreso() {
+        const contexto = document.querySelector('textarea[placeholder="Describe tu institución, nivel educativo, características del alumnado..."]').value;
+        const problematica = document.querySelector('textarea[placeholder="¿Qué problema curricular quieres investigar?"]').value;
+        const justificacion = document.querySelector('textarea[placeholder="Fundamenta tu problema con autores y enfoques estudiados..."]').value;
+        const preguntaCentral = document.querySelector('input[placeholder="¿Cómo...? ¿En qué medida...? ¿Cuál es el impacto de...?"]').value;
+        const metodo = document.querySelector('input[name="metodo"]:checked');
+        const instrumentos = document.querySelectorAll('input[type="checkbox"]:checked');
+
+        let progreso = 0;
+        if (contexto) progreso += 20;
+        if (problematica) progreso += 20;
+        if (justificacion) progreso += 20;
+        if (preguntaCentral) progreso += 20;
+        if (metodo) progreso += 10;
+        if (instrumentos.length > 0) progreso += 10;
+
+        return Math.min(progreso, 100);
+    }
+
+    function actualizarBarraProgreso(progreso) {
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercentage = document.getElementById('progress-percentage');
+        
+        if (progressBar && progressPercentage) {
+            progressBar.style.width = progreso + '%';
+            progressPercentage.textContent = progreso + '%';
+            
+            // Actualizar fases completadas
+            const phaseCards = document.querySelectorAll('.phase-card');
+            phaseCards.forEach((card, index) => {
+                const faseProgreso = (index + 1) * 25;
+                const circle = card.querySelector('.w-8.h-8');
+                if (progreso >= faseProgreso) {
+                    circle.classList.remove('bg-gray-300');
+                    circle.classList.add('bg-green-600');
+                    card.classList.remove('border-gray-200');
+                    card.classList.add('border-green-500');
+                }
+            });
+        }
+    }
+
+    // Notificaciones (toast)
+    // - Se usa un contenedor (#toast-container) para apilar mensajes y evitar superposición.
+    // - Se limpia el emoji inicial del mensaje para evitar iconos duplicados (p.ej. "✅ ✅ ...").
+    function mostrarNotificacion(mensaje, tipo = 'info') {
+        // Asegurar contenedor para apilar notificaciones sin superposición
+        let toastContainer = document.getElementById('toast-container');
+        if (!toastContainer) {
+            toastContainer = document.createElement('div');
+            toastContainer.id = 'toast-container';
+            toastContainer.className = 'fixed top-4 right-4 z-50 flex flex-col gap-3 items-end';
+            document.body.appendChild(toastContainer);
+        }
+
+        // Crear elemento de notificación
+        const notificacion = document.createElement('div');
+        notificacion.className = `toast-notificacion p-4 rounded-lg shadow-lg flex items-center space-x-2 transition-all duration-300 transform translate-x-full`;
+        
+        // Definir colores según tipo
+        const colores = {
+            success: 'bg-green-500 text-white',
+            warning: 'bg-yellow-500 text-white',
+            error: 'bg-red-500 text-white',
+            info: 'bg-blue-500 text-white'
+        };
+        
+        notificacion.classList.add(...colores[tipo].split(' '));
+        
+        // Iconos según tipo
+        const iconos = {
+            success: '✅',
+            warning: '⚠️',
+            error: '❌',
+            info: 'ℹ️'
+        };
+
+        // Evita duplicar el icono si el mensaje ya viene prefijado con emoji.
+        const mensajeLimpio = String(mensaje).replace(/^(✅|⚠️|❌|ℹ️)\s*/u, '');
+        
+        notificacion.innerHTML = `
+            <span class="text-lg">${iconos[tipo]}</span>
+            <span>${mensajeLimpio}</span>
+        `;
+        
+        toastContainer.appendChild(notificacion);
+        
+        // Animar entrada
+        setTimeout(() => {
+            notificacion.classList.remove('translate-x-full');
+        }, 100);
+        
+        // Remover después de 3 segundos
+        setTimeout(() => {
+            notificacion.classList.add('translate-x-full');
+            setTimeout(() => {
+                if (notificacion.parentNode) {
+                    notificacion.parentNode.removeChild(notificacion);
+                }
+            }, 300);
+        }, 3000);
+    }
+
+    // Ayuda por módulo (tooltips)
+    // - Un botón por módulo (data-help) que muestra un globo con síntesis.
+    // - Hover (desktop) muestra el globo; click lo fija; se cierra con click fuera o Esc.
+    const ayudaPorModulo = {
+        contexto: '<strong>Objetivo:</strong> identificar brechas entre DBA y PEI en tu contexto.<br><strong>Debe incluir:</strong> menciona DBA, PEI y al menos una brecha/diferencia concreta.<br><strong>Tip:</strong> usa términos como currículo, contexto, aprendizaje, comunidad.<br><strong>Ejemplo:</strong> “En los DBA se prioriza __, pero en el PEI __. La brecha es __ porque __”.',
+        espiral: '<strong>Objetivo:</strong> secuenciar un concepto de 1° a 11° aumentando complejidad (Bruner).<br><strong>Debe incluir:</strong> concepto + primaria + secundaria + media + justificación.<br><strong>Tip:</strong> observación → explicación → aplicación.<br><strong>Ejemplo:</strong> “Ecosistema: observar → modelar → analizar impactos”.',
+        correlacion: '<strong>Objetivo:</strong> conectar Ciencias con Matemáticas, Tecnología y Sociales en un tema integrador.<br><strong>Debe incluir:</strong> tema + aportes por área.<br><strong>Tip:</strong> escribe una frase de conexión: “se relaciona con”, “aplica para”, “articula”.<br><strong>Ejemplo:</strong> “Energías renovables: ciencias explica, matemáticas calcula, tecnología prototipa, sociales evalúa impacto”.',
+        dimensiones: '<strong>Objetivo:</strong> equilibrar lo cognitivo, afectivo y psicomotor en el aprendizaje científico.<br><strong>Debe incluir:</strong> 3 dimensiones con una acción/evidencia.<br><strong>Tip:</strong> saber (conceptos), sentir/valorar, hacer (experimento).<br><strong>Ejemplo:</strong> “Cognitiva: explicar __; Afectiva: valorar __; Psicomotora: experimentar __”.'
+    };
+
+    function setupHelpTooltips() {
+        const triggers = Array.from(document.querySelectorAll('[data-help]'));
+        if (!triggers.length) return;
+
+        let tooltipEl = document.getElementById('help-tooltip');
+        if (!tooltipEl) {
+            tooltipEl = document.createElement('div');
+            tooltipEl.id = 'help-tooltip';
+            tooltipEl.className = 'fixed z-50 max-w-sm p-3 text-sm text-slate-800 bg-slate-50 border border-slate-200 rounded-lg shadow-xl';
+            tooltipEl.style.display = 'none';
+            document.body.appendChild(tooltipEl);
+        }
+
+        let pinned = false;
+        let currentTrigger = null;
+
+        const positionTooltip = (trigger) => {
+            const rect = trigger.getBoundingClientRect();
+            const margin = 8;
+
+            tooltipEl.style.display = 'block';
+            tooltipEl.style.left = '0px';
+            tooltipEl.style.top = '0px';
+
+            const tRect = tooltipEl.getBoundingClientRect();
+            let top = rect.bottom + margin;
+            let left = rect.left;
+
+            if (left + tRect.width > window.innerWidth - margin) {
+                left = window.innerWidth - tRect.width - margin;
+            }
+            if (left < margin) left = margin;
+
+            if (top + tRect.height > window.innerHeight - margin) {
+                top = rect.top - tRect.height - margin;
+            }
+            if (top < margin) top = margin;
+
+            tooltipEl.style.left = `${left}px`;
+            tooltipEl.style.top = `${top}px`;
+        };
+
+        const openTooltip = (trigger) => {
+            const key = trigger.getAttribute('data-help');
+            const text = ayudaPorModulo[key];
+            if (!text) return;
+
+            currentTrigger = trigger;
+            tooltipEl.innerHTML = text;
+            tooltipEl.style.whiteSpace = 'normal';
+            positionTooltip(trigger);
+        };
+
+        const closeTooltip = () => {
+            tooltipEl.style.display = 'none';
+            currentTrigger = null;
+            pinned = false;
+        };
+
+        triggers.forEach((trigger) => {
+            // Evita que el click del ícono de ayuda active el acordeón.
+            trigger.addEventListener('mouseenter', () => {
+                if (pinned) return;
+                openTooltip(trigger);
+            });
+
+            trigger.addEventListener('mouseleave', () => {
+                if (pinned) return;
+                tooltipEl.style.display = 'none';
+                currentTrigger = null;
+            });
+
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (pinned && currentTrigger === trigger) {
+                    closeTooltip();
+                    return;
+                }
+
+                pinned = true;
+                openTooltip(trigger);
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!pinned) return;
+            if (tooltipEl.contains(e.target)) return;
+            if (e.target && e.target.closest && e.target.closest('[data-help]')) return;
+            closeTooltip();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeTooltip();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (tooltipEl.style.display === 'none') return;
+            if (!currentTrigger) return;
+            positionTooltip(currentTrigger);
+        });
+
+        window.addEventListener('scroll', () => {
+            if (tooltipEl.style.display === 'none') return;
+            if (!currentTrigger) return;
+            positionTooltip(currentTrigger);
+        }, true);
+    }
+
+    // Acordeón del taller (Módulos 1-4)
+    // - Un módulo abierto a la vez.
+    // - Módulo 1 abierto por defecto.
+    // - Al completar un módulo, se abre automáticamente el siguiente.
+    function setupTallerAccordion() {
+        const accordion = document.getElementById('taller-accordion');
+        if (!accordion) return;
+
+        const getTrigger = (key) => accordion.querySelector(`[data-acc-trigger="${key}"]`);
+        const getPanel = (key) => accordion.querySelector(`[data-acc-panel="${key}"]`);
+
+        const keys = Array.from(accordion.querySelectorAll('[data-acc-trigger]'))
+            .map(el => el.getAttribute('data-acc-trigger'))
+            .filter(Boolean);
+
+        const openKey = (key) => {
+            keys.forEach(k => {
+                const panel = getPanel(k);
+                const trigger = getTrigger(k);
+                const isOpen = k === key;
+                if (panel) panel.classList.toggle('hidden', !isOpen);
+                if (trigger) trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        };
+
+        const toggleKey = (key) => {
+            // Acordeón estricto: siempre deja 1 panel abierto.
+            openKey(key);
+        };
+
+        keys.forEach(key => {
+            const trigger = getTrigger(key);
+            if (!trigger) return;
+
+            trigger.addEventListener('click', (e) => {
+                // Si se hizo click en el botón de ayuda, no alternar.
+                if (e.target && e.target.closest && e.target.closest('[data-help]')) return;
+                toggleKey(key);
+            });
+
+            trigger.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleKey(key);
+                }
+            });
+        });
+
+        // Abrir el primer módulo por defecto
+        openKey('contexto');
+
+        // Exponer helper para abrir desde validaciones
+        window.abrirModuloAcordeon = (key) => {
+            openKey(key);
+            const trigger = getTrigger(key);
+            if (trigger) {
+                trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+    }
+
+    // Auto-guardar cada 30 segundos
+    setInterval(() => {
+        const proyectoData = JSON.parse(localStorage.getItem('proyectoInvestigacion') || '{}');
+        if (proyectoData.contexto) {
+            guardarProgreso();
+        }
+    }, 30000);
+
+    // Cargar progreso guardado al iniciar
+    window.addEventListener('load', () => {
+        const proyectoGuardado = localStorage.getItem('proyectoInvestigacion');
+        if (proyectoGuardado) {
+            const proyectoData = JSON.parse(proyectoGuardado);
+            actualizarBarraProgreso(proyectoData.progreso || 0);
+        }
+            });
+
+    
+    // ============ FUNCIONES DEL TALLER DE DISEÑO CURRICULAR ============
+    
+    // Variables globales para el taller
+    let portafolioData = {
+        contexto: '',
+        espiral: {
+            concepto: '',
+            primaria: '',
+            secundaria: '',
+            media: '',
+            justificacion: ''
+        },
+        correlacion: {
+            tema: '',
+            ciencias: '',
+            matematicas: '',
+            tecnologia: '',
+            sociales: ''
+        },
+        dimensiones: {
+            cognitiva: '',
+            afectiva: '',
+            psicomotora: ''
+        },
+        progreso: 0
+    };
+
+    // Función para actualizar contadores de caracteres
+    function actualizarContador(textareaId, contadorId, maxChars) {
+        const textarea = document.getElementById(textareaId);
+        const contador = document.getElementById(contadorId);
+        
+        console.log(`Inicializando contador: ${textareaId} -> ${contadorId}`);
+        
+        if (textarea && contador) {
+            // Actualizar contador inicial
+            contador.textContent = textarea.value.length;
+            
+            textarea.addEventListener('input', function() {
+                const length = this.value.length;
+                contador.textContent = length;
+                
+                // Solo cortar si el maxlength del HTML es menor que el maxChars de la función
+                const htmlMaxlength = parseInt(this.getAttribute('maxlength') || '300');
+                if (length > htmlMaxlength) {
+                    this.value = this.value.substring(0, htmlMaxlength);
+                    contador.textContent = htmlMaxlength;
+                }
+            });
+            
+            console.log(`Contador ${textareaId} inicializado correctamente`);
+        } else {
+            console.error(`No se encontraron elementos: ${textareaId} o ${contadorId}`);
+        }
+    }
+
+    // Inicializar contadores y límites de caracteres
+    // Nota: actualizarContador() respeta el atributo HTML maxlength cuando existe.
+    document.addEventListener('DOMContentLoaded', function() {
+        // Esperar un poco más para asegurar que el DOM esté completamente cargado
+        setTimeout(function() {
+            setupTallerAccordion();
+            setupHelpTooltips();
+
+            // Módulo 1
+            actualizarContador('brechas-contexto', 'brechas-contexto-count', 2000);
+            
+            // Módulo 2
+            actualizarContador('concepto-cientifico', 'concepto-cientifico-count', 200);
+            actualizarContador('primaria-espiral', 'primaria-espiral-count', 300);
+            actualizarContador('secundaria-espiral', 'secundaria-espiral-count', 300);
+            actualizarContador('media-espiral', 'media-espiral-count', 300);
+            actualizarContador('justificacion-espiral', 'justificacion-espiral-count', 300);
+            
+            // Módulo 3
+            actualizarContador('tema-integrador', 'tema-integrador-count', 200);
+            actualizarContador('ciencias-correlacion', 'ciencias-correlacion-count', 300);
+            actualizarContador('matematicas-correlacion', 'matematicas-correlacion-count', 300);
+            actualizarContador('tecnologia-correlacion', 'tecnologia-correlacion-count', 300);
+            actualizarContador('sociales-correlacion', 'sociales-correlacion-count', 300);
+            
+            // Módulo 4
+            actualizarContador('dimension-cognitiva', 'dimension-cognitiva-count', 2000);
+            actualizarContador('dimension-afectiva', 'dimension-afectiva-count', 2000);
+            actualizarContador('dimension-psicomotora', 'dimension-psicomotora-count', 2000);
+
+            // Detectar cambios para resetear la bandera de guardado
+            const campos = ['brechas-contexto', 'concepto-cientifico', 'primaria-espiral', 'secundaria-espiral', 'media-espiral', 'justificacion-espiral', 'tema-integrador', 'ciencias-correlacion', 'matematicas-correlacion', 'tecnologia-correlacion', 'sociales-correlacion', 'dimension-cognitiva', 'dimension-afectiva', 'dimension-psicomotora'];
+            campos.forEach(campoId => {
+                const campo = document.getElementById(campoId);
+                if (campo) {
+                    campo.addEventListener('input', detectarCambios);
+                    campo.addEventListener('change', detectarCambios);
+                }
+            });
+        }, 100);
+        
+        // Cargar datos guardados si existen
+        cargarPortafolioGuardado();
+    });
+
+    // Módulo 1: Análisis del Contexto
+    function analizarContexto() {
+        const brechas = document.getElementById('brechas-contexto').value;
+        
+        if (!brechas.trim()) {
+            mostrarNotificacion('Por favor, describe las brechas identificadas', 'error');
+            return;
+        }
+        
+        // Validación académica mejorada
+        const textoLower = brechas.toLowerCase();
+        const palabrasClaveDBA = ['dba', 'derechos básicos de aprendizaje', 'derechos básicos', 'aprendizaje', 'estándares', 'indicadores'];
+        const palabrasClavePEI = ['pei', 'proyecto educativo institucional', 'proyecto educativo', 'institucional', 'proyecto', 'institución'];
+        const palabrasBrecha = ['brecha', 'brechas', 'diferencia', 'diferencias', 'desconexión', 'separación', 'ruptura', 'conflicto', 'tensión'];
+        
+        let tieneDBA = palabrasClaveDBA.some(palabra => textoLower.includes(palabra));
+        let tienePEI = palabrasClavePEI.some(palabra => textoLower.includes(palabra));
+        let tieneBrecha = palabrasBrecha.some(palabra => textoLower.includes(palabra));
+        
+        // Validaciones específicas
+        if (!tieneDBA) {
+            mostrarNotificacion('❌ Debes mencionar los DBA (Derechos Básicos de Aprendizaje)', 'error');
+            return;
+        }
+        
+        if (!tienePEI) {
+            mostrarNotificacion('❌ Debes mencionar el PEI (Proyecto Educativo Institucional)', 'error');
+            return;
+        }
+        
+        if (!tieneBrecha) {
+            mostrarNotificacion('❌ Debes identificar brechas o diferencias específicas', 'error');
+            return;
+        }
+        
+        if (brechas.length < 50) {
+            mostrarNotificacion('❌ El análisis debe tener al menos 50 caracteres', 'error');
+            return;
+        }
+        
+        // Validación de calidad académica
+        const conceptosAcademicos = ['currículo', 'pedagógico', 'contexto', 'realidad', 'aprendizaje', 'educativo', 'escolar', 'comunidad'];
+        let tieneConceptos = conceptosAcademicos.some(concepto => textoLower.includes(concepto));
+        
+        if (!tieneConceptos) {
+            mostrarNotificacion('⚠️ Incluye conceptos académicos del currículo para enriquecer tu análisis', 'warning');
+        }
+        
+        // Si pasa todas las validaciones
+        portafolioData.contexto = brechas;
+        mostrarNotificacion('✅ ¡Excelente! Análisis de contexto validado académicamente', 'success');
+        actualizarProgresoTaller();
+        guardarPortafolio(true);
+
+        if (typeof window.abrirModuloAcordeon === 'function') {
+            window.abrirModuloAcordeon('espiral');
+        }
+        
+        // Feedback adicional
+        console.log('✅ Análisis validado:', {
+            tieneDBA,
+            tienePEI,
+            tieneBrecha,
+            longitud: brechas.length,
+            tieneConceptos
+        });
+    }
+
+    // Módulo 2: Diseño de Espiral
+    function disenarEspiral() {
+        const concepto = document.getElementById('concepto-cientifico').value;
+        const primaria = document.getElementById('primaria-espiral').value;
+        const secundaria = document.getElementById('secundaria-espiral').value;
+        const media = document.getElementById('media-espiral').value;
+        const justificacion = document.getElementById('justificacion-espiral').value;
+        
+        if (!concepto || !primaria || !secundaria || !media || !justificacion) {
+            mostrarNotificacion('Por favor, completa todos los campos de la espiral', 'error');
+            return;
+        }
+        
+        portafolioData.espiral = {
+            concepto,
+            primaria,
+            secundaria,
+            media,
+            justificacion
+        };
+        
+        mostrarNotificacion('Secuenciación espiral diseñada', 'success');
+        actualizarProgresoTaller();
+        guardarPortafolio(true);
+
+        if (typeof window.abrirModuloAcordeon === 'function') {
+            window.abrirModuloAcordeon('correlacion');
+        }
+    }
+
+    // Módulo 3: Correlación Interdisciplinaria
+    // Taller de práctica:
+    // - Bloquea solo por campos vacíos y tema demasiado corto.
+    // - STEAM e integración entre áreas son sugerencias (warning) consolidadas en un único mensaje.
+    function crearCorrelacion() {
+        const tema = document.getElementById('tema-integrador').value;
+        const ciencias = document.getElementById('ciencias-correlacion').value;
+        const matematicas = document.getElementById('matematicas-correlacion').value;
+        const tecnologia = document.getElementById('tecnologia-correlacion').value;
+        const sociales = document.getElementById('sociales-correlacion').value;
+        
+        // Validación básica de campos vacíos
+        if (!tema || !ciencias || !matematicas || !tecnologia || !sociales) {
+            mostrarNotificacion('Por favor, completa todos los campos de correlación', 'error');
+            return;
+        }
+        
+        // Validación académica mejorada
+        const textoLower = tema.toLowerCase() + ' ' + ciencias.toLowerCase() + ' ' + matematicas.toLowerCase() + ' ' + tecnologia.toLowerCase() + ' ' + sociales.toLowerCase();
+        const palabrasClaveSTEAM = ['steam', 'stema', 'integración', 'interdisciplinar', 'tecnología', 'ciencias', 'matemáticas', 'sociales'];
+        const conceptosIntegracion = ['relación', 'conexión', 'articulación', 'vínculo', 'integración curricular', 'proyecto', 'aplicación'];
+        
+        let tieneSTEAM = palabrasClaveSTEAM.some(palabra => textoLower.includes(palabra));
+        let tieneIntegracion = conceptosIntegracion.some(concepto => textoLower.includes(concepto));
+
+        // Validaciones específicas (taller de práctica: sugerencias, no bloqueo)
+        const sugerencias = [];
+        if (!tieneSTEAM) {
+            sugerencias.push('menciona un enfoque STEAM o interdisciplinario');
+        }
+        if (!tieneIntegracion) {
+            sugerencias.push('explica cómo se conectan las áreas (relación, conexión, articulación, vínculo, proyecto, aplicación)');
+        }
+        if (sugerencias.length) {
+            mostrarNotificacion(`⚠️ Sugerencia: ${sugerencias.join('. ') }.`, 'warning');
+        }
+        
+        if (tema.length < 20) {
+            mostrarNotificacion('❌ El tema integrador debe tener al menos 20 caracteres', 'error');
+            return;
+        }
+        
+        // Validación de calidad académica
+        const conceptosAvanzados = ['aprendizaje basado en proyectos', 'resolución de problemas', 'contexto real', 'aplicación práctica', 'pensamiento crítico'];
+        let tieneConceptosAvanzados = conceptosAvanzados.some(concepto => textoLower.includes(concepto));
+        
+        if (!tieneConceptosAvanzados) {
+            mostrarNotificacion('⚠️ Incluye conceptos de aprendizaje avanzado para enriquecer tu análisis', 'warning');
+        }
+        
+        // Si pasa todas las validaciones
+        portafolioData.correlacion = {
+            tema,
+            ciencias,
+            matematicas,
+            tecnologia,
+            sociales
+        };
+        
+        mostrarNotificacion('Correlación interdisciplinaria guardada', 'success');
+        actualizarProgresoTaller();
+        guardarPortafolio(true);
+
+        if (typeof window.abrirModuloAcordeon === 'function') {
+            window.abrirModuloAcordeon('dimensiones');
+        }
+        
+        // Feedback adicional
+        console.log('✅ Correlación validada:', {
+            tieneSTEAM,
+            tieneIntegracion,
+            longitudTema: tema.length,
+            tieneConceptosAvanzados
+        });
+    }
+
+    // Módulo 4: Dimensiones del Aprendizaje
+    function equilibrarDimensiones() {
+        const cognitiva = document.getElementById('dimension-cognitiva').value;
+        const afectiva = document.getElementById('dimension-afectiva').value;
+        const psicomotora = document.getElementById('dimension-psicomotora').value;
+        
+        if (!cognitiva || !afectiva || !psicomotora) {
+            mostrarNotificacion('Por favor, completa las tres dimensiones del aprendizaje', 'error');
+            return;
+        }
+        
+        portafolioData.dimensiones = {
+            cognitiva,
+            afectiva,
+            psicomotora
+        };
+        
+        mostrarNotificacion('Dimensiones del aprendizaje equilibradas', 'success');
+        actualizarProgresoTaller();
+        guardarPortafolio(true);
+    }
+
+    // Actualizar progreso del taller
+    function actualizarProgresoTaller() {
+        let progreso = 0;
+        
+        // Leer directamente del DOM como la función original
+        const contexto = document.getElementById('brechas-contexto').value;
+        const concepto = document.getElementById('concepto-cientifico').value;
+        const tema = document.getElementById('tema-integrador').value;
+        const cognitiva = document.getElementById('dimension-cognitiva').value;
+        
+        if (contexto.trim()) progreso += 25;
+        if (concepto.trim()) progreso += 25;
+        if (tema.trim()) progreso += 25;
+        if (cognitiva.trim()) progreso += 25;
+        
+        portafolioData.progreso = progreso;
+        
+        // Actualizar barra de progreso
+        const progressBar = document.getElementById('progress-bar-taller');
+        const progresoText = document.getElementById('progreso-taller');
+        
+        if (progressBar && progresoText) {
+            progressBar.style.width = `${progreso}%`;
+            progresoText.textContent = `${progreso}%`;
+        }
+        
+        // Actualizar colores de módulos completados
+        actualizarColoresModulos();
+    }
+
+    // Actualizar colores de módulos según progreso
+    function actualizarColoresModulos() {
+        const modulos = document.querySelectorAll('.bg-white.border.border-gray-200');
+        
+        // Limpiar todos los colores primero
+        modulos.forEach(modulo => {
+            modulo.classList.remove('border-blue-500', 'bg-blue-50', 'border-green-500', 'bg-green-50', 'border-purple-500', 'bg-purple-50', 'border-orange-500', 'bg-orange-50');
+            modulo.classList.add('border-gray-200');
+        });
+        
+        // Leer directamente del DOM como la función original
+        const contexto = document.getElementById('brechas-contexto').value;
+        const concepto = document.getElementById('concepto-cientifico').value;
+        const tema = document.getElementById('tema-integrador').value;
+        const cognitiva = document.getElementById('dimension-cognitiva').value;
+        
+        // Aplicar colores solo si hay contenido
+        if (contexto.trim() && modulos[0]) {
+            modulos[0].classList.remove('border-gray-200');
+            modulos[0].classList.add('border-blue-500', 'bg-blue-50');
+        }
+        
+        if (concepto.trim() && modulos[1]) {
+            modulos[1].classList.remove('border-gray-200');
+            modulos[1].classList.add('border-green-500', 'bg-green-50');
+        }
+        
+        if (tema.trim() && modulos[2]) {
+            modulos[2].classList.remove('border-gray-200');
+            modulos[2].classList.add('border-purple-500', 'bg-purple-50');
+        }
+        
+        if (cognitiva.trim() && modulos[3]) {
+            modulos[3].classList.remove('border-gray-200');
+            modulos[3].classList.add('border-orange-500', 'bg-orange-50');
+        }
+    }
+
+    // Variable global para rastrear si el usuario guardó
+    let usuarioGuardo = false;
+
+    // Guardar portafolio en localStorage
+    // - silencioso=true se usa cuando un módulo guarda automáticamente, para no saturar con mensajes.
+    // - el botón "Guardar Portafolio" llama sin el parámetro, mostrando confirmación al usuario.
+    function guardarPortafolio(silencioso = false) {
+        localStorage.setItem('portafolioCurricular', JSON.stringify(portafolioData));
+        usuarioGuardo = true; // Marcar que el usuario guardó
+        if (!silencioso) {
+            mostrarNotificacion('Portafolio guardado exitosamente', 'success');
+        }
+    }
+
+    // Cargar portafolio guardado (solo si el usuario lo solicita explícitamente)
+    function cargarPortafolioGuardado() {
+        // No cargar automáticamente - el usuario tiene el botón "Guardar Portafolio"
+        // para decidir cuándo quiere guardar y cuándo quiere recuperar
+        console.log('Carga automática desactivada - el usuario controla sus datos');
+    }
+
+    // Función para recuperar portafolio guardado (si el usuario lo solicita)
+    function recuperarPortafolio() {
+        const guardado = localStorage.getItem('portafolioCurricular');
+        
+        if (!guardado) {
+            mostrarNotificacion('No hay portafolios guardados', 'info');
+            return;
+        }
+        
+        if (confirm('¿Deseas recuperar el portafolio guardado? Esto reemplazará los datos actuales.')) {
+            portafolioData = JSON.parse(guardado);
+            usuarioGuardo = true; // Si recupera, consideramos que ya guardó
+            
+            // Restaurar valores en los campos
+            document.getElementById('brechas-contexto').value = portafolioData.contexto || '';
+            document.getElementById('concepto-cientifico').value = portafolioData.espiral.concepto || '';
+            document.getElementById('primaria-espiral').value = portafolioData.espiral.primaria || '';
+            document.getElementById('secundaria-espiral').value = portafolioData.espiral.secundaria || '';
+            document.getElementById('media-espiral').value = portafolioData.espiral.media || '';
+            document.getElementById('justificacion-espiral').value = portafolioData.espiral.justificacion || '';
+            document.getElementById('tema-integrador').value = portafolioData.correlacion.tema || '';
+            document.getElementById('ciencias-correlacion').value = portafolioData.correlacion.ciencias || '';
+            document.getElementById('matematicas-correlacion').value = portafolioData.correlacion.matematicas || '';
+            document.getElementById('tecnologia-correlacion').value = portafolioData.correlacion.tecnologia || '';
+            document.getElementById('sociales-correlacion').value = portafolioData.correlacion.sociales || '';
+            document.getElementById('dimension-cognitiva').value = portafolioData.dimensiones.cognitiva || '';
+            document.getElementById('dimension-afectiva').value = portafolioData.dimensiones.afectiva || '';
+            document.getElementById('dimension-psicomotora').value = portafolioData.dimensiones.psicomotora || '';
+            
+            // Actualizar contadores
+            if (document.getElementById('brechas-contexto-count')) {
+                document.getElementById('brechas-contexto-count').textContent = portafolioData.contexto.length;
+            }
+            if (document.getElementById('concepto-cientifico-count')) {
+                document.getElementById('concepto-cientifico-count').textContent = portafolioData.espiral.concepto.length;
+            }
+            if (document.getElementById('primaria-espiral-count')) {
+                document.getElementById('primaria-espiral-count').textContent = portafolioData.espiral.primaria.length;
+            }
+            if (document.getElementById('secundaria-espiral-count')) {
+                document.getElementById('secundaria-espiral-count').textContent = portafolioData.espiral.secundaria.length;
+            }
+            if (document.getElementById('media-espiral-count')) {
+                document.getElementById('media-espiral-count').textContent = portafolioData.espiral.media.length;
+            }
+            if (document.getElementById('justificacion-espiral-count')) {
+                document.getElementById('justificacion-espiral-count').textContent = portafolioData.espiral.justificacion.length;
+            }
+            if (document.getElementById('tema-integrador-count')) {
+                document.getElementById('tema-integrador-count').textContent = portafolioData.correlacion.tema.length;
+            }
+            if (document.getElementById('ciencias-correlacion-count')) {
+                document.getElementById('ciencias-correlacion-count').textContent = portafolioData.correlacion.ciencias.length;
+            }
+            if (document.getElementById('matematicas-correlacion-count')) {
+                document.getElementById('matematicas-correlacion-count').textContent = portafolioData.correlacion.matematicas.length;
+            }
+            if (document.getElementById('tecnologia-correlacion-count')) {
+                document.getElementById('tecnologia-correlacion-count').textContent = portafolioData.correlacion.tecnologia.length;
+            }
+            if (document.getElementById('sociales-correlacion-count')) {
+                document.getElementById('sociales-correlacion-count').textContent = portafolioData.correlacion.sociales.length;
+            }
+            if (document.getElementById('dimension-cognitiva-count')) {
+                document.getElementById('dimension-cognitiva-count').textContent = portafolioData.dimensiones.cognitiva.length;
+            }
+            if (document.getElementById('dimension-afectiva-count')) {
+                document.getElementById('dimension-afectiva-count').textContent = portafolioData.dimensiones.afectiva.length;
+            }
+            if (document.getElementById('dimension-psicomotora-count')) {
+                document.getElementById('dimension-psicomotora-count').textContent = portafolioData.dimensiones.psicomotora.length;
+            }
+            
+            // Actualizar progreso y colores
+            actualizarProgresoTaller();
+            
+            mostrarNotificacion('Portafolio recuperado exitosamente', 'success');
+        }
+    }
+
+    // Evento que se dispara cuando el usuario intenta cerrar la página
+    window.addEventListener('beforeunload', function(e) {
+        // Si el usuario no guardó y hay datos, limpiar el localStorage
+        if (!usuarioGuardo && (portafolioData.contexto || portafolioData.espiral.concepto || portafolioData.correlacion.tema || portafolioData.dimensiones.cognitiva)) {
+            // Limpiar el localStorage para que no aparezcan datos la próxima vez
+            localStorage.removeItem('portafolioCurricular');
+            console.log('Datos no guardados - localStorage limpiado automáticamente');
+        }
+    });
+
+    // Detectar cambios en el formulario para resetear la bandera de guardado
+    function detectarCambios() {
+        // Si el usuario hace cambios, resetear la bandera de guardado
+        usuarioGuardo = false;
+    }
+
+    // Limpiar portafolio
+    function limpiarPortafolio() {
+        console.log('=== DEBUG LIMPIAR PORTAFOLIO ===');
+        
+        if (confirm('¿Estás seguro de que quieres limpiar todo el portafolio? Esta acción no se puede deshacer.')) {
+            console.log('Usuario confirmó limpieza');
+            
+            // Limpiar localStorage PRIMERO
+            localStorage.removeItem('portafolioCurricular');
+            console.log('LocalStorage limpiado INMEDIATAMENTE');
+            
+            // Limpiar datos
+            portafolioData = {
+                contexto: '',
+                espiral: {
+                    concepto: '',
+                    primaria: '',
+                    secundaria: '',
+                    media: '',
+                    justificacion: ''
+                },
+                correlacion: {
+                    tema: '',
+                    ciencias: '',
+                    matematicas: '',
+                    tecnologia: '',
+                    sociales: ''
+                },
+                dimensiones: {
+                    cognitiva: '',
+                    afectiva: '',
+                    psicomotora: ''
+                },
+                progreso: 0
+            };
+            
+            console.log('Datos limpiados:', JSON.stringify(portafolioData));
+            
+            // Limpiar campos del formulario
+            document.getElementById('brechas-contexto').value = '';
+            document.getElementById('concepto-cientifico').value = '';
+            document.getElementById('primaria-espiral').value = '';
+            document.getElementById('secundaria-espiral').value = '';
+            document.getElementById('media-espiral').value = '';
+            document.getElementById('justificacion-espiral').value = '';
+            document.getElementById('tema-integrador').value = '';
+            document.getElementById('ciencias-correlacion').value = '';
+            document.getElementById('matematicas-correlacion').value = '';
+            document.getElementById('tecnologia-correlacion').value = '';
+            document.getElementById('sociales-correlacion').value = '';
+            document.getElementById('dimension-cognitiva').value = '';
+            document.getElementById('dimension-afectiva').value = '';
+            document.getElementById('dimension-psicomotora').value = '';
+            
+            console.log('Campos del formulario limpiados');
+            
+            // Limpiar contadores
+            document.getElementById('brechas-contexto-count').textContent = '0';
+            document.getElementById('concepto-cientifico-count').textContent = '0';
+            document.getElementById('primaria-espiral-count').textContent = '0';
+            document.getElementById('secundaria-espiral-count').textContent = '0';
+            document.getElementById('media-espiral-count').textContent = '0';
+            document.getElementById('justificacion-espiral-count').textContent = '0';
+            document.getElementById('tema-integrador-count').textContent = '0';
+            document.getElementById('ciencias-correlacion-count').textContent = '0';
+            document.getElementById('matematicas-correlacion-count').textContent = '0';
+            document.getElementById('tecnologia-correlacion-count').textContent = '0';
+            document.getElementById('sociales-correlacion-count').textContent = '0';
+            document.getElementById('dimension-cognitiva-count').textContent = '0';
+            document.getElementById('dimension-afectiva-count').textContent = '0';
+            document.getElementById('dimension-psicomotora-count').textContent = '0';
+            
+            console.log('Contadores limpiados');
+            
+            // Limpiar colores de módulos
+            const modulos = document.querySelectorAll('.bg-white.border.border-gray-200');
+            modulos.forEach(modulo => {
+                modulo.classList.remove('border-blue-500', 'bg-blue-50', 'border-green-500', 'bg-green-50', 'border-purple-500', 'bg-purple-50', 'border-orange-500', 'bg-orange-50');
+                modulo.classList.add('border-gray-200');
+            });
+            
+            console.log('Colores de módulos limpiados');
+            
+            // Actualizar progreso
+            console.log('Llamando a actualizarProgresoTaller()...');
+            actualizarProgresoTaller();
+            
+            mostrarNotificacion('Portafolio limpiado exitosamente. Los datos no volverán a aparecer.', 'success');
+            console.log('=== FIN DEBUG LIMPIAR PORTAFOLIO ===');
+        } else {
+            console.log('Usuario canceló limpieza');
+        }
+    }
+
+    // Generar reporte del portafolio
+    function generarReportePortafolio() {
+        if (portafolioData.progreso < 100) {
+            mostrarNotificacion('Completa todos los módulos antes de generar el reporte', 'warning');
+            return;
+        }
+        
+        const contenidoReporte = `
+PORTAFOLIO CURRICULAR - CIENCIAS NATURALES
+===============================================
+Fecha: ${new Date().toLocaleDateString()}
+Progreso: ${portafolioData.progreso}% completado
+
+1. ANÁLISIS DEL CONTEXTO
+-----------------------------------------------
+Brechas identificadas entre DBA y PEI:
+${portafolioData.contexto}
+
+2. SECUENCIACIÓN ESPIRAL
+-----------------------------------------------
+Concepto científico: ${portafolioData.espiral.concepto}
+
+Primaria (1°-5°): ${portafolioData.espiral.primaria}
+Secundaria (6°-9°): ${portafolioData.espiral.secundaria}
+Media (10°-11°): ${portafolioData.espiral.media}
+
+Justificación (Bruner): ${portafolioData.espiral.justificacion}
+
+3. CORRELACIÓN INTERDISCIPLINARIA
+-----------------------------------------------
+Tema integrador STEAM: ${portafolioData.correlacion.tema}
+
+Matriz de correlación:
+- Ciencias Naturales: ${portafolioData.correlacion.ciencias}
+- Matemáticas: ${portafolioData.correlacion.matematicas}
+- Tecnología: ${portafolioData.correlacion.tecnologia}
+- Sociales/Humanidades: ${portafolioData.correlacion.sociales}
+
+4. DIMENSIONES DEL APRENDIZAJE CIENTÍFICO
+-----------------------------------------------
+Cognoscitiva: ${portafolioData.dimensiones.cognitiva}
+Afectiva: ${portafolioData.dimensiones.afectiva}
+Psicomotora: ${portafolioData.dimensiones.psicomotora}
+
+===============================================
+Basado en los fundamentos del currículo escolar de ciencias naturales
+Secuenciación espiral, correlación interdisciplinaria y dimensiones del aprendizaje
+Taller de Diseño Curricular - Tema 3
+Universidad de Córdoba - Maestría en Didáctica de las Ciencias
+        `;
+
+        // Descargar como archivo de texto
+        const blob = new Blob([contenidoReporte], { type: 'text/plain;charset=utf-8' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `portafolio_curricular_${new Date().toISOString().split('T')[0]}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        
+        mostrarNotificacion('Portafolio exportado exitosamente', 'success');
+    }
+
+    // Exportar portafolio como documento
+    function exportarPortafolio() {
+        if (portafolioData.progreso < 100) {
+            mostrarNotificacion('Completa todos los módulos antes de exportar', 'warning');
+            return;
+        }
+
+        const contenidoHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio Curricular - Ciencias Naturales</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { color: #2c5f2d; border-bottom: 3px solid #2c5f2d; padding-bottom: 10px; }
+        h2 { color: #2c5f2d; margin-top: 30px; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .header { background: #f8f9fa; padding: 10px; margin: -20px -20px 20px -20px; border-radius: 8px 8px 0 0; }
+    </style>
+</head>
+<body>
+    <h1>🔬 Portafolio Curricular - Ciencias Naturales</h1>
+    
+    <div class="section">
+        <div class="header"><strong>1. ANÁLISIS DEL CONTEXTO</strong></div>
+        <p><strong>Fecha:</strong> ${new Date().toLocaleDateString()}</p>
+        <p><strong>Progreso:</strong> ${portafolioData.progreso}% completado</p>
+        <h3>Brechas identificadas entre DBA y PEI:</h3>
+        <p>${portafolioData.contexto}</p>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>2. SECUENCIACIÓN ESPIRAL</strong></div>
+        <h3>Concepto científico: ${portafolioData.espiral.concepto}</h3>
+        
+        <h4>Primaria (1°-5°):</h4>
+        <p>${portafolioData.espiral.primaria}</p>
+        
+        <h4>Secundaria (6°-9°):</h4>
+        <p>${portafolioData.espiral.secundaria}</p>
+        
+        <h4>Media (10°-11°):</h4>
+        <p>${portafolioData.espiral.media}</p>
+        
+        <h4>Justificación (Bruner):</h4>
+        <p>${portafolioData.espiral.justificacion}</p>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>3. CORRELACIÓN INTERDISCIPLINARIA</strong></div>
+        <h3>Tema integrador STEAM: ${portafolioData.correlacion.tema}</h3>
+        
+        <h4>Matriz de correlación:</h4>
+        <ul>
+            <li><strong>Ciencias Naturales:</strong> ${portafolioData.correlacion.ciencias}</li>
+            <li><strong>Matemáticas:</strong> ${portafolioData.correlacion.matematicas}</li>
+            <li><strong>Tecnología:</strong> ${portafolioData.correlacion.tecnologia}</li>
+            <li><strong>Sociales/Humanidades:</strong> ${portafolioData.correlacion.sociales}</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>4. DIMENSIONES DEL APRENDIZAJE CIENTÍFICO</strong></div>
+        
+        <h4>Cognoscitiva:</h4>
+        <p>${portafolioData.dimensiones.cognitiva}</p>
+        
+        <h4>Afectiva:</h4>
+        <p>${portafolioData.dimensiones.afectiva}</p>
+        
+        <h4>Psicomotora:</h4>
+        <p>${portafolioData.dimensiones.psicomotora}</p>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>REFERENCIAS TEÓRICAS</strong></div>
+        <p>Basado en los fundamentos del currículo escolar de ciencias naturales:</p>
+        <ul>
+            <li>Secuenciación espiral - Jerome Bruner</li>
+            <li>Correlación interdisciplinaria - Enfoque STEAM</li>
+            <li>Dimensiones del aprendizaje - Modelo integral</li>
+        </ul>
+        <p><strong>Taller de Diseño Curricular - Tema 3</strong></p>
+        <p><strong>Universidad de Córdoba - Maestría en Didáctica de las Ciencias</strong></p>
+    </div>
+</body>
+</html>
+        `;
+
+        // Descargar como archivo HTML
+        const blob = new Blob([contenidoHTML], { type: 'text/html;charset=utf-8' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `portafolio_curricular_${new Date().toISOString().split('T')[0]}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        
+        mostrarNotificacion('Portafolio exportado como documento', 'success');
+    }
+
+    function exportarPortafolioWord() {
+        if (portafolioData.progreso < 100) {
+            mostrarNotificacion('Completa todos los módulos antes de exportar', 'warning');
+            return;
+        }
+
+        const contenidoWord = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio Curricular - Ciencias Naturales</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { color: #2c5f2d; border-bottom: 3px solid #2c5f2d; padding-bottom: 10px; }
+        h2 { color: #2c5f2d; margin-top: 24px; }
+        .section { margin: 16px 0; padding: 16px; border: 1px solid #ddd; border-radius: 8px; }
+        .header { background: #f8f9fa; padding: 10px; margin: -16px -16px 16px -16px; border-radius: 8px 8px 0 0; }
+    </style>
+</head>
+<body>
+    <h1>Portafolio Curricular - Ciencias Naturales</h1>
+    <p><strong>Fecha:</strong> ${new Date().toLocaleDateString()}</p>
+    <p><strong>Progreso:</strong> ${portafolioData.progreso}% completado</p>
+
+    <div class="section">
+        <div class="header"><strong>1. ANÁLISIS DEL CONTEXTO</strong></div>
+        <p>${portafolioData.contexto}</p>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>2. SECUENCIACIÓN ESPIRAL</strong></div>
+        <p><strong>Concepto:</strong> ${portafolioData.espiral.concepto}</p>
+        <p><strong>Primaria:</strong> ${portafolioData.espiral.primaria}</p>
+        <p><strong>Secundaria:</strong> ${portafolioData.espiral.secundaria}</p>
+        <p><strong>Media:</strong> ${portafolioData.espiral.media}</p>
+        <p><strong>Justificación:</strong> ${portafolioData.espiral.justificacion}</p>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>3. CORRELACIÓN INTERDISCIPLINARIA</strong></div>
+        <p><strong>Tema:</strong> ${portafolioData.correlacion.tema}</p>
+        <ul>
+            <li><strong>Ciencias:</strong> ${portafolioData.correlacion.ciencias}</li>
+            <li><strong>Matemáticas:</strong> ${portafolioData.correlacion.matematicas}</li>
+            <li><strong>Tecnología:</strong> ${portafolioData.correlacion.tecnologia}</li>
+            <li><strong>Sociales:</strong> ${portafolioData.correlacion.sociales}</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>4. DIMENSIONES DEL APRENDIZAJE CIENTÍFICO</strong></div>
+        <p><strong>Cognoscitiva:</strong> ${portafolioData.dimensiones.cognitiva}</p>
+        <p><strong>Afectiva:</strong> ${portafolioData.dimensiones.afectiva}</p>
+        <p><strong>Psicomotora:</strong> ${portafolioData.dimensiones.psicomotora}</p>
+    </div>
+</body>
+</html>
+        `;
+
+        const blob = new Blob([contenidoWord], { type: 'application/msword;charset=utf-8' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `portafolio_curricular_${new Date().toISOString().split('T')[0]}.doc`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+
+        mostrarNotificacion('Portafolio exportado a Word', 'success');
+    }
+
+    function exportarPortafolioPDF() {
+        if (portafolioData.progreso < 100) {
+            mostrarNotificacion('Completa todos los módulos antes de exportar', 'warning');
+            return;
+        }
+
+        const contenidoHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio Curricular - Ciencias Naturales</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { color: #2c5f2d; border-bottom: 3px solid #2c5f2d; padding-bottom: 10px; }
+        h2 { color: #2c5f2d; margin-top: 24px; }
+        .section { margin: 16px 0; padding: 16px; border: 1px solid #ddd; border-radius: 8px; }
+        .header { background: #f8f9fa; padding: 10px; margin: -16px -16px 16px -16px; border-radius: 8px 8px 0 0; }
+        @media print {
+            body { margin: 20px; }
+            .section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Portafolio Curricular - Ciencias Naturales</h1>
+    <p><strong>Fecha:</strong> ${new Date().toLocaleDateString()}</p>
+    <p><strong>Progreso:</strong> ${portafolioData.progreso}% completado</p>
+
+    <div class="section">
+        <div class="header"><strong>1. ANÁLISIS DEL CONTEXTO</strong></div>
+        <p>${portafolioData.contexto}</p>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>2. SECUENCIACIÓN ESPIRAL</strong></div>
+        <p><strong>Concepto:</strong> ${portafolioData.espiral.concepto}</p>
+        <p><strong>Primaria:</strong> ${portafolioData.espiral.primaria}</p>
+        <p><strong>Secundaria:</strong> ${portafolioData.espiral.secundaria}</p>
+        <p><strong>Media:</strong> ${portafolioData.espiral.media}</p>
+        <p><strong>Justificación:</strong> ${portafolioData.espiral.justificacion}</p>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>3. CORRELACIÓN INTERDISCIPLINARIA</strong></div>
+        <p><strong>Tema:</strong> ${portafolioData.correlacion.tema}</p>
+        <ul>
+            <li><strong>Ciencias:</strong> ${portafolioData.correlacion.ciencias}</li>
+            <li><strong>Matemáticas:</strong> ${portafolioData.correlacion.matematicas}</li>
+            <li><strong>Tecnología:</strong> ${portafolioData.correlacion.tecnologia}</li>
+            <li><strong>Sociales:</strong> ${portafolioData.correlacion.sociales}</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="header"><strong>4. DIMENSIONES DEL APRENDIZAJE CIENTÍFICO</strong></div>
+        <p><strong>Cognoscitiva:</strong> ${portafolioData.dimensiones.cognitiva}</p>
+        <p><strong>Afectiva:</strong> ${portafolioData.dimensiones.afectiva}</p>
+        <p><strong>Psicomotora:</strong> ${portafolioData.dimensiones.psicomotora}</p>
+    </div>
+</body>
+</html>
+        `;
+
+        const w = window.open('', '_blank');
+        if (!w) {
+            mostrarNotificacion('El navegador bloqueó la ventana emergente. Permite popups para exportar a PDF.', 'warning');
+            return;
+        }
+
+        w.document.open();
+        w.document.write(contenidoHTML);
+        w.document.close();
+
+        w.addEventListener('load', () => {
+            w.focus();
+            w.print();
+        });
+
+        mostrarNotificacion('Usa Imprimir → Guardar como PDF', 'info');
+    }
+
+    </script>
+</body>
+</html>
