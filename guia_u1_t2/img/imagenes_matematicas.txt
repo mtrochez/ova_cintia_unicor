@@ -1,0 +1,3 @@
+# Este archivo es un placeholder para las imágenes matemáticas
+# Las imágenes Funcion_exponencial.png y Funcion_polinomica.png deberían copiarse aquí
+# desde la carpeta de referencias para usar en el OVA de Cálculo
