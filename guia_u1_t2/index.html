@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1.1: Fundamentos Teóricos-Conceptuales del Currículo</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-soft: #f0fdf4;
+            --surface-muted: #f8fafc;
+            --text: #334155;
+            --heading: #166534;
+            --heading-deep: #14532d;
+            --line: #d1d5db;
+            --line-soft: #dcfce7;
+            --accent: #22c55e;
+            --accent-soft: #bbf7d0;
+            --accent-deep: #16a34a;
+            --shadow: 0 8px 24px rgba(1, 103, 56, 0.12);
+            --radius-xl: 18px;
+            --radius-lg: 14px;
+            --radius-md: 12px;
+            --transition: 0.25s ease;
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            color: var(--text);
+            background: var(--bg);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .scrollbar-hidden { scrollbar-width: none; -ms-overflow-style: none; }
+        #ova-embed .scrollbar-hidden::-webkit-scrollbar { display: none; }
+        #ova-embed .content-stage { position: relative; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar {
+            width: 264px;
+            background: #ffffff;
+            box-shadow: 0 2px 16px rgba(15, 23, 42, 0.08);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 18px 0 0;
+        }
+        #ova-embed .brand-shell {
+            padding: 0 16px 14px;
+        }
+        #ova-embed .logo-orb {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 12px;
+            background: #ffffff;
+            border-radius: 9999px;
+            box-shadow: 0 8px 24px rgba(1, 103, 56, 0.25);
+            border: 2px solid #22c55e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        #ova-embed .logo-orb img {
+            width: 82%;
+            height: 82%;
+            object-fit: contain;
+        }
+        #ova-embed .brand-copy {
+            text-align: center;
+        }
+        #ova-embed .brand-copy h1 {
+            margin: 0;
+            font-weight: 700;
+            color: #166534;
+            font-size: 1.15rem;
+            line-height: 1.35;
+        }
+        #ova-embed .eyebrow {
+            margin: 0 0 8px;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #64748b;
+        }
+        #ova-embed .sidebar-nav {
+            margin-top: 8px;
+            flex: 1;
+            padding-bottom: 0;
+            overflow: visible;
+        }
+        #ova-embed .sidebar-link {
+            width: 100%;
+            border: 0;
+            border-left: 4px solid transparent;
+            background: transparent;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px;
+            text-align: left;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            margin: 0;
+            border-radius: 0;
+        }
+        #ova-embed .sidebar-link:hover,
+        #ova-embed .sidebar-link:focus-visible,
+        #ova-embed .sidebar-link.active {
+            background: #e6f4ea;
+            color: #166534;
+            border-left-color: #22c55e;
+            outline: none;
+        }
+        #ova-embed .nav-icon {
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+        #ova-embed .sidebar-link:focus-visible { outline: 2px solid #22c55e; outline-offset: 2px; }
+        #ova-embed summary { list-style: none; }
+        #ova-embed summary::-webkit-details-marker { display: none; }
+        #ova-embed details[open] .accordion-toggle { transform: rotate(45deg); background-color: #dcfce7; border-color: #22c55e; }
+        #ova-embed .speech-controls button:disabled { opacity: 0.5; cursor: not-allowed; }
+        @media (prefers-reduced-motion: reduce) { #ova-embed * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+        .btn-sue { background-color: #22c55e !important; color: #fff !important; border: none !important; padding: 12px 24px !important; border-radius: 6px !important; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-flex !important; align-items: center !important; box-shadow: 0 2px 4px rgba(0, 86, 179, 0.2) !important; }
+        .btn-sue:hover { background-color: #16a34a !important; color: #fff !important; text-decoration: none; box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3) !important; transform: translateY(-1px); }
+        .btn-sue:focus { outline: 2px solid #22c55e; outline-offset: 2px; }
+        .btn-sue i { margin-right: 8px; }
+        #ova-embed #recursos .btn-sue { background-color: #22c55e !important; color: #fff !important; border: none !important; text-decoration: none !important; background-image: none !important; appearance: none !important; -webkit-appearance: none !important; }
+        #ova-embed #recursos .btn-sue:hover { background-color: #16a34a !important; color: #fff !important; text-decoration: none; box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3) !important; transform: translateY(-1px); }
+        #ova-embed #recursos .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 28px; margin-top: 22px; }
+        #ova-embed #recursos .resource-card { background: #fff; border-radius: 18px; padding: 26px 26px; text-align: left; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08); transition: box-shadow 0.25s ease, transform 0.25s ease; border: 1px solid #f1f5f9; border-left: 6px solid #22c55e; }
+        #ova-embed #recursos .resource-card:hover { box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12); transform: translateY(-2px); }
+        #ova-embed #recursos .resource-icon { display: none; }
+        #ova-embed #recursos .resource-title { font-size: 18px; font-weight: 600; color: #15803d; margin-bottom: 10px; }
+        #ova-embed #recursos .resource-description { color: #334155; line-height: 1.6; font-size: 16px; margin: 0; }
+        .progress-bar { background: #e5e7eb; border-radius: 9999px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%); height: 100%; border-radius: 9999px; transition: width 0.5s ease; }
+        .slide-container { position: relative; overflow: hidden; border-radius: 12px; }
+        .slide { opacity: 0; transform: translateX(100%); transition: opacity 0.3s ease, transform 0.3s ease; position: absolute; width: 100%; top: 0; left: 0; }
+        .slide.active { opacity: 1; transform: translateX(0); position: relative; }
+        .slide-nav { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+        .slide-dot { width: 10px; height: 10px; border-radius: 50%; background: #d1d5db; cursor: pointer; transition: background 0.3s ease; }
+        .slide-dot.active { background: #22c55e; }
+        .slide-dot:hover { background: #16a34a; }
+        .method-option { transition: all 0.3s ease; cursor: pointer; }
+        .method-option:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .method-option.selected { border-color: #22c55e; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
+        .method-option input[type="radio"] { display: none; }
+        .method-option input[type="radio"]:checked + .method-content { color: #166534; }
+        .method-option input[type="radio"]:checked + .method-content .method-title { color: #15803d; font-weight: 600; }
+        .instrument-option { transition: all 0.3s ease; cursor: pointer; }
+        .instrument-option:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .instrument-option.selected { border-color: #9333ea; background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); }
+        .instrument-option input[type="checkbox"] { display: none; }
+        .instrument-option input[type="checkbox"]:checked + .instrument-content { color: #6b21a8; }
+        .instrument-option input[type="checkbox"]:checked + .instrument-content .instrument-title { color: #7c3aed; font-weight: 600; }
+        .product-option { transition: all 0.3s ease; cursor: pointer; }
+        .product-option:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .product-option.selected { border-color: #dc2626; background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); }
+        .product-option input[type="checkbox"] { display: none; }
+        .product-option input[type="checkbox"]:checked + .product-content { color: #991b1b; }
+        .product-option input[type="checkbox"]:checked + .product-content .product-title { color: #dc2626; font-weight: 600; }
+        .dropdown-menu { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: white; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; border-radius: 6px; overflow: hidden; }
+        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; transition: background-color 0.3s; }
+        .dropdown-content a:hover { background-color: #f1f5f9; }
+        .dropdown-content a i { margin-right: 8px; }
+        .dropdown-menu:hover .dropdown-content { display: block; }
+        .dropdown-btn { background-color: #9333ea; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; }
+        .dropdown-btn:hover { background-color: #7c3aed; }
+    </style>
+</head>
+<body>
+    <div id="ova-embed" class="min-h-screen bg-white">
+        <div class="flex items-stretch min-h-screen">
+            <!-- Sidebar -->
+            <aside class="sidebar hidden md:flex md:flex-col md:sticky md:top-0 md:min-h-screen self-stretch">
+                <div class="brand-shell">
+                    <div class="logo-orb">
+                        <img src="LOGO MAESTRIA (1).jpg.jpeg" alt="Logo Maestría" loading="lazy">
+                    </div>
+                    <div class="brand-copy">
+                        <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                        <h1>Fundamentos teoricos conceptuales del curriculo</h1>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav" aria-label="Secciones">
+                    <a href="#introduccion" class="sidebar-link active" data-target="introduccion" aria-controls="introduccion" aria-current="page"><span class="nav-icon">🚀</span><span>Introducción</span></a>
+                    <a href="#objetivos" class="sidebar-link" data-target="objetivos" aria-controls="objetivos"><span class="nav-icon">🎯</span><span>Objetivos</span></a>
+                    <a href="#contenido" class="sidebar-link" data-target="contenido" aria-controls="contenido"><span class="nav-icon">📚</span><span>Contenido</span></a>
+                    <a href="#actividad" class="sidebar-link" data-target="actividad" aria-controls="actividad"><span class="nav-icon">✍️</span><span>Actividades</span></a>
+                    <a href="#evaluacion" class="sidebar-link" data-target="evaluacion" aria-controls="evaluacion"><span class="nav-icon">✔️</span><span>Autoevaluación</span></a>
+                    <a href="#recursos" class="sidebar-link" data-target="recursos" aria-controls="recursos"><span class="nav-icon">📖</span><span>Recursos</span></a>
+                    <a href="#bibliografia" class="sidebar-link" data-target="bibliografia" aria-controls="bibliografia"><span class="nav-icon">📚</span><span>Bibliografía</span></a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 px-4 sm:px-6 md:px-8 py-6 bg-white">
+                <div class="w-full max-w-6xl mx-auto">
+                <!-- Mobile Header -->
+                <div class="md:hidden mb-6 flex flex-col items-center">
+                    <div style="width: 100px; height: 100px;" class="p-2 flex items-center justify-center bg-white rounded-full shadow-lg transition-shadow duration-300 hover:shadow-green-400 mb-2">
+                        <img src="LOGO MAESTRIA (1).jpg.jpeg" alt="Logo Maestría" class="w-5/6 h-5/6 object-contain rounded-full" loading="lazy">
+                    </div>
+                    <div class="text-center mb-4">
+                        <p class="uppercase text-slate-500 leading-snug font-bold" style="font-size: 0.72rem; letter-spacing: 0.08em;">Maestría en Didáctica de las Ciencias Naturales</p>
+                        <p class="mt-2 font-bold" style="font-size: 1.3rem; line-height: 1.3; color: #166534;">Fundamentos teoricos conceptuales del curriculo</p>
+                    </div>
+                    <select id="mobile-nav" class="w-full mt-2 p-2 border rounded-md bg-white shadow-sm" aria-label="Secciones">
+                        <option value="introduccion">🚀 Introducción</option>
+                        <option value="objetivos">🎯 Objetivos</option>
+                        <option value="contenido">📚 Contenido</option>
+                        <option value="actividad">✍️ Actividades</option>
+                        <option value="evaluacion">✔️ Autoevaluación</option>
+                        <option value="recursos">📖 Recursos</option>
+                        <option value="bibliografia">📚 Bibliografía</option>
+                    </select>
+                </div>
+
+                <div id="content-stage" class="content-stage">
+
+            <!-- Introducción -->
+                    <div id="introduccion" class="content-pane active">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción de la unidad</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Fundamentos teóricos conceptuales del currículo</h2>
+                        </div>
+
+                        <div class="mt-6">
+                            <p class="text-slate-700 leading-relaxed mb-4">El estudio de los fundamentos teóricos-conceptuales del currículo constituye la piedra angular de la formación de un Magíster en Didáctica de las Ciencias, pues permite comprender que el currículo no es un objeto neutro o puramente técnico, sino una construcción social, histórica y política.</p>
+                            <p class="text-slate-700 leading-relaxed mb-4">Para el docente investigador, dominar estos fundamentos implica reconocer las tensiones entre las diversas escuelas de pensamiento que han definido "qué es ciencia escolar" a lo largo de los siglos.</p>
+                            <p class="text-slate-700 leading-relaxed mb-6">Este tema explora las principales perspectivas teóricas que sustentan el diseño curricular: el enfoque técnico, práctico y crítico.</p>
+                        </div>
+                        <div class="mt-6 p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
+                            <p class="text-green-800 font-semibold">Pregunta orientadora</p>
+                            <p class="text-green-800 mt-2">¿Cómo transforman los fundamentos teóricos del currículo las decisiones pedagógicas y el modo de evaluar el aprendizaje?</p>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="introduccion">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Contenido -->
+                    <div id="contenido" class="content-pane">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido central</p>
+                        <h2 class="mt-4 text-[1.95rem] font-extrabold text-green-800 leading-tight mb-[10px]">Mapa conceptual e interpretación de casos</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">El contenido se organiza en capas: primero el sistema de aprendizaje, luego la lectura de teorías implícitas, después la comparación entre tipos de conocimiento y, finalmente, el análisis de casos de aula.</p>
+
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8 mb-6">
+                            <div id="mapa-curriculo"></div>
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Mapa conceptual</p>
+                            <div class="mt-6 relative">
+                                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
+                                    <line x1="50" y1="18" x2="18" y2="42" stroke="#cbd5e1" stroke-width="1" />
+                                    <line x1="50" y1="18" x2="50" y2="42" stroke="#cbd5e1" stroke-width="1" />
+                                    <line x1="50" y1="18" x2="82" y2="42" stroke="#cbd5e1" stroke-width="1" />
+                                </svg>
+
+                                <div class="relative grid grid-cols-1 gap-4">
+                                    <div class="flex justify-center">
+                                        <a href="#mapa-curriculo" class="inline-flex items-center justify-center text-center px-5 py-3 rounded-2xl border border-green-200 bg-green-50 text-green-900 font-semibold shadow-sm">Currículo</a>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <a href="#enfoque-tecnico" class="inline-flex items-center justify-center text-center px-4 py-3 rounded-2xl border border-slate-200 bg-white text-slate-700 font-semibold shadow-sm hover:bg-green-50 hover:border-green-200 transition-colors">Enfoque técnico</a>
+                                        <a href="#enfoque-practico" class="inline-flex items-center justify-center text-center px-4 py-3 rounded-2xl border border-slate-200 bg-white text-slate-700 font-semibold shadow-sm hover:bg-green-50 hover:border-green-200 transition-colors">Enfoque práctico</a>
+                                        <a href="#enfoque-critico" class="inline-flex items-center justify-center text-center px-4 py-3 rounded-2xl border border-slate-200 bg-white text-slate-700 font-semibold shadow-sm hover:bg-green-50 hover:border-green-200 transition-colors">Enfoque crítico</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid gap-5">
+                            <details id="enfoque-tecnico" data-accordion="contenido-enfoques" class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                    <span>Evolución y Enfoques Técnicos</span>
+                                    <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                </summary>
+                                <div class="mt-4 text-slate-700 space-y-3">
+                                    <p>El currículo moderno nace bajo el imperativo de la eficiencia social. Autores como <strong>Franklin Bobbitt (1918)</strong> y <strong>Ralph Tyler (1949)</strong> sentaron las bases de un modelo técnico-instrumental donde el currículo se concibe como un plan de instrucción orientado a resultados medibles.</p>
+                                    <p class="text-sm text-slate-500">Autores referenciales: Franklin Bobbitt, Ralph Tyler.</p>
+                                    <p>Tyler propuso un esquema racional basado en cuatro preguntas fundamentales sobre propósitos, experiencias, organización y evaluación, que aún hoy influye en la planeación curricular por objetivos.</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>Impulsa estrategias de argumentación, demostración y resolución de problemas.</li>
+                                        <li>Evalúa mediante pruebas objetivas y rúbricas estructuradas.</li>
+                                        <li>Organiza el contenido en secuencias lógicas y progresivas.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details id="enfoque-practico" data-accordion="contenido-enfoques" class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                    <span>Corrientes Prácticas y Deliberativas</span>
+                                    <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                </summary>
+                                <div class="mt-4 text-slate-700 space-y-3">
+                                    <p>Frente a la rigidez técnica, surge la escuela del currículo como práctica, donde <strong>Joseph Schwab (1969)</strong> propone las ciencias como una forma de “deliberación” y no solo como un “producto” terminado.</p>
+                                    <p class="text-sm text-slate-500">Autores referenciales: Joseph Schwab, Maxine Greene, Elliot Eisner.</p>
+                                    <p>Simultáneamente, <strong>Jerome Bruner (1960)</strong> revoluciona la didáctica de las ciencias al introducir la espiral curricular, argumentando que cualquier tema puede enseñarse de forma honesta si se respeta la estructura de la disciplina y se ajusta su complejidad al desarrollo del niño.</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>Fomenta la investigación-acción y la reflexión crítica.</li>
+                                        <li>Valora el conocimiento docente como fuente de currículo.</li>
+                                        <li>Desarrolla competencias de deliberación y juicio profesional.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details id="enfoque-critico" data-accordion="contenido-enfoques" class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                    <span>Enfoques Críticos y Culturales</span>
+                                    <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                </summary>
+                                <div class="mt-4 text-slate-700 space-y-3">
+                                    <p>La teoría curricular contemporánea está marcada por la pedagogía crítica de <strong>Michael Apple</strong> y <strong>Henry Giroux</strong>, quienes definen el currículo como una “selección cultural” cargada de poder e ideología.</p>
+                                    <p class="text-sm text-slate-500">Autores referenciales: Michael Apple, Paulo Freire, Henry Giroux.</p>
+                                    <p>Apple sostiene que el currículo no es neutral y que el conocimiento científico escolar a menudo refleja los intereses de los grupos dominantes. En América Latina, esta visión se complementa con la pedagogía dialógica de <strong>Paulo Freire</strong>, que entiende el currículo como una práctica de libertad y concientización social.</p>
+                                    <ul class="list-disc pl-5">
+                                        <li>Desarrolla pensamiento crítico y conciencia social.</li>
+                                        <li>Cuestiona las relaciones de poder en el conocimiento.</li>
+                                        <li>Promueve la justicia curricular y la equidad educativa.</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="contenido">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Objetivos -->
+                    <div id="objetivos" class="content-pane">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 mb-[10px] text-[1.95rem] font-extrabold text-green-800 leading-tight">Resultados que orientan la unidad</h2>
+
+                        <div class="mt-10 bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                            <div class="inline-flex items-center rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800">Objetivo general</div>
+                            <p class="mt-4 text-slate-700 leading-relaxed">
+                                Analizar y comprender los fundamentos epistemológicos, históricos y teóricos que sustentan el campo del currículo, identificando las principales corrientes de pensamiento y autores que han moldeado la enseñanza de las ciencias naturales.
+                            </p>
+                        </div>
+
+                        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                                <div class="inline-flex items-center justify-center rounded-full bg-green-100 px-8 py-2 text-sm font-semibold text-green-800">Reflexión teórica</div>
+                                <h3 class="mt-5 text-xl font-bold text-green-800 leading-snug">Propiciar espacios de debate</h3>
+                                <p class="mt-4 text-slate-600 leading-relaxed">Propiciar espacios de debate sobre el origen, la historia y las diversas teorías del currículo escolar y universitario, fortaleciendo el pensamiento crítico del docente.</p>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                                <div class="inline-flex items-center justify-center rounded-full bg-green-100 px-8 py-2 text-sm font-semibold text-green-800">Análisis técnico</div>
+                                <h3 class="mt-5 text-xl font-bold text-green-800 leading-snug">Identificar y comparar técnicas curriculares</h3>
+                                <p class="mt-4 text-slate-600 leading-relaxed">Identificar y comparar las diferentes técnicas y tipologías del desarrollo curricular, utilizando herramientas digitales y matrices de análisis para sustentar decisiones de transformación.</p>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                                <div class="inline-flex items-center justify-center rounded-full bg-green-100 px-8 py-2 text-sm font-semibold text-green-800">Diseño aplicado</div>
+                                <h3 class="mt-5 text-xl font-bold text-green-800 leading-snug">Diseñar una propuesta curricular contextualizada</h3>
+                                <p class="mt-4 text-slate-600 leading-relaxed">Diseñar una propuesta curricular o unidad de aprendizaje de ciencias naturales que esté debidamente contextualizada, integrando objetivos, contenidos, competencias y criterios de evaluación claros.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <h3 class="text-xl sm:text-2xl font-bold text-green-800">Resultados de Aprendizaje y Competencias</h3>
+                            <div class="mt-6 space-y-4">
+                                <details data-accordion="objetivos-competencias" class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                    <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                        <span>Saber (Conocimiento)</span>
+                                        <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                    </summary>
+                                    <div class="mt-4 text-slate-700">
+                                        <ul class="list-disc pl-5 space-y-3">
+                                            <li>Reconocer las características epistemológicas, históricas y teóricas de la construcción del currículo.</li>
+                                            <li>Dominar los saberes sobre las tipologías curriculares y su articulación con recursos educativos digitales.</li>
+                                            <li>Comprender los principios de planificación y evaluación curricular en modalidades virtuales.</li>
+                                        </ul>
+                                    </div>
+                                </details>
+
+                                <details data-accordion="objetivos-competencias" class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                    <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                        <span>Saber Hacer (Habilidades)</span>
+                                        <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                    </summary>
+                                    <div class="mt-4 text-slate-700">
+                                        <ul class="list-disc pl-5 space-y-3">
+                                            <li>Diseñar unidades didácticas coherentes en ciencias naturales que incorporen actividades sincrónicas y asincrónicas.</li>
+                                            <li>Operacionalizar estrategias de ajuste curricular mediante el uso de instrumentos digitales como portafolios y rúbricas.</li>
+                                            <li>Integrar tecnologías de la información para representar y comunicar decisiones curriculares de manera responsable.</li>
+                                            <li>Aplicar el conocimiento curricular para plantear soluciones a problemas educativos en diferentes contextos.</li>
+                                        </ul>
+                                    </div>
+                                </details>
+
+                                <details data-accordion="objetivos-competencias" class="bg-white border border-green-200 rounded-xl p-5 shadow-sm">
+                                    <summary class="flex items-center justify-between font-semibold text-green-800 cursor-pointer">
+                                        <span>Saber Ser (Actitudes)</span>
+                                        <span class="accordion-toggle h-7 w-7 rounded-full border border-green-200 flex items-center justify-center text-green-700">+</span>
+                                    </summary>
+                                    <div class="mt-4 text-slate-700">
+                                        <ul class="list-disc pl-5 space-y-3">
+                                            <li>Autorregular su propio aprendizaje, demostrando autonomía, compromiso y una gestión efectiva del tiempo en entornos virtuales.</li>
+                                            <li>Actuar con ética y respeto en el uso de la información y las tecnologías al servicio de la sociedad.</li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="objetivos">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Actividades -->
+                    <div id="actividad" class="content-pane">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-[1.95rem] font-extrabold text-green-800 leading-tight mb-[10px]">Laboratorio de Investigación Curricular</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">Plataforma académica para el diseño, implementación y análisis de proyectos curriculares de investigación aplicada.</p>
+
+                        <!-- BLOQUE 1: TU PROYECTO DE INVESTIGACIÓN -->
+                        <div class="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-600 rounded-xl p-6 mb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-bold text-green-800 text-lg">📊 Tu Proyecto de Investigación</h3>
+                                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Nivel Maestría</span>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between text-sm text-slate-600 mb-2">
+                                    <span>Seguimiento del Proyecto</span>
+                                    <span id="project-progress-percentage">0%</span>
+                                </div>
+                                <div class="progress-bar h-3">
+                                    <div id="project-progress-fill" class="progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-green-500 hover:shadow-md transition-shadow cursor-pointer" onclick="irAPaso(1)">
+                                    <div class="flex items-center mb-2">
+                                        <span class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
+                                        <h4 class="font-semibold text-gray-800">Análisis Contextual</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Diagnóstico institucional</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500 hover:shadow-md transition-shadow cursor-pointer" onclick="irAPaso(2)">
+                                    <div class="flex items-center mb-2">
+                                        <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3">2</span>
+                                        <h4 class="font-semibold text-gray-800">Diseño Metodológico</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Investigación aplicada</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-500 hover:shadow-md transition-shadow cursor-pointer" onclick="irAPaso(3)">
+                                    <div class="flex items-center mb-2">
+                                        <span class="bg-purple-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3">3</span>
+                                        <h4 class="font-semibold text-gray-800">Implementación</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Ejecución y datos</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-orange-500 hover:shadow-md transition-shadow cursor-pointer" onclick="irAPaso(4)">
+                                    <div class="flex items-center mb-2">
+                                        <span class="bg-orange-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3">4</span>
+                                        <h4 class="font-semibold text-gray-800">Diseminación</h4>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Publicación académica</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BLOQUE 2: WORKSPACE DE INVESTIGACIÓN -->
+                        <div class="bg-white border border-green-200 rounded-xl shadow-sm p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-bold text-green-800 text-lg">📋 Workspace de Investigación</h3>
+                                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Espacio Personalizado</span>
+                            </div>
+                            
+                            <p class="text-slate-600 mb-6">Espacio de trabajo académico personalizado para desarrollar proyectos curriculares de investigación aplicada. Navega por las diferentes secciones para construir tu propuesta curricular fundamentada.</p>
+
+                            <div class="slide-container">
+                                <!-- Slide 1: Análisis contextual avanzado -->
+                                <div class="slide active" id="slide-1">
+                                    <h4 class="text-lg font-bold text-green-800 mb-4">Análisis Contextual Avanzado</h4>
+                                    <p class="text-slate-600 mb-6">Diagnóstico institucional y problemática curricular para fundamentar tu investigación.</p>
+
+                                    <div class="space-y-4">
+                                        <details class="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-xl overflow-hidden">
+                                            <summary class="p-4 cursor-pointer flex items-center justify-between font-semibold text-green-800 hover:from-green-100 hover:to-blue-100 transition-colors">
+                                                <span class="flex items-center">
+                                                    <i class="fas fa-search text-green-600 mr-3"></i>
+                                                    Diagnóstico Institucional
+                                                </span>
+                                                <span class="accordion-toggle h-6 w-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">+</span>
+                                            </summary>
+                                            <div class="mt-4 space-y-4 p-4">
+                                                <div class="bg-white p-4 rounded-lg border-l-4 border-green-500">
+                                                    <h5 class="font-semibold text-green-800 mb-3">
+                                                        <i class="fas fa-hospital text-green-600 mr-2"></i>
+                                                        Contexto Educativo
+                                                    </h5>
+                                                    
+                                                    <div class="mb-4">
+                                                        <label class="block text-sm font-medium text-gray-700 mb-2">Contexto educativo</label>
+                                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                                            <div>
+                                                                <label class="block text-xs font-medium text-gray-600 mb-1">Tipo de educación</label>
+                                                                <select id="tipo-educacion" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                                                    <option value="">Seleccionar...</option>
+                                                                    <option value="formal">Educación Formal</option>
+                                                                    <option value="no-formal">Educación No Formal</option>
+                                                                    <option value="informal">Educación Informal</option>
+                                                                    <option value="especial">Educación Especial</option>
+                                                                    <option value="adultos">Educación de Adultos</option>
+                                                                    <option value="virtual">Educación Virtual</option>
+                                                                </select>
+                                                            </div>
+                                                            <div>
+                                                                <label class="block text-xs font-medium text-gray-600 mb-1">Nivel educativo</label>
+                                                                <select id="nivel-educativo" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                                                    <option value="">Seleccionar...</option>
+                                                                    <option value="preescolar">Preescolar</option>
+                                                                    <option value="primaria">Primaria</option>
+                                                                    <option value="secundaria">Secundaria</option>
+                                                                    <option value="media">Media Técnica</option>
+                                                                    <option value="superior">Educación Superior</option>
+                                                                    <option value="posgrado">Posgrado</option>
+                                                                    <option value="continuada">Educación Continuada</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-4">
+                                                        <label class="block text-sm font-medium text-gray-700 mb-2">Descripción del contexto</label>
+                                                        <textarea id="contexto-educativo-desc" maxlength="2000" placeholder="Describe detalladamente tu contexto educativo..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none" rows="4" oninput="actualizarContador(this, 'contador-contexto')"></textarea>
+                                                        <div class="flex justify-between items-center mt-2">
+                                                            <span class="text-xs text-gray-500">Caracteres: <span id="contador-contexto" class="font-medium">0</span>/2000</span>
+                                                            <span id="contexto-estado" class="text-xs text-gray-500">Máximo 2000 caracteres</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                                                    <h5 class="font-semibold text-orange-800 mb-3">
+                                                        <i class="fas fa-exclamation-triangle text-orange-600 mr-2"></i>
+                                                        Problemática Curricular
+                                                    </h5>
+                                                    <textarea id="problematica-curricular" maxlength="2000" placeholder="Describe la problemática curricular identificada..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none" rows="4" oninput="actualizarContador(this, 'contador-problematica')"></textarea>
+                                                    <div class="flex justify-between items-center mt-2">
+                                                        <span class="text-xs text-gray-500">Caracteres: <span id="contador-problematica" class="font-medium">0</span>/2000</span>
+                                                        <span id="problematica-estado" class="text-xs text-gray-500">Máximo 2000 caracteres</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                                                    <h5 class="font-semibold text-blue-800 mb-3">
+                                                        <i class="fas fa-book text-blue-600 mr-2"></i>
+                                                        Justificación Teórica
+                                                    </h5>
+                                                    <textarea id="justificacion-teorica" maxlength="2000" placeholder="Fundamenta teóricamente tu investigación..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none" rows="4" oninput="actualizarContador(this, 'contador-justificacion')"></textarea>
+                                                    <div class="flex justify-between items-center mt-2">
+                                                        <span class="text-xs text-gray-500">Caracteres: <span id="contador-justificacion" class="font-medium">0</span>/2000</span>
+                                                        <span id="justificacion-estado" class="text-xs text-gray-500">Máximo 2000 caracteres</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Diseño metodológico -->
+                                <div class="slide" id="slide-2">
+                                    <h4 class="text-lg font-bold text-green-800 mb-4">Diseño Metodológico</h4>
+                                    <p class="text-slate-600 mb-6">Definición del enfoque metodológico y pregunta de investigación.</p>
+
+                                    <div class="space-y-4">
+                                        <details class="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-xl overflow-hidden">
+                                            <summary class="p-4 cursor-pointer flex items-center justify-between font-semibold text-blue-800 hover:from-blue-100 hover:to-purple-100 transition-colors">
+                                                <span class="flex items-center">
+                                                    <i class="fas fa-question-circle text-blue-600 mr-3"></i>
+                                                    Pregunta de Investigación
+                                                </span>
+                                                <span class="accordion-toggle h-6 w-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">+</span>
+                                            </summary>
+                                            <div class="mt-4 p-4">
+                                                <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                                                    <h5 class="font-semibold text-blue-800 mb-3">
+                                                        <i class="fas fa-question-circle text-blue-600 mr-2"></i>
+                                                        Formula tu pregunta central
+                                                    </h5>
+                                                    <textarea id="pregunta-investigacion" maxlength="500" placeholder="Formula claramente tu pregunta central de investigación..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none" rows="3" oninput="actualizarContador(this, 'contador-pregunta')"></textarea>
+                                                    <div class="flex justify-between items-center mt-2">
+                                                        <span class="text-xs text-gray-500">Caracteres: <span id="contador-pregunta" class="font-medium">0</span>/500</span>
+                                                        <span id="pregunta-estado" class="text-xs text-gray-500">Máximo 500 caracteres</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </details>
+
+                                        <details class="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl overflow-hidden">
+                                            <summary class="p-4 cursor-pointer flex items-center justify-between font-semibold text-purple-800 hover:from-purple-100 hover:to-pink-100 transition-colors">
+                                                <span class="flex items-center">
+                                                    <i class="fas fa-microscope text-purple-600 mr-3"></i>
+                                                    Enfoque Metodológico
+                                                </span>
+                                                <span class="accordion-toggle h-6 w-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">+</span>
+                                            </summary>
+                                            <div class="mt-4 p-4">
+                                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-500">
+                                                    <h5 class="font-semibold text-purple-800 mb-3">
+                                                        <i class="fas fa-microscope text-purple-600 mr-2"></i>
+                                                        Selecciona el enfoque metodológico
+                                                    </h5>
+                                                    <p class="text-sm text-gray-600 mb-4">Elige el enfoque metodológico que mejor se adapte a tu investigación:</p>
+                                                    
+                                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        <label class="method-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                            <input type="radio" name="enfoque-metodologico" value="cualitativo" class="method-radio">
+                                                            <div class="method-content">
+                                                                <div class="flex items-center mb-2">
+                                                                    <span class="bg-blue-100 text-blue-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
+                                                                    <h6 class="font-semibold text-gray-800">Cualitativo</h6>
+                                                                </div>
+                                                                <p class="text-sm text-gray-600">Estudio de casos, etnografía</p>
+                                                            </div>
+                                                        </label>
+
+                                                        <label class="method-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                            <input type="radio" name="enfoque-metodologico" value="cuantitativo" class="method-radio">
+                                                            <div class="method-content">
+                                                                <div class="flex items-center mb-2">
+                                                                    <span class="bg-green-100 text-green-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
+                                                                    <h6 class="font-semibold text-gray-800">Cuantitativo</h6>
+                                                                </div>
+                                                                <p class="text-sm text-gray-600">Experimental, correlacional</p>
+                                                            </div>
+                                                        </label>
+
+                                                        <label class="method-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                            <input type="radio" name="enfoque-metodologico" value="mixto" class="method-radio">
+                                                            <div class="method-content">
+                                                                <div class="flex items-center mb-2">
+                                                                    <span class="bg-purple-100 text-purple-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
+                                                                    <h6 class="font-semibold text-gray-800">Mixto</h6>
+                                                                </div>
+                                                                <p class="text-sm text-gray-600">Convergente, secuencial</p>
+                                                            </div>
+                                                        </label>
+
+                                                        <label class="method-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                            <input type="radio" name="enfoque-metodologico" value="accion" class="method-radio">
+                                                            <div class="method-content">
+                                                                <div class="flex items-center mb-2">
+                                                                    <span class="bg-orange-100 text-orange-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
+                                                                    <h6 class="font-semibold text-gray-800">Investigación-Acción</h6>
+                                                                </div>
+                                                                <p class="text-sm text-gray-600">Participativa, reflexiva</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Implementación -->
+                                <div class="slide" id="slide-3">
+                                    <h4 class="text-lg font-bold text-green-800 mb-4">Implementación: Ejecución y datos</h4>
+                                    <p class="text-slate-600 mb-6">Espacio para la ejecución de tu investigación curricular y recolección de datos.</p>
+
+                                    <div class="space-y-4">
+                                        <details class="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl overflow-hidden">
+                                            <summary class="p-4 cursor-pointer flex items-center justify-between font-semibold text-purple-800 hover:from-purple-100 hover:to-pink-100 transition-colors">
+                                                <span class="flex items-center">
+                                                    <i class="fas fa-tools text-purple-600 mr-3"></i>
+                                                    📊 Instrumentos de Recolección
+                                                </span>
+                                                <span class="accordion-toggle h-6 w-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">+</span>
+                                            </summary>
+                                            <div class="mt-4 space-y-4 p-4">
+                                                <p class="text-sm text-gray-600 mb-4">Selecciona los instrumentos que utilizarás para la recolección de datos:</p>
+                                                
+                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <label class="instrument-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                        <input type="checkbox" name="instrumentos-recoleccion" value="entrevistas" class="instrument-checkbox">
+                                                        <div class="instrument-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-purple-100 text-purple-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
+                                                                <h6 class="font-semibold text-gray-800">Entrevistas en profundidad</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Diálogos estructurados con informantes clave</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="instrument-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                        <input type="checkbox" name="instrumentos-recoleccion" value="observacion" class="instrument-checkbox">
+                                                        <div class="instrument-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-blue-100 text-blue-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
+                                                                <h6 class="font-semibold text-gray-800">Observación participante</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Registro directo de prácticas curriculares</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="instrument-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                        <input type="checkbox" name="instrumentos-recoleccion" value="cuestionarios" class="instrument-checkbox">
+                                                        <div class="instrument-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-green-100 text-green-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
+                                                                <h6 class="font-semibold text-gray-800">Cuestionarios validados</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Instrumentos estructurados con validez</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="instrument-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                        <input type="checkbox" name="instrumentos-recoleccion" value="analisis-documental" class="instrument-checkbox">
+                                                        <div class="instrument-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-orange-100 text-orange-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
+                                                                <h6 class="font-semibold text-gray-800">Análisis documental</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Revisión de documentos curriculares</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="instrument-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-purple-300">
+                                                        <input type="checkbox" name="instrumentos-recoleccion" value="grupos-focales" class="instrument-checkbox">
+                                                        <div class="instrument-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-pink-100 text-pink-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
+                                                                <h6 class="font-semibold text-gray-800">Grupos focales</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Discusiones grupales temáticas</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </details>
+
+                                        <details class="bg-gradient-to-r from-pink-50 to-orange-50 border border-pink-200 rounded-xl overflow-hidden">
+                                            <summary class="p-4 cursor-pointer flex items-center justify-between font-semibold text-pink-800 hover:from-pink-100 hover:to-orange-100 transition-colors">
+                                                <span class="flex items-center">
+                                                    <i class="fas fa-clipboard-list text-pink-600 mr-3"></i>
+                                                    📋 Plan de Recolección
+                                                </span>
+                                                <span class="accordion-toggle h-6 w-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">+</span>
+                                            </summary>
+                                            <div class="mt-4 space-y-4 p-4">
+                                                <div class="bg-white p-4 rounded-lg border-l-4 border-pink-500">
+                                                    <h5 class="font-semibold text-pink-800 mb-3">
+                                                        <i class="fas fa-calendar-alt text-pink-600 mr-2"></i>
+                                                        Plan de Recolección de Datos
+                                                    </h5>
+                                                    <textarea id="plan-recoleccion" maxlength="1000" placeholder="Describe detalladamente tu plan de recolección de datos..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none" rows="5" oninput="actualizarContador(this, 'contador-plan')"></textarea>
+                                                    <div class="flex justify-between items-center mt-2">
+                                                        <span class="text-xs text-gray-500">Caracteres: <span id="contador-plan" class="font-medium">0</span>/1000</span>
+                                                        <span id="plan-estado" class="text-xs text-gray-500">Máximo 1000 caracteres</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: Diseminación -->
+                                <div class="slide" id="slide-4">
+                                    <h4 class="text-lg font-bold text-green-800 mb-4">Diseminación: Publicación académica</h4>
+                                    <p class="text-slate-600 mb-6">Espacio para planificar la divulgación de tu investigación curricular.</p>
+
+                                    <div class="space-y-4">
+                                        <details class="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-xl overflow-hidden">
+                                            <summary class="p-4 cursor-pointer flex items-center justify-between font-semibold text-orange-800 hover:from-orange-100 hover:to-red-100 transition-colors">
+                                                <span class="flex items-center">
+                                                    <i class="fas fa-file-alt text-orange-600 mr-3"></i>
+                                                    📄 Productos Académicos
+                                                </span>
+                                                <span class="accordion-toggle h-6 w-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">+</span>
+                                            </summary>
+                                            <div class="mt-4 space-y-4 p-4">
+                                                <p class="text-sm text-gray-600 mb-4">Selecciona los productos académicos que generarás:</p>
+                                                
+                                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <label class="product-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-orange-300">
+                                                        <input type="checkbox" name="productos-academicos" value="articulo" class="product-checkbox">
+                                                        <div class="product-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-orange-100 text-orange-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
+                                                                <h6 class="font-semibold text-gray-800">Artículo científico</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Publicación en revista indexada</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="product-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-orange-300">
+                                                        <input type="checkbox" name="productos-academicos" value="reporte" class="product-checkbox">
+                                                        <div class="product-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-red-100 text-red-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
+                                                                <h6 class="font-semibold text-gray-800">Reporte de investigación</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Documento técnico completo</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="product-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-orange-300">
+                                                        <input type="checkbox" name="productos-academicos" value="presentacion" class="product-checkbox">
+                                                        <div class="product-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-yellow-100 text-yellow-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
+                                                                <h6 class="font-semibold text-gray-800">Presentación en congreso</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Ponencia o poster académico</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="product-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-orange-300">
+                                                        <input type="checkbox" name="productos-academicos" value="material" class="product-checkbox">
+                                                        <div class="product-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-green-100 text-green-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
+                                                                <h6 class="font-semibold text-gray-800">Material didáctico</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Recursos educativos innovadores</p>
+                                                        </div>
+                                                    </label>
+
+                                                    <label class="product-option bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-orange-300">
+                                                        <input type="checkbox" name="productos-academicos" value="propuesta" class="product-checkbox">
+                                                        <div class="product-content">
+                                                            <div class="flex items-center mb-2">
+                                                                <span class="bg-blue-100 text-blue-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
+                                                                <h6 class="font-semibold text-gray-800">Propuesta curricular</h6>
+                                                            </div>
+                                                            <p class="text-sm text-gray-600">Diseño curricular fundamentado</p>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </details>
+
+                                        <details class="bg-gradient-to-r from-red-50 to-yellow-50 border border-red-200 rounded-xl overflow-hidden">
+                                            <summary class="p-4 cursor-pointer flex items-center justify-between font-semibold text-red-800 hover:from-red-100 hover:to-yellow-100 transition-colors">
+                                                <span class="flex items-center">
+                                                    <i class="fas fa-bullhorn text-red-600 mr-3"></i>
+                                                    🎯 Estrategias de Divulgación
+                                                </span>
+                                                <span class="accordion-toggle h-6 w-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">+</span>
+                                            </summary>
+                                            <div class="mt-4 space-y-4 p-4">
+                                                <div class="bg-white p-4 rounded-lg border-l-4 border-red-500">
+                                                    <h5 class="font-semibold text-red-800 mb-3">
+                                                        <i class="fas fa-share-alt text-red-600 mr-2"></i>
+                                                        Estrategias de Divulgación
+                                                    </h5>
+                                                    <textarea id="estrategias-divulgacion" maxlength="1000" placeholder="Describe tus estrategias para divulgar los resultados..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none" rows="5" oninput="actualizarContador(this, 'contador-estrategias')"></textarea>
+                                                    <div class="flex justify-between items-center mt-2">
+                                                        <span class="text-xs text-gray-500">Caracteres: <span id="contador-estrategias" class="font-medium">0</span>/1000</span>
+                                                        <span id="estrategias-estado" class="text-xs text-gray-500">Máximo 1000 caracteres</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slide-nav">
+                                <button class="slide-dot active" onclick="showSlide(1)" title="Análisis contextual avanzado"></button>
+                                <button class="slide-dot" onclick="showSlide(2)" title="Diseño metodológico"></button>
+                                <button class="slide-dot" onclick="showSlide(3)" title="Implementación"></button>
+                                <button class="slide-dot" onclick="showSlide(4)" title="Diseminación"></button>
+                            </div>
+
+                            <div class="flex justify-between items-center mt-6">
+                                <button id="prev-slide" onclick="changeSlide(-1)" class="bg-gray-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                                    <i class="fas fa-arrow-left mr-2"></i>Anterior
+                                </button>
+                                <span id="slide-indicator" class="text-sm text-gray-600 font-medium">1 de 4</span>
+                                <button id="next-slide" onclick="changeSlide(1)" class="bg-green-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                                    Siguiente<i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+                            <button onclick="guardarTodo()" class="bg-green-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center">
+                                💾 Guardar Todo
+                            </button>
+                            <button onclick="generarReporte()" class="bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center">
+                                📄 Generar Reporte
+                            </button>
+                            <button onclick="limpiarFormularios()" class="bg-red-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-red-700 transition-colors flex items-center justify-center">
+                                🗑️ Limpiar
+                            </button>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-btn bg-purple-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center">
+                                    📚 Exportar Proyecto <i class="fas fa-chevron-down ml-2"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="#" onclick="exportarProyecto('word')">
+                                        <i class="fas fa-file-word"></i>Word (.doc)
+                                    </a>
+                                    <a href="#" onclick="exportarProyecto('pdf')">
+                                        <i class="fas fa-file-pdf"></i>PDF (.pdf)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="actividad">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Autoevaluación -->
+                    <div id="evaluacion" class="content-pane">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-[1.95rem] font-extrabold text-green-800 leading-tight mb-[10px]">Autoevaluación</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">Responde las siguientes preguntas tipo Saber Pro. Selecciona la opción correcta y avanza entre las preguntas.</p>
+
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                            <div class="slide-container">
+                                <!-- Slide 1: Pregunta 1 -->
+                                <div class="slide active" id="quiz-slide-1">
+                                    <div class="quiz-question">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Pregunta 1 de 5</span>
+                                            <span class="text-sm text-gray-600">Fundamentos del currículo</span>
+                                        </div>
+                                        <p class="font-semibold text-slate-800 mb-4 text-lg">¿Cuál de los siguientes autores es considerado el padre del enfoque técnico del currículo?</p>
+                                        <div class="space-y-3 text-slate-700">
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q1" value="wrong" class="mr-3">Jerome Bruner
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q1" value="correct" class="mr-3">Franklin Bobbitt
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q1" value="wrong" class="mr-3">Michael Apple
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q1" value="wrong" class="mr-3">Joseph Schwab
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Pregunta 2 -->
+                                <div class="slide" id="quiz-slide-2">
+                                    <div class="quiz-question">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Pregunta 2 de 5</span>
+                                            <span class="text-sm text-gray-600">Conceptos curriculares</span>
+                                        </div>
+                                        <p class="font-semibold text-slate-800 mb-4 text-lg">¿Qué concepto introdujo Jerome Bruner que permite revisitar contenidos científicos con progresiva complejidad?</p>
+                                        <div class="space-y-3 text-slate-700">
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q2" value="wrong" class="mr-3">Currículo oculto
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q2" value="correct" class="mr-3">Espiral curricular
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q2" value="wrong" class="mr-3">Deliberación práctica
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q2" value="wrong" class="mr-3">Selección cultural
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3: Pregunta 3 -->
+                                <div class="slide" id="quiz-slide-3">
+                                    <div class="quiz-question">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Pregunta 3 de 5</span>
+                                            <span class="text-sm text-gray-600">Perspectiva crítica</span>
+                                        </div>
+                                        <p class="font-semibold text-slate-800 mb-4 text-lg">Según Michael Apple, el currículo es una:</p>
+                                        <div class="space-y-3 text-slate-700">
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q3" value="wrong" class="mr-3">Construcción neutral del conocimiento
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q3" value="correct" class="mr-3">Selección cultural cargada de poder
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q3" value="wrong" class="mr-3">Plan de instrucción técnico
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q3" value="wrong" class="mr-3">Espacio de deliberación práctica
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4: Pregunta 4 -->
+                                <div class="slide" id="quiz-slide-4">
+                                    <div class="quiz-question">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Pregunta 4 de 5</span>
+                                            <span class="text-sm text-gray-600">Enfoque práctico</span>
+                                        </div>
+                                        <p class="font-semibold text-slate-800 mb-4 text-lg">¿Qué autor propone las ciencias como una forma de "deliberación" y no solo como un "producto" terminado?</p>
+                                        <div class="space-y-3 text-slate-700">
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q4" value="correct" class="mr-3">Joseph Schwab
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q4" value="wrong" class="mr-3">Ralph Tyler
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q4" value="wrong" class="mr-3">Paulo Freire
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q4" value="wrong" class="mr-3">John Dewey
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 5: Pregunta 5 -->
+                                <div class="slide" id="quiz-slide-5">
+                                    <div class="quiz-question">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Pregunta 5 de 5</span>
+                                            <span class="text-sm text-gray-600">Dimensiones curriculares</span>
+                                        </div>
+                                        <p class="font-semibold text-slate-800 mb-4 text-lg">¿Cuál de las siguientes dimensiones del currículo se encarga de analizar la naturaleza del conocimiento científico?</p>
+                                        <div class="space-y-3 text-slate-700">
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q5" value="wrong" class="mr-3">Dimensión Política
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q5" value="correct" class="mr-3">Dimensión Epistemológica
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q5" value="wrong" class="mr-3">Dimensión Psicológica
+                                            </label>
+                                            <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 hover:bg-green-50 hover:border-green-300 transition-colors cursor-pointer">
+                                                <input type="radio" name="q5" value="wrong" class="mr-3">Dimensión Social
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 6: Resultados -->
+                                <div class="slide" id="quiz-slide-6">
+                                    <div class="text-center py-8">
+                                        <div class="mb-6">
+                                            <i class="fas fa-graduation-cap text-6xl text-green-600 mb-4"></i>
+                                            <h3 class="text-2xl font-bold text-green-800 mb-2">¡Evaluación Completada!</h3>
+                                            <p class="text-slate-600 mb-4">Revisa tus resultados a continuación</p>
+                                        </div>
+                                        <div id="quiz-final-result" class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-green-200">
+                                            <!-- Resultados se insertarán aquí -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navegación de slides -->
+                            <div class="slide-nav">
+                                <button class="slide-dot active" onclick="showQuizSlide(1)" title="Pregunta 1"></button>
+                                <button class="slide-dot" onclick="showQuizSlide(2)" title="Pregunta 2"></button>
+                                <button class="slide-dot" onclick="showQuizSlide(3)" title="Pregunta 3"></button>
+                                <button class="slide-dot" onclick="showQuizSlide(4)" title="Pregunta 4"></button>
+                                <button class="slide-dot" onclick="showQuizSlide(5)" title="Pregunta 5"></button>
+                                <button class="slide-dot" onclick="showQuizSlide(6)" title="Resultados"></button>
+                            </div>
+
+                            <div class="flex justify-between items-center mt-6">
+                                <button id="quiz-prev-slide" onclick="changeQuizSlide(-1)" class="bg-gray-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                                    <i class="fas fa-arrow-left mr-2"></i>Anterior
+                                </button>
+                                <span id="quiz-slide-indicator" class="text-sm text-gray-600 font-medium">1 de 6</span>
+                                <button id="quiz-next-slide" onclick="changeQuizSlide(1)" class="bg-green-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                                    Siguiente<i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+
+                            <div class="mt-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                                <button id="submit-quiz-btn" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Verificar Respuestas</button>
+                                <button id="reset-quiz-btn" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Reiniciar Evaluación</button>
+                                <p id="quiz-result" class="text-sm font-medium"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="evaluacion">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Recursos -->
+                    <div id="recursos" class="content-pane">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-[1.95rem] font-extrabold text-green-800 leading-tight mb-[10px]">Lecturas y materiales para profundizar</h2>
+                        <p class="text-slate-700 leading-relaxed mb-6">Estos recursos amplían el estudio sobre tipos de conocimiento, teorías implícitas, dificultades de aprendizaje y enseñanza de las ciencias.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Crítica curricular</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">Apple, M. (1979). <span class="not-italic">Ideology and Curriculum</span></h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Referencia central de la pedagogía crítica.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="https://www.academia.edu/33210837/Apple_Michael_W_Ideologia_Y_Curriculo" target="_blank" rel="noopener noreferrer">Consultar recurso</a>
+                            </div>
+
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Enfoque técnico</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">Bobbitt, F. (1918). <span class="not-italic">The Curriculum</span></h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Texto clave del enfoque técnico del currículo.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="https://archive.org/details/curriculum00bobbrich/page/n3/mode/2up" target="_blank" rel="noopener noreferrer">Consultar recurso</a>
+                            </div>
+
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Espiral curricular</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">Bruner, J. (1960). <span class="not-italic">The Process of Education</span></h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Base del concepto de espiral curricular.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="https://www.scribd.com/document/359544036/BRUNER-Jerome-El-Proceso-de-La-Educacion" target="_blank" rel="noopener noreferrer">Consultar recurso</a>
+                            </div>
+
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Currículo práctico</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">Schwab, J. (1978). <span class="not-italic">Science, Curriculum and Liberal Education</span></h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Fundamental para el enfoque práctico del currículo.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="https://archive.org/details/sciencecurriculu0000schw" target="_blank" rel="noopener noreferrer">Consultar recurso</a>
+                            </div>
+
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Objetivos curriculares</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">Tyler, R. (1949). <span class="not-italic">Basic Principles of Curriculum and Instruction</span></h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Clásico del currículo por objetivos.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="https://archive.org/details/basicprinciple00tyle" target="_blank" rel="noopener noreferrer">Consultar recurso</a>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="recursos">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Bibliografía -->
+                    <div id="bibliografia" class="content-pane">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-[1.95rem] font-extrabold text-green-800 leading-tight mb-[10px]">Referencias orientadoras de la unidad</h2>
+                        <div class="mt-6 space-y-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Apple, M. (1979). <em>Ideology and Curriculum</em>. Routledge & Kegan Paul.</span>
+                                <p class="text-slate-500 text-sm mt-2">Referencia central de la pedagogía crítica.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Bobbitt, F. (1918). <em>The Curriculum</em>. Houghton Mifflin.</span>
+                                <p class="text-slate-500 text-sm mt-2">Texto clave del enfoque técnico del currículo.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Bruner, J. (1960). <em>The Process of Education</em>. Harvard University Press.</span>
+                                <p class="text-slate-500 text-sm mt-2">Base del concepto de espiral curricular.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Schwab, J. (1978). <em>Science, Curriculum and Liberal Education</em>. University of Chicago Press.</span>
+                                <p class="text-slate-500 text-sm mt-2">Fundamental para el enfoque práctico del currículo.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                                <span class="block text-slate-700">Tyler, R. (1949). <em>Basic Principles of Curriculum and Instruction</em>. University of Chicago Press.</span>
+                                <p class="text-slate-500 text-sm mt-2">Clásico del currículo por objetivos.</p>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="bibliografia">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+                </div>
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const sections = ['introduccion', 'objetivos', 'contenido', 'actividad', 'evaluacion', 'recursos', 'bibliografia'];
+        let currentSectionIndex = 0;
+        let currentSlide = 1;
+        const totalSlides = 4;
+        let currentQuizSlide = 1;
+        const totalQuizSlides = 6;
+
+        function showSection(sectionId) {
+            const contentPanes = document.querySelectorAll('.content-pane');
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const mobileNav = document.getElementById('mobile-nav');
+            
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const targetPane = document.getElementById(sectionId);
+            if (targetPane) targetPane.classList.add('active');
+            
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-target') === sectionId) link.classList.add('active');
+            });
+            
+            if (mobileNav) mobileNav.value = sectionId;
+            currentSectionIndex = sections.indexOf(sectionId);
+            updateNavigationButtons();
+        }
+
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prev-section');
+            const nextBtn = document.getElementById('next-section');
+            const sectionIndicator = document.getElementById('section-indicator');
+            
+            if (prevBtn) prevBtn.disabled = currentSectionIndex === 0;
+            if (nextBtn) nextBtn.disabled = currentSectionIndex === sections.length - 1;
+            if (sectionIndicator) sectionIndicator.textContent = `Sección ${currentSectionIndex + 1} de ${sections.length}`;
+        }
+
+        function showSlide(slideNumber) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slide-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            const targetSlide = document.getElementById(`slide-${slideNumber}`);
+            if (targetSlide) targetSlide.classList.add('active');
+            
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === slideNumber - 1) dot.classList.add('active');
+            });
+            
+            currentSlide = slideNumber;
+            updateSlideButtons();
+            actualizarProgresoPrincipal();
+        }
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 1 && newSlide <= totalSlides) showSlide(newSlide);
+        }
+
+        function showQuizSlide(slideNumber) {
+            const slides = document.querySelectorAll('#evaluacion .slide');
+            const dots = document.querySelectorAll('#evaluacion .slide-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            const targetSlide = document.getElementById(`quiz-slide-${slideNumber}`);
+            if (targetSlide) targetSlide.classList.add('active');
+            
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === slideNumber - 1) dot.classList.add('active');
+            });
+            
+            currentQuizSlide = slideNumber;
+            updateQuizSlideButtons();
+        }
+
+        function changeQuizSlide(direction) {
+            const newSlide = currentQuizSlide + direction;
+            if (newSlide >= 1 && newSlide <= totalQuizSlides) showQuizSlide(newSlide);
+        }
+
+        function updateQuizSlideButtons() {
+            const prevBtn = document.getElementById('quiz-prev-slide');
+            const nextBtn = document.getElementById('quiz-next-slide');
+            const slideIndicator = document.getElementById('quiz-slide-indicator');
+            
+            if (prevBtn) {
+                prevBtn.disabled = currentQuizSlide === 1;
+                if (currentQuizSlide === 1) {
+                    prevBtn.className = 'bg-gray-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
+                } else {
+                    prevBtn.className = 'bg-green-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition-colors';
+                }
+            }
+            
+            if (nextBtn) {
+                nextBtn.disabled = currentQuizSlide === totalQuizSlides;
+                if (currentQuizSlide === totalQuizSlides) {
+                    nextBtn.className = 'bg-gray-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
+                } else {
+                    nextBtn.className = 'bg-green-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition-colors';
+                }
+            }
+            
+            if (slideIndicator) slideIndicator.textContent = `${currentQuizSlide} de ${totalQuizSlides}`;
+        }
+
+        function updateSlideButtons() {
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const slideIndicator = document.getElementById('slide-indicator');
+            
+            if (prevBtn) {
+                prevBtn.disabled = currentSlide === 1;
+                // Cambiar estilo del botón anterior
+                if (currentSlide === 1) {
+                    prevBtn.className = 'bg-gray-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
+                } else {
+                    prevBtn.className = 'bg-green-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition-colors';
+                }
+            }
+            
+            if (nextBtn) {
+                nextBtn.disabled = currentSlide === totalSlides;
+                // Cambiar estilo del botón siguiente
+                if (currentSlide === totalSlides) {
+                    nextBtn.className = 'bg-gray-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed';
+                } else {
+                    nextBtn.className = 'bg-green-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-700 transition-colors';
+                }
+            }
+            
+            if (slideIndicator) slideIndicator.textContent = `${currentSlide} de ${totalSlides}`;
+        }
+
+        function irAPaso(paso) {
+            showSlide(paso);
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function actualizarContador(elemento, contadorId) {
+            const contador = document.getElementById(contadorId);
+            const longitud = elemento.value.length;
+            const maximo = elemento.maxLength;
+            
+            contador.textContent = longitud;
+            
+            if (longitud >= maximo) {
+                contador.classList.add('text-red-600', 'font-bold');
+                contador.classList.remove('text-slate-500');
+                mostrarNotificación(`Límite alcanzado: ${maximo} caracteres`, 'warning');
+            } else if (longitud > maximo * 0.9) {
+                contador.classList.add('text-red-600');
+                contador.classList.remove('text-slate-500', 'font-bold');
+            } else {
+                contador.classList.add('text-slate-500');
+                contador.classList.remove('text-red-600', 'font-bold');
+            }
+            
+            actualizarProgresoPrincipal();
+        }
+
+        function actualizarProgresoPrincipal() {
+            const progreso = calcularProgresoPrincipal();
+            actualizarBarraProgresoPrincipal(progreso);
+        }
+
+        function calcularProgresoPrincipal() {
+            const contextoDesc = document.getElementById('contexto-educativo-desc')?.value || '';
+            const problematica = document.getElementById('problematica-curricular')?.value || '';
+            const justificacion = document.getElementById('justificacion-teorica')?.value || '';
+            const pregunta = document.getElementById('pregunta-investigacion')?.value || '';
+            const planRecoleccion = document.getElementById('plan-recoleccion')?.value || '';
+            const estrategiasDivulgacion = document.getElementById('estrategias-divulgacion')?.value || '';
+            const tipoEducacion = document.getElementById('tipo-educacion')?.value || '';
+            const nivelEducativo = document.getElementById('nivel-educativo')?.value || '';
+            const enfoque = document.querySelector('input[name="enfoque-metodologico"]:checked')?.value || '';
+            const instrumentos = document.querySelectorAll('input[name="instrumentos-recoleccion"]:checked');
+            const productos = document.querySelectorAll('input[name="productos-academicos"]:checked');
+
+            let progreso = 0;
+            if (tipoEducacion) progreso += 5;
+            if (nivelEducativo) progreso += 5;
+            if (contextoDesc) progreso += 12;
+            if (problematica) progreso += 12;
+            if (justificacion) progreso += 12;
+            if (pregunta) progreso += 8;
+            if (enfoque) progreso += 8;
+            if (planRecoleccion) progreso += 10;
+            if (estrategiasDivulgacion) progreso += 10;
+            if (instrumentos.length > 0) progreso += 8;
+            if (productos.length > 0) progreso += 8;
+            if (currentSlide > 1) progreso += 4;
+
+            return Math.min(progreso, 100);
+        }
+
+        function actualizarBarraProgresoPrincipal(progreso) {
+            const progressFill = document.getElementById('project-progress-fill');
+            const progressPercentage = document.getElementById('project-progress-percentage');
+            
+            if (progressFill) progressFill.style.width = `${progreso}%`;
+            if (progressPercentage) progressPercentage.textContent = `${progreso}%`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav) {
+                mobileNav.addEventListener('change', function() {
+                    showSection(this.value);
+                });
+            }
+
+            const mapaLinks = document.querySelectorAll('a[href^="#enfoque-"]');
+            mapaLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (!href) return;
+                    const target = document.querySelector(href);
+                    if (!target) return;
+
+                    e.preventDefault();
+                    if (target.tagName && target.tagName.toLowerCase() === 'details') {
+                        const group = target.getAttribute('data-accordion');
+                        if (group) {
+                            document.querySelectorAll(`details[data-accordion="${group}"]`).forEach(other => {
+                                if (other !== target) other.open = false;
+                            });
+                        }
+                        target.open = true;
+                    }
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            const accordionDetails = document.querySelectorAll('details[data-accordion]');
+            accordionDetails.forEach(detail => {
+                detail.addEventListener('toggle', function() {
+                    if (!this.open) return;
+                    const group = this.getAttribute('data-accordion');
+                    if (!group) return;
+                    document.querySelectorAll(`details[data-accordion="${group}"]`).forEach(other => {
+                        if (other !== this) other.open = false;
+                    });
+                });
+            });
+
+            const prevBtn = document.getElementById('prev-section');
+            const nextBtn = document.getElementById('next-section');
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    if (currentSectionIndex > 0) {
+                        showSection(sections[currentSectionIndex - 1]);
+                    }
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    if (currentSectionIndex < sections.length - 1) {
+                        showSection(sections[currentSectionIndex + 1]);
+                    }
+                });
+            }
+
+            showSection('introduccion');
+            updateSlideButtons();
+
+            const methodOptions = document.querySelectorAll('.method-option');
+            methodOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    methodOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    actualizarProgresoPrincipal();
+                });
+            });
+
+            const instrumentOptions = document.querySelectorAll('.instrument-option');
+            instrumentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    if (this.querySelector('input[type="checkbox"]').checked) {
+                        this.classList.add('selected');
+                    } else {
+                        this.classList.remove('selected');
+                    }
+                    actualizarProgresoPrincipal();
+                });
+            });
+
+            const productOptions = document.querySelectorAll('.product-option');
+            productOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    if (this.querySelector('input[type="checkbox"]').checked) {
+                        this.classList.add('selected');
+                    } else {
+                        this.classList.remove('selected');
+                    }
+                    actualizarProgresoPrincipal();
+                });
+            });
+
+            const textareas = document.querySelectorAll('textarea[maxlength]');
+            textareas.forEach(function(elemento) {
+                const evento = new Event('input');
+                elemento.dispatchEvent(evento);
+            });
+            
+            actualizarProgresoPrincipal();
+            
+            const submitQuizBtn = document.getElementById('submit-quiz-btn');
+            const resetQuizBtn = document.getElementById('reset-quiz-btn');
+            const quizResult = document.getElementById('quiz-result');
+            const quizQuestions = document.querySelectorAll('#evaluacion .quiz-question');
+
+            if (submitQuizBtn) {
+                submitQuizBtn.addEventListener('click', function() {
+                    let score = 0;
+                    let allAnswered = true;
+                    
+                    // Verificar que todas las preguntas estén respondidas
+                    for (let i = 1; i <= 5; i++) {
+                        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                        if (!selected) {
+                            allAnswered = false;
+                            break;
+                        }
+                    }
+                    
+                    if (!allAnswered) {
+                        mostrarNotificación('Debes responder todas las preguntas antes de verificar', 'warning');
+                        return;
+                    }
+                    
+                    quizQuestions.forEach(question => {
+                        const selected = question.querySelector('input[type="radio"]:checked');
+                        question.querySelectorAll('label').forEach(label => {
+                            label.classList.remove('bg-green-100', 'bg-red-100', 'border-green-500', 'border-red-500', 'font-bold');
+                            label.classList.add('bg-gray-50', 'border-gray-200');
+                        });
+
+                        if (selected) {
+                            if (selected.value === 'correct') {
+                                score++;
+                                selected.parentElement.classList.remove('bg-gray-50', 'border-gray-200');
+                                selected.parentElement.classList.add('bg-green-100', 'border-green-500', 'font-bold');
+                            } else {
+                                selected.parentElement.classList.remove('bg-gray-50', 'border-gray-200');
+                                selected.parentElement.classList.add('bg-red-100', 'border-red-500');
+                                const correct = question.querySelector('input[value="correct"]');
+                                if (correct) {
+                                    correct.parentElement.classList.remove('bg-gray-50', 'border-gray-200');
+                                    correct.parentElement.classList.add('bg-green-100', 'border-green-500', 'font-bold');
+                                }
+                            }
+                        }
+                    });
+
+                    // Mostrar resultados en el slide 6
+                    const finalResult = document.getElementById('quiz-final-result');
+                    const percentage = Math.round((score / 5) * 100);
+                    
+                    let resultHTML = '';
+                    if (score === 5) {
+                        resultHTML = `
+                            <div class="text-center">
+                                <i class="fas fa-trophy text-5xl text-yellow-500 mb-4"></i>
+                                <h4 class="text-2xl font-bold text-green-800 mb-2">¡Excelente!</h4>
+                                <p class="text-lg text-green-700 mb-4">Obtuviste ${score} de 5 respuestas correctas (${percentage}%)</p>
+                                <div class="bg-green-100 p-4 rounded-lg">
+                                    <p class="text-green-800 font-semibold">¡Dominio completo de los fundamentos curriculares!</p>
+                                </div>
+                            </div>
+                        `;
+                    } else if (score >= 3) {
+                        resultHTML = `
+                            <div class="text-center">
+                                <i class="fas fa-thumbs-up text-5xl text-blue-500 mb-4"></i>
+                                <h4 class="text-2xl font-bold text-blue-800 mb-2">¡Muy bien!</h4>
+                                <p class="text-lg text-blue-700 mb-4">Respondiste correctamente ${score} de 5 preguntas (${percentage}%)</p>
+                                <div class="bg-blue-100 p-4 rounded-lg">
+                                    <p class="text-blue-800 font-semibold">Buen conocimiento de los conceptos curriculares</p>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        resultHTML = `
+                            <div class="text-center">
+                                <i class="fas fa-book text-5xl text-orange-500 mb-4"></i>
+                                <h4 class="text-2xl font-bold text-orange-800 mb-2">Necesitas repasar</h4>
+                                <p class="text-lg text-orange-700 mb-4">Respondiste correctamente ${score} de 5 preguntas (${percentage}%)</p>
+                                <div class="bg-orange-100 p-4 rounded-lg">
+                                    <p class="text-orange-800 font-semibold">Te recomendamos revisar nuevamente los materiales</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    finalResult.innerHTML = resultHTML;
+                    showQuizSlide(6); // Mostrar slide de resultados
+                    
+                    submitQuizBtn.disabled = true;
+                    submitQuizBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                });
+            }
+            
+            if (resetQuizBtn) {
+                resetQuizBtn.addEventListener('click', function() {
+                    // Limpiar todas las respuestas
+                    document.querySelectorAll('#evaluacion input[type="radio"]').forEach(radio => radio.checked = false);
+                    
+                    // Limpiar estilos de las preguntas
+                    document.querySelectorAll('#evaluacion .quiz-question label').forEach(label => {
+                        label.classList.remove('bg-green-100', 'bg-red-100', 'border-green-500', 'border-red-500', 'font-bold');
+                        label.classList.add('bg-gray-50', 'border-gray-200');
+                    });
+                    
+                    // Limpiar resultados
+                    quizResult.textContent = '';
+                    quizResult.className = 'text-sm font-medium';
+                    document.getElementById('quiz-final-result').innerHTML = '';
+                    
+                    // Rehabilitar botón
+                    submitQuizBtn.disabled = false;
+                    submitQuizBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    
+                    // Volver al primer slide
+                    showQuizSlide(1);
+                });
+            }
+            
+            // Inicializar botones de navegación del quiz
+            updateQuizSlideButtons();
+        });
+
+        function guardarTodo() {
+            const tipoEducacion = document.getElementById('tipo-educacion')?.value || '';
+            const nivelEducativo = document.getElementById('nivel-educativo')?.value || '';
+            const contextoDesc = document.getElementById('contexto-educativo-desc')?.value || '';
+            const problematica = document.getElementById('problematica-curricular')?.value || '';
+            const justificacion = document.getElementById('justificacion-teorica')?.value || '';
+            const pregunta = document.getElementById('pregunta-investigacion')?.value || '';
+            const planRecoleccion = document.getElementById('plan-recoleccion')?.value || '';
+            const estrategiasDivulgacion = document.getElementById('estrategias-divulgacion')?.value || '';
+            const enfoque = document.querySelector('input[name="enfoque-metodologico"]:checked')?.value || '';
+            const instrumentos = Array.from(document.querySelectorAll('input[name="instrumentos-recoleccion"]:checked')).map(cb => cb.value);
+            const productos = Array.from(document.querySelectorAll('input[name="productos-academicos"]:checked')).map(cb => cb.value);
+
+            const proyectoData = {
+                progresoPrincipal: calcularProgresoPrincipal(),
+                slideActual: currentSlide,
+                tipoEducacion: tipoEducacion,
+                nivelEducativo: nivelEducativo,
+                contextoDescripcion: contextoDesc,
+                problematica: problematica,
+                justificacionTeorica: justificacion,
+                preguntaInvestigacion: pregunta,
+                planRecoleccion: planRecoleccion,
+                estrategiasDivulgacion: estrategiasDivulgacion,
+                enfoqueMetodologico: enfoque,
+                instrumentosRecoleccion: instrumentos,
+                productosAcademicos: productos,
+                fecha: new Date().toISOString()
+            };
+
+            localStorage.setItem('proyectoCompleto', JSON.stringify(proyectoData));
+            actualizarProgresoPrincipal();
+            mostrarNotificación('Proyecto completo guardado exitosamente', 'success');
+        }
+
+        function generarReporte() {
+            const proyectoData = JSON.parse(localStorage.getItem('proyectoCompleto') || '{}');
+            
+            if (!proyectoData.contextoDescripcion) {
+                mostrarNotificación('Debes completar al menos el diagnóstico institucional', 'warning');
+                return;
+            }
+
+            const reporteHTML = `
+                <html>
+                <head>
+                    <title>Reporte Completo del Proyecto</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+                        .header { text-align: center; border-bottom: 2px solid #16a34a; padding-bottom: 20px; margin-bottom: 30px; }
+                        .section { margin-bottom: 30px; }
+                        h2 { color: #16a34a; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+                        h3 { color: #333; }
+                        .metadata { background: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 30px; }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <h1>📊 Reporte Completo del Proyecto</h1>
+                        <div class="header-info">
+                            <p><strong>Nivel:</strong> Maestría en Didáctica de las Ciencias</p>
+                            <p><strong>Fecha:</strong> ${new Date().toLocaleDateString()}</p>
+                            <p><strong>Progreso general:</strong> ${proyectoData.progresoPrincipal || 0}%</p>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>📋 TU PROYECTO DE INVESTIGACIÓN</h2>
+                        <h3>Seguimiento del Proyecto</h3>
+                        <p>Progreso completado: ${proyectoData.progresoPrincipal || 0}%</p>
+                        <p>Slide actual: ${proyectoData.slideActual || 1}</p>
+                    </div>
+
+                    <div class="section">
+                        <h2>🔍 WORKSPACE DE INVESTIGACIÓN</h2>
+                        <h3>Análisis Contextual Avanzado</h3>
+                        <p><strong>Tipo de educación:</strong> ${proyectoData.tipoEducacion || 'No especificado'}</p>
+                        <p><strong>Nivel educativo:</strong> ${proyectoData.nivelEducativo || 'No especificado'}</p>
+                        <p><strong>Contexto educativo:</strong></p>
+                        <p>${proyectoData.contextoDescripcion || 'No especificado'}</p>
+                        
+                        <h3>Problemática Curricular</h3>
+                        <p>${proyectoData.problematica || 'No especificada'}</p>
+                        
+                        <h3>Justificación Teórica</h3>
+                        <p>${proyectoData.justificacionTeorica || 'No especificada'}</p>
+
+                        <h3>Diseño Metodológico</h3>
+                        <p><strong>Pregunta de investigación:</strong></p>
+                        <p>${proyectoData.preguntaInvestigacion || 'No especificada'}</p>
+                        <p><strong>Enfoque metodológico:</strong> ${proyectoData.enfoqueMetodologico ? proyectoData.enfoqueMetodologico.charAt(0).toUpperCase() + proyectoData.enfoqueMetodologico.slice(1) : 'No especificado'}</p>
+
+                        <h3>Implementación</h3>
+                        <p><strong>Plan de recolección:</strong></p>
+                        <p>${proyectoData.planRecoleccion || 'No especificado'}</p>
+                        <p><strong>Instrumentos seleccionados:</strong> ${proyectoData.instrumentosRecoleccion ? proyectoData.instrumentosRecoleccion.join(', ') : 'No especificados'}</p>
+
+                        <h3>Diseminación</h3>
+                        <p><strong>Estrategias de divulgación:</strong></p>
+                        <p>${proyectoData.estrategiasDivulgacion || 'No especificado'}</p>
+                        <p><strong>Productos académicos:</strong> ${proyectoData.productosAcademicos ? proyectoData.productosAcademicos.join(', ') : 'No especificados'}</p>
+                    </div>
+
+                    <div class="metadata">
+                        <p>Generado con Laboratorio de Investigación Curricular - OVA Fundamentos Teóricos-Conceptuales del Currículo</p>
+                        <p>Universidad de Córdoba - Maestría en Didáctica de las Ciencias</p>
+                        <p>Página 1 de 1</p>
+                    </div>
+                </body>
+                </html>
+            `;
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(reporteHTML);
+            printWindow.document.close();
+            printWindow.print();
+            
+            mostrarNotificación('Reporte generado exitosamente', 'success');
+        }
+
+        function exportarProyecto(formato) {
+            const proyectoData = JSON.parse(localStorage.getItem('proyectoCompleto') || '{}');
+            
+            if (!proyectoData.contextoDescripcion) {
+                mostrarNotificación('Debes guardar el proyecto primero', 'warning');
+                return;
+            }
+
+            if (formato === 'word') {
+                const wordContent = `
+                    <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Proyecto Completo de Investigación</title>
+                    </head>
+                    <body>
+                        <h1>Proyecto Completo de Investigación Curricular</h1>
+                        <h2>Tu Proyecto de Investigación</h2>
+                        <p>Progreso: ${proyectoData.progresoPrincipal || 0}%</p>
+                        <h2>Workspace de Investigación</h2>
+                        <h3>Análisis Contextual Avanzado</h3>
+                        <p><strong>Tipo de educación:</strong> ${proyectoData.tipoEducacion || 'No especificado'}</p>
+                        <p><strong>Nivel educativo:</strong> ${proyectoData.nivelEducativo || 'No especificado'}</p>
+                        <h3>Contexto educativo</h3>
+                        <p>${proyectoData.contextoDescripcion || 'No especificado'}</p>
+                        <h2>Problemática Curricular</h2>
+                        <p>${proyectoData.problematica || 'No especificada'}</p>
+                        <h2>Justificación Teórica</h2>
+                        <p>${proyectoData.justificacionTeorica || 'No especificada'}</p>
+                        <h2>Diseño Metodológico</h2>
+                        <p><strong>Pregunta de investigación:</strong> ${proyectoData.preguntaInvestigacion || 'No especificada'}</p>
+                        <p><strong>Enfoque metodológico:</strong> ${proyectoData.enfoqueMetodologico || 'No especificado'}</p>
+                        <h2>Implementación</h2>
+                        <p><strong>Plan de recolección:</strong> ${proyectoData.planRecoleccion || 'No especificado'}</p>
+                        <p><strong>Instrumentos:</strong> ${proyectoData.instrumentosRecoleccion ? proyectoData.instrumentosRecoleccion.join(', ') : 'No especificados'}</p>
+                        <h2>Diseminación</h2>
+                        <p><strong>Estrategias de divulgación:</strong> ${proyectoData.estrategiasDivulgacion || 'No especificado'}</p>
+                        <p><strong>Productos académicos:</strong> ${proyectoData.productosAcademicos ? proyectoData.productosAcademicos.join(', ') : 'No especificados'}</p>
+                    </body>
+                    </html>
+                `;
+
+                const blob = new Blob([wordContent], { type: 'application/msword' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'proyecto_completo.doc';
+                a.click();
+                
+                mostrarNotificación('Archivo Word descargado', 'success');
+            } else if (formato === 'pdf') {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                doc.setFontSize(12);
+                doc.setFont('helvetica');
+                
+                let yPosition = 20;
+                const lineHeight = 10;
+                const pageWidth = doc.internal.pageSize.width;
+                const pageHeight = doc.internal.pageSize.height;
+                const margin = 20;
+                
+                // Título
+                doc.setFontSize(20);
+                doc.setFont('helvetica', 'bold');
+                doc.text('PROYECTO COMPLETO DE INVESTIGACIÓN CURRICULAR', pageWidth / 2, yPosition, { align: 'center' });
+                yPosition += 30;
+                
+                // Información del proyecto
+                doc.setFontSize(12);
+                doc.setFont('helvetica', 'normal');
+                doc.text(`Progreso: ${proyectoData.progresoPrincipal || 0}%`, margin, yPosition);
+                yPosition += lineHeight;
+                doc.text(`Fecha: ${new Date().toLocaleDateString()}`, margin, yPosition);
+                yPosition += lineHeight;
+                doc.text(`Slide actual: ${proyectoData.slideActual || 1}`, margin, yPosition);
+                yPosition += 20;
+                
+                // Análisis Contextual
+                doc.setFont('helvetica', 'bold');
+                doc.text('ANÁLISIS CONTEXTUAL AVANZADO', margin, yPosition);
+                yPosition += lineHeight;
+                doc.setFont('helvetica', 'normal');
+                doc.text(`Tipo de educación: ${proyectoData.tipoEducacion || 'No especificado'}`, margin, yPosition);
+                yPosition += lineHeight;
+                doc.text(`Nivel educativo: ${proyectoData.nivelEducativo || 'No especificado'}`, margin, yPosition);
+                yPosition += lineHeight;
+                doc.text('Contexto educativo:', margin, yPosition);
+                yPosition += lineHeight;
+                
+                // Dividir el texto largo en líneas
+                const contextoLines = doc.splitTextToSize(proyectoData.contextoDescripcion || 'No especificado', pageWidth - 2 * margin, 12);
+                contextoLines.forEach(line => {
+                    doc.text(line, margin, yPosition);
+                    yPosition += lineHeight;
+                });
+                yPosition += 10;
+                
+                // Problemática
+                doc.setFont('helvetica', 'bold');
+                doc.text('PROBLEMÁTICA CURRICULAR', margin, yPosition);
+                yPosition += lineHeight;
+                doc.setFont('helvetica', 'normal');
+                doc.text(proyectoData.problematica || 'No especificada', margin, yPosition);
+                yPosition += 15;
+                
+                // Justificación
+                doc.setFont('helvetica', 'bold');
+                doc.text('JUSTIFICACIÓN TEÓRICA', margin, yPosition);
+                yPosition += lineHeight;
+                doc.setFont('helvetica', 'normal');
+                doc.text(proyectoData.justificacionTeorica || 'No especificada', margin, yPosition);
+                yPosition += 15;
+                
+                // Diseño Metodológico
+                doc.setFont('helvetica', 'bold');
+                doc.text('DISEÑO METODOLÓGICO', margin, yPosition);
+                yPosition += lineHeight;
+                doc.setFont('helvetica', 'normal');
+                doc.text(`Pregunta de investigación: ${proyectoData.preguntaInvestigacion || 'No especificada'}`, margin, yPosition);
+                yPosition += lineHeight;
+                doc.text(`Enfoque metodológico: ${proyectoData.enfoqueMetodologico || 'No especificado'}`, margin, yPosition);
+                yPosition += 15;
+                
+                // Implementación
+                doc.setFont('helvetica', 'bold');
+                doc.text('IMPLEMENTACIÓN', margin, yPosition);
+                yPosition += lineHeight;
+                doc.setFont('helvetica', 'normal');
+                doc.text(`Plan de recolección: ${proyectoData.planRecoleccion || 'No especificado'}`, margin, yPosition);
+                yPosition += lineHeight;
+                doc.text(`Instrumentos: ${proyectoData.instrumentosRecoleccion ? proyectoData.instrumentosRecoleccion.join(', ') : 'No especificados'}`, margin, yPosition);
+                yPosition += 15;
+                
+                // Diseminación
+                doc.setFont('helvetica', 'bold');
+                doc.text('DISEMINACIÓN', margin, yPosition);
+                yPosition += lineHeight;
+                doc.setFont('helvetica', 'normal');
+                doc.text(`Estrategias de divulgación: ${proyectoData.estrategiasDivulgacion || 'No especificado'}`, margin, yPosition);
+                yPosition += lineHeight;
+                doc.text(`Productos académicos: ${proyectoData.productosAcademicos ? proyectoData.productosAcademicos.join(', ') : 'No especificados'}`, margin, yPosition);
+                yPosition += 20;
+                
+                // Footer
+                doc.setFont('helvetica', 'italic');
+                doc.setFontSize(10);
+                doc.text('Generado con Laboratorio de Investigación Curricular', margin, pageHeight - 30);
+                doc.text('Universidad de Córdoba - Maestría en Didáctica de las Ciencias', margin, pageHeight - 20);
+                
+                doc.save('proyecto_completo.pdf');
+                mostrarNotificación('Archivo PDF descargado', 'success');
+            }
+        }
+
+        function limpiarFormularios() {
+            if (confirm('¿Está seguro de que desea limpiar todos los formularios? Esta acción eliminará todos los datos ingresados y no se puede deshacer.')) {
+                // Limpiar todos los campos de texto
+                document.querySelectorAll('textarea').forEach(textarea => {
+                    textarea.value = '';
+                    // Disparar evento input para actualizar contadores
+                    textarea.dispatchEvent(new Event('input'));
+                });
+                
+                // Limpiar todos los selects
+                document.querySelectorAll('select').forEach(select => {
+                    select.value = '';
+                });
+                
+                // Limpiar todos los checkboxes
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                
+                // Limpiar todos los radio buttons
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.checked = false;
+                });
+                
+                // Remover clases seleccionadas
+                document.querySelectorAll('.product-option, .instrument-option, .method-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                // Resetear al primer slide
+                showSlide(1);
+                
+                // Limpiar localStorage
+                localStorage.removeItem('proyectoCompleto');
+                
+                // Resetear barra de progreso
+                actualizarBarraProgresoPrincipal(0);
+                
+                mostrarNotificación('Todos los formularios han sido limpiados exitosamente', 'success');
+            }
+        }
+
+        function mostrarNotificación(mensaje, tipo) {
+            const notificacion = document.createElement('div');
+            notificacion.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full ${tipo === 'success' ? 'bg-green-500 text-white' : tipo === 'warning' ? 'bg-yellow-500 text-white' : 'bg-red-500 text-white'}`;
+            notificacion.style.cssText = 'max-width: 300px;';
+            
+            const iconos = { success: '✅', warning: '⚠️', error: '❌', info: 'ℹ️' };
+            
+            notificacion.innerHTML = `<span class="text-lg">${iconos[tipo]}</span><span>${mensaje}</span>`;
+            
+            document.body.appendChild(notificacion);
+            
+            setTimeout(() => { notificacion.classList.remove('translate-x-full'); }, 100);
+            
+            setTimeout(() => {
+                notificacion.classList.add('translate-x-full');
+                setTimeout(() => { document.body.removeChild(notificacion); }, 300);
+            }, 3000);
+        }
+
+        setInterval(() => {
+            const proyectoData = JSON.parse(localStorage.getItem('proyectoCompleto') || '{}');
+            if (proyectoData.contextoDescripcion) {
+                guardarTodo();
+            }
+        }, 30000);
+
+        window.addEventListener('load', () => {
+            // Limpiar completamente el formulario al cargar
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            document.querySelectorAll('input[type="radio"]').forEach(rb => rb.checked = false);
+            document.querySelectorAll('.product-option, .instrument-option, .method-option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Resetear la barra de progreso a 0
+            actualizarBarraProgresoPrincipal(0);
+            
+            // Solo cargar datos si el usuario explícitamente lo desea
+            const proyectoGuardado = localStorage.getItem('proyectoCompleto');
+            if (proyectoGuardado && confirm('¿Desea restaurar los datos guardados del proyecto anterior?')) {
+                const proyectoData = JSON.parse(proyectoGuardado);
+                if (proyectoData.slideActual) showSlide(proyectoData.slideActual);
+                if (proyectoData.tipoEducacion) document.getElementById('tipo-educacion').value = proyectoData.tipoEducacion;
+                if (proyectoData.nivelEducativo) document.getElementById('nivel-educativo').value = proyectoData.nivelEducativo;
+                if (proyectoData.enfoqueMetodologico) {
+                    const radio = document.querySelector(`input[name="enfoque-metodologico"][value="${proyectoData.enfoqueMetodologico}"]`);
+                    if (radio) { radio.checked = true; radio.closest('.method-option').classList.add('selected'); }
+                }
+                if (proyectoData.instrumentosRecoleccion) {
+                    proyectoData.instrumentosRecoleccion.forEach(instrumento => {
+                        const checkbox = document.querySelector(`input[name="instrumentos-recoleccion"][value="${instrumento}"]`);
+                        if (checkbox) { checkbox.checked = true; checkbox.closest('.instrument-option').classList.add('selected'); }
+                    });
+                }
+                if (proyectoData.productosAcademicos) {
+                    proyectoData.productosAcademicos.forEach(producto => {
+                        const checkbox = document.querySelector(`input[name="productos-academicos"][value="${producto}"]`);
+                        if (checkbox) { checkbox.checked = true; checkbox.closest('.product-option').classList.add('selected'); }
+                    });
+                }
+                actualizarProgresoPrincipal();
+            }
+        });
+    </script>
+</body>
+</html>
