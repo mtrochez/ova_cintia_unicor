@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Referencias bibliográficas — Procesos Curriculares</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --paper: #f8fafc;
+      --emerald: #0f766e;
+      --outline: rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 18px 35px -30px rgba(15, 23, 42, 0.45);
+      --shadow-strong: 0 28px 60px -40px rgba(15, 23, 42, 0.6);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100%;
+      background:
+        radial-gradient(900px 320px at 8% -12%, rgba(14, 116, 144, 0.18), transparent 60%),
+        radial-gradient(700px 320px at 96% 6%, rgba(245, 158, 11, 0.14), transparent 55%),
+        linear-gradient(120deg, rgba(15, 118, 110, 0.08), transparent 60%),
+        repeating-linear-gradient(90deg, rgba(15, 23, 42, 0.035), rgba(15, 23, 42, 0.035) 1px, transparent 1px, transparent 140px),
+        var(--paper);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      top: -210px;
+      right: -140px;
+      background: radial-gradient(circle, rgba(94, 234, 212, 0.5), transparent 70%);
+      opacity: 0.8;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      bottom: -240px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(148, 163, 184, 0.35), transparent 70%);
+      opacity: 0.8;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-font {
+      font-family: "Playfair Display", serif;
+    }
+
+    .filter-panel {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--outline);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(8px);
+    }
+
+    #references-container {
+      grid-auto-rows: 1fr;
+      align-items: stretch;
+    }
+
+    .reference-card {
+      position: relative;
+      border: 1px solid var(--outline);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      box-shadow: var(--shadow-soft);
+      height: 100%;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.3, 0.7, 0.4, 1), box-shadow 0.35s ease, opacity 0.25s ease, filter 0.25s ease;
+    }
+
+    .card-citation {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      line-clamp: 6;
+    }
+
+    .card-actions {
+      margin-top: auto;
+    }
+
+    .reference-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(140px 140px at 90% 8%, rgba(14, 165, 233, 0.18), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .reference-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 30px 50px -40px rgba(15, 23, 42, 0.6);
+    }
+
+    .reference-card:hover::after {
+      opacity: 1;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.55s cubic-bezier(0.3, 0.7, 0.4, 1) both;
+      animation-delay: var(--delay, 0ms);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .filter-chip {
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      box-shadow: 0 10px 20px -16px rgba(15, 23, 42, 0.4);
+    }
+
+    .filter-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 26px -18px rgba(15, 23, 42, 0.5);
+    }
+
+    .filter-chip:focus-visible {
+      outline: 3px solid rgba(14, 116, 144, 0.35);
+      outline-offset: 2px;
+    }
+
+    .filter-chip.is-active {
+      background: #e0f2f1;
+      border-color: rgba(13, 148, 136, 0.4);
+      color: #0f766e;
+      box-shadow: 0 18px 30px -20px rgba(13, 148, 136, 0.5);
+    }
+
+    .type-pill {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .reference-card:hover .type-pill {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px -18px rgba(15, 23, 42, 0.4);
+    }
+
+    .reference-card img {
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 12px 22px -16px rgba(15, 23, 42, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .reference-card:hover img {
+      transform: scale(1.04);
+      box-shadow: 0 18px 30px -20px rgba(15, 23, 42, 0.55);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <header class="hero bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-600 text-white" aria-label="Presentación">
+      <div class="container mx-auto px-4 py-10">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-white/15 border border-white/30 overflow-hidden flex items-center justify-center">
+              <img src="../Tema_1/LOGO%20MAESTRIA%20(1).jpg.jpeg" alt="Logo" class="w-full h-full object-cover" onerror="if(!this.dataset.f){ this.dataset.f='1'; this.src='logo.jpg'; } else if(this.dataset.f==='1'){ this.dataset.f='2'; this.src='logo.png'; } else { this.onerror=null; }" />
+            </div>
+            <div>
+              <h1 class="title-font text-3xl md:text-4xl font-semibold">Referencias bibliográficas</h1>
+              <p class="text-white/80 mt-1">Curso: Procesos Curriculares en las Ciencias Naturales</p>
+            </div>
+          </div>
+          <div class="self-start rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-white/90"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+      <section class="filter-panel mb-8" aria-label="Filtros">
+        <h2 class="title-font text-2xl text-emerald-900 mb-3">Filtrar por tipo de recurso</h2>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por tipo de recurso">
+          <button class="filter-chip is-active px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="" aria-pressed="true">Todos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="articulo" aria-pressed="false">Artículos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="documento" aria-pressed="false">Documentos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="libro" aria-pressed="false">Libros</button>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="references-container" aria-label="Lista de referencias"></section>
+    </main>
+  </div>
+
+  <script>
+    const rawItems = [
+      { key: 'apple_1979_ideology', type: 'libro', themes: [1,2], citationHtml: 'Apple, M. (1979). <em>Ideology and Curriculum</em>. Routledge &amp; Kegan Paul.', note: 'Referencia central de la pedagogía crítica.', url: 'https://archive.org/details/ideologycurricul00mich' },
+      { key: 'bobbitt_1918_curriculum', type: 'libro', themes: [1], citationHtml: 'Bobbitt, F. (1918). <em>The Curriculum</em>. Houghton Mifflin.', note: 'Texto clave del enfoque técnico del currículo.', url: 'https://archive.org/details/curriculum00bobbrich/page/n3/mode/2up' },
+      { key: 'bruner_1960_process', type: 'libro', themes: [1,3], citationHtml: 'Bruner, J. (1960). <em>The Process of Education</em>. Harvard University Press.', note: 'Base del concepto de espiral curricular.', url: 'https://archive.org/details/processofeducati0000brun' },
+      { key: 'schwab_1978_science', type: 'libro', themes: [1], citationHtml: 'Schwab, J. (1978). <em>Science, Curriculum and Liberal Education</em>. University of Chicago Press.', note: 'Fundamental para el enfoque práctico del currículo.', url: 'https://archive.org/details/sciencecurriculu0000schw' },
+      { key: 'tyler_1949_basic', type: 'libro', themes: [1,2], citationHtml: 'Tyler, R. (1949). <em>Basic Principles of Curriculum and Instruction</em>. University of Chicago Press.', note: 'Clásico del currículo por objetivos.', url: 'https://archive.org/details/basicprinciple00tyle' },
+
+      { key: 'coll_2006_basico', type: 'articulo', themes: [2], citationHtml: 'Coll, C. (2006). <em>Lo básico en la educación básica</em>. Trasatlántica de la Educación.', note: 'Aportes a la formación por competencias y aprendizajes aplicables.', url: 'https://www.redalyc.org/pdf/155/15508110.pdf' },
+      { key: 'diaz_barriga_2003_tensiones', type: 'articulo', themes: [2], citationHtml: 'Díaz Barriga, Á. (2003). <em>Currículum. Tensiones conceptuales y prácticas</em>. Revista REDIE.', note: 'Análisis crítico sobre tensiones del diseño curricular.', url: 'https://www.redalyc.org/articulo.oa?id=15550205' },
+      { key: 'gimeno_1988_aproximacion', type: 'libro', themes: [2,3,4], citationHtml: 'Gimeno Sacristán, J. (1988). <em>Aproximación al concepto currículo</em>. Editorial Popular.', note: 'Aportes sobre flexibilidad y contextualización social del currículo.', url: 'https://proyectoinvestigacionmodulomb.wordpress.com/wp-content/uploads/2018/05/gimeno_aproximacion-al-concepto-de-curriculum.pdf' },
+      { key: 'goodson_1991_construccion', type: 'articulo', themes: [2], citationHtml: 'Goodson, I. (1991). <em>La construcción social del currículum</em>. Revista de Educación.', note: 'Perspectiva social e histórica de la construcción curricular.', url: 'https://www.educacionfpydeportes.gob.es/revista-de-educacion/numeros-revista-educacion/numeros-anteriores/1991/re295/re295-01.html' },
+      { key: 'men_2016_dba', type: 'documento', themes: [2,4], citationHtml: 'Ministerio de Educación Nacional (2016). <em>Derechos Básicos de Aprendizaje</em>. Bogotá: MEN.', note: 'Marco para aprendizajes fundamentales y equidad educativa.', url: 'https://www.colombiaaprende.edu.co/sites/default/files/files_public/2022-06/DBA_C.Naturales-min.pdf' },
+      { key: 'stenhouse_1984_investigacion', type: 'libro', themes: [2], citationHtml: 'Stenhouse, L. (1984). <em>Investigación y desarrollo del currículum</em>. Morata.', note: 'Currículo como práctica e investigación.', url: 'https://archive.org/details/investigacionyde0000sten' },
+
+      { key: 'bybee_2015_5e', type: 'libro', themes: [3], citationHtml: 'Bybee, R. (2015). <em>The BSCS 5E Instructional Model</em>. NSTA Press.', note: 'Modelo de enseñanza para ciencias basado en indagación.', url: 'https://media.bscs.org/bscsmw/5es/bscs_5e_full_report.pdf' },
+      { key: 'coll_taylor_2012_reflexiones', type: 'libro', themes: [3,4], citationHtml: 'Coll, C. y Taylor, S. (2012). <em>Reflexiones sobre el currículo en la educación básica</em>.', note: 'Reflexiones contemporáneas sobre currículo escolar.', url: 'https://www.redalyc.org/pdf/155/15508110.pdf' },
+      { key: 'men_2015_lineamientos', type: 'documento', themes: [3,4], citationHtml: 'Ministerio de Educación Nacional (2015). <em>Lineamientos Curriculares para Ciencias Naturales</em>. Bogotá: MEN.', note: 'Orientaciones curriculares nacionales para ciencias.', url: 'https://www.mineducacion.gov.co/1759/articles-339975_recurso_5.pdf' },
+      { key: 'oecd_2015_pisa', type: 'documento', themes: [3], citationHtml: 'OECD (2015). <em>PISA 2015 Results: Excellence and Equity in Education</em>.', note: 'Marco internacional de evaluación y estándares.', url: 'https://www.oecd.org/content/dam/oecd/en/publications/reports/2016/12/pisa-2015-results-volume-i_g1g7397c/9789264266490-en.pdf' },
+      { key: 'porlan_1998_pasado', type: 'articulo', themes: [3], citationHtml: 'Porlán, R. (1998). <em>Pasado, presente y futuro de la didáctica de las ciencias</em>. Enseñanza de las Ciencias.', note: 'Perspectivas sobre la didáctica de las ciencias.', url: 'https://ensciencias.uab.cat/article/view/v16-n1-porlan' },
+
+      { key: 'nino_gamboa_2013_estandares', type: 'documento', themes: [4], citationHtml: 'Niño, L. y Gamboa, A. (2013). <em>Los estándares en el currículo y la evaluación</em>.', note: 'Análisis sobre estándares y evaluación.', url: 'https://revistas.um.es/reifop/article/view/186781' },
+      { key: 'sed_2014_curriculo_excelencia', type: 'documento', themes: [4], citationHtml: 'Secretaría de Educación Distrital - SED. (2014). <em>Currículo para la excelencia académica: Orientaciones para el área de ciencias</em>.', note: 'Orientaciones curriculares para el área de ciencias.', url: 'https://repositoriosed.educacionbogota.edu.co/server/api/core/bitstreams/3b291127-b191-4438-8d1d-dfda539af06a/content' }
+    ];
+
+    function normalizeText(html) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return (tmp.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    }
+
+    const dedup = new Map();
+    for (const item of rawItems) {
+      const n = normalizeText(item.citationHtml);
+      if (!dedup.has(n)) {
+        dedup.set(n, { ...item, themes: [...item.themes] });
+      } else {
+        const existing = dedup.get(n);
+        existing.themes = Array.from(new Set([...existing.themes, ...item.themes])).sort((a,b) => a-b);
+        if (existing.note !== item.note && item.note) {
+          existing.note = existing.note || item.note;
+        }
+      }
+    }
+
+    const items = Array.from(dedup.values()).filter(it => typeof it.url === 'string' && it.url.trim().length > 0);
+
+    const elList = document.getElementById('references-container');
+    const pills = Array.from(document.querySelectorAll('.filter-chip[data-type]'));
+
+    const state = {
+      type: '',
+    };
+
+    const typeMeta = {
+      articulo: {
+        label: 'Artículo',
+        border: 'border-sky-500',
+        pill: 'bg-sky-50 text-sky-700'
+      },
+      libro: {
+        label: 'Libro',
+        border: 'border-emerald-500',
+        pill: 'bg-emerald-50 text-emerald-700'
+      },
+      documento: {
+        label: 'Documento',
+        border: 'border-amber-500',
+        pill: 'bg-amber-50 text-amber-700'
+      }
+    };
+
+    function createCard(item, idx) {
+      const meta = typeMeta[item.type] || { label: 'Recurso', border: 'border-slate-300', pill: 'bg-slate-50 text-slate-700' };
+
+      const tmp = document.createElement('div');
+      tmp.innerHTML = item.citationHtml;
+      const em = tmp.querySelector('em');
+      const titleText = (em && em.textContent ? em.textContent : '').trim();
+      const citationText = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+
+      const article = document.createElement('article');
+      article.className = `reference-card fade-in bg-white rounded-xl p-6 border-l-4 ${meta.border}`;
+      article.dataset.type = item.type;
+      article.style.setProperty('--delay', `${idx * 45}ms`);
+
+      const refNum = String(idx + 1).padStart(2, '0');
+
+      article.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Referencia ${refNum}</p>
+            <h3 class="title-font text-lg text-emerald-900 mt-2">${titleText || ''}</h3>
+          </div>
+          <span class="type-pill uppercase ${meta.pill} px-2 py-1 rounded-full">${meta.label}</span>
+        </div>
+        <p class="card-citation text-slate-600 text-sm mt-3">${citationText}</p>
+        <div class="card-actions flex items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-emerald-700 text-sm font-semibold underline hover:text-emerald-900">Ver fuente</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(item.url)}" alt="Código QR" class="h-16 w-16 rounded-xl border border-slate-200 bg-white p-1" />
+          </div>
+        </div>
+      `;
+
+      return article;
+    }
+
+    function render(list) {
+      elList.innerHTML = '';
+      list.forEach((item, idx) => {
+        elList.appendChild(createCard(item, idx));
+      });
+    }
+
+    function applyFilters() {
+      const type = state.type;
+      const filtered = items.filter((it) => {
+        if (type && it.type !== type) return false;
+        return true;
+      });
+
+      filtered.sort((a, b) => normalizeText(a.citationHtml).localeCompare(normalizeText(b.citationHtml)));
+      render(filtered);
+    }
+
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const t = pill.getAttribute('data-type') || '';
+        state.type = t;
+        pills.forEach(p => {
+          const active = p === pill;
+          p.classList.toggle('is-active', active);
+          p.setAttribute('aria-pressed', String(active));
+        });
+        applyFilters();
+      });
+    });
+
+    applyFilters();
+  </script>
+</body>
+</html>
