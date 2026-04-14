@@ -1,0 +1,1557 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos evaluativos en las ciencias naturales - Unidad 2</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-soft: #f0fdf4;
+            --surface-muted: #f8fafc;
+            --text: #334155;
+            --heading: #166534;
+            --heading-deep: #14532d;
+            --line: #d1d5db;
+            --line-soft: #dcfce7;
+            --accent: #22c55e;
+            --accent-soft: #bbf7d0;
+            --accent-deep: #16a34a;
+            --shadow: 0 8px 24px rgba(1, 103, 56, 0.12);
+            --radius-xl: 18px;
+            --radius-lg: 14px;
+            --radius-md: 12px;
+            --transition: 0.25s ease;
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            color: var(--text);
+            background: var(--bg);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .scrollbar-hidden { scrollbar-width: none; -ms-overflow-style: none; }
+        #ova-embed .scrollbar-hidden::-webkit-scrollbar { display: none; }
+        #ova-embed .content-stage { position: relative; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar {
+            width: 264px;
+            background: #ffffff;
+            box-shadow: 0 2px 16px rgba(15, 23, 42, 0.08);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 18px 0 0;
+        }
+        #ova-embed .brand-shell {
+            padding: 0 16px 14px;
+        }
+        #ova-embed .logo-orb {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 12px;
+            background: #ffffff;
+            border-radius: 9999px;
+            box-shadow: 0 8px 24px rgba(1, 103, 56, 0.25);
+            border: 2px solid #22c55e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        #ova-embed .logo-orb img {
+            width: 82%;
+            height: 82%;
+            object-fit: contain;
+        }
+        #ova-embed .brand-copy {
+            text-align: center;
+        }
+        #ova-embed .brand-copy h1 {
+            margin: 0;
+            font-weight: 700;
+            color: #166534;
+            font-size: 1.15rem;
+            line-height: 1.35;
+        }
+        #ova-embed .eyebrow {
+            margin: 0 0 8px;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #64748b;
+        }
+        #ova-embed .sidebar-nav {
+            margin-top: 8px;
+            flex: 1;
+            padding-bottom: 0;
+            overflow: visible;
+        }
+        #ova-embed .sidebar-link {
+            width: 100%;
+            border: 0;
+            border-left: 4px solid transparent;
+            background: transparent;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px;
+            text-align: left;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            margin: 0;
+            border-radius: 0;
+        }
+        #ova-embed .sidebar-link:hover,
+        #ova-embed .sidebar-link:focus-visible,
+        #ova-embed .sidebar-link.active {
+            background: #e6f4ea;
+            color: #166534;
+            border-left-color: #22c55e;
+            outline: none;
+        }
+        #ova-embed .nav-icon {
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+        #ova-embed .sidebar-link:focus-visible { outline: 2px solid #22c55e; outline-offset: 2px; }
+        #ova-embed summary { list-style: none; }
+        #ova-embed summary::-webkit-details-marker { display: none; }
+        #ova-embed details[open] .accordion-toggle { transform: rotate(45deg); background-color: #dcfce7; border-color: #22c55e; }
+        #ova-embed .speech-controls button:disabled { opacity: 0.5; cursor: not-allowed; }
+        @media (prefers-reduced-motion: reduce) { #ova-embed * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+        .btn-sue { background-color: #22c55e !important; color: #fff !important; border: none !important; padding: 12px 24px !important; border-radius: 6px !important; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-flex !important; align-items: center !important; box-shadow: 0 2px 4px rgba(0, 86, 179, 0.2) !important; }
+        .btn-sue:hover { background-color: #16a34a !important; color: #fff !important; text-decoration: none; box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3) !important; transform: translateY(-1px); }
+        .btn-sue:focus { outline: 2px solid #22c55e; outline-offset: 2px; }
+        .btn-sue i { margin-right: 8px; }
+        #ova-embed #recursos .btn-sue { background-color: #22c55e !important; color: #fff !important; border: none !important; text-decoration: none !important; background-image: none !important; appearance: none !important; -webkit-appearance: none !important; }
+        #ova-embed #recursos .btn-sue:hover { background-color: #16a34a !important; color: #fff !important; text-decoration: none; box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3) !important; transform: translateY(-1px); }
+        #ova-embed #recursos .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 28px; margin-top: 22px; }
+        #ova-embed #recursos .resource-card { background: #fff; border-radius: 18px; padding: 26px 26px; text-align: left; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08); transition: box-shadow 0.25s ease, transform 0.25s ease; border: 1px solid #f1f5f9; border-left: 6px solid #22c55e; }
+        #ova-embed #recursos .resource-card:hover { box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12); transform: translateY(-2px); }
+        #ova-embed #recursos .resource-icon { display: none; }
+        #ova-embed #recursos .resource-title { font-size: 18px; font-weight: 600; color: #15803d; margin-bottom: 10px; }
+        #ova-embed #recursos .resource-description { color: #334155; line-height: 1.6; font-size: 16px; margin: 0; }
+        .progress-bar { background: #e5e7eb; border-radius: 9999px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%); height: 100%; border-radius: 9999px; transition: width 0.5s ease; }
+        .slide-container { position: relative; overflow: hidden; border-radius: 12px; }
+        .slide { opacity: 0; transform: translateX(100%); transition: opacity 0.3s ease, transform 0.3s ease; position: absolute; width: 100%; top: 0; left: 0; }
+        .slide.active { opacity: 1; transform: translateX(0); position: relative; }
+        .slide-nav { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+        .slide-dot { width: 10px; height: 10px; border-radius: 50%; background: #d1d5db; cursor: pointer; transition: background 0.3s ease; }
+        .slide-dot.active { background: #22c55e; }
+        .slide-dot:hover { background: #16a34a; }
+        .method-option { transition: all 0.3s ease; cursor: pointer; }
+        .method-option:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .method-option.selected { border-color: #22c55e; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
+        .method-option input[type="radio"] { display: none; }
+        .method-option input[type="radio"]:checked + .method-content { color: #166534; }
+        .method-option input[type="radio"]:checked + .method-content .method-title { color: #15803d; font-weight: 600; }
+        .instrument-option { transition: all 0.3s ease; cursor: pointer; }
+        .instrument-option:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .instrument-option.selected { border-color: #9333ea; background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); }
+        .instrument-option input[type="checkbox"] { display: none; }
+        .instrument-option input[type="checkbox"]:checked + .instrument-content { color: #6b21a8; }
+        .instrument-option input[type="checkbox"]:checked + .instrument-content .instrument-title { color: #7c3aed; font-weight: 600; }
+        .product-option { transition: all 0.3s ease; cursor: pointer; }
+        .product-option:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        .product-option.selected { border-color: #dc2626; background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); }
+        .product-option input[type="checkbox"] { display: none; }
+        .product-option input[type="checkbox"]:checked + .product-content { color: #991b1b; }
+        .product-option input[type="checkbox"]:checked + .product-content .product-title { color: #dc2626; font-weight: 600; }
+        .dropdown-menu { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: white; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; border-radius: 6px; overflow: hidden; }
+        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; transition: background-color 0.3s; }
+        .dropdown-content a:hover { background-color: #f1f5f9; }
+        .dropdown-content a i { margin-right: 8px; }
+        .dropdown-menu:hover .dropdown-content { display: block; }
+        .dropdown-btn { background-color: #9333ea; color: white; padding: 8px 16px; font-size: 14px; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; }
+        .dropdown-btn:hover { background-color: #7c3aed; }
+    </style>
+</head>
+<body>
+    <div id="ova-embed" class="min-h-screen bg-white">
+        <div class="flex items-stretch min-h-screen">
+            <!-- Sidebar -->
+            <aside class="sidebar hidden md:flex md:flex-col md:sticky md:top-0 md:min-h-screen self-stretch">
+                <div class="brand-shell">
+                    <div class="logo-orb">
+                        <img src="LOGO MAESTRIA (1).jpg.jpeg" alt="Logo Maestría" loading="lazy">
+                    </div>
+                    <div class="brand-copy">
+                        <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                        <h1>Procesos evaluativos en las ciencias naturales</h1>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav" aria-label="Secciones">
+                    <a href="#introduccion" class="sidebar-link active" data-target="introduccion" aria-controls="introduccion" aria-current="page"><span class="nav-icon">🚀</span><span>Introducción</span></a>
+                    <a href="#objetivos" class="sidebar-link" data-target="objetivos" aria-controls="objetivos"><span class="nav-icon">🎯</span><span>Objetivos</span></a>
+                    <a href="#contenido" class="sidebar-link" data-target="contenido" aria-controls="contenido"><span class="nav-icon">📚</span><span>Contenido</span></a>
+                    <a href="#actividad" class="sidebar-link" data-target="actividad" aria-controls="actividad"><span class="nav-icon">✍️</span><span>Actividades</span></a>
+                    <a href="#evaluacion" class="sidebar-link" data-target="evaluacion" aria-controls="evaluacion"><span class="nav-icon">✔️</span><span>Autoevaluación</span></a>
+                    <a href="#recursos" class="sidebar-link" data-target="recursos" aria-controls="recursos"><span class="nav-icon">📖</span><span>Recursos</span></a>
+                    <a href="#bibliografia" class="sidebar-link" data-target="bibliografia" aria-controls="bibliografia"><span class="nav-icon">📚</span><span>Bibliografía</span></a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 px-4 sm:px-6 md:px-8 py-6 bg-white">
+                <div class="w-full max-w-6xl mx-auto">
+                <!-- Mobile Header -->
+                <div class="md:hidden mb-6 flex flex-col items-center">
+                    <div style="width: 100px; height: 100px;" class="p-2 flex items-center justify-center bg-white rounded-full shadow-lg transition-shadow duration-300 hover:shadow-green-400 mb-2">
+                        <img src="LOGO MAESTRIA (1).jpg.jpeg" alt="Logo Maestría" class="w-5/6 h-5/6 object-contain rounded-full" loading="lazy">
+                    </div>
+                    <div class="text-center mb-4">
+                        <p class="uppercase text-slate-500 leading-snug font-bold" style="font-size: 0.72rem; letter-spacing: 0.08em;">Maestría en Didáctica de las Ciencias Naturales</p>
+                        <p class="mt-2 font-bold" style="font-size: 1.3rem; line-height: 1.3; color: #166534;">Procesos evaluativos en las ciencias naturales</p>
+                    </div>
+                    <select id="mobile-nav" class="w-full mt-2 p-2 border rounded-md bg-white shadow-sm" aria-label="Secciones">
+                        <option value="introduccion">🚀 Introducción</option>
+                        <option value="objetivos">🎯 Objetivos</option>
+                        <option value="contenido">📚 Contenido</option>
+                        <option value="actividad">✍️ Actividades</option>
+                        <option value="evaluacion">✔️ Autoevaluación</option>
+                        <option value="recursos">📖 Recursos</option>
+                        <option value="bibliografia">📚 Bibliografía</option>
+                    </select>
+                </div>
+
+                <div id="content-stage" class="content-stage">
+
+            <!-- Introducción -->
+                    <div id="introduccion" class="content-pane active">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción de la unidad</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Postulados metodológicos de la evaluación para el aprendizaje en ciencias</h2>
+                        </div>
+
+                        <div class="mt-6">
+                            <p class="text-slate-700 leading-relaxed mb-4">Tras haber fundamentado los postulados conceptuales en la Unidad 1, esta segunda etapa nos sitúa en la dimensión operativa: el "qué" y el "cómo" evaluar en ciencias naturales.</p>
+                            <p class="text-slate-700 leading-relaxed mb-4">En el nivel de maestría, este tránsito implica reconocer que la evaluación es un eje vertebrador que pone al descubierto el currículo oculto del docente.</p>
+                            <p class="text-slate-700 leading-relaxed mb-6">Nos enfocaremos en superar la evaluación reproductiva para transitar hacia el diseño de situaciones didácticas constructivas, donde el maestrante diseña criterios metodológicos que no solo miden resultados, sino que actúan como herramientas potenciadoras del aprendizaje y la autonomía.</p>
+                        </div>
+                        <div class="mt-6 p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
+                            <p class="text-green-800 font-semibold">Pregunta orientadora</p>
+                            <p class="text-green-800 mt-2">¿Qué transformaciones metodológicas necesita mi práctica evaluativa para favorecer aprendizajes profundos y autonomía?</p>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="introduccion">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Contenido -->
+                    <div id="contenido" class="content-pane">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido central</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Contenido temático</h2>
+                        </div>
+                        <p class="mt-6 text-slate-700 leading-relaxed mb-6">En esta unidad se abordarán los siguientes ejes:</p>
+
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                            <ul class="list-disc pl-6 text-slate-700 space-y-2">
+                                <li>Evaluación de contenidos desde una perspectiva didáctica integradora.</li>
+                                <li>Criterios e indicadores de evaluación como ejes articuladores del proceso de enseñanza.</li>
+                                <li>Estrategias e instrumentos para favorecer la autorregulación y la metacognición.</li>
+                                <li>Métodos activos: la pregunta y la resolución de problemas como evidencias de aprendizaje.</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="mt-6 bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                <h3 class="text-xl font-extrabold text-green-800 leading-snug">Mapa conceptual del contenido</h3>
+                                <p class="text-sm text-slate-600">Lectura rápida de relaciones entre ejes</p>
+                            </div>
+
+                            <div class="mt-6 relative">
+                                <svg class="hidden lg:block absolute inset-0 w-full h-full" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
+                                    <defs>
+                                        <marker id="u2-arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                                            <path d="M0,0 L6,3 L0,6" fill="#16a34a"></path>
+                                        </marker>
+                                    </defs>
+                                    <line x1="500" y1="120" x2="210" y2="240" stroke="#16a34a" stroke-width="3" marker-end="url(#u2-arrow)" opacity="0.75"></line>
+                                    <line x1="500" y1="120" x2="790" y2="240" stroke="#16a34a" stroke-width="3" marker-end="url(#u2-arrow)" opacity="0.75"></line>
+                                    <line x1="500" y1="120" x2="340" y2="360" stroke="#16a34a" stroke-width="3" marker-end="url(#u2-arrow)" opacity="0.75"></line>
+                                    <line x1="500" y1="120" x2="660" y2="360" stroke="#16a34a" stroke-width="3" marker-end="url(#u2-arrow)" opacity="0.75"></line>
+                                </svg>
+
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <div class="lg:col-span-2">
+                                        <div class="w-full bg-green-50 border border-green-200 rounded-2xl p-5 sm:p-6">
+                                            <p class="text-xs font-bold tracking-widest text-green-700 uppercase">Núcleo</p>
+                                            <p class="mt-2 text-lg sm:text-xl font-extrabold text-green-900 leading-snug">Postulados metodológicos para una evaluación centrada en los aprendizajes</p>
+                                            <p class="mt-2 text-slate-700 leading-relaxed">La evaluación como herramienta pedagógica que orienta el aprendizaje, la autonomía y la toma de decisiones en la enseñanza de las ciencias.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Eje 1</p>
+                                        <p class="mt-2 text-base font-extrabold text-green-800 leading-snug">Evaluación de contenidos (perspectiva integradora)</p>
+                                        <p class="mt-2 text-slate-600 leading-relaxed">Integra saberes, habilidades y actitudes en situaciones didácticas significativas.</p>
+                                    </div>
+
+                                    <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Eje 2</p>
+                                        <p class="mt-2 text-base font-extrabold text-green-800 leading-snug">Criterios e indicadores</p>
+                                        <p class="mt-2 text-slate-600 leading-relaxed">Definen qué cuenta como evidencia y cómo se valora el progreso del estudiante.</p>
+                                    </div>
+
+                                    <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Eje 3</p>
+                                        <p class="mt-2 text-base font-extrabold text-green-800 leading-snug">Autorregulación y metacognición</p>
+                                        <p class="mt-2 text-slate-600 leading-relaxed">Estrategias e instrumentos para que el estudiante planifique, monitoree y ajuste su aprendizaje.</p>
+                                    </div>
+
+                                    <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Eje 4</p>
+                                        <p class="mt-2 text-base font-extrabold text-green-800 leading-snug">Métodos activos (pregunta y resolución de problemas)</p>
+                                        <p class="mt-2 text-slate-600 leading-relaxed">La pregunta y el problema como evidencias de comprensión profunda y transferencia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="contenido">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Objetivos -->
+                    <div id="objetivos" class="content-pane">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Resultados que orientan la unidad</h2>
+                        </div>
+
+                        <div class="mt-10 bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                            <div class="inline-flex items-center rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800">Objetivos de aprendizaje</div>
+                            <ul class="mt-4 list-disc pl-6 text-slate-700 space-y-2">
+                                <li>Desarrollar habilidades argumentativas y propositivas en la apropiación de nuevas metodologías de una evaluación centrada en los aprendizajes.</li>
+                                <li>Diseñar criterios metodológicos e indicadores de evaluación contextualizados a las prácticas de enseñanza de las ciencias.</li>
+                                <li>Estructurar la pregunta como una herramienta cognitiva y evidencia de aprendizaje.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                                <div class="inline-flex items-center justify-center rounded-full bg-green-100 px-8 py-2 text-sm font-semibold text-green-800">Argumentación</div>
+                                <h3 class="mt-5 text-xl font-bold text-green-800 leading-snug">Apropiar metodologías centradas en el aprendizaje</h3>
+                                <p class="mt-4 text-slate-600 leading-relaxed">Desarrollar habilidades argumentativas y propositivas sobre metodologías de evaluación para el aprendizaje en ciencias.</p>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                                <div class="inline-flex items-center justify-center rounded-full bg-green-100 px-8 py-2 text-sm font-semibold text-green-800">Diseño</div>
+                                <h3 class="mt-5 text-xl font-bold text-green-800 leading-snug">Construir criterios e indicadores contextualizados</h3>
+                                <p class="mt-4 text-slate-600 leading-relaxed">Diseñar criterios metodológicos e indicadores de evaluación conectados con prácticas reales de enseñanza de las ciencias.</p>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                                <div class="inline-flex items-center justify-center rounded-full bg-green-100 px-8 py-2 text-sm font-semibold text-green-800">Pregunta</div>
+                                <h3 class="mt-5 text-xl font-bold text-green-800 leading-snug">Usar la pregunta como evidencia de aprendizaje</h3>
+                                <p class="mt-4 text-slate-600 leading-relaxed">Estructurar la pregunta como herramienta cognitiva que permita evidenciar comprensión profunda y transferencia.</p>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="objetivos">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Actividades -->
+                    <div id="actividad" class="content-pane">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Actividades de la Unidad 2</h2>
+                        </div>
+                        <p class="mt-6 text-slate-700 leading-relaxed mb-6">Desarrolla las actividades propuestas para llevar los postulados metodológicos al diseño y la toma de decisiones evaluativas en ciencias.</p>
+
+                        <div class="mb-6">
+                            <div class="flex flex-col sm:flex-row gap-2" role="tablist" aria-label="Paginación de actividades">
+                                <button type="button" class="activity-subnav-btn bg-green-600 text-white font-semibold py-2 px-5 rounded-full" data-activity-section="act-a1" aria-selected="true">Actividad 1</button>
+                                <button type="button" class="activity-subnav-btn bg-white text-slate-700 font-semibold py-2 px-5 rounded-full border border-slate-200" data-activity-section="act-a2" aria-selected="false">Actividad 2</button>
+                                <button type="button" class="activity-subnav-btn bg-white text-slate-700 font-semibold py-2 px-5 rounded-full border border-slate-200" data-activity-section="act-a3" aria-selected="false">Actividad 3</button>
+                                <button type="button" class="activity-subnav-btn bg-white text-slate-700 font-semibold py-2 px-5 rounded-full border border-slate-200" data-activity-section="act-seg" aria-selected="false">Seguimiento</button>
+                            </div>
+                        </div>
+
+                        <div id="act-a1" class="activity-section space-y-6">
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad 1</p>
+                                <h3 class="mt-4 text-2xl font-extrabold text-green-800 leading-tight">Laboratorio de Reconfiguración de Microclases</h3>
+                                <p class="mt-4 text-slate-700 leading-relaxed"><strong>Propósito:</strong> Transformar una clase tradicional en una propuesta de evaluación para el aprendizaje.</p>
+                                <p class="mt-3 text-slate-700 leading-relaxed"><strong>Descripción:</strong> A partir de un diseño previo, reconfigura tu microclase integrando resolución de problemas y diseño de preguntas que indaguen comprensión profunda más allá del dato memorístico.</p>
+
+                                <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                    <p class="text-sm font-semibold text-slate-700">Punto de partida</p>
+                                    <p class="mt-3 block text-sm text-slate-700 font-medium">Selecciona ideas clave que quieres superar en una microclase tradicional:</p>
+                                    <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="u2-a1-emociones">
+                                        <label class="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3">
+                                            <input type="checkbox" value="ansiedad" class="u2-a1-emocion">
+                                            <span class="text-sm font-semibold text-slate-700">Memorización</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3">
+                                            <input type="checkbox" value="reto" class="u2-a1-emocion">
+                                            <span class="text-sm font-semibold text-slate-700">Reproducción</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3">
+                                            <input type="checkbox" value="indiferencia" class="u2-a1-emocion">
+                                            <span class="text-sm font-semibold text-slate-700">Examen tradicional</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3">
+                                            <input type="checkbox" value="motivación" class="u2-a1-emocion">
+                                            <span class="text-sm font-semibold text-slate-700">Preguntas cerradas</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3">
+                                            <input type="checkbox" value="curiosidad" class="u2-a1-emocion">
+                                            <span class="text-sm font-semibold text-slate-700">Actividad sin contexto</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 space-y-4">
+                                    <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                        <div class="flex items-start justify-between gap-3">
+                                            <label class="block text-sm font-semibold text-slate-700" for="u2-a1-prompt-1">Describe la microclase original (antes de reconfigurar)</label>
+                                        </div>
+                                        <textarea id="u2-a1-prompt-1" maxlength="500" class="mt-3 w-full min-h-[90px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                        <div class="mt-2 flex justify-end">
+                                            <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a1-prompt-1">0/500</span>
+                                        </div>
+                                        <p class="mt-2 text-xs text-slate-500">Resume el propósito, la dinámica y cómo evaluabas.</p>
+                                    </div>
+
+                                    <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                        <div class="flex items-start justify-between gap-3">
+                                            <label class="block text-sm font-semibold text-slate-700" for="u2-a1-prompt-2">¿Cómo la reconfiguras con resolución de problemas?</label>
+                                        </div>
+                                        <textarea id="u2-a1-prompt-2" maxlength="700" class="mt-3 w-full min-h-[90px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                        <div class="mt-2 flex justify-end">
+                                            <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a1-prompt-2">0/700</span>
+                                        </div>
+                                        <p class="mt-2 text-xs text-slate-500">Explica la situación didáctica y la evidencia de aprendizaje esperada.</p>
+                                    </div>
+
+                                    <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                        <div class="flex items-start justify-between gap-3">
+                                            <label class="block text-sm font-semibold text-slate-700" for="u2-a1-prompt-3">Diseña preguntas para indagar comprensión profunda</label>
+                                        </div>
+                                        <textarea id="u2-a1-prompt-3" maxlength="700" class="mt-3 w-full min-h-[90px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                        <div class="mt-2 flex justify-end">
+                                            <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a1-prompt-3">0/700</span>
+                                        </div>
+                                        <p class="mt-2 text-xs text-slate-500">Incluye al menos 2 preguntas que exijan explicación, relación o transferencia.</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 bg-white rounded-2xl border border-slate-200 p-5">
+                                    <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                        <button id="u2-a1-generate" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Generar borrador para el foro</button>
+                                        <button id="u2-a1-copy" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Copiar</button>
+                                        <p id="u2-a1-status" class="text-sm font-semibold"></p>
+                                    </div>
+                                    <label class="mt-5 block text-sm font-semibold text-slate-700" for="u2-a1-draft">Borrador</label>
+                                    <textarea id="u2-a1-draft" class="mt-3 w-full min-h-[160px] p-3 border rounded-lg bg-white resize-none" readonly data-autosize></textarea>
+                                </div>
+                                <div class="mt-5 p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
+                                    <p class="text-green-800 font-semibold">Pregunta orientadora</p>
+                                    <p class="text-green-800 mt-2">¿Qué evidencia de aprendizaje buscas observar y cómo tus preguntas ayudan a construir autonomía?</p>
+                                </div>
+                                <p class="mt-5 text-slate-700 leading-relaxed font-semibold">Instrucciones:</p>
+                                <ul class="list-disc pl-6 text-slate-700 space-y-2 mt-2">
+                                    <li>Redacta tu propuesta de microclase reconfigurada.</li>
+                                    <li>Incluye la situación problema y las preguntas que evaluarán comprensión profunda.</li>
+                                    <li>Conserva el borrador para pegarlo en el espacio indicado en Moodle.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="act-a2" class="activity-section space-y-6 hidden">
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad 2</p>
+                                <h3 class="mt-4 text-2xl font-extrabold text-green-800 leading-tight">Taller de Diseño de Matrices y Criterios</h3>
+                                <p class="mt-4 text-slate-700 leading-relaxed"><strong>Propósito:</strong> Operacionalizar los objetivos de aprendizaje en indicadores evaluables.</p>
+                                <p class="mt-3 text-slate-700 leading-relaxed"><strong>Descripción:</strong> Elabora una matriz de evaluación de contenidos científicos donde explicites niveles de logro y criterios, de manera contextualizada a tu práctica.</p>
+                                <p class="mt-3 text-slate-700 leading-relaxed"><strong>Recurso base:</strong> Catálogo de rúbricas (referente técnico) y textos guía de la unidad.</p>
+
+                                <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                    <p class="text-sm font-semibold text-slate-700">Componentes de tu matriz (selecciona los que vas a incluir)</p>
+                                    <div class="mt-4 flex flex-wrap gap-2" id="u2-a2-escenas">
+                                        <button type="button" class="u2-chip px-4 py-2 rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-700" data-value="criterios">Criterios</button>
+                                        <button type="button" class="u2-chip px-4 py-2 rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-700" data-value="indicadores">Indicadores</button>
+                                        <button type="button" class="u2-chip px-4 py-2 rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-700" data-value="niveles">Niveles de logro</button>
+                                        <button type="button" class="u2-chip px-4 py-2 rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-700" data-value="evidencias">Evidencias</button>
+                                        <button type="button" class="u2-chip px-4 py-2 rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-700" data-value="retroalimentacion">Retroalimentación</button>
+                                        <button type="button" class="u2-chip px-4 py-2 rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-700" data-value="preguntas">Preguntas (cognitivas)</button>
+                                    </div>
+                                    <label class="mt-5 block text-sm font-semibold text-slate-700" for="u2-a2-escena-otra">Otro componente (opcional)</label>
+                                    <input id="u2-a2-escena-otra" class="mt-2 w-full p-3 border rounded-lg bg-white" placeholder="Escribe otro componente si aplica">
+                                </div>
+
+                                <div class="mt-6 space-y-4">
+                                    <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                        <div class="flex items-start justify-between gap-3">
+                                            <label class="block text-sm font-semibold text-slate-700" for="u2-a2-prompt-1">¿Cuál es el objetivo de aprendizaje que vas a evaluar?</label>
+                                        </div>
+                                        <textarea id="u2-a2-prompt-1" maxlength="500" class="mt-3 w-full min-h-[90px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                        <div class="mt-2 flex justify-end">
+                                            <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a2-prompt-1">0/500</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                        <div class="flex items-start justify-between gap-3">
+                                            <label class="block text-sm font-semibold text-slate-700" for="u2-a2-prompt-2">Diseña criterios e indicadores (¿qué evidencias observarás?)</label>
+                                        </div>
+                                        <textarea id="u2-a2-prompt-2" maxlength="700" class="mt-3 w-full min-h-[90px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                        <div class="mt-2 flex justify-end">
+                                            <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a2-prompt-2">0/700</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                        <div class="flex items-start justify-between gap-3">
+                                            <label class="block text-sm font-semibold text-slate-700" for="u2-a2-prompt-3">Define niveles de logro y retroalimentación</label>
+                                        </div>
+                                        <textarea id="u2-a2-prompt-3" maxlength="700" class="mt-3 w-full min-h-[90px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                        <div class="mt-2 flex justify-end">
+                                            <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a2-prompt-3">0/700</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 bg-white rounded-2xl border border-slate-200 p-5">
+                                    <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                        <button id="u2-a2-generate" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Generar borrador de matriz</button>
+                                        <button id="u2-a2-copy" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Copiar</button>
+                                        <p id="u2-a2-status" class="text-sm font-semibold"></p>
+                                    </div>
+                                    <label class="mt-5 block text-sm font-semibold text-slate-700" for="u2-a2-draft">Borrador</label>
+                                    <textarea id="u2-a2-draft" class="mt-3 w-full min-h-[160px] p-3 border rounded-lg bg-white resize-none" readonly data-autosize></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="act-a3" class="activity-section space-y-6 hidden">
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad 3</p>
+                                <h3 class="mt-4 text-2xl font-extrabold text-green-800 leading-tight">Lectura y Ensayo Crítico en Inglés</h3>
+                                <p class="mt-4 text-slate-700 leading-relaxed"><strong>Propósito:</strong> Fomentar la comprensión lectora y el pensamiento crítico en lengua extranjera sobre la autoevaluación.</p>
+                                <p class="mt-3 text-slate-700 leading-relaxed"><strong>Recursos base:</strong> Andrade (2019) y Fox &amp; Riconscente (2008).</p>
+                                <div class="mt-5 flex flex-col sm:flex-row gap-2">
+                                    <a class="btn-sue" href="U2_Andrade, H. L. (2019). A Critical Review of Research on Student Self-Assessment.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i>Abrir Andrade (2019)</a>
+                                    <a class="btn-sue" href="U2_2008_Fox_MetacognitionandSelf-RegulationinJamesPiagetandVygotsky.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i>Abrir Fox &amp; Riconscente (2008)</a>
+                                </div>
+
+                                <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                    <p class="text-sm font-semibold text-slate-700">Redacta tu Wiki por momentos (borrador)</p>
+                                    <div class="mt-4 flex flex-col sm:flex-row gap-2" role="tablist" aria-label="Momentos de la Wiki">
+                                        <button id="u2-a3-tab-m1" type="button" class="u2-a3-tab bg-green-600 text-white font-semibold py-2 px-5 rounded-full" data-step="m1" aria-controls="u2-a3-panel-m1" aria-selected="true">Momento 1</button>
+                                        <button id="u2-a3-tab-m2" type="button" class="u2-a3-tab bg-white text-slate-700 font-semibold py-2 px-5 rounded-full border border-slate-200" data-step="m2" aria-controls="u2-a3-panel-m2" aria-selected="false">Momento 2</button>
+                                        <button id="u2-a3-tab-m3" type="button" class="u2-a3-tab bg-white text-slate-700 font-semibold py-2 px-5 rounded-full border border-slate-200" data-step="m3" aria-controls="u2-a3-panel-m3" aria-selected="false">Momento 3</button>
+                                    </div>
+
+                                    <div class="mt-5">
+                                        <div id="u2-a3-panel-m1" class="u2-a3-panel" role="tabpanel" aria-labelledby="u2-a3-tab-m1">
+                                            <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                                <div class="flex items-start justify-between gap-3">
+                                                    <p class="text-sm font-semibold text-slate-700">Momento 1 (Presaberes)</p>
+                                                </div>
+                                                <p class="mt-2 text-sm text-slate-600">Escribe notas de lectura: ideas clave y conceptos sobre autoevaluación y aprendizaje autorregulado.</p>
+                                                <textarea id="u2-a3-m1-text" maxlength="900" class="mt-4 w-full min-h-[120px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                                <div class="mt-2 flex justify-end">
+                                                    <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a3-m1-text">0/900</span>
+                                                </div>
+
+                                                <div class="mt-5 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                                    <button id="u2-a3-m1-generate" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Generar borrador</button>
+                                                    <button id="u2-a3-m1-copy" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Copiar</button>
+                                                    <p id="u2-a3-m1-status" class="text-sm font-semibold"></p>
+                                                </div>
+                                                <label class="mt-5 block text-sm font-semibold text-slate-700" for="u2-a3-m1-draft">Borrador</label>
+                                                <textarea id="u2-a3-m1-draft" class="mt-3 w-full min-h-[160px] p-3 border rounded-lg bg-white resize-none" readonly data-autosize></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div id="u2-a3-panel-m2" class="u2-a3-panel hidden" role="tabpanel" aria-labelledby="u2-a3-tab-m2">
+                                            <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                                <div class="flex items-start justify-between gap-3">
+                                                    <p class="text-sm font-semibold text-slate-700">Momento 2 (Replanteamiento)</p>
+                                                </div>
+                                                <p class="mt-2 text-sm text-slate-600">Organiza el esquema de tu ensayo: tesis, argumentos y conexión con tu práctica evaluativa en ciencias.</p>
+                                                <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                    <div class="md:col-span-1">
+                                                        <label class="block text-sm font-semibold text-slate-700" for="u2-a3-m2-aut">Autor</label>
+                                                        <input id="u2-a3-m2-aut" class="mt-2 w-full p-3 border rounded-lg bg-white" placeholder="Ej: Andrade">
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-sm font-semibold text-slate-700" for="u2-a3-m2-year">Concepto</label>
+                                                        <input id="u2-a3-m2-year" class="mt-2 w-full p-3 border rounded-lg bg-white" placeholder="Ej: self-assessment">
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-sm font-semibold text-slate-700" for="u2-a3-m2-idea">Idea clave</label>
+                                                        <input id="u2-a3-m2-idea" class="mt-2 w-full p-3 border rounded-lg bg-white" placeholder="Ej: criterios de éxito claros">
+                                                    </div>
+                                                </div>
+                                                <textarea id="u2-a3-m2-text" maxlength="1100" class="mt-4 w-full min-h-[120px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                                <div class="mt-2 flex justify-end">
+                                                    <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a3-m2-text">0/1100</span>
+                                                </div>
+
+                                                <div class="mt-5 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                                    <button id="u2-a3-m2-generate" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Generar borrador</button>
+                                                    <button id="u2-a3-m2-copy" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Copiar</button>
+                                                    <p id="u2-a3-m2-status" class="text-sm font-semibold"></p>
+                                                </div>
+                                                <label class="mt-5 block text-sm font-semibold text-slate-700" for="u2-a3-m2-draft">Borrador</label>
+                                                <textarea id="u2-a3-m2-draft" class="mt-3 w-full min-h-[160px] p-3 border rounded-lg bg-white resize-none" readonly data-autosize></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div id="u2-a3-panel-m3" class="u2-a3-panel hidden" role="tabpanel" aria-labelledby="u2-a3-tab-m3">
+                                            <div class="bg-white rounded-2xl border border-slate-200 p-5">
+                                                <div class="flex items-start justify-between gap-3">
+                                                    <p class="text-sm font-semibold text-slate-700">Momento 3 (Consolidación)</p>
+                                                </div>
+                                                <p class="mt-2 text-sm text-slate-600">Escribe tu ensayo académico breve en inglés conectando autores, aprendizaje autorregulado y evaluación en ciencias.</p>
+                                                <div class="mt-5">
+                                                    <a class="btn-sue" href="https://mtrochez.github.io/ova_cintia_unicor/unidad2/rubrica/index.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-word"></i>Presione aquí para ver la rúbrica</a>
+                                                </div>
+                                                <textarea id="u2-a3-m3-text" maxlength="1500" class="mt-4 w-full min-h-[140px] p-3 border rounded-lg bg-white resize-none" placeholder="Escribe aquí..." data-autosize></textarea>
+                                                <div class="mt-2 flex justify-end">
+                                                    <span class="text-xs font-semibold text-slate-500" data-counter-for="u2-a3-m3-text">0/1500</span>
+                                                </div>
+
+                                                <div class="mt-5 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                                    <button id="u2-a3-m3-generate" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Generar borrador</button>
+                                                    <button id="u2-a3-m3-copy" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Copiar</button>
+                                                    <p id="u2-a3-m3-status" class="text-sm font-semibold"></p>
+                                                </div>
+                                                <label class="mt-5 block text-sm font-semibold text-slate-700" for="u2-a3-m3-draft">Borrador</label>
+                                                <textarea id="u2-a3-m3-draft" class="mt-3 w-full min-h-[160px] p-3 border rounded-lg bg-white resize-none" readonly data-autosize></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="act-seg" class="activity-section space-y-6 hidden">
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6">
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Herramientas</p>
+                                <h3 class="mt-3 text-xl font-extrabold text-green-800 leading-tight">Guardar y retomar tu avance</h3>
+                                <p class="mt-3 text-slate-700 leading-relaxed">Usa estos botones para guardar tu borrador en este dispositivo. No se envía información a la plataforma.</p>
+                                <div class="mt-5 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                    <button id="u2-save" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Guardar</button>
+                                    <button id="u2-restore" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Restaurar</button>
+                                    <button id="u2-clear" type="button" class="bg-red-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-red-600 transition-colors">Limpiar</button>
+                                    <p id="u2-save-status" class="text-sm font-semibold"></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Checklist</p>
+                                <h3 class="mt-4 text-2xl font-extrabold text-green-800 leading-tight">Seguimiento de entrega</h3>
+                                <p class="mt-3 text-slate-700 leading-relaxed">Marca lo que ya completaste.</p>
+                                <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <label class="flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                                        <input id="u2-check-foro" type="checkbox" class="mt-1">
+                                        <span class="text-slate-700"><strong>Actividad 1</strong><br><span class="text-slate-600">Redacté la microclase reconfigurada con preguntas y situación problema.</span></span>
+                                    </label>
+                                    <label class="flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                                        <input id="u2-check-prewiki" type="checkbox" class="mt-1">
+                                        <span class="text-slate-700"><strong>Actividad 2</strong><br><span class="text-slate-600">Diseñé matriz con criterios, indicadores y niveles de logro.</span></span>
+                                    </label>
+                                    <label class="flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                                        <input id="u2-check-wiki" type="checkbox" class="mt-1">
+                                        <span class="text-slate-700"><strong>Actividad 3</strong><br><span class="text-slate-600">Completé lectura, esquema y ensayo en inglés.</span></span>
+                                    </label>
+                                    <label class="flex items-start gap-3 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                                        <input id="u2-check-rubrica" type="checkbox" class="mt-1">
+                                        <span class="text-slate-700"><strong>Rúbrica revisada</strong><br><span class="text-slate-600">Leí los criterios de valoración antes de entregar.</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="actividad">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Autoevaluación -->
+                    <div id="evaluacion" class="content-pane">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Autoevaluación</h2>
+                        </div>
+                        <p class="mt-6 text-slate-700 leading-relaxed mb-6">Lee cada enunciado y selecciona la opción que responda de manera más precisa desde la perspectiva de la evaluación para el aprendizaje en ciencias. Al finalizar, presiona <strong>Verificar</strong>.</p>
+
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-8">
+                            <div class="space-y-6">
+                                <div class="quiz-question" data-correct="b">
+                                    <p class="font-semibold text-slate-800 mb-3">1. Jerarquización del contenido (Basado en Furman, 2011). Al momento de seleccionar qué evaluar en una unidad didáctica de ciencias, el docente debe priorizar las llamadas “grandes ideas”. Esto implica que el foco de la evaluación debe situarse en:</p>
+                                    <div class="space-y-2">
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q1" value="a" class="mr-3">A. La memorización de datos técnicos y el manejo exhaustivo de la terminología científica.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q1" value="b" class="mr-3">B. Aquellos conceptos imprescindibles que el estudiante pueda usar en el futuro y que den sentido a los fenómenos observados.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q1" value="c" class="mr-3">C. La totalidad de los temas impartidos en clase para garantizar una medición objetiva del progreso.</label>
+                                    </div>
+                                    <p class="mt-3 text-sm font-medium" data-feedback></p>
+                                </div>
+
+                                <div class="quiz-question" data-correct="b">
+                                    <p class="font-semibold text-slate-800 mb-3">2. Evaluación del "cómo" de la ciencia (Basado en Furman, 2011 y Perales, 1998). ¿Cuál de las siguientes acciones constituye una evidencia de estrategias de pensamiento científico?</p>
+                                    <div class="space-y-2">
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q2" value="a" class="mr-3">A. Que el alumno nombre correctamente las partes de un circuito eléctrico.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q2" value="b" class="mr-3">B. Que el estudiante diseñe un experimento válido controlando variables para responder a una pregunta.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q2" value="c" class="mr-3">C. Que el alumno elija la respuesta correcta en una sopa de letras sobre el sistema óseo.</label>
+                                    </div>
+                                    <p class="mt-3 text-sm font-medium" data-feedback></p>
+                                </div>
+
+                                <div class="quiz-question" data-correct="b">
+                                    <p class="font-semibold text-slate-800 mb-3">3. Elección del método evaluativo (Basado en el Informe de Evaluación de los Aprendizajes). Si un docente desea evaluar un desempeño complejo, el método más adecuado es:</p>
+                                    <div class="space-y-2">
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q3" value="a" class="mr-3">A. Un examen de selección múltiple con única respuesta.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q3" value="b" class="mr-3">B. La observación sistemática del desempeño registrada a través de una rúbrica o matriz de valoración.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q3" value="c" class="mr-3">C. Un cuestionario de respuesta corta que indague sobre el marco teórico del tema.</label>
+                                    </div>
+                                    <p class="mt-3 text-sm font-medium" data-feedback></p>
+                                </div>
+
+                                <div class="quiz-question" data-correct="b">
+                                    <p class="font-semibold text-slate-800 mb-3">4. Sentido de la autoevaluación (Basado en Andrade, 2019 y Fox &amp; Riconscente, 2008). La autoevaluación es efectiva cuando el estudiante:</p>
+                                    <div class="space-y-2">
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q4" value="a" class="mr-3">A. Se asigna una nota final para facilitar el trabajo administrativo del docente.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q4" value="b" class="mr-3">B. Identifica sus fortalezas y áreas de mejora comparando su trabajo con criterios de éxito claros y preestablecidos.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q4" value="c" class="mr-3">C. Responde mecánicamente un formato de "sí/no" al finalizar cada actividad.</label>
+                                    </div>
+                                    <p class="mt-3 text-sm font-medium" data-feedback></p>
+                                </div>
+
+                                <div class="quiz-question" data-correct="b">
+                                    <p class="font-semibold text-slate-800 mb-3">5. La pregunta como evidencia (Basado en Anijovich, 2017 y Perales, 1998). Para que una pregunta de evaluación sea una herramienta de comprensión profunda, debe exigir que el estudiante:</p>
+                                    <div class="space-y-2">
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q5" value="a" class="mr-3">A. Repita textualmente la definición que se encuentra en el libro de texto de referencia.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q5" value="b" class="mr-3">B. Realice una transferencia del conocimiento, aplicándolo a un contexto nuevo o una situación problemática diferente a la trabajada en clase.</label>
+                                        <label class="block bg-gray-50 p-3 rounded-lg border border-gray-200 cursor-pointer"><input type="radio" name="u2q5" value="c" class="mr-3">C. Identifique un dato aislado, como el punto de fusión de una sustancia específica.</label>
+                                    </div>
+                                    <p class="mt-3 text-sm font-medium" data-feedback></p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                                <button id="u2-quiz-check" type="button" class="bg-green-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-green-700 transition-colors">Verificar</button>
+                                <button id="u2-quiz-reset" type="button" class="bg-gray-500 text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-600 transition-colors">Reiniciar</button>
+                                <p id="u2-quiz-result" class="text-sm font-semibold"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="evaluacion">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Recursos -->
+                    <div id="recursos" class="content-pane">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Instrumentos de apoyo</h2>
+                        </div>
+                        <p class="mt-6 text-slate-700 leading-relaxed mb-6">Encuentra aquí instrumentos y lecturas de apoyo para diseñar criterios, indicadores y evidencias de aprendizaje.</p>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">Ubicación de archivos: los PDF de lectura se encuentran en la carpeta <strong>Unidad2/pdf/</strong>. Dos artículos base (Andrade y Fox) están en la <strong>raíz de la carpeta Unidad2</strong>.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Instrumento</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">Estrategias de evaluación formativa</h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Orientaciones para retroalimentar y regular el aprendizaje.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="pdf/Estrategias_Evaluacion_Formativa.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a>
+                            </div>
+
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Lectura</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">10 ideas clave: evaluar para aprender</h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Aportes metodológicos para orientar la evaluación como aprendizaje.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="pdf/10_ideas_clave_evaluar_para_aprender.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a>
+                            </div>
+
+                            <div class="w-full max-w-[22rem] bg-[var(--surface)] rounded-[var(--radius-xl)] border border-[var(--line)] shadow-[var(--shadow)] p-8 transition-all hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(1,103,56,0.16)]">
+                                <p class="text-xs font-extrabold tracking-widest uppercase text-[var(--heading)]">Lectura</p>
+                                <h3 class="mt-5 text-xl font-extrabold text-[var(--heading)] leading-snug">Evaluación de los aprendizajes</h3>
+                                <p class="mt-5 text-slate-600 leading-relaxed text-base">Recomendaciones sobre métodos e instrumentos de evaluación.</p>
+                                <a class="mt-8 inline-flex text-xs font-extrabold tracking-widest uppercase text-[var(--heading)] hover:text-[var(--accent-deep)] transition-colors" href="pdf/6.%20Evaluaci%C3%B3n%20de%20los%20aprendizajes.%20C%C3%B3mo%20evaluar.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a>
+                            </div>
+                        </div>
+
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="recursos">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+            <!-- Bibliografía -->
+                    <div id="bibliografia" class="content-pane">
+                        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-6 sm:px-10 sm:py-10">
+                            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                            <h2 class="mt-4 mb-4 text-[2rem] font-extrabold text-green-800 leading-[1.3]">Referencias orientadoras de la unidad</h2>
+                        </div>
+
+                        <p class="mt-6 text-sm text-slate-600 leading-relaxed">Para consulta sin conexión, los PDF están alojados localmente (carpeta <strong>Unidad2/pdf/</strong> y, en algunos casos, en la <strong>raíz de Unidad2</strong>). También se incluye el enlace “Ver en línea” cuando existe una fuente confiable.</p>
+
+                        <div class="mt-6 space-y-4">
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6 border-l-4 border-green-500">
+                                <p class="text-slate-700 italic">Andrade, H. L. (2019). A Critical Review of Research on Student Self-Assessment. Frontiers in Education.</p>
+                                <a class="mt-2 block text-green-700 underline break-all" href="U2_Andrade%2C%20H.%20L.%20%282019%29.%20A%20Critical%20Review%20of%20Research%20on%20Student%20Self-Assessment.pdf" target="_blank" rel="noopener noreferrer">U2_Andrade, H. L. (2019). A Critical Review of Research on Student Self-Assessment.pdf</a>
+                                <a class="mt-2 block text-slate-600 underline break-all" href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2019.00087/full" target="_blank" rel="noopener noreferrer">Ver en línea (Frontiers)</a>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6 border-l-4 border-green-500">
+                                <p class="text-slate-700 italic">Fox, E. &amp; Riconscente, M. (2008). Metacognition and Self-Regulation in James, Piaget, and Vygotsky.</p>
+                                <a class="mt-2 block text-green-700 underline break-all" href="U2_2008_Fox_MetacognitionandSelf-RegulationinJamesPiagetandVygotsky.pdf" target="_blank" rel="noopener noreferrer">U2_2008_Fox_MetacognitionandSelf-RegulationinJamesPiagetandVygotsky.pdf</a>
+                                <a class="mt-2 block text-slate-600 underline break-all" href="https://link.springer.com/article/10.1007/s10648-008-9079-2" target="_blank" rel="noopener noreferrer">Ver en línea (Springer)</a>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6 border-l-4 border-green-500">
+                                <p class="text-slate-700 italic">Jorba, J. &amp; Sanmartí, N. (s. f.). Función pedagógica de la evaluación.</p>
+                                <a class="mt-2 block text-green-700 underline break-all" href="pdf/4.%20Jorba%20y%20Sanmarti.%20Funci%C3%B3n%20pedag%C3%B3gica%20de%20la%20evaluaci%C3%B3n.%20Jorba%20y%20Sanmart%C3%AD.pdf" target="_blank" rel="noopener noreferrer">pdf/4. Jorba y Sanmarti. Función pedagógica de la evaluación. Jorba y Sanmartí.pdf</a>
+                                <a class="mt-2 block text-slate-600 underline break-all" href="https://ddd.uab.cat/pub/artpub/1993/187512/aulinnedu_a1993n20aJorba.pdf" target="_blank" rel="noopener noreferrer">Ver en línea (UAB)</a>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6 border-l-4 border-green-500">
+                                <p class="text-slate-700 italic">Díaz Barriga, Á. (s. f.). Examen problema.</p>
+                                <a class="mt-2 block text-green-700 underline break-all" href="pdf/5.%20Diaz%20Barriga-Examen%20problema.pdf" target="_blank" rel="noopener noreferrer">pdf/5. Diaz Barriga-Examen problema.pdf</a>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6 border-l-4 border-green-500">
+                                <p class="text-slate-700 italic">10 ideas clave: evaluar para aprender.</p>
+                                <a class="mt-2 block text-green-700 underline break-all" href="pdf/10_ideas_clave_evaluar_para_aprender.pdf" target="_blank" rel="noopener noreferrer">pdf/10_ideas_clave_evaluar_para_aprender.pdf</a>
+                                <a class="mt-2 block text-slate-600 underline break-all" href="https://www.grao.com/libros/10-ideas-clave-evaluar-para-aprender-2080" target="_blank" rel="noopener noreferrer">Ver en línea (Editorial Graó)</a>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6 border-l-4 border-green-500">
+                                <p class="text-slate-700 italic">Evaluación de los aprendizajes. Cómo evaluar.</p>
+                                <a class="mt-2 block text-green-700 underline break-all" href="pdf/6.%20Evaluaci%C3%B3n%20de%20los%20aprendizajes.%20C%C3%B3mo%20evaluar.pdf" target="_blank" rel="noopener noreferrer">pdf/6. Evaluación de los aprendizajes. Cómo evaluar.pdf</a>
+                            </div>
+
+                            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 sm:p-6 border-l-4 border-green-500">
+                                <p class="text-slate-700 italic">Estrategias de evaluación formativa.</p>
+                                <a class="mt-2 block text-green-700 underline break-all" href="pdf/Estrategias_Evaluacion_Formativa.pdf" target="_blank" rel="noopener noreferrer">pdf/Estrategias_Evaluacion_Formativa.pdf</a>
+                                <a class="mt-2 block text-slate-600 underline break-all" href="https://educrea.cl/wp-content/uploads/2017/12/DOC1-ev-formativa.pdf" target="_blank" rel="noopener noreferrer">Ver en línea (Educrea)</a>
+                            </div>
+                        </div>
+                        <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="bibliografia">
+                            <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">Audio</button>
+                            <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Pausar</button>
+                            <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>Detener</button>
+                        </div>
+                    </div>
+
+                </div>
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const contentPanes = document.querySelectorAll('.content-pane');
+            const mobileNav = document.getElementById('mobile-nav');
+
+            const activitySubnavButtons = document.querySelectorAll('.activity-subnav-btn');
+            const activitySections = document.querySelectorAll('.activity-section');
+
+            function switchPane(targetId) {
+                contentPanes.forEach(pane => pane.classList.remove('active'));
+
+                const targetPane = document.getElementById(targetId);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                }
+
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.target === targetId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                if (mobileNav && mobileNav.value !== targetId) {
+                    mobileNav.value = targetId;
+                }
+            }
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchPane(link.dataset.target);
+                });
+            });
+
+            if (mobileNav) {
+                mobileNav.addEventListener('change', (e) => {
+                    switchPane(e.target.value);
+                });
+            }
+
+            function switchActivitySection(sectionId) {
+                activitySections.forEach(section => {
+                    section.classList.toggle('hidden', section.id !== sectionId);
+                });
+                activitySubnavButtons.forEach(btn => {
+                    const isActive = btn.getAttribute('data-activity-section') === sectionId;
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    btn.classList.toggle('bg-green-600', isActive);
+                    btn.classList.toggle('text-white', isActive);
+                    btn.classList.toggle('bg-white', !isActive);
+                    btn.classList.toggle('text-slate-700', !isActive);
+                    btn.classList.toggle('border', !isActive);
+                    btn.classList.toggle('border-slate-200', !isActive);
+                });
+            }
+
+            if (activitySubnavButtons && activitySubnavButtons.length) {
+                activitySubnavButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        switchActivitySection(btn.getAttribute('data-activity-section'));
+                    });
+                });
+                switchActivitySection('act-a1');
+            }
+
+            switchPane('introduccion');
+
+            const quizCheckBtn = document.getElementById('u2-quiz-check');
+            const quizResetBtn = document.getElementById('u2-quiz-reset');
+            const quizResult = document.getElementById('u2-quiz-result');
+            const quizQuestions = document.querySelectorAll('#evaluacion .quiz-question');
+
+            const a1GenerateBtn = document.getElementById('u2-a1-generate');
+            const a1CopyBtn = document.getElementById('u2-a1-copy');
+            const a1Status = document.getElementById('u2-a1-status');
+            const a1EmotionContainer = document.getElementById('u2-a1-emociones');
+            const a1EmotionInputs = document.querySelectorAll('.u2-a1-emocion');
+            const a1Prompt1 = document.getElementById('u2-a1-prompt-1');
+            const a1Prompt2 = document.getElementById('u2-a1-prompt-2');
+            const a1Prompt3 = document.getElementById('u2-a1-prompt-3');
+            const a1Draft = document.getElementById('u2-a1-draft');
+
+            const a2ChipContainer = document.getElementById('u2-a2-escenas');
+            const a2OtherScene = document.getElementById('u2-a2-escena-otra');
+            const a2Prompt1 = document.getElementById('u2-a2-prompt-1');
+            const a2Prompt2 = document.getElementById('u2-a2-prompt-2');
+            const a2Prompt3 = document.getElementById('u2-a2-prompt-3');
+            const a2Draft = document.getElementById('u2-a2-draft');
+            const a2GenerateBtn = document.getElementById('u2-a2-generate');
+            const a2CopyBtn = document.getElementById('u2-a2-copy');
+            const a2Status = document.getElementById('u2-a2-status');
+
+            const a3Tabs = document.querySelectorAll('.u2-a3-tab');
+            const a3Panels = document.querySelectorAll('.u2-a3-panel');
+            const a3M1Text = document.getElementById('u2-a3-m1-text');
+            const a3M1Draft = document.getElementById('u2-a3-m1-draft');
+            const a3M1Generate = document.getElementById('u2-a3-m1-generate');
+            const a3M1Copy = document.getElementById('u2-a3-m1-copy');
+            const a3M1Status = document.getElementById('u2-a3-m1-status');
+
+            const a3M2Aut = document.getElementById('u2-a3-m2-aut');
+            const a3M2Year = document.getElementById('u2-a3-m2-year');
+            const a3M2Idea = document.getElementById('u2-a3-m2-idea');
+            const a3M2Text = document.getElementById('u2-a3-m2-text');
+            const a3M2Draft = document.getElementById('u2-a3-m2-draft');
+            const a3M2Generate = document.getElementById('u2-a3-m2-generate');
+            const a3M2Copy = document.getElementById('u2-a3-m2-copy');
+            const a3M2Status = document.getElementById('u2-a3-m2-status');
+
+            const a3M3Text = document.getElementById('u2-a3-m3-text');
+            const a3M3Draft = document.getElementById('u2-a3-m3-draft');
+            const a3M3Generate = document.getElementById('u2-a3-m3-generate');
+            const a3M3Copy = document.getElementById('u2-a3-m3-copy');
+            const a3M3Status = document.getElementById('u2-a3-m3-status');
+
+            const saveBtn = document.getElementById('u2-save');
+            const restoreBtn = document.getElementById('u2-restore');
+            const clearBtn = document.getElementById('u2-clear');
+            const saveStatus = document.getElementById('u2-save-status');
+
+            const checkForo = document.getElementById('u2-check-foro');
+            const checkPrewiki = document.getElementById('u2-check-prewiki');
+            const checkWiki = document.getElementById('u2-check-wiki');
+            const checkRubrica = document.getElementById('u2-check-rubrica');
+
+            const STORAGE_KEY = 'pe_u2_unidad2';
+
+            function setSaveStatus(message, kind) {
+                if (!saveStatus) return;
+                saveStatus.textContent = message;
+                saveStatus.className = kind === 'success' ? 'text-sm font-semibold text-green-700' : kind === 'warning' ? 'text-sm font-semibold text-yellow-700' : kind === 'error' ? 'text-sm font-semibold text-red-700' : 'text-sm font-semibold text-slate-700';
+            }
+
+            function updateCounter(textarea) {
+                const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+                if (!counter) return;
+                const max = textarea.getAttribute('maxlength');
+                const current = textarea.value.length;
+                counter.textContent = max ? `${current}/${max}` : `${current}`;
+            }
+
+            function autosizeTextarea(textarea) {
+                textarea.style.height = 'auto';
+                textarea.style.height = `${textarea.scrollHeight}px`;
+            }
+
+            document.querySelectorAll('textarea[data-autosize]').forEach(textarea => {
+                autosizeTextarea(textarea);
+                updateCounter(textarea);
+                textarea.addEventListener('input', () => {
+                    autosizeTextarea(textarea);
+                    updateCounter(textarea);
+                });
+            });
+
+            function collectState() {
+                const emociones = [];
+                a1EmotionInputs.forEach(input => {
+                    if (input.checked) emociones.push(input.value);
+                });
+
+                const escenas = [];
+                if (a2ChipContainer) {
+                    a2ChipContainer.querySelectorAll('button.u2-chip[data-value][data-selected="true"]').forEach(btn => {
+                        escenas.push(btn.getAttribute('data-value'));
+                    });
+                }
+                return {
+                    a1: {
+                        emociones,
+                        p1: a1Prompt1 ? a1Prompt1.value : '',
+                        p2: a1Prompt2 ? a1Prompt2.value : '',
+                        p3: a1Prompt3 ? a1Prompt3.value : '',
+                        draft: a1Draft ? a1Draft.value : ''
+                    },
+                    a2: {
+                        escenas,
+                        otra: a2OtherScene ? a2OtherScene.value : '',
+                        p1: a2Prompt1 ? a2Prompt1.value : '',
+                        p2: a2Prompt2 ? a2Prompt2.value : '',
+                        p3: a2Prompt3 ? a2Prompt3.value : '',
+                        draft: a2Draft ? a2Draft.value : ''
+                    },
+                    a3: {
+                        active: document.querySelector('.u2-a3-tab[aria-selected="true"]')?.getAttribute('data-step') || 'm1',
+                        m1: {
+                            text: a3M1Text ? a3M1Text.value : '',
+                            draft: a3M1Draft ? a3M1Draft.value : ''
+                        },
+                        m2: {
+                            aut: a3M2Aut ? a3M2Aut.value : '',
+                            year: a3M2Year ? a3M2Year.value : '',
+                            idea: a3M2Idea ? a3M2Idea.value : '',
+                            text: a3M2Text ? a3M2Text.value : '',
+                            draft: a3M2Draft ? a3M2Draft.value : ''
+                        },
+                        m3: {
+                            text: a3M3Text ? a3M3Text.value : '',
+                            draft: a3M3Draft ? a3M3Draft.value : ''
+                        }
+                    },
+                    checklist: {
+                        foro: checkForo ? checkForo.checked : false,
+                        prewiki: checkPrewiki ? checkPrewiki.checked : false,
+                        wiki: checkWiki ? checkWiki.checked : false,
+                        rubrica: checkRubrica ? checkRubrica.checked : false
+                    }
+                };
+            }
+
+            function applyState(state) {
+                const s = state || {};
+                const a1 = s.a1 || {};
+
+                const rawEmociones = a1.emociones ?? a1.emocion ?? [];
+                const emociones = Array.isArray(rawEmociones) ? rawEmociones : (rawEmociones ? [rawEmociones] : []);
+                if (a1EmotionInputs && a1EmotionInputs.length) {
+                    a1EmotionInputs.forEach(input => {
+                        input.checked = emociones.includes(input.value);
+                    });
+                }
+                if (a1Prompt1) { a1Prompt1.value = a1.p1 || ''; autosizeTextarea(a1Prompt1); updateCounter(a1Prompt1); }
+                if (a1Prompt2) { a1Prompt2.value = a1.p2 || ''; autosizeTextarea(a1Prompt2); updateCounter(a1Prompt2); }
+                if (a1Prompt3) { a1Prompt3.value = a1.p3 || ''; autosizeTextarea(a1Prompt3); updateCounter(a1Prompt3); }
+                if (a1Draft) { a1Draft.value = a1.draft || ''; autosizeTextarea(a1Draft); }
+
+                const a2 = s.a2 || {};
+                const escenas = Array.isArray(a2.escenas) ? a2.escenas : [];
+                if (a2ChipContainer) {
+                    a2ChipContainer.querySelectorAll('button.u2-chip[data-value]').forEach(btn => {
+                        const val = btn.getAttribute('data-value');
+                        const selected = escenas.includes(val);
+                        btn.setAttribute('data-selected', selected ? 'true' : 'false');
+                        btn.classList.toggle('bg-green-600', selected);
+                        btn.classList.toggle('text-white', selected);
+                        btn.classList.toggle('border-green-600', selected);
+                        btn.classList.toggle('bg-white', !selected);
+                        btn.classList.toggle('text-slate-700', !selected);
+                        btn.classList.toggle('border-slate-200', !selected);
+                    });
+                }
+                if (a2OtherScene) a2OtherScene.value = a2.otra || '';
+                if (a2Prompt1) { a2Prompt1.value = a2.p1 || ''; autosizeTextarea(a2Prompt1); updateCounter(a2Prompt1); }
+                if (a2Prompt2) { a2Prompt2.value = a2.p2 || ''; autosizeTextarea(a2Prompt2); updateCounter(a2Prompt2); }
+                if (a2Prompt3) { a2Prompt3.value = a2.p3 || ''; autosizeTextarea(a2Prompt3); updateCounter(a2Prompt3); }
+                if (a2Draft) { a2Draft.value = a2.draft || ''; autosizeTextarea(a2Draft); }
+
+                const a3 = s.a3 || {};
+                const active = a3.active || 'm1';
+                if (a3M1Text) { a3M1Text.value = a3.m1?.text || ''; autosizeTextarea(a3M1Text); updateCounter(a3M1Text); }
+                if (a3M1Draft) { a3M1Draft.value = a3.m1?.draft || ''; autosizeTextarea(a3M1Draft); }
+                if (a3M2Aut) a3M2Aut.value = a3.m2?.aut || '';
+                if (a3M2Year) a3M2Year.value = a3.m2?.year || '';
+                if (a3M2Idea) a3M2Idea.value = a3.m2?.idea || '';
+                if (a3M2Text) { a3M2Text.value = a3.m2?.text || ''; autosizeTextarea(a3M2Text); updateCounter(a3M2Text); }
+                if (a3M2Draft) { a3M2Draft.value = a3.m2?.draft || ''; autosizeTextarea(a3M2Draft); }
+                if (a3M3Text) { a3M3Text.value = a3.m3?.text || ''; autosizeTextarea(a3M3Text); updateCounter(a3M3Text); }
+                if (a3M3Draft) { a3M3Draft.value = a3.m3?.draft || ''; autosizeTextarea(a3M3Draft); }
+
+                if (a3Tabs && a3Tabs.length) {
+                    const tabToActivate = Array.from(a3Tabs).find(t => t.getAttribute('data-step') === active) || a3Tabs[0];
+                    if (tabToActivate) tabToActivate.click();
+                }
+
+                const c = s.checklist || {};
+                if (checkForo) checkForo.checked = !!c.foro;
+                if (checkPrewiki) checkPrewiki.checked = !!c.prewiki;
+                if (checkWiki) checkWiki.checked = !!c.wiki;
+                if (checkRubrica) checkRubrica.checked = !!c.rubrica;
+            }
+
+            function saveState() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(collectState()));
+                    setSaveStatus('Guardado.', 'success');
+                } catch {
+                    setSaveStatus('No fue posible guardar en este navegador.', 'error');
+                }
+            }
+
+            function restoreState() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    if (!raw) {
+                        setSaveStatus('No hay datos guardados.', 'warning');
+                        return;
+                    }
+                    applyState(JSON.parse(raw));
+                    setSaveStatus('Restaurado.', 'success');
+                } catch {
+                    setSaveStatus('No fue posible restaurar los datos.', 'error');
+                }
+            }
+
+            function clearState() {
+                try {
+                    localStorage.removeItem(STORAGE_KEY);
+                } catch {
+                }
+                applyState({ a1: {}, checklist: {} });
+                setSaveStatus('Limpio.', 'success');
+            }
+
+            if (saveBtn) saveBtn.addEventListener('click', saveState);
+            if (restoreBtn) restoreBtn.addEventListener('click', restoreState);
+            if (clearBtn) clearBtn.addEventListener('click', clearState);
+
+            if (a1EmotionInputs && a1EmotionInputs.length) {
+                a1EmotionInputs.forEach(input => input.addEventListener('change', saveState));
+            }
+            if (a1Prompt1) a1Prompt1.addEventListener('input', saveState);
+            if (a1Prompt2) a1Prompt2.addEventListener('input', saveState);
+            if (a1Prompt3) a1Prompt3.addEventListener('input', saveState);
+
+            if (a2ChipContainer) {
+                a2ChipContainer.querySelectorAll('button.u2-chip[data-value]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const isSelected = btn.getAttribute('data-selected') === 'true';
+                        const next = !isSelected;
+                        btn.setAttribute('data-selected', next ? 'true' : 'false');
+                        btn.classList.toggle('bg-green-600', next);
+                        btn.classList.toggle('text-white', next);
+                        btn.classList.toggle('border-green-600', next);
+                        btn.classList.toggle('bg-white', !next);
+                        btn.classList.toggle('text-slate-700', !next);
+                        btn.classList.toggle('border-slate-200', !next);
+                        saveState();
+                    });
+                });
+            }
+            if (a2OtherScene) a2OtherScene.addEventListener('input', saveState);
+            if (a2Prompt1) a2Prompt1.addEventListener('input', saveState);
+            if (a2Prompt2) a2Prompt2.addEventListener('input', saveState);
+            if (a2Prompt3) a2Prompt3.addEventListener('input', saveState);
+            if (a2Draft) a2Draft.addEventListener('input', saveState);
+            if (checkForo) checkForo.addEventListener('change', saveState);
+            if (checkPrewiki) checkPrewiki.addEventListener('change', saveState);
+            if (checkWiki) checkWiki.addEventListener('change', saveState);
+            if (checkRubrica) checkRubrica.addEventListener('change', saveState);
+
+            function activateA3(step) {
+                a3Tabs.forEach(tab => {
+                    const isActive = tab.getAttribute('data-step') === step;
+                    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    tab.classList.toggle('bg-green-600', isActive);
+                    tab.classList.toggle('text-white', isActive);
+                    tab.classList.toggle('bg-white', !isActive);
+                    tab.classList.toggle('text-slate-700', !isActive);
+                    tab.classList.toggle('border', !isActive);
+                    tab.classList.toggle('border-slate-200', !isActive);
+                });
+                a3Panels.forEach(panel => {
+                    panel.classList.toggle('hidden', panel.id !== `u2-a3-panel-${step}`);
+                });
+                saveState();
+            }
+
+            if (a3Tabs && a3Tabs.length) {
+                a3Tabs.forEach(tab => {
+                    tab.addEventListener('click', () => activateA3(tab.getAttribute('data-step')));
+                });
+            }
+
+            function setA3Status(el, message, kind) {
+                if (!el) return;
+                el.textContent = message;
+                el.className = kind === 'success' ? 'text-sm font-semibold text-green-700' : kind === 'warning' ? 'text-sm font-semibold text-yellow-700' : kind === 'error' ? 'text-sm font-semibold text-red-700' : 'text-sm font-semibold text-slate-700';
+            }
+
+            function copyTextFrom(textarea, statusEl) {
+                const text = textarea ? (textarea.value || '') : '';
+                if (!text.trim()) {
+                    setA3Status(statusEl, 'Primero genera el borrador.', 'warning');
+                    return;
+                }
+                (async () => {
+                    try {
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            await navigator.clipboard.writeText(text);
+                        } else {
+                            textarea.focus();
+                            textarea.select();
+                            document.execCommand('copy');
+                        }
+                        setA3Status(statusEl, 'Copiado al portapapeles.', 'success');
+                    } catch {
+                        setA3Status(statusEl, 'No fue posible copiar automáticamente. Selecciona el texto y copia manualmente.', 'error');
+                    }
+                })();
+            }
+
+            if (a3M1Text) a3M1Text.addEventListener('input', saveState);
+            if (a3M2Aut) a3M2Aut.addEventListener('input', saveState);
+            if (a3M2Year) a3M2Year.addEventListener('input', saveState);
+            if (a3M2Idea) a3M2Idea.addEventListener('input', saveState);
+            if (a3M2Text) a3M2Text.addEventListener('input', saveState);
+            if (a3M3Text) a3M3Text.addEventListener('input', saveState);
+
+            if (a3M1Generate && a3M1Draft) {
+                a3M1Generate.addEventListener('click', () => {
+                    const base = a3M1Text ? a3M1Text.value.trim() : '';
+                    const partes = [];
+                    if (base) partes.push(base);
+                    partes.push('Cierro este momento con una pregunta: ¿en qué medida mi historia como estudiante sigue influyendo en cómo entiendo y ejerzo la evaluación?');
+                    a3M1Draft.value = partes.join('\n\n');
+                    autosizeTextarea(a3M1Draft);
+                    setA3Status(a3M1Status, 'Borrador generado.', 'success');
+                    saveState();
+                });
+            }
+            if (a3M1Copy && a3M1Draft) {
+                a3M1Copy.addEventListener('click', () => copyTextFrom(a3M1Draft, a3M1Status));
+            }
+
+            if (a3M2Generate && a3M2Draft) {
+                a3M2Generate.addEventListener('click', () => {
+                    const aut = a3M2Aut ? a3M2Aut.value.trim() : '';
+                    const year = a3M2Year ? a3M2Year.value.trim() : '';
+                    const idea = a3M2Idea ? a3M2Idea.value.trim() : '';
+                    const base = a3M2Text ? a3M2Text.value.trim() : '';
+                    const partes = [];
+                    if (aut || year || idea) {
+                        const ref = [aut, year ? `(${year})` : '', idea ? `— ${idea}` : ''].filter(Boolean).join(' ');
+                        partes.push(`Referente teórico: ${ref}.`);
+                    }
+                    if (base) partes.push(base);
+                    partes.push('En este replanteamiento, busco articular teoría y práctica para comprender la evaluación como una oportunidad de aprendizaje.');
+                    a3M2Draft.value = partes.join('\n\n');
+                    autosizeTextarea(a3M2Draft);
+                    setA3Status(a3M2Status, 'Borrador generado.', 'success');
+                    saveState();
+                });
+            }
+            if (a3M2Copy && a3M2Draft) {
+                a3M2Copy.addEventListener('click', () => copyTextFrom(a3M2Draft, a3M2Status));
+            }
+
+            if (a3M3Generate && a3M3Draft) {
+                a3M3Generate.addEventListener('click', () => {
+                    const base = a3M3Text ? a3M3Text.value.trim() : '';
+                    const partes = [];
+                    if (base) partes.push(base);
+                    partes.push('Este concepto final integra lo vivido, lo leído y lo reflexionado, priorizando la retroalimentación y la autorregulación como parte del aprendizaje.');
+                    a3M3Draft.value = partes.join('\n\n');
+                    autosizeTextarea(a3M3Draft);
+                    setA3Status(a3M3Status, 'Borrador generado.', 'success');
+                    saveState();
+                });
+            }
+            if (a3M3Copy && a3M3Draft) {
+                a3M3Copy.addEventListener('click', () => copyTextFrom(a3M3Draft, a3M3Status));
+            }
+
+            function setA2Status(message, kind) {
+                if (!a2Status) return;
+                a2Status.textContent = message;
+                a2Status.className = kind === 'success' ? 'text-sm font-semibold text-green-700' : kind === 'warning' ? 'text-sm font-semibold text-yellow-700' : kind === 'error' ? 'text-sm font-semibold text-red-700' : 'text-sm font-semibold text-slate-700';
+            }
+
+            if (a2GenerateBtn && a2Draft) {
+                a2GenerateBtn.addEventListener('click', () => {
+                    const escenas = [];
+                    if (a2ChipContainer) {
+                        a2ChipContainer.querySelectorAll('button.u2-chip[data-value][data-selected="true"]').forEach(btn => {
+                            escenas.push(btn.getAttribute('data-value'));
+                        });
+                    }
+                    const otra = a2OtherScene ? a2OtherScene.value.trim() : '';
+                    if (otra) escenas.push(otra);
+
+                    const p1 = a2Prompt1 ? a2Prompt1.value.trim() : '';
+                    const p2 = a2Prompt2 ? a2Prompt2.value.trim() : '';
+                    const p3 = a2Prompt3 ? a2Prompt3.value.trim() : '';
+
+                    const partes = [];
+                    if (escenas.length) {
+                        partes.push(`Al recordar mi trayectoria escolar, identifico como “escenas temidas” de evaluación: ${escenas.join(', ')}.`);
+                    }
+                    if (p1) partes.push(`En esas situaciones, lo que más me hacía sentir era: ${p1}`);
+                    if (p2) partes.push(`Hoy pienso que lo que se valoraba realmente era: ${p2}`);
+                    if (p3) partes.push(`A partir de esa experiencia, considero que lo que aprendí (o dejé de aprender) fue: ${p3}`);
+                    partes.push('Con esto, retomo la pregunta “¿Nos han evaluado bien a nosotros?” para iniciar mi primera entrada en la Wiki.');
+
+                    a2Draft.value = partes.join('\n\n');
+                    autosizeTextarea(a2Draft);
+                    setA2Status('Borrador generado.', 'success');
+                    saveState();
+                });
+            }
+
+            if (a2CopyBtn && a2Draft) {
+                a2CopyBtn.addEventListener('click', async () => {
+                    const text = a2Draft.value || '';
+                    if (!text.trim()) {
+                        setA2Status('Primero genera el borrador.', 'warning');
+                        return;
+                    }
+                    try {
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            await navigator.clipboard.writeText(text);
+                        } else {
+                            a2Draft.focus();
+                            a2Draft.select();
+                            document.execCommand('copy');
+                        }
+                        setA2Status('Copiado al portapapeles.', 'success');
+                    } catch {
+                        setA2Status('No fue posible copiar automáticamente. Selecciona el texto y copia manualmente.', 'error');
+                    }
+                });
+            }
+
+            function setA1Status(message, kind) {
+                if (!a1Status) return;
+                a1Status.textContent = message;
+                a1Status.className = kind === 'success' ? 'text-sm font-semibold text-green-700' : kind === 'warning' ? 'text-sm font-semibold text-yellow-700' : kind === 'error' ? 'text-sm font-semibold text-red-700' : 'text-sm font-semibold text-slate-700';
+            }
+
+            if (a1GenerateBtn && a1Draft) {
+                a1GenerateBtn.addEventListener('click', () => {
+                    const emociones = [];
+                    a1EmotionInputs.forEach(input => {
+                        if (input.checked) emociones.push(input.value);
+                    });
+                    const p1 = a1Prompt1 ? a1Prompt1.value.trim() : '';
+                    const p2 = a1Prompt2 ? a1Prompt2.value.trim() : '';
+                    const p3 = a1Prompt3 ? a1Prompt3.value.trim() : '';
+
+                    const partes = [];
+                    if (emociones.length) {
+                        partes.push(`Cuando pienso en evaluación, siento ${emociones.join(', ')}.`);
+                    }
+                    if (p1) {
+                        partes.push(`Del video, la escena que más me marcó fue: ${p1}`);
+                    }
+                    if (p2) {
+                        partes.push(`Esto se relaciona con mi experiencia escolar porque: ${p2}`);
+                    }
+                    if (p3) {
+                        partes.push(`Como docente, cambiaría: ${p3}`);
+                    }
+                    partes.push('Al final, me pregunto: ¿cómo evaluamos a nuestros estudiantes y en qué medida esa forma de evaluar refleja nuestra historia como alumnos?');
+
+                    a1Draft.value = partes.join('\n\n');
+                    setA1Status('Borrador generado.', 'success');
+                    saveState();
+                });
+            }
+
+            if (a1CopyBtn && a1Draft) {
+                a1CopyBtn.addEventListener('click', async () => {
+                    const text = a1Draft.value || '';
+                    if (!text.trim()) {
+                        setA1Status('Primero genera el borrador.', 'warning');
+                        return;
+                    }
+                    try {
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            await navigator.clipboard.writeText(text);
+                        } else {
+                            a1Draft.focus();
+                            a1Draft.select();
+                            document.execCommand('copy');
+                        }
+                        setA1Status('Copiado al portapapeles.', 'success');
+                    } catch {
+                        setA1Status('No fue posible copiar automáticamente. Selecciona el texto y copia manualmente.', 'error');
+                    }
+                });
+            }
+
+            function resetQuizStyles() {
+                quizQuestions.forEach(question => {
+                    const feedback = question.querySelector('[data-feedback]');
+                    if (feedback) {
+                        feedback.textContent = '';
+                        feedback.className = 'mt-3 text-sm font-medium';
+                    }
+                    question.querySelectorAll('label').forEach(label => {
+                        label.classList.remove('bg-green-100', 'bg-red-100', 'border-green-500', 'border-red-500', 'font-bold');
+                        label.classList.add('bg-gray-50', 'border-gray-200');
+                    });
+                });
+                if (quizResult) {
+                    quizResult.textContent = '';
+                    quizResult.className = 'text-sm font-semibold';
+                }
+            }
+
+            if (quizCheckBtn) {
+                quizCheckBtn.addEventListener('click', () => {
+                    let score = 0;
+                    let answeredCount = 0;
+
+                    quizQuestions.forEach(question => {
+                        const correct = (question.getAttribute('data-correct') || '').toLowerCase();
+                        const selected = question.querySelector('input[type="radio"]:checked');
+                        const feedback = question.querySelector('[data-feedback]');
+
+                        if (selected) {
+                            answeredCount += 1;
+                        }
+
+                        question.querySelectorAll('label').forEach(label => {
+                            label.classList.remove('bg-green-100', 'bg-red-100', 'border-green-500', 'border-red-500', 'font-bold');
+                            label.classList.add('bg-gray-50', 'border-gray-200');
+                        });
+
+                        if (!selected) {
+                            if (feedback) {
+                                feedback.textContent = 'Selecciona una opción para ver la retroalimentación.';
+                                feedback.className = 'mt-3 text-sm font-medium text-yellow-700';
+                            }
+                            return;
+                        }
+
+                        if (selected.value === correct) {
+                            score += 1;
+                            const selectedLabel = selected.closest('label');
+                            if (selectedLabel) {
+                                selectedLabel.classList.remove('bg-gray-50', 'border-gray-200');
+                                selectedLabel.classList.add('bg-green-100', 'border-green-500', 'font-bold');
+                            }
+                            if (feedback) {
+                                feedback.textContent = 'Correcto. Excelente comprensión del concepto.';
+                                feedback.className = 'mt-3 text-sm font-medium text-green-700';
+                            }
+                        } else {
+                            const selectedLabel = selected.closest('label');
+                            if (selectedLabel) {
+                                selectedLabel.classList.remove('bg-gray-50', 'border-gray-200');
+                                selectedLabel.classList.add('bg-red-100', 'border-red-500');
+                            }
+                            const correctRadio = question.querySelector(`input[type="radio"][value="${correct}"]`);
+                            const correctLabel = correctRadio ? correctRadio.closest('label') : null;
+                            if (correctLabel) {
+                                correctLabel.classList.remove('bg-gray-50', 'border-gray-200');
+                                correctLabel.classList.add('bg-green-100', 'border-green-500', 'font-bold');
+                            }
+                            if (feedback) {
+                                feedback.textContent = 'Respuesta incorrecta. Revisa la opción correcta resaltada en verde.';
+                                feedback.className = 'mt-3 text-sm font-medium text-red-700';
+                            }
+                        }
+                    });
+
+                    if (quizResult) {
+                        if (answeredCount < quizQuestions.length) {
+                            quizResult.textContent = `Has respondido ${answeredCount} de ${quizQuestions.length}. Puntaje actual: ${score}/${quizQuestions.length}.`;
+                            quizResult.className = 'text-sm font-semibold text-yellow-700';
+                        } else {
+                            quizResult.textContent = `Resultado: ${score}/${quizQuestions.length}.`;
+                            quizResult.className = score === quizQuestions.length ? 'text-sm font-semibold text-green-700' : 'text-sm font-semibold text-slate-700';
+                        }
+                    }
+                });
+            }
+
+            if (quizResetBtn) {
+                quizResetBtn.addEventListener('click', () => {
+                    document.querySelectorAll('#evaluacion input[type="radio"]').forEach(radio => {
+                        radio.checked = false;
+                    });
+                    resetQuizStyles();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
