@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rúbricas — Procesos Evaluativos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .unicordoba-bg { background-color: #166534; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; padding: 0 !important; margin: 0 !important; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-200">
+        <header class="unicordoba-bg p-8 text-white relative">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                            <i data-lucide="clipboard-check" class="w-6 h-6 text-green-200"></i>
+                        </div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Rúbricas de evaluación</h1>
+                    </div>
+                    <p class="text-green-100 font-medium text-sm md:text-base">Procesos evaluativos en las ciencias naturales</p>
+                    <div class="flex flex-wrap gap-4 mt-4 text-[11px] uppercase tracking-wider font-semibold text-green-200">
+                        <span class="flex items-center gap-1"><i data-lucide="graduation-cap" class="w-3 h-3"></i> Maestría en Didáctica de las CC. NN.</span>
+                        <span class="flex items-center gap-1"><i data-lucide="monitor" class="w-3 h-3"></i> Plataforma Moodle (posgrado)</span>
+                    </div>
+                </div>
+                <div class="no-print flex gap-2">
+                    <button onclick="window.print()" class="flex items-center gap-2 bg-white text-emerald-900 px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg hover:bg-green-50 transition-all active:scale-95">
+                        <i data-lucide="printer" class="w-4 h-4"></i> Imprimir
+                    </button>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+        </header>
+
+        <div class="px-8 py-5 bg-slate-50 border-b border-slate-100">
+            <p class="text-sm text-slate-600">Selecciona la unidad para abrir la rúbrica. Cada enlace puede copiarse y pegarse en Moodle.</p>
+        </div>
+
+        <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a class="group block bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow" href="https://mtrochez.github.io/ova_cintia_unicor/unidad1/rubrica/index.html" target="_blank" rel="noopener noreferrer">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-extrabold tracking-widest uppercase text-slate-500">Unidad 1</p>
+                        <h2 class="mt-2 text-xl font-extrabold text-green-800">Wiki personal</h2>
+                        <p class="mt-3 text-slate-600">Conceptualización: ¿Qué sabemos acerca de la evaluación?</p>
+                    </div>
+                    <div class="shrink-0 w-11 h-11 rounded-xl bg-green-50 border border-green-200 flex items-center justify-center text-green-700 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </div>
+                </div>
+                <p class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-green-700">Abrir rúbrica</p>
+            </a>
+
+            <a class="group block bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow" href="https://mtrochez.github.io/ova_cintia_unicor/unidad2/rubrica/index.html" target="_blank" rel="noopener noreferrer">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-extrabold tracking-widest uppercase text-slate-500">Unidad 2</p>
+                        <h2 class="mt-2 text-xl font-extrabold text-green-800">Lectura y ensayo crítico</h2>
+                        <p class="mt-3 text-slate-600">Postulados metodológicos de la evaluación para el aprendizaje en ciencias.</p>
+                    </div>
+                    <div class="shrink-0 w-11 h-11 rounded-xl bg-green-50 border border-green-200 flex items-center justify-center text-green-700 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </div>
+                </div>
+                <p class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-green-700">Abrir rúbrica</p>
+            </a>
+
+            <a class="group block bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow" href="https://mtrochez.github.io/ova_cintia_unicor/unidad3/rubrica/index.html" target="_blank" rel="noopener noreferrer">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-extrabold tracking-widest uppercase text-slate-500">Unidad 3</p>
+                        <h2 class="mt-2 text-xl font-extrabold text-green-800">Recorrido virtual (IA)</h2>
+                        <p class="mt-3 text-slate-600">Postulados actitudinales de la evaluación para el aprendizaje en ciencias.</p>
+                    </div>
+                    <div class="shrink-0 w-11 h-11 rounded-xl bg-green-50 border border-green-200 flex items-center justify-center text-green-700 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </div>
+                </div>
+                <p class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-green-700">Abrir rúbrica</p>
+            </a>
+        </div>
+
+        <footer class="p-6 bg-slate-50 border-t border-slate-100">
+            <div class="flex flex-col md:flex-row justify-end items-center gap-4">
+                <div class="text-right">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Universidad de Córdoba</p>
+                    <p class="text-[9px] text-slate-400">Facultad de Educación y Ciencias Humanas</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
