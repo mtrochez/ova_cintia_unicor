@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Referencias bibliográficas — Procesos Evaluativos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --paper: #f8fafc;
+      --emerald: #0f766e;
+      --outline: rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 18px 35px -30px rgba(15, 23, 42, 0.45);
+      --shadow-strong: 0 28px 60px -40px rgba(15, 23, 42, 0.6);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100%;
+      background:
+        radial-gradient(900px 320px at 8% -12%, rgba(14, 116, 144, 0.18), transparent 60%),
+        radial-gradient(700px 320px at 96% 6%, rgba(245, 158, 11, 0.14), transparent 55%),
+        linear-gradient(120deg, rgba(15, 118, 110, 0.08), transparent 60%),
+        repeating-linear-gradient(90deg, rgba(15, 23, 42, 0.035), rgba(15, 23, 42, 0.035) 1px, transparent 1px, transparent 140px),
+        var(--paper);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      top: -210px;
+      right: -140px;
+      background: radial-gradient(circle, rgba(94, 234, 212, 0.5), transparent 70%);
+      opacity: 0.8;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      bottom: -240px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(148, 163, 184, 0.35), transparent 70%);
+      opacity: 0.8;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-font {
+      font-family: "Playfair Display", serif;
+    }
+
+    .filter-panel {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--outline);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(8px);
+    }
+
+    #references-container {
+      grid-auto-rows: 1fr;
+      align-items: stretch;
+    }
+
+    .reference-card {
+      position: relative;
+      border: 1px solid var(--outline);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      box-shadow: var(--shadow-soft);
+      height: 100%;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.3, 0.7, 0.4, 1), box-shadow 0.35s ease, opacity 0.25s ease, filter 0.25s ease;
+    }
+
+    .card-citation {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      line-clamp: 6;
+    }
+
+    .card-actions {
+      margin-top: auto;
+    }
+
+    .reference-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(140px 140px at 90% 8%, rgba(14, 165, 233, 0.18), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .reference-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 30px 50px -40px rgba(15, 23, 42, 0.6);
+    }
+
+    .reference-card:hover::after {
+      opacity: 1;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.55s cubic-bezier(0.3, 0.7, 0.4, 1) both;
+      animation-delay: var(--delay, 0ms);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .filter-chip {
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      box-shadow: 0 10px 20px -16px rgba(15, 23, 42, 0.4);
+    }
+
+    .filter-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 26px -18px rgba(15, 23, 42, 0.5);
+    }
+
+    .filter-chip:focus-visible {
+      outline: 3px solid rgba(14, 116, 144, 0.35);
+      outline-offset: 2px;
+    }
+
+    .filter-chip.is-active {
+      background: #e0f2f1;
+      border-color: rgba(13, 148, 136, 0.4);
+      color: #0f766e;
+      box-shadow: 0 18px 30px -20px rgba(13, 148, 136, 0.5);
+    }
+
+    .type-pill {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .reference-card:hover .type-pill {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px -18px rgba(15, 23, 42, 0.4);
+    }
+
+    .reference-card img {
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 12px 22px -16px rgba(15, 23, 42, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .reference-card:hover img {
+      transform: scale(1.04);
+      box-shadow: 0 18px 30px -20px rgba(15, 23, 42, 0.55);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <header class="hero bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-600 text-white" aria-label="Presentación">
+      <div class="container mx-auto px-4 py-10">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-white/15 border border-white/30 overflow-hidden flex items-center justify-center">
+              <img src="../ProcesosCurriculares/Tema_1/LOGO%20MAESTRIA%20(1).jpg.jpeg" alt="Logo" class="w-full h-full object-cover" onerror="if(!this.dataset.f){ this.dataset.f='1'; this.src='logo.jpg'; } else if(this.dataset.f==='1'){ this.dataset.f='2'; this.src='logo.png'; } else if(this.dataset.f==='2'){ this.dataset.f='3'; this.src='https://raw.githubusercontent.com/mtrochez/ova_cintia_unicor/main/ref_pc/logo.jpg'; } else { this.onerror=null; }" />
+            </div>
+            <div>
+              <h1 class="title-font text-3xl md:text-4xl font-semibold">Referencias bibliográficas</h1>
+              <p class="text-white/80 mt-1">Curso: Procesos Evaluativos en las Ciencias Naturales</p>
+            </div>
+          </div>
+          <div class="self-start rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-white/90"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-10">
+      <section class="filter-panel mb-8" aria-label="Filtros">
+        <h2 class="title-font text-2xl text-emerald-900 mb-3">Filtrar por tipo de recurso</h2>
+        <div class="mb-4">
+          <label for="reference-search" class="block text-sm font-semibold text-slate-700">Buscar</label>
+          <input id="reference-search" type="search" placeholder="Escribe autor, título o palabra clave" class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-800 shadow-sm outline-none focus:border-emerald-300 focus:ring-4 focus:ring-emerald-100" autocomplete="off" />
+        </div>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por tipo de recurso">
+          <button class="filter-chip is-active px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="" aria-pressed="true">Todos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="articulo" aria-pressed="false">Artículos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="documento" aria-pressed="false">Documentos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="libro" aria-pressed="false">Libros</button>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="references-container" aria-label="Lista de referencias"></section>
+    </main>
+  </div>
+
+  <script>
+    const base = 'https://mtrochez.github.io/ova_cintia_unicor';
+
+    const rawItems = [
+      {
+        key: 'furman_2011_evaluar_para_ensenar',
+        type: 'libro',
+        citationHtml: 'Furman, M. (2011). <em>Evaluar para enseñar Ciencias Naturales</em> (Caps. 1 y 2). Sangari.',
+        url: `${base}/unidad1/pdf/Cap.4_EVALUACI%C3%93N_Furman_Melina_La%20aventura%20de%20ensear%20ciencias%20naturales.pdf`
+      },
+      {
+        key: 'anijovich_cappelletti_2017_oportunidad_u1',
+        type: 'libro',
+        citationHtml: 'Anijovich, R. &amp; Cappelletti, G. (2017). <em>La evaluación como oportunidad</em>. Paidós.',
+        url: `${base}/unidad1/pdf/7.%20Anijovich.%20La%20evaluacion%20como%20oportunidad..pdf`
+      },
+      {
+        key: 'perales_1998_resolucion_problemas',
+        type: 'articulo',
+        citationHtml: 'Perales, F. J. (1998). <em>La resolución de problemas en la didáctica de las ciencias</em>. Revista Educación y Pedagogía.',
+        url: `${base}/unidad1/pdf/9.%20La%20Resolucion%20De%20Problemas%20En%20La%20Didactica%20De%20Las%20Ciencias.pdf`
+      },
+      {
+        key: 'tobon_2017_portafolio',
+        type: 'documento',
+        citationHtml: 'Tobón, S. (2017). <em>El portafolio de evidencias</em>.',
+        url: `${base}/unidad1/pdf/10.%20Tob%C3%B3n,%20S.%20El%20portafolio.pdf`
+      },
+      {
+        key: 'catalogo_rubricas',
+        type: 'documento',
+        citationHtml: '<em>Catálogo de rúbricas para la evaluación del aprendizaje</em>.',
+        url: `${base}/unidad1/pdf/8.%20Cat%20r%C3%BAbrica.pdf`
+      },
+
+      {
+        key: 'andrade_2019_self_assessment',
+        type: 'articulo',
+        citationHtml: 'Andrade, H. L. (2019). <em>A Critical Review of Research on Student Self-Assessment</em>. Frontiers in Education.',
+        url: 'https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2019.00087/full'
+      },
+      {
+        key: 'fox_riconscente_2008_metacognition',
+        type: 'articulo',
+        citationHtml: 'Fox, E. &amp; Riconscente, M. (2008). <em>Metacognition and Self-Regulation in James, Piaget, and Vygotsky</em>.',
+        url: 'https://link.springer.com/article/10.1007/s10648-008-9079-2'
+      },
+      {
+        key: 'jorba_sanmarti_funcion',
+        type: 'documento',
+        citationHtml: 'Jorba, J. &amp; Sanmartí, N. (s. f.). <em>Función pedagógica de la evaluación</em>.',
+        url: 'https://ddd.uab.cat/pub/artpub/1993/187512/aulinnedu_a1993n20aJorba.pdf'
+      },
+      {
+        key: 'diaz_barriga_examen_problema',
+        type: 'documento',
+        citationHtml: 'Díaz Barriga, Á. (s. f.). <em>Examen problema</em>.',
+        url: `${base}/unidad2/pdf/5.%20Diaz%20Barriga-Examen%20problema.pdf`
+      },
+      {
+        key: 'sanmarti_10_ideas_clave_u2',
+        type: 'libro',
+        citationHtml: 'Sanmartí, N. (2007). <em>10 ideas clave: Evaluar para aprender</em>. Graó.',
+        url: 'https://www.grao.com/libros/10-ideas-clave-evaluar-para-aprender-2080'
+      },
+      {
+        key: 'evaluacion_aprendizajes_como_evaluar',
+        type: 'documento',
+        citationHtml: '<em>Evaluación de los aprendizajes. Cómo evaluar</em>.',
+        url: `${base}/unidad2/pdf/6.%20Evaluaci%C3%B3n%20de%20los%20aprendizajes.%20C%C3%B3mo%20evaluar.pdf`
+      },
+      {
+        key: 'estrategias_ev_formativa',
+        type: 'documento',
+        citationHtml: '<em>Estrategias de evaluación formativa</em>.',
+        url: 'https://educrea.cl/wp-content/uploads/2017/12/DOC1-ev-formativa.pdf'
+      },
+
+      {
+        key: 'anijovich_cappelletti_2017_oportunidad_u3',
+        type: 'libro',
+        citationHtml: 'Anijovich, R. &amp; Cappelletti, G. (2017). <em>La evaluación como oportunidad</em>. Paidós.',
+        url: 'https://www.redalyc.org/journal/1531/153151864008/html/'
+      },
+      {
+        key: 'dino_morales_tobon_2017_portafolio_evidencias',
+        type: 'articulo',
+        citationHtml: 'Dino-Morales, L. I. &amp; Tobón, S. (2017). <em>El Portafolio de evidencias como una modalidad de titulación en las escuelas normales</em>. Revista de Investigación Educativa de la REDIECH.',
+        url: 'https://revistas.rediech.org/index.php/ie_rie_rediech/article/view/46'
+      },
+      {
+        key: 'sanmarti_10_ideas_clave_u3',
+        type: 'libro',
+        citationHtml: 'Sanmartí, N. (2007). <em>10 ideas clave: Evaluar para aprender</em>. Graó.',
+        url: 'https://www.grao.com/es/producto/10-ideas-clave-evaluar-para-aprender'
+      },
+      {
+        key: 'tobon_2013_formacion_integral',
+        type: 'libro',
+        citationHtml: 'Tobón, S. (2013). <em>Formación integral y competencias: Pensamiento complejo, currículo, didáctica y evaluación</em>. ECOE.',
+        url: 'https://www.ecoeediciones.com/libro/formacion-integral-y-competencias/'
+      },
+      {
+        key: 'tobon_2014_rubricas_socioformativas',
+        type: 'libro',
+        citationHtml: 'Tobón, S. (2014). <em>Rúbricas socioformativas (Mapas de aprendizaje)</em>. CIFE.',
+        url: 'https://cife.edu.mx/recursos/evaluacion-socioformativa/'
+      },
+      {
+        key: 'wiggins_mctighe_2005_ubd',
+        type: 'libro',
+        citationHtml: 'Wiggins, G. &amp; McTighe, J. (2005). <em>Understanding by Design</em>. ASCD.',
+        url: 'https://www.ascd.org/books/understanding-by-design-expanded-2nd-edition'
+      }
+    ];
+
+    function normalizeText(html) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return (tmp.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    }
+
+    const dedup = new Map();
+    for (const item of rawItems) {
+      const n = normalizeText(item.citationHtml);
+      if (!dedup.has(n)) {
+        dedup.set(n, { ...item });
+      }
+    }
+
+    const items = Array.from(dedup.values()).filter(it => typeof it.url === 'string' && it.url.trim().length > 0);
+
+    const elList = document.getElementById('references-container');
+    const searchInput = document.getElementById('reference-search');
+    const pills = Array.from(document.querySelectorAll('.filter-chip[data-type]'));
+
+    const state = {
+      type: '',
+      query: '',
+    };
+
+    const typeMeta = {
+      articulo: {
+        label: 'Artículo',
+        border: 'border-sky-500',
+        pill: 'bg-sky-50 text-sky-700'
+      },
+      libro: {
+        label: 'Libro',
+        border: 'border-emerald-500',
+        pill: 'bg-emerald-50 text-emerald-700'
+      },
+      documento: {
+        label: 'Documento',
+        border: 'border-amber-500',
+        pill: 'bg-amber-50 text-amber-700'
+      }
+    };
+
+    function createCard(item, idx) {
+      const meta = typeMeta[item.type] || { label: 'Recurso', border: 'border-slate-300', pill: 'bg-slate-50 text-slate-700' };
+
+      const tmp = document.createElement('div');
+      tmp.innerHTML = item.citationHtml;
+      const em = tmp.querySelector('em');
+      const titleText = (em && em.textContent ? em.textContent : '').trim();
+      const citationText = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+
+      const article = document.createElement('article');
+      article.className = `reference-card fade-in bg-white rounded-xl p-6 border-l-4 ${meta.border}`;
+      article.dataset.type = item.type;
+      article.style.setProperty('--delay', `${idx * 45}ms`);
+
+      const refNum = String(idx + 1).padStart(2, '0');
+
+      article.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Referencia ${refNum}</p>
+            <h3 class="title-font text-lg text-emerald-900 mt-2">${titleText || ''}</h3>
+          </div>
+          <span class="type-pill uppercase ${meta.pill} px-2 py-1 rounded-full">${meta.label}</span>
+        </div>
+        <p class="card-citation text-slate-600 text-sm mt-3">${citationText}</p>
+        <div class="card-actions flex items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-emerald-700 text-sm font-semibold underline hover:text-emerald-900">Ver fuente</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(item.url)}" alt="Código QR" class="h-16 w-16 rounded-xl border border-slate-200 bg-white p-1" />
+          </div>
+        </div>
+      `;
+
+      return article;
+    }
+
+    function render(list) {
+      elList.innerHTML = '';
+
+      if (!list.length) {
+        const empty = document.createElement('div');
+        empty.className = 'col-span-full rounded-2xl border border-slate-200 bg-white/80 p-8 text-center text-slate-600 shadow-sm';
+        empty.textContent = 'No hay referencias para mostrar con los filtros seleccionados.';
+        elList.appendChild(empty);
+        return;
+      }
+
+      list.forEach((item, idx) => {
+        elList.appendChild(createCard(item, idx));
+      });
+    }
+
+    function applyFilters() {
+      const type = state.type;
+      const query = (state.query || '').trim().toLowerCase();
+      const filtered = items.filter((it) => {
+        if (type && it.type !== type) return false;
+        if (query) {
+          const haystack = normalizeText(it.citationHtml);
+          if (!haystack.includes(query)) return false;
+        }
+        return true;
+      });
+
+      filtered.sort((a, b) => normalizeText(a.citationHtml).localeCompare(normalizeText(b.citationHtml)));
+      render(filtered);
+    }
+
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const t = pill.getAttribute('data-type') || '';
+        state.type = t;
+        pills.forEach(p => {
+          const active = p === pill;
+          p.classList.toggle('is-active', active);
+          p.setAttribute('aria-pressed', String(active));
+        });
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        state.query = searchInput.value || '';
+        applyFilters();
+      });
+    }
+
+    applyFilters();
+  </script>
+</body>
+</html>
