@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rúbrica Unidad 1 — Wiki personal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .unicordoba-bg { background-color: #166534; }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .level-cell {
+            transition: all 0.2s ease;
+        }
+
+        .level-cell:hover {
+            background-color: rgba(240, 253, 244, 0.5);
+        }
+
+        @media print {
+            @page {
+                size: letter landscape;
+                margin: 1cm;
+            }
+
+            .no-print { display: none !important; }
+
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .container-print {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                transform: scale(0.88);
+                transform-origin: top left;
+            }
+
+            .shadow-2xl { box-shadow: none !important; }
+            .rounded-3xl { border-radius: 0 !important; }
+
+            th {
+                background-color: #f0fdf4 !important;
+                color: #166534 !important;
+                font-size: 8pt !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            td {
+                font-size: 7pt !important;
+                border: 1px solid #e2e8f0 !important;
+                padding: 6px !important;
+            }
+
+            .unicordoba-bg {
+                background-color: #166534 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .bg-slate-50 { background-color: #f8fafc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .bg-green-50 { background-color: #f0fdf4 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+            h1 { font-size: 1.2rem !important; }
+            .text-xs { font-size: 7pt !important; }
+
+            header.unicordoba-bg { padding: 16px !important; }
+            .px-8.py-4 { padding: 10px 16px !important; }
+
+            tr { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-200 container-print">
+
+        <header class="unicordoba-bg p-8 text-white relative">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                            <i data-lucide="clipboard-check" class="w-6 h-6 text-green-200"></i>
+                        </div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Rúbrica de Evaluación</h1>
+                    </div>
+                    <p class="text-green-100 font-medium text-sm md:text-base">Procesos evaluativos en las ciencias naturales</p>
+                    <div class="flex flex-wrap gap-4 mt-4 text-[11px] uppercase tracking-wider font-semibold text-green-200">
+                        <span class="flex items-center gap-1"><i data-lucide="layers" class="w-3 h-3"></i> Unidad 1</span>
+                        <span class="flex items-center gap-1"><i data-lucide="file-text" class="w-3 h-3"></i> Wiki personal</span>
+                        <span class="flex items-center gap-1"><i data-lucide="percent" class="w-3 h-3"></i> 10%</span>
+                    </div>
+                </div>
+                <div class="no-print flex gap-2">
+                    <button onclick="window.print()" class="flex items-center gap-2 bg-white text-emerald-900 px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg hover:bg-green-50 transition-all active:scale-95">
+                        <i data-lucide="printer" class="w-4 h-4"></i> Imprimir
+                    </button>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+        </header>
+
+        <div class="px-8 py-4 bg-slate-50 border-b border-slate-100">
+            <p class="text-sm text-slate-700 font-semibold">Unidad 1 — Conceptualización: ¿Qué sabemos acerca de la evaluación?</p>
+            <p class="mt-2 text-[12px] text-slate-600">Estructura sugerida: 3 entradas (Entrada 1: 1–2 párrafos; Entrada 2: 1–2 párrafos o 2–4 interrogantes; Entrada 3: 3–4 párrafos). Incluir fecha de registro.</p>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full">
+                <thead>
+                    <tr class="bg-green-50 text-green-900">
+                        <th class="p-4 text-left border-b border-green-100 text-xs font-bold uppercase tracking-wider w-56">Criterios</th>
+                        <th class="p-4 border-b border-green-100 text-center">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Bajo</span>
+                            <span class="text-[9px] opacity-70 font-medium">(0,2)</span>
+                        </th>
+                        <th class="p-4 border-b border-green-100 text-center">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Mejorable/Regular</span>
+                            <span class="text-[9px] opacity-70 font-medium">(0,4)</span>
+                        </th>
+                        <th class="p-4 border-b border-green-100 text-center">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Básico</span>
+                            <span class="text-[9px] opacity-70 font-medium">(0,6)</span>
+                        </th>
+                        <th class="p-4 border-b border-green-100 text-center bg-green-100/50">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Alto</span>
+                            <span class="text-[9px] opacity-70 font-medium">(0,8)</span>
+                        </th>
+                        <th class="p-4 border-b border-green-100 text-center bg-green-200/50">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Muy alto</span>
+                            <span class="text-[9px] opacity-70 font-medium">(1)</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-[11px] leading-relaxed">
+
+                    <tr>
+                        <td class="p-4 bg-slate-50/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-green-600 text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">1</span>
+                                <div>
+                                    <p class="font-bold text-slate-800">Recordación</p>
+                                    <p class="text-[10px] text-slate-500 mt-1 italic">Entrada 1</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-slate-500 italic">No realiza la 1° entrada a la wiki.</td>
+                        <td class="p-4 level-cell">Expresa por escrito no saber nada o realiza una invención alejada del tema.</td>
+                        <td class="p-4 level-cell">Recuerda datos sobre el tema abordado, aunque ellos no sean comprendidos.</td>
+                        <td class="p-4 level-cell bg-green-50/30">Relaciona aspectos de su experiencia con la recordación de acciones en el tema.</td>
+                        <td class="p-4 level-cell bg-green-100/30 font-medium text-green-900 border-l-2 border-green-400">Enlista ampliamente presaberes adquiridos.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-4 bg-slate-50/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-green-600 text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">2</span>
+                                <div>
+                                    <p class="font-bold text-slate-800">Comprensión</p>
+                                    <p class="text-[10px] text-slate-500 mt-1 italic">Entrada 2</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-slate-500 italic">No realiza la 2° entrada a la wiki.</td>
+                        <td class="p-4 level-cell">Realiza una intervención que no retoma los componentes teóricos trabajados hasta esa sección.</td>
+                        <td class="p-4 level-cell">Parafrasea aspectos poco relevantes; no conlleva a reconstrucciones o interrogantes que le permitan ahondar en el aprendizaje.</td>
+                        <td class="p-4 level-cell bg-green-50/30">Enlista elementos llamativos y plantea reconstrucciones o interrogantes importantes, pero no relacionados con su campo de acción docente.</td>
+                        <td class="p-4 level-cell bg-green-100/30 font-medium text-green-900 border-l-2 border-green-400">Plantea reconstrucciones o interrogantes basados en los datos presentados y pertinentes a su campo de acción docente.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-4 bg-slate-50/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-green-600 text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">3</span>
+                                <div>
+                                    <p class="font-bold text-slate-800">Aplicación</p>
+                                    <p class="text-[10px] text-slate-500 mt-1 italic">Entrada 3</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-slate-500 italic">No realiza la 3° entrada a la wiki.</td>
+                        <td class="p-4 level-cell">Ideas ambiguas sin referencias; no se evidencia uso o aplicación de conceptos en un escenario particular.</td>
+                        <td class="p-4 level-cell">Usa ideas de recursos sugeridos y da crédito, pero sin evidencia de ideas originales; aplicación superficial a otros contextos.</td>
+                        <td class="p-4 level-cell bg-green-50/30">Intervención final con cierta originalidad; se constata comprensión y puesta en otros escenarios.</td>
+                        <td class="p-4 level-cell bg-green-100/30 font-medium text-green-900 border-l-2 border-green-400">Intervención final original; se constata comprensión y aplicación del concepto en otros escenarios.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-4 bg-slate-50/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-green-600 text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">4</span>
+                                <div>
+                                    <p class="font-bold text-slate-800">Apariencia, organización y ortografía</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-slate-500 italic">No existe texto continuo; ideas sueltas y faltas de ortografía.</td>
+                        <td class="p-4 level-cell">No existe coherencia ni cohesión; se evidencian faltas de ortografía.</td>
+                        <td class="p-4 level-cell">Se sigue un hilo conductor, pero múltiples faltas ortográficas y de redacción.</td>
+                        <td class="p-4 level-cell bg-green-50/30">Extensión menor a la sugerida; algunas faltas ortográficas y problemas de redacción.</td>
+                        <td class="p-4 level-cell bg-green-100/30 font-medium text-green-900 border-l-2 border-green-400">Extensión sugerida; escrito sin faltas de ortografía.</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-4 bg-slate-50/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-green-600 text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">5</span>
+                                <div>
+                                    <p class="font-bold text-slate-800">Derechos de autor</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-slate-500 italic">No se evidencian referencias que apoyen la wiki 2 o 3; solo opinión.</td>
+                        <td class="p-4 level-cell">Aportes sin referenciar o material reproducido sin permiso (si aplica).</td>
+                        <td class="p-4 level-cell">Cita la mayoría del material, pero con autores externos a los sugeridos en la unidad.</td>
+                        <td class="p-4 level-cell bg-green-50/30">Cita la mayoría del material y usa autores sugeridos en la unidad.</td>
+                        <td class="p-4 level-cell bg-green-100/30 font-medium text-green-900 border-l-2 border-green-400">Normas APA en todas las referencias (materiales sugeridos con permisos de utilización).</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="p-6 bg-slate-50 border-t border-slate-100">
+            <div class="flex flex-col md:flex-row justify-end items-center gap-4">
+                <div class="text-right">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Universidad de Córdoba</p>
+                    <p class="text-[9px] text-slate-400">Facultad de Educación y Ciencias Humanas</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
