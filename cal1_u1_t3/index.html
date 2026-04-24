@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVA: Cálculo I - Tema 3: Álgebra de funciones, Composición e Inversa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+
+        .sidebar-link.active, .sidebar-link:hover {
+            background-color: #e6f4ea;
+            color: #166534;
+            border-left-color: #22c55e;
+        }
+
+        .content-pane {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .content-pane.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .speech-controls {
+            background-color: #e6f4ea;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .play-btn {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .play-btn:hover { background-color: #16a34a; }
+
+        .pause-btn {
+            background-color: #eab308;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pause-btn:hover { background-color: #ca8a04; }
+
+        .stop-btn {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .stop-btn:hover { background-color: #dc2626; }
+
+        .tab-btn.active {
+            background: #16a34a;
+            color: #fff;
+            border-color: #16a34a;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-white shadow-lg flex-shrink-0 hidden md:flex md:flex-col">
+            <div class="p-4">
+                <div style="width: 150px; height: 150px;" class="p-2 mx-auto flex items-center justify-center bg-white rounded-full shadow-lg border-2 border-green-500 transition-shadow duration-300 hover:shadow-green-400">
+                    <img src="img/logo.webp" alt="Logo OVA" class="w-5/6 h-5/6 object-contain" loading="lazy">
+                </div>
+                <div class="mt-3 text-center">
+                    <div class="text-xs font-semibold text-slate-600 tracking-widest uppercase">Cálculo I</div>
+                    <div class="text-lg font-extrabold text-green-800 leading-snug">Funciones, gráficas y límite de funciones.</div>
+                </div>
+            </div>
+            <nav class="mt-6 flex-1">
+                <a href="#" class="sidebar-link active flex items-center py-3 px-6 font-medium text-slate-700" data-target="introduccion"><span class="mr-3 text-xl">🚀</span> Introducción</a>
+                <a href="#" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="objetivos"><span class="mr-3 text-xl">🎯</span> Objetivos</a>
+                <a href="#" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="contenido"><span class="mr-3 text-xl">📚</span> Contenido</a>
+                <a href="#" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="actividades"><span class="mr-3 text-xl">🧩</span> Actividades interactivas</a>
+                <a href="#" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="evaluacion"><span class="mr-3 text-xl">✔️</span> Evaluación</a>
+                <a href="#" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="recursos"><span class="mr-3 text-xl">📖</span> Recursos</a>
+                <a href="#" class="sidebar-link flex items-center py-3 px-6 font-medium text-slate-700" data-target="bibliografia"><span class="mr-3 text-xl">📚</span> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-4 sm:p-6 md:p-10 bg-gray-50">
+            <div class="md:hidden mb-6 flex flex-col items-center">
+                <div style="width: 100px; height: 100px;" class="p-2 flex items-center justify-center bg-white rounded-full shadow-lg transition-shadow duration-300 hover:shadow-green-400 mb-2">
+                    <img src="img/logo.webp" alt="Logo OVA" class="w-5/6 h-5/6 object-contain" loading="lazy">
+                </div>
+                <div class="text-center mb-3">
+                    <div class="text-xs font-semibold text-slate-600 tracking-widest uppercase">Cálculo I</div>
+                    <div class="text-xl font-extrabold text-green-800 leading-snug">Funciones, gráficas y límite de funciones.</div>
+                </div>
+                <select id="mobile-nav" class="w-full mt-2 p-2 border rounded-md bg-white shadow-sm">
+                    <option value="introduccion">🚀 Introducción</option>
+                    <option value="objetivos">🎯 Objetivos</option>
+                    <option value="contenido">📚 Contenido</option>
+                    <option value="actividades">🧩 Actividades interactivas</option>
+                    <option value="evaluacion">✔️ Evaluación</option>
+                    <option value="recursos">📖 Recursos</option>
+                    <option value="bibliografia">📚 Bibliografía</option>
+                </select>
+            </div>
+
+            <div id="introduccion" class="content-pane active">
+                <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-4">📐 Tema 3: Álgebra de funciones, Composición e Inversa</h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    <strong>Introducción</strong><br><br>
+                    Las funciones son una herramienta fundamental en matemáticas y en la ingeniería de sistemas, ya que permiten modelar relaciones entre variables; sin embargo, en la práctica rara vez se trabaja con funciones de manera aislada. Es común combinar funciones, transformarlas o incluso deshacer procesos mediante funciones inversas. Por ejemplo, en programación, una función puede representar una transformación de datos y otra función puede depender del resultado de la primera. En este sentido, entender cómo operar funciones, componerlas o invertirlas resulta esencial para el análisis de algoritmos, estructuras de datos y procesos computacionales.
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    En esta guía se abordan tres conceptos fundamentales: el álgebra de funciones, la composición de funciones y la función inversa, integrando representaciones algebraicas y explicaciones que faciliten la comprensión conceptual.
+                </p>
+
+                <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="introduccion">
+                    <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">
+                        <span class="mr-1">▶️</span> Leer
+                    </button>
+                    <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>
+                        <span class="mr-1">⏸️</span> Pausar
+                    </button>
+                    <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>
+                        <span class="mr-1">⏹️</span> Detener
+                    </button>
+                    <div class="flex items-center ml-2">
+                        <label for="speech-rate-introduccion" class="text-sm text-green-800 mr-2">Velocidad:</label>
+                        <input type="range" class="speech-rate" id="speech-rate-introduccion" min="0.5" max="2" step="0.1" value="1" class="w-24">
+                    </div>
+                </div>
+            </div>
+
+            <div id="objetivos" class="content-pane">
+                <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-6">🎯 Objetivo</h2>
+                <p class="text-slate-700 leading-relaxed mb-6">
+                    Comprender y aplicar las operaciones entre funciones (álgebra de funciones, composición y función inversa) mediante el análisis algebraico y gráfico, para resolver problemas matemáticos y modelar situaciones propias del contexto de la ingeniería.
+                </p>
+
+                <div class="bg-white rounded-lg shadow-sm p-5 border border-slate-200 mb-6">
+                    <h3 class="text-lg font-bold text-green-700 mb-3">Resultados esperados</h3>
+                    <ul class="text-slate-700 space-y-2">
+                        <li>• Realizar operaciones entre funciones (suma, resta, producto y cociente) y determinar el dominio resultante.</li>
+                        <li>• Calcular composiciones de funciones y analizar el orden de la composición y su dominio.</li>
+                        <li>• Hallar y verificar la función inversa de una función (cuando exista) mediante procedimientos algebraicos.</li>
+                    </ul>
+                </div>
+
+                <div class="speech-controls mb-4 p-3 bg-green-100 rounded-lg flex items-center flex-wrap gap-2 mt-4" data-target="objetivos">
+                    <button class="play-btn bg-green-600 hover:bg-green-700 text-white font-medium py-1 px-4 rounded-full flex items-center">
+                        <span class="mr-1">▶️</span> Leer
+                    </button>
+                    <button class="pause-btn bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>
+                        <span class="mr-1">⏸️</span> Pausar
+                    </button>
+                    <button class="stop-btn bg-red-500 hover:bg-red-600 text-white font-medium py-1 px-4 rounded-full flex items-center" disabled>
+                        <span class="mr-1">⏹️</span> Detener
+                    </button>
+                    <div class="flex items-center ml-2">
+                        <label for="speech-rate-objetivos" class="text-sm text-green-800 mr-2">Velocidad:</label>
+                        <input type="range" class="speech-rate" id="speech-rate-objetivos" min="0.5" max="2" step="0.1" value="1" class="w-24">
+                    </div>
+                </div>
+            </div>
+
+            <div id="contenido" class="content-pane">
+                <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-6">📚 Contenido</h2>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+                        <button type="button" class="accordion-btn w-full flex items-center justify-between text-left px-5 py-4 font-bold text-green-700" data-target="#contenido-panel-1">
+                            <span class="mr-3">➕</span>
+                            <span class="flex-1">Álgebra de funciones</span>
+                        </button>
+                        <div id="contenido-panel-1" class="accordion-panel hidden px-5 pb-5">
+                            <p class="mb-4 text-slate-700 leading-relaxed">
+                                Consiste en combinar dos funciones para obtener una nueva función, de manera semejante a como se hace con números o expresiones algebraicas. Si <strong>f</strong> y <strong>g</strong> son funciones, pueden definirse la suma, la resta, el producto y, bajo ciertas condiciones, el cociente. Estas operaciones generan nuevas funciones, pero siempre es necesario revisar el dominio resultante.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-bold text-green-800 mb-2">Dominio en operaciones con funciones</h4>
+                                <ul class="text-sm text-slate-700 space-y-1">
+                                    <li>• El dominio de <strong>f + g</strong>, <strong>f − g</strong> y <strong>f·g</strong> es la intersección de los dominios de <strong>f</strong> y <strong>g</strong>.</li>
+                                    <li>• El dominio de <strong>f/g</strong> también es la intersección, excluyendo además los valores donde <strong>g(x)=0</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+                        <button type="button" class="accordion-btn w-full flex items-center justify-between text-left px-5 py-4 font-bold text-green-700" data-target="#contenido-panel-2">
+                            <span class="mr-3">➕</span>
+                            <span class="flex-1">Composición de funciones</span>
+                        </button>
+                        <div id="contenido-panel-2" class="accordion-panel hidden px-5 pb-5">
+                            <p class="mb-4 text-slate-700 leading-relaxed">
+                                Si <strong>f</strong> y <strong>g</strong> son funciones, la composición de <strong>f</strong> con <strong>g</strong> se escribe: <strong>(f ∘ g)(x) = f(g(x))</strong>. Se lee “f compuesta con g”.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-bold text-green-800 mb-2">Orden de la composición</h4>
+                                <p class="text-sm text-slate-700">
+                                    En general, <strong>(f ∘ g)(x) ≠ (g ∘ f)(x)</strong>. Primero actúa la función interna y luego la externa.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+                        <button type="button" class="accordion-btn w-full flex items-center justify-between text-left px-5 py-4 font-bold text-green-700" data-target="#contenido-panel-3">
+                            <span class="mr-3">➕</span>
+                            <span class="flex-1">Función inversa</span>
+                        </button>
+                        <div id="contenido-panel-3" class="accordion-panel hidden px-5 pb-5">
+                            <p class="mb-4 text-slate-700 leading-relaxed">
+                                Sea <strong>f</strong> una función uno a uno con dominio <strong>D</strong> y recorrido <strong>R</strong>. Entonces la inversa de <strong>f</strong> es la función <strong>f⁻¹</strong> con dominio <strong>R</strong> y recorrido <strong>D</strong>, definida por <strong>f⁻¹(y) = x</strong> si y solo si <strong>f(x) = y</strong>.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-bold text-green-800 mb-2">Pasos para hallar una inversa (idea)</h4>
+                                <ul class="text-sm text-slate-700 space-y-1">
+                                    <li>• Intercambiar las variables <strong>x</strong> y <strong>y</strong> en la ecuación <strong>y = f(x)</strong>.</li>
+                                    <li>• Despejar <strong>y</strong> (o la nueva variable dependiente) para obtener la expresión de <strong>f⁻¹</strong>.</li>
+                                    <li>• Verificar por composición si es posible.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="actividades" class="content-pane">
+                <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-6">🧩 Actividades interactivas</h2>
+                <p class="text-slate-700 leading-relaxed mb-6">
+                    Desarrolla las siguientes actividades. Puedes escribir tus respuestas directamente aquí y luego copiarlas para tu entrega.
+                </p>
+
+                <div class="bg-white rounded-lg shadow-lg p-5 border border-slate-200">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="tab-btn px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-slate-50" data-tab="a1">Dominio express</button>
+                            <button type="button" class="tab-btn px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-slate-50" data-tab="a2">Arma la composición</button>
+                            <button type="button" class="tab-btn px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-slate-50" data-tab="a3">Caja negra</button>
+                            <button type="button" class="tab-btn px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-slate-50" data-tab="a4">Emparejar inversas</button>
+                            <button type="button" class="tab-btn px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-slate-50" data-tab="a5">Verificación rápida</button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button type="button" id="btn-copy-activity" class="px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-white text-slate-700">Copiar</button>
+                            <button type="button" id="btn-clear-activity" class="px-3 py-2 text-sm font-semibold rounded-lg border border-red-200 bg-red-50 text-red-700">Limpiar</button>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="activity-tab" data-panel="a1">
+                            <h3 class="text-lg font-bold text-slate-800">Actividad 1. Dominio express</h3>
+                            <p class="text-sm text-slate-600 mt-2">Responde rápidamente sobre el dominio en operaciones y composición. Marca una opción en cada pregunta.</p>
+
+                            <div class="mt-4 space-y-4">
+                                <div class="p-4 border border-slate-200 rounded-lg">
+                                    <p class="font-semibold text-slate-800">1) Si <strong>f</strong> y <strong>g</strong> están definidas en <strong>Dom(f)</strong> y <strong>Dom(g)</strong>, ¿cuál es el dominio de <strong>f+g</strong>?</p>
+                                    <div class="mt-3 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom1" data-correct="true">Dom(f) ∩ Dom(g)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom1" data-correct="false">Dom(f) ∪ Dom(g)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom1" data-correct="false">Dom(f)</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="dom1"></div>
+                                </div>
+
+                                <div class="p-4 border border-slate-200 rounded-lg">
+                                    <p class="font-semibold text-slate-800">2) En el cociente <strong>f/g</strong>, además de Dom(f) ∩ Dom(g), ¿qué condición adicional se exige?</p>
+                                    <div class="mt-3 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom2" data-correct="true">g(x) ≠ 0</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom2" data-correct="false">f(x) ≠ 0</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom2" data-correct="false">f(x) = g(x)</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="dom2"></div>
+                                </div>
+
+                                <div class="p-4 border border-slate-200 rounded-lg">
+                                    <p class="font-semibold text-slate-800">3) Para el dominio de <strong>(f∘g)(x)=f(g(x))</strong>, ¿qué debe cumplirse?</p>
+                                    <div class="mt-3 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom3" data-correct="true">x ∈ Dom(g) y g(x) ∈ Dom(f)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom3" data-correct="false">x ∈ Dom(f) y f(x) ∈ Dom(g)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="dom3" data-correct="false">Dom(f∘g)=Dom(f) ∩ Dom(g)</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="dom3"></div>
+                                </div>
+                            </div>
+
+                            <h4 class="mt-6 font-bold text-slate-800">Justificación / procedimiento</h4>
+                            <textarea class="mt-3 w-full border border-slate-200 rounded-lg p-3 text-sm" rows="7" placeholder="Explica brevemente cómo determinaste las respuestas..."></textarea>
+                        </div>
+
+                        <div class="activity-tab hidden" data-panel="a2">
+                            <h3 class="text-lg font-bold text-slate-800">Actividad 2. Arma la composición</h3>
+                            <p class="text-sm text-slate-600 mt-2">Para las funciones dadas, responde paso a paso. Selecciona la opción correcta en cada paso.</p>
+
+                            <div class="mt-4 p-4 border border-slate-200 rounded-lg">
+                                <p class="text-slate-800"><strong>f(x)=x²</strong> y <strong>g(x)=2x+1</strong></p>
+
+                                <div class="mt-4">
+                                    <p class="font-semibold text-slate-800">Paso 1) ¿Cuál es la función interna en <strong>(f∘g)(x)</strong>?</p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp1" data-correct="true">g(x)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp1" data-correct="false">f(x)</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="comp1"></div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <p class="font-semibold text-slate-800">Paso 2) Reemplaza y escribe la composición:</p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp2" data-correct="true">(f∘g)(x)=f(2x+1)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp2" data-correct="false">(f∘g)(x)=g(x²)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp2" data-correct="false">(f∘g)(x)=f(x)+g(x)</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="comp2"></div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <p class="font-semibold text-slate-800">Paso 3) Simplifica el resultado:</p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp3" data-correct="true">(2x+1)² = 4x²+4x+1</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp3" data-correct="false">2x²+1</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="comp3" data-correct="false">x²+2x+1</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="comp3"></div>
+                                </div>
+                            </div>
+
+                            <h4 class="mt-6 font-bold text-slate-800">Justificación / procedimiento</h4>
+                            <textarea class="mt-3 w-full border border-slate-200 rounded-lg p-3 text-sm" rows="7" placeholder="Explica los pasos con tu propio procedimiento y comenta por qué el orden importa..."></textarea>
+                        </div>
+
+                        <div class="activity-tab hidden" data-panel="a3">
+                            <h3 class="text-lg font-bold text-slate-800">Actividad 3. Caja negra (descomposición)</h3>
+                            <p class="text-sm text-slate-600 mt-2">Identifica la secuencia de transformaciones (función interna y externa) que genera la función final.</p>
+
+                            <div class="mt-4 p-4 border border-slate-200 rounded-lg">
+                                <p class="text-slate-800">Función final: <strong>h(x)=√(x−3)</strong></p>
+
+                                <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="text-sm font-semibold text-slate-800">Paso 1 (interna)</label>
+                                        <select class="mt-2 w-full border border-slate-200 rounded-lg p-2 text-sm" data-select="box1">
+                                            <option value="">Selecciona...</option>
+                                            <option value="restar3">Restar 3 (x−3)</option>
+                                            <option value="raiz">Aplicar raíz (√x)</option>
+                                            <option value="cuadrado">Elevar al cuadrado (x²)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="text-sm font-semibold text-slate-800">Paso 2 (externa)</label>
+                                        <select class="mt-2 w-full border border-slate-200 rounded-lg p-2 text-sm" data-select="box2">
+                                            <option value="">Selecciona...</option>
+                                            <option value="restar3">Restar 3 (x−3)</option>
+                                            <option value="raiz">Aplicar raíz (√x)</option>
+                                            <option value="cuadrado">Elevar al cuadrado (x²)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <button type="button" class="btn-check px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-white" data-check="box">Verificar</button>
+                                    <div class="mt-2 text-sm hidden" data-feedback="box"></div>
+                                </div>
+                            </div>
+
+                            <h4 class="mt-6 font-bold text-slate-800">Justificación / procedimiento</h4>
+                            <textarea class="mt-3 w-full border border-slate-200 rounded-lg p-3 text-sm" rows="7" placeholder="Explica por qué esa secuencia genera h(x) y qué implicaciones tiene sobre el dominio..."></textarea>
+                        </div>
+
+                        <div class="activity-tab hidden" data-panel="a4">
+                            <h3 class="text-lg font-bold text-slate-800">Actividad 4. Emparejar inversas</h3>
+                            <p class="text-sm text-slate-600 mt-2">Arrastra la inversa correcta para cada función (cuando exista).</p>
+
+                            <div class="mt-4 p-4 border border-slate-200 rounded-lg space-y-4">
+                                <div class="grid lg:grid-cols-2 gap-4">
+                                    <div class="space-y-3">
+                                        <div class="p-3 border border-slate-200 rounded-lg bg-white">
+                                            <p class="font-semibold text-slate-800">1) f(x)=5x−4</p>
+                                            <div class="drop-zone mt-2 min-h-10 p-2 border-2 border-dashed border-green-200 rounded-lg bg-green-50" data-drop="inv1" data-answer="(x+4)/5">
+                                                <span class="text-xs text-slate-500">Suelta aquí…</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-3 border border-slate-200 rounded-lg bg-white">
+                                            <p class="font-semibold text-slate-800">2) g(x)=x³ (en ℝ)</p>
+                                            <div class="drop-zone mt-2 min-h-10 p-2 border-2 border-dashed border-green-200 rounded-lg bg-green-50" data-drop="inv2" data-answer="cuberoot(x)">
+                                                <span class="text-xs text-slate-500">Suelta aquí…</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-3 border border-slate-200 rounded-lg bg-white">
+                                            <p class="font-semibold text-slate-800">3) h(x)=x² (en ℝ)</p>
+                                            <div class="drop-zone mt-2 min-h-10 p-2 border-2 border-dashed border-green-200 rounded-lg bg-green-50" data-drop="inv3" data-answer="no">
+                                                <span class="text-xs text-slate-500">Suelta aquí…</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3 border border-slate-200 rounded-lg bg-white">
+                                        <p class="font-semibold text-slate-800">Opciones</p>
+                                        <div class="mt-3 flex flex-col gap-2" data-drag-pool>
+                                            <div class="drag-item w-full cursor-move px-3 py-2 text-sm rounded-lg border border-yellow-200 bg-yellow-50 hover:bg-yellow-100 text-slate-800" draggable="true" data-value="(x+4)/5">(x+4)/5</div>
+                                            <div class="drag-item w-full cursor-move px-3 py-2 text-sm rounded-lg border border-yellow-200 bg-yellow-50 hover:bg-yellow-100 text-slate-800" draggable="true" data-value="5x+4">5x+4</div>
+                                            <div class="drag-item w-full cursor-move px-3 py-2 text-sm rounded-lg border border-yellow-200 bg-yellow-50 hover:bg-yellow-100 text-slate-800" draggable="true" data-value="cuberoot(x)">∛x</div>
+                                            <div class="drag-item w-full cursor-move px-3 py-2 text-sm rounded-lg border border-yellow-200 bg-yellow-50 hover:bg-yellow-100 text-slate-800" draggable="true" data-value="sqrt(x)">√x</div>
+                                            <div class="drag-item w-full cursor-move px-3 py-2 text-sm rounded-lg border border-yellow-200 bg-yellow-50 hover:bg-yellow-100 text-slate-800" draggable="true" data-value="no">No tiene inversa en ℝ</div>
+                                            <div class="drag-item w-full cursor-move px-3 py-2 text-sm rounded-lg border border-yellow-200 bg-yellow-50 hover:bg-yellow-100 text-slate-800" draggable="true" data-value="-sqrt(x)">−√x</div>
+                                        </div>
+                                        <p class="mt-3 text-xs text-slate-500">Puedes volver a arrastrar una opción para corregir.</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-2">
+                                    <button type="button" class="btn-check px-3 py-2 text-sm font-semibold rounded-lg border border-slate-200 bg-white" data-check="match">Verificar</button>
+                                    <div class="mt-2 text-sm hidden" data-feedback="match"></div>
+                                </div>
+                            </div>
+
+                            <h4 class="mt-6 font-bold text-slate-800">Justificación / procedimiento</h4>
+                            <textarea class="mt-3 w-full border border-slate-200 rounded-lg p-3 text-sm" rows="7" placeholder="Justifica cada emparejamiento. Si no existe inversa en ℝ, explica por qué..."></textarea>
+                        </div>
+
+                        <div class="activity-tab hidden" data-panel="a5">
+                            <h3 class="text-lg font-bold text-slate-800">Actividad 5. Verificación rápida</h3>
+                            <p class="text-sm text-slate-600 mt-2">Responde dos preguntas de verificación y condiciones de existencia de inversa.</p>
+
+                            <div class="mt-4 space-y-4">
+                                <div class="p-4 border border-slate-200 rounded-lg">
+                                    <p class="font-semibold text-slate-800">1) Si <strong>f</strong> tiene inversa, entonces:</p>
+                                    <div class="mt-3 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="ver1" data-correct="true">f(f⁻¹(x)) = x</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="ver1" data-correct="false">f(f(x)) = x</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="ver1" data-correct="false">f(x) = f⁻¹(x)</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="ver1"></div>
+                                </div>
+
+                                <div class="p-4 border border-slate-200 rounded-lg">
+                                    <p class="font-semibold text-slate-800">2) Para que una función tenga inversa en su dominio (sin restricciones), debe ser:</p>
+                                    <div class="mt-3 flex flex-wrap gap-2">
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="ver2" data-correct="true">Uno a uno (inyectiva)</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="ver2" data-correct="false">Par</button>
+                                        <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="ver2" data-correct="false">Periódica</button>
+                                    </div>
+                                    <div class="mt-2 text-sm hidden" data-feedback="ver2"></div>
+                                </div>
+                            </div>
+
+                            <h4 class="mt-6 font-bold text-slate-800">Justificación / procedimiento</h4>
+                            <textarea class="mt-3 w-full border border-slate-200 rounded-lg p-3 text-sm" rows="7" placeholder="Escribe una breve explicación de tus respuestas..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="evaluacion" class="content-pane">
+                <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-6">✔️ Evaluación</h2>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <p class="text-slate-700 leading-relaxed mb-6">Responde las siguientes preguntas para verificar tu comprensión del tema.</p>
+
+                    <div class="space-y-4">
+                        <div class="p-4 border border-slate-200 rounded-lg">
+                            <p class="font-semibold text-slate-800">1) El dominio de <strong>f+g</strong> (cuando ambas están definidas) es:</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto1" data-correct="true">Dom(f) ∩ Dom(g)</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto1" data-correct="false">Dom(f) ∪ Dom(g)</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto1" data-correct="false">Dom(f)</button>
+                            </div>
+                            <div class="mt-2 text-sm hidden" data-feedback="auto1"></div>
+                        </div>
+
+                        <div class="p-4 border border-slate-200 rounded-lg">
+                            <p class="font-semibold text-slate-800">2) En general, respecto a la composición se cumple:</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto2" data-correct="true">(f∘g)(x) ≠ (g∘f)(x)</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto2" data-correct="false">(f∘g)(x) = (g∘f)(x)</button>
+                            </div>
+                            <div class="mt-2 text-sm hidden" data-feedback="auto2"></div>
+                        </div>
+
+                        <div class="p-4 border border-slate-200 rounded-lg">
+                            <p class="font-semibold text-slate-800">3) Para que <strong>(f∘g)(x)</strong> exista, es necesario que:</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto3" data-correct="true">x ∈ Dom(g) y g(x) ∈ Dom(f)</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto3" data-correct="false">x ∈ Dom(f) y f(x) ∈ Dom(g)</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto3" data-correct="false">Dom(f∘g)=Dom(f) ∩ Dom(g)</button>
+                            </div>
+                            <div class="mt-2 text-sm hidden" data-feedback="auto3"></div>
+                        </div>
+
+                        <div class="p-4 border border-slate-200 rounded-lg">
+                            <p class="font-semibold text-slate-800">4) Una función tiene inversa (sin restringir dominio) si es:</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto4" data-correct="true">Uno a uno (inyectiva)</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto4" data-correct="false">Periódica</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto4" data-correct="false">Par</button>
+                            </div>
+                            <div class="mt-2 text-sm hidden" data-feedback="auto4"></div>
+                        </div>
+
+                        <div class="p-4 border border-slate-200 rounded-lg">
+                            <p class="font-semibold text-slate-800">5) Si <strong>f</strong> tiene inversa, entonces se cumple:</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto5" data-correct="true">f(f⁻¹(x)) = x</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto5" data-correct="false">f(f(x)) = x</button>
+                                <button type="button" class="q-btn px-3 py-2 text-sm rounded-lg border border-green-200 bg-green-50 hover:bg-green-100" data-q="auto5" data-correct="false">f(x) = f⁻¹(x)</button>
+                            </div>
+                            <div class="mt-2 text-sm hidden" data-feedback="auto5"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex items-center gap-3 flex-wrap">
+                        <button type="button" id="btn-score-autoeval" class="px-3 py-2 text-sm font-semibold rounded-lg border border-green-200 bg-green-50 hover:bg-green-100 text-green-800">Ver puntaje</button>
+                        <button type="button" id="btn-reset-autoeval" class="px-3 py-2 text-sm font-semibold rounded-lg border border-red-200 bg-red-50 hover:bg-red-100 text-red-800">Reiniciar</button>
+                        <div id="autoeval-score" class="text-sm font-semibold text-slate-700"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="recursos" class="content-pane">
+                <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-6">📖 Recursos</h2>
+                <p class="text-slate-700 leading-relaxed mb-6">Amplía tu conocimiento con estos recursos educativos digitales.</p>
+                <ul class="space-y-4">
+                    <li class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-green-700">📘 OpenStax Calculus Volumen 1</h3>
+                            <p class="text-slate-600 text-sm mb-2">Libro abierto para reforzar conceptos y ejercicios.</p>
+                            <a href="https://openstax.org/details/books/calculus-volume-1" target="_blank" class="underline text-slate-700 hover:text-green-700">Ir al recurso</a>
+                        </div>
+                        <div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0">
+                            <div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;">
+                                <img src="img/Qr1.png" alt="QR OpenStax" class="max-w-full max-h-full object-contain" loading="lazy">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-green-700">📚 Khan Academy</h3>
+                            <p class="text-slate-600 text-sm mb-2">Práctica de álgebra y funciones.</p>
+                            <a href="https://es.khanacademy.org/math" target="_blank" class="underline text-slate-700 hover:text-green-700">Ir al recurso</a>
+                        </div>
+                        <div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0">
+                            <div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;">
+                                <img src="img/Qr2.png" alt="QR Khan Academy" class="max-w-full max-h-full object-contain" loading="lazy">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="bibliografia" class="content-pane">
+                <h2 class="text-2xl sm:text-3xl font-bold text-green-800 mb-6">📚 Bibliografía</h2>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                        <p class="text-gray-700">
+                            <strong>Gonzalez, W. M. (2007, enero 7).</strong> <em>Funciones: función inversa</em>. Matebrunca.
+                            <a href="http://matebrunca.com/wp-content/uploads/2014/06/Funciones-funcioninversa.pdf" target="_blank" class="text-green-600 hover:underline">Abrir referencia →</a>
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                        <p class="text-gray-700">
+                            <strong>Khan Academy. (s.f.).</strong> <em>Introducción al álgebra</em>.
+                            <a href="https://es.khanacademy.org/math/algebra-home/alg-intro-to-algebra" target="_blank" class="text-green-600 hover:underline">Abrir referencia →</a>
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+                        <p class="text-gray-700">
+                            <strong>OpenStax. (2016).</strong> <em>Calculus Volumen 1</em>.
+                            <a href="http://openstax.org/details/books/calculus-volume-1" target="_blank" class="text-green-600 hover:underline">Abrir referencia →</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/accordion.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+            const panels = Array.from(document.querySelectorAll('.activity-tab'));
+            const clearBtn = document.getElementById('btn-clear-activity');
+            const copyBtn = document.getElementById('btn-copy-activity');
+
+            function showTab(tabId) {
+                tabButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.tab === tabId);
+                });
+
+                panels.forEach(p => {
+                    p.classList.toggle('hidden', p.dataset.panel !== tabId);
+                });
+            }
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showTab(btn.dataset.tab);
+                });
+            });
+
+            clearBtn.addEventListener('click', () => {
+                const activePanel = panels.find(p => !p.classList.contains('hidden'));
+                if (!activePanel) return;
+                const fields = activePanel.querySelectorAll('input, textarea, select');
+                fields.forEach(el => {
+                    if (el && typeof el.value !== 'undefined') el.value = '';
+                });
+
+                const selected = document.querySelector('.drag-item.ring-2');
+                if (selected) selected.classList.remove('ring-2', 'ring-green-400');
+
+                const pool = activePanel.querySelector('[data-drag-pool]');
+                if (pool) {
+                    const inZones = activePanel.querySelectorAll('.drop-zone .drag-item');
+                    inZones.forEach(item => pool.appendChild(item));
+                }
+
+                const zones = activePanel.querySelectorAll('.drop-zone');
+                zones.forEach(z => {
+                    z.classList.remove('border-green-300', 'border-red-300');
+                    z.classList.remove('bg-green-100', 'border-green-400');
+                    if (!z.querySelector('.drag-item')) {
+                        z.innerHTML = '<span class="text-xs text-slate-500">Suelta aquí…</span>';
+                    }
+                });
+
+                const feedbackBlocks = activePanel.querySelectorAll('[data-feedback]');
+                feedbackBlocks.forEach(el => {
+                    el.classList.add('hidden');
+                    el.textContent = '';
+                    el.classList.remove('text-green-700', 'text-red-700');
+                });
+            });
+
+            copyBtn.addEventListener('click', async () => {
+                const activePanel = panels.find(p => !p.classList.contains('hidden'));
+                if (!activePanel) return;
+                const textarea = activePanel.querySelector('textarea');
+                if (!textarea) return;
+
+                const text = textarea.value || '';
+                try {
+                    await navigator.clipboard.writeText(text);
+                } catch (e) {
+                    textarea.select();
+                    document.execCommand('copy');
+                    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                }
+            });
+
+            function insertAtCursor(textarea, text) {
+                const start = textarea.selectionStart ?? 0;
+                const end = textarea.selectionEnd ?? 0;
+                const value = textarea.value ?? '';
+                textarea.value = value.slice(0, start) + text + value.slice(end);
+                const pos = start + text.length;
+                textarea.setSelectionRange(pos, pos);
+                textarea.focus();
+                textarea.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+
+            function initMathToolbars() {
+                const templates = [
+                    { label: '^', insert: '^' },
+                    { label: '√( )', insert: 'sqrt()' },
+                    { label: 'π', insert: 'pi' },
+                    { label: '≤', insert: '≤' },
+                    { label: '≥', insert: '≥' },
+                    { label: '≠', insert: '≠' },
+                    { label: '∘', insert: '∘' },
+                    { label: 'f(x)=', insert: 'f(x) = ' },
+                    { label: 'g(x)=', insert: 'g(x) = ' },
+                    { label: '(f∘g)(x)=', insert: '(f∘g)(x) = ' }
+                ];
+
+                panels.forEach(panel => {
+                    const textarea = panel.querySelector('textarea');
+                    if (!textarea) return;
+                    if (panel.querySelector('[data-role="math-toolbar"]')) return;
+
+                    const toolbar = document.createElement('div');
+                    toolbar.setAttribute('data-role', 'math-toolbar');
+                    toolbar.className = 'mt-3 flex flex-wrap gap-2';
+
+                    templates.forEach(t => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'px-2 py-1 text-xs font-semibold rounded-md border border-slate-200 bg-white text-slate-700';
+                        btn.textContent = t.label;
+                        btn.addEventListener('click', () => insertAtCursor(textarea, t.insert));
+                        toolbar.appendChild(btn);
+                    });
+
+                    textarea.parentNode.insertBefore(toolbar, textarea);
+                });
+            }
+
+            function initAutosave() {
+                panels.forEach(panel => {
+                    const textarea = panel.querySelector('textarea');
+                    if (!textarea) return;
+
+                    const panelId = panel.dataset.panel;
+                    const storageKey = `calculo1_tema3_${panelId}`;
+                    const saved = localStorage.getItem(storageKey);
+                    if (saved !== null && (textarea.value ?? '') === '') {
+                        textarea.value = saved;
+                    }
+
+                    textarea.addEventListener('input', () => {
+                        localStorage.setItem(storageKey, textarea.value || '');
+                    });
+                });
+            }
+
+            function setFeedback(key, ok, message) {
+                const feedback = document.querySelector(`[data-feedback="${key}"]`);
+                if (!feedback) return;
+                feedback.textContent = message;
+                feedback.classList.remove('hidden');
+                feedback.classList.toggle('text-green-700', !!ok);
+                feedback.classList.toggle('text-red-700', !ok);
+            }
+
+            function initQuickQuestions() {
+                const buttons = Array.from(document.querySelectorAll('.q-btn'));
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const key = btn.dataset.q;
+                        if (!key) return;
+
+                        const group = document.querySelectorAll(`.q-btn[data-q="${key}"]`);
+                        group.forEach(b => b.classList.remove('ring-2', 'ring-green-400'));
+                        btn.classList.add('ring-2', 'ring-green-400');
+
+                        const correct = btn.dataset.correct === 'true';
+                        setFeedback(key, correct, correct ? 'Correcto.' : 'Revisa el concepto y vuelve a intentarlo.');
+                    });
+                });
+            }
+
+            function initAutoEvalScore() {
+                const btn = document.getElementById('btn-score-autoeval');
+                const out = document.getElementById('autoeval-score');
+                if (!btn || !out) return;
+
+                const keys = ['auto1', 'auto2', 'auto3', 'auto4', 'auto5'];
+
+                btn.addEventListener('click', () => {
+                    let answered = 0;
+                    let score = 0;
+
+                    keys.forEach(key => {
+                        const selected = document.querySelector(`.q-btn[data-q="${key}"].ring-2`);
+                        if (!selected) return;
+                        answered += 1;
+                        if (selected.dataset.correct === 'true') score += 1;
+                    });
+
+                    out.textContent = `Puntaje: ${score}/${keys.length} (Respondidas: ${answered}/${keys.length})`;
+                });
+            }
+
+            function initAutoEvalReset() {
+                const btn = document.getElementById('btn-reset-autoeval');
+                const out = document.getElementById('autoeval-score');
+                if (!btn || !out) return;
+
+                const keys = ['auto1', 'auto2', 'auto3', 'auto4', 'auto5'];
+
+                btn.addEventListener('click', () => {
+                    keys.forEach(key => {
+                        const group = document.querySelectorAll(`.q-btn[data-q="${key}"]`);
+                        group.forEach(b => b.classList.remove('ring-2', 'ring-green-400'));
+
+                        const feedback = document.querySelector(`[data-feedback="${key}"]`);
+                        if (feedback) {
+                            feedback.classList.add('hidden');
+                            feedback.textContent = '';
+                            feedback.classList.remove('text-green-700', 'text-red-700');
+                        }
+                    });
+
+                    out.textContent = '';
+                });
+            }
+
+            function initChecks() {
+                const checkButtons = Array.from(document.querySelectorAll('.btn-check'));
+                checkButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const type = btn.dataset.check;
+                        if (type === 'box') {
+                            const s1 = document.querySelector('[data-select="box1"]');
+                            const s2 = document.querySelector('[data-select="box2"]');
+                            const ok = (s1?.value === 'restar3' && s2?.value === 'raiz');
+                            setFeedback('box', ok, ok ? 'Correcto. Interna: x−3. Externa: √x.' : 'Aún no. Piensa: primero se forma (x−3) y luego se aplica la raíz.');
+                            return;
+                        }
+
+                        if (type === 'match') {
+                            const zones = Array.from(document.querySelectorAll('.drop-zone'));
+                            const zoneOk = zones.map(z => {
+                                const answer = z.getAttribute('data-answer');
+                                const item = z.querySelector('.drag-item');
+                                const value = item?.getAttribute('data-value') || '';
+                                const ok = value === answer;
+                                z.classList.toggle('border-green-300', ok);
+                                z.classList.toggle('border-red-300', !ok && value !== '');
+                                return ok;
+                            });
+
+                            const allFilled = zones.every(z => !!z.querySelector('.drag-item'));
+                            const ok = allFilled && zoneOk.every(Boolean);
+
+                            setFeedback('match', ok, ok ? 'Correcto. Buen criterio al identificar existencia de inversa.' : 'Revisa: lineal → despeje; x³ ↔ ∛x; x² no es 1-1 en ℝ.');
+                            return;
+                        }
+                    });
+                });
+            }
+
+            function initDragAndDrop() {
+                let dragged = null;
+                let tappedItem = null;
+
+                function clearTapped() {
+                    if (tappedItem) tappedItem.classList.remove('ring-2', 'ring-green-400');
+                    tappedItem = null;
+                }
+
+                function setTapped(item) {
+                    clearTapped();
+                    tappedItem = item;
+                    if (tappedItem) tappedItem.classList.add('ring-2', 'ring-green-400');
+                }
+
+                function getPool() {
+                    return document.querySelector('[data-drag-pool]');
+                }
+
+                function placeItemInZone(item, zone) {
+                    if (!item || !zone) return;
+                    const pool = getPool();
+                    const existing = zone.querySelector('.drag-item');
+                    if (existing && pool) pool.appendChild(existing);
+
+                    zone.innerHTML = '';
+                    zone.appendChild(item);
+                    zone.classList.remove('border-green-300', 'border-red-300');
+                    zone.classList.remove('border-green-400', 'bg-green-100');
+                }
+
+                const items = Array.from(document.querySelectorAll('.drag-item'));
+                items.forEach(item => {
+                    item.addEventListener('dragstart', (e) => {
+                        dragged = item;
+                        e.dataTransfer.setData('text/plain', item.getAttribute('data-value') || '');
+                        e.dataTransfer.effectAllowed = 'move';
+                        item.classList.add('opacity-60');
+                    });
+
+                    item.addEventListener('dragend', () => {
+                        item.classList.remove('opacity-60');
+                        dragged = null;
+                    });
+
+                    item.addEventListener('click', () => {
+                        if (tappedItem === item) {
+                            clearTapped();
+                            return;
+                        }
+                        setTapped(item);
+                    });
+                });
+
+                const zones = Array.from(document.querySelectorAll('.drop-zone'));
+                zones.forEach(zone => {
+                    zone.addEventListener('dragover', (e) => {
+                        e.preventDefault();
+                        e.dataTransfer.dropEffect = 'move';
+                        zone.classList.add('border-green-400', 'bg-green-100');
+                    });
+
+                    zone.addEventListener('dragleave', () => {
+                        zone.classList.remove('border-green-400', 'bg-green-100');
+                    });
+
+                    zone.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        zone.classList.remove('border-green-400', 'bg-green-100');
+                        if (!dragged) return;
+
+                        placeItemInZone(dragged, zone);
+                        clearTapped();
+                    });
+
+                    zone.addEventListener('click', () => {
+                        if (!tappedItem) return;
+                        placeItemInZone(tappedItem, zone);
+                        clearTapped();
+                    });
+                });
+
+                document.querySelectorAll('.drop-zone').forEach(zone => {
+                    zone.addEventListener('click', (e) => {
+                        const item = e.target?.closest?.('.drag-item');
+                        if (!item) return;
+                        const pool = getPool();
+                        if (pool) pool.appendChild(item);
+                        if (!zone.querySelector('.drag-item')) {
+                            zone.innerHTML = '<span class="text-xs text-slate-500">Suelta aquí…</span>';
+                        }
+                        clearTapped();
+                    });
+                });
+            }
+
+            initMathToolbars();
+            initAutosave();
+            initQuickQuestions();
+            initChecks();
+            initDragAndDrop();
+            initAutoEvalScore();
+            initAutoEvalReset();
+
+            showTab('a1');
+        });
+    </script>
+</body>
+</html>
