@@ -1,0 +1,86 @@
+<svg width="100%" viewBox="0 0 620 484.76" role="img" style="" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Gráfica 4: f(x) = x³</title>
+  <!--
+    x ∈ [-5.5, 5.5]  → px ∈ [70, 580]  escala_x = 510/11 = 46.36 px/unidad
+    y ∈ [-130, 140]  → py ∈ [420, 30]  rango=270  escala_y = 390/270 = 1.444 px/unidad
+    px = 70+(x+5.5)*46.36
+    py = 420-(y+130)*1.444
+    Origen x=0: px=70+5.5*46.36=325
+    Origen y=0: py=420-130*1.444=420-187.7=232.3≈232
+  -->
+  <defs>
+    <clipPath id="c4"><rect x="70" y="30" width="510" height="390"/></clipPath>
+  </defs>
+  <rect x="70" y="30" width="510" height="390" fill="none" stroke="#ccc" stroke-width="1" style="fill:none;stroke:rgb(204, 204, 204);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Cuadrícula -->
+  <g stroke="#e0e0e0" stroke-width="0.6" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- verticales cada 1 unidad = 46.36px; x=-5→93, -4→139, -3→186, -2→232, -1→278, 0→325, 1→371, 2→418, 3→464, 4→510, 5→557 -->
+    <line x1="93" y1="30" x2="93" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/><line x1="139" y1="30" x2="139" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="186" y1="30" x2="186" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/><line x1="232" y1="30" x2="232" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="278" y1="30" x2="278" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/><line x1="325" y1="30" x2="325" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="371" y1="30" x2="371" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/><line x1="418" y1="30" x2="418" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="464" y1="30" x2="464" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/><line x1="510" y1="30" x2="510" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="557" y1="30" x2="557" y2="420" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- horizontales cada 50 unidades = 72.2px; y=-100→175, -50→104, 0→232, 50→160(wait):
+         py=-100: 420-(−100+130)*1.444=420-43.3=376.7≈377
+         py=-50:  420-80*1.444=420-115.5=304.5≈305
+         py=0:    232
+         py=50:   420-180*1.444=420-259.9=160.1≈160
+         py=100:  420-230*1.444=420-332.1=87.9≈88
+    -->
+    <line x1="70" y1="377" x2="580" y2="377" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/><line x1="70" y1="305" x2="580" y2="305" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="70" y1="232" x2="580" y2="232" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/><line x1="70" y1="160" x2="580" y2="160" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <line x1="70" y1="88" x2="580" y2="88" style="fill:rgb(0, 0, 0);stroke:rgb(224, 224, 224);color:rgb(255, 255, 255);stroke-width:0.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  </g>
+
+  <!-- Ejes -->
+  <line x1="70" y1="232" x2="580" y2="232" stroke="#3A8FC7" stroke-width="1.4" clip-path="url(#c4)" style="fill:rgb(0, 0, 0);stroke:rgb(58, 143, 199);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="325" y1="30" x2="325" y2="420" stroke="#3A8FC7" stroke-width="1.4" clip-path="url(#c4)" style="fill:rgb(0, 0, 0);stroke:rgb(58, 143, 199);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Curva f(x)=x³
+       x=-5.5 y=-166.4 →clamp; x=-5 y=-125 px=93 py=377
+       x=-4.5 y=-91.1  px=116 py=420-(-91.1+130)*1.444=420-56.2=363.8≈364
+       x=-4   y=-64    px=139 py=420-66*1.444=420-95.3=324.7≈325
+       x=-3.5 y=-42.9  px=162 py=420-87.1*1.444=420-125.8=294.2≈294
+       x=-3   y=-27    px=186 py=420-103*1.444=420-148.7=271.3≈271
+       x=-2.5 y=-15.6  px=209 py=420-114.4*1.444=420-165.2=254.8≈255
+       x=-2   y=-8     px=232 py=420-122*1.444=420-176.2=243.8≈244
+       x=-1.5 y=-3.375 px=255 py=420-126.6*1.444=420-182.8=237.2≈237
+       x=-1   y=-1     px=278 py=420-129*1.444=420-186.3=233.7≈234
+       x=-0.5 y=-0.125 px=302 py=420-129.9*1.444=420-187.5=232.5≈233
+       x=0    y=0      px=325 py=232
+       x=0.5  y=0.125  px=348 py=232-0.18=231.8≈232
+       x=1    y=1      px=371 py=420-131*1.444=420-189.2=230.8≈231
+       x=1.5  y=3.375  px=395 py=420-133.4*1.444=420-192.6=227.4≈227
+       x=2    y=8      px=418 py=420-138*1.444=420-199.3=220.7≈221
+       x=2.5  y=15.625 px=441 py=420-145.6*1.444=420-210.3=209.7≈210
+       x=3    y=27     px=464 py=420-157*1.444=420-226.7=193.3≈193
+       x=3.5  y=42.875 px=487 py=420-172.9*1.444=420-249.7=170.3≈170
+       x=4    y=64     px=510 py=420-194*1.444=420-280.1=139.9≈140
+       x=4.5  y=91.125 px=534 py=420-221.1*1.444=420-319.3=100.7≈101
+       x=5    y=125    px=557 py=420-255*1.444=420-368.2=51.8≈52
+       x=5.5  y=166    px=580 py=clamp 30
+  -->
+  <polyline clip-path="url(#c4)" fill="none" stroke="#3A8FC7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="93,377 116,364 139,325 162,294 186,271 209,255 232,244 255,237 278,234 302,233 325,232 348,232 371,231 395,227 418,221 441,210 464,193 487,170 510,140 534,101 557,52 575,34" style="fill:none;stroke:rgb(58, 143, 199);color:rgb(255, 255, 255);stroke-width:2.2px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Etiquetas eje X -->
+  <g text-anchor="middle" font-size="11" fill="#555" font-family="Arial" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">
+    <text x="139" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">-4</text><text x="186" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">-3</text>
+    <text x="232" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">-2</text><text x="278" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">-1</text>
+    <text x="325" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">0</text> <text x="371" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">1</text>
+    <text x="418" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">2</text> <text x="464" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">3</text>
+    <text x="510" y="435" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">4</text>
+    <text x="325" y="455" font-size="12" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">x</text>
+  </g>
+  <!-- Etiquetas eje Y -->
+  <g text-anchor="end" font-size="11" fill="#555" font-family="Arial" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:end;dominant-baseline:auto">
+    <text x="64" y="381" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:end;dominant-baseline:auto">-100</text><text x="64" y="309" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:end;dominant-baseline:auto">-50</text>
+    <text x="64" y="236" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:end;dominant-baseline:auto">0</text>  <text x="64" y="164" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:end;dominant-baseline:auto">50</text>
+    <text x="64" y="92" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:11px;font-weight:400;text-anchor:end;dominant-baseline:auto">100</text>
+    <text x="22" y="230" font-size="12" transform="rotate(-90,22,230)" style="fill:rgb(85, 85, 85);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:12px;font-weight:400;text-anchor:end;dominant-baseline:auto">f(x)</text>
+  </g>
+
+  <text x="325" y="20" text-anchor="middle" font-size="13" font-family="Arial" fill="#333" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:13px;font-weight:400;text-anchor:middle;dominant-baseline:auto">f(x) = x³</text>
+  <text x="325" y="472" text-anchor="middle" font-size="13" font-family="Arial" font-weight="bold" fill="#333" style="fill:rgb(51, 51, 51);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial;font-size:13px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Gráfica 4</text>
+</svg>

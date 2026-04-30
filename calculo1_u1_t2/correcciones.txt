@@ -1,0 +1,55 @@
+
+ 
+1. Reemplaza la introducción por este texto: 
+   Tema 1: Funciones y Gráficas 
+¡Bienvenido al Tema 1: Funciones y Gráficas!
+Este componente introduce el estudio formal de las funciones, herramientas críticas en la Ingeniería de Sistemas para la modelación de fenómenos y la predicción de comportamientos en entornos técnicos. A través del análisis de diversas representaciones y propiedades geométricas, se establecerán los fundamentos analíticos necesarios para abordar con éxito los conceptos de límites y derivadas.
+¡Iniciemos este recorrido hacia el dominio del cálculo diferencial! 
+
+2. En la pestaña contenido reemplaza el texto por el siguiente:
+
+Contenido del Tema 1: Funciones y Gráficas
+
+Contenido del Tema 1: Funciones y Gráficas 
+
+Esta sección presenta los conceptos fundamentales de las funciones y sus representaciones. Se analizan propiedades como el dominio, el rango, la paridad y la monotonía, herramientas clave para la modelación matemática en Ingeniería de Sistemas.
+
+
+Concepto de Función
+
+De manera sencilla, una función es una relación entre dos conjuntos donde a cada valor del primer conjunto le corresponde uno solo del segundo. Formalmente, se define como un conjunto de pares ordenados (x, y) en los que no existen dos pares diferentes con el mismo primer número.
+Elementos fundamentales:
+
+* Dominio: Es el conjunto de todos los valores que puede tomar la variable x.
+* Rango: Es el conjunto de todos los valores resultantes de la variable y.
+* Relación única: Ningún elemento de x puede estar relacionado más de una vez con elementos de y.
+* Representación: Se denotan comúnmente con letras como f, g o h, expresándose como y = f(x).
+Representaciones de Funciones
+
+Existen cuatro maneras de representar una función, lo que permite analizar la información desde diferentes perspectivas:
+
+* Tabular: Relación organizada mediante una tabla de valores numéricos.
+* Algebraica: Expresión mediante una fórmula matemática o ecuación (ejemplo: y = x^2).
+* Gráfica: Visualización geométrica de los pares ordenados en el plano cartesiano R^2.
+* Diagramas de conjuntos: Representación visual de la correspondencia entre los elementos del dominio y el rango.
+
+Criterio de la Recta Vertical
+
+Para determinar si una gráfica representa una función, se aplica la "prueba de la recta vertical". Esta consiste en trazar rectas verticales sobre la curva; si ninguna recta interseca la gráfica en más de un punto, entonces la gráfica representa una función.
+
+Paridad (Simetría)
+
+El análisis de la simetría o paridad ayuda a entender el comportamiento geométrico de la función.
+
+* Función par: Satisface la condición f(-x) = f(x). Es simétrica con respecto al eje y.
+* Función impar: Satisface la condición f(-x) = -f(x). Es simétrica con respecto al origen.
+
+Monotonía (Comportamiento)
+
+La monotonía describe si los valores de la función aumentan o disminuyen.
+
+* Función creciente: Si al aumentar los valores de x, también aumentan los valores de f(x).
+* Función decreciente: Si al aumentar los valores de x, disminuyen los valores de f(x).
+
+
+
