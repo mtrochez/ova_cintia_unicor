@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia y Epistemología de las Ciencias Naturales - Unidad 3</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #f6efe1;
+            --surface: #ffffff;
+            --surface-soft: #fff7e6;
+            --text: #3f3528;
+            --heading: #14532d;
+            --line: #d7b98a;
+            --accent: #b7791f;
+            --accent-deep: #166534;
+            --sepia: #6b4f2a;
+            --shadow: 0 12px 30px rgba(74, 50, 18, 0.16);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(183, 121, 31, 0.16), transparent 34%),
+                linear-gradient(135deg, #fbf3df 0%, #f6efe1 48%, #eef5e8 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 264px; background: linear-gradient(180deg, #fffaf0 0%, #f4e6c6 100%); box-shadow: 0 2px 18px rgba(74, 50, 18, 0.14); border-right: 1px solid #d7b98a; flex-shrink: 0; display: flex; flex-direction: column; padding: 18px 0 0; }
+        #ova-embed .brand-shell { padding: 0 16px 14px; }
+        #ova-embed .logo-orb { width: 140px; height: 140px; margin: 0 auto 12px; background: #fffaf0; border-radius: 9999px; box-shadow: 0 8px 24px rgba(107, 79, 42, 0.28); border: 3px double #b7791f; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 82%; height: 82%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: #14532d; font-size: 1.02rem; line-height: 1.35; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: #7c5a24; }
+        #ova-embed .sidebar-nav { margin-top: 8px; padding-bottom: 18px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 13px 22px; border-left: 4px solid transparent; color: #5f4a2f; font-weight: 600; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(20, 83, 45, 0.11); color: #14532d; border-left-color: #b7791f; }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 28px; }
+        #ova-embed .content-stage { position: relative; max-width: 1120px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, #14532d 0%, #6b4f2a 56%, #b7791f 100%); color: #fffaf0; border-radius: 24px; padding: 34px; box-shadow: var(--shadow); border: 1px solid rgba(255, 250, 240, 0.35); }
+        #ova-embed .section-card { background: rgba(255, 250, 240, 0.94); border: 1px solid #d7b98a; border-radius: 22px; box-shadow: 0 1px 14px rgba(74, 50, 18, 0.08); padding: 28px; }
+        #ova-embed .mini-card { background: rgba(255, 252, 244, 0.96); border: 1px solid #dcc395; border-radius: 18px; padding: 20px; box-shadow: 0 1px 8px rgba(74, 50, 18, 0.06); }
+        #ova-embed .btn-main { background: #14532d; color: #fffaf0; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid #b7791f; cursor: pointer; transition: background 0.25s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        #ova-embed .btn-main:hover { background: #0f3f23; }
+        #ova-embed .btn-soft { background: #fffaf0; color: #5f4a2f; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid #d7b98a; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        #ova-embed .epistemic-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .epistemic-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #b7791f, #14532d, #b7791f, transparent); opacity: 0.55; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: #fffaf0; border: 2px solid #b7791f; box-shadow: 0 8px 18px rgba(74, 50, 18, 0.13); display: flex; align-items: center; justify-content: center; color: #14532d; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #14532d; font-weight: 800; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #5f4a2f; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .archive-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+        #ova-embed .archive-card { position: relative; background: linear-gradient(135deg, rgba(255, 252, 244, 0.98), rgba(250, 239, 212, 0.92)); border: 1px solid #d7b98a; border-left: 7px solid #b7791f; border-radius: 20px; padding: 22px; box-shadow: 0 10px 22px rgba(74, 50, 18, 0.08); overflow: hidden; }
+        #ova-embed .archive-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 18% 20%, rgba(107, 79, 42, 0.08) 0 1px, transparent 2px), radial-gradient(circle at 72% 65%, rgba(183, 121, 31, 0.06) 0 1px, transparent 2px), linear-gradient(90deg, rgba(107, 79, 42, 0.035) 1px, transparent 1px), linear-gradient(0deg, rgba(107, 79, 42, 0.025) 1px, transparent 1px); background-size: 28px 28px, 36px 36px, 18px 18px, 18px 18px; opacity: 0.65; pointer-events: none; }
+        #ova-embed .archive-card::after { content: "ARCHIVO"; position: absolute; right: -18px; bottom: 18px; width: 142px; height: 142px; border-radius: 999px; border: 3px double rgba(123, 62, 36, 0.18); color: rgba(123, 62, 36, 0.19); display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; letter-spacing: 0.16em; transform: rotate(-18deg); background: radial-gradient(circle, rgba(123, 62, 36, 0.08), transparent 64%); }
+        #ova-embed .archive-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; position: relative; z-index: 1; }
+        #ova-embed .archive-code { display: inline-flex; align-items: center; gap: 8px; color: #7c5a24; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+        #ova-embed .archive-icon { width: 42px; height: 42px; border-radius: 999px; background: #fff7e6; border: 1px solid #d7b98a; display: inline-flex; align-items: center; justify-content: center; color: #14532d; box-shadow: 0 6px 14px rgba(74, 50, 18, 0.08); }
+        #ova-embed .archive-card h3 { position: relative; z-index: 1; color: #14532d; font-size: 1.25rem; font-weight: 800; margin: 0; }
+        #ova-embed .archive-card p { position: relative; z-index: 1; }
+        #ova-embed .key-note { margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: rgba(20, 83, 45, 0.08); border: 1px solid rgba(20, 83, 45, 0.14); color: #36523a; font-size: 0.9rem; }
+        #ova-embed .activity-ledger { position: relative; background: linear-gradient(135deg, rgba(255, 252, 244, 0.98), rgba(248, 235, 204, 0.9)); border: 1px solid #d7b98a; border-radius: 22px; box-shadow: 0 10px 24px rgba(74, 50, 18, 0.09); padding: 28px; overflow: hidden; }
+        #ova-embed .activity-ledger::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(183, 121, 31, 0.07) 1px, transparent 1px), linear-gradient(0deg, rgba(107, 79, 42, 0.04) 1px, transparent 1px); background-size: 22px 22px; opacity: 0.55; pointer-events: none; }
+        #ova-embed .activity-ledger > * { position: relative; z-index: 1; }
+        #ova-embed .ledger-heading { display: flex; align-items: flex-start; gap: 14px; }
+        #ova-embed .ledger-icon { width: 50px; height: 50px; flex: 0 0 50px; border-radius: 999px; background: #fff7e6; border: 2px solid #b7791f; color: #14532d; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(74, 50, 18, 0.12); }
+        #ova-embed .purpose-note { margin-top: 18px; padding: 14px 16px; border-left: 5px solid #b7791f; border-radius: 14px; background: rgba(20, 83, 45, 0.07); color: #3f3528; }
+        #ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed rgba(123, 62, 36, 0.28); border-radius: 16px; background: rgba(255, 250, 240, 0.72); }
+        #ova-embed .export-menu-wrap { position: relative; display: inline-flex; }
+        #ova-embed .export-menu { position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px; background: #fffaf0; border: 1px solid #d7b98a; border-radius: 16px; box-shadow: 0 12px 24px rgba(74, 50, 18, 0.16); padding: 8px; z-index: 20; }
+        #ova-embed .export-menu.hidden { display: none; }
+        #ova-embed .export-option { width: 100%; display: flex; align-items: center; gap: 10px; border: 0; background: transparent; color: #3f3528; font-weight: 700; text-align: left; padding: 10px 12px; border-radius: 12px; cursor: pointer; }
+        #ova-embed .export-option:hover { background: rgba(20, 83, 45, 0.09); color: #14532d; }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .activity-section.hidden { display: none; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid #d7b98a; background: #fffaf0; border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: #3f3528; }
+        #ova-embed .quiz-option.selected { border-color: #14532d; background: #edf6e7; color: #14532d; }
+        #ova-embed .mobile-header { display: none; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: #fffaf0; box-shadow: 0 2px 14px rgba(74, 50, 18, 0.12); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .epistemic-route { grid-template-columns: 1fr; }
+            #ova-embed .epistemic-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #b7791f, #14532d, #b7791f, transparent); }
+            #ova-embed .archive-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="img/logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Historia y Epistemología</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="img/logo.webp" alt="Logo CINTIA"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Maestría en Didáctica</p>
+                    <h1>Historia y Epistemología de las Ciencias Naturales</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-compass"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-scroll"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-feather-pointed"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-magnifying-glass-chart"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-folder-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-atlas"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-compass mr-2"></i>Unidad 3</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Reconstrucciones Socio-Históricas y Ciencia en Colombia</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Esta unidad representa la culminación del curso, donde el conocimiento histórico y epistemológico se transforma en acción pedagógica situada, con especial énfasis en la ciencia producida en Colombia.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-magnifying-glass mr-2 text-amber-700"></i>Pregunta central</h3><p class="mt-2 text-slate-700">¿Cómo vincular la historia de las ciencias con el patrimonio natural y cultural colombiano para favorecer nuevas identidades y lecturas del territorio?</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-timeline mr-2 text-amber-700"></i>Enfoque</h3><p class="mt-2 text-slate-700">Reconstrucción socio-histórica de la ciencia en Colombia y diseño de retos histórico-didácticos.</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-chalkboard-user mr-2 text-amber-700"></i>Producto esperado</h3><p class="mt-2 text-slate-700">Propuestas didácticas y cartillas digitales que incorporen la NOS y permitan cambios en las formas de pensar, sentir y actuar de los educandos.</p></div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta histórica</p>
+                        <h3 class="mt-3 text-2xl font-extrabold text-green-800">Ciencia en Colombia: Identidad y Territorio</h3>
+                        <div class="epistemic-route">
+                            <div class="route-stop"><div class="route-node"><i class="fa-solid fa-leaf"></i></div><h4>Botánica</h4><p>Expedición Botánica de Mutis y la institucionalización del saber científico.</p></div>
+                            <div class="route-stop"><div class="route-node"><i class="fa-solid fa-coins"></i></div><h4>Platino</h4><p>Descubrimiento, explotación y comercialización en el Nuevo Reino de Granada.</p></div>
+                            <div class="route-stop"><div class="route-node"><i class="fa-solid fa-landmark"></i></div><h4>Reconstrucción</h4><p>Metodología NOS: condiciones, científicos, instrumentos y obstáculos.</p></div>
+                            <div class="route-stop"><div class="route-node"><i class="fa-solid fa-chalkboard-teacher"></i></div><h4>Reto Didáctico</h4><p>Investigación Basada en Diseño y cartillas digitales con IA.</p></div>
+                            <div class="route-stop"><div class="route-node"><i class="fa-solid fa-users"></i></div><h4>Transformación</h4><p>Cambios en pensar, sentir y actuar sobre la ciencia y sus protagonistas.</p></div>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <h3 class="text-2xl font-extrabold text-green-800">Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed text-slate-700">El maestrante transformará el conocimiento histórico y epistemológico en acción pedagógica situada, diseñando propuestas didácticas que incorporen la Naturaleza de la Ciencia y permitan cambios reales en las formas de pensar, sentir y actuar de los educandos en relación con la ciencia y sus protagonistas.</p>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivo de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Meta de la Unidad 3</h2>
+                        <p class="mt-5 text-slate-700 leading-relaxed text-lg">Vincular la historia de las ciencias con el patrimonio natural y cultural colombiano, crear propuestas didácticas (Retos Histórico-Didácticos) que incorporen argumentos históricos, y evaluar diseños didácticos que permitan cambios en las formas de pensar, sentir y actuar de los educandos.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-landmark mr-2 text-amber-700"></i>Vincular</h3><p class="mt-2">La historia de las ciencias con el patrimonio natural y cultural colombiano para favorecer nuevas identidades y lecturas del territorio.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-lightbulb mr-2 text-amber-700"></i>Crear</h3><p class="mt-2">Propuestas didácticas (Retos Histórico-Didácticos) que incorporen argumentos históricos para fortalecer la motivación y el sentido social.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-chart-line mr-2 text-amber-700"></i>Evaluar</h3><p class="mt-2">Diseños didácticos que permitan cambios en las formas de pensar, sentir y actuar de los educandos en relación con la ciencia.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-robot mr-2 text-amber-700"></i>Integrar</h3><p class="mt-2">Herramientas de Inteligencia Artificial para la curaduría y producción de materiales educativos.</p></div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Expedientes de ciencia en Colombia</h2>
+                        <p class="mt-4 text-slate-700">Cada expediente presenta un momento de la ciencia en Colombia como escenario de identidad, territorio y transformación pedagógica.</p>
+                    </div>
+                    <div class="archive-grid mt-6">
+                        <article class="archive-card"><div class="archive-meta"><span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente A</span><span class="archive-icon"><i class="fa-solid fa-leaf"></i></span></div><h3>Ciencia en Colombia: Identidad y Territorio</h3><p class="mt-3 leading-relaxed">La ciencia en Colombia ha estado ligada a las necesidades de reconocimiento del territorio y la explotación de recursos, constituyendo una historia social de la ciencia que debe formar parte de la identidad científica nacional.</p><div class="key-note"><strong>Clave histórica:</strong> el conocimiento científico como herramienta de reconocimiento y valoración del patrimonio natural y cultural.</div><p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> la Expedición Botánica y el descubrimiento del platino como hitos fundamentales.</p></article>
+                        <article class="archive-card"><div class="archive-meta"><span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente B</span><span class="archive-icon"><i class="fa-solid fa-leaf"></i></span></div><h3>La Expedición Botánica</h3><p class="mt-3 leading-relaxed">Liderada por José Celestino Mutis, representó un hito en la institucionalización del saber científico en el Nuevo Reino de Granada, vinculando la botánica con el desarrollo económico y la ilustración criolla.</p><div class="key-note"><strong>Clave histórica:</strong> la ciencia como proyecto de nación y de construcción de identidad.</div><p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> la creación del Real Jardín Botánico y la formación de científicos criollos.</p></article>
+                        <article class="archive-card"><div class="archive-meta"><span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente C</span><span class="archive-icon"><i class="fa-solid fa-coins"></i></span></div><h3>El Platino</h3><p class="mt-3 leading-relaxed">El descubrimiento, explotación y comercialización del platino en el Nuevo Reino de Granada constituye un caso de estudio sobre cómo el contexto local influye en la aportación científica global.</p><div class="key-note"><strong>Clave histórica:</strong> los recursos naturales como motor de conocimiento científico y desarrollo económico.</div><p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> la metalurgia del platino y su impacto en la economía del virreinato.</p></article>
+                        <article class="archive-card"><div class="archive-meta"><span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente D</span><span class="archive-icon"><i class="fa-solid fa-microscope"></i></span></div><h3>Metodología de Reconstrucción (NOS)</h3><p class="mt-3 leading-relaxed">Para diseñar OVA o materiales de aula, se debe dominar la plantilla de Reconstrucción Histórica: análisis de condiciones, científicos y aportes, instrumentos y experimentos, obstáculos y teorías abandonadas.</p><div class="key-note"><strong>Clave metodológica:</strong> la reconstrucción histórica permite entender cómo se construye el conocimiento científico en contexto.</div><p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> el barómetro de Caldas como instrumento que validó nuevas teorías atmosféricas.</p></article>
+                        <article class="archive-card"><div class="archive-meta"><span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente E</span><span class="archive-icon"><i class="fa-solid fa-chalkboard-teacher"></i></span></div><h3>El Reto Histórico-Didáctico</h3><p class="mt-3 leading-relaxed">La Investigación Basada en Diseño (IBD) permite usar la historia para crear secuencias didácticas que no solo informen, sino que problematicen el conocimiento, transformando la imagen de ciencia en los estudiantes.</p><div class="key-note"><strong>Clave didáctica:</strong> la historia como herramienta para problematizar y motivar el aprendizaje científico.</div><p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> cartillas digitales con IA para narrativas históricas y actividades interactivas.</p></article>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Actividades de la Unidad 3</h2>
+                        <p class="mt-4 text-slate-700 leading-relaxed">Las actividades promueven la reconstrucción socio-histórica, el diseño de narrativas creativas y la elaboración de cartillas digitales con Inteligencia Artificial.</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2" role="tablist">
+                        <button type="button" class="activity-subnav-btn btn-main" data-activity-section="act-a1">Actividad 1</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="act-a2">Actividad 2</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="act-seg">Seguimiento</button>
+                    </div>
+                    <div id="act-a1" class="activity-section mt-6 space-y-5">
+                        <div class="activity-ledger"><div class="ledger-heading"><div class="ledger-icon"><i class="fa-solid fa-pen-fancy"></i></div><div><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bitácora 1</p><h3 class="mt-2 text-2xl font-extrabold text-green-800">Laboratorio de Narrativa: Cuénteme una Historia</h3></div></div><div class="purpose-note"><strong>Propósito:</strong> Seleccionar un episodio de la ciencia en Colombia y presentarlo de forma creativa usando formatos digitales.</div><div class="field-panel"><label class="block font-bold text-slate-700" for="a1-episodio">Episodio seleccionado</label><select id="a1-episodio" class="mt-2 w-full p-3 border rounded-xl bg-white"><option value="">Selecciona una opción</option><option>Expedición Botánica de Mutis</option><option>Descubrimiento del platino</option><option>Barómetro de Caldas</option><option>Otro episodio de ciencia en Colombia</option></select><div class="mt-5 grid md:grid-cols-2 gap-4"><div><label class="block font-bold text-slate-700" for="a1-formato">Formato digital</label><select id="a1-formato" class="mt-2 w-full p-3 border rounded-xl bg-white"><option value="">Selecciona una opción</option><option>Infografía digital</option><option>Podcast o audiovisual</option><option>Cuento corto digital</option><option>Historieta interactiva</option><option>Post de blog educativo</option></select></div><div><label class="block font-bold text-slate-700" for="a1-publico">Público objetivo</label><input id="a1-publico" class="mt-2 w-full p-3 border rounded-xl" placeholder="Ej: estudiantes de bachillerato, comunidad general"></div></div><label class="mt-5 block font-bold text-slate-700" for="a1-text">Narrativa creativa</label><textarea id="a1-text" maxlength="1500" class="mt-3 w-full min-h-[200px] p-4 border rounded-xl bg-white resize-none" placeholder="Desarrolla la historia del episodio seleccionado con un tono atractivo, incluyendo contexto, personajes, conflicto y resolución..."></textarea><div class="mt-3 flex justify-between gap-3 flex-wrap"><span class="text-sm font-semibold text-slate-500" data-counter-for="a1-text">0/1500</span><div class="flex flex-wrap gap-2"><button type="button" class="btn-main" data-copy="a1-text">Copiar texto</button><div class="export-menu-wrap"><button type="button" class="btn-soft export-toggle" data-export-scope="a1"><i class="fa-solid fa-file-export"></i>Exportar</button><div class="export-menu hidden"><button type="button" class="export-option" data-export-format="word" data-export-scope="a1"><i class="fa-solid fa-file-word"></i> Word</button><button type="button" class="export-option" data-export-format="pdf" data-export-scope="a1"><i class="fa-solid fa-file-pdf"></i> PDF</button></div></div></div></div></div></div>
+                    </div>
+                    <div id="act-a2" class="activity-section hidden mt-6 space-y-5">
+                        <div class="activity-ledger"><div class="ledger-heading"><div class="ledger-icon"><i class="fa-solid fa-map-location-dot"></i></div><div><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bitácora 2</p><h3 class="mt-2 text-2xl font-extrabold text-green-800">Proyecto: Que no te cuenten la historia, reconstrúyela</h3></div></div><div class="purpose-note"><strong>Propósito:</strong> Elegir un concepto estructurante actual y realizar su reconstrucción histórica completa, luego diseñar una cartilla digital con IA. Consulta la <a href="https://mtrochez.github.io/ova_cintia_unicor/hye_gt/index.html" target="_blank" rel="noopener" class="text-green-800 font-bold underline">Guía de Reconstrucciones Socio-Históricas</a> (Aristizábal) disponible en la pestaña Recursos.</div>
+                        
+                        <div class="mt-6 flex flex-wrap gap-2" role="tablist">
+                            <button type="button" class="step-subnav-btn btn-main" data-step-section="step-1">Paso 1: Reconstrucción</button>
+                            <button type="button" class="step-subnav-btn btn-soft" data-step-section="step-2">Paso 2: Cartilla Digital</button>
+                        </div>
+                        
+                        <div id="step-1" class="step-section mt-6 space-y-5">
+                            <div class="field-panel"><div class="grid md:grid-cols-2 gap-4"><div><label class="block font-bold text-slate-700" for="a2-concepto">Concepto estructurante</label><select id="a2-concepto" class="mt-2 w-full p-3 border rounded-xl bg-white"><option value="">Selecciona una opción</option><option>Vacunas</option><option>Transición energética</option><option>Clonación</option><option>Cambio climático</option><option>Inteligencia Artificial</option><option>Otro concepto</option></select></div><div><label class="block font-bold text-slate-700" for="a2-periodo">Periodo histórico clave</label><input id="a2-periodo" class="mt-2 w-full p-3 border rounded-xl" placeholder="Ej: siglo XIX, revolución industrial"></div></div><label class="mt-5 block font-bold text-slate-700" for="a2-condiciones">Análisis de condiciones (contexto social, político, económico)</label><textarea id="a2-condiciones" maxlength="800" class="mt-3 w-full min-h-[140px] p-4 border rounded-xl bg-white resize-none" placeholder="Describe el entorno en el que se desarrolló el concepto científico..."></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-condiciones">0/800</span><label class="mt-5 block font-bold text-slate-700" for="a2-cientificos">Científicos y aportes</label><textarea id="a2-cientificos" maxlength="800" class="mt-3 w-full min-h-[140px] p-4 border rounded-xl bg-white resize-none" placeholder="Identifica los principales científicos y el significado de sus contribuciones..."></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-cientificos">0/800</span><label class="mt-5 block font-bold text-slate-700" for="a2-instrumentos">Instrumentos y experimentos</label><textarea id="a2-instrumentos" maxlength="800" class="mt-3 w-full min-h-[140px] p-4 border rounded-xl bg-white resize-none" placeholder="Analiza la tecnología que permitió el avance..."></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-instrumentos">0/800</span><label class="mt-5 block font-bold text-slate-700" for="a2-obstaculos">Obstáculos y teorías abandonadas</label><textarea id="a2-obstaculos" maxlength="800" class="mt-3 w-full min-h-[140px] p-4 border rounded-xl bg-white resize-none" placeholder="Documenta qué se pensaba antes y por qué esa idea fue dejada atrás..."></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-obstaculos">0/800</span><label class="mt-5 block font-bold text-slate-700" for="a2-reflexion">Reflexión docente</label><textarea id="a2-reflexion" maxlength="800" class="mt-3 w-full min-h-[140px] p-4 border rounded-xl bg-white resize-none" placeholder="¿Cómo puede esta reconstrucción transformar la enseñanza del concepto?"></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-reflexion">0/800</span></div>
+                        </div>
+                        
+                        <div id="step-2" class="step-section hidden mt-6 space-y-5">
+                            <div class="field-panel"><div class="grid md:grid-cols-2 gap-4"><div><label class="block font-bold text-slate-700" for="a2-tema">Tema de la cartilla</label><input id="a2-tema" class="mt-2 w-full p-3 border rounded-xl" placeholder="Ej: La ciencia en Colombia, Historia de las vacunas"></div><div><label class="block font-bold text-slate-700" for="a2-nivel">Nivel educativo</label><select id="a2-nivel" class="mt-2 w-full p-3 border rounded-xl bg-white"><option value="">Selecciona una opción</option><option>Primaria (grados 3-5)</option><option>Bachillerato (grados 6-9)</option><option>Media (grados 10-11)</option></select></div></div><label class="mt-5 block font-bold text-slate-700" for="a2-estructura">Estructura de la cartilla</label><textarea id="a2-estructura" maxlength="1000" class="mt-3 w-full min-h-[160px] p-4 border rounded-xl bg-white resize-none" placeholder="Describe la estructura: introducción, secciones, actividades propuestas, evaluación..."></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-estructura">0/1000</span><label class="mt-5 block font-bold text-slate-700" for="a2-ia">Uso de Inteligencia Artificial</label><textarea id="a2-ia" maxlength="1000" class="mt-3 w-full min-h-[160px] p-4 border rounded-xl bg-white resize-none" placeholder="Explica cómo usarás IA para generar narrativas, imágenes históricas, preguntas o recursos educativos..."></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-ia">0/1000</span><label class="mt-5 block font-bold text-slate-700" for="a2-actividades">Actividades para estudiantes</label><textarea id="a2-actividades" maxlength="1000" class="mt-3 w-full min-h-[160px] p-4 border rounded-xl bg-white resize-none" placeholder="Describe al menos 3 actividades que los estudiantes podrán realizar con la cartilla..."></textarea><span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="a2-actividades">0/1000</span></div>
+                        </div>
+                        
+                        <div class="mt-5 flex justify-end gap-2 flex-wrap"><div class="export-menu-wrap"><button type="button" class="btn-soft export-toggle" data-export-scope="a2"><i class="fa-solid fa-file-export"></i>Exportar</button><div class="export-menu hidden"><button type="button" class="export-option" data-export-format="word" data-export-scope="a2"><i class="fa-solid fa-file-word"></i> Word</button><button type="button" class="export-option" data-export-format="pdf" data-export-scope="a2"><i class="fa-solid fa-file-pdf"></i> PDF</button></div></div></div>
+                    </div>
+                    <div id="act-seg" class="activity-section hidden mt-6 space-y-5">
+                        <div class="activity-ledger"><div class="ledger-heading"><div class="ledger-icon"><i class="fa-solid fa-floppy-disk"></i></div><div><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Seguimiento</p><h3 class="mt-2 text-2xl font-extrabold text-green-800">Guardar y retomar avance</h3></div></div><div class="purpose-note">El guardado es local en este navegador. No se envía información a ninguna plataforma.</div><div class="mt-5 flex flex-wrap gap-3"><button id="save-progress" type="button" class="btn-main">Guardar</button><button id="restore-progress" type="button" class="btn-soft">Restaurar</button><button id="clear-progress" type="button" class="bg-red-500 text-white font-bold rounded-full py-2 px-5 border-0 cursor-pointer">Limpiar</button><p id="save-status" class="font-semibold text-sm"></p></div></div>
+                        <div class="section-card"><h3 class="text-xl font-extrabold text-green-800">Checklist de entrega</h3><div class="mt-4 grid md:grid-cols-2 gap-3"><label class="mini-card"><input type="checkbox" id="check-narrativa"> Laboratorio de Narrativa</label><label class="mini-card"><input type="checkbox" id="check-proyecto"> Proyecto completo (Reconstrucción + Cartilla)</label><label class="mini-card"><input type="checkbox" id="check-reflexion"> Reflexión sobre NOS en Colombia</label></div></div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Cuestionario de la Unidad 3</h2><p class="mt-4 text-slate-700">Responde las 10 preguntas. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p></div>
+                    <div class="section-card mt-6"><div id="quiz-box"><div class="flex justify-between items-center gap-4"><h3 id="quiz-title" class="text-xl font-extrabold text-green-800">Pregunta 1</h3><span id="quiz-progress" class="text-sm font-bold text-slate-500">1/10</span></div><p id="quiz-text" class="mt-4 text-lg font-semibold text-slate-700"></p><div id="quiz-options" class="mt-5 space-y-3"></div><div class="mt-6 flex justify-between gap-3"><button id="quiz-prev" type="button" class="btn-soft">Anterior</button><button id="quiz-next" type="button" class="btn-main">Siguiente</button></div></div><div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl bg-green-50 border border-green-200"><h3 class="text-xl font-extrabold text-green-800">Autoevaluación completada</h3><p class="mt-2 text-green-800 font-semibold">Puntaje: <span id="quiz-score">0</span>/10</p><p id="quiz-feedback" class="mt-2 text-green-800"></p><div id="quiz-review" class="mt-5 space-y-3"></div><button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button></div></div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Materiales de apoyo</h2></div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-database text-amber-700"></i> Repositorios digitales</h3><p class="mt-2 text-slate-700">Repositorios institucionales sobre historia de la ciencia en Colombia para investigación y consulta.</p><div class="mt-4"><a class="btn-main" href="https://www.google.com/search?q=repositorio+historia+ciencia+colombia" target="_blank" rel="noopener">Buscar repositorios</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.google.com/search?q=repositorio+historia+ciencia+colombia" alt="QR Repositorios" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-book-open text-amber-700"></i> Guía Técnica de Reconstrucción</h3><p class="mt-2 text-slate-700">OVA con los 8 pasos metodológicos y herramientas de IA para la reconstrucción socio-histórica.</p><div class="mt-4"><a class="btn-main" href="https://mtrochez.github.io/ova_cintia_unicor/hye_gt/index.html" target="_blank" rel="noopener">Abrir Guía Técnica</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://mtrochez.github.io/ova_cintia_unicor/hye_gt/index.html" alt="QR Guía Técnica" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Referencias orientadoras</h2></div>
+                    <div class="mt-6 space-y-4">
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Aristizábal, A. (2026). Reconstrucciones Socio-Históricas: Que no te cuenten la historia, reconstrúyela. Disponible en carpeta de trabajo.</p></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.google.com/search?q=Reconstrucciones+Socio+Historicas+Aristizabal" alt="QR Aristizábal" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Matthews, M.R. (2015). Science teaching: The contribution of history and philosophy of science. New York: Routledge.</p></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.routledge.com/Science-Teaching/Matthews/p/book/9780415652005" alt="QR Matthews" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const embed = document.getElementById('ova-embed');
+        
+        function getValue(id) {
+            const element = document.getElementById(id);
+            return element ? (element.value || 'Sin diligenciar') : 'Sin diligenciar';
+        }
+
+        function getActivityExportData(scope) {
+            const data = {
+                a1: { title: 'Actividad 1. Laboratorio de Narrativa', subtitle: 'Cuénteme una Historia', body: `<p><strong>Episodio:</strong> ${getValue('a1-episodio')}</p><p><strong>Formato:</strong> ${getValue('a1-formato')}</p><p><strong>Público:</strong> ${getValue('a1-publico')}</p><h3>Narrativa creativa</h3><div class="box">${getValue('a1-text')}</div>` },
+                a2: { title: 'Actividad 2. Proyecto: Que no te cuenten la historia, reconstrúyela', subtitle: 'Paso 1: Reconstrucción y Paso 2: Cartilla Digital', body: `<p><strong>Concepto:</strong> ${getValue('a2-concepto')}</p><p><strong>Periodo:</strong> ${getValue('a2-periodo')}</p><h3>Paso 1: Reconstrucción Histórica</h3><h4>Análisis de condiciones</h4><div class="box">${getValue('a2-condiciones')}</div><h4>Científicos y aportes</h4><div class="box">${getValue('a2-cientificos')}</div><h4>Instrumentos y experimentos</h4><div class="box">${getValue('a2-instrumentos')}</div><h4>Obstáculos y teorías abandonadas</h4><div class="box">${getValue('a2-obstaculos')}</div><h4>Reflexión docente</h4><div class="box">${getValue('a2-reflexion')}</div><h3>Paso 2: Cartilla Digital con IA</h3><p><strong>Tema:</strong> ${getValue('a2-tema')}</p><p><strong>Nivel:</strong> ${getValue('a2-nivel')}</p><h4>Estructura de la cartilla</h4><div class="box">${getValue('a2-estructura')}</div><h4>Uso de Inteligencia Artificial</h4><div class="box">${getValue('a2-ia')}</div><h4>Actividades para estudiantes</h4><div class="box">${getValue('a2-actividades')}</div>` }
+            };
+            return data[scope];
+        }
+
+        function buildActivityHtml(scope) {
+            const activity = getActivityExportData(scope);
+            const date = new Date().toLocaleString('es-CO');
+            return `<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Respuestas HYE Unidad 3</title><style>body{font-family:Arial,sans-serif;color:#263728;line-height:1.55;margin:36px}h1{color:#14532d;margin-bottom:4px}h2{color:#14532d;border-bottom:2px solid #b7791f;padding-bottom:6px;margin-top:28px}h3{color:#6b4f2a;margin-bottom:6px}.meta{color:#5f4a2f;font-size:.95rem;margin-bottom:24px}.box{border:1px solid #d7b98a;background:#fffaf0;border-radius:10px;padding:14px;margin:10px 0 18px;white-space:pre-wrap}.footer{margin-top:36px;font-size:.9rem;color:#5f4a2f;text-align:center}</style></head><body><h1>Respuesta de actividad</h1><div class="meta"><strong>Curso:</strong> Historia y Epistemología de las Ciencias Naturales<br><strong>Unidad 3:</strong> Reconstrucciones Socio-Históricas y Ciencia en Colombia<br><strong>Fecha de exportación:</strong> ${date}</div><h2>${activity.title}</h2><h3>${activity.subtitle}</h3>${activity.body}<div class="footer">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA - Universidad de Córdoba</div></body></html>`;
+        }
+
+        function downloadFile(filename, content) {
+            const blob = new Blob([content], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        embed.addEventListener('click', function(e) {
+            if (e.target.matches('[data-copy]')) {
+                const targetId = e.target.dataset.copy;
+                const element = document.getElementById(targetId);
+                if (element) {
+                    element.select();
+                    document.execCommand('copy');
+                    alert('Texto copiado al portapapeles');
+                }
+            }
+
+            if (e.target.matches('.export-toggle')) {
+                e.stopPropagation();
+                const menu = e.target.nextElementSibling;
+                menu.classList.toggle('hidden');
+            }
+
+            if (e.target.matches('.export-option')) {
+                e.stopPropagation();
+                const scope = e.target.dataset.exportScope;
+                const format = e.target.dataset.exportFormat;
+                const html = buildActivityHtml(scope);
+                const filename = `Respuesta_A3_HYE_Unidad3.${format}`;
+                downloadFile(filename, html);
+                e.target.closest('.export-menu').classList.add('hidden');
+            }
+
+            if (e.target.matches('.sidebar-link') || e.target.closest('.sidebar-link')) {
+                e.preventDefault();
+                const link = e.target.matches('.sidebar-link') ? e.target : e.target.closest('.sidebar-link');
+                const target = link.dataset.target;
+                
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+            }
+
+            if (e.target.matches('.activity-subnav-btn')) {
+                const section = e.target.dataset.activitySection;
+                document.querySelectorAll('.activity-subnav-btn').forEach(b => {
+                    b.classList.remove('btn-main');
+                    b.classList.add('btn-soft');
+                });
+                e.target.classList.remove('btn-soft');
+                e.target.classList.add('btn-main');
+                
+                document.querySelectorAll('.activity-section').forEach(s => s.classList.add('hidden'));
+                document.getElementById(section).classList.remove('hidden');
+            }
+
+            if (e.target.matches('.step-subnav-btn')) {
+                const stepSection = e.target.dataset.stepSection;
+                document.querySelectorAll('.step-subnav-btn').forEach(b => {
+                    b.classList.remove('btn-main');
+                    b.classList.add('btn-soft');
+                });
+                e.target.classList.remove('btn-soft');
+                e.target.classList.add('btn-main');
+                
+                document.querySelectorAll('.step-section').forEach(s => s.classList.add('hidden'));
+                document.getElementById(stepSection).classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('mobile-nav').addEventListener('change', function() {
+            const target = this.value;
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(target).classList.add('active');
+        });
+
+        const textareas = embed.querySelectorAll('textarea[maxlength]');
+        textareas.forEach(textarea => {
+            const counter = embed.querySelector(`[data-counter-for="${textarea.id}"]`);
+            if (counter) {
+                textarea.addEventListener('input', function() {
+                    counter.textContent = `${this.value.length}/${this.getAttribute('maxlength')}`;
+                });
+            }
+        });
+
+        const saveKey = 'ova_hye_u3_progress';
+        document.getElementById('save-progress').addEventListener('click', function() {
+            const progress = {
+                a1_episodio: getValue('a1-episodio'),
+                a1_formato: getValue('a1-formato'),
+                a1_publico: getValue('a1-publico'),
+                a1_text: getValue('a1-text'),
+                a2_concepto: getValue('a2-concepto'),
+                a2_periodo: getValue('a2-periodo'),
+                a2_condiciones: getValue('a2-condiciones'),
+                a2_cientificos: getValue('a2-cientificos'),
+                a2_instrumentos: getValue('a2-instrumentos'),
+                a2_obstaculos: getValue('a2-obstaculos'),
+                a2_reflexion: getValue('a2-reflexion'),
+                a2_tema: getValue('a2-tema'),
+                a2_nivel: getValue('a2-nivel'),
+                a2_estructura: getValue('a2-estructura'),
+                a2_ia: getValue('a2-ia'),
+                a2_actividades: getValue('a2-actividades'),
+                check_narrativa: document.getElementById('check-narrativa').checked,
+                check_proyecto: document.getElementById('check-proyecto').checked,
+                check_reflexion: document.getElementById('check-reflexion').checked
+            };
+            localStorage.setItem(saveKey, JSON.stringify(progress));
+            const status = document.getElementById('save-status');
+            if (status) status.textContent = 'Guardado exitoso.';
+        });
+
+        document.getElementById('restore-progress').addEventListener('click', function() {
+            const saved = localStorage.getItem(saveKey);
+            if (saved) {
+                const progress = JSON.parse(saved);
+                const fields = ['a1-episodio', 'a1-formato', 'a1-publico', 'a1-text', 'a2-concepto', 'a2-periodo', 'a2-condiciones', 'a2-cientificos', 'a2-instrumentos', 'a2-obstaculos', 'a2-reflexion', 'a2-tema', 'a2-nivel', 'a2-estructura', 'a2-ia', 'a2-actividades'];
+                fields.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && progress[id.replace('-', '_')]) el.value = progress[id.replace('-', '_')];
+                });
+                document.getElementById('check-narrativa').checked = progress.check_narrativa || false;
+                document.getElementById('check-proyecto').checked = progress.check_proyecto || false;
+                document.getElementById('check-reflexion').checked = progress.check_reflexion || false;
+                const status = document.getElementById('save-status');
+                if (status) status.textContent = 'Avance restaurado.';
+            }
+        });
+
+        document.getElementById('clear-progress').addEventListener('click', function() {
+            localStorage.removeItem(saveKey);
+            const textareas = embed.querySelectorAll('textarea');
+            textareas.forEach(t => t.value = '');
+            const inputs = embed.querySelectorAll('input[type="text"]');
+            inputs.forEach(i => i.value = '');
+            const selects = embed.querySelectorAll('select');
+            selects.forEach(s => s.selectedIndex = 0);
+            const checkboxes = embed.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(c => c.checked = false);
+            const status = document.getElementById('save-status');
+            if (status) status.textContent = 'Guardado eliminado.';
+        });
+
+        const quizQuestions = [
+            { question: '¿Cuál fue el impacto social de las Expediciones Científicas en el Nuevo Reino de Granada?', options: ['Institucionalizar el saber científico y vincularlo al desarrollo económico', 'Solo recolectar especies sin aplicación práctica', 'Fomentar el aislamiento científico de Europa', 'Eliminar las tradiciones indígenas'], correct: 0 },
+            { question: 'Explique la importancia histórica del platino en la economía del virreinato.', options: ['Fue un recurso clave para la economía y la ciencia', 'No tuvo relevancia económica', 'Solo se usó para ornamentación', 'Fue descubierto en el siglo XX'], correct: 0 },
+            { question: '¿Qué elementos debe contener un análisis de condiciones para una reconstrucción histórica?', options: ['Contexto social, político y económico de la época', 'Solo datos biográficos del científico', 'Lista de experimentos realizados', 'Fechas de descubrimientos'], correct: 0 },
+            { question: 'Defina qué es un "obstáculo epistemológico" aplicado a un caso de la ciencia en Colombia.', options: ['Una creencia que dificulta el avance del conocimiento', 'Un error experimental', 'Una falta de financiación', 'Un problema político'], correct: 0 },
+            { question: '¿Cómo puede el estudio de "teorías abandonadas" ayudar a un estudiante a comprender la ciencia actual?', options: ['Mostrar que la ciencia evoluciona y cambia', 'Confundir al estudiante', 'No tiene relación con la ciencia actual', 'Solo sirve para historia'], correct: 0 },
+            { question: '¿Cuál es el propósito didáctico de vincular la NOS (Naturaleza de la Ciencia) con las actividades de aula?', options: ['Transformar la imagen de ciencia de los estudiantes', 'Solo añadir contenido histórico', 'Cumplir requisitos curriculares', 'Facilitar la memorización'], correct: 0 },
+            { question: 'Describa cómo el contexto político de la Ilustración influyó en los científicos criollos.', options: ['Inspiró proyectos de nación y autonomía científica', 'No tuvo influencia alguna', 'Fomentó la dependencia de Europa', 'Limitó el desarrollo científico'], correct: 0 },
+            { question: '¿Qué papel juegan los instrumentos científicos en la validación de un hito histórico?', options: ['Permiten observar y medir fenómenos que validan teorías', 'Solo son decorativos', 'No influyen en el conocimiento', 'Son secundarios a la teoría'], correct: 0 },
+            { question: '¿Cómo el Reto Histórico-Didáctico puede transformar la "imagen de ciencia" en los niños?', options: ['Problemantizando el conocimiento y mostrando su construcción social', 'Solo informando datos históricos', 'Memorizando nombres y fechas', 'Sin impacto significativo'], correct: 0 },
+            { question: 'Explique la relación entre patrimonio natural y enseñanza de las ciencias naturales.', options: ['El patrimonio es contexto para comprender la ciencia local', 'No existe relación', 'El patrimonio solo es para geografía', 'La ciencia es universal y no tiene contexto'], correct: 0 }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+        const quizTitle = document.getElementById('quiz-title');
+        const quizText = document.getElementById('quiz-text');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizProgress = document.getElementById('quiz-progress');
+        const quizBox = document.getElementById('quiz-box');
+        const quizResults = document.getElementById('quiz-results');
+        const quizScore = document.getElementById('quiz-score');
+        const quizFeedback = document.getElementById('quiz-feedback');
+        const quizReview = document.getElementById('quiz-review');
+
+        function loadQuestion() {
+            const q = quizQuestions[currentQuestion];
+            quizTitle.textContent = `Pregunta ${currentQuestion + 1}`;
+            quizText.textContent = q.question;
+            quizProgress.textContent = `${currentQuestion + 1}/${quizQuestions.length}`;
+            quizOptions.innerHTML = '';
+            q.options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'quiz-option';
+                btn.textContent = opt;
+                if (userAnswers[currentQuestion] === i) btn.classList.add('selected');
+                btn.addEventListener('click', () => selectOption(i));
+                quizOptions.appendChild(btn);
+            });
+            document.getElementById('quiz-prev').disabled = currentQuestion === 0;
+            document.getElementById('quiz-next').textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        function selectOption(index) {
+            userAnswers[currentQuestion] = index;
+            loadQuestion();
+        }
+
+        document.getElementById('quiz-prev').addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        });
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            let score = 0;
+            quizReview.innerHTML = '';
+            quizQuestions.forEach((q, i) => {
+                const correct = userAnswers[i] === q.correct;
+                if (correct) score++;
+                const reviewItem = document.createElement('div');
+                reviewItem.className = correct ? 'p-3 rounded-lg bg-green-50 border border-green-200' : 'p-3 rounded-lg bg-red-50 border border-red-200';
+                reviewItem.innerHTML = `<p class="font-bold">${i + 1}. ${q.question}</p><p class="text-sm mt-1">Tu respuesta: ${q.options[userAnswers[i]] || 'Sin responder'}</p>${!correct ? `<p class="text-sm text-green-700">Correcta: ${q.options[q.correct]}</p>` : ''}`;
+                quizReview.appendChild(reviewItem);
+            });
+            quizScore.textContent = score;
+            quizFeedback.textContent = score >= 7 ? '¡Excelente! Has demostrado una buena comprensión de la ciencia en Colombia y la metodología de reconstrucción histórica.' : score >= 5 ? 'Buen trabajo. Repasa algunos conceptos clave para fortalecer tu comprensión.' : 'Te recomendamos revisar nuevamente los contenidos de la unidad.';
+            quizBox.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        document.getElementById('quiz-restart').addEventListener('click', () => {
+            currentQuestion = 0;
+            userAnswers = [];
+            quizBox.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            loadQuestion();
+        });
+
+        loadQuestion();
+    })();
+</script>
+</body>
+</html>
