@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Técnica de Reconstrucción con IA - Historia y Epistemología</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #f6efe1;
+            --surface: #ffffff;
+            --surface-soft: #fff7e6;
+            --text: #3f3528;
+            --heading: #14532d;
+            --line: #d7b98a;
+            --accent: #b7791f;
+            --accent-deep: #166534;
+            --sepia: #6b4f2a;
+            --shadow: 0 12px 30px rgba(74, 50, 18, 0.16);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(183, 121, 31, 0.16), transparent 34%),
+                linear-gradient(135deg, #fbf3df 0%, #f6efe1 48%, #eef5e8 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 264px; background: linear-gradient(180deg, #fffaf0 0%, #f4e6c6 100%); box-shadow: 0 2px 18px rgba(74, 50, 18, 0.14); border-right: 1px solid #d7b98a; flex-shrink: 0; display: flex; flex-direction: column; padding: 18px 0 0; }
+        #ova-embed .brand-shell { padding: 0 16px 14px; }
+        #ova-embed .logo-orb { width: 140px; height: 140px; margin: 0 auto 12px; background: #fffaf0; border-radius: 9999px; box-shadow: 0 8px 24px rgba(107, 79, 42, 0.28); border: 3px double #b7791f; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 82%; height: 82%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: #14532d; font-size: 1.02rem; line-height: 1.35; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: #7c5a24; }
+        #ova-embed .sidebar-nav { margin-top: 8px; padding-bottom: 18px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 13px 22px; border-left: 4px solid transparent; color: #5f4a2f; font-weight: 600; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(20, 83, 45, 0.11); color: #14532d; border-left-color: #b7791f; }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 28px; }
+        #ova-embed .content-stage { position: relative; max-width: 1120px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, #14532d 0%, #6b4f2a 56%, #b7791f 100%); color: #fffaf0; border-radius: 24px; padding: 34px; box-shadow: var(--shadow); border: 1px solid rgba(255, 250, 240, 0.35); }
+        #ova-embed .section-card { background: rgba(255, 250, 240, 0.94); border: 1px solid #d7b98a; border-radius: 22px; box-shadow: 0 1px 14px rgba(74, 50, 18, 0.08); padding: 28px; }
+        #ova-embed .mini-card { background: rgba(255, 252, 244, 0.96); border: 1px solid #dcc395; border-radius: 18px; padding: 20px 20px 24px; box-shadow: 0 1px 8px rgba(74, 50, 18, 0.06); }
+        #ova-embed .btn-main { background: #14532d; color: #fffaf0; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid #b7791f; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: #0f3f23; }
+        #ova-embed .btn-soft { background: #fffaf0; color: #5f4a2f; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid #d7b98a; cursor: pointer; }
+        #ova-embed .step-card { background: linear-gradient(135deg, rgba(255, 252, 244, 0.98), rgba(250, 239, 212, 0.92)); border: 1px solid #d7b98a; border-left: 7px solid #b7791f; border-radius: 20px; padding: 22px; box-shadow: 0 10px 22px rgba(74, 50, 18, 0.08); margin-bottom: 18px; }
+        #ova-embed .tool-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(20, 83, 45, 0.1); border: 1px solid rgba(20, 83, 45, 0.2); border-radius: 12px; padding: 6px 12px; color: #14532d; font-weight: 600; font-size: 0.85rem; }
+        #ova-embed .mobile-header { display: none; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: #fffaf0; box-shadow: 0 2px 14px rgba(74, 50, 18, 0.12); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="img/logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Guía Técnica de Reconstrucción</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="pasos">8 Pasos de Reconstrucción</option>
+            <option value="ensamble">Fase de Ensamble</option>
+            <option value="reflexivo">Componente Reflexivo</option>
+            <option value="rubrica">Rúbrica de Evaluación</option>
+            <option value="recursos">Recursos</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="img/logo.webp" alt="Logo CINTIA"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                    <h1>Guía Técnica de Reconstrucción con IA</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-book-open"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="pasos"><i class="fa-solid fa-list-ol"></i> 8 Pasos de Reconstrucción</a>
+                <a href="#" class="sidebar-link" data-target="ensamble"><i class="fa-solid fa-layer-group"></i> Fase de Ensamble</a>
+                <a href="#" class="sidebar-link" data-target="reflexivo"><i class="fa-solid fa-lightbulb"></i> Componente Reflexivo</a>
+                <a href="#" class="sidebar-link" data-target="rubrica"><i class="fa-solid fa-clipboard-check"></i> Rúbrica de Evaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-tools"></i> Recursos</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="eyebrow mb-2">ANEXO TÉCNICO</p>
+                        <h1 class="text-3xl font-extrabold mb-4">Guía de Reconstrucción con IA</h1>
+                        <p class="text-xl font-semibold mb-2">"Que no te cuenten la historia, reconstrúyela"</p>
+                        <p class="text-base opacity-90">Transformate en investigador-diseñador que reconstruye un hito científico desde la perspectiva de la Naturaleza de la Ciencia (NOS)</p>
+                    </div>
+
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">Propósito</p>
+                        <p class="text-lg text-slate-700 leading-relaxed mb-4">El maestrante debe transformarse en un investigador-diseñador que reconstruya un hito científico (ej. Vacunas, Transición energética, o hitos locales como el Platino) desde la perspectiva de la Naturaleza de la Ciencia (NOS). El producto final es una cartilla digital que demuestre una comprensión crítica y humanizada del saber científico.</p>
+                        <div class="mt-6 p-4 rounded-xl bg-green-50 border border-green-200">
+                            <h3 class="font-bold text-green-800 mb-2"><i class="fa-solid fa-bullseye mr-2"></i>Consigna Central</h3>
+                            <p class="text-green-800">Indagar, explicar y narrar: utiliza las herramientas de Inteligencia Artificial sugeridas para cada fase de la producción de la cartilla digital.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="pasos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">Matriz de Trabajo</p>
+                        <h2 class="text-3xl font-extrabold text-green-800 mb-4">8 Pasos de Reconstrucción con IA</h2>
+                        <p class="text-slate-700 mb-6">Sigue estos ocho pasos metodológicos de la Dra. Aristizábal, integrando las herramientas de Inteligencia Artificial sugeridas para cada fase.</p>
+                    </div>
+
+                    <div class="mt-6 space-y-4">
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">1</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Contexto Situado</h3>
+                                    <p class="text-slate-700 mt-1">Analizar condiciones sociales, económicas y políticas locales y globales.</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-robot"></i> Perplexity AI</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para búsqueda académica de fuentes históricas citadas.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">2</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Actores y Aportes</h3>
+                                    <p class="text-slate-700 mt-1">Identificar científicos, año, país y descripción técnica de la contribución.</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-robot"></i> ChatGPT / Claude</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para estructurar la biografía técnica y el aporte científico.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">3</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Glosario Histórico</h3>
+                                    <p class="text-slate-700 mt-1">Aclarar el lenguaje de la época y la evolución de los significados.</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-robot"></i> ChatGPT</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para contrastar términos antiguos vs. modernos.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">4</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Cultura Material</h3>
+                                    <p class="text-slate-700 mt-1">Documentar instrumentos inventados o empleados para validar la teoría.</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-image"></i> DALL-E 3 / Leonardo.ai</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para recrear visualmente aparatos históricos detallados.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">5</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Evidencia Experimental</h3>
+                                    <p class="text-slate-700 mt-1">Describir los experimentos clave asociados al modelo.</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-image"></i> Midjourney</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para generar diagramas conceptuales o escenas de laboratorio.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">6</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Superación de Crisis</h3>
+                                    <p class="text-slate-700 mt-1">Identificar obstáculos y dificultades técnicas o sociales superadas.</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-robot"></i> ChatGPT</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para redactar la narrativa de la controversia y el conflicto.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">7</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Teorías Abandonadas</h3>
+                                    <p class="text-slate-700 mt-1">Analizar críticamente los modelos que fueron dejados atrás (Rupturas).</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-robot"></i> Claude</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para analizar el cambio de paradigma (ej. del calórico a la energía).</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-green-100 border-2 border-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-green-800">8</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-green-800">Vigencia</h3>
+                                    <p class="text-slate-700 mt-1">Explicar por qué el concepto sigue siendo estructurante en la ciencia actual.</p>
+                                    <span class="tool-badge mt-2"><i class="fa-solid fa-robot"></i> Perplexity</span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-600 mt-3 pl-16">Para conectar el hito histórico con la vanguardia científica.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ensamble" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">Fase de Ensamble</p>
+                        <h2 class="text-3xl font-extrabold text-green-800 mb-4">Diseño Digital</h2>
+                        <p class="text-slate-700 mb-6">Una vez procesada la información, procede al montaje de la cartilla utilizando herramientas de diseño que permitan interactividad.</p>
+                    </div>
+
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 border-2 border-blue-600 flex items-center justify-center">
+                                    <i class="fa-solid fa-palette text-blue-800"></i>
+                                </div>
+                                <h3 class="font-bold text-green-800">Canva</h3>
+                            </div>
+                            <p class="text-slate-700 text-sm mb-3">Magic Design para el diseño visual y la diagramación profesional de la cartilla.</p>
+                            <div class="mt-4"><a href="https://www.canva.com" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a Canva</a></div>
+                        </div>
+
+                        <div class="mini-card">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-purple-100 border-2 border-purple-600 flex items-center justify-center">
+                                    <i class="fa-solid fa-presentation-screen text-purple-800"></i>
+                                </div>
+                                <h3 class="font-bold text-green-800">Gamma.app</h3>
+                            </div>
+                            <p class="text-slate-700 text-sm mb-3">Para generar presentaciones o sitios web rápidos que actúen como soporte de la cartilla.</p>
+                            <div class="mt-4"><a href="https://gamma.app" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a Gamma.app</a></div>
+                        </div>
+
+                        <div class="mini-card">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 rounded-full bg-orange-100 border-2 border-orange-600 flex items-center justify-center">
+                                    <i class="fa-solid fa-book text-orange-800"></i>
+                                </div>
+                                <h3 class="font-bold text-green-800">BookCreator</h3>
+                            </div>
+                            <p class="text-slate-700 text-sm mb-3">Para integrar el video de implementación exigido en la evaluación.</p>
+                            <div class="mt-4"><a href="https://bookcreator.com" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a BookCreator</a></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="reflexivo" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">Componente Reflexivo</p>
+                        <h2 class="text-3xl font-extrabold text-green-800 mb-4">El "Ser-Hacer" Docente</h2>
+                        <p class="text-slate-700 mb-6">La IA es un socio creativo, pero la curaduría técnica es responsabilidad absoluta del estudiante. La sección final de la cartilla debe responder estas preguntas:</p>
+                    </div>
+
+                    <div class="mt-6 space-y-4">
+                        <div class="mini-card">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-question-circle text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h3 class="font-bold text-green-800">¿Qué aportes y reflexiones generó este análisis en su rol como profesor?</h3>
+                                    <p class="text-slate-700 text-sm mt-2">Reflexiona sobre cómo la reconstrucción histórica transforma tu comprensión de la enseñanza de las ciencias.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mini-card">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-question-circle text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h3 class="font-bold text-green-800">¿Cómo incidió esta reconstrucción en sus formas de pensar, sentir y actuar?</h3>
+                                    <p class="text-slate-700 text-sm mt-2">Analiza el impacto personal y profesional del proceso de reconstrucción socio-histórica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="rubrica" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">Evaluación</p>
+                        <h2 class="text-3xl font-extrabold text-green-800 mb-4">Rúbrica de Éxito</h2>
+                        <p class="text-slate-700 mb-6">Para alcanzar el nivel de <strong>Abstracto Ampliado (4.6 - 5.0)</strong>, la cartilla debe cumplir estos criterios:</p>
+                    </div>
+
+                    <div class="mt-6 space-y-4">
+                        <div class="step-card">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-white">1</span>
+                                </div>
+                                <p class="text-slate-700">Utilizar un lenguaje científico predominante.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-white">2</span>
+                                </div>
+                                <p class="text-slate-700">Establecer relaciones de tiempo/espacio diacrónicas (evitar anacronismos).</p>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center flex-shrink-0">
+                                    <span class="font-bold text-white">3</span>
+                                </div>
+                                <p class="text-slate-700">Evidenciar cómo la historia permite valorar los alcances y limitaciones del conocimiento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">Recursos</p>
+                        <h2 class="text-3xl font-extrabold text-green-800 mb-4">Herramientas de IA</h2>
+                        <p class="text-slate-700 mb-6">Enlaces directos a las herramientas de Inteligencia Artificial sugeridas para cada paso de la reconstrucción.</p>
+                    </div>
+
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card">
+                            <h3 class="font-bold text-green-800"><i class="fa-solid fa-robot text-amber-700 mr-2"></i>Perplexity AI</h3>
+                            <p class="text-slate-700 text-sm mt-2">Búsqueda académica con fuentes citadas.</p>
+                            <div class="mt-4"><a href="https://www.perplexity.ai" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a Perplexity</a></div>
+                        </div>
+
+                        <div class="mini-card">
+                            <h3 class="font-bold text-green-800"><i class="fa-solid fa-robot text-amber-700 mr-2"></i>ChatGPT</h3>
+                            <p class="text-slate-700 text-sm mt-2">Asistente de IA para estructuración y narrativa.</p>
+                            <div class="mt-4"><a href="https://chat.openai.com" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a ChatGPT</a></div>
+                        </div>
+
+                        <div class="mini-card">
+                            <h3 class="font-bold text-green-800"><i class="fa-solid fa-robot text-amber-700 mr-2"></i>Claude</h3>
+                            <p class="text-slate-700 text-sm mt-2">IA para análisis de cambio de paradigma.</p>
+                            <div class="mt-4"><a href="https://claude.ai" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a Claude</a></div>
+                        </div>
+
+                        <div class="mini-card">
+                            <h3 class="font-bold text-green-800"><i class="fa-solid fa-image text-amber-700 mr-2"></i>DALL-E 3</h3>
+                            <p class="text-slate-700 text-sm mt-2">Generación de imágenes históricas detalladas.</p>
+                            <div class="mt-4"><a href="https://openai.com/dall-e-3" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a DALL-E 3</a></div>
+                        </div>
+
+                        <div class="mini-card">
+                            <h3 class="font-bold text-green-800"><i class="fa-solid fa-image text-amber-700 mr-2"></i>Leonardo.ai</h3>
+                            <p class="text-slate-700 text-sm mt-2">Recreación visual de aparatos históricos.</p>
+                            <div class="mt-4"><a href="https://leonardo.ai" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a Leonardo.ai</a></div>
+                        </div>
+
+                        <div class="mini-card">
+                            <h3 class="font-bold text-green-800"><i class="fa-solid fa-image text-amber-700 mr-2"></i>Midjourney</h3>
+                            <p class="text-slate-700 text-sm mt-2">Generación de diagramas conceptuales.</p>
+                            <div class="mt-4"><a href="https://www.midjourney.com" target="_blank" rel="noopener" class="btn-main text-xs py-1 px-3">Ir a Midjourney</a></div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                    <div class="mt-4">
+                        <a href="../Unidad3/index.html" class="btn-soft text-sm"><i class="fa-solid fa-arrow-left mr-2"></i>Regresar a Unidad 3</a>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const embed = document.getElementById('ova-embed');
+        
+        embed.addEventListener('click', function(e) {
+            if (e.target.matches('.sidebar-link') || e.target.closest('.sidebar-link')) {
+                e.preventDefault();
+                const link = e.target.matches('.sidebar-link') ? e.target : e.target.closest('.sidebar-link');
+                const target = link.dataset.target;
+                
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(target).classList.add('active');
+            }
+        });
+
+        document.getElementById('mobile-nav').addEventListener('change', function() {
+            const target = this.value;
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(target).classList.add('active');
+        });
+    })();
+</script>
+</body>
+</html>
