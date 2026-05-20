@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Referencias bibliográficas — Historia y Epistemología</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #faf8f5;
+      color: #3d2e1f;
+      line-height: 1.6;
+      min-height: 100%;
+      background:
+        radial-gradient(900px 320px at 8% -12%, rgba(183, 121, 31, 0.12), transparent 60%),
+        radial-gradient(700px 320px at 96% 6%, rgba(20, 83, 45, 0.1), transparent 55%),
+        linear-gradient(120deg, rgba(107, 79, 42, 0.06), transparent 60%),
+        repeating-linear-gradient(90deg, rgba(107, 79, 42, 0.025), rgba(107, 79, 42, 0.025) 1px, transparent 1px, transparent 140px),
+        #faf8f5;
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .vintage-header {
+      background: linear-gradient(135deg, #14532d 0%, #6b4f2a 56%, #b7791f 100%);
+      border-bottom: 1px solid rgba(255, 250, 240, 0.35);
+      box-shadow: 0 12px 30px rgba(74, 50, 18, 0.16);
+    }
+
+    .filter-panel {
+      background: rgba(255, 250, 240, 0.94);
+      border: 1px solid #d7b98a;
+      border-radius: 22px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 14px rgba(74, 50, 18, 0.08);
+    }
+
+    #references-container {
+      grid-auto-rows: 1fr;
+      align-items: stretch;
+    }
+
+    .reference-card {
+      position: relative;
+      border: 1px solid #d7b98a;
+      background: linear-gradient(180deg, rgba(255, 252, 244, 0.98), rgba(250, 239, 212, 0.92));
+      box-shadow: 0 10px 22px rgba(74, 50, 18, 0.08);
+      height: 100%;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.3, 0.7, 0.4, 1), box-shadow 0.35s ease, opacity 0.25s ease;
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .card-citation {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      line-clamp: 6;
+    }
+
+    .card-actions {
+      margin-top: auto;
+    }
+
+    .reference-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 18px 30px -20px rgba(74, 50, 18, 0.12);
+    }
+
+    .fade-in {
+      animation: fadeIn 0.55s cubic-bezier(0.3, 0.7, 0.4, 1) both;
+      animation-delay: var(--delay, 0ms);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .filter-chip {
+      border: 1px solid #d7b98a;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      box-shadow: 0 10px 20px -16px rgba(74, 50, 18, 0.4);
+    }
+
+    .filter-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 26px -18px rgba(74, 50, 18, 0.5);
+    }
+
+    .filter-chip.is-active {
+      background: rgba(20, 83, 45, 0.11);
+      border-color: #b7791f;
+      color: #14532d;
+      box-shadow: 0 18px 30px -20px rgba(183, 121, 31, 0.5);
+    }
+
+    .type-pill {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .reference-card:hover .type-pill {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px -18px rgba(74, 50, 18, 0.4);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <header class="vintage-header text-amber-50 py-10 px-4">
+      <div class="container mx-auto max-w-5xl">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-amber-900/30 border border-amber-300/30 overflow-hidden flex items-center justify-center backdrop-blur-sm">
+              <i class="fa-solid fa-book-atlas text-amber-200 text-xl"></i>
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-4xl font-semibold">Referencias bibliográficas</h1>
+              <p class="text-amber-100 mt-1">Curso: Historia y Epistemología de las Ciencias Naturales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-10">
+      <section class="filter-panel mb-8">
+        <h2 class="text-2xl font-bold text-green-900 mb-3">Filtrar por tipo de recurso</h2>
+        <div class="mb-4">
+          <label for="reference-search" class="block text-sm font-semibold text-slate-700">Buscar</label>
+          <input id="reference-search" type="search" placeholder="Escribe autor, título o palabra clave" class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-800 shadow-sm outline-none focus:border-green-300 focus:ring-4 focus:ring-green-100" autocomplete="off" />
+        </div>
+        <div class="flex flex-wrap gap-2" role="group">
+          <button class="filter-chip is-active px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="" aria-pressed="true">Todos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="articulo" aria-pressed="false">Artículos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="documento" aria-pressed="false">Documentos</button>
+          <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="libro" aria-pressed="false">Libros</button>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="references-container"></section>
+    </main>
+  </div>
+
+  <script>
+    const base = 'https://mtrochez.github.io/ova_cintia_unicor';
+
+    const rawItems = [
+      {
+        key: 'aduriz_bravo_2005_naturaleza_ciencia',
+        type: 'articulo',
+        citationHtml: 'Adúriz-Bravo, A. (2005). <em>Una introducción a la naturaleza de la ciencia</em>.',
+        url: 'https://rieoei.org/historico/documentos/rie42a07.pdf'
+      },
+      {
+        key: 'chalmers_1983_que_es_ciencia',
+        type: 'libro',
+        citationHtml: 'Chalmers, A. (1983). <em>¿Qué es esa cosa llamada ciencia?</em>.',
+        url: 'https://archive.org/details/chalmers-cap-12345-digitalizado'
+      },
+      {
+        key: 'gamow_1960_biografia_fisica',
+        type: 'libro',
+        citationHtml: 'Gamow, G. (1960). <em>Biografía de la Física</em>. Salvat.',
+        url: 'https://archive.org/details/BiografiaDeLaFisicaGGamowBibliotecaCientificaSalvat0731987'
+      },
+      {
+        key: 'aristizabal_2026_reconstrucciones',
+        type: 'documento',
+        citationHtml: 'Aristizábal, A. (2026). <em>Reconstrucciones Socio-Históricas: Que no te cuenten la historia, reconstrúyela</em>.',
+        url: 'https://www.google.com/search?q=Reconstrucciones+Socio+Historicas+Aristizabal'
+      },
+      {
+        key: 'matthews_2015_science_teaching',
+        type: 'libro',
+        citationHtml: 'Matthews, M.R. (2015). <em>Science teaching: The contribution of history and philosophy of science</em>. New York: Routledge.',
+        url: 'https://www.routledge.com/Science-Teaching/Matthews/p/book/9780415652005'
+      }
+    ];
+
+    function normalizeText(html) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return (tmp.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    }
+
+    const dedup = new Map();
+    for (const item of rawItems) {
+      const n = normalizeText(item.citationHtml);
+      if (!dedup.has(n)) {
+        dedup.set(n, { ...item });
+      }
+    }
+
+    const items = Array.from(dedup.values()).filter(it => typeof it.url === 'string' && it.url.trim().length > 0);
+
+    const elList = document.getElementById('references-container');
+    const searchInput = document.getElementById('reference-search');
+    const pills = Array.from(document.querySelectorAll('.filter-chip[data-type]'));
+
+    const state = {
+      type: '',
+      query: '',
+    };
+
+    const typeMeta = {
+      articulo: {
+        label: 'Artículo',
+        border: 'border-l-4 border-red-700',
+        pill: 'bg-red-50 text-red-700'
+      },
+      libro: {
+        label: 'Libro',
+        border: 'border-l-4 border-green-500',
+        pill: 'bg-green-50 text-green-700'
+      },
+      documento: {
+        label: 'Documento',
+        border: 'border-l-4 border-amber-500',
+        pill: 'bg-amber-50 text-amber-700'
+      }
+    };
+
+    function createCard(item, idx) {
+      const meta = typeMeta[item.type] || { label: 'Recurso', border: 'border-l-4 border-slate-300', pill: 'bg-slate-50 text-slate-700' };
+
+      const tmp = document.createElement('div');
+      tmp.innerHTML = item.citationHtml;
+      const em = tmp.querySelector('em');
+      const titleText = (em && em.textContent ? em.textContent : '').trim();
+      const citationText = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+
+      const article = document.createElement('article');
+      article.className = `reference-card fade-in ${meta.border}`;
+      article.dataset.type = item.type;
+      article.style.setProperty('--delay', `${idx * 45}ms`);
+
+      const refNum = String(idx + 1).padStart(2, '0');
+
+      article.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <div class="flex-1">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Referencia ${refNum}</p>
+            <h3 class="text-lg font-bold text-green-900 mt-2">${titleText || ''}</h3>
+            <p class="card-citation text-slate-600 text-sm mt-3">${citationText}</p>
+          </div>
+          <span class="type-pill uppercase ${meta.pill} px-2 py-1 rounded-full">${meta.label}</span>
+        </div>
+        <div class="card-actions flex items-center justify-between gap-4 mt-auto">
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-green-700 text-sm font-semibold underline hover:text-green-900">Ver fuente</a>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(item.url)}" alt="Código QR" class="h-16 w-16 rounded-xl border border-slate-200 bg-white p-1" />
+        </div>
+      `;
+
+      return article;
+    }
+
+    function render(list) {
+      elList.innerHTML = '';
+
+      if (!list.length) {
+        const empty = document.createElement('div');
+        empty.className = 'col-span-full rounded-2xl border border-slate-200 bg-white/80 p-8 text-center text-slate-600 shadow-sm';
+        empty.textContent = 'No hay referencias para mostrar con los filtros seleccionados.';
+        elList.appendChild(empty);
+        return;
+      }
+
+      list.forEach((item, idx) => {
+        elList.appendChild(createCard(item, idx));
+      });
+    }
+
+    function applyFilters() {
+      const type = state.type;
+      const query = (state.query || '').trim().toLowerCase();
+      const filtered = items.filter((it) => {
+        if (type && it.type !== type) return false;
+        if (query) {
+          const haystack = normalizeText(it.citationHtml);
+          if (!haystack.includes(query)) return false;
+        }
+        return true;
+      });
+
+      filtered.sort((a, b) => normalizeText(a.citationHtml).localeCompare(normalizeText(b.citationHtml)));
+      render(filtered);
+    }
+
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const t = pill.getAttribute('data-type') || '';
+        state.type = t;
+        pills.forEach(p => {
+          const active = p === pill;
+          p.classList.toggle('is-active', active);
+          p.setAttribute('aria-pressed', String(active));
+        });
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        state.query = searchInput.value || '';
+        applyFilters();
+      });
+    }
+
+    applyFilters();
+  </script>
+</body>
+</html>
