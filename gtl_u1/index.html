@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Intervención - Unidad 1</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #f8f9fa;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #000000;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background: var(--bg);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: var(--surface); box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); opacity: 0.55; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.13); display: flex; align-items: center; justify-content: center; color: var(--heading); font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: var(--heading); font-weight: 800; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #495057; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .development-matrix { margin-top: 24px; padding: 24px; background: var(--surface-soft); border-radius: 12px; border: 1px solid var(--line); }
+        #ova-embed .matrix-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        #ova-embed .matrix-header h3 { margin: 0; color: var(--heading); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-table { width: 100%; border-collapse: collapse; }
+        #ova-embed .matrix-table th { padding: 12px 16px; text-align: left; font-weight: 700; color: var(--heading); border-bottom: 2px solid var(--accent); }
+        #ova-embed .matrix-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+        #ova-embed .matrix-table tr:last-child td { border-bottom: none; }
+        #ova-embed .matrix-check { color: var(--accent); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-empty { color: #adb5bd; }
+        #ova-embed .activity-subnav-btn { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 10px 20px; border: 1px solid var(--line); cursor: pointer; transition: all 0.25s ease; }
+        #ova-embed .activity-subnav-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        #ova-embed .activity-subnav-btn:hover:not(.active) { background: var(--surface-soft); }
+        #ova-embed .activity-section.hidden { display: none; }
+        #ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed var(--line); border-radius: 16px; background: var(--surface-soft); }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .mobile-header { display: none; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="img/logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="img/logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-users-viewfinder mr-2"></i>Unidad 1</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Proyecto Opción de Grado</h2>
+                        <p class="text-lg leading-relaxed opacity-95">La Unidad 01 constituye el punto de partida para la consolidación del perfil de egreso del especialista. Bajo el marco del Decreto 1330 de 2019, el estudiante transformará una inquietud administrativa en un problema de investigación e intervención estructurado.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">🎯 Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed">El especialista desarrollará competencias para formular proyectos de intervención rigurosos, alineados con el marco legal colombiano y capaces de generar valor real en las organizaciones, aplicando metodologías probadas y herramientas de diagnóstico validadas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta de consultor</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">El proceso de intervención organizacional</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-user-doctor"></i></div>
+                                <h4>Diagnóstico</h4>
+                                <p>Identificación del problema organizacional.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <h4>Análisis</h4>
+                                <p>Marco normativo y contexto organizacional.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-pen-ruler"></i></div>
+                                <h4>Formulación</h4>
+                                <p>Metodología y diseño del proyecto.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-rocket"></i></div>
+                                <h4>Implementación</h4>
+                                <p>Plan de acción y ejecución.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-chart-line"></i></div>
+                                <h4>Evaluación</h4>
+                                <p>Medición de resultados y ajustes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-lightbulb mr-2" style="color: var(--accent)"></i>Pregunta central</h3><p class="mt-2">¿Cómo transformar una inquietud administrativa en un proyecto de intervención estructurado que cumpla con los requisitos institucionales?</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-route mr-2" style="color: var(--accent)"></i>Enfoque</h3><p class="mt-2">Marco normativo colombiano, identificación de problemas, metodologías de formulación y herramientas de diagnóstico organizacional.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-award mr-2" style="color: var(--accent)"></i>Producto esperado</h3><p class="mt-2">Anteproyecto de grado con problema de intervención estructurado, metodología definida y plan de acción concreto.</p></div>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivo de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Meta de la Unidad 1</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Formular un proyecto de intervención organizacional estructurado, fundamentado en el marco normativo colombiano, con identificación clara del problema, metodología adecuada y plan de acción viable para obtener el título de especialista.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-brain mr-2" style="color: var(--accent)"></i>Comprender</h3><p class="mt-2">La naturaleza epistemológica de la intervención organizacional y el marco normativo colombiano.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-magnifying-glass-chart mr-2" style="color: var(--accent)"></i>Analizar</h3><p class="mt-2">El Decreto 1330 de 2019 y las modalidades de trabajo de grado en especialización.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-handshake mr-2" style="color: var(--accent)"></i>Aplicar</h3><p class="mt-2">Técnicas de mapeo de procesos y matrices de priorización para identificar problemas.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-pen-ruler mr-2" style="color: var(--accent)"></i>Diseñar</h3><p class="mt-2">Propuestas de intervención con metodología clara y plan de acción estructurado.</p></div>
+                    </div>
+                    <div class="development-matrix">
+                        <div class="matrix-header">
+                            <i class="fa-solid fa-link" style="color: var(--accent); font-size: 1.5rem;"></i>
+                            <h3>Matriz de desarrollo: Objetivos ↔ Actividades</h3>
+                        </div>
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th>Objetivo</th>
+                                    <th>Actividad 1<br><small>Análisis del Marco Normativo</small></th>
+                                    <th>Actividad 2<br><small>Identificación de Problemas</small></th>
+                                    <th>Actividad 3<br><small>Formulación de Anteproyecto</small></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Comprender</strong></td>
+                                    <td><span class="matrix-check">✓</span></td>
+                                    <td><span class="matrix-empty">—</span></td>
+                                    <td><span class="matrix-empty">—</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Analizar</strong></td>
+                                    <td><span class="matrix-check">✓</span></td>
+                                    <td><span class="matrix-check">✓</span></td>
+                                    <td><span class="matrix-empty">—</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Aplicar</strong></td>
+                                    <td><span class="matrix-empty">—</span></td>
+                                    <td><span class="matrix-check">✓</span></td>
+                                    <td><span class="matrix-check">✓</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Diseñar</strong></td>
+                                    <td><span class="matrix-empty">—</span></td>
+                                    <td><span class="matrix-empty">—</span></td>
+                                    <td><span class="matrix-check">✓</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Cinco subtemas para estructurar tu proyecto</h2>
+                        <p class="mt-4 leading-relaxed">Cada subtema funciona como un pilar fundamental para la formulación rigurosa de proyectos de intervención organizacional.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><i class="fa-solid fa-chevron-down hover-indicator"></i><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-scale-balanced mr-2" style="color: var(--accent)"></i>1. Marco Normativo</h3><p class="mt-2">Decreto 1330 de 2019 y modalidades de trabajo de grado en especialización. Comprensión del marco legal colombiano para proyectos de intervención.</p><div class="hover-content"><p class="text-sm"><strong>Clave de gestión:</strong> El Decreto 1330 establece que los proyectos de intervención deben demostrar impacto real en la organización y cumplir con estándares de calidad académica.</p></div></div>
+                        <div class="mini-card"><i class="fa-solid fa-chevron-down hover-indicator"></i><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-user-doctor mr-2" style="color: var(--accent)"></i>2. Identificación del Problema</h3><p class="mt-2">Estrategias para detectar y priorizar problemas organizacionales. Transformación de inquietudes administrativas en problemas de investigación estructurados.</p><div class="hover-content"><p class="text-sm"><strong>Clave de gestión:</strong> Un problema bien formulado debe ser específico, medible, alcanzable, relevante y temporal (SMART).</p></div></div>
+                        <div class="mini-card"><i class="fa-solid fa-chevron-down hover-indicator"></i><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-network-wired mr-2" style="color: var(--accent)"></i>3. Metodologías de Formulación</h3><p class="mt-2">Modelos predictivos, metodologías ágiles e investigación-acción. Selección de metodologías apropiadas según la naturaleza del problema.</p><div class="hover-content"><p class="text-sm"><strong>Clave de gestión:</strong> La investigación-acción permite la iteración continua entre diagnóstico, acción y reflexión.</p></div></div>
+                        <div class="mini-card"><i class="fa-solid fa-chevron-down hover-indicator"></i><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-heart-pulse mr-2" style="color: var(--accent)"></i>4. Herramientas de Diagnóstico</h3><p class="mt-2">Herramientas funcionales y culturales para diagnóstico organizacional. Técnicas de mapeo de procesos y matrices de priorización.</p><div class="hover-content"><p class="text-sm"><strong>Clave de gestión:</strong> El diagnóstico debe considerar tanto aspectos funcionales (procesos) como culturales (clima organizacional).</p></div></div>
+                        <div class="mini-card md:col-span-2"><i class="fa-solid fa-chevron-down hover-indicator"></i><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-rocket mr-2" style="color: var(--accent)"></i>5. Diseño de Proyectos</h3><p class="mt-2">Proyectos orientados a resultados. Estructuración de propuestas de intervención con metodología clara, plan de acción definido y métricas de evaluación.</p><div class="hover-content"><p class="text-sm"><strong>Clave de gestión:</strong> El diseño debe incluir indicadores de medición, cronograma detallado y plan de contingencia para mitigar riesgos.</p></div></div>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🤝 Actividades de la Unidad 1</h2>
+                        <p class="mt-4 leading-relaxed">Las actividades promueven la aplicación práctica de los conceptos de formulación de proyectos de intervención organizacional.</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2" role="tablist">
+                        <button type="button" class="activity-subnav-btn active" data-activity-section="act-a1">Actividad 1</button>
+                        <button type="button" class="activity-subnav-btn" data-activity-section="act-a2">Actividad 2</button>
+                        <button type="button" class="activity-subnav-btn" data-activity-section="act-a3">Actividad 3</button>
+                    </div>
+                    <div id="act-a1" class="activity-section mt-6 space-y-5">
+                        <div class="section-card">
+                            <h3 class="text-xl font-bold" style="color: var(--heading)"><i class="fa-solid fa-scale-balanced mr-2" style="color: var(--accent)"></i>Actividad 1: Análisis del Marco Normativo</h3>
+                            <p class="mt-3">Identificar y analizar los elementos del Decreto 1330 de 2019 que aplican a proyectos de intervención en especialización.</p>
+                            <div class="field-panel">
+                                <label class="block font-bold text-slate-700" for="a1-text">Redacta tu análisis del Decreto 1330 de 2019</label>
+                                <textarea id="a1-text" maxlength="1200" class="mt-3 w-full min-h-[180px] p-4 border rounded-xl bg-white resize-none" placeholder="Describe los elementos del Decreto 1330 que aplican a proyectos de intervención..."></textarea>
+                                <div class="mt-3 flex justify-between gap-3 flex-wrap">
+                                    <span class="text-sm font-semibold text-slate-500" data-counter-for="a1-text">0/1200</span>
+                                    <button type="button" class="btn-main" data-copy="a1-text">Copiar texto</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="act-a2" class="activity-section hidden mt-6 space-y-5">
+                        <div class="section-card">
+                            <h3 class="text-xl font-bold" style="color: var(--heading)"><i class="fa-solid fa-search-location mr-2" style="color: var(--accent)"></i>Actividad 2: Identificación de Problemas</h3>
+                            <p class="mt-3">Aplicar técnicas de mapeo de procesos para identificar un problema organizacional en un contexto real.</p>
+                            <div class="field-panel">
+                                <label class="block font-bold text-slate-700" for="a2-problem">Problema identificado</label>
+                                <input id="a2-problem" class="mt-2 w-full p-3 border rounded-xl" placeholder="Describe el problema organizacional identificado">
+                                <label class="mt-5 block font-bold text-slate-700" for="a2-text">Análisis del problema</label>
+                                <textarea id="a2-text" maxlength="1300" class="mt-3 w-full min-h-[180px] p-4 border rounded-xl bg-white resize-none" placeholder="Explica el contexto, causas y consecuencias del problema..."></textarea>
+                                <div class="mt-3 flex justify-between gap-3 flex-wrap">
+                                    <span class="text-sm font-semibold text-slate-500" data-counter-for="a2-text">0/1300</span>
+                                    <button type="button" class="btn-main" data-copy="a2-text">Copiar texto</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="act-a3" class="activity-section hidden mt-6 space-y-5">
+                        <div class="section-card">
+                            <h3 class="text-xl font-bold" style="color: var(--heading)"><i class="fa-solid fa-file-signature mr-2" style="color: var(--accent)"></i>Actividad 3: Formulación de Anteproyecto</h3>
+                            <p class="mt-3">Elaborar la estructura básica de un anteproyecto de intervención con metodología definida y plan de acción.</p>
+                            <div class="field-panel">
+                                <label class="block font-bold text-slate-700" for="a3-methodology">Metodología seleccionada</label>
+                                <select id="a3-methodology" class="mt-2 w-full p-3 border rounded-xl bg-white">
+                                    <option value="">Selecciona una opción</option>
+                                    <option>Investigación-acción</option>
+                                    <option>Modelos predictivos</option>
+                                    <option>Metodologías ágiles</option>
+                                    <option>Otra metodología</option>
+                                </select>
+                                <label class="mt-5 block font-bold text-slate-700" for="a3-text">Estructura del anteproyecto</label>
+                                <textarea id="a3-text" maxlength="1500" class="mt-3 w-full min-h-[200px] p-4 border rounded-xl bg-white resize-none" placeholder="Incluye: problema, objetivos, metodología, plan de acción y métricas de evaluación..."></textarea>
+                                <div class="mt-3 flex justify-between gap-3 flex-wrap">
+                                    <span class="text-sm font-semibold text-slate-500" data-counter-for="a3-text">0/1500</span>
+                                    <button type="button" class="btn-main" data-copy="a3-text">Copiar texto</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario de la Unidad 1</h2>
+                        <p class="mt-4 leading-relaxed">Responde las preguntas para verificar tu comprensión sobre la formulación de proyectos de intervención.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-circle-question mr-2" style="color: var(--accent)"></i>1. ¿Cuál es el propósito principal del Decreto 1330 de 2019?</p>
+                        <p class="mt-2">Establecer la calidad de la educación superior y regular el trabajo de grado.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-circle-question mr-2" style="color: var(--accent)"></i>2. ¿Qué elementos debe contener un problema de investigación estructurado?</p>
+                        <p class="mt-2">Contexto, formulación clara, justificación y viabilidad.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-circle-question mr-2" style="color: var(--accent)"></i>3. ¿Qué metodologías son apropiadas para proyectos de intervención?</p>
+                        <p class="mt-2">Investigación-acción, modelos predictivos y metodologías ágiles.</p>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Materiales de apoyo</h2>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-file-pdf mr-2" style="color: var(--accent)"></i>Decreto 1330 de 2019</h3><p class="mt-2">Documento oficial del Ministerio de Educación sobre calidad de la educación superior.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-book-open mr-2" style="color: var(--accent)"></i>Guía de Formulación</h3><p class="mt-2">Lineamientos institucionales para la elaboración de proyectos de intervención.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-file-lines mr-2" style="color: var(--accent)"></i>Plantilla de Anteproyecto</h3><p class="mt-2">Formato estructurado para la presentación de anteproyectos de grado.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-play-circle mr-2" style="color: var(--accent)"></i>Tutorial de Diagnóstico</h3><p class="mt-2">Video guía sobre técnicas de mapeo de procesos organizacionales.</p></div>
+                    </div>
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias orientadoras</h2>
+                    </div>
+                    <div class="mt-6 space-y-4">
+                        <div class="mini-card border-l-4" style="border-color: var(--accent)"><p class="italic">Ministerio de Educación Nacional. (2019). Decreto 1330 de 2019. Por el cual se establece la calidad de la educación superior.</p></div>
+                        <div class="mini-card border-l-4" style="border-color: var(--accent)"><p class="italic">Hernández, R., Fernández, C., & Baptista, P. (2014). Metodología de la investigación (6ª ed.). McGraw-Hill.</p></div>
+                        <div class="mini-card border-l-4" style="border-color: var(--accent)"><p class="italic">Sampieri, R. H. (2018). Metodología de la investigación: Las rutas cuantitativa, cualitativa y mixta. McGraw-Hill Education.</p></div>
+                        <div class="mini-card border-l-4" style="border-color: var(--accent)"><p class="italic">Chiavenato, I. (2017). Gestión del talento humano (4ª ed.). McGraw-Hill Interamericana.</p></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+        const activityBtns = document.querySelectorAll('.activity-subnav-btn');
+        const activitySections = document.querySelectorAll('.activity-section');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Activity tabs navigation
+        activityBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetSection = btn.dataset.activitySection;
+                activityBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activitySections.forEach(section => {
+                    if (section.id === targetSection) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Character counters
+        const textareas = document.querySelectorAll('textarea[maxlength]');
+        textareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Copy text functionality
+        const copyBtns = document.querySelectorAll('[data-copy]');
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.copy;
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const originalText = btn.textContent;
+                    btn.textContent = '¡Copiado!';
+                    setTimeout(() => btn.textContent = originalText, 2000);
+                }
+            });
+        });
+
+        if (mobileNav) mobileNav.addEventListener('change', event => switchPane(event.target.value));
+    });
+</script>
+</body>
+</html>
