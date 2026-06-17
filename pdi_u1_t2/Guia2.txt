@@ -1,0 +1,20 @@
+Tema 2: Estrategias para la identificación y priorización de problemas en los procesos administrativos
+Introducción:
+La fase más crítica de cualquier intervención es el hallazgo del "problema real". Frecuentemente, los gerentes confunden síntomas (ej. alta rotación) con causas raíz (ej. liderazgo autocrático). Este subtema enseña al especialista a mapear los "dolores operativos" de la organización y a utilizar herramientas de priorización para asegurar que los recursos limitados se inviertan en los problemas de mayor impacto estratégico.
+Objetivos de Aprendizaje:
+1. Aplicar técnicas de mapeo de procesos administrativos para identificar puntos de dolor, cuellos de botella e ineficiencias.
+2. Utilizar matrices de priorización (Impacto vs. Esfuerzo, Gravedad-Urgencia-Tendencia) para seleccionar el problema objeto de la intervención.
+3. Analizar la alineación estratégica del problema identificado con los objetivos de negocio y la misión institucional.
+Contenido:
+? Parte 1: Mapeo y Diagnóstico de Procesos Administrativos: No se puede mejorar lo que no se conoce. El especialista debe iniciar con un mapeo detallado del estado actual, documentando el flujo de procesos, los actores involucrados, los tiempos de ejecución y los puntos de decisión. Esta fase implica recolectar evidencia empírica mediante observación directa, entrevistas estructuradas y análisis de datos cuantitativos. El objetivo es detectar la "automatización sombra" (prácticas informales) y las brechas entre el proceso diseñado y el ejecutado, identificando actividades que no agregan valor y que generan sobrecostos o desmotivación en el talento humano.
+? Parte 2: Criterios de Evaluación y Gravedad del Problema: Una vez listados los problemas potenciales, se deben evaluar bajo criterios objetivos:
+1. Alcance: ¿Cuántas áreas o personas se ven afectadas?
+2. Gravedad: ¿Cuál es el nivel de daño o riesgo (financiero, reputacional, legal)?
+3. Urgencia: ¿Con qué rapidez se necesita una solución debido a plazos legales o consecuencias críticas?
+Esta evaluación permite al especialista actuar con racionalidad, evitando dejarse llevar por percepciones subjetivas o miedos momentáneos de la alta dirección, y centrándose en aquellos retos cuya resolución sea vital para la sostenibilidad organizacional.
+? Parte 3: Matrices de Priorización y Alineación Estratégica: El especialista utiliza herramientas visuales como la Matriz de Impacto vs. Esfuerzo para clasificar las intervenciones en: "Victorias rápidas" (Alto impacto, bajo esfuerzo), "Proyectos estratégicos" (Alto impacto, alto esfuerzo), y tareas a descartar. Es imperativo que el problema seleccionado esté alineado con la visión corporativa; si la solución no contribuye directamente a los objetivos estratégicos, la intervención perderá apoyo político interno. El proceso concluye con una validación formal ante los stakeholders, garantizando que el sentido de la acción de fomento sea compartido por los actores clave del territorio o sector.
+Referencias para ampliación:
+? CEPAL. (2025). Guía para la Definición de Prioridades Estratégicas.
+? ADR Formación. (2024). La Identificación de Problemas en el Ámbito Directivo.
+? CIDEI. (2023). 4 Pasos para Identificar y Priorizar Procesos Administrativos.
+
