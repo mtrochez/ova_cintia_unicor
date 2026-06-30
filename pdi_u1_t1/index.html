@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtema 1: Fundamentos Conceptuales y Normativos</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .matrix-export-btn { background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; border: 1px solid #17a2b8; cursor: pointer; }
+        #ova-embed .matrix-export-btn:hover { background: #17a2b8; color: white; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .mckinsey-tab-btn:hover { background: #D8EBF8 !important; color: #374151 !important; }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #495057; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .development-matrix { margin-top: 24px; padding: 24px; background: var(--surface-soft); border-radius: 12px; border: 1px solid var(--line); }
+        #ova-embed .matrix-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        #ova-embed .matrix-header h3 { margin: 0; color: var(--heading); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-table { width: 100%; border-collapse: collapse; }
+        #ova-embed .matrix-table th { padding: 12px 16px; text-align: left; font-weight: 700; color: var(--heading); border-bottom: 2px solid var(--accent); }
+        #ova-embed .matrix-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+        #ova-embed .matrix-table tr:last-child td { border-bottom: none; }
+        #ova-embed .matrix-check { color: var(--accent); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-empty { color: #adb5bd; }
+        #ova-embed .activity-subnav-btn { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 10px 20px; border: 1px solid var(--line); cursor: pointer; transition: all 0.25s ease; }
+        #ova-embed .activity-subnav-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        #ova-embed .activity-subnav-btn:hover:not(.active) { background: var(--surface-soft); }
+        #ova-embed .activity-section.hidden { display: none; }
+        #ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed var(--line); border-radius: 16px; background: var(--surface-soft); }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed .flip-card { perspective: 1000px; height: 200px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="diagnostico">Diagnóstico</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="diagnostico"><i class="fa-solid fa-clipboard-list"></i> Diagnóstico</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-scale-balanced mr-2"></i>Unidad 1 - Tema 1</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Fundamentos Conceptuales y Normativos</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Un proyecto de intervención organizacional no es simplemente una propuesta de mejora; es un ejercicio académico y profesional que busca transformar una realidad específica mediante la aplicación sistemática de teorías de la gestión humana.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">🎯 Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed">Este tema establece la diferencia entre la consultoría técnica y la intervención reflexiva, situando el proceso dentro del marco legal colombiano que rige las opciones de grado en posgrado. Para el especialista de la Universidad de Córdoba, esto implica alinear su propuesta con el compromiso social y la excelencia académica del PEI.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta de consultor</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">El proceso de intervención organizacional</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-user-doctor"></i></div>
+                                <h4>Diagnóstico</h4>
+                                <p>Identificación del problema organizacional.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <h4>Análisis</h4>
+                                <p>Marco normativo y contexto organizacional.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-pen-ruler"></i></div>
+                                <h4>Formulación</h4>
+                                <p>Metodología y diseño del proyecto.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-rocket"></i></div>
+                                <h4>Implementación</h4>
+                                <p>Plan de acción y ejecución.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-chart-line"></i></div>
+                                <h4>Evaluación</h4>
+                                <p>Medición de resultados y ajustes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card" style="transition: all 0.3s ease;"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-lightbulb mr-2" style="color: #17a2b8;"></i>Pregunta central</h3><p class="mt-2">¿Qué diferencia existe entre la consultoría técnica y la intervención reflexiva en el contexto de proyectos de grado?</p></div>
+                        <div class="mini-card" style="transition: all 0.3s ease;"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-route mr-2" style="color: #17a2b8;"></i>Enfoque</h3><p class="mt-2">Marco normativo colombiano (Decreto 1330 de 2019), conceptualización de intervención organizacional y modalidades de trabajo de grado.</p></div>
+                        <div class="mini-card" style="transition: all 0.3s ease;"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-award mr-2" style="color: #17a2b8;"></i>Producto esperado</h3><p class="mt-2">Comprensión del marco legal y conceptual para formular proyectos de intervención alineados con los requisitos institucionales.</p></div>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 1</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de comprender la naturaleza epistemológica de la intervención organizacional, analizar el marco normativo colombiano y diferenciar las modalidades de trabajo de grado.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-brain mr-2" style="color: #17a2b8;"></i>Comprender</h3>
+                            <p class="mt-2 text-sm leading-relaxed">La naturaleza epistemológica de la intervención organizacional como una actividad científica y profesional de cambio profundo.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-magnifying-glass-chart mr-2" style="color: #17a2b8;"></i>Analizar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">El marco normativo colombiano (Decreto 1330 de 2019 y reglamentos institucionales) que regula las modalidades de trabajo de grado en nivel de especialización.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-handshake mr-2" style="color: #17a2b8;"></i>Diferenciar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Las modalidades de proyecto aplicado, monografía y proyecto de investigación, seleccionando la más adecuada para su contexto profesional.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="diagnostico" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Diagnóstico Inicial</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📋 Diagnóstico de Contexto Organizacional</h2>
+                        <p class="mt-4 leading-relaxed">Responde las 8 preguntas. Al finalizar podrás guardar tu diagnóstico.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="diag-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="diag-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="diag-progress" class="text-sm font-bold" style="color: var(--text);">1/8</span>
+                            </div>
+                            <p id="diag-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <p id="diag-hint" class="mt-1 text-xs" style="color: #6c757d;"></p>
+                            <div id="diag-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="diag-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="diag-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="diag-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">¡Diagnóstico completado!</h3>
+                            <p class="mt-2" style="color: var(--text);">Gracias por compartir tu contexto organizacional. Tus respuestas nos ayudan a orientar mejor el contenido del curso.</p>
+                            <div id="diag-summary" class="mt-5 space-y-3"></div>
+                            <div class="mt-5 flex gap-3 flex-wrap">
+                                <button id="diag-save" type="button" class="btn-main flex items-center gap-2"><i class="fa-solid fa-save"></i> Guardar diagnóstico</button>
+                                <div style="position: relative; display: inline-block;">
+                                    <button id="diag-export" type="button" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar respuestas <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                                    <div id="export-dropdown" class="hidden" style="position: absolute; top: 100%; left: 0; z-index: 100; min-width: 180px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-top: 4px; overflow: hidden;">
+                                        <button id="export-txt" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-lines" style="color: var(--accent);"></i> Texto (.txt)</button>
+                                        <button id="export-word" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-word" style="color: #2563eb;"></i> Word (.doc)</button>
+                                    </div>
+                                </div>
+                                <button id="diag-restart" type="button" class="btn-soft">Reiniciar</button>
+                            </div>
+                            <div id="diag-save-feedback" class="mt-3 hidden text-sm font-semibold" style="color: var(--accent);"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres partes fundamentales</h2>
+                        <p class="mt-4 leading-relaxed">Este subtema se estructura en tres partes que abordan desde la conceptualización hasta el marco normativo y los requisitos institucionales.</p>
+                    </div>
+
+                    <!-- Frase de consultor destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"La intervención no es solo resolver problemas, es transformar culturas y capacitar organizaciones para el cambio sostenible."</p>
+                                <p class="mt-2 text-sm opacity-80">— Beckhard & Bennis, Fundadores de la Intervención Organizacional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards del Ciclo de Investigación-Acción -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">🔄 El Plan de Vuelo: Ciclo de Investigación-Acción (Kurt Lewin)</h3>
+                        <p class="text-xs mb-6" style="color: #6c757d;"><i class="fa-solid fa-hand-pointer mr-1"></i>Pasa el cursor sobre cada tarjeta para ver el detalle.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-magnifying-glass text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Planear</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-magnifying-glass text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Planear</h4>
+                                        <p class="text-xs leading-relaxed">Diagnóstico inicial y diseño de la intervención organizacional.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-rocket text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Actuar</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-rocket text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Actuar</h4>
+                                        <p class="text-xs leading-relaxed">Implementación de las acciones planificadas en la intervención.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-eye text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Observar</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-eye text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Observar</h4>
+                                        <p class="text-xs leading-relaxed">Recolección de datos y evaluación de resultados obtenidos.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-brain text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Reflexionar</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-brain text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Reflexionar</h4>
+                                        <p class="text-xs leading-relaxed">Análisis crítico y ajuste para iniciar el siguiente ciclo.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Acordeón de las Tres Partes -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📚 Tres Partes Fundamentales</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-lightbulb mr-2" style="color: #374151;"></i>Parte 1: Conceptualización de la Intervención Organizacional</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La intervención se define como una secuencia de acciones planificadas que buscan modificar el estado actual de un sistema para alcanzar niveles superiores de efectividad y bienestar. A diferencia de la administración rutinaria, la intervención requiere que el especialista asuma el rol de "interventor", quien debe poseer la voluntad de reflexionar sobre problemáticas complejas, reconocer fortalezas y debilidades institucionales y actuar con ética profesional. Autores clásicos como Beckhard y Bennis enfatizan que este proceso debe ser apoyado por la alta gerencia y basarse en las ciencias de la conducta para generar cambios sostenibles en la cultura y los procesos.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-scale-balanced mr-2" style="color: #374151;"></i>Parte 2: Marco Normativo en Colombia - El Decreto 1330 de 2019</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La educación posgradual en Colombia ha evolucionado hacia la priorización de resultados de aprendizaje. El Decreto 1330 de 2019 establece que los programas deben demostrar condiciones de calidad en su gestión curricular y fomentar la creación de conocimiento o innovación. En este contexto, el proyecto de intervención se configura como un "Proyecto Aplicado", el cual permite la transferencia social de conocimiento para solucionar problemas focalizados. La normativa exige que el trabajo de grado refleje la profundización en el área de especialidad y que el estudiante demuestre autonomía y espíritu crítico-transformador.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-university mr-2" style="color: #374151;"></i>Parte 3: Modalidades y Requisitos Institucionales</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">Las Instituciones de Educación Superior (IES) ofrecen diversas rutas para la obtención del título. El Proyecto Aplicado (en modalidades de emprendimiento, desarrollo tecnológico o social) y la Investigación-Acción son las más valoradas en especializaciones de gerencia por su impacto directo. Es fundamental que el especialista conozca los requisitos de permanencia y graduación, tales como el porcentaje de créditos cursados (generalmente entre el 40% y el 80%) para la inscripción de la propuesta, y los plazos máximos de graduación (usualmente hasta 3 años). Este subtema concluye analizando la propiedad intelectual, donde los resultados derivados del trabajo suelen regirse por acuerdos de co-creación entre el estudiante y la universidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pestañas 7S de McKinsey -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">🧬 Las 7S de McKinsey: Marco de Diagnóstico Organizacional</h3>
+                        <div class="mckinsey-tabs">
+                            <div class="flex flex-wrap gap-2 mb-4 border-b" style="border-color: var(--line);">
+                                <button class="mckinsey-tab-btn px-4 py-2 font-bold text-sm rounded-t-lg transition-all" data-tab="strategy" style="background: #17a2b8; color: white;">
+                                    <i class="fa-solid fa-chess-king mr-1"></i>Estrategia
+                                </button>
+                                <button class="mckinsey-tab-btn px-4 py-2 font-semibold text-sm rounded-t-lg transition-all" data-tab="structure" style="background: var(--surface-soft); color: #374151;">
+                                    <i class="fa-solid fa-sitemap mr-1"></i>Estructura
+                                </button>
+                                <button class="mckinsey-tab-btn px-4 py-2 font-semibold text-sm rounded-t-lg transition-all" data-tab="systems" style="background: var(--surface-soft); color: #374151;">
+                                    <i class="fa-solid fa-cogs mr-1"></i>Sistemas
+                                </button>
+                                <button class="mckinsey-tab-btn px-4 py-2 font-semibold text-sm rounded-t-lg transition-all" data-tab="values" style="background: var(--surface-soft); color: #374151;">
+                                    <i class="fa-solid fa-heart mr-1"></i>Valores
+                                </button>
+                                <button class="mckinsey-tab-btn px-4 py-2 font-semibold text-sm rounded-t-lg transition-all" data-tab="style" style="background: var(--surface-soft); color: #374151;">
+                                    <i class="fa-solid fa-users mr-1"></i>Estilo
+                                </button>
+                                <button class="mckinsey-tab-btn px-4 py-2 font-semibold text-sm rounded-t-lg transition-all" data-tab="skills" style="background: var(--surface-soft); color: #374151;">
+                                    <i class="fa-solid fa-user-graduate mr-1"></i>Habilidades
+                                </button>
+                                <button class="mckinsey-tab-btn px-4 py-2 font-semibold text-sm rounded-t-lg transition-all" data-tab="staff" style="background: var(--surface-soft); color: #374151;">
+                                    <i class="fa-solid fa-users-gear mr-1"></i>Personal
+                                </button>
+                            </div>
+                            <div class="mckinsey-tab-content">
+                                <div class="mckinsey-tab-pane active p-5 bg-white rounded-lg" data-content="strategy">
+                                    <h4 class="font-bold text-lg mb-3" style="color: var(--heading)">Estrategia (Strategy)</h4>
+                                    <p class="text-sm leading-relaxed">El plan de acción de la organización para construir y mantener una ventaja competitiva sostenible. Incluye la misión, visión, objetivos y la forma en que la empresa comprenderá y abordará el mercado.</p>
+                                </div>
+                                <div class="mckinsey-tab-pane hidden p-5 bg-white rounded-lg" data-content="structure">
+                                    <h4 class="font-bold text-lg mb-3" style="color: var(--heading)">Estructura (Structure)</h4>
+                                    <p class="text-sm leading-relaxed">La forma en que la organización está estructurada, incluyendo la jerarquía, división del trabajo, líneas de autoridad y comunicación. Determina cómo se distribuyen las responsabilidades y el poder.</p>
+                                </div>
+                                <div class="mckinsey-tab-pane hidden p-5 bg-white rounded-lg" data-content="systems">
+                                    <h4 class="font-bold text-lg mb-3" style="color: var(--heading)">Sistemas (Systems)</h4>
+                                    <p class="text-sm leading-relaxed">Los procesos y procedimientos formales e informales que gobiernan el trabajo diario. Incluye sistemas de información, gestión de desempeño, finanzas, recursos humanos y operaciones.</p>
+                                </div>
+                                <div class="mckinsey-tab-pane hidden p-5 bg-white rounded-lg" data-content="values">
+                                    <h4 class="font-bold text-lg mb-3" style="color: var(--heading)">Valores Compartidos (Shared Values)</h4>
+                                    <p class="text-sm leading-relaxed">El núcleo central de la cultura organizacional. Son las creencias, principios y filosofía que guían las decisiones y comportamientos. Es el "pegamento" que mantiene unidas las otras S.</p>
+                                </div>
+                                <div class="mckinsey-tab-pane hidden p-5 bg-white rounded-lg" data-content="style">
+                                    <h4 class="font-bold text-lg mb-3" style="color: var(--heading)">Estilo (Style)</h4>
+                                    <p class="text-sm leading-relaxed">El estilo de liderazgo y la cultura organizacional. Incluye cómo los líderes interactúan con los empleados, el nivel de empowerment, la toma de decisiones y el clima laboral.</p>
+                                </div>
+                                <div class="mckinsey-tab-pane hidden p-5 bg-white rounded-lg" data-content="skills">
+                                    <h4 class="font-bold text-lg mb-3" style="color: var(--heading)">Habilidades (Skills)</h4>
+                                    <p class="text-sm leading-relaxed">Las capacidades distintivas de la organización y sus empleados. Incluye competencias técnicas, conocimientos especializados y habilidades que crean ventaja competitiva.</p>
+                                </div>
+                                <div class="mckinsey-tab-pane hidden p-5 bg-white rounded-lg" data-content="staff">
+                                    <h4 class="font-bold text-lg mb-3" style="color: var(--heading)">Personal (Staff)</h4>
+                                    <p class="text-sm leading-relaxed">Las personas de la organización y cómo son gestionadas. Incluye reclutamiento, capacitación, desarrollo, compensación y la composición del talento humano.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🤝 Actividades</h2>
+                        <p class="mt-4 leading-relaxed">Las actividades promueven la aplicación práctica de los conceptos de intervención organizacional y el marco normativo colombiano.</p>
+                    </div>
+
+                    <!-- Pestañas de Actividades -->
+                    <div class="mt-6 section-card">
+                        <div class="activity-tabs">
+                            <div class="flex flex-wrap gap-2 mb-4 border-b" style="border-color: var(--line);">
+                                <button class="activity-tab-btn px-4 py-2 font-bold text-sm rounded-t-lg transition-all" data-tab="decreto" style="background: var(--accent); color: white;">
+                                    <i class="fa-solid fa-scale-balanced mr-1"></i>Análisis del Decreto
+                                </button>
+                                <button class="activity-tab-btn px-4 py-2 font-bold text-sm rounded-t-lg transition-all" data-tab="matriz" style="background: var(--surface-soft); color: var(--heading);">
+                                    <i class="fa-solid fa-chart-line mr-1"></i>Matriz de Priorización
+                                </button>
+                            </div>
+                            <div class="activity-tab-content">
+                                <!-- Actividad 1: Análisis del Decreto -->
+                                <div class="activity-tab-pane active p-5 bg-white rounded-lg" data-content="decreto">
+                                    <div class="flex items-start gap-4 mb-6">
+                                        <div class="flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-3xl" style="color: #6c757d;">
+                                            <i class="fa-solid fa-scale-balanced"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-xl font-bold" style="color: var(--heading)">Análisis del Decreto 1330 de 2019</h3>
+                                            <p class="mt-2">Analiza los elementos del Decreto 1330 de 2019 que aplican a proyectos de intervención en especialización y reflexiona sobre su impacto en la calidad de la educación superior.</p>
+                                        </div>
+                                    </div>
+                                    <div class="p-5 rounded-xl" style="background: var(--surface-soft); border: 2px dashed var(--line);">
+                                        <label class="block font-bold mb-3" style="color: var(--heading)"><i class="fa-solid fa-pen-to-square mr-2" style="color: var(--accent)"></i>Redacta tu análisis del Decreto 1330 de 2019</label>
+                                        <textarea id="a1-text" maxlength="1200" class="mt-3 w-full min-h-[180px] p-4 border rounded-xl bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);" placeholder="Describe los elementos del Decreto 1330 que aplican a proyectos de intervención y su impacto en la calidad educativa..."></textarea>
+                                        <div class="mt-3 flex items-center gap-2">
+                                            <span class="text-sm font-semibold" style="color: var(--heading);" data-counter-for="a1-text">0/1200</span>
+                                            <div class="w-32 h-2 rounded-full bg-gray-200 overflow-hidden">
+                                                <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="a1-text"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end items-center gap-3 flex-wrap">
+                                        <div class="flex items-center gap-2">
+                                            <button type="button" class="btn-main flex items-center gap-2" data-copy="a1-text">
+                                                <i class="fa-solid fa-copy"></i>
+                                                Copiar texto
+                                            </button>
+                                            <div style="position: relative; display: inline-block;">
+                                                <button id="a1-export" type="button" class="flex items-center gap-2 font-semibold rounded-lg px-4 py-2 transition-all" style="background: #D8EBF8; color: #0c7b8a; border: 1px solid #17a2b8;">
+                                                    <i class="fa-solid fa-file-export"></i> Exportar <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                                                </button>
+                                                <div id="a1-export-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: white; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 50; min-width: 140px;">
+                                                    <button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-t-lg" onclick="exportText('a1-text', 'word')" style="color: #374151;">
+                                                        <i class="fa-solid fa-file-word mr-2" style="color: #2b579a;"></i>Word
+                                                    </button>
+                                                    <button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-b-lg" onclick="exportText('a1-text', 'txt')" style="color: #374151;">
+                                                        <i class="fa-solid fa-file-lines mr-2" style="color: #6c757d;"></i>TXT
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Actividad 2: Matriz de Priorización -->
+                                <div class="activity-tab-pane hidden p-5 bg-white rounded-lg" data-content="matriz">
+                                    <h3 class="text-xl font-bold mb-4" style="color: var(--heading)">📊 Clasificación de Problemas Organizacionales</h3>
+                                    <p class="mb-4 text-sm">Analiza cada problema organizacional y clasifícalo según su impacto y esfuerzo requerido para resolverlo. Justifica tu respuesta.</p>
+                                    <div class="mb-4 p-4 rounded-lg" style="background: var(--surface-soft);">
+                                        <p class="text-xs font-bold mb-2" style="color: var(--heading);">Leyenda de prioridades:</p>
+                                        <div class="flex flex-wrap gap-4 text-xs">
+                                            <span style="color: #059669;">⚡ Victoria Rápida: Alto impacto, bajo esfuerzo</span>
+                                            <span style="color: #d97706;">🎯 Proyecto Estratégico: Alto impacto, alto esfuerzo</span>
+                                            <span style="color: #dc2626;">❌ Baja Prioridad: Bajo impacto, alto esfuerzo</span>
+                                            <span style="color: #0284c7;">📋 Rellenar: Medio impacto, bajo esfuerzo</span>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-6">
+                                        <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                            <h4 class="font-bold mb-3" style="color: var(--heading)">1. Baja rotación de personal en áreas clave</h4>
+                                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Impacto:</label>
+                                                    <select class="impact-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="1">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Esfuerzo:</label>
+                                                    <select class="effort-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="1">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Justifica tu clasificación:</label>
+                                            <textarea id="justif-1" maxlength="500" class="justif-textarea w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 80px;" placeholder="Explica por qué asignaste ese nivel de impacto y esfuerzo..."></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="justif-1">0/500</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="justif-1"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                            <h4 class="font-bold mb-3" style="color: var(--heading)">2. Falta de capacitación digital en personal administrativo</h4>
+                                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Impacto:</label>
+                                                    <select class="impact-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="2">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Esfuerzo:</label>
+                                                    <select class="effort-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="2">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Justifica tu clasificación:</label>
+                                            <textarea id="justif-2" maxlength="500" class="justif-textarea w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 80px;" placeholder="Explica por qué asignaste ese nivel de impacto y esfuerzo..."></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="justif-2">0/500</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="justif-2"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                            <h4 class="font-bold mb-3" style="color: var(--heading)">3. Sistema de nómina obsoleto y propenso a errores</h4>
+                                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Impacto:</label>
+                                                    <select class="impact-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="3">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Esfuerzo:</label>
+                                                    <select class="effort-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="3">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Justifica tu clasificación:</label>
+                                            <textarea id="justif-3" maxlength="500" class="justif-textarea w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 80px;" placeholder="Explica por qué asignaste ese nivel de impacto y esfuerzo..."></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="justif-3">0/500</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="justif-3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                            <h4 class="font-bold mb-3" style="color: var(--heading)">4. Mejora en comunicación interna entre departamentos</h4>
+                                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Impacto:</label>
+                                                    <select class="impact-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="4">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Esfuerzo:</label>
+                                                    <select class="effort-select w-full p-3 rounded-lg border" style="border-color: var(--line);" data-problem="4">
+                                                        <option value="">Seleccionar...</option>
+                                                        <option value="alto">Alto</option>
+                                                        <option value="medio">Medio</option>
+                                                        <option value="bajo">Bajo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Justifica tu clasificación:</label>
+                                            <textarea id="justif-4" maxlength="500" class="justif-textarea w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 80px;" placeholder="Explica por qué asignaste ese nivel de impacto y esfuerzo..."></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="justif-4">0/500</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="justif-4"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6 grid grid-cols-3 gap-3">
+                                        <button type="button" id="save-matrix-btn" class="btn-main flex items-center justify-center gap-2 py-3 px-4">
+                                            <i class="fa-solid fa-floppy-disk"></i>
+                                            <span>Guardar</span>
+                                        </button>
+                                        <div style="position: relative;">
+                                            <button id="matrix-export-btn" type="button" class="matrix-export-btn w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-200">
+                                                <i class="fa-solid fa-file-export"></i>
+                                                <span>Exportar</span>
+                                                <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                                            </button>
+                                            <div id="matrix-export-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: white; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 50; min-width: 140px;">
+                                                <button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-t-lg" onclick="exportMatrix('word')" style="color: #374151;">
+                                                    <i class="fa-solid fa-file-word mr-2" style="color: #2b579a;"></i>Word
+                                                </button>
+                                                <button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-b-lg" onclick="exportMatrix('txt')" style="color: #374151;">
+                                                    <i class="fa-solid fa-file-lines mr-2" style="color: #6c757d;"></i>TXT
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="button" id="reset-matrix-btn" class="btn-soft flex items-center justify-center gap-2 py-3 px-4">
+                                            <i class="fa-solid fa-rotate-right"></i>
+                                            <span>Limpiar</span>
+                                        </button>
+                                    </div>
+                                    <div id="matrix-feedback" class="mt-4 hidden p-4 rounded-lg" style="background: var(--surface-soft);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Subtema 1</h2>
+                        <p class="mt-4 leading-relaxed">Responde las 3 preguntas. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/3</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">Autoevaluación completada</h3>
+                            <p class="mt-2 font-semibold" style="color: var(--text);">Puntaje: <span id="quiz-score">0</span>/3</p>
+                            <p id="quiz-feedback" class="mt-2" style="color: var(--text);"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Materiales de apoyo</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Escanea el código QR de cada recurso con tu celular o haz clic en el botón para acceder directamente.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Recurso 1: Decreto 1330 -->
+                        <div class="section-card border-t-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl" style="color: #e53e3e;">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold" style="color: var(--heading)">Decreto 1330 de 2019</h3>
+                                    <p class="mt-1 text-sm leading-relaxed">Documento oficial del Ministerio de Educación sobre calidad de la educación superior.</p>
+                                    <a href="https://www.mineducacion.gov.co/1780/articles-387348_archivo_pdf.pdf" target="_blank" class="mt-3 inline-flex items-center gap-2 text-sm font-bold" style="color: var(--accent);">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https://www.mineducacion.gov.co/1780/articles-387348_archivo_pdf.pdf" alt="QR Decreto 1330" class="rounded-lg" style="border: 1px solid var(--line);">
+                                    <p class="text-xs font-semibold" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Escanea el QR o usa los enlaces para acceder a cada referencia desde la biblioteca virtual o Google Scholar.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Ref 1: Cummings -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Cummings, T. G.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Desarrollo organizacional y cambio.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://login.ezproxyucor.unicordoba.edu.co/login?qurl=https%3a%2f%2febookcentral.proquest.com%2flib%2funicordobasp%2fdetail.action%3fdocID%3d3196423" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-building-columns"></i> EbookCentral
+                                        </a>
+                                        <a href="https://scholar.google.com/scholar?q=Cummings%20Worley%20Desarrollo%20organizacional%20cambio" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                    <p class="mt-2 text-xs" style="color: #6c757d;"><i class="fa-solid fa-circle-info mr-1"></i>EbookCentral requiere credenciales institucionales de Unicórdoba.</p>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://login.ezproxyucor.unicordoba.edu.co/login?qurl=https%3a%2f%2febookcentral.proquest.com%2flib%2funicordobasp%2fdetail.action%3fdocID%3d3196423" alt="QR Cummings" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Guízar Montúfar -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Guízar Montúfar, R.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Desarrollo organizacional: principios y aplicaciones.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://login.ezproxyucor.unicordoba.edu.co/login?qurl=https%3a%2f%2febookcentral.proquest.com%2flib%2funicordobasp%2fdetail.action%3fdocID%3d3195984" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-building-columns"></i> EbookCentral
+                                        </a>
+                                        <a href="https://scholar.google.com/scholar?q=Guizar%20Montufar%20Desarrollo%20organizacional%20principios%20aplicaciones" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                    <p class="mt-2 text-xs" style="color: #6c757d;"><i class="fa-solid fa-circle-info mr-1"></i>EbookCentral requiere credenciales institucionales de Unicórdoba.</p>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://login.ezproxyucor.unicordoba.edu.co/login?qurl=https%3a%2f%2febookcentral.proquest.com%2flib%2funicordobasp%2fdetail.action%3fdocID%3d3195984" alt="QR Guízar" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: Mello -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Mello, O. A. de F.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Desarrollo organizacional: enfoque integral.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://dialnet.unirioja.es/servlet/libro?codigo=223910" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-database"></i> Dialnet
+                                        </a>
+                                        <a href="https://scholar.google.com/scholar?q=Mello%20Desarrollo%20organizacional%20enfoque%20integral" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://dialnet.unirioja.es/servlet/libro?codigo=223910" alt="QR Mello" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: Ferrer Pérez -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Ferrer Pérez, L.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Desarrollo organizacional.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://scholar.google.com/scholar?q=Ferrer%20Perez%20Desarrollo%20organizacional" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://scholar.google.com/scholar?q=Ferrer%20Perez%20Desarrollo%20organizacional" alt="QR Ferrer" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Character counters with progress bars
+        const textareas = document.querySelectorAll('textarea[maxlength]');
+        textareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Initialize justification textareas counters
+        const justifTextareas = document.querySelectorAll('.justif-textarea');
+        justifTextareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Copy text functionality
+        const copyBtns = document.querySelectorAll('[data-copy]');
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.copy;
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const originalText = btn.textContent;
+                    btn.textContent = '¡Copiado!';
+                    setTimeout(() => btn.textContent = originalText, 2000);
+                }
+            });
+        });
+
+        if (mobileNav) mobileNav.addEventListener('change', event => switchPane(event.target.value));
+
+        // Accordion functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.fa-chevron-down');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // McKinsey tabs functionality
+        const mckinseyTabBtns = document.querySelectorAll('.mckinsey-tab-btn');
+        const mckinseyTabPanes = document.querySelectorAll('.mckinsey-tab-pane');
+        mckinseyTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                mckinseyTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = '#17a2b8';
+                btn.style.color = 'white';
+                mckinseyTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Activity tabs functionality
+        const activityTabBtns = document.querySelectorAll('.activity-tab-btn');
+        const activityTabPanes = document.querySelectorAll('.activity-tab-pane');
+        activityTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                activityTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = 'var(--accent)';
+                btn.style.color = 'white';
+                activityTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Quiz functionality - one question at a time
+        const quizQuestions = [
+            {
+                question: "¿Cuál es la diferencia entre consultoría técnica e intervención reflexiva?",
+                options: [
+                    { value: "a", text: "La consultoría técnica es más costosa que la intervención reflexiva." },
+                    { value: "b", text: "La consultoría técnica se enfoca en soluciones específicas, mientras la intervención reflexiva implica un proceso de cambio profundo con reflexión sobre problemáticas complejas." },
+                    { value: "c", text: "No existe diferencia entre ambas modalidades." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Qué establece el Decreto 1330 de 2019 sobre los proyectos de intervención?",
+                options: [
+                    { value: "a", text: "Que los proyectos de intervención son opcionales en especializaciones." },
+                    { value: "b", text: "Que los programas deben demostrar calidad en gestión curricular y fomentar creación de conocimiento. El proyecto de intervención se configura como 'Proyecto Aplicado'." },
+                    { value: "c", text: "Que los proyectos de intervención deben ser exclusivamente de investigación teórica." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Cuáles son las modalidades más valoradas en especializaciones de gerencia?",
+                options: [
+                    { value: "a", text: "Solo la tesis tradicional de investigación." },
+                    { value: "b", text: "El Proyecto Aplicado (emprendimiento, desarrollo tecnológico o social) y la Investigación-Acción por su impacto directo." },
+                    { value: "c", text: "Solo el monografía sin aplicación práctica." }
+                ],
+                correct: "b"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        const quizBox = document.getElementById('quiz-box');
+        const quizResults = document.getElementById('quiz-results');
+        const quizTitle = document.getElementById('quiz-title');
+        const quizProgress = document.getElementById('quiz-progress');
+        const quizText = document.getElementById('quiz-text');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizPrev = document.getElementById('quiz-prev');
+        const quizNext = document.getElementById('quiz-next');
+        const quizScore = document.getElementById('quiz-score');
+        const quizFeedback = document.getElementById('quiz-feedback');
+        const quizReview = document.getElementById('quiz-review');
+        const quizRestart = document.getElementById('quiz-restart');
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuestion];
+            quizTitle.textContent = `Pregunta ${currentQuestion + 1}`;
+            quizProgress.textContent = `${currentQuestion + 1}/${quizQuestions.length}`;
+            quizText.textContent = q.question;
+            
+            quizOptions.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                btn.dataset.value = opt.value;
+                if (userAnswers[currentQuestion] === opt.value) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => {
+                    userAnswers[currentQuestion] = opt.value;
+                    document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+                quizOptions.appendChild(btn);
+            });
+
+            quizPrev.disabled = currentQuestion === 0;
+            quizNext.textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        quizPrev.addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        });
+
+        quizNext.addEventListener('click', () => {
+            // Validate that current question is answered
+            if (!userAnswers[currentQuestion]) {
+                alert('Por favor selecciona una respuesta antes de continuar.');
+                return;
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            let score = 0;
+            let reviewHTML = '';
+
+            quizQuestions.forEach((q, i) => {
+                const userAnswer = userAnswers[i];
+                const isCorrect = userAnswer === q.correct;
+                if (isCorrect) score++;
+
+                const userOption = q.options.find(opt => opt.value === userAnswer);
+                const correctOption = q.options.find(opt => opt.value === q.correct);
+
+                reviewHTML += `
+                    <div class="p-4 rounded-lg" style="background: ${isCorrect ? 'var(--surface-soft)' : 'var(--surface)'}; border: 1px solid ${isCorrect ? 'var(--accent)' : 'var(--line)'};">
+                        <p class="font-bold" style="color: var(--heading);">Pregunta ${i + 1}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);">${q.question}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);"><strong>Tu respuesta:</strong> ${userOption ? userOption.text : 'Sin respuesta'}</p>
+                        ${!isCorrect ? `<p class="mt-1 text-sm" style="color: var(--accent);"><strong>Respuesta correcta:</strong> ${correctOption.text}</p>` : ''}
+                        <p class="mt-1 text-sm font-semibold" style="color: ${isCorrect ? 'var(--accent)' : '#dc2626'};">${isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>
+                    </div>
+                `;
+            });
+
+            quizScore.textContent = score;
+            quizFeedback.textContent = score === quizQuestions.length ? '¡Excelente! Has respondido todas las preguntas correctamente.' : score >= quizQuestions.length / 2 ? 'Buen trabajo. Revisa las respuestas incorrectas para mejorar.' : 'Te recomiendo repasar el contenido antes de intentar nuevamente.';
+            quizReview.innerHTML = reviewHTML;
+
+            quizBox.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        quizRestart.addEventListener('click', () => {
+            currentQuestion = 0;
+            userAnswers = {};
+            quizBox.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            renderQuestion();
+            // Scroll to top of evaluation section
+            document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Initialize quiz
+        if (quizBox) {
+            renderQuestion();
+        }
+
+        // Diagnosis functionality - one question at a time
+        const diagQuestions = [
+            {
+                id: 'd1',
+                question: '¿Qué tan urgente considera que su organización necesita un diagnóstico formal de sus procesos internos?',
+                hint: 'Escala: 1 = Nada urgente · 5 = Muy urgente',
+                type: 'radio',
+                options: [
+                    { value: '1', text: '1 - Nada urgente' },
+                    { value: '2', text: '2 - Poco urgente' },
+                    { value: '3', text: '3 - Moderadamente urgente' },
+                    { value: '4', text: '4 - Urgente' },
+                    { value: '5', text: '5 - Muy urgente' }
+                ]
+            },
+            {
+                id: 'd2',
+                question: '¿Ha observado en su entorno laboral problemas recurrentes que nunca se han abordado desde una perspectiva organizacional sistemática?',
+                hint: 'Puede agregar una descripción breve opcional.',
+                type: 'radio-text',
+                options: [
+                    { value: 'si', text: 'Sí' },
+                    { value: 'no', text: 'No' }
+                ],
+                textPlaceholder: 'Describe brevemente los problemas observados (opcional)...',
+                textMax: 300
+            },
+            {
+                id: 'd3',
+                question: '¿Qué tipo de problema organizacional considera más relevante de abordar en su contexto laboral?',
+                hint: 'Puede seleccionar más de una opción.',
+                type: 'checkbox',
+                options: [
+                    { value: 'estructura', text: 'Estructura' },
+                    { value: 'cultura', text: 'Cultura' },
+                    { value: 'procesos', text: 'Procesos' },
+                    { value: 'liderazgo', text: 'Liderazgo' },
+                    { value: 'tecnologia', text: 'Tecnología' },
+                    { value: 'comunicacion', text: 'Comunicación' },
+                    { value: 'otro', text: 'Otro' }
+                ]
+            },
+            {
+                id: 'd4',
+                question: '¿Tiene alguna idea o hipótesis sobre una intervención que podría transformar su organización? Descríbala brevemente.',
+                hint: 'Pregunta abierta · Máx. 500 caracteres.',
+                type: 'textarea',
+                textPlaceholder: 'Describe tu idea o hipótesis de intervención...',
+                textMax: 500
+            },
+            {
+                id: 'd5',
+                question: '¿Qué tan familiarizado/a está con metodologías de investigación aplicada como diagnóstico organizacional, investigación-acción o estudio de caso?',
+                hint: 'Escala: 1 = Nada familiarizado/a · 5 = Muy familiarizado/a',
+                type: 'radio',
+                options: [
+                    { value: '1', text: '1 - Nada familiarizado/a' },
+                    { value: '2', text: '2 - Poco familiarizado/a' },
+                    { value: '3', text: '3 - Moderadamente familiarizado/a' },
+                    { value: '4', text: '4 - Bastante familiarizado/a' },
+                    { value: '5', text: '5 - Muy familiarizado/a' }
+                ]
+            },
+            {
+                id: 'd6',
+                question: '¿En su organización se toman decisiones basadas en datos e indicadores o predominan las decisiones intuitivas?',
+                hint: 'Selecciona la opción que mejor describe tu organización.',
+                type: 'radio',
+                options: [
+                    { value: 'siempre-datos', text: 'Siempre datos' },
+                    { value: 'mayoria-datos', text: 'Mayoría datos' },
+                    { value: 'equilibrio', text: 'Equilibrio' },
+                    { value: 'mayoria-intuicion', text: 'Mayoría intuición' },
+                    { value: 'siempre-intuicion', text: 'Siempre intuición' }
+                ]
+            },
+            {
+                id: 'd7',
+                question: '¿Considera que las organizaciones de su región tienen capacidad real para implementar proyectos de intervención organizacional?',
+                hint: 'Escala: 1 = Ninguna capacidad · 5 = Plena capacidad',
+                type: 'radio',
+                options: [
+                    { value: '1', text: '1 - Ninguna capacidad' },
+                    { value: '2', text: '2 - Poca capacidad' },
+                    { value: '3', text: '3 - Capacidad moderada' },
+                    { value: '4', text: '4 - Buena capacidad' },
+                    { value: '5', text: '5 - Plena capacidad' }
+                ]
+            },
+            {
+                id: 'd8',
+                question: '¿Estaría dispuesto/a a realizar su proyecto de grado en la organización donde trabaja actualmente?',
+                hint: 'Selecciona la opción que mejor aplica a tu situación.',
+                type: 'radio',
+                options: [
+                    { value: 'si', text: 'Sí' },
+                    { value: 'no', text: 'No' },
+                    { value: 'tal-vez', text: 'Tal vez' },
+                    { value: 'no-trabajo', text: 'No trabajo actualmente' }
+                ]
+            }
+        ];
+
+        let currentDiagQuestion = 0;
+        let diagAnswers = {};
+
+        const diagBox = document.getElementById('diag-box');
+        const diagResults = document.getElementById('diag-results');
+        const diagTitle = document.getElementById('diag-title');
+        const diagProgress = document.getElementById('diag-progress');
+        const diagText = document.getElementById('diag-text');
+        const diagHint = document.getElementById('diag-hint');
+        const diagOptions = document.getElementById('diag-options');
+        const diagPrev = document.getElementById('diag-prev');
+        const diagNext = document.getElementById('diag-next');
+        const diagSummary = document.getElementById('diag-summary');
+        const diagSaveBtn = document.getElementById('diag-save');
+        const diagRestartBtn = document.getElementById('diag-restart');
+        const diagSaveFeedback = document.getElementById('diag-save-feedback');
+
+        function renderDiagQuestion() {
+            const q = diagQuestions[currentDiagQuestion];
+            diagTitle.textContent = `Pregunta ${currentDiagQuestion + 1}`;
+            diagProgress.textContent = `${currentDiagQuestion + 1}/${diagQuestions.length}`;
+            diagText.textContent = q.question;
+            diagHint.textContent = q.hint || '';
+            diagOptions.innerHTML = '';
+
+            if (q.type === 'radio' || q.type === 'radio-text') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    if (diagAnswers[q.id] === opt.value) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        diagAnswers[q.id] = opt.value;
+                        diagOptions.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                    });
+                    diagOptions.appendChild(btn);
+                });
+                if (q.type === 'radio-text') {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'mt-4';
+                    wrapper.innerHTML = `
+                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Descripción breve (opcional):</label>
+                        <textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 70px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id + '_text'] || ''}</textarea>
+                        <span class="mt-1 block text-xs font-semibold" style="color: var(--text);" id="diag-text-counter">${(diagAnswers[q.id + '_text'] || '').length}/${q.textMax}</span>
+                    `;
+                    diagOptions.appendChild(wrapper);
+                    const ta = wrapper.querySelector('#diag-text-input');
+                    const taCounter = wrapper.querySelector('#diag-text-counter');
+                    ta.addEventListener('input', () => {
+                        diagAnswers[q.id + '_text'] = ta.value;
+                        taCounter.textContent = `${ta.value.length}/${q.textMax}`;
+                    });
+                }
+            } else if (q.type === 'checkbox') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    const saved = diagAnswers[q.id] || [];
+                    if (saved.includes(opt.value)) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        let arr = diagAnswers[q.id] || [];
+                        if (arr.includes(opt.value)) {
+                            arr = arr.filter(v => v !== opt.value);
+                            btn.classList.remove('selected');
+                        } else {
+                            arr.push(opt.value);
+                            btn.classList.add('selected');
+                        }
+                        diagAnswers[q.id] = arr;
+                        // Show/hide "otro" text field
+                        const otroWrapper = diagOptions.querySelector('#otro-wrapper');
+                        if (otroWrapper) {
+                            otroWrapper.style.display = arr.includes('otro') ? 'block' : 'none';
+                        }
+                    });
+                    diagOptions.appendChild(btn);
+                });
+                // Add "otro" text field (hidden by default)
+                const otroWrapper = document.createElement('div');
+                otroWrapper.id = 'otro-wrapper';
+                otroWrapper.style.display = (diagAnswers[q.id] || []).includes('otro') ? 'block' : 'none';
+                otroWrapper.className = 'mt-3';
+                otroWrapper.innerHTML = `
+                    <label class="block text-sm font-bold mb-2" style="color: var(--heading);">¿Cuál otro problema? (opcional):</label>
+                    <input type="text" id="d3-otro-input" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" placeholder="Describe el otro tipo de problema..." value="${diagAnswers['d3_otro'] || ''}">
+                    <span class="mt-1 block text-xs font-semibold" style="color: var(--text);" id="otro-char-count">${(diagAnswers['d3_otro'] || '').length}/100</span>
+                `;
+                diagOptions.appendChild(otroWrapper);
+                const otroInput = otroWrapper.querySelector('#d3-otro-input');
+                const otroCounter = otroWrapper.querySelector('#otro-char-count');
+                otroInput.addEventListener('input', () => {
+                    diagAnswers['d3_otro'] = otroInput.value;
+                    if (otroCounter) otroCounter.textContent = `${otroInput.value.length}/100`;
+                });
+            } else if (q.type === 'textarea') {
+                const wrapper = document.createElement('div');
+                wrapper.innerHTML = `
+                    <textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 120px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id] || ''}</textarea>
+                    <span class="mt-1 block text-xs font-semibold" style="color: var(--text);" id="diag-char-count">${(diagAnswers[q.id] || '').length}/${q.textMax}</span>
+                `;
+                diagOptions.appendChild(wrapper);
+                const ta = wrapper.querySelector('#diag-text-input');
+                const counter = wrapper.querySelector('#diag-char-count');
+                ta.addEventListener('input', () => {
+                    diagAnswers[q.id] = ta.value;
+                    counter.textContent = `${ta.value.length}/${q.textMax}`;
+                });
+            }
+
+            diagPrev.disabled = currentDiagQuestion === 0;
+            diagNext.textContent = currentDiagQuestion === diagQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        diagPrev.addEventListener('click', () => {
+            if (currentDiagQuestion > 0) {
+                currentDiagQuestion--;
+                renderDiagQuestion();
+            }
+        });
+
+        diagNext.addEventListener('click', () => {
+            const q = diagQuestions[currentDiagQuestion];
+            // Validate: textarea and checkbox are optional, radio is required
+            if ((q.type === 'radio' || q.type === 'radio-text') && !diagAnswers[q.id]) {
+                alert('Por favor selecciona una respuesta antes de continuar.');
+                return;
+            }
+            if (currentDiagQuestion < diagQuestions.length - 1) {
+                currentDiagQuestion++;
+                renderDiagQuestion();
+            } else {
+                showDiagResults();
+            }
+        });
+
+        function showDiagResults() {
+            let summaryHTML = '';
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let checkVals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (checkVals.includes('otro') && diagAnswers['d3_otro']) {
+                        checkVals = checkVals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    }
+                    ansText = checkVals.length > 0 ? checkVals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') {
+                    ansText = ans || 'Sin respuesta';
+                } else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) {
+                        ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                    }
+                }
+                summaryHTML += `
+                    <div class="p-3 rounded-lg" style="background: var(--surface); border: 1px solid var(--line); overflow: hidden;">
+                        <p class="text-xs font-bold mb-1" style="color: var(--accent);">Pregunta ${i + 1}</p>
+                        <p class="text-sm font-bold" style="color: var(--heading);">${q.question}</p>
+                        <p class="mt-1 text-sm" style="color: var(--text); word-break: break-word; white-space: pre-wrap; overflow-wrap: break-word;">${ansText}</p>
+                    </div>
+                `;
+            });
+            diagSummary.innerHTML = summaryHTML;
+            diagBox.classList.add('hidden');
+            diagResults.classList.remove('hidden');
+        }
+
+        diagSaveBtn.addEventListener('click', () => {
+            localStorage.setItem('diagnostico_tema1', JSON.stringify(diagAnswers));
+            diagSaveFeedback.textContent = '✓ Diagnóstico guardado correctamente en este navegador.';
+            diagSaveFeedback.classList.remove('hidden');
+        });
+
+        // Toggle export dropdown
+        const exportDropdown = document.getElementById('export-dropdown');
+        document.getElementById('diag-export').addEventListener('click', (e) => {
+            e.stopPropagation();
+            exportDropdown.classList.toggle('hidden');
+        });
+        document.addEventListener('click', () => exportDropdown.classList.add('hidden'));
+
+        function buildDiagLines() {
+            const lines = [];
+            lines.push('DIAGNÓSTICO DE CONTEXTO ORGANIZACIONAL');
+            lines.push('Gerencia de Talento Humano y Desarrollo Organizacional — Unidad 1, Tema 1');
+            lines.push('Fecha: ' + new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' }));
+            lines.push('='.repeat(60));
+            lines.push('');
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let checkVals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (checkVals.includes('otro') && diagAnswers['d3_otro']) {
+                        checkVals = checkVals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    }
+                    ansText = checkVals.length > 0 ? checkVals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') {
+                    ansText = ans || 'Sin respuesta';
+                } else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) {
+                        ansText += `\n   Descripción: ${diagAnswers[q.id + '_text']}`;
+                    }
+                }
+                lines.push(`Pregunta ${i + 1}: ${q.question}`);
+                lines.push(`Respuesta: ${ansText}`);
+                lines.push('');
+            });
+            lines.push('='.repeat(60));
+            lines.push('Este documento fue generado automáticamente desde el OVA.');
+            return lines;
+        }
+
+        document.getElementById('export-txt').addEventListener('click', () => {
+            const lines = buildDiagLines();
+            const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'diagnostico_contexto_organizacional.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            exportDropdown.classList.add('hidden');
+            diagSaveFeedback.textContent = '✓ Archivo .txt descargado. Puedes adjuntarlo al correo o subirlo a Moodle.';
+            diagSaveFeedback.classList.remove('hidden');
+        });
+
+        document.getElementById('export-word').addEventListener('click', () => {
+            const lines = buildDiagLines();
+            const htmlContent = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                <head><meta charset='utf-8'><title>Diagnóstico</title></head>
+                <body style="font-family: Calibri, sans-serif; font-size: 12pt; line-height: 1.6;">
+                ${lines.map(l => l.startsWith('=') ? `<hr>` : l === '' ? `<br>` : `<p style="margin:4px 0;">${l}</p>`).join('')}
+                </body></html>`;
+            const blob = new Blob(['\ufeff' + htmlContent], { type: 'application/msword;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'diagnostico_contexto_organizacional.doc';
+            a.click();
+            URL.revokeObjectURL(url);
+            exportDropdown.classList.add('hidden');
+            diagSaveFeedback.textContent = '✓ Archivo .doc descargado. Puedes adjuntarlo al correo o subirlo a Moodle.';
+            diagSaveFeedback.classList.remove('hidden');
+        });
+
+        diagRestartBtn.addEventListener('click', () => {
+            currentDiagQuestion = 0;
+            diagAnswers = {};
+            diagBox.classList.remove('hidden');
+            diagResults.classList.add('hidden');
+            diagSaveFeedback.classList.add('hidden');
+            renderDiagQuestion();
+            document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        if (diagBox) {
+            renderDiagQuestion();
+        }
+
+        // Botón Exportar con dropdown para actividades
+        const a1ExportBtn = document.getElementById('a1-export');
+        const a1ExportMenu = document.getElementById('a1-export-menu');
+        if (a1ExportBtn && a1ExportMenu) {
+            a1ExportBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                a1ExportMenu.style.display = a1ExportMenu.style.display === 'none' ? 'block' : 'none';
+            });
+            document.addEventListener('click', () => a1ExportMenu.style.display = 'none');
+        }
+
+        // === MATRIZ DE PRIORIZACIÓN: Guardar, Exportar, Limpiar ===
+        const matrixProblems = [
+            { id: 1, title: 'Alto índice de rotación de personal en áreas clave' },
+            { id: 2, title: 'Baja adopción de metodologías ágiles en gestión de proyectos' },
+            { id: 3, title: 'Sistema de nómina obsoleto y propenso a errores' },
+            { id: 4, title: 'Mejora en comunicación interna entre departamentos' }
+        ];
+
+        // Guardar matriz en localStorage
+        const saveMatrixBtn = document.getElementById('save-matrix-btn');
+        const matrixFeedback = document.getElementById('matrix-feedback');
+        if (saveMatrixBtn) {
+            saveMatrixBtn.addEventListener('click', () => {
+                const data = {};
+                matrixProblems.forEach(p => {
+                    data[p.id] = {
+                        impact: document.querySelector(`select.impact-select[data-problem="${p.id}"]`)?.value || '',
+                        effort: document.querySelector(`select.effort-select[data-problem="${p.id}"]`)?.value || '',
+                        justification: document.getElementById(`justif-${p.id}`)?.value || ''
+                    };
+                });
+                localStorage.setItem('matrixPriorizacionTema1', JSON.stringify(data));
+                if (matrixFeedback) {
+                    matrixFeedback.classList.remove('hidden');
+                    matrixFeedback.innerHTML = '<div style="color: #059669;"><i class="fa-solid fa-check-circle mr-2"></i>¡Tu matriz ha sido guardada correctamente!</div>';
+                    setTimeout(() => matrixFeedback.classList.add('hidden'), 3000);
+                }
+            });
+        }
+
+        // Cargar matriz guardada al iniciar
+        const savedMatrix = localStorage.getItem('matrixPriorizacionTema1');
+        if (savedMatrix) {
+            const data = JSON.parse(savedMatrix);
+            Object.keys(data).forEach(id => {
+                const impactSelect = document.querySelector(`select.impact-select[data-problem="${id}"]`);
+                const effortSelect = document.querySelector(`select.effort-select[data-problem="${id}"]`);
+                const justif = document.getElementById(`justif-${id}`);
+                if (impactSelect) impactSelect.value = data[id].impact;
+                if (effortSelect) effortSelect.value = data[id].effort;
+                if (justif) {
+                    justif.value = data[id].justification;
+                    justif.dispatchEvent(new Event('input'));
+                }
+            });
+        }
+
+        // Dropdown de Exportar matriz
+        const matrixExportBtn = document.getElementById('matrix-export-btn');
+        const matrixExportMenu = document.getElementById('matrix-export-menu');
+        if (matrixExportBtn && matrixExportMenu) {
+            matrixExportBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                matrixExportMenu.style.display = matrixExportMenu.style.display === 'none' ? 'block' : 'none';
+            });
+            document.addEventListener('click', () => matrixExportMenu.style.display = 'none');
+        }
+
+        // Función para exportar matriz
+        function exportMatrix(format) {
+            let content = '';
+            matrixProblems.forEach(p => {
+                const impact = document.querySelector(`select.impact-select[data-problem="${p.id}"]`)?.value || 'No seleccionado';
+                const effort = document.querySelector(`select.effort-select[data-problem="${p.id}"]`)?.value || 'No seleccionado';
+                const justif = document.getElementById(`justif-${p.id}`)?.value || 'Sin justificación';
+                content += `${p.id}. ${p.title}\n   Impacto: ${impact}\n   Esfuerzo: ${effort}\n   Justificación: ${justif}\n\n`;
+            });
+
+            const title = 'Matriz de Priorización de Problemas Organizacionales';
+            const subtitle = 'Gerencia de Talento Humano y Desarrollo Organizacional — Unidad 1, Tema 1';
+            const date = new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            if (format === 'txt') {
+                const blob = new Blob([`${title}\n${subtitle}\nFecha: ${date}\n${'='.repeat(60)}\n\n${content}`], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'matriz_priorizacion.txt';
+                a.click();
+                URL.revokeObjectURL(url);
+            } else if (format === 'word') {
+                const htmlContent = `<html><head><meta charset='utf-8'><title>Matriz</title></head><body style="font-family: Calibri, sans-serif; font-size: 12pt; line-height: 1.6;"><h2>${title}</h2><p><strong>${subtitle}</strong></p><p>Fecha: ${date}</p><hr><p>${content.replace(/\n/g, '<br>')}</p><hr><p><em>Generado desde el OVA</em></p></body></html>`;
+                const blob = new Blob(['\ufeff' + htmlContent], { type: 'application/msword;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'matriz_priorizacion.doc';
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        // Limpiar matriz
+        const resetMatrixBtn = document.getElementById('reset-matrix-btn');
+        if (resetMatrixBtn) {
+            resetMatrixBtn.addEventListener('click', () => {
+                matrixProblems.forEach(p => {
+                    const impactSelect = document.querySelector(`select.impact-select[data-problem="${p.id}"]`);
+                    const effortSelect = document.querySelector(`select.effort-select[data-problem="${p.id}"]`);
+                    const justif = document.getElementById(`justif-${p.id}`);
+                    if (impactSelect) impactSelect.value = '';
+                    if (effortSelect) effortSelect.value = '';
+                    if (justif) {
+                        justif.value = '';
+                        justif.dispatchEvent(new Event('input'));
+                    }
+                });
+                localStorage.removeItem('matrixPriorizacionTema1');
+                if (matrixFeedback) {
+                    matrixFeedback.classList.remove('hidden');
+                    matrixFeedback.innerHTML = '<div style="color: #6b7280;"><i class="fa-solid fa-rotate-right mr-2"></i>El formulario ha sido limpiado.</div>';
+                    setTimeout(() => matrixFeedback.classList.add('hidden'), 3000);
+                }
+            });
+        }
+
+        // Función para exportar texto a Word o TXT
+        function exportText(textareaId, format) {
+            const textarea = document.getElementById(textareaId);
+            if (!textarea) return;
+            const text = textarea.value || '';
+            const title = 'Análisis del Decreto 1330 de 2019';
+            const subtitle = 'Gerencia de Talento Humano y Desarrollo Organizacional — Unidad 1, Tema 1';
+            const date = new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            if (format === 'txt') {
+                const lines = [];
+                lines.push(title);
+                lines.push(subtitle);
+                lines.push('Fecha: ' + date);
+                lines.push('='.repeat(60));
+                lines.push('');
+                lines.push(text || 'Sin contenido');
+                lines.push('');
+                lines.push('='.repeat(60));
+                lines.push('Este documento fue generado automáticamente desde el OVA.');
+                const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'analisis_decreto_1330.txt';
+                a.click();
+                URL.revokeObjectURL(url);
+            } else if (format === 'word') {
+                const htmlContent = `
+                    <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                    <head><meta charset='utf-8'><title>Análisis</title></head>
+                    <body style="font-family: Calibri, sans-serif; font-size: 12pt; line-height: 1.6;">
+                    <h2>${title}</h2>
+                    <p><strong>${subtitle}</strong></p>
+                    <p>Fecha: ${date}</p>
+                    <hr>
+                    <p>${text.replace(/\n/g, '<br>') || 'Sin contenido'}</p>
+                    <hr>
+                    <p><em>Este documento fue generado automáticamente desde el OVA.</em></p>
+                    </body></html>`;
+                const blob = new Blob(['\ufeff' + htmlContent], { type: 'application/msword;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'analisis_decreto_1330.doc';
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+    });
+</script>
+</body>
+</html>
