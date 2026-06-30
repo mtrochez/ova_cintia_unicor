@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3: Modelos y metodologías de formulación de propuestas de intervención</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .flip-card { perspective: 1000px; height: 200px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #4a5568; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .drag-card { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 14px; cursor: grab; transition: all 0.25s ease; }
+        #ova-embed .drag-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(86,145,81,0.15); }
+        #ova-embed .drag-card.dragging { opacity: 0.4; transform: scale(0.95); }
+        #ova-embed .drag-card.placed { opacity: 0.5; pointer-events: none; cursor: default; }
+        #ova-embed .drag-card.correct { border-color: #22c55e; background: #f0fdf4; }
+        #ova-embed .drag-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+        #ova-embed .drop-zone { background: var(--surface-soft); border: 2px dashed var(--line); border-radius: 12px; padding: 12px; min-height: 120px; transition: all 0.25s ease; display: flex; flex-direction: column; }
+        #ova-embed .drop-zone.drag-over { border-color: var(--accent); background: rgba(86,145,81,0.08); box-shadow: 0 0 0 3px rgba(86,145,81,0.15); }
+        #ova-embed .drop-zone-header { text-align: center; font-weight: 700; font-size: 0.8rem; color: #0c7b8a; padding: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        #ova-embed .drop-zone-header i { font-size: 1.2rem; }
+        #ova-embed .drop-zone-content { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        #ova-embed .drop-zone-content .drag-card { font-size: 0.75rem; padding: 8px 10px; }
+        #ova-embed .drop-zone-content .drag-card .text-sm { font-size: 0.7rem; }
+        #ova-embed .drop-zone-content .drag-card .text-xs { font-size: 0.65rem; }
+        #ova-embed .mobile-header { display: none; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .flip-card { height: 180px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCION -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-chess mr-2"></i>Unidad 1 — Tema 3</p>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Modelos y metodologías de formulación de propuestas de intervención</h1>
+                        <p class="text-white/90 text-lg max-w-3xl">Este tema desarrolla competencias para diseñar propuestas de intervención con rigor metodológico, combinando enfoques predictivos, ágiles y de investigación-acción.</p>
+                    </div>
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">Propósito Formativo</h2>
+                        <p class="mt-4 leading-relaxed">Una propuesta de intervención exitosa requiere un diseño metodológico que garantice la rigurosidad en la ejecución. Este tema explora desde los modelos predictivos tradicionales (cascada) hasta los enfoques ágiles y de investigación-acción, permitiendo al especialista elegir el marco que mejor se adapte a la volatilidad del entorno actual y a la complejidad del comportamiento humano en la organización.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Proceso de formulación</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">Fases de la formulación metodológica</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-compass"></i></div>
+                                <h4>Selección</h4>
+                                <p>Elección del enfoque metodológico: predictivo, ágil o híbrido.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-arrows-spin"></i></div>
+                                <h4>Ciclo IA</h4>
+                                <p>Aplicación del ciclo de Investigación-Acción: Planear, Actuar, Observar, Reflexionar.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-file-pen"></i></div>
+                                <h4>Diseño</h4>
+                                <p>Estructuración de la propuesta: justificación, objetivos SMART, marco teórico y cronograma.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-sitemap"></i></div>
+                                <h4>Gobernanza</h4>
+                                <p>Definición de roles, responsabilidades y mecanismos de rendición de cuentas.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-rocket"></i></div>
+                                <h4>Sustentación</h4>
+                                <p>Presentación y aprobación ante directivos con presupuesto y plan de comunicación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-code-branch text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Predictivo vs. Ágil</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Comparación entre el enfoque de Cascada y las Metodologías Ágiles (Scrum, Kanban).</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">La Gestión Híbrida combina la rigurosidad de un plan sólido con la flexibilidad de responder a cambios en tiempo real.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-arrows-spin text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Investigación-Acción</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Ciclo iterativo que disuelve la brecha entre el investigador y el investigado.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Al ser participativo, reduce la resistencia al cambio: los colaboradores se convierten en co-autores de la solución.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-building-shield text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Gobernanza y Estructura</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Definición del modelo operativo: quién decide, qué tecnología se usa y cómo se comunica el progreso.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El especialista actúa como líder que incorpora estrategias para la resiliencia y el crecimiento sostenible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 3</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de diseñar propuestas de intervención con rigor metodológico, seleccionando el enfoque más adecuado según las características del proyecto y definiendo esquemas de gobernanza que garanticen la ejecución efectiva.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-code-branch mr-2" style="color: #17a2b8;"></i>Diferenciar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Las metodologías predictivas de las ágiles, evaluando su aplicabilidad según la definición de los requisitos del proyecto.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-arrows-spin mr-2" style="color: #17a2b8;"></i>Implementar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">El ciclo de la Investigación-Acción (Planear, Actuar, Observar, Reflexionar) como motor de aprendizaje y cambio organizacional.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-building-shield mr-2" style="color: #17a2b8;"></i>Diseñar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Esquemas de gobernanza para la propuesta, definiendo roles, responsabilidades y mecanismos de rendición de cuentas.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres Partes Fundamentales</h2>
+                        <p class="mt-4 leading-relaxed">Este tema desarrolla competencias para diseñar propuestas de intervención con rigor metodológico. Se estructura en tres partes que abordan desde la selección del enfoque metodológico hasta la estructuración y gobernanza de la propuesta.</p>
+                    </div>
+
+                    <!-- Frase de consultor destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"El nuevo estándar es la Gestión Híbrida, que selecciona y combina prácticas según las características específicas de cada proyecto, permitiendo la rigurosidad de un plan sólido con la flexibilidad de responder a cambios en tiempo real."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">Estructura del Tema</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-code-branch mr-2" style="color: #4a5568;"></i>Parte 1: Metodologías Predictivas vs. Ágiles</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">El enfoque tradicional o de Cascada es ideal para intervenciones con requisitos bien definidos y poco cambio esperado, donde cada fase debe completarse antes de pasar a la siguiente. Sin embargo, en la era de la transformación digital, las Metodologías Ágiles (Scrum, Kanban) ganan terreno al ser colaborativas, iterativas y valoran a las personas por encima de los procesos. Para el especialista, el nuevo estándar es la Gestión Híbrida, que selecciona y combina prácticas según las características específicas de cada proyecto, permitiendo la rigurosidad de un plan sólido con la flexibilidad de responder a cambios en tiempo real.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-arrows-spin mr-2" style="color: #4a5568;"></i>Parte 2: El Modelo de Investigación-Acción (IA) en DO</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La Investigación-Acción es una de las metodologías más potentes en Desarrollo Organizacional porque disuelve la brecha entre el investigador y el investigado. Se basa en un ciclo iterativo:</p>
+                                    <ul class="mt-3 space-y-2 text-sm">
+                                        <li><strong>Identificación del problema:</strong> Diagnóstico participativo con los actores involucrados.</li>
+                                        <li><strong>Planificación de la acción:</strong> Diseño colaborativo de estrategias de intervención.</li>
+                                        <li><strong>Implementación:</strong> Ejecución de las acciones planificadas en el contexto real.</li>
+                                        <li><strong>Observación y Reflexión:</strong> Evaluación de resultados y generación de aprendizaje mutuo.</li>
+                                    </ul>
+                                    <p class="text-sm leading-relaxed mt-3">Este enfoque no solo busca resolver un problema técnico, sino generar aprendizaje mutuo y construir conocimiento a través de la experiencia práctica. Al ser participativo, reduce drásticamente la resistencia al cambio, ya que los colaboradores se convierten en co-autores de la solución.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-building-shield mr-2" style="color: #4a5568;"></i>Parte 3: Estructuración y Gobernanza de la Propuesta</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La formulación de la propuesta debe seguir un esquema lógico que incluya: justificación, objetivos (SMART), marco teórico aplicado, cronograma y presupuesto. Es vital definir el Operating Model de la intervención: quién toma las decisiones (gobernanza), qué tecnología habilitadora se usará (IA, Big Data) y cómo se comunicará el progreso a los directivos y equipos. El especialista actúa como un líder que traza hacia dónde quiere ir, incorporando estrategias que aseguren la resiliencia y el crecimiento sostenible de la organización intervenida.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Enfoques Metodológicos - Ruta horizontal -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">📊 Enfoques Metodológicos</h3>
+                        <p class="text-xs mb-2" style="color: #6c757d;">De lo más rígido a lo más flexible: evolución de los enfoques para formular propuestas de intervención.</p>
+                        <div class="consultant-route" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-water"></i></div>
+                                <h4>Cascada</h4>
+                                <p>Fases secuenciales con requisitos definidos y poco cambio esperado.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-bolt"></i></div>
+                                <h4>Ágiles</h4>
+                                <p>Scrum y Kanban: iterativas, colaborativas, centradas en las personas.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-arrows-spin"></i></div>
+                                <h4>Investigación-Acción</h4>
+                                <p>Ciclo participativo: Planear, Actuar, Observar, Reflexionar.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-shuffle"></i></div>
+                                <h4>Gestión Híbrida</h4>
+                                <p>Combina rigurosidad del plan con flexibilidad ante cambios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Dos actividades interactivas para reforzar los conceptos de metodologías y formulación de propuestas de intervención.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-dragdrop">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i> Selección Metodológica
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-proposal">
+                                <i class="fa-solid fa-file-pen"></i> Mini-Propuesta
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Drag & Drop -->
+                        <div class="act-panel active" id="act-dragdrop">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Selección Metodológica</h3>
+                                <p class="text-sm mb-6">Arrastra cada escenario de intervención hacia la metodología más adecuada. Luego verifica tus respuestas.</p>
+
+                                <p class="text-xs font-bold mb-3 uppercase tracking-widest text-slate-500"><i class="fa-solid fa-grip-vertical mr-1"></i>Escenarios (arrastra hacia abajo)</p>
+                                <div id="drag-scenarios" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                                    <div class="drag-card" draggable="true" data-correct="cascada" id="scenario-1">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Escenario 1</p>
+                                                <p class="text-xs mt-1">Implementar un sistema de nómina con requisitos legales fijos y plazos regulatorios definidos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="agil" id="scenario-2">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Escenario 2</p>
+                                                <p class="text-xs mt-1">Rediseñar la experiencia del colaborador en onboarding, ajustando iterativamente según feedback semanal.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="ia" id="scenario-3">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Escenario 3</p>
+                                                <p class="text-xs mt-1">Resolver conflictos de comunicación entre departamentos involucrando a los propios colaboradores como co-investigadores.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="hibrida" id="scenario-4">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Escenario 4</p>
+                                                <p class="text-xs mt-1">Transformar la cultura organizacional con un plan maestro definido pero con sprints de cambio iterativos por área.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="text-xs font-bold mb-3 uppercase tracking-widest text-slate-500"><i class="fa-solid fa-bullseye mr-1"></i>Metodologías (suelta aquí)</p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                                    <div class="drop-zone" data-method="cascada" id="zone-cascada">
+                                        <div class="drop-zone-header"><i class="fa-solid fa-water"></i><span>Cascada</span></div>
+                                        <div class="drop-zone-content"></div>
+                                    </div>
+                                    <div class="drop-zone" data-method="agil" id="zone-agil">
+                                        <div class="drop-zone-header"><i class="fa-solid fa-bolt"></i><span>Ágiles</span></div>
+                                        <div class="drop-zone-content"></div>
+                                    </div>
+                                    <div class="drop-zone" data-method="ia" id="zone-ia">
+                                        <div class="drop-zone-header"><i class="fa-solid fa-arrows-spin"></i><span>Investigación-Acción</span></div>
+                                        <div class="drop-zone-content"></div>
+                                    </div>
+                                    <div class="drop-zone" data-method="hibrida" id="zone-hibrida">
+                                        <div class="drop-zone-header"><i class="fa-solid fa-shuffle"></i><span>Híbrida</span></div>
+                                        <div class="drop-zone-content"></div>
+                                    </div>
+                                </div>
+
+                                <div id="drag-feedback" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
+
+                                <div class="mt-4 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="verifyDragDrop()">
+                                        <i class="fa-solid fa-check-double"></i> Verificar
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="resetDragDrop()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Mini-Propuesta -->
+                        <div class="act-panel" id="act-proposal">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Diseño de Mini-Propuesta</h3>
+                                <p class="text-sm mb-6">Estructura una propuesta básica de intervención organizacional siguiendo el esquema lógico del tema.</p>
+
+                                <div class="space-y-5">
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-tag" style="color: var(--accent);"></i>
+                                            Nombre de la intervención
+                                        </label>
+                                        <input type="text" id="prop-name" maxlength="120" class="w-full p-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);" placeholder="Ej: Programa de mejora del clima laboral en el área comercial">
+                                        <div class="mt-2"><span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="prop-name">0/120</span></div>
+                                    </div>
+
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-file-lines" style="color: var(--accent);"></i>
+                                            Justificación
+                                        </label>
+                                        <textarea id="prop-justification" maxlength="500" class="w-full p-4 rounded-lg border bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line); min-height: 100px;" placeholder="¿Por qué es necesaria esta intervención? ¿Qué problema resuelve?"></textarea>
+                                        <div class="mt-2 flex items-center gap-2">
+                                            <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="prop-justification">0/500</span>
+                                            <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="prop-justification"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-bullseye" style="color: var(--accent);"></i>
+                                            Objetivo SMART
+                                        </label>
+                                        <textarea id="prop-objective" maxlength="300" class="w-full p-4 rounded-lg border bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line); min-height: 80px;" placeholder="Redacta un objetivo Específico, Medible, Alcanzable, Relevante y con Tiempo definido."></textarea>
+                                        <div class="mt-2 flex items-center gap-2">
+                                            <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="prop-objective">0/300</span>
+                                            <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="prop-objective"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-code-branch" style="color: var(--accent);"></i>
+                                            Metodología seleccionada
+                                        </label>
+                                        <select id="prop-methodology" class="w-full p-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-green-600 font-semibold" style="border-color: var(--line);">
+                                            <option value="">— Selecciona una metodología —</option>
+                                            <option value="Cascada (Predictiva)">Cascada (Predictiva)</option>
+                                            <option value="Ágil (Scrum/Kanban)">Ágil (Scrum/Kanban)</option>
+                                            <option value="Investigación-Acción">Investigación-Acción</option>
+                                            <option value="Gestión Híbrida">Gestión Híbrida</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-building-shield" style="color: var(--accent);"></i>
+                                            Esquema de gobernanza
+                                        </label>
+                                        <p class="text-xs mb-3" style="color: #6c757d;">Define roles, responsabilidades y mecanismos de rendición de cuentas.</p>
+                                        <textarea id="prop-governance" maxlength="500" class="w-full p-4 rounded-lg border bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line); min-height: 100px;" placeholder="Ej: Sponsor: Gerente General. Líder del proyecto: Jefe de RRHH. Comité de seguimiento: reuniones quincenales. Informes de avance mensuales a directivos."></textarea>
+                                        <div class="mt-2 flex items-center gap-2">
+                                            <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="prop-governance">0/500</span>
+                                            <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="prop-governance"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 flex flex-wrap gap-3">
+                                    <div class="relative inline-block" id="export-dropdown-prop">
+                                        <button type="button" class="flex items-center gap-2" style="background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer;" onclick="toggleExportMenuProp()">
+                                            <i class="fa-solid fa-download"></i>
+                                            Exportar
+                                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                                        </button>
+                                        <div id="export-menu-prop" class="hidden absolute left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border z-10" style="border-color: var(--line);">
+                                            <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-t-lg" onclick="exportPropToWord()">
+                                                <i class="fa-solid fa-file-word text-blue-600"></i>
+                                                <span>Exportar a Word (.doc)</span>
+                                            </button>
+                                            <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-b-lg" onclick="exportPropToTxt()">
+                                                <i class="fa-solid fa-file-lines text-gray-600"></i>
+                                                <span>Exportar a TXT (.txt)</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="copyPropWork()">
+                                        <i class="fa-solid fa-copy"></i>
+                                        Copiar trabajo
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="clearPropForm()">
+                                        <i class="fa-solid fa-eraser" style="color: var(--accent);"></i>
+                                        Limpiar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 3</h2>
+                        <p class="mt-4 leading-relaxed">Responde las preguntas. Al finalizar podrás ver tu puntaje.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/3</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-summary" class="hidden mt-6">
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--heading);">Resumen</h3>
+                            <div id="summary-content" class="space-y-4"></div>
+                            <div class="mt-6"><button id="quiz-restart" type="button" class="btn-main">Reiniciar</button></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECURSOS -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas de apoyo</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Plataformas de gestión ágil y herramientas de IA para la formulación de propuestas de intervención. Haz clic para acceder o escanea el QR con tu celular.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Trello -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-brands fa-trello" style="color: #0079bf; font-size: 1em;"></i> Trello
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Plataforma Kanban gratuita para gestionar proyectos ágiles. Tableros visuales, listas y tarjetas para organizar tareas e intervenciones.</p>
+                                    <a href="https://trello.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://trello.com/" alt="QR Trello" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Asana -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-list-check" style="color: #f06a6a; font-size: 1em;"></i> Asana
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Gestión de proyectos con vistas Scrum, Kanban y cronograma. Plan gratuito para equipos pequeños. Ideal para planificar sprints de intervención.</p>
+                                    <a href="https://asana.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://asana.com/" alt="QR Asana" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Google Gemini -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-robot" style="color: #4285f4; font-size: 1em;"></i> Google Gemini
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Asistente de IA de Google para estructurar propuestas, redactar justificaciones, formular objetivos SMART y generar cronogramas. Se integra con Google Docs, Sheets y Slides. Accede con tu cuenta institucional de correo de la Universidad de Córdoba.</p>
+                                    <a href="https://gemini.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://gemini.google.com/" alt="QR Gemini" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Notion AI -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-brain" style="color: #000000; font-size: 1em;"></i> Notion AI
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Espacio de trabajo con IA integrada para documentar propuestas, gestionar proyectos con tableros Kanban y generar resúmenes ejecutivos automáticos.</p>
+                                    <a href="https://www.notion.so/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.notion.so/" alt="QR Notion" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliación según la guía del curso.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+                        <!-- Ref 1: Prosci -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Prosci</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Modelos de Gestión del Cambio y ADKAR. (2024)</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.prosci.com/methodology/adkar" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Sitio oficial Prosci
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.prosci.com/methodology/adkar" alt="QR Prosci" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: CUN -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">CUN</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Especialización en Desarrollo Organizacional y Gestión del Talento Humano. (2026)</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://cun.edu.co/especializacion-desarrollo-organizacional-y-gestion-del-talento-humano/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-external-link-alt"></i> Ver recurso
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://cun.edu.co/especializacion-desarrollo-organizacional-y-gestion-del-talento-humano/" alt="QR CUN" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: Lewin -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Lewin, K.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Action Research and Minority Problems. Journal of Social Issues, 2(4), 34–46. (1946)</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://doi.org/10.1111/j.1540-4560.1946.tb02295.x" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-external-link-alt"></i> Ver artículo (DOI)
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://doi.org/10.1111/j.1540-4560.1946.tb02295.x" alt="QR Lewin" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navegación sidebar
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(link.dataset.target).classList.add('active');
+            });
+        });
+
+        // Mobile nav
+        document.getElementById('mobile-nav').addEventListener('change', (e) => {
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(e.target.value).classList.add('active');
+        });
+
+        // Acordeón
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = btn.querySelector('.fa-chevron-down');
+                if (icon) icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Quiz
+        const quizData = [
+            { q: "¿Cuál es la principal ventaja de la Gestión Híbrida frente a los enfoques puramente predictivos o ágiles?", options: ["Elimina por completo la necesidad de planificación", "Combina la rigurosidad de un plan sólido con la flexibilidad de responder a cambios en tiempo real", "Solo funciona en organizaciones pequeñas", "Se basa exclusivamente en metodologías Scrum"], correct: 1 },
+            { q: "¿Cuál es el orden correcto del ciclo de Investigación-Acción (IA) en Desarrollo Organizacional?", options: ["Actuar, Reflexionar, Planear, Observar", "Observar, Planear, Actuar, Reflexionar", "Planear, Actuar, Observar, Reflexionar", "Reflexionar, Observar, Actuar, Planear"], correct: 2 },
+            { q: "¿Qué elemento NO forma parte del esquema de estructuración y gobernanza de una propuesta de intervención?", options: ["Justificación y objetivos SMART", "Definición de quién toma las decisiones (gobernanza)", "Cronograma y presupuesto", "Eliminación de todos los procesos existentes antes de intervenir"], correct: 3 }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        const quizBox = document.getElementById('quiz-box');
+        const quizSummary = document.getElementById('quiz-summary');
+
+        function renderQuiz() {
+            document.getElementById('quiz-title').textContent = `Pregunta ${currentQ + 1}`;
+            document.getElementById('quiz-progress').textContent = `${currentQ + 1}/${quizData.length}`;
+            document.getElementById('quiz-text').textContent = quizData[currentQ].q;
+            const opts = document.getElementById('quiz-options');
+            opts.innerHTML = '';
+            quizData[currentQ].options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = `quiz-option w-full text-left border rounded-lg p-4 transition-all ${answers[currentQ] === i ? 'border-[var(--accent)] bg-[var(--surface-soft)]' : 'border-[var(--line)] hover:bg-[var(--surface-soft)]'}`;
+                btn.innerHTML = `<span class="font-semibold">${String.fromCharCode(65+i)}.</span> ${opt}`;
+                btn.onclick = () => { answers[currentQ] = i; renderQuiz(); };
+                opts.appendChild(btn);
+            });
+            document.getElementById('quiz-prev').disabled = currentQ === 0;
+            document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQ < quizData.length - 1) { currentQ++; renderQuiz(); }
+            else {
+                quizBox.classList.add('hidden');
+                quizSummary.classList.remove('hidden');
+                let correct = 0;
+                let html = '';
+                quizData.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correct++;
+                    html += `<div class="p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}"><p class="font-semibold">${i+1}. ${q.q}</p><p class="text-sm mt-2">Tu respuesta: ${String.fromCharCode(65+answers[i])}. ${q.options[answers[i]]}</p>${!isCorrect ? `<p class="text-sm mt-1 text-green-700">Correcta: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}</p>` : ''}</div>`;
+                });
+                html += `<p class="text-center font-bold text-lg mt-4">Puntuación: ${correct}/${quizData.length} (${Math.round(correct/quizData.length*100)}%)</p>`;
+                document.getElementById('summary-content').innerHTML = html;
+            }
+        });
+
+        document.getElementById('quiz-prev').addEventListener('click', () => { if (currentQ > 0) { currentQ--; renderQuiz(); } });
+        document.getElementById('quiz-restart').addEventListener('click', () => { currentQ = 0; answers = []; quizBox.classList.remove('hidden'); quizSummary.classList.add('hidden'); renderQuiz(); });
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== ACTIVIDAD 1: DRAG & DROP =====
+        let draggedEl = null;
+        const scenarioOrigins = {};
+
+        document.querySelectorAll('.drag-card[draggable]').forEach(card => {
+            card.addEventListener('dragstart', (e) => {
+                draggedEl = card;
+                card.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/plain', card.id);
+            });
+            card.addEventListener('dragend', () => {
+                card.classList.remove('dragging');
+                draggedEl = null;
+                document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('drag-over'));
+            });
+        });
+
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('drag-over'); });
+            zone.addEventListener('dragleave', () => { zone.classList.remove('drag-over'); });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('drag-over');
+                if (!draggedEl) return;
+                const content = zone.querySelector('.drop-zone-content');
+                // Si ya hay una card en esta zona, devuélvela al origen
+                const existing = content.querySelector('.drag-card');
+                if (existing) {
+                    existing.classList.remove('placed');
+                    document.getElementById('drag-scenarios').appendChild(existing);
+                }
+                // Guardar origen y mover
+                scenarioOrigins[draggedEl.id] = zone.dataset.method;
+                draggedEl.classList.add('placed');
+                draggedEl.classList.remove('correct', 'incorrect');
+                content.appendChild(draggedEl);
+            });
+        });
+
+        // También permitir devolver al origen haciendo clic
+        document.getElementById('drag-scenarios').addEventListener('dragover', (e) => e.preventDefault());
+        document.getElementById('drag-scenarios').addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (!draggedEl) return;
+            draggedEl.classList.remove('placed', 'correct', 'incorrect');
+            delete scenarioOrigins[draggedEl.id];
+            document.getElementById('drag-scenarios').appendChild(draggedEl);
+        });
+
+        function verifyDragDrop() {
+            const feedback = document.getElementById('drag-feedback');
+            const allCards = document.querySelectorAll('.drag-card[data-correct]');
+            let correctCount = 0;
+            const explanations = {
+                'scenario-1': 'El sistema de nómina tiene requisitos legales fijos → Cascada es ideal para procesos secuenciales con requisitos definidos.',
+                'scenario-2': 'El onboarding con feedback iterativo semanal → Ágiles permiten ajustar en cada sprint según retroalimentación.',
+                'scenario-3': 'Involucrar colaboradores como co-investigadores → Investigación-Acción disuelve la brecha investigador/investigado.',
+                'scenario-4': 'Plan maestro + sprints iterativos por área → Gestión Híbrida combina rigurosidad con flexibilidad.'
+            };
+
+            allCards.forEach(card => {
+                const correctMethod = card.dataset.correct;
+                const placedIn = scenarioOrigins[card.id];
+                if (placedIn === correctMethod) {
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    correctCount++;
+                } else if (placedIn) {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                }
+            });
+
+            let html = `<p class="font-bold mb-3" style="color: var(--heading);">Resultado: ${correctCount}/4 correctas</p>`;
+            allCards.forEach(card => {
+                const isCorrect = scenarioOrigins[card.id] === card.dataset.correct;
+                html += `<div class="mt-2 p-3 rounded-lg text-xs ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}">
+                    <span class="font-bold">${card.querySelector('.font-bold').textContent}:</span> ${explanations[card.id]}
+                    ${isCorrect ? '<span class="text-green-600 font-bold ml-1">✓</span>' : '<span class="text-red-600 font-bold ml-1">✗</span>'}
+                </div>`;
+            });
+
+            feedback.innerHTML = html;
+            feedback.classList.remove('hidden');
+            feedback.style.background = correctCount === 4 ? '#f0fdf4' : '#fffbeb';
+            feedback.style.border = correctCount === 4 ? '1px solid #bbf7d0' : '1px solid #fde68a';
+        }
+
+        function resetDragDrop() {
+            const container = document.getElementById('drag-scenarios');
+            document.querySelectorAll('.drag-card[data-correct]').forEach(card => {
+                card.classList.remove('placed', 'correct', 'incorrect');
+                container.appendChild(card);
+            });
+            document.querySelectorAll('.drop-zone-content').forEach(c => c.innerHTML = '');
+            document.getElementById('drag-feedback').classList.add('hidden');
+            Object.keys(scenarioOrigins).forEach(k => delete scenarioOrigins[k]);
+        }
+
+        // ===== ACTIVIDAD 2: MINI-PROPUESTA =====
+        // Contadores de caracteres
+        ['prop-name', 'prop-justification', 'prop-objective', 'prop-governance'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', () => {
+                    const len = el.value.length;
+                    const max = el.getAttribute('maxlength');
+                    const counter = document.querySelector(`[data-counter-for="${id}"]`);
+                    const progress = document.querySelector(`[data-progress-for="${id}"]`);
+                    if (counter) counter.textContent = `${len}/${max}`;
+                    if (progress) progress.style.width = `${(len/max)*100}%`;
+                });
+            }
+        });
+
+        function getPropData() {
+            return {
+                name: document.getElementById('prop-name')?.value || '',
+                justification: document.getElementById('prop-justification')?.value || '',
+                objective: document.getElementById('prop-objective')?.value || '',
+                methodology: document.getElementById('prop-methodology')?.value || '',
+                governance: document.getElementById('prop-governance')?.value || ''
+            };
+        }
+
+        function copyPropWork() {
+            const d = getPropData();
+            const text = `MINI-PROPUESTA DE INTERVENCIÓN\n\nNombre: ${d.name}\n\nJustificación:\n${d.justification}\n\nObjetivo SMART:\n${d.objective}\n\nMetodología: ${d.methodology}\n\nEsquema de gobernanza:\n${d.governance}`;
+            navigator.clipboard.writeText(text).then(() => alert('¡Propuesta copiada al portapapeles!'));
+        }
+
+        function toggleExportMenuProp() {
+            document.getElementById('export-menu-prop').classList.toggle('hidden');
+        }
+
+        document.addEventListener('click', (e) => {
+            const dd = document.getElementById('export-dropdown-prop');
+            const menu = document.getElementById('export-menu-prop');
+            if (dd && !dd.contains(e.target)) menu.classList.add('hidden');
+        });
+
+        function exportPropToTxt() {
+            const d = getPropData();
+            const text = `MINI-PROPUESTA DE INTERVENCIÓN - TEMA 3\n\nNOMBRE: ${d.name}\n\nJUSTIFICACIÓN:\n${d.justification}\n\nOBJETIVO SMART:\n${d.objective}\n\nMETODOLOGÍA SELECCIONADA: ${d.methodology}\n\nESQUEMA DE GOBERNANZA:\n${d.governance}\n\n---\nGenerado desde OVA Gerencia del Talento Humano - Tema 3`;
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Mini_Propuesta_${d.name.replace(/\s+/g, '_') || 'Intervencion'}.txt`;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            document.getElementById('export-menu-prop').classList.add('hidden');
+        }
+
+        function exportPropToWord() {
+            const d = getPropData();
+            const html = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                <head><meta charset='utf-8'><title>Mini-Propuesta</title></head>
+                <body>
+                    <h2>Mini-Propuesta de Intervención - Tema 3</h2>
+                    <p><strong>Nombre:</strong> ${d.name}</p>
+                    <h3>Justificación:</h3><p>${d.justification.replace(/\n/g, '<br>')}</p>
+                    <h3>Objetivo SMART:</h3><p>${d.objective.replace(/\n/g, '<br>')}</p>
+                    <p><strong>Metodología seleccionada:</strong> ${d.methodology}</p>
+                    <h3>Esquema de gobernanza:</h3><p>${d.governance.replace(/\n/g, '<br>')}</p>
+                </body></html>`;
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Mini_Propuesta_${d.name.replace(/\s+/g, '_') || 'Intervencion'}.doc`;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            document.getElementById('export-menu-prop').classList.add('hidden');
+        }
+
+        function clearPropForm() {
+            if (confirm('¿Estás seguro de que deseas borrar todo el contenido? Esta acción no se puede deshacer.')) {
+                ['prop-name', 'prop-justification', 'prop-objective', 'prop-governance'].forEach(id => {
+                    document.getElementById(id).value = '';
+                    const counter = document.querySelector(`[data-counter-for="${id}"]`);
+                    const progress = document.querySelector(`[data-progress-for="${id}"]`);
+                    if (counter) counter.textContent = '0/' + document.getElementById(id).getAttribute('maxlength');
+                    if (progress) progress.style.width = '0%';
+                });
+                document.getElementById('prop-methodology').value = '';
+                alert('Formulario limpiado correctamente.');
+            }
+        }
+
+        renderQuiz();
+    </script>
+</body>
+</html>

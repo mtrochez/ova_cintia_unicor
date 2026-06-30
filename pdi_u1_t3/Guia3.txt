@@ -1,0 +1,26 @@
+Tema 3: Modelos y metodologías de formulación de propuestas de intervención
+Introducción:
+Una propuesta de intervención exitosa requiere un diseño metodológico que garantice la rigurosidad en la ejecución. Este subtema explora desde los modelos predictivos tradicionales (cascada) hasta los enfoques ágiles y de investigación-acción, permitiendo al especialista elegir el marco que mejor se adapte a la volatilidad del entorno actual y a la complejidad del comportamiento humano en la organización.
+Objetivos de Aprendizaje:
+1. Diferenciar las metodologías predictivas de las ágiles, evaluando su aplicabilidad según la definición de los requisitos del proyecto.
+2. Implementar el ciclo de la Investigación-Acción (Planear, Actuar, Observar, Reflexionar) como motor de aprendizaje y cambio.
+3. Diseñar esquemas de gobernanza para la propuesta, definiendo roles, responsabilidades y mecanismos de rendición de cuentas.
+Contenido:
+? Parte 1: Metodologías Predictivas vs. Ágiles: El enfoque tradicional o de Cascada es ideal para intervenciones con requisitos bien definidos y poco cambio esperado, donde cada fase debe completarse antes de pasar a la siguiente. Sin embargo, en la era de la transformación digital, las Metodologías Ágiles (Scrum, Kanban) ganan terreno al ser colaborativas, iterativas y valoran a las personas por encima de los procesos. Para el especialista, el nuevo estándar es la Gestión Híbrida, que selecciona y combina prácticas según las características específicas de cada proyecto, permitiendo la rigurosidad de un plan sólido con la flexibilidad de responder a cambios en tiempo real.
+? Parte 2: El Modelo de Investigación-Acción (IA) en DO: La IA es una de las metodologías más potentes en Desarrollo Organizacional porque disuelve la brecha entre el investigador y el investigado. Se basa en un ciclo iterativo: Identificación del problema, Planificación de la acción, Implementación, Observación de resultados y Reflexión crítica. Este enfoque no solo busca resolver un problema técnico, sino generar aprendizaje mutuo y construir conocimiento a través de la experiencia práctica. Al ser participativo, reduce drásticamente la resistencia al cambio, ya que los colaboradores se convierten en co-autores de la solución.
+? Parte 3: Estructuración y Gobernanza de la Propuesta: La formulación de la propuesta debe seguir un esquema lógico que incluya: justificación, objetivos (SMART), marco teórico aplicado, cronograma y presupuesto. Es vital definir el Operating Model de la intervención: quién toma las decisiones (gobernanza), qué tecnología habilitadora se usará (IA, Big Data) y cómo se comunicará el progreso a los directivos y equipos. El especialista actúa como un líder que traza hacia dónde quiere ir, incorporando estrategias que aseguren la resiliencia y el crecimiento sostenible de la organización intervenida.
+Referencias para ampliación:
+? Prosci. (2024). Modelos de Gestión del Cambio y ADKAR.
+? Asana Resources. (2025). Las 12 Metodologías más populares para la Gestión de Proyectos.
+? Lewin, K. (1946). Action Research and Minority Problems. (Sustento del Modelo de Investigación-Acción).
+?  Humanos.
+Integración con Google Docs y Guía para el Estudiante
+Este material de la Unidad 01 sirve como base documental para la construcción del Anteproyecto de Grado.
+Actividades Sugeridas en el Aula Virtual:
+1. Taller de Mapeo: El estudiante debe diagramar un proceso administrativo actual de su organización usando la simbología BPMN básica.
+2. Laboratorio de Priorización: Uso de una hoja de cálculo para calificar tres problemas identificados bajo los criterios de Alcance, Gravedad y Urgencia.
+3. Foro Normativo: Debate sobre las implicaciones del Decreto 1330 en el rigor de los trabajos de grado de especialización en Colombia.
+Este diseño pedagógico asegura que el estudiante de la Universidad de Córdoba inicie su proyecto de intervención con un sustento teórico sólido, un método probado y una visión estratégica de alto nivel.
+Fuentes citadas
+1. Especialización en Desarrollo Organizacional y Gestión del Talento Humano - CUN, acceso: abril 12, 2026, https://cun.edu.co/especializacion-desarrollo-organizacional-y-gestion-del-talento-humano/
+2. Especialización en gerencia de talento humano en Montería - UCC, acceso: abril 12, 2026, https://ucc.edu.co/programas/posgrados/Paginas/monteria/especializacion-en-gerencia-del-talento-humano-monteria.aspx
