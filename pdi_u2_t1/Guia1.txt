@@ -1,0 +1,34 @@
+Unidad 02: Plan de Intervención Organizacional - OD Intervention
+La Unidad 02 constituye el núcleo operativo del curso. Una vez identificado el problema en la unidad anterior, el especialista debe proceder al diseño detallado de la intervención. Bajo la perspectiva del Desarrollo Organizacional (DO), intervenir no es imponer una solución, sino facilitar un proceso de cambio sistémico que incremente la efectividad y el bienestar de la organización. Este material aborda la orquestación entre cultura, estructura y procesos, preparando al líder para actuar como un consultor estratégico de alto impacto en entornos volátiles y dinámicos.
+
+
+Tema 1: Comprensión de las Intervenciones en Cultura y estructuras Organizacionales
+
+Introducción:
+Las intervenciones de DO se clasifican según el nivel de profundidad y el subsistema que pretenden afectar. En 2025, la distinción entre cultura (el "software" de la empresa) y estructura (el "hardware") se vuelve más porosa. El especialista debe comprender que cambiar un organigrama sin transformar las creencias compartidas es un ejercicio estéril. Este subtema explora la tipología de intervenciones propuesta por Cummings y Worley, centrándose en cómo la estructura debe estar al servicio de una cultura de innovación y agilidad.
+Objetivos de Aprendizaje:
+1. Clasificar las intervenciones de DO en tecnoestructurales, de procesos humanos y estratégicas, evaluando su nivel de impacto organizacional.
+2. Analizar la interdependencia entre la arquitectura formal de la organización y los patrones culturales implícitos.
+3. Diseñar planes de intervención integral que coordinen cambios en el diseño del trabajo con la evolución de la identidad corporativa.
+Contenido:
+? Parte 1: Tipología de Intervenciones de Cummings y Worley: Las intervenciones se agrupan en cuatro grandes categorías: 1) Procesos Humanos (comunicación, toma de decisiones, resolución de conflictos); 2) Tecnoestructurales (rediseño de puestos, estructuras organizativas, calidad total); 3) Gestión del Talento Humano (sistemas de recompensas, planes de carrera); y 4) Estratégicas (cultura organizacional, fusiones, alianzas). Para el especialista, el reto consiste en seleccionar el "mix" de intervenciones adecuado: una empresa con problemas de productividad puede requerir tanto un rediseño de procesos (tecnoestructural) como un taller de integración de equipos (proceso humano) para que la mejora sea sostenible y aceptada por las personas.
+? Parte 2: Intervenciones Tecnoestructurales y Eficiencia Operativa: Estas intervenciones se enfocan en mejorar la efectividad mediante la reorganización de los recursos físicos y humanos. En 2025, el rediseño del Operating Model es una prioridad para reducir la burocracia. Esto incluye la implementación de estructuras planas, el diseño de trabajos basados en misiones estratégicas y no solo en tareas repetitivas, y la integración de tecnología organizacional que optimice los flujos de decisión. El especialista debe ser capaz de justificar estos cambios no solo como ahorros de costos, sino como facilitadores de la "velocidad de negocio", permitiendo que la organización responda con mayor rapidez a las demandas del mercado.
+? Parte 3: Intervenciones en el Tejido Cultural: La cultura organizacional es el conjunto de valores, normas y supuestos que guían la conducta de los miembros. Intervenir en la cultura requiere "deshacer" hábitos profundamente arraigados para anclar nuevos comportamientos. Para el especialista de la Universidad de Córdoba, esto implica promover una cultura inclusiva que celebre la diversidad cultural, generacional y de género como factores diferenciadores. Las intervenciones culturales modernas utilizan narrativas compartidas y espacios de co-creación para que el colaborador se convierta en protagonista de la transformación, asegurando que los valores declarados coincidan con la práctica diaria en todos los niveles del sistema.
+Referencias para ampliación:
+? Cummings, T. G., & Worley, C. G. (2014). Organization Development and Change. Cengage Learning.
+? Burke, W. W. (1994). Organization Development: A Process of Learning and Changing.
+? GSH Blog. (2024). Diagnóstico Organizacional: Métodos y Técnicas.
+? Asana Resources. (2025). Desarrollo Organizacional: Guía de Intervenciones.
+
+-------------------------------------------------------------------------------------------------- 
+Integración con Google Docs y Guía Práctica
+Este material de la Unidad 02 sirve como guía técnica para el desarrollo del Cuerpo de la Propuesta de Intervención.
+Actividades Sugeridas en el Aula Virtual:
+1. Simulacro de Diseño Organizacional: El estudiante debe proponer una red de equipos autónomos para una unidad funcional de su empresa, eliminando un nivel jerárquico.
+2. Taller de Gestión del Cambio: Creación de un plan de comunicación de 5 hitos para una transformación digital basada en los primeros 4 pasos de Kotter.
+3. Análisis de Caso (Argyris): Identificar un caso de "aprendizaje de bucle simple" en su entorno laboral y proponer la intervención para convertirlo en "bucle doble".
+Este diseño asegura que el especialista de la Universidad de Córdoba no solo aprenda conceptos, sino que adquiera las destrezas operativas y humanas para transformar positivamente sus organizaciones.
+
+
+Plan de Intervención Organizacional – OD Intervention
+AutorTítuloEnlace de accesoPartin, J. J.Perspectivas del desarrollo organizacional[Google Scholar]Salazar Palacios, J. M.Desarrollo organizacional: guía de capacitación[Google Scholar]Castillo Aponte, J.El desarrollo organizacional en Colombia[Google Scholar]Reinoso Lastra, J. F.Empresas del Tolima: enfoque histórico DO[Google Scholar]
