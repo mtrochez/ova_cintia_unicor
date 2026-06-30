@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Herramientas de diagnóstico para la revisión de métodos y procedimientos</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .flip-card { perspective: 1000px; height: 200px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #4a5568; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .drag-card { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 14px; cursor: grab; transition: all 0.25s ease; }
+        #ova-embed .drag-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(86,145,81,0.15); }
+        #ova-embed .drag-card.dragging { opacity: 0.4; transform: scale(0.95); }
+        #ova-embed .drag-card.placed { opacity: 0.5; pointer-events: none; cursor: default; }
+        #ova-embed .drag-card.correct { border-color: #22c55e; background: #f0fdf4; }
+        #ova-embed .drag-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+        #ova-embed .drop-zone { background: var(--surface-soft); border: 2px dashed var(--line); border-radius: 12px; padding: 12px; min-height: 120px; transition: all 0.25s ease; display: flex; flex-direction: column; }
+        #ova-embed .drop-zone.drag-over { border-color: var(--accent); background: rgba(86,145,81,0.08); box-shadow: 0 0 0 3px rgba(86,145,81,0.15); }
+        #ova-embed .drop-zone-header { text-align: center; font-weight: 700; font-size: 0.8rem; color: #0c7b8a; padding: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        #ova-embed .drop-zone-header i { font-size: 1.2rem; }
+        #ova-embed .drop-zone-content { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        #ova-embed .drop-zone-content .drag-card { font-size: 0.75rem; padding: 8px 10px; }
+        #ova-embed .drop-zone-content .drag-card .text-sm { font-size: 0.7rem; }
+        #ova-embed .drop-zone-content .drag-card .text-xs { font-size: 0.65rem; }
+        #ova-embed .mobile-header { display: none; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .flip-card { height: 180px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCION -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-stethoscope mr-2"></i>Unidad 1 — Tema 4</p>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Herramientas de diagnóstico para la revisión de métodos y procedimientos</h1>
+                        <p class="text-white/90 text-lg max-w-3xl">Este tema profundiza en herramientas funcionales y culturales que permiten realizar una radiografía precisa de la organización antes de proponer cualquier cambio.</p>
+                    </div>
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">Propósito Formativo</h2>
+                        <p class="mt-4 leading-relaxed">El diagnóstico organizacional es un proceso analítico que permite conocer la situación real de la empresa en un momento dado para descubrir problemas y áreas de oportunidad. Este tema profundiza en herramientas funcionales y culturales, permitiendo al especialista realizar una "radiografía" precisa del sistema antes de proponer cualquier cambio, basándose en la interdependencia de los subsistemas organizacionales.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Proceso de diagnóstico</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">Fases del diagnóstico organizacional</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <h4>Exploración</h4>
+                                <p>Identificación de subsistemas y su interacción dentro de la organización.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-clipboard-list"></i></div>
+                                <h4>Recolección</h4>
+                                <p>Aplicación de cuestionarios, entrevistas y análisis de redes de comunicación.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-diagram-project"></i></div>
+                                <h4>Análisis</h4>
+                                <p>Uso de marcos estratégicos: 7S de McKinsey, Ishikawa, Pareto.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-flask-vial"></i></div>
+                                <h4>Validación</h4>
+                                <p>Pruebas piloto y análisis de fiabilidad (Alpha de Cronbach).</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-file-medical"></i></div>
+                                <h4>Informe</h4>
+                                <p>Presentación de hallazgos basados en datos probados, no en supuestos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-hospital text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Funcional vs. Cultural</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">El funcional mide "qué se hace y cómo"; el cultural explica "por qué se hace".</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Ambos enfoques son complementarios y permiten predecir la resistencia a nuevas intervenciones.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-diagram-project text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Marcos Estratégicos</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">7S de McKinsey, Ishikawa y Pareto para un análisis sistémico de la organización.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Priorizan los "pocos vitales" frente a los "muchos triviales" en productividad y satisfacción laboral.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-flask-vial text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Validación Rigurosa</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Pruebas piloto, expertos y Alpha de Cronbach para garantizar objetividad.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Protege al especialista de los "supuestos automatistas" y los "supuestos conspirativos".</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 4</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de ejecutar diagnósticos organizacionales rigurosos utilizando herramientas funcionales, culturales y marcos de análisis estratégico, validando sus instrumentos para garantizar la objetividad de los hallazgos.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-magnifying-glass-chart mr-2" style="color: #17a2b8;"></i>Ejecutar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Diagnósticos funcionales y culturales utilizando técnicas de recolección de información desde el cliente y el consultor.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-diagram-project mr-2" style="color: #17a2b8;"></i>Aplicar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Marcos de análisis estratégicos como las 7S de McKinsey y el Diagrama de Ishikawa para identificar causas raíz de desalineación.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-flask-vial mr-2" style="color: #17a2b8;"></i>Validar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Las herramientas de diagnóstico mediante pruebas piloto y análisis de fiabilidad para garantizar la objetividad de los hallazgos.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres Partes Fundamentales</h2>
+                        <p class="mt-4 leading-relaxed">Este tema desarrolla competencias para ejecutar diagnósticos organizacionales rigurosos. Se estructura en tres partes que abordan desde los enfoques funcional y cultural hasta la validación metodológica de las herramientas de diagnóstico.</p>
+                    </div>
+
+                    <!-- Frase de consultor destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"El diagnóstico no debe ser una lista de quejas, sino un análisis sistémico de las variables que influyen en la productividad y la satisfacción laboral, basado en datos probados y no en rumores institucionales."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">Estructura del Tema</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-hospital mr-2" style="color: #4a5568;"></i>Parte 1: Enfoques del Diagnóstico — Funcional vs. Cultural</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">El Diagnóstico Funcional examina las estructuras de comunicación, la eficiencia de los procesos, la producción y la satisfacción del personal. Utiliza técnicas estructuradas como cuestionarios de gran escala, entrevistas detalladas y análisis de redes de comunicación.</p>
+                                    <p class="text-sm leading-relaxed mt-3">Por otro lado, el Diagnóstico Cultural busca descubrir los valores, creencias y principios compartidos que guían el comportamiento organizacional. Ambas perspectivas son complementarias: mientras lo funcional mide "qué se hace y cómo", lo cultural explica "por qué se hace" y permite predecir la resistencia a nuevas intervenciones.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-diagram-project mr-2" style="color: #4a5568;"></i>Parte 2: Marcos de Análisis Estratégico</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">El especialista debe dominar herramientas que permitan ver la organización como un todo interdependiente. El 7S Framework de McKinsey es fundamental para analizar la alineación entre siete dimensiones clave:</p>
+                                    <ul class="mt-3 space-y-2 text-sm">
+                                        <li><strong>Strategy (Estrategia):</strong> Dirección y prioridades competitivas.</li>
+                                        <li><strong>Structure (Estructura):</strong> Organigrama y líneas de reporte.</li>
+                                        <li><strong>Systems (Sistemas):</strong> Procesos y flujos de trabajo.</li>
+                                        <li><strong>Shared Values (Valores compartidos):</strong> Cultura y creencias centrales.</li>
+                                        <li><strong>Skills (Habilidades):</strong> Competencias del equipo.</li>
+                                        <li><strong>Style (Estilo):</strong> Liderazgo y comportamiento gerencial.</li>
+                                        <li><strong>Staff (Personal):</strong> Talento y capacidades humanas.</li>
+                                    </ul>
+                                    <p class="text-sm leading-relaxed mt-3">Complementariamente, el Diagrama de Ishikawa (Causa-Efecto) y el Análisis de Pareto facilitan la priorización de los "pocos vitales" frente a los "muchos triviales". Estos marcos aseguran que el diagnóstico sea un análisis sistémico y no una lista de quejas.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-flask-vial mr-2" style="color: #4a5568;"></i>Parte 3: Diseño y Validación de Herramientas de Diagnóstico</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">Para que el diagnóstico tenga validez académica, el especialista debe seguir un proceso riguroso:</p>
+                                    <ul class="mt-3 space-y-2 text-sm">
+                                        <li><strong>1. Identificar subsistemas:</strong> Mapear la interacción entre áreas con enfoque de sistemas.</li>
+                                        <li><strong>2. Generar ítems:</strong> Construir el listado de preguntas o indicadores a medir.</li>
+                                        <li><strong>3. Validar con expertos:</strong> Someter los instrumentos a juicio de especialistas y realizar pruebas piloto.</li>
+                                        <li><strong>4. Analizar fiabilidad:</strong> Aplicar Alpha de Cronbach u otras métricas de consistencia interna.</li>
+                                    </ul>
+                                    <p class="text-sm leading-relaxed mt-3">Este rigor metodológico protege al especialista de los "supuestos automatistas" (pensar que un curso lo solucionará todo) y de los "supuestos conspirativos", permitiendo que la intervención se base en datos probados y no en rumores institucionales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Herramientas de Diagnóstico - Ruta horizontal -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">📊 Herramientas de Diagnóstico</h3>
+                        <p class="text-xs mb-2" style="color: #6c757d;">Del análisis individual al sistémico: herramientas clave para el diagnóstico organizacional.</p>
+                        <div class="consultant-route" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-clipboard-question"></i></div>
+                                <h4>Cuestionarios</h4>
+                                <p>Escalas estandarizadas para medir clima, satisfacción y comunicación.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-fish-fins"></i></div>
+                                <h4>Ishikawa</h4>
+                                <p>Diagrama causa-efecto para identificar raíces de los problemas.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-layer-group"></i></div>
+                                <h4>7S McKinsey</h4>
+                                <p>Alineación de 7 dimensiones: estrategia, estructura, sistemas, valores, habilidades, estilo, personal.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-chart-bar"></i></div>
+                                <h4>Pareto</h4>
+                                <p>Priorización 80/20: los pocos vitales frente a los muchos triviales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Dos actividades interactivas para reforzar los conceptos de diagnóstico organizacional y priorización de problemas.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-dragdrop">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i> Funcional vs. Cultural
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-priority">
+                                <i class="fa-solid fa-ranking-star"></i> Laboratorio de Priorización
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Drag & Drop Funcional vs Cultural -->
+                        <div class="act-panel active" id="act-dragdrop">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Clasificación: Funcional vs. Cultural</h3>
+                                <p class="text-sm mb-6">Arrastra cada técnica o herramienta hacia el tipo de diagnóstico al que pertenece. Luego verifica tus respuestas.</p>
+
+                                <p class="text-xs font-bold mb-3 uppercase tracking-widest text-slate-500"><i class="fa-solid fa-grip-vertical mr-1"></i>Técnicas (arrastra hacia abajo)</p>
+                                <div id="drag-scenarios" class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                                    <div class="drag-card" draggable="true" data-correct="funcional" id="scenario-1">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Técnica 1</p>
+                                                <p class="text-xs mt-1">Cuestionarios de gran escala para medir satisfacción del personal y eficiencia de procesos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="cultural" id="scenario-2">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Técnica 2</p>
+                                                <p class="text-xs mt-1">Entrevistas en profundidad para descubrir valores, creencias y principios compartidos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="funcional" id="scenario-3">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Técnica 3</p>
+                                                <p class="text-xs mt-1">Análisis de redes de comunicación formal entre departamentos y líneas de reporte.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="cultural" id="scenario-4">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Técnica 4</p>
+                                                <p class="text-xs mt-1">Observación participante de rituales, símbolos y normas no escritas del comportamiento organizacional.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="funcional" id="scenario-5">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Técnica 5</p>
+                                                <p class="text-xs mt-1">Medición de indicadores de producción, tiempos de respuesta y volumen de quejas internas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="drag-card" draggable="true" data-correct="cultural" id="scenario-6">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fa-solid fa-grip-vertical text-slate-400"></i>
+                                            <div>
+                                                <p class="font-bold text-sm" style="color: var(--heading);">Técnica 6</p>
+                                                <p class="text-xs mt-1">Grupos focales para explorar la resistencia al cambio y las narrativas informales del equipo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="text-xs font-bold mb-3 uppercase tracking-widest text-slate-500"><i class="fa-solid fa-bullseye mr-1"></i>Tipo de diagnóstico (suelta aquí)</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                                    <div class="drop-zone" data-method="funcional" id="zone-funcional">
+                                        <div class="drop-zone-header"><i class="fa-solid fa-gears"></i><span>Diagnóstico Funcional</span></div>
+                                        <div class="drop-zone-content"></div>
+                                    </div>
+                                    <div class="drop-zone" data-method="cultural" id="zone-cultural">
+                                        <div class="drop-zone-header"><i class="fa-solid fa-people-group"></i><span>Diagnóstico Cultural</span></div>
+                                        <div class="drop-zone-content"></div>
+                                    </div>
+                                </div>
+
+                                <div id="drag-feedback" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
+
+                                <div class="mt-4 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="verifyDragDrop()">
+                                        <i class="fa-solid fa-check-double"></i> Verificar
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="resetDragDrop()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Laboratorio de Priorización -->
+                        <div class="act-panel" id="act-priority">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Laboratorio de Priorización</h3>
+                                <p class="text-sm mb-6">Ingresa 3 problemas identificados en tu organización y califícalos con los criterios de Alcance, Gravedad y Urgencia (1 a 5). El sistema calculará la prioridad automáticamente.</p>
+
+                                <div class="space-y-5">
+                                    <!-- Problema 1 -->
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i>
+                                            Problema 1
+                                        </label>
+                                        <input type="text" id="prob-1-name" maxlength="150" class="w-full p-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-green-600 mb-3" style="border-color: var(--line);" placeholder="Describe el problema identificado">
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Alcance (1-5)</label>
+                                                <input type="number" id="prob-1-alcance" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Gravedad (1-5)</label>
+                                                <input type="number" id="prob-1-gravedad" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Urgencia (1-5)</label>
+                                                <input type="number" id="prob-1-urgencia" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Problema 2 -->
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i>
+                                            Problema 2
+                                        </label>
+                                        <input type="text" id="prob-2-name" maxlength="150" class="w-full p-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-green-600 mb-3" style="border-color: var(--line);" placeholder="Describe el problema identificado">
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Alcance (1-5)</label>
+                                                <input type="number" id="prob-2-alcance" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Gravedad (1-5)</label>
+                                                <input type="number" id="prob-2-gravedad" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Urgencia (1-5)</label>
+                                                <input type="number" id="prob-2-urgencia" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Problema 3 -->
+                                    <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                        <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);">
+                                            <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i>
+                                            Problema 3
+                                        </label>
+                                        <input type="text" id="prob-3-name" maxlength="150" class="w-full p-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-green-600 mb-3" style="border-color: var(--line);" placeholder="Describe el problema identificado">
+                                        <div class="grid grid-cols-3 gap-3">
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Alcance (1-5)</label>
+                                                <input type="number" id="prob-3-alcance" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Gravedad (1-5)</label>
+                                                <input type="number" id="prob-3-gravedad" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                            <div>
+                                                <label class="text-xs font-bold block mb-1" style="color: #6c757d;">Urgencia (1-5)</label>
+                                                <input type="number" id="prob-3-urgencia" min="1" max="5" class="w-full p-2 rounded-lg border bg-white text-center font-bold focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Resultado de priorización -->
+                                <div id="priority-result" class="hidden mt-6 p-5 rounded-xl border-2" style="border-color: var(--accent); background: white;">
+                                    <h4 class="font-bold mb-3" style="color: var(--heading);"><i class="fa-solid fa-chart-bar mr-2" style="color: var(--accent);"></i>Tabla de Priorización</h4>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-sm border-collapse">
+                                            <thead>
+                                                <tr style="background: var(--surface-soft);">
+                                                    <th class="p-3 text-left font-bold border" style="border-color: var(--line);">Prioridad</th>
+                                                    <th class="p-3 text-left font-bold border" style="border-color: var(--line);">Problema</th>
+                                                    <th class="p-3 text-center font-bold border" style="border-color: var(--line);">Alcance</th>
+                                                    <th class="p-3 text-center font-bold border" style="border-color: var(--line);">Gravedad</th>
+                                                    <th class="p-3 text-center font-bold border" style="border-color: var(--line);">Urgencia</th>
+                                                    <th class="p-3 text-center font-bold border" style="border-color: var(--line);">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="priority-table-body"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="calculatePriority()">
+                                        <i class="fa-solid fa-calculator"></i> Calcular prioridad
+                                    </button>
+                                    <div class="relative inline-block" id="export-dropdown-priority">
+                                        <button type="button" class="flex items-center gap-2" style="background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer;" onclick="toggleExportMenuPriority()">
+                                            <i class="fa-solid fa-download"></i>
+                                            Exportar
+                                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                                        </button>
+                                        <div id="export-menu-priority" class="hidden absolute left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border z-10" style="border-color: var(--line);">
+                                            <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-t-lg" onclick="exportPriorityToWord()">
+                                                <i class="fa-solid fa-file-word text-blue-600"></i>
+                                                <span>Exportar a Word (.doc)</span>
+                                            </button>
+                                            <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-b-lg" onclick="exportPriorityToTxt()">
+                                                <i class="fa-solid fa-file-lines text-gray-600"></i>
+                                                <span>Exportar a TXT (.txt)</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="clearPriorityForm()">
+                                        <i class="fa-solid fa-eraser" style="color: var(--accent);"></i>
+                                        Limpiar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 4</h2>
+                        <p class="mt-4 leading-relaxed">Responde las preguntas. Al finalizar podrás ver tu puntaje.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/3</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-summary" class="hidden mt-6">
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--heading);">Resumen</h3>
+                            <div id="summary-content" class="space-y-4"></div>
+                            <div class="mt-6"><button id="quiz-restart" type="button" class="btn-main">Reiniciar</button></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECURSOS -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas de apoyo</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Herramientas digitales para ejecutar diagnósticos organizacionales, construir diagramas de análisis y validar instrumentos. Haz clic para acceder o escanea el QR con tu celular.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Google Forms -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-brands fa-google" style="color: #673ab7; font-size: 1em;"></i> Google Forms
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Para diseñar encuestas de diagnóstico funcional (clima laboral, satisfacción, comunicación). Exporta respuestas a Sheets para análisis. Accede con tu cuenta institucional de la Universidad de Córdoba.</p>
+                                    <a href="https://docs.google.com/forms/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://docs.google.com/forms/" alt="QR Google Forms" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Lucidchart -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-diagram-project" style="color: #f96b13; font-size: 1em;"></i> Lucidchart
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Para construir Diagramas de Ishikawa (causa-efecto) y mapear procesos organizacionales. Incluye plantillas prediseñadas de espina de pescado y diagramas de flujo. Plan gratuito para estudiantes.</p>
+                                    <a href="https://www.lucidchart.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.lucidchart.com/" alt="QR Lucidchart" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Miro -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-object-group" style="color: #ffd02f; font-size: 1em;"></i> Miro
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Para mapear las 7S de McKinsey en un lienzo colaborativo. Pizarra digital con plantillas de marcos estratégicos, análisis de Pareto y mapas de stakeholders. Ideal para trabajo en equipo en tiempo real.</p>
+                                    <a href="https://miro.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://miro.com/" alt="QR Miro" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Google Gemini -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-robot" style="color: #4285f4; font-size: 1em;"></i> Google Gemini
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Para analizar resultados de diagnóstico, generar interpretaciones de datos cualitativos, redactar informes de hallazgos y sugerir categorías de análisis cultural. Accede con tu cuenta institucional de correo de la Universidad de Córdoba.</p>
+                                    <a href="https://gemini.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir herramienta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://gemini.google.com/" alt="QR Gemini" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliación según la guía del curso.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+                        <!-- Ref 1: GSH Blog -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">GSH Blog</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Diagnóstico Organizacional: Métodos y Técnicas. (2024)</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.gsh.com.co/blog/diagnostico-organizacional/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver artículo
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.gsh.com.co/blog/diagnostico-organizacional/" alt="QR GSH" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Ferrari -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Ferrari, L. E.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">El uso de herramientas de diagnóstico organizacional. (2004)</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.redalyc.org/articulo.oa?id=369139941007" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-external-link-alt"></i> Ver en Redalyc
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.redalyc.org/articulo.oa?id=369139941007" alt="QR Ferrari" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: McKinsey -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">McKinsey & Co.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">The 7S Framework: A Strategic Assessment Tool. (2025)</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-external-link-alt"></i> Ver en McKinsey
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/enduring-ideas-the-7-s-framework" alt="QR McKinsey" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navegación sidebar
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(link.dataset.target).classList.add('active');
+            });
+        });
+
+        // Mobile nav
+        document.getElementById('mobile-nav').addEventListener('change', (e) => {
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(e.target.value).classList.add('active');
+        });
+
+        // Acordeón
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = btn.querySelector('.fa-chevron-down');
+                if (icon) icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Quiz
+        const quizData = [
+            { q: "¿Cuál es la diferencia principal entre el Diagnóstico Funcional y el Diagnóstico Cultural?", options: ["El funcional mide 'qué se hace y cómo'; el cultural explica 'por qué se hace'", "El funcional se centra en valores y el cultural en procesos", "No existe diferencia, ambos miden lo mismo", "El cultural solo se aplica en empresas internacionales"], correct: 0 },
+            { q: "¿Cuáles son las 7 dimensiones del Framework 7S de McKinsey?", options: ["Estrategia, Estructura, Sistemas, Valores compartidos, Habilidades, Estilo y Personal", "Planeación, Organización, Dirección, Control, Evaluación, Retroalimentación y Cierre", "Diagnóstico, Análisis, Diseño, Implementación, Evaluación, Ajuste y Cierre", "Misión, Visión, Objetivos, Metas, Indicadores, Procesos y Resultados"], correct: 0 },
+            { q: "¿Qué instrumento estadístico se utiliza para analizar la fiabilidad de las herramientas de diagnóstico organizacional?", options: ["Análisis de Pareto", "Diagrama de Ishikawa", "Alpha de Cronbach", "Matriz DOFA"], correct: 2 }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        const quizBox = document.getElementById('quiz-box');
+        const quizSummary = document.getElementById('quiz-summary');
+
+        function renderQuiz() {
+            document.getElementById('quiz-title').textContent = `Pregunta ${currentQ + 1}`;
+            document.getElementById('quiz-progress').textContent = `${currentQ + 1}/${quizData.length}`;
+            document.getElementById('quiz-text').textContent = quizData[currentQ].q;
+            const opts = document.getElementById('quiz-options');
+            opts.innerHTML = '';
+            quizData[currentQ].options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = `quiz-option w-full text-left border rounded-lg p-4 transition-all ${answers[currentQ] === i ? 'border-[var(--accent)] bg-[var(--surface-soft)]' : 'border-[var(--line)] hover:bg-[var(--surface-soft)]'}`;
+                btn.innerHTML = `<span class="font-semibold">${String.fromCharCode(65+i)}.</span> ${opt}`;
+                btn.onclick = () => { answers[currentQ] = i; renderQuiz(); };
+                opts.appendChild(btn);
+            });
+            document.getElementById('quiz-prev').disabled = currentQ === 0;
+            document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQ < quizData.length - 1) { currentQ++; renderQuiz(); }
+            else {
+                quizBox.classList.add('hidden');
+                quizSummary.classList.remove('hidden');
+                let correct = 0;
+                let html = '';
+                quizData.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correct++;
+                    html += `<div class="p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}"><p class="font-semibold">${i+1}. ${q.q}</p><p class="text-sm mt-2">Tu respuesta: ${String.fromCharCode(65+answers[i])}. ${q.options[answers[i]]}</p>${!isCorrect ? `<p class="text-sm mt-1 text-green-700">Correcta: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}</p>` : ''}</div>`;
+                });
+                html += `<p class="text-center font-bold text-lg mt-4">Puntuación: ${correct}/${quizData.length} (${Math.round(correct/quizData.length*100)}%)</p>`;
+                document.getElementById('summary-content').innerHTML = html;
+            }
+        });
+
+        document.getElementById('quiz-prev').addEventListener('click', () => { if (currentQ > 0) { currentQ--; renderQuiz(); } });
+        document.getElementById('quiz-restart').addEventListener('click', () => { currentQ = 0; answers = []; quizBox.classList.remove('hidden'); quizSummary.classList.add('hidden'); renderQuiz(); });
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== ACTIVIDAD 1: DRAG & DROP =====
+        let draggedEl = null;
+        const scenarioOrigins = {};
+
+        document.querySelectorAll('.drag-card[draggable]').forEach(card => {
+            card.addEventListener('dragstart', (e) => {
+                draggedEl = card;
+                card.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/plain', card.id);
+            });
+            card.addEventListener('dragend', () => {
+                card.classList.remove('dragging');
+                draggedEl = null;
+                document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('drag-over'));
+            });
+        });
+
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('drag-over'); });
+            zone.addEventListener('dragleave', () => { zone.classList.remove('drag-over'); });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('drag-over');
+                if (!draggedEl) return;
+                const content = zone.querySelector('.drop-zone-content');
+                scenarioOrigins[draggedEl.id] = zone.dataset.method;
+                draggedEl.classList.add('placed');
+                draggedEl.classList.remove('correct', 'incorrect');
+                content.appendChild(draggedEl);
+            });
+        });
+
+        // También permitir devolver al origen haciendo clic
+        document.getElementById('drag-scenarios').addEventListener('dragover', (e) => e.preventDefault());
+        document.getElementById('drag-scenarios').addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (!draggedEl) return;
+            draggedEl.classList.remove('placed', 'correct', 'incorrect');
+            delete scenarioOrigins[draggedEl.id];
+            document.getElementById('drag-scenarios').appendChild(draggedEl);
+        });
+
+        function verifyDragDrop() {
+            const feedback = document.getElementById('drag-feedback');
+            const allCards = document.querySelectorAll('.drag-card[data-correct]');
+            let correctCount = 0;
+            const totalCards = allCards.length;
+            const explanations = {
+                'scenario-1': 'Cuestionarios de gran escala miden variables funcionales como satisfacción y eficiencia → Diagnóstico Funcional.',
+                'scenario-2': 'Descubrir valores y creencias compartidas es el objetivo del → Diagnóstico Cultural.',
+                'scenario-3': 'El análisis de redes de comunicación formal examina estructuras operativas → Diagnóstico Funcional.',
+                'scenario-4': 'Rituales, símbolos y normas no escritas son elementos culturales → Diagnóstico Cultural.',
+                'scenario-5': 'Indicadores de producción y tiempos de respuesta son métricas funcionales → Diagnóstico Funcional.',
+                'scenario-6': 'Grupos focales sobre resistencia al cambio exploran narrativas culturales → Diagnóstico Cultural.'
+            };
+
+            allCards.forEach(card => {
+                const correctMethod = card.dataset.correct;
+                const placedIn = scenarioOrigins[card.id];
+                if (placedIn === correctMethod) {
+                    card.classList.add('correct');
+                    card.classList.remove('incorrect');
+                    correctCount++;
+                } else if (placedIn) {
+                    card.classList.add('incorrect');
+                    card.classList.remove('correct');
+                }
+            });
+
+            let html = `<p class="font-bold mb-3" style="color: var(--heading);">Resultado: ${correctCount}/${totalCards} correctas</p>`;
+            allCards.forEach(card => {
+                const isCorrect = scenarioOrigins[card.id] === card.dataset.correct;
+                html += `<div class="mt-2 p-3 rounded-lg text-xs ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}">
+                    <span class="font-bold">${card.querySelector('.font-bold').textContent}:</span> ${explanations[card.id]}
+                    ${isCorrect ? '<span class="text-green-600 font-bold ml-1">✓</span>' : '<span class="text-red-600 font-bold ml-1">✗</span>'}
+                </div>`;
+            });
+
+            feedback.innerHTML = html;
+            feedback.classList.remove('hidden');
+            feedback.style.background = correctCount === totalCards ? '#f0fdf4' : '#fffbeb';
+            feedback.style.border = correctCount === totalCards ? '1px solid #bbf7d0' : '1px solid #fde68a';
+        }
+
+        function resetDragDrop() {
+            const container = document.getElementById('drag-scenarios');
+            document.querySelectorAll('.drag-card[data-correct]').forEach(card => {
+                card.classList.remove('placed', 'correct', 'incorrect');
+                container.appendChild(card);
+            });
+            document.querySelectorAll('.drop-zone-content').forEach(c => c.innerHTML = '');
+            document.getElementById('drag-feedback').classList.add('hidden');
+            Object.keys(scenarioOrigins).forEach(k => delete scenarioOrigins[k]);
+        }
+
+        // ===== ACTIVIDAD 2: LABORATORIO DE PRIORIZACIÓN =====
+        function calculatePriority() {
+            const problems = [];
+            for (let i = 1; i <= 3; i++) {
+                const name = document.getElementById(`prob-${i}-name`).value.trim();
+                const alcance = parseInt(document.getElementById(`prob-${i}-alcance`).value) || 0;
+                const gravedad = parseInt(document.getElementById(`prob-${i}-gravedad`).value) || 0;
+                const urgencia = parseInt(document.getElementById(`prob-${i}-urgencia`).value) || 0;
+                if (!name) { alert(`Por favor completa el nombre del Problema ${i}.`); return; }
+                if (alcance < 1 || alcance > 5 || gravedad < 1 || gravedad > 5 || urgencia < 1 || urgencia > 5) {
+                    alert(`Los valores de Problema ${i} deben estar entre 1 y 5.`); return;
+                }
+                problems.push({ name, alcance, gravedad, urgencia, total: alcance + gravedad + urgencia });
+            }
+            problems.sort((a, b) => b.total - a.total);
+            const tbody = document.getElementById('priority-table-body');
+            tbody.innerHTML = '';
+            problems.forEach((p, i) => {
+                const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉';
+                tbody.innerHTML += `<tr>
+                    <td class="p-3 border text-center font-bold" style="border-color: var(--line);">${medal} ${i + 1}°</td>
+                    <td class="p-3 border" style="border-color: var(--line);">${p.name}</td>
+                    <td class="p-3 border text-center" style="border-color: var(--line);">${p.alcance}</td>
+                    <td class="p-3 border text-center" style="border-color: var(--line);">${p.gravedad}</td>
+                    <td class="p-3 border text-center" style="border-color: var(--line);">${p.urgencia}</td>
+                    <td class="p-3 border text-center font-bold" style="border-color: var(--line); color: var(--accent);">${p.total}</td>
+                </tr>`;
+            });
+            document.getElementById('priority-result').classList.remove('hidden');
+        }
+
+        function toggleExportMenuPriority() {
+            document.getElementById('export-menu-priority').classList.toggle('hidden');
+        }
+
+        document.addEventListener('click', (e) => {
+            const dd = document.getElementById('export-dropdown-priority');
+            const menu = document.getElementById('export-menu-priority');
+            if (dd && menu && !dd.contains(e.target)) menu.classList.add('hidden');
+        });
+
+        function getPriorityData() {
+            const problems = [];
+            for (let i = 1; i <= 3; i++) {
+                problems.push({
+                    name: document.getElementById(`prob-${i}-name`).value.trim(),
+                    alcance: document.getElementById(`prob-${i}-alcance`).value,
+                    gravedad: document.getElementById(`prob-${i}-gravedad`).value,
+                    urgencia: document.getElementById(`prob-${i}-urgencia`).value
+                });
+            }
+            return problems.sort((a, b) => (parseInt(b.alcance||0)+parseInt(b.gravedad||0)+parseInt(b.urgencia||0)) - (parseInt(a.alcance||0)+parseInt(a.gravedad||0)+parseInt(a.urgencia||0)));
+        }
+
+        function exportPriorityToTxt() {
+            const problems = getPriorityData();
+            let text = `LABORATORIO DE PRIORIZACIÓN - TEMA 4\nCriterios: Alcance, Gravedad, Urgencia (1-5)\n\n`;
+            problems.forEach((p, i) => {
+                const total = (parseInt(p.alcance||0)+parseInt(p.gravedad||0)+parseInt(p.urgencia||0));
+                text += `${i+1}° PRIORIDAD: ${p.name}\n   Alcance: ${p.alcance} | Gravedad: ${p.gravedad} | Urgencia: ${p.urgencia} | TOTAL: ${total}\n\n`;
+            });
+            text += `---\nGenerado desde OVA Gerencia del Talento Humano - Tema 4`;
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'Priorizacion_Problemas.txt';
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            document.getElementById('export-menu-priority').classList.add('hidden');
+        }
+
+        function exportPriorityToWord() {
+            const problems = getPriorityData();
+            let rows = '';
+            problems.forEach((p, i) => {
+                const total = (parseInt(p.alcance||0)+parseInt(p.gravedad||0)+parseInt(p.urgencia||0));
+                rows += `<tr><td>${i+1}°</td><td>${p.name}</td><td>${p.alcance}</td><td>${p.gravedad}</td><td>${p.urgencia}</td><td><strong>${total}</strong></td></tr>`;
+            });
+            const html = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                <head><meta charset='utf-8'><title>Priorización</title></head>
+                <body>
+                    <h2>Laboratorio de Priorización - Tema 4</h2>
+                    <p>Criterios: Alcance, Gravedad y Urgencia (escala 1-5)</p>
+                    <table border="1" cellpadding="5" cellspacing="0">
+                        <tr><th>Prioridad</th><th>Problema</th><th>Alcance</th><th>Gravedad</th><th>Urgencia</th><th>Total</th></tr>
+                        ${rows}
+                    </table>
+                </body></html>`;
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'Priorizacion_Problemas.doc';
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            document.getElementById('export-menu-priority').classList.add('hidden');
+        }
+
+        function clearPriorityForm() {
+            if (confirm('¿Estás seguro de que deseas borrar todo el contenido?')) {
+                for (let i = 1; i <= 3; i++) {
+                    document.getElementById(`prob-${i}-name`).value = '';
+                    document.getElementById(`prob-${i}-alcance`).value = '';
+                    document.getElementById(`prob-${i}-gravedad`).value = '';
+                    document.getElementById(`prob-${i}-urgencia`).value = '';
+                }
+                document.getElementById('priority-result').classList.add('hidden');
+                document.getElementById('priority-table-body').innerHTML = '';
+            }
+        }
+
+        renderQuiz();
+    </script>
+</body>
+</html>

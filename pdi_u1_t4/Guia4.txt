@@ -1,0 +1,34 @@
+
+Tema 4: Herramientas de diagnóstico para la revisión de métodos y procedimientos
+
+Introducción:
+El diagnóstico organizacional es un proceso analítico que permite conocer la situación real de la empresa en un momento dado para descubrir problemas y áreas de oportunidad. Este subtema profundiza en herramientas funcionales y culturales, permitiendo al especialista realizar una "radiografía" precisa del sistema antes de proponer cualquier cambio, basándose en la interdependencia de los subsistemas organizacionales.
+Objetivos de Aprendizaje:
+1. Ejecutar diagnósticos funcionales y culturales utilizando técnicas de recolección de información desde el cliente y el consultor.
+2. Aplicar marcos de análisis estratégicos como las 7S de McKinsey y el Diagrama de Ishikawa para identificar causas raíz de desalineación.
+3. Validar las herramientas de diagnóstico mediante pruebas piloto y análisis de fiabilidad para garantizar la objetividad de los hallazgos.
+Contenido:
+? Parte 1: Enfoques del Diagnóstico - Funcional vs. Cultural: El Diagnóstico Funcional examina las estructuras de comunicación, la eficiencia de los procesos, la producción y la satisfacción del personal. Utiliza técnicas estructuradas como cuestionarios de gran escala, entrevistas detalladas y análisis de redes de comunicación. Por otro lado, el Diagnóstico Cultural busca descubrir los valores, creencias y principios compartidos que guían el comportamiento organizacional. Ambas perspectivas son complementarias: mientras lo funcional mide "qué se hace y cómo", lo cultural explica "por qué se hace" y permite predecir la resistencia a nuevas intervenciones.
+? Parte 2: Marcos de Análisis Estratégico: El especialista debe dominar herramientas que permitan ver la organización como un todo interdependiente. El 7S Framework de McKinsey es fundamental para analizar la alineación entre siete dimensiones clave: estrategia, estructura, sistemas, valores compartidos, habilidades, estilo y personal. Complementariamente, herramientas como el Diagrama de Ishikawa (Causa-Efecto) y el Análisis de Pareto facilitan la priorización de los "pocos vitales" frente a los "muchos triviales". Estos marcos aseguran que el diagnóstico no sea una lista de quejas, sino un análisis sistémico de las variables que influyen en la productividad y la satisfacción laboral.
+? Parte 3: Metodología para el Diseño y Validación de Herramientas: Para que el diagnóstico tenga validez académica, el especialista debe seguir un proceso riguroso:
+1. Identificar subsistemas y su interacción (enfoque de sistemas).
+2. Generar el listado de ítems o preguntas a medir.
+3. Validar con expertos y realizar pruebas piloto.
+4. Analizar la fiabilidad (ej. Alpha de Cronbach) de las escalas de medición.
+Este rigor metodológico protege al especialista de los "supuestos automatistas" (pensar que un curso lo solucionará todo) y de los "supuestos conspirativos", permitiendo que la intervención se base en datos probados y no en rumores institucionales.
+Referencias para ampliación:
+? GSH Blog. (2024). Diagnóstico Organizacional: Métodos y Técnicas.
+? Ferrari, L. E. (2004). El uso de herramientas de diagnóstico organizacional.
+? McKinsey & Co. (2025). The 7S Framework: A Strategic Assessment Tool.
+
+
+Integración con Google Docs y Guía para el Estudiante
+Este material de la Unidad 01 sirve como base documental para la construcción del Anteproyecto de Grado.
+Actividades Sugeridas en el Aula Virtual:
+1. Taller de Mapeo: El estudiante debe diagramar un proceso administrativo actual de su organización usando la simbología BPMN básica.
+2. Laboratorio de Priorización: Uso de una hoja de cálculo para calificar tres problemas identificados bajo los criterios de Alcance, Gravedad y Urgencia.
+3. Foro Normativo: Debate sobre las implicaciones del Decreto 1330 en el rigor de los trabajos de grado de especialización en Colombia.
+Este diseño pedagógico asegura que el estudiante de la Universidad de Córdoba inicie su proyecto de intervención con un sustento teórico sólido, un método probado y una visión estratégica de alto nivel.
+Fuentes citadas
+1. Especialización en Desarrollo Organizacional y Gestión del Talento Humano - CUN, acceso: abril 12, 2026, https://cun.edu.co/especializacion-desarrollo-organizacional-y-gestion-del-talento-humano/
+2. Especialización en gerencia de talento humano en Montería - UCC, acceso: abril 12, 2026, https://ucc.edu.co/programas/posgrados/Paginas/monteria/especializacion-en-gerencia-del-talento-humano-monteria.aspx
