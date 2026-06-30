@@ -1,0 +1,26 @@
+
+Tema 5: Diseño de proyectos orientados a la solución de problemas organizacionales
+
+Introducción: El diseño del proyecto es la síntesis de todo el conocimiento previo. En esta etapa, el especialista traduce el diagnóstico y la metodología en un plan de acción concreto, con objetivos claros e indicadores de éxito. Este subtema se enfoca en la creación de valor y el retorno de inversión, asegurando que la propuesta sea atractiva para la organización y cumpla con el estándar de excelencia de un especialista en Gerencia del Talento Humano.1
+Objetivos de Aprendizaje:
+1. Formular proyectos orientados a resultados, alineando los objetivos individuales con las metas estratégicas de la organización.
+2. Diseñar propuestas de valor (EVP) y planes de intervención que integren el bienestar emocional y la eficiencia operativa.
+3. Desarrollar indicadores de impacto y metas alcanzables (SMART) para el seguimiento y evaluación del proyecto.
+Contenido:
+? Parte 1: Estructuración de la Solución de Problemas: El diseño de un proyecto debe ir más allá de la teoría. Se basa en un modelo de Socio Estratégico, donde RR. HH. participa en decisiones clave que impactan en finanzas, operaciones o tecnología. El proyecto debe estar estructurado por fases: desde la planificación y asignación de recursos hasta la ejecución y control. Un diseño sólido identifica no solo el "qué hacer", sino el costo-beneficio de la intervención, demostrando cómo la solución reducirá la rotación, aumentará la productividad o mejorará el clima emocional, convirtiendo el bienestar en una ventaja competitiva.
+? Parte 2: El Modelo Centrado en la Tarea y en el Humano: Para proyectos aplicados, es efectivo utilizar el Modelo Centrado en la Tarea, el cual se enfoca en identificar problemas específicos y trabajar en metas concretas y alcanzables de forma colaborativa entre el especialista y la empresa. Al mismo tiempo, el diseño debe ser EX-driven (impulsado por la experiencia del empleado), asegurando que la intervención fortalezca la Propuesta de Valor al Empleado (EVP) y promueva un entorno laboral saludable, inclusivo y resiliente. Esta dualidad garantiza que la eficiencia operativa no se logre a costa del desgaste del capital humano.
+? Parte 3: Evaluación del Impacto y Mejora Continua: Todo diseño debe incluir un sistema de seguimiento con indicadores cuantitativos y cualitativos. El especialista debe ser capaz de proyectar el impacto a largo plazo de su intervención, utilizando herramientas de analítica para medir el progreso. Un proyecto exitoso incluye un plan de comunicación para socializar los resultados y un esquema de mejora continua que permita ajustar la intervención según los hallazgos en la fase de observación. En el contexto de la Universidad de Córdoba, el diseño del proyecto debe reflejar la idoneidad y el compromiso ético, contribuyendo al desarrollo socioeconómico de la región.
+Referencias para ampliación:
+? Quality Service. (2025). De lo Operativo a lo Estratégico: Evolución de RRHH.
+? Poliverso Blog. (2024). Modelos de Intervención Estructurados.
+? Dessler, G. (2021). Administración de Recursos Humanos.
+Integración con Google Docs y Guía para el Estudiante
+Este material de la Unidad 01 sirve como base documental para la construcción del Anteproyecto de Grado.
+Actividades Sugeridas en el Aula Virtual:
+1. Taller de Mapeo: El estudiante debe diagramar un proceso administrativo actual de su organización usando la simbología BPMN básica.
+2. Laboratorio de Priorización: Uso de una hoja de cálculo para calificar tres problemas identificados bajo los criterios de Alcance, Gravedad y Urgencia.
+3. Foro Normativo: Debate sobre las implicaciones del Decreto 1330 en el rigor de los trabajos de grado de especialización en Colombia.
+Este diseño pedagógico asegura que el estudiante de la Universidad de Córdoba inicie su proyecto de intervención con un sustento teórico sólido, un método probado y una visión estratégica de alto nivel.
+Fuentes citadas
+1. Especialización en Desarrollo Organizacional y Gestión del Talento Humano - CUN, acceso: abril 12, 2026, https://cun.edu.co/especializacion-desarrollo-organizacional-y-gestion-del-talento-humano/
+2. Especialización en gerencia de talento humano en Montería - UCC, acceso: abril 12, 2026, https://ucc.edu.co/programas/posgrados/Paginas/monteria/especializacion-en-gerencia-del-talento-humano-monteria.aspx
