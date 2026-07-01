@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2: Desarrollo de la Cultura Estratégica para la Gestión del Cambio</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #d1d5db; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .flip-card { perspective: 1000px; height: 200px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #4a5568; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .drag-card { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 14px; cursor: grab; transition: all 0.25s ease; }
+        #ova-embed .drag-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(86,145,81,0.15); }
+        #ova-embed .drag-card.dragging { opacity: 0.4; transform: scale(0.95); }
+        #ova-embed .drag-card.placed { opacity: 0.5; pointer-events: none; cursor: default; }
+        #ova-embed .drag-card.correct { border-color: #22c55e; background: #f0fdf4; }
+        #ova-embed .drag-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+        #ova-embed .drop-zone { background: var(--surface-soft); border: 2px dashed var(--line); border-radius: 12px; padding: 12px; min-height: 120px; transition: all 0.25s ease; display: flex; flex-direction: column; }
+        #ova-embed .drop-zone.drag-over { border-color: var(--accent); background: rgba(86,145,81,0.08); box-shadow: 0 0 0 3px rgba(86,145,81,0.15); }
+        #ova-embed .drop-zone-header { text-align: center; font-weight: 700; font-size: 0.8rem; color: #0c7b8a; padding: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        #ova-embed .drop-zone-header i { font-size: 1.2rem; }
+        #ova-embed .drop-zone-content { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        #ova-embed .drop-zone-content .drag-card { font-size: 0.75rem; padding: 8px 10px; }
+        #ova-embed .drop-zone-content .drag-card .text-sm { font-size: 0.7rem; }
+        #ova-embed .drop-zone-content .drag-card .text-xs { font-size: 0.65rem; }
+        #ova-embed .mobile-header { display: none; }
+        
+        #ova-embed .flip-card { perspective: 1000px; height: 200px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .flip-card { height: 180px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCION -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-chess mr-2"></i>Unidad 2 — Tema 2</p>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Desarrollo de la Cultura Estratégica para la Gestión del Cambio</h1>
+                        <p class="text-white/90 text-lg max-w-3xl">Gestionar el cambio es, en esencia, gestionar la cultura. Este tema profundiza en el modelo de 8 pasos de John Kotter, la metodología estándar para liderar transformaciones exitosas en el siglo XXI.</p>
+                    </div>
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">El cambio falla por la cultura, no por la tecnología</h2>
+                        <p class="mt-4 leading-relaxed">Gestionar el cambio es, en esencia, gestionar la cultura. El especialista aprenderá que las transformaciones fracasan no por falta de herramientas, sino por falta de alineación emocional y estratégica. Se explora cómo construir una <strong>coalición guía</strong> y cómo anclar los nuevos enfoques en el ADN organizacional para evitar que el sistema regrese a sus viejas prácticas una vez finalizada la intervención.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta del cambio</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">De la urgencia al anclaje cultural</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-bolt"></i></div>
+                                <h4>Urgencia</h4>
+                                <p>Crear un sentido de urgencia que muestre que el estado actual es insostenible.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-users-gear"></i></div>
+                                <h4>Coalición</h4>
+                                <p>Formar una red poderosa de líderes influyentes que lideren la transformación.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-eye"></i></div>
+                                <h4>Visión</h4>
+                                <p>Definir y comunicar una visión estratégica clara por múltiples canales.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-flag-checkered"></i></div>
+                                <h4>Triunfos</h4>
+                                <p>Generar victorias rápidas y consolidarlas para producir más cambios.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-anchor"></i></div>
+                                <h4>Anclaje</h4>
+                                <p>Integrar los nuevos enfoques en la cultura: "así hacemos las cosas aquí".</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-stairs text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">8 etapas de Kotter</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Modelo secuencial para crear urgencia, empoderar actores, comunicar y anclar el cambio.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Cada etapa reduce la resistencia y aumenta la probabilidad de que la transformación sea sostenible.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-heart-pulse text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Modelo ADKAR</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Gestión del lado humano: Conciencia, Deseo, Conocimiento, Habilidad y Refuerzo.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Permite diagnosticar por qué una persona o área no avanza en la transformación.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-wind text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Cultura adaptativa</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Dejar la planificación rígida para pasar a ciclos de iteración continua y aprendizaje rápido.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">En entornos BANI, la adaptabilidad es la principal ventaja competitiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 2</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de liderar la gestión del cambio desde la cultura, aplicando modelos probados, comunicando con propósito y evaluando la madurez organizacional para la transformación.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-stairs mr-2" style="color: #17a2b8;"></i>Aplicar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Las 8 fases del modelo de Kotter para estructurar un plan de cambio organizacional robusto y persuasivo.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-comments mr-2" style="color: #17a2b8;"></i>Comunicar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Estrategias de comunicación estratégica que mitiguen la resistencia y generen un sentido de urgencia movilizador.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-chart-line mr-2" style="color: #17a2b8;"></i>Evaluar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">La madurez cultural de la organización para recibir y sostener procesos de transformación digital e innovación.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Cultura Estratégica y Gestión del Cambio</h2>
+                        <p class="mt-4 leading-relaxed">Este tema explora el modelo de 8 pasos de Kotter, las estrategias para gestionar la resistencia humana a través de ADKAR y el liderazgo empático, y la construcción de una cultura de adaptabilidad como ventaja competitiva en contextos organizacionales cambiantes.</p>
+                    </div>
+
+                    <!-- Frase de consultor destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"El cambio no es un evento, es un proceso. Y ese proceso solo se sostiene cuando los nuevos comportamientos se anclan en la cultura."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Pilares del cambio sostenible -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📋 Cuatro pilares del cambio sostenible</h3>
+                        <p class="text-sm mb-6" style="color: var(--text);">Haz clic en cada tarjeta para descubrir claves del modelo de Kotter.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <!-- Flip Card 1: Urgencia -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-bolt text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Urgencia</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-bolt text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Sentido de urgencia</h4>
+                                        <p class="text-xs leading-relaxed">Las personas solo cambian cuando sienten que el status quo es insostenible. Use datos, testimonios y tendencias para crear movimiento.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flip Card 2: Coalición -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-users-gear text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Coalición</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-users-gear text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Coalición guía</h4>
+                                        <p class="text-xs leading-relaxed">Una red de líderes influyentes, con credibilidad y visión compartida, que impulse el cambio desde todos los niveles.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flip Card 3: Victorias -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-flag-checkered text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Triunfos</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-flag-checkered text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Victorias rápidas</h4>
+                                        <p class="text-xs leading-relaxed">Diseñar logros visibles en poco tiempo. Celebrarlos y usarlos para generar momentum y credibilidad.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flip Card 4: Anclaje -->
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-anchor text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Anclaje</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-anchor text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Anclaje cultural</h4>
+                                        <p class="text-xs leading-relaxed">Integrar los nuevos enfoques en la cultura para evitar el retroceso: "así hacemos las cosas aquí".</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">Estructura del Tema</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-stairs mr-2" style="color: #4a5568;"></i>Parte 1: Las 8 Etapas de Kotter para la Transformación</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">El modelo de Kotter establece un camino secuencial para transformar organizaciones. Las personas solo cambian cuando comprenden que el estado actual es insostenible.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>1. Crear sentido de urgencia:</strong> evidenciar la necesidad del cambio con datos y narrativas que movilicen.</li>
+                                        <li><strong>2. Formar una coalición guía:</strong> reunir líderes influyentes con credibilidad, autoridad y comunicación.</li>
+                                        <li><strong>3. Desarrollar una visión:</strong> definir un norte claro y atractivo que oriente decisiones.</li>
+                                        <li><strong>4. Comunicar la visión:</strong> repetir el mensaje por múltiples canales, respondiendo dudas y miedos.</li>
+                                        <li><strong>5. Eliminar obstáculos:</strong> quitar barreras estructurales y culturales que frenan el progreso.</li>
+                                        <li><strong>6. Generar triunfos a corto plazo:</strong> diseñar victorias rápidas que mantengan la motivación.</li>
+                                        <li><strong>7. Consolidar mejoras:</strong> usar el impulso ganado para producir más cambios.</li>
+                                        <li><strong>8. Anclar en la cultura:</strong> integrar los nuevos enfoques en valores, rituales y sistemas de reconocimiento.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-heart-pulse mr-2" style="color: #4a5568;"></i>Parte 2: Gestión de la Resistencia y Liderazgo Estratégico</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">La resistencia es una respuesta humana natural ante la pérdida percibida de control, estatus o certidumbre. El especialista actúa como <strong>Agente de Cambio</strong> empático y estratega.</p>
+                                    <p class="text-sm leading-relaxed">El modelo <strong>ADKAR</strong> (Prosci) ayuda a gestionar el lado humano: asegurar que los empleados tengan <strong>Conciencia</strong> del porqué, <strong>Deseo</strong> de participar, <strong>Conocimiento</strong> de cómo cambiar, <strong>Habilidad</strong> para ejecutarlo y <strong>Refuerzo</strong> para mantenerlo.</p>
+                                    <p class="text-sm leading-relaxed mt-3">Los líderes de primera línea son el antídoto principal contra la incertidumbre en entornos BANI. Empoderarlos con autonomía, escucha y ejemplo reduce la resistencia y acelera la adopción.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-wind mr-2" style="color: #4a5568;"></i>Parte 3: Cultura de Adaptabilidad como Ventaja Competitiva</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">En 2025, la meta no es llegar a un estado final, sino desarrollar una cultura que abrace la adaptabilidad como norma. Esto implica pasar de la planificación rígida a ciclos de iteración continua y aprendizaje rápido.</p>
+                                    <p class="text-sm leading-relaxed">El especialista debe fomentar espacios de diálogo donde se cuestionen modelos mentales obsoletos y se incentive la toma de riesgos calculados. En la Universidad de Córdoba, esta cultura estratégica fortalece la excelencia institucional al alinear el propósito personal de los colaboradores con la misión de transformación social de la región.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Aplica los conceptos de Kotter y ADKAR mediante un plan de comunicación y un diagnóstico del lado humano del cambio.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-plan">
+                                <i class="fa-solid fa-comments"></i> Plan de comunicación de 5 hitos
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-adkar">
+                                <i class="fa-solid fa-heart-pulse"></i> Diagnóstico ADKAR
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Plan de comunicación -->
+                        <div class="act-panel active" id="act-plan">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">📢 Taller: Plan de comunicación de 5 hitos</h3>
+                                <p class="text-sm mb-6">Diseña un plan de comunicación para una transformación digital, aplicando los primeros pasos del modelo de Kotter.</p>
+                                
+                                <!-- Instrucciones -->
+                                <div class="mb-6 p-4 rounded-lg" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #0ea5e9;">
+                                    <h4 class="font-bold text-sm mb-2" style="color: #0369a1;">
+                                        <i class="fa-solid fa-info-circle mr-2"></i>¿Cómo funciona?
+                                    </h4>
+                                    <div class="text-xs space-y-1" style="color: #0369a1;">
+                                        <p>📌 <strong>Contexto:</strong> Describe el cambio digital que enfrenta tu organización.</p>
+                                        <p>📌 <strong>5 hitos:</strong> Define acciones concretas para crear urgencia, formar coalición, articular visión, comunicar y lograr un triunfo rápido.</p>
+                                        <p>📌 <strong>Exporta</strong> tu plan en Word o TXT para incluirlo en tu portafolio.</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading)">Contexto del cambio digital</label>
+                                        <textarea id="change-context" rows="4" maxlength="500" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--line);" placeholder="¿Qué proceso o tecnología se va a transformar y por qué?"></textarea>
+                                        <div class="mt-2 flex items-center gap-2">
+                                            <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="change-context">0/500</span>
+                                            <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="change-context"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-bold mb-2" style="color: var(--heading)">1. Sentido de urgencia</label>
+                                            <textarea id="hito-urgencia" rows="3" maxlength="300" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--line);" placeholder="¿Cómo comunicarás que el estado actual es insostenible?"></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="hito-urgencia">0/300</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="hito-urgencia"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-bold mb-2" style="color: var(--heading)">2. Coalición guía</label>
+                                            <textarea id="hito-coalicion" rows="3" maxlength="300" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--line);" placeholder="¿Quiénes serán los líderes influyentes del cambio?"></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="hito-coalicion">0/300</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="hito-coalicion"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-bold mb-2" style="color: var(--heading)">3. Visión estratégica</label>
+                                            <textarea id="hito-vision" rows="3" maxlength="300" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--line);" placeholder="¿Cuál es el norte claro y atractivo del cambio?"></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="hito-vision">0/300</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="hito-vision"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-bold mb-2" style="color: var(--heading)">4. Comunicación multi-canal</label>
+                                            <textarea id="hito-comunicacion" rows="3" maxlength="300" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--line);" placeholder="¿Qué canales usarás y con qué frecuencia?"></textarea>
+                                            <div class="mt-2 flex items-center gap-2">
+                                                <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="hito-comunicacion">0/300</span>
+                                                <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                    <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="hito-comunicacion"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading)">5. Triunfo rápido</label>
+                                        <textarea id="hito-triunfo" rows="3" maxlength="300" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--line);" placeholder="¿Qué victoria visible lograrás en las primeras semanas?"></textarea>
+                                        <div class="mt-2 flex items-center gap-2">
+                                            <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="hito-triunfo">0/300</span>
+                                            <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                                                <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="hito-triunfo"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" onclick="clearPlanForm()" class="btn-soft">
+                                        <i class="fa-solid fa-rotate-left mr-2"></i>Limpiar
+                                    </button>
+                                    <div class="relative" id="export-dropdown-plan">
+                                        <button type="button" onclick="toggleExportMenuPlan()" class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300 hover:shadow-lg" style="background: #D8EBF8; color: #0c7b8a; border: 1px solid #D8EBF8;">
+                                            <i class="fa-solid fa-download mr-2"></i>Exportar
+                                            <i class="fa-solid fa-chevron-down ml-2"></i>
+                                        </button>
+                                        <div id="export-menu-plan" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                                            <button onclick="exportPlanToWord()" class="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors flex items-center gap-3 rounded-t-lg">
+                                                <i class="fa-solid fa-file-word" style="color: #0c7b8a;"></i>
+                                                <div>
+                                                    <div class="font-semibold text-sm" style="color: var(--heading);">Word (.doc)</div>
+                                                    <div class="text-xs" style="color: var(--text);">Documento con formato profesional</div>
+                                                </div>
+                                            </button>
+                                            <button onclick="exportPlanToTxt()" class="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors flex items-center gap-3 rounded-b-lg">
+                                                <i class="fa-solid fa-file-alt" style="color: #6b7280;"></i>
+                                                <div>
+                                                    <div class="font-semibold text-sm" style="color: var(--heading);">Texto (.txt)</div>
+                                                    <div class="text-xs" style="color: var(--text);">Archivo de texto plano</div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Diagnóstico ADKAR -->
+                        <div class="act-panel" id="act-adkar">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🩺 Diagnóstico ADKAR</h3>
+                                <p class="text-sm mb-6">Lee cada situación y selecciona la etapa de ADKAR que está faltando. Refuerza la gestión del lado humano del cambio.</p>
+
+                                <!-- Instrucciones -->
+                                <div class="mb-6 p-4 rounded-lg" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1px solid #22c55e;">
+                                    <h4 class="font-bold text-sm mb-2" style="color: #166534;">
+                                        <i class="fa-solid fa-info-circle mr-2"></i>Recuerda las etapas de ADKAR
+                                    </h4>
+                                    <div class="text-xs space-y-1" style="color: #166534;">
+                                        <p><strong>A</strong> — Conciencia del porqué del cambio.</p>
+                                        <p><strong>D</strong> — Deseo de participar en el cambio.</p>
+                                        <p><strong>K</strong> — Conocimiento de cómo cambiar.</p>
+                                        <p><strong>A</strong> — Habilidad para ejecutar el nuevo comportamiento.</p>
+                                        <p><strong>R</strong> — Refuerzo para mantener el cambio.</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4" id="adkar-scenarios">
+                                    <div class="adkar-item p-4 rounded-lg border" style="border-color: var(--line);" data-correct="awareness">
+                                        <p class="text-sm font-semibold mb-3" style="color: var(--text);">El equipo no entiende por qué la universidad debe cambiar de sistema de gestión documental.</p>
+                                        <select class="adkar-select w-full px-3 py-2 border rounded-lg text-sm" style="border-color: var(--line);">
+                                            <option value="">Selecciona la etapa de ADKAR</option>
+                                            <option value="awareness">Conciencia (Awareness)</option>
+                                            <option value="desire">Deseo (Desire)</option>
+                                            <option value="knowledge">Conocimiento (Knowledge)</option>
+                                            <option value="ability">Habilidad (Ability)</option>
+                                            <option value="reinforcement">Refuerzo (Reinforcement)</option>
+                                        </select>
+                                        <div class="adkar-feedback mt-2 text-xs hidden"></div>
+                                    </div>
+
+                                    <div class="adkar-item p-4 rounded-lg border" style="border-color: var(--line);" data-correct="desire">
+                                        <p class="text-sm font-semibold mb-3" style="color: var(--text);">Varios colaboradores dicen: "Esto no es problema mío, prefiero seguir usando la carpeta compartida de siempre".</p>
+                                        <select class="adkar-select w-full px-3 py-2 border rounded-lg text-sm" style="border-color: var(--line);">
+                                            <option value="">Selecciona la etapa de ADKAR</option>
+                                            <option value="awareness">Conciencia (Awareness)</option>
+                                            <option value="desire">Deseo (Desire)</option>
+                                            <option value="knowledge">Conocimiento (Knowledge)</option>
+                                            <option value="ability">Habilidad (Ability)</option>
+                                            <option value="reinforcement">Refuerzo (Reinforcement)</option>
+                                        </select>
+                                        <div class="adkar-feedback mt-2 text-xs hidden"></div>
+                                    </div>
+
+                                    <div class="adkar-item p-4 rounded-lg border" style="border-color: var(--line);" data-correct="knowledge">
+                                        <p class="text-sm font-semibold mb-3" style="color: var(--text);">Asistieron al taller de inducción, pero aún no saben cómo clasificar documentos en el nuevo sistema.</p>
+                                        <select class="adkar-select w-full px-3 py-2 border rounded-lg text-sm" style="border-color: var(--line);">
+                                            <option value="">Selecciona la etapa de ADKAR</option>
+                                            <option value="awareness">Conciencia (Awareness)</option>
+                                            <option value="desire">Deseo (Desire)</option>
+                                            <option value="knowledge">Conocimiento (Knowledge)</option>
+                                            <option value="ability">Habilidad (Ability)</option>
+                                            <option value="reinforcement">Refuerzo (Reinforcement)</option>
+                                        </select>
+                                        <div class="adkar-feedback mt-2 text-xs hidden"></div>
+                                    </div>
+
+                                    <div class="adkar-item p-4 rounded-lg border" style="border-color: var(--line);" data-correct="ability">
+                                        <p class="text-sm font-semibold mb-3" style="color: var(--text);">Comprenden la teoría, pero al momento de subir un documento se equivocan en la categoría y la versión.</p>
+                                        <select class="adkar-select w-full px-3 py-2 border rounded-lg text-sm" style="border-color: var(--line);">
+                                            <option value="">Selecciona la etapa de ADKAR</option>
+                                            <option value="awareness">Conciencia (Awareness)</option>
+                                            <option value="desire">Deseo (Desire)</option>
+                                            <option value="knowledge">Conocimiento (Knowledge)</option>
+                                            <option value="ability">Habilidad (Ability)</option>
+                                            <option value="reinforcement">Refuerzo (Reinforcement)</option>
+                                        </select>
+                                        <div class="adkar-feedback mt-2 text-xs hidden"></div>
+                                    </div>
+
+                                    <div class="adkar-item p-4 rounded-lg border" style="border-color: var(--line);" data-correct="reinforcement">
+                                        <p class="text-sm font-semibold mb-3" style="color: var(--text);">Después de dos meses, algunos colaboradores vuelven a guardar archivos en el disco local como antes.</p>
+                                        <select class="adkar-select w-full px-3 py-2 border rounded-lg text-sm" style="border-color: var(--line);">
+                                            <option value="">Selecciona la etapa de ADKAR</option>
+                                            <option value="awareness">Conciencia (Awareness)</option>
+                                            <option value="desire">Deseo (Desire)</option>
+                                            <option value="knowledge">Conocimiento (Knowledge)</option>
+                                            <option value="ability">Habilidad (Ability)</option>
+                                            <option value="reinforcement">Refuerzo (Reinforcement)</option>
+                                        </select>
+                                        <div class="adkar-feedback mt-2 text-xs hidden"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" onclick="checkAdkar()" class="btn-main">
+                                        <i class="fa-solid fa-check mr-2"></i>Verificar diagnóstico
+                                    </button>
+                                    <button type="button" onclick="resetAdkar()" class="btn-soft">
+                                        <i class="fa-solid fa-redo mr-2"></i>Reiniciar
+                                    </button>
+                                </div>
+
+                                <div id="adkar-summary" class="hidden mt-4 p-4 rounded-lg text-center font-bold text-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 2</h2>
+                        <p class="mt-4 leading-relaxed">Evalúa tu comprensión sobre la cultura estratégica, el modelo de 8 pasos de Kotter y la gestión de la resistencia al cambio.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/3</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-summary" class="hidden mt-6">
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--heading);">Resumen</h3>
+                            <div id="summary-content" class="space-y-4"></div>
+                            <div class="mt-6"><button id="quiz-restart" type="button" class="btn-main">Reiniciar</button></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECURSOS -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas gratuitas para la gestión del cambio</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Plataformas digitales para diagnosticar, planificar, comunicar y visualizar procesos de cambio organizacional.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Miro -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-table-cells" style="color: #f06a6a; font-size: 1em;"></i> Miro
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Pizarra colaborativa con plantillas para gestión del cambio, mapa de actores y roadmap de las 8 etapas de Kotter.</p>
+                                    <a href="https://miro.com/templates/change-management/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Miro
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://miro.com/templates/change-management/" alt="QR Miro" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Google Forms -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-square-poll-horizontal" style="color: #4285f4; font-size: 1em;"></i> Google Forms
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Crea encuestas para medir el sentido de urgencia, la resistencia al cambio o la madurez cultural del equipo.</p>
+                                    <a href="https://www.google.com/forms/about/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Crear encuesta
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.google.com/forms/about/" alt="QR Google Forms" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: draw.io -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-project-diagram" style="color: #f59e0b; font-size: 1em;"></i> draw.io
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Diagramador gratuito para diseñar flujos de comunicación, organigramas de la coalición guía o rutas de cambio.</p>
+                                    <a href="https://app.diagrams.net/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Diagramar
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://app.diagrams.net/" alt="QR draw.io" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Google Gemini -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-robot" style="color: #8e75b2; font-size: 1em;"></i> Google Gemini
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Asistente de IA para redactar planes de comunicación, diagnósticos y materiales de la intervención. Disponible con la cuenta institucional.</p>
+                                    <a href="https://gemini.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Gemini
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://gemini.google.com/" alt="QR Google Gemini" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliación según la guía del curso.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+                        <!-- Ref 1: Kotter -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Kotter, J. P.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Leading Change. (1996). Harvard Business School Press.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://archive.org/details/leadingchange0000kott" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-book-open"></i> Ver en Archive.org
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://archive.org/details/leadingchange0000kott" alt="QR Kotter" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Prosci -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Prosci</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Modelos de Gestión del Cambio y ADKAR. (2024).</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.prosci.com/methodology/adkar" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Visitar Prosci
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.prosci.com/methodology/adkar" alt="QR Prosci" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: Schein -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Schein, E. H.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Organizational Culture and Leadership. (2010). Jossey-Bass.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://scholar.google.com/scholar?q=Schein+Organizational+Culture+and+Leadership+2010" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-search"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://scholar.google.com/scholar?q=Schein+Organizational+Culture+and+Leadership+2010" alt="QR Schein" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: Integral Coaching Colombia -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Integral Coaching Colombia</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Guía de Estrategias de Gestión del Cambio. (2025).</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.google.com/search?q=Integral+Coaching+Colombia+Gu%C3%ADa+de+Estrategias+de+Gesti%C3%B3n+del+Cambio+2025" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-search"></i> Buscar recurso
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.google.com/search?q=Integral+Coaching+Colombia+Gu%C3%ADa+de+Estrategias+de+Gesti%C3%B3n+del+Cambio+2025" alt="QR Integral Coaching" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navegación sidebar
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(link.dataset.target).classList.add('active');
+                
+                // Inicializar quiz cuando se navega a evaluación
+                if (link.dataset.target === 'evaluacion') {
+                    setTimeout(() => {
+                        renderQuiz();
+                    }, 100);
+                }
+            });
+        });
+
+        // Mobile nav
+        document.getElementById('mobile-nav').addEventListener('change', (e) => {
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(e.target.value).classList.add('active');
+        });
+
+        // Acordeón
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = btn.querySelector('.fa-chevron-down');
+                if (icon) icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Quiz - Preguntas acotadas según formato 088 y guía
+        const quizData = [
+            { 
+                q: "Según el modelo de Kotter, ¿cuál es el primer paso para liderar una transformación organizacional exitosa?", 
+                options: [
+                    "Definir la visión estratégica del cambio", 
+                    "Crear un sentido de urgencia que muestre la insostenibilidad del estado actual", 
+                    "Formar una coalición guía de líderes influyentes", 
+                    "Generar triunfos a corto plazo"
+                ], 
+                correct: 1 
+            },
+            { 
+                q: "En el modelo ADKAR de Prosci, ¿qué dimensión representa la disposición emocional para apoyar el cambio?", 
+                options: [
+                    "Conciencia del porqué del cambio", 
+                    "Conocimiento de cómo cambiar", 
+                    "Deseo de participar en el cambio", 
+                    "Habilidad para ejecutar el nuevo comportamiento"
+                ], 
+                correct: 2 
+            },
+            { 
+                q: "¿Cuál es la principal ventaja de desarrollar una cultura de adaptabilidad en las organizaciones en 2025?", 
+                options: [
+                    "Mantener los procesos sin modificaciones para dar estabilidad", 
+                    "Reducir la necesidad de comunicación interna", 
+                    "Responder con rapidez ante entornos BANI y cambios acelerados", 
+                    "Eliminar la toma de riesgos en la innovación"
+                ], 
+                correct: 2 
+            }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        const quizBox = document.getElementById('quiz-box');
+        const quizSummary = document.getElementById('quiz-summary');
+
+        function renderQuiz() {
+            // Verificar que los elementos existan antes de renderizar
+            const quizTitle = document.getElementById('quiz-title');
+            const quizProgress = document.getElementById('quiz-progress');
+            const quizText = document.getElementById('quiz-text');
+            const quizOptions = document.getElementById('quiz-options');
+            
+            if (!quizTitle || !quizProgress || !quizText || !quizOptions) {
+                console.log('Elementos del quiz no encontrados, reintentando...');
+                setTimeout(renderQuiz, 100);
+                return;
+            }
+            
+            quizTitle.textContent = `Pregunta ${currentQ + 1}`;
+            quizProgress.textContent = `${currentQ + 1}/${quizData.length}`;
+            quizText.textContent = quizData[currentQ].q;
+            const opts = document.getElementById('quiz-options');
+            opts.innerHTML = '';
+            quizData[currentQ].options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = `quiz-option w-full text-left border rounded-lg p-4 transition-all ${answers[currentQ] === i ? 'border-[var(--accent)] bg-[var(--surface-soft)]' : 'border-[var(--line)] hover:bg-[var(--surface-soft)]'}`;
+                btn.innerHTML = `<span class="font-semibold">${String.fromCharCode(65+i)}.</span> ${opt}`;
+                btn.onclick = () => { answers[currentQ] = i; renderQuiz(); };
+                opts.appendChild(btn);
+            });
+            document.getElementById('quiz-prev').disabled = currentQ === 0;
+            document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQ < quizData.length - 1) { currentQ++; renderQuiz(); }
+            else {
+                quizBox.classList.add('hidden');
+                quizSummary.classList.remove('hidden');
+                let correct = 0;
+                let html = '';
+                quizData.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correct++;
+                    html += `<div class="p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}"><p class="font-semibold">${i+1}. ${q.q}</p><p class="text-sm mt-2">Tu respuesta: ${String.fromCharCode(65+answers[i])}. ${q.options[answers[i]]}</p>${!isCorrect ? `<p class="text-sm mt-1 text-green-700">Correcta: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}</p>` : ''}</div>`;
+                });
+                html += `<p class="text-center font-bold text-lg mt-4">Puntuación: ${correct}/${quizData.length} (${Math.round(correct/quizData.length*100)}%)</p>`;
+                document.getElementById('summary-content').innerHTML = html;
+            }
+        });
+
+        document.getElementById('quiz-prev').addEventListener('click', () => { if (currentQ > 0) { currentQ--; renderQuiz(); } });
+        document.getElementById('quiz-restart').addEventListener('click', () => { currentQ = 0; answers = []; quizBox.classList.remove('hidden'); quizSummary.classList.add('hidden'); renderQuiz(); });
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== CONTADORES =====
+        function updateCounter(fieldId) {
+            const field = document.getElementById(fieldId);
+            const counter = document.querySelector(`[data-counter-for="${fieldId}"]`);
+            const progressBar = document.querySelector(`[data-progress-for="${fieldId}"]`);
+            if (field && counter) {
+                const currentLength = field.value.length;
+                const maxLength = field.maxLength;
+                counter.textContent = `${currentLength}/${maxLength}`;
+                if (progressBar) {
+                    progressBar.style.width = `${(currentLength / maxLength) * 100}%`;
+                }
+            }
+        }
+
+        // ===== ACTIVIDAD 1: PLAN DE COMUNICACIÓN =====
+        const planFields = ['change-context', 'hito-urgencia', 'hito-coalicion', 'hito-vision', 'hito-comunicacion', 'hito-triunfo'];
+
+        function getPlanData() {
+            return {
+                context: document.getElementById('change-context')?.value || '',
+                urgencia: document.getElementById('hito-urgencia')?.value || '',
+                coalicion: document.getElementById('hito-coalicion')?.value || '',
+                vision: document.getElementById('hito-vision')?.value || '',
+                comunicacion: document.getElementById('hito-comunicacion')?.value || '',
+                triunfo: document.getElementById('hito-triunfo')?.value || ''
+            };
+        }
+
+        function clearPlanForm() {
+            planFields.forEach(id => {
+                const field = document.getElementById(id);
+                if (field) {
+                    field.value = '';
+                    updateCounter(id);
+                }
+            });
+        }
+
+        function toggleExportMenuPlan() {
+            const menu = document.getElementById('export-menu-plan');
+            const isHidden = menu.classList.contains('hidden');
+            if (!isHidden) {
+                menu.classList.add('hidden');
+                return;
+            }
+            const d = getPlanData();
+            if (!d.context && !d.urgencia && !d.coalicion && !d.vision && !d.comunicacion && !d.triunfo) {
+                alert('Por favor complete al menos un campo antes de exportar.');
+                return;
+            }
+            window.exportPlanData = d;
+            menu.classList.remove('hidden');
+            setTimeout(() => {
+                document.addEventListener('click', closeExportMenuOutsidePlan);
+            }, 100);
+        }
+
+        function closeExportMenuOutsidePlan(event) {
+            const menu = document.getElementById('export-menu-plan');
+            const button = event.target.closest('button[onclick="toggleExportMenuPlan()"]');
+            const dd = document.getElementById('export-dropdown-plan');
+            if (dd && !dd.contains(event.target) && !button) {
+                menu.classList.add('hidden');
+                document.removeEventListener('click', closeExportMenuOutsidePlan);
+            }
+        }
+
+        function exportPlanToTxt() {
+            const d = window.exportPlanData || getPlanData();
+            const content = `PLAN DE COMUNICACIÓN DE 5 HITOS - TEMA 2
+================================================
+Fecha: ${new Date().toLocaleDateString('es-ES')}
+
+CONTEXTO DEL CAMBIO DIGITAL
+----------------------------------
+${d.context || 'No especificado'}
+
+1. SENTIDO DE URGENCIA
+----------------------
+${d.urgencia || 'No especificado'}
+
+2. COALICIÓN GUÍA
+-----------------
+${d.coalicion || 'No especificado'}
+
+3. VISIÓN ESTRATÉGICA
+---------------------
+${d.vision || 'No especificado'}
+
+4. COMUNICACIÓN MULTI-CANAL
+---------------------------
+${d.comunicacion || 'No especificado'}
+
+5. TRIUNFO RÁPIDO
+-----------------
+${d.triunfo || 'No especificado'}
+
+================================================
+Generado desde OVA - Gerencia del Talento Humano
+Universidad de Córdoba`;
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Plan_Comunicacion_5_Hitos_${new Date().toISOString().split('T')[0]}.txt`;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            document.getElementById('export-menu-plan').classList.add('hidden');
+        }
+
+        function exportPlanToWord() {
+            const d = window.exportPlanData || getPlanData();
+            const html = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+                <head><meta charset='utf-8'><title>Plan de Comunicación 5 Hitos</title></head>
+                <body>
+                    <h2>Plan de Comunicación de 5 Hitos - Tema 2</h2>
+                    <p><strong>Fecha:</strong> ${new Date().toLocaleDateString('es-ES')}</p>
+                    <h3>Contexto del cambio digital</h3><p>${(d.context || 'No especificado').replace(/\n/g, '<br>')}</p>
+                    <h3>1. Sentido de urgencia</h3><p>${(d.urgencia || 'No especificado').replace(/\n/g, '<br>')}</p>
+                    <h3>2. Coalición guía</h3><p>${(d.coalicion || 'No especificado').replace(/\n/g, '<br>')}</p>
+                    <h3>3. Visión estratégica</h3><p>${(d.vision || 'No especificado').replace(/\n/g, '<br>')}</p>
+                    <h3>4. Comunicación multi-canal</h3><p>${(d.comunicacion || 'No especificado').replace(/\n/g, '<br>')}</p>
+                    <h3>5. Triunfo rápido</h3><p>${(d.triunfo || 'No especificado').replace(/\n/g, '<br>')}</p>
+                </body></html>`;
+            const blob = new Blob(['﻿', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Plan_Comunicacion_5_Hitos_${new Date().toISOString().split('T')[0]}.doc`;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            document.getElementById('export-menu-plan').classList.add('hidden');
+        }
+
+        // ===== ACTIVIDAD 2: DIAGNÓSTICO ADKAR =====
+        const adkarLabels = {
+            awareness: 'Conciencia (Awareness)',
+            desire: 'Deseo (Desire)',
+            knowledge: 'Conocimiento (Knowledge)',
+            ability: 'Habilidad (Ability)',
+            reinforcement: 'Refuerzo (Reinforcement)'
+        };
+
+        function checkAdkar() {
+            const items = document.querySelectorAll('.adkar-item');
+            let correct = 0;
+            items.forEach(item => {
+                const correctValue = item.dataset.correct;
+                const select = item.querySelector('.adkar-select');
+                const feedback = item.querySelector('.adkar-feedback');
+                const selected = select.value;
+                feedback.classList.remove('hidden');
+                if (selected === correctValue) {
+                    correct++;
+                    item.style.borderColor = '#22c55e';
+                    item.style.backgroundColor = '#f0fdf4';
+                    feedback.textContent = `✓ Correcto. La etapa es ${adkarLabels[correctValue]}.`;
+                    feedback.style.color = '#15803d';
+                } else {
+                    item.style.borderColor = '#ef4444';
+                    item.style.backgroundColor = '#fef2f2';
+                    feedback.textContent = `✗ Incorrecto. La etapa correcta es ${adkarLabels[correctValue]}.`;
+                    feedback.style.color = '#b91c1c';
+                }
+            });
+            const summary = document.getElementById('adkar-summary');
+            summary.classList.remove('hidden');
+            summary.textContent = `Resultado: ${correct}/${items.length} correctas`;
+            summary.style.background = correct === items.length ? '#dcfce7' : '#fef3c7';
+            summary.style.color = correct === items.length ? '#166534' : '#92400e';
+        }
+
+        function resetAdkar() {
+            document.querySelectorAll('.adkar-item').forEach(item => {
+                const select = item.querySelector('.adkar-select');
+                const feedback = item.querySelector('.adkar-feedback');
+                select.value = '';
+                feedback.classList.add('hidden');
+                feedback.textContent = '';
+                item.style.borderColor = '';
+                item.style.backgroundColor = '';
+            });
+            document.getElementById('adkar-summary').classList.add('hidden');
+        }
+
+        // ===== FLIP CARDS Y DOMContentLoaded =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const flipCards = document.querySelectorAll('.flip-card');
+            flipCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+            });
+
+            planFields.forEach(id => {
+                const field = document.getElementById(id);
+                if (field) {
+                    field.addEventListener('input', () => updateCounter(id));
+                    updateCounter(id);
+                }
+            });
+
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>
