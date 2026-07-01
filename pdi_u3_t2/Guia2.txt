@@ -1,0 +1,26 @@
+
+Tema 2: La RSE en la práctica y sus grupos de interés
+
+Introducción:
+La Responsabilidad Social Empresarial (RSE) ha evolucionado de un enfoque filantrópico y reactivo hacia una gestión proactiva e integrada de los impactos ASG (Ambiental, Social y Gobernanza). Este subtema profundiza en la Teoría de los Stakeholders de Edward Freeman, la cual sostiene que el éxito sostenible de una organización depende de su capacidad para gestionar los intereses de todos sus grupos de interés. El especialista aprenderá a realizar diagnósticos de materialidad que permitan identificar qué temas son realmente críticos para sus empleados, clientes y comunidades locales.
+Objetivos de Aprendizaje:
+1. Mapear y clasificar los grupos de interés (stakeholders) primarios y secundarios, evaluando su nivel de influencia y legitimidad en la organización.
+2. Aplicar los criterios ASG (ESG) en el diseño de programas de talento humano para generar impactos positivos en el pilar social y de gobernanza.
+3. Evaluar la relación entre la satisfacción de los stakeholders y la competitividad empresarial bajo modelos de gestión responsable.
+Contenido:
+? Parte 1: La Teoría de los Grupos de Interés (Stakeholders): El paradigma tradicional de orientación exclusiva al accionista ha sido desplazado por el reconocimiento de que la empresa es un sistema complejo de intereses interconectados. Según el profesor Domènec Melé, el éxito económico no puede lograrse de modo sostenible si los ejecutivos no tienen en cuenta a los empleados, clientes, distribuidores y comunidades. El especialista en talento humano debe identificar a los grupos impactados por las políticas de RRHH, incluyendo no solo a los empleados actuales, sino también a las familias, sindicatos, y las generaciones futuras, quienes son stakeholders silenciosos en las decisiones de sostenibilidad de hoy.
+? Parte 2: Dimensiones de la Sostenibilidad Corporativa: La sostenibilidad moderna se fundamenta en tres dimensiones integradas: Ambiental, Social y Económica. En la práctica, esto implica que las compañías no solo deben evitar impactos negativos (como la vulneración de derechos humanos o el daño ambiental), sino generar impactos positivos activos. Para el gerente de talento humano, esto se traduce en liderar el componente Social (S), velando por la inclusión laboral, la diversidad, la equidad salarial y los derechos laborales; y el componente de Gobernanza (G), asegurando la transparencia en las formas de gobierno y la lucha contra la corrupción. La sostenibilidad se convierte así en el lenguaje de las empresas con futuro.
+? Parte 3: Diagnóstico y Buenas Prácticas de RSE: Implementar la RSE requiere un proceso estructurado que inicie con un diagnóstico de qué le pide la sociedad a la empresa para ser una "buena ciudadana". Las organizaciones líderes están sustentando sus estrategias en los Objetivos de Desarrollo Sostenible (ODS) de la Agenda 2030, utilizándolos como un marco para articular sus metas. El especialista debe ser capaz de diseñar diagnósticos sencillos que identifiquen los puntos de dolor de los stakeholders y proponer prácticas responsables que mejoren el bienestar social y la viabilidad económica a largo plazo, profesionalizando así la gestión de la sostenibilidad dentro del área de talento.
+Referencias para ampliación:
+? Freeman, R. E. (1984). Strategic Management: A Stakeholder Approach.
+? Pacto Mundial de la ONU. (2025). Guía de Sostenibilidad Empresarial y ODS.
+? Carbal Herrera, A., et al. (2024). Teoría organizacional y sostenibilidad empresarial: Un análisis teórico.
+? Dyllick, T., & Hockerts, K. (2002). Beyond the Business Case for Corporate Sustainability.
+
+Integración con Google Docs y Portafolio de Ética
+Este material de la Unidad 03 concluye la fase de diseño del proyecto de intervención.
+Actividades Sugeridas en el Aula Virtual:
+1. Auditoría de IA: El estudiante evaluará un algoritmo de selección de personal hipotético bajo los 10 principios éticos de la UNESCO.
+2. Mapa de Stakeholders: Creación de una matriz de materialidad para el proyecto de intervención diseñado en la unidad 01.
+3. Taller de SROI: Cálculo del retorno social de una iniciativa de bienestar laboral utilizando simuladores en línea.
+Con este diseño pedagógico, el especialista de la Universidad de Córdoba está plenamente facultado para liderar intervenciones con rigor técnico y, sobre todo, con la profundidad ética que demanda la sociedad contemporánea.
