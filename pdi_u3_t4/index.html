@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Ciudadanía Empresarial — Un rol más amplio en la sociedad</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #d1d5db; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #4a5568; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .drag-card { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 14px; cursor: grab; transition: all 0.25s ease; }
+        #ova-embed .drag-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(86,145,81,0.15); }
+        #ova-embed .drag-card.dragging { opacity: 0.4; transform: scale(0.95); }
+        #ova-embed .drag-card.placed { opacity: 0.5; pointer-events: none; cursor: default; }
+        #ova-embed .drag-card.correct { border-color: #22c55e; background: #f0fdf4; }
+        #ova-embed .drag-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+        #ova-embed .drop-zone { background: var(--surface-soft); border: 2px dashed var(--line); border-radius: 12px; padding: 12px; min-height: 120px; transition: all 0.25s ease; display: flex; flex-direction: column; }
+        #ova-embed .drop-zone.drag-over { border-color: var(--accent); background: rgba(86,145,81,0.08); box-shadow: 0 0 0 3px rgba(86,145,81,0.15); }
+        #ova-embed .drop-zone-header { text-align: center; font-weight: 700; font-size: 0.8rem; color: #0c7b8a; padding: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        #ova-embed .drop-zone-header i { font-size: 1.2rem; }
+        #ova-embed .drop-zone-content { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        #ova-embed .drop-zone-content .drag-card { font-size: 0.75rem; padding: 8px 10px; }
+        #ova-embed .drop-zone-content .drag-card .text-sm { font-size: 0.7rem; }
+        #ova-embed .drop-zone-content .drag-card .text-xs { font-size: 0.65rem; }
+        #ova-embed .mobile-header { display: none; }
+        
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .flip-card { height: 220px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); }
+        }
+
+        /* Senge drag & drop colors */
+        #ova-embed .senge-labels { background: linear-gradient(135deg, #f8fbfd 0%, #eef8fb 100%) !important; border-color: #17a2b8 !important; }
+        #ova-embed .senge-label { background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); color: #0c7b8a; border-color: #17a2b8; }
+        #ova-embed .senge-label:hover { background: #17a2b8; color: #ffffff; border-color: #0c7b8a; }
+        #ova-embed .senge-dropzone { background: #ffffff; border-left: 4px solid #D8EBF8; border-color: var(--line); }
+        #ova-embed .senge-dropzone:hover { border-color: #17a2b8; }
+        #ova-embed .senge-number { background: #17a2b8; }
+        #ova-embed .senge-slot { background: #ffffff; border-color: #17a2b8; color: #17a2b8; }
+        #ova-embed .senge-assigned { background: #D8EBF8; color: #0c7b8a; border-radius: 6px; padding: 4px 10px; }
+
+        /* Stakeholders map */
+        #ova-embed .stakeholder-chip {
+            background: var(--surface-soft);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--heading);
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        #ova-embed .stakeholder-chip:hover { transform: translateY(-2px); box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        #ova-embed .stakeholder-chip.dragging { opacity: 0.5; cursor: grabbing; }
+        #ova-embed .stakeholder-zone { transition: background-color 0.2s, border-color 0.2s; }
+        #ova-embed .stakeholder-zone.drag-over { background-color: rgba(86,145,81,0.15) !important; border-color: var(--accent) !important; }
+        #ova-embed .stakeholder-zone.correct-zone { border-color: #22c55e !important; background-color: #f0fdf4 !important; }
+        #ova-embed .stakeholder-zone.incorrect-zone { border-color: #ef4444 !important; background-color: #fef2f2 !important; }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCION -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-landmark mr-2"></i>Unidad 3 — Tema 4</p>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Ciudadanía Empresarial: Un rol más amplio en la sociedad</h1>
+                        <p class="text-white/90 text-lg max-w-3xl">La empresa como miembro con plenos derechos y deberes en una sociedad democrática: más allá del cumplimiento legal, hacia la construcción del bien común y la justicia socioambiental.</p>
+                    </div>
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">La empresa como ciudadana</h2>
+                        <p class="mt-4 leading-relaxed">La <strong>Ciudadanía Empresarial</strong> es una metáfora poderosa que entiende a la empresa como un <strong>miembro con plenos derechos y deberes</strong> dentro de una sociedad democrática. Este tema explora el modelo de la "Empresa Ciudadana", que opta por una aproximación comunitarista donde la participación en el debate público y la búsqueda del bien común son claves. El especialista comprenderá que su papel <strong>trasciende los límites físicos de la oficina</strong> para impactar en el territorio, especialmente en las pymes, donde la vinculación local es vital para la justicia socioambiental.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contexto de la Unidad</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">Las cuatro dimensiones de la ciudadanía corporativa</h3>
+                        <div class="consultant-route" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-sack-dollar"></i></div>
+                                <h4>Ciudadanía Económica</h4>
+                                <p>Obligación de aportar beneficios utilitarios a los grupos de interés de la organización.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-scale-balanced"></i></div>
+                                <h4>Ciudadanía Legal</h4>
+                                <p>Cumplir la misión organizacional dentro del marco jurídico vigente.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                                <h4>Ciudadanía Ética</h4>
+                                <p>Comportamiento justo que va más allá del cumplimiento estricto de la ley.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-handshake-angle"></i></div>
+                                <h4>Ciudadanía Discrecional</h4>
+                                <p>Decisión autónoma de realizar actividades no obligatorias para mejorar la sociedad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-users-viewfinder text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Actor político responsable</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">La empresa participa activamente en el debate público sobre lo común, comprendiendo las necesidades de su entorno.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">No se trata solo de cumplir la ley, sino de co-construir mejores condiciones de justicia ambiental y social junto con otros agentes.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-seedling text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Virtudes cívicas</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Solidaridad, diálogo y honestidad orientan una empresa ciudadana hacia el bien común.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Integrar estas dimensiones mejora el comportamiento de ciudadanía organizacional (CCO) de los empleados, generando compromiso y lealtad.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-shop text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Ciudadanía en pymes</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Aunque una pyme no pueda hacer grandes donaciones, sí puede vincularse estrechamente con su territorio.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Planes de igualdad, proyectos culturales locales o replanteamiento de líneas productivas en crisis fortalecen el desarrollo territorial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 4</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista podrá analizar las cuatro dimensiones de la ciudadanía corporativa, desarrollar competencias para que la empresa actúe como actor político responsable y diseñar estrategias de participación ciudadana empresarial que fortalezcan la identidad institucional y el desarrollo territorial.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-layer-group mr-2" style="color: #17a2b8;"></i>Analizar dimensiones</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Analizar las cuatro dimensiones de la ciudadanía corporativa: económica, legal, ética y discrecional, según el modelo de Lin et al.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-landmark mr-2" style="color: #17a2b8;"></i>Actor político responsable</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Desarrollar competencias para que la empresa actúe como un actor político responsable en la búsqueda del bien común y la justicia distributiva.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-map-location-dot mr-2" style="color: #17a2b8;"></i>Diseñar estrategias territoriales</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Diseñar estrategias de participación ciudadana empresarial que fortalezcan la identidad institucional y el desarrollo del municipio o región.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Ciudadanía Empresarial: Un rol más amplio en la sociedad</h2>
+                        <p class="mt-4 leading-relaxed">Este tema desarrolla las cuatro dimensiones de la ciudadanía corporativa, el papel de la empresa como actor en una sociedad democrática y la importancia de la ciudadanía empresarial en pymes y desarrollo territorial.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"La ciudadanía empresarial no se limita a cumplir la ley ni a ser rentable: implica participar activamente en la construcción del bien común y la justicia socioambiental."</p>
+                                <p class="text-sm mt-2 opacity-75">— Adaptado de Lin et al. (2010) y ALBOAN (2025)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: 4 dimensiones -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📋 Las cuatro dimensiones de la ciudadanía corporativa</h3>
+                        <p class="text-sm mb-6" style="color: var(--text);">Haz clic en cada tarjeta para descubrir las dimensiones del modelo de Lin et al.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-sack-dollar text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Económica</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-sack-dollar text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Ciudadanía Económica</h4>
+                                        <p class="text-xs leading-relaxed">Obligación de aportar beneficios utilitarios a los grupos de interés. Es la base sobre la que se sostiene la viabilidad organizacional.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-scale-balanced text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Legal</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-scale-balanced text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Ciudadanía Legal</h4>
+                                        <p class="text-xs leading-relaxed">Obligación de cumplir la misión dentro del marco jurídico. Es el piso mínimo de responsabilidad institucional.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-hand-holding-heart text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Ética</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-hand-holding-heart text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Ciudadanía Ética</h4>
+                                        <p class="text-xs leading-relaxed">Comportamiento justo que va más allá de lo legal. Refleja el compromiso con principios, equidad y dignidad humana.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-handshake-angle text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Discrecional</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-handshake-angle text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Ciudadanía Discrecional</h4>
+                                        <p class="text-xs leading-relaxed">Decisión autónoma de realizar actividades no obligatorias para mejorar la sociedad: filantropía estratégica alineada con el territorio.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">Estructura del Tema</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-layer-group mr-2" style="color: #4a5568;"></i>Parte 1: Las Dimensiones de la Ciudadanía Corporativa</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">El modelo propuesto por <strong>Lin et al.</strong> establece que la ciudadanía se manifiesta en cuatro niveles. Para el especialista, integrar estas dimensiones mejora el <strong>comportamiento de ciudadanía organizacional (CCO)</strong> de sus empleados, generando mayor compromiso y lealtad.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Ciudadanía Económica:</strong> aportar beneficios utilitarios a los grupos de interés, asegurando la sostenibilidad financiera.</li>
+                                        <li><strong>Ciudadanía Legal:</strong> cumplir la misión organizacional dentro del marco jurídico vigente.</li>
+                                        <li><strong>Ciudadanía Ética:</strong> comportamiento justo que trasciende lo legal, promoviendo equidad y dignidad.</li>
+                                        <li><strong>Ciudadanía Discrecional:</strong> actividades voluntarias para mejorar la sociedad, como filantropía estratégica.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-landmark mr-2" style="color: #4a5568;"></i>Parte 2: La Empresa como Actor en una Sociedad Democrática</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">Desde la <strong>aproximación comunitarista</strong>, la ciudadanía empresarial emana de su pertenencia a una sociedad democrática de iguales. La empresa debe participar activamente en el <strong>debate público sobre lo común</strong> para comprender mejor las necesidades de su entorno y aportar desde su potencial y capacidad.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Empresa ciudadana:</strong> una empresa orientada éticamente encarna virtudes cívicas como solidaridad, diálogo y honestidad.</li>
+                                        <li><strong>Más allá de la ley:</strong> no se trata solo de cumplir normas, sino de co-construir mejores condiciones de justicia ambiental y social.</li>
+                                        <li><strong>Bien común:</strong> la empresa contribuye a la justicia distributiva junto con otros agentes sociales.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-shop mr-2" style="color: #4a5568;"></i>Parte 3: Ciudadanía en Pymes y Desarrollo Territorial</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">A menudo se piensa que la ciudadanía es exclusiva de las grandes corporaciones, pero el modelo de empresa ciudadana es vital para las <strong>pymes</strong>. Aunque una pyme no pueda hacer grandes donaciones, sí puede vincularse estrechamente con su territorio.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Vínculo local:</strong> planes de igualdad, proyectos culturales en el municipio o replanteamiento de líneas productivas ante crisis locales.</li>
+                                        <li><strong>Evitar el "yugo de la rentabilidad":</strong> el especialista debe analizar críticamente las estrategias de crecimiento para seguir razonando éticamente.</li>
+                                        <li><strong>Trabajo en red:</strong> priorizar la calidad humana y la colaboración con el entorno como elementos diferenciadores.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Clasifica acciones empresariales según las cuatro dimensiones de ciudadanía corporativa y diseña una estrategia de ciudadanía empresarial para tu proyecto de intervención.</p>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex border-b flex-wrap" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-caso">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i> Clasificación de Dimensiones
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-stakeholders">
+                                <i class="fa-solid fa-map"></i> Mapa de Stakeholders
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Clasificación de dimensiones -->
+                        <div class="act-panel active" id="act-caso">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🔍 Análisis de Caso: ¿Qué dimensión de ciudadanía corporativa representa?</h3>
+                                <p class="text-sm mb-4">Lee cada situación empresarial e identifica si corresponde a <strong>ciudadanía económica, legal, ética o discrecional</strong>. Una situación por vez.</p>
+
+                                <div class="mb-4">
+                                    <div class="flex justify-between text-xs font-semibold mb-1" style="color:var(--text)">
+                                        <span id="caso-paso-label">Caso 1 de 5</span>
+                                        <span id="caso-score-mini" class="font-extrabold" style="color:var(--accent)">0 / 0 correctas</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-gray-200 overflow-hidden">
+                                        <div id="caso-progress-bar" class="h-full rounded-full transition-all duration-300" style="width:20%; background:var(--accent);"></div>
+                                    </div>
+                                </div>
+
+                                <div id="caso-card" class="p-5 rounded-xl border-2 transition-all duration-300" style="border-color:var(--accent); background:var(--surface-soft);"></div>
+                                <div id="caso-resultado-global" class="hidden mt-4 p-4 rounded-xl text-center" style="background:var(--surface-soft); border: 2px solid #d1d5db;"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" id="caso-btn-prev" onclick="pasoCaso(-1)" class="btn-soft"><i class="fa-solid fa-arrow-left mr-1"></i>Anterior</button>
+                                    <button type="button" id="caso-btn-verificar" onclick="verificarCaso()" class="btn-main"><i class="fa-solid fa-check mr-1"></i>Verificar</button>
+                                    <button type="button" id="caso-btn-next" onclick="pasoCaso(1)" class="btn-main hidden">Siguiente <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                                    <button type="button" onclick="reiniciarCaso()" class="btn-soft"><i class="fa-solid fa-rotate-left mr-1"></i>Reiniciar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Mapa de Stakeholders -->
+                        <div class="act-panel" id="act-stakeholders">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🗺️ Mapa de Stakeholders</h3>
+                                <p class="text-sm mb-4">Una empresa ciudadana reconoce a sus grupos de interés. Coloca cada stakeholder en el cuadrante que le corresponde según su poder de influencia y su nivel de interés en la organización.</p>
+
+                                <div class="mb-4 p-3 rounded-lg" style="background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); border: 1px solid #17a2b8;">
+                                    <p class="text-xs" style="color: #0c7b8a;"><i class="fa-solid fa-info-circle mr-1"></i> Arrastra cada ficha al cuadrante correcto. Luego presiona <strong>Verificar</strong> para recibir retroalimentación.</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <p class="text-xs font-bold mb-2" style="color:var(--heading)">Stakeholders disponibles:</p>
+                                    <div id="stakeholders-pool" class="flex flex-wrap gap-2 p-3 rounded-lg border border-dashed" style="border-color:var(--line); background:var(--surface-soft); min-height:60px;">
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="accionistas" data-correct="alto-poder-bajo-interes">Accionistas</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="empleados" data-correct="alto-poder-alto-interes">Empleados</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="comunidad" data-correct="bajo-poder-alto-interes">Comunidad local</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="proveedores" data-correct="bajo-poder-alto-interes">Proveedores locales</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="clientes" data-correct="alto-poder-alto-interes">Clientes</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="gobierno" data-correct="alto-poder-bajo-interes">Gobierno / regulador</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="sindicatos" data-correct="alto-poder-alto-interes">Sindicatos</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="medioambiente" data-correct="bajo-poder-bajo-interes">Medio ambiente</div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2 md:gap-3 mb-4">
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="alto-poder-alto-interes" style="border-color:var(--accent); background:#f0fdf4; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Alto poder / Alto interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Gestionar de cerca</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="alto-poder-bajo-interes" style="border-color:#f59e0b; background:#fffbeb; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Alto poder / Bajo interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Mantener satisfechos</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="bajo-poder-alto-interes" style="border-color:#3b82f6; background:#eff6ff; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Bajo poder / Alto interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Mantener informados</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="bajo-poder-bajo-interes" style="border-color:#6b7280; background:#f9fafb; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Bajo poder / Bajo interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Monitorear</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                </div>
+
+                                <div id="stakeholder-feedback" class="hidden mt-4 p-4 rounded-lg text-sm" style="background:#f0f9ff; color:#0369a1;"></div>
+
+                                <div class="mt-4 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" onclick="verificarStakeholders()" class="btn-main"><i class="fa-solid fa-check mr-1"></i>Verificar</button>
+                                    <button type="button" onclick="reiniciarStakeholders()" class="btn-soft"><i class="fa-solid fa-rotate-left mr-1"></i>Reiniciar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- EVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 4</h2>
+                        <p class="mt-4 leading-relaxed">Evalúa tu comprensión sobre las cuatro dimensiones de la ciudadanía corporativa, la empresa ciudadana en una sociedad democrática y el rol de las pymes en el desarrollo territorial.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/4</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-summary" class="hidden mt-6">
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--heading);">Resumen</h3>
+                            <div id="summary-content" class="space-y-4"></div>
+                            <div class="mt-6"><button id="quiz-restart" type="button" class="btn-main">Reiniciar</button></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECURSOS -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas para explorar la Ciudadanía Empresarial</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Recursos prácticos para profundizar en las dimensiones de ciudadanía corporativa, analizar el rol de la empresa en la sociedad democrática y documentar el proyecto de intervención.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: ALBOAN Anatomía de la Empresa Ciudadana -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-handshake-angle" style="color: #569151; font-size: 1em;"></i> ALBOAN — Anatomía de la Empresa Ciudadana
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Recurso del Centro de Ética Aplicada y ALBOAN sobre justicia socioambiental, bien común y empresa ciudadana. Referencia central para el Tema 4.</p>
+                                    <a href="https://www.alboan.org/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Explorar ALBOAN
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.alboan.org/" alt="QR ALBOAN" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Centro de Ética Aplicada -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-scale-balanced" style="color: #2a7a4f; font-size: 1em;"></i> Centro de Ética Aplicada (CEA)
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Marco de reflexión para la empresa ciudadana. Incluye propuestas conceptuales y herramientas para analizar el rol ético-político de la organización.</p>
+                                    <a href="https://www.uvigo.es/uvigo_gl/centros/cea/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir CEA
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.uvigo.es/uvigo_gl/centros/cea/" alt="QR CEA" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Miro — Canvas de ciudadanía empresarial -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-table-cells" style="color: #f06a6a; font-size: 1em;"></i> Miro — Canvas de stakeholders y territorio
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Pizarra colaborativa para mapear grupos de interés, necesidades locales y acciones de ciudadanía empresarial aplicadas al proyecto de intervención.</p>
+                                    <a href="https://miro.com/templates/stakeholder-map/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir plantilla
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://miro.com/templates/stakeholder-map/" alt="QR Miro Stakeholder" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Google Meet -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-video" style="color: #00832d; font-size: 1em;"></i> Google Meet
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Canal para videosesiones, tutorías virtuales y análisis sincrónico de casos de ciudadanía empresarial y pymes, y discusión del proyecto de intervención con el docente.</p>
+                                    <a href="https://meet.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Iniciar reunión
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://meet.google.com/" alt="QR Google Meet" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliación del Tema 4 — Ciudadanía Empresarial: Un rol más amplio en la sociedad.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Ref 1: Lin et al. 2010 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Lin, C. P., et al. (2010).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Corporate Citizenship and Organizational Results: The Mediating Role of Employee Engagement.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.researchgate.net/publication/240980435_Corporate_Citizenship_and_Organizational_Results_The_Mediating_Role_of_Employee_Engagement" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver en ResearchGate
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.researchgate.net/publication/240980435_Corporate_Citizenship_and_Organizational_Results_The_Mediating_Role_of_Employee_Engagement" alt="QR Lin et al. 2010" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Centro de Ética Aplicada 2025 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Centro de Ética Aplicada (CEA). (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Marco de reflexión para la empresa ciudadana.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.uvigo.es/uvigo_gl/centros/cea/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver CEA
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.uvigo.es/uvigo_gl/centros/cea/" alt="QR CEA" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: ALBOAN 2025 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">ALBOAN. (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Anatomía de la Empresa Ciudadana: Justicia socioambiental y Bien Común.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.alboan.org/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver ALBOAN
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.alboan.org/" alt="QR ALBOAN" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: Jain & Rizvi 2020 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Jain, A., & Rizvi, I. A. (2020).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">The Relationship between Corporate Citizenship and Organizational Citizenship Behavior.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.researchgate.net/publication/340346088_The_Relationship_between_Corporate_Citizenship_and_Organizational_Citizenship_Behavior" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver en ResearchGate
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.researchgate.net/publication/340346088_The_Relationship_between_Corporate_Citizenship_and_Organizational_Citizenship_Behavior" alt="QR Jain Rizvi 2020" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navegación sidebar
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(link.dataset.target).classList.add('active');
+                
+                // Inicializar quiz cuando se navega a evaluación
+                if (link.dataset.target === 'evaluacion') {
+                    setTimeout(() => {
+                        renderQuiz();
+                    }, 100);
+                }
+            });
+        });
+
+        // Mobile nav
+        document.getElementById('mobile-nav').addEventListener('change', (e) => {
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(e.target.value).classList.add('active');
+        });
+
+        // Acordeón
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = btn.querySelector('.fa-chevron-down');
+                if (icon) icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Quiz - Preguntas acotadas del Tema 4
+        const quizData = [
+            {
+                q: "¿Cuál de las siguientes es una de las cuatro dimensiones de la ciudadanía corporativa propuesta por Lin et al.?",
+                options: [
+                    "Ciudadanía financiera — maximizar dividendos para accionistas",
+                    "Ciudadanía legal — cumplir la misión dentro del marco jurídico",
+                    "Ciudadanía comercial — expandir cuota de mercado a toda costa",
+                    "Ciudadanía fiscal — pagar menos impuestos posibles"
+                ],
+                correct: 1
+            },
+            {
+                q: "¿Qué dimensión representa realizar actividades no obligatorias para mejorar la sociedad?",
+                options: [
+                    "Ciudadanía económica",
+                    "Ciudadanía legal",
+                    "Ciudadanía ética",
+                    "Ciudadanía discrecional"
+                ],
+                correct: 3
+            },
+            {
+                q: "¿Qué implica la aproximación comunitarista de la empresa ciudadana?",
+                options: [
+                    "La empresa solo debe cumplir la ley y generar utilidades",
+                    "La empresa participa activamente en el debate público y co-construye el bien común",
+                    "La empresa debe evitar toda participación política para no generar conflictos",
+                    "La empresa prioriza siempre el beneficio de sus accionistas por encima del entorno"
+                ],
+                correct: 1
+            },
+            {
+                q: "¿Cuál es una estrategia recomendada para que una pyme ejerza ciudadanía empresarial?",
+                options: [
+                    "Realizar grandes donaciones internacionales como las multinacionales",
+                    "Vincularse estrechamente con su territorio mediante planes de igualdad, proyectos culturales o replanteamiento de líneas productivas",
+                    "Evitar el contacto con la comunidad para concentrarse en la rentabilidad",
+                    "Subcontratar todos los servicios locales para reducir costos"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        const quizBox = document.getElementById('quiz-box');
+        const quizSummary = document.getElementById('quiz-summary');
+
+        function renderQuiz() {
+            // Verificar que los elementos existan antes de renderizar
+            const quizTitle = document.getElementById('quiz-title');
+            const quizProgress = document.getElementById('quiz-progress');
+            const quizText = document.getElementById('quiz-text');
+            const quizOptions = document.getElementById('quiz-options');
+            
+            if (!quizTitle || !quizProgress || !quizText || !quizOptions) {
+                console.log('Elementos del quiz no encontrados, reintentando...');
+                setTimeout(renderQuiz, 100);
+                return;
+            }
+            
+            quizTitle.textContent = `Pregunta ${currentQ + 1}`;
+            quizProgress.textContent = `${currentQ + 1}/${quizData.length}`;
+            quizText.textContent = quizData[currentQ].q;
+            const opts = document.getElementById('quiz-options');
+            opts.innerHTML = '';
+            quizData[currentQ].options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = `quiz-option w-full text-left border rounded-lg p-4 transition-all ${answers[currentQ] === i ? 'border-[var(--accent)] bg-[var(--surface-soft)]' : 'border-[var(--line)] hover:bg-[var(--surface-soft)]'}`;
+                btn.innerHTML = `<span class="font-semibold">${String.fromCharCode(65+i)}.</span> ${opt}`;
+                btn.onclick = () => { answers[currentQ] = i; renderQuiz(); };
+                opts.appendChild(btn);
+            });
+            document.getElementById('quiz-prev').disabled = currentQ === 0;
+            document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQ < quizData.length - 1) { currentQ++; renderQuiz(); }
+            else {
+                quizBox.classList.add('hidden');
+                quizSummary.classList.remove('hidden');
+                let correct = 0;
+                let html = '';
+                quizData.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correct++;
+                    html += `<div class="p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}"><p class="font-semibold">${i+1}. ${q.q}</p><p class="text-sm mt-2">Tu respuesta: ${String.fromCharCode(65+answers[i])}. ${q.options[answers[i]]}</p>${!isCorrect ? `<p class="text-sm mt-1 text-green-700">Correcta: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}</p>` : ''}</div>`;
+                });
+                html += `<p class="text-center font-bold text-lg mt-4">Puntuación: ${correct}/${quizData.length} (${Math.round(correct/quizData.length*100)}%)</p>`;
+                document.getElementById('summary-content').innerHTML = html;
+            }
+        });
+
+        document.getElementById('quiz-prev').addEventListener('click', () => { if (currentQ > 0) { currentQ--; renderQuiz(); } });
+        document.getElementById('quiz-restart').addEventListener('click', () => { currentQ = 0; answers = []; quizBox.classList.remove('hidden'); quizSummary.classList.add('hidden'); renderQuiz(); document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== UTILIDAD: SCROLL AL TOPE DE ACTIVIDAD =====
+        function scrollToActividad() {
+            const panel = document.querySelector('.act-panel.active');
+            if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== ACTIVIDAD 1: CLASIFICACIÓN DE DIMENSIONES DE CIUDADANÍA CORPORATIVA =====
+        const casosSituaciones = [
+            {
+                empresa: 'Empresa textil — Cumplimiento de normas laborales',
+                situacion: 'Una empresa textil paga salarios mínimos legales, registra a todos sus empleados en seguridad social y cumple las jornadas establecidas en la legislación colombiana. No hace nada más allá de lo que exige la ley.',
+                correcta: 'legal',
+                opciones: [
+                    { valor: 'economica', etiqueta: 'Ciudadanía Económica — aportar beneficios utilitarios a grupos de interés' },
+                    { valor: 'legal', etiqueta: 'Ciudadanía Legal — cumplir la misión dentro del marco jurídico' },
+                    { valor: 'etica', etiqueta: 'Ciudadanía Ética — comportamiento justo más allá de la ley' },
+                    { valor: 'discrecional', etiqueta: 'Ciudadanía Discrecional — actividades no obligatorias para mejorar la sociedad' }
+                ],
+                explicacion: 'Correcto: es Ciudadanía Legal. La empresa cumple estrictamente con la normativa laboral, pero no trasciende lo exigido por la ley.'
+            },
+            {
+                empresa: 'Pyme de software — Becas de programación para jóvenes del barrio',
+                situacion: 'Una pyme de software en Montería ofrece gratuitamente talleres de programación para jóvenes de su barrio, sin obligación contractual ni beneficio directo inmediato para la empresa. Lo hace como aporte al desarrollo local.',
+                correcta: 'discrecional',
+                opciones: [
+                    { valor: 'economica', etiqueta: 'Ciudadanía Económica — aportar beneficios utilitarios a grupos de interés' },
+                    { valor: 'legal', etiqueta: 'Ciudadanía Legal — cumplir la misión dentro del marco jurídico' },
+                    { valor: 'etica', etiqueta: 'Ciudadanía Ética — comportamiento justo más allá de la ley' },
+                    { valor: 'discrecional', etiqueta: 'Ciudadanía Discrecional — actividades no obligatorias para mejorar la sociedad' }
+                ],
+                explicacion: 'Correcto: es Ciudadanía Discrecional. La pyme realiza una actividad voluntaria y no obligatoria para mejorar la sociedad y el territorio.'
+            },
+            {
+                empresa: 'Cooperativa agrícola — Pago de precios justos a pequeños productores',
+                situacion: 'Una cooperativa decide pagar a sus proveedores pequeños un precio superior al mínimo del mercado, aunque podría negociar más bajo. Lo hace porque considera que es lo justo para garantizar la dignidad de las familias campesinas.',
+                correcta: 'etica',
+                opciones: [
+                    { valor: 'economica', etiqueta: 'Ciudadanía Económica — aportar beneficios utilitarios a grupos de interés' },
+                    { valor: 'legal', etiqueta: 'Ciudadanía Legal — cumplir la misión dentro del marco jurídico' },
+                    { valor: 'etica', etiqueta: 'Ciudadanía Ética — comportamiento justo más allá de la ley' },
+                    { valor: 'discrecional', etiqueta: 'Ciudadanía Discrecional — actividades no obligatorias para mejorar la sociedad' }
+                ],
+                explicacion: 'Correcto: es Ciudadanía Ética. La cooperativa va más allá del cumplimiento legal y actúa por justicia y dignidad humana.'
+            },
+            {
+                empresa: 'Fábrica de alimentos — Generación de empleo y utilidades sostenibles',
+                situacion: 'Una fábrica de alimentos es rentable, paga dividendos a sus accionistas, mantiene empleo estable para 200 familias y genera utilidades que permiten reinvertir en la empresa.',
+                correcta: 'economica',
+                opciones: [
+                    { valor: 'economica', etiqueta: 'Ciudadanía Económica — aportar beneficios utilitarios a grupos de interés' },
+                    { valor: 'legal', etiqueta: 'Ciudadanía Legal — cumplir la misión dentro del marco jurídico' },
+                    { valor: 'etica', etiqueta: 'Ciudadanía Ética — comportamiento justo más allá de la ley' },
+                    { valor: 'discrecional', etiqueta: 'Ciudadanía Discrecional — actividades no obligatorias para mejorar la sociedad' }
+                ],
+                explicacion: 'Correcto: es Ciudadanía Económica. La empresa aporta beneficios utilitarios a sus grupos de interés (accionistas, empleados, comunidad) a través de la sostenibilidad financiera.'
+            },
+            {
+                empresa: 'Empresa de servicios — Participación en mesas de desarrollo local',
+                situacion: 'Una empresa de servicios participa activamente en las mesas de desarrollo del municipio, aporta datos sobre empleo local y cocrea un plan de igualdad de género con la alcaldía y organizaciones sociales.',
+                correcta: 'etica',
+                opciones: [
+                    { valor: 'economica', etiqueta: 'Ciudadanía Económica — aportar beneficios utilitarios a grupos de interés' },
+                    { valor: 'legal', etiqueta: 'Ciudadanía Legal — cumplir la misión dentro del marco jurídico' },
+                    { valor: 'etica', etiqueta: 'Ciudadanía Ética — comportamiento justo más allá de la ley' },
+                    { valor: 'discrecional', etiqueta: 'Ciudadanía Discrecional — actividades no obligatorias para mejorar la sociedad' }
+                ],
+                explicacion: 'Correcto: es Ciudadanía Ética. La empresa participa en la construcción del bien común y la justicia socioambiental, trascendiendo el cumplimiento legal y buscando equidad.'
+            }
+        ];
+        let casoStep = 0;
+        let casoResultados = [];
+
+        function renderCasoCard() {
+            const c = casosSituaciones[casoStep];
+            const card = document.getElementById('caso-card'); if (!card) return;
+            const ya = casoResultados[casoStep];
+            const opcionesHtml = c.opciones.map(op =>
+                `<label class="flex items-start gap-2 cursor-pointer p-3 rounded-lg border transition-colors ${ya ? (op.valor === c.correcta ? 'border-green-500 bg-green-50' : (op.valor === ya.seleccion && op.valor !== c.correcta ? 'border-red-400 bg-red-50' : 'border-gray-200')) : 'border-gray-200 hover:border-gray-400'}" style="${ya ? 'cursor:default;' : ''}">
+                    <input type="radio" name="caso-opcion" value="${op.valor}" ${ya ? 'disabled' : ''} ${ya && ya.seleccion === op.valor ? 'checked' : ''} class="mt-0.5 flex-shrink-0">
+                    <span class="text-sm leading-snug">${op.etiqueta}</span>
+                </label>`
+            ).join('');
+            const fbHtml = ya ? `<div class="mt-4 p-3 rounded-lg text-xs leading-relaxed ${ya.correcto ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}" style="border:1px solid ${ya.correcto ? '#86efac' : '#fca5a5'}">
+                <p class="font-bold mb-1">${ya.correcto ? '✅ Correcto' : '❌ Incorrecto'}</p>
+                <p>${c.explicacion}</p>
+            </div>` : '';
+            card.innerHTML = `
+                <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent)">${c.empresa}</p>
+                <p class="text-sm leading-relaxed mb-4" style="color:var(--text)">${c.situacion}</p>
+                <p class="text-xs font-bold mb-2" style="color:var(--heading)">¿A qué categoría corresponde esta situación?</p>
+                <div class="space-y-2">${opcionesHtml}</div>
+                ${fbHtml}`;
+            const paso = document.getElementById('caso-paso-label'); if (paso) paso.textContent = 'Caso ' + (casoStep + 1) + ' de ' + casosSituaciones.length;
+            const bar = document.getElementById('caso-progress-bar'); if (bar) bar.style.width = ((casoStep + 1) / casosSituaciones.length * 100) + '%';
+            const correctas = casoResultados.filter(r => r && r.correcto).length;
+            const respondidas = casoResultados.filter(Boolean).length;
+            const mini = document.getElementById('caso-score-mini'); if (mini) mini.textContent = correctas + ' / ' + respondidas + ' correctas';
+            const btnVerif = document.getElementById('caso-btn-verificar'); if (btnVerif) btnVerif.classList.toggle('hidden', !!ya);
+            const btnNext = document.getElementById('caso-btn-next'); if (btnNext) btnNext.classList.toggle('hidden', !ya || casoStep === casosSituaciones.length - 1);
+            const btnPrev = document.getElementById('caso-btn-prev'); if (btnPrev) btnPrev.classList.toggle('hidden', casoStep === 0);
+            if (ya && casoStep === casosSituaciones.length - 1 && casoResultados.filter(Boolean).length === casosSituaciones.length) mostrarResultadoCaso();
+        }
+
+        function verificarCaso() {
+            const seleccionado = document.querySelector('input[name="caso-opcion"]:checked');
+            if (!seleccionado) { alert('Selecciona una opción antes de verificar.'); return; }
+            const correcto = seleccionado.value === casosSituaciones[casoStep].correcta;
+            casoResultados[casoStep] = { seleccion: seleccionado.value, correcto };
+            renderCasoCard();
+        }
+
+        function pasoCaso(dir) {
+            casoStep = Math.max(0, Math.min(casosSituaciones.length - 1, casoStep + dir));
+            const rg = document.getElementById('caso-resultado-global'); if (rg) rg.classList.add('hidden');
+            renderCasoCard();
+        }
+
+        function mostrarResultadoCaso() {
+            const correctas = casoResultados.filter(r => r && r.correcto).length;
+            const total = casosSituaciones.length;
+            const pct = Math.round((correctas / total) * 100);
+            const nivel = pct === 100 ? '🟢 Excelente — dominas las cuatro dimensiones de ciudadanía corporativa' : pct >= 60 ? '🟡 Bien encaminado — revisa el modelo de Lin et al. y la empresa ciudadana' : '🔴 En proceso — vuelve al Contenido para reforzar las dimensiones de ciudadanía';
+            const rg = document.getElementById('caso-resultado-global'); if (!rg) return;
+            rg.innerHTML = `<p class="font-extrabold text-lg mb-1" style="color:var(--heading)">Resultado del análisis</p><p class="text-4xl font-black my-2" style="color:var(--accent)">${pct}%</p><p class="text-sm">${correctas} de ${total} casos identificados correctamente</p><p class="mt-3 font-semibold">${nivel}</p>`;
+            rg.classList.remove('hidden');
+        }
+
+        function reiniciarCaso() {
+            casoStep = 0; casoResultados = [];
+            const rg = document.getElementById('caso-resultado-global'); if (rg) { rg.innerHTML = ''; rg.classList.add('hidden'); }
+            renderCasoCard();
+            scrollToActividad();
+        }
+
+        // ===== ACTIVIDAD 2: MAPA DE STAKEHOLDERS =====
+        function initStakeholders() {
+            const chips = document.querySelectorAll('.stakeholder-chip');
+            const zones = document.querySelectorAll('.stakeholder-zone');
+            const pool = document.getElementById('stakeholders-pool');
+            let draggedEl = null;
+
+            chips.forEach(chip => {
+                chip.addEventListener('dragstart', (e) => {
+                    draggedEl = chip;
+                    chip.classList.add('dragging');
+                    e.dataTransfer.setData('text/plain', chip.dataset.stakeholder);
+                });
+                chip.addEventListener('dragend', () => {
+                    chip.classList.remove('dragging');
+                    draggedEl = null;
+                    zones.forEach(z => z.classList.remove('drag-over'));
+                });
+                chip.addEventListener('click', () => {
+                    // Fallback táctil: si está en el pool, mover a la zona con menos fichas; si está en zona, volver al pool
+                    if (chip.parentElement.id === 'stakeholders-pool') {
+                        const zoneContents = document.querySelectorAll('.zone-content');
+                        let min = null;
+                        zoneContents.forEach(zc => { if (!min || zc.children.length < min.children.length) min = zc; });
+                        if (min) min.appendChild(chip);
+                    } else if (chip.parentElement.classList.contains('zone-content')) {
+                        pool.appendChild(chip);
+                    }
+                });
+            });
+
+            zones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('drag-over'); });
+                zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+                    if (draggedEl) {
+                        zone.querySelector('.zone-content').appendChild(draggedEl);
+                    }
+                });
+            });
+
+            pool.addEventListener('dragover', (e) => { e.preventDefault(); pool.classList.add('drag-over'); });
+            pool.addEventListener('dragleave', () => pool.classList.remove('drag-over'));
+            pool.addEventListener('drop', (e) => {
+                e.preventDefault();
+                pool.classList.remove('drag-over');
+                if (draggedEl) pool.appendChild(draggedEl);
+            });
+        }
+
+        function verificarStakeholders() {
+            const zones = document.querySelectorAll('.stakeholder-zone');
+            let correctas = 0;
+            let total = 0;
+            let feedback = [];
+            zones.forEach(zone => {
+                zone.classList.remove('correct-zone', 'incorrect-zone');
+                const zoneId = zone.dataset.zone;
+                const chips = zone.querySelectorAll('.stakeholder-chip');
+                let zoneCorrect = true;
+                chips.forEach(chip => {
+                    total++;
+                    if (chip.dataset.correct === zoneId) {
+                        correctas++;
+                    } else {
+                        zoneCorrect = false;
+                        feedback.push(`<span style="color:#ef4444">❌ ${chip.textContent}</span> debería estar en <strong>${zoneLabel(chip.dataset.correct)}</strong>.`);
+                    }
+                });
+                if (chips.length > 0 && zoneCorrect) zone.classList.add('correct-zone');
+                if (chips.length > 0 && !zoneCorrect) zone.classList.add('incorrect-zone');
+            });
+
+            const pool = document.getElementById('stakeholders-pool');
+            const pendientes = pool.querySelectorAll('.stakeholder-chip').length;
+
+            const fb = document.getElementById('stakeholder-feedback');
+            if (pendientes > 0) {
+                fb.innerHTML = `<p class="font-bold mb-2">⚠️ Faltan ${pendientes} stakeholder(s) por ubicar.</p><p>Arrastra todos los elementos antes de verificar.</p>`;
+                fb.classList.remove('hidden');
+                return;
+            }
+
+            const pct = Math.round((correctas / total) * 100);
+            let mensaje = `<p class="font-bold mb-2">Resultado: ${correctas} de ${total} correctas (${pct}%)</p>`;
+            if (pct === 100) mensaje += `<p>🟢 Excelente — identificaste bien el poder e interés de cada grupo.</p>`;
+            else if (pct >= 60) mensaje += `<p>🟡 Bien encaminado — revisa los grupos que tienen alto poder o alto interés.</p>`;
+            else mensaje += `<p>🔴 En proceso — vuelve al contenido y repasa la matriz de stakeholders.</p>`;
+            if (feedback.length > 0) mensaje += `<div class="mt-2 space-y-1">${feedback.join('')}</div>`;
+            fb.innerHTML = mensaje;
+            fb.classList.remove('hidden');
+        }
+
+        function zoneLabel(zoneId) {
+            return {
+                'alto-poder-alto-interes': 'Alto poder / Alto interés',
+                'alto-poder-bajo-interes': 'Alto poder / Bajo interés',
+                'bajo-poder-alto-interes': 'Bajo poder / Alto interés',
+                'bajo-poder-bajo-interes': 'Bajo poder / Bajo interés'
+            }[zoneId] || zoneId;
+        }
+
+        function reiniciarStakeholders() {
+            const pool = document.getElementById('stakeholders-pool');
+            document.querySelectorAll('.stakeholder-chip').forEach(chip => {
+                pool.appendChild(chip);
+            });
+            document.querySelectorAll('.stakeholder-zone').forEach(zone => zone.classList.remove('correct-zone', 'incorrect-zone'));
+            const fb = document.getElementById('stakeholder-feedback');
+            if (fb) { fb.innerHTML = ''; fb.classList.add('hidden'); }
+            scrollToActividad();
+        }
+
+        // ===== FLIP CARDS Y DOMContentLoaded =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const flipCards = document.querySelectorAll('.flip-card');
+            flipCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+            });
+
+            renderCasoCard();
+            renderQuiz();
+            initStakeholders();
+        });
+    </script>
+</body>
+</html>
