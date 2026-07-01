@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Mejora de Procesos y Autoaprendizaje Organizacional</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #d1d5db; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #4a5568; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .drag-card { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 14px; cursor: grab; transition: all 0.25s ease; }
+        #ova-embed .drag-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(86,145,81,0.15); }
+        #ova-embed .drag-card.dragging { opacity: 0.4; transform: scale(0.95); }
+        #ova-embed .drag-card.placed { opacity: 0.5; pointer-events: none; cursor: default; }
+        #ova-embed .drag-card.correct { border-color: #22c55e; background: #f0fdf4; }
+        #ova-embed .drag-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+        #ova-embed .drop-zone { background: var(--surface-soft); border: 2px dashed var(--line); border-radius: 12px; padding: 12px; min-height: 120px; transition: all 0.25s ease; display: flex; flex-direction: column; }
+        #ova-embed .drop-zone.drag-over { border-color: var(--accent); background: rgba(86,145,81,0.08); box-shadow: 0 0 0 3px rgba(86,145,81,0.15); }
+        #ova-embed .drop-zone-header { text-align: center; font-weight: 700; font-size: 0.8rem; color: #0c7b8a; padding: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        #ova-embed .drop-zone-header i { font-size: 1.2rem; }
+        #ova-embed .drop-zone-content { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        #ova-embed .drop-zone-content .drag-card { font-size: 0.75rem; padding: 8px 10px; }
+        #ova-embed .drop-zone-content .drag-card .text-sm { font-size: 0.7rem; }
+        #ova-embed .drop-zone-content .drag-card .text-xs { font-size: 0.65rem; }
+        #ova-embed .mobile-header { display: none; }
+        
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .flip-card { height: 220px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); }
+        }
+
+        /* Senge drag & drop colors */
+        #ova-embed .senge-labels { background: linear-gradient(135deg, #f8fbfd 0%, #eef8fb 100%) !important; border-color: #17a2b8 !important; }
+        #ova-embed .senge-label { background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); color: #0c7b8a; border-color: #17a2b8; }
+        #ova-embed .senge-label:hover { background: #17a2b8; color: #ffffff; border-color: #0c7b8a; }
+        #ova-embed .senge-dropzone { background: #ffffff; border-left: 4px solid #D8EBF8; border-color: var(--line); }
+        #ova-embed .senge-dropzone:hover { border-color: #17a2b8; }
+        #ova-embed .senge-number { background: #17a2b8; }
+        #ova-embed .senge-slot { background: #ffffff; border-color: #17a2b8; color: #17a2b8; }
+        #ova-embed .senge-assigned { background: #D8EBF8; color: #0c7b8a; border-radius: 6px; padding: 4px 10px; }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCION -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-users-viewfinder mr-2"></i>Unidad 2 — Tema 4</p>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Mejora de Procesos y Autoaprendizaje Organizacional</h1>
+                        <p class="text-white/90 text-lg max-w-3xl">La excelencia operacional depende de la capacidad de la organización para aprender de su propia práctica, corregir errores y cuestionar los supuestos que los originan.</p>
+                    </div>
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">Aprender de la práctica para transformar la organización</h2>
+                        <p class="mt-4 leading-relaxed">Este subtema integra la <strong>mejora de procesos</strong> con la teoría del aprendizaje organizacional de <strong>Argyris y Schön</strong>. El especialista aprenderá la diferencia crucial entre el <strong>aprendizaje de bucle simple</strong> (corregir errores) y el <strong>aprendizaje de bucle doble</strong> (cuestionar los valores que causaron el error). Se analiza cómo construir una <strong>organización inteligente</strong> capaz de autogestionar su conocimiento y evolucionar sus procedimientos de forma autónoma.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta del aprendizaje</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">Del ajuste reactivo a la organización inteligente</h3>
+                        <div class="consultant-route" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-rotate-left"></i></div>
+                                <h4>Bucle simple</h4>
+                                <p>Detectar errores y corregir la acción para cumplir la norma, sin cuestionar la norma misma.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-arrows-rotate"></i></div>
+                                <h4>Bucle doble</h4>
+                                <p>Reflexionar sobre los supuestos, objetivos y valores que generaron el desajuste.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-brain"></i></div>
+                                <h4>Organización inteligente</h4>
+                                <p>Autogestionar el conocimiento, expandir capacidades y evolucionar los procedimientos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-rotate-left text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Aprendizaje de bucle simple</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Ajuste reactivo que corrige la acción para cumplir con la norma existente.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Ejemplo: bajar precios ante una caída de ventas sin cuestionar el modelo de negocio.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-arrows-rotate text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Aprendizaje de bucle doble</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Reflexión transformadora que cuestiona los supuestos y objetivos que originan el problema.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Permite atacar causas raíz y reinventar la organización ante la era digital y la IA.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-brain text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Organización inteligente</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Organización donde la gente expande su capacidad para crear los resultados que desea.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Requiere dominar cinco disciplinas según Peter Senge: pensamiento sistémico, dominio personal, modelos mentales, visión compartida y aprendizaje en equipo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 4</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de incorporar el aprendizaje organizacional a la mejora continua de procesos, superar las rutinas defensivas y construir infraestructuras que generen conocimiento colectivo.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-arrows-rotate mr-2" style="color: #17a2b8;"></i>Implementar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Metodologías de mejora continua que incorporen ciclos de retroalimentación de bucle doble para una transformación profunda.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-shield-halved mr-2" style="color: #17a2b8;"></i>Identificar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Rutinas defensivas que bloquean el aprendizaje colectivo y la innovación en los procesos, y mitigar su efecto.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-network-wired mr-2" style="color: #17a2b8;"></i>Diseñar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Infraestructuras de aprendizaje en el flujo de trabajo que fomenten la autonomía y la creación de conocimiento organizacional.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Mejora de Procesos y Autoaprendizaje Organizacional</h2>
+                        <p class="mt-4 leading-relaxed">Este tema integra la mejora continua de procesos con la teoría del aprendizaje organizacional. El especialista aprenderá a distinguir entre ajustes reactivos y transformaciones profundas, a reconocer las rutinas defensivas que bloquean la innovación y a diseñar organizaciones inteligentes que conviertan el conocimiento individual en patrimonio colectivo.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"Las organizaciones que no pueden aprender de sus propios errores están condenadas a repetirlos; las que aprenden a cuestionar sus supuestos se reinventan."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Conceptos clave -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📋 Conceptos clave del aprendizaje organizacional</h3>
+                        <p class="text-sm mb-6" style="color: var(--text);">Haz clic en cada tarjeta para descubrir los conceptos centrales del Tema 4.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-rotate-left text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Bucle simple</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-rotate-left text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Corregir sin cuestionar</h4>
+                                        <p class="text-xs leading-relaxed">Ajusta la acción para cumplir la norma existente. Es reactivo, rápido y útil para problemas técnicos, pero no transforma los supuestos subyacentes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-arrows-rotate text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Bucle doble</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-arrows-rotate text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Cuestionar la norma</h4>
+                                        <p class="text-xs leading-relaxed">Reflexiona sobre los objetivos, valores y supuestos que generaron el desajuste. Permite transformar causas raíz y reinventar la organización.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-theater-masks text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Teoría en uso</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-theater-masks text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Lo que realmente guía</h4>
+                                        <p class="text-xs leading-relaxed">Son los supuestos y rutinas que realmente orientan las decisiones, a menudo ocultos detrás de la teoría declarada.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-brain text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Organización inteligente</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-brain text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Aprendizaje continuo</h4>
+                                        <p class="text-xs leading-relaxed">Organización donde la gente expande su capacidad para crear los resultados que desea, integrando tecnología y comunidades de práctica.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">Estructura del Tema</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-arrows-rotate mr-2" style="color: #4a5568;"></i>Parte 1: Ciclos de Aprendizaje de Argyris y Schön</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">El aprendizaje organizacional ocurre cuando los desajustes entre intenciones y resultados son detectados y corregidos. Argyris y Schön distinguen dos niveles:</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Bucle simple:</strong> ajusta la acción para cumplir la norma sin cuestionarla. Ejemplo: bajar precios ante la caída de ventas.</li>
+                                        <li><strong>Bucle doble:</strong> cuestiona los supuestos, objetivos y valores que generan el desajuste. Ejemplo: preguntarse si el modelo de negocio sigue siendo válido.</li>
+                                    </ul>
+                                    <p class="text-sm leading-relaxed mt-3">El aprendizaje de bucle doble es clave para transformar las causas raíz de los problemas operativos y permitir que la organización se reinvente ante la era digital y la inteligencia artificial.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-theater-masks mr-2" style="color: #4a5568;"></i>Parte 2: Teoría en Uso vs. Teoría Declarada</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">Existe una brecha entre lo que las organizaciones dicen que hacen (<strong>teoría declarada</strong>) y lo que realmente guía sus decisiones (<strong>teoría en uso</strong>). Las <strong>rutinas defensivas</strong> son comportamientos diseñados para evitar la incomodidad o el conflicto, pero perpetúan el error y bloquean el aprendizaje.</p>
+                                    <p class="text-sm leading-relaxed">El especialista actúa como facilitador que promueve la comunicación abierta, la reflexión crítica y la participación colaborativa. Ayuda a los equipos a "desaprender" creencias limitantes, considerando al individuo como el eje central y la palanca que impulsa el éxito organizacional.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-brain mr-2" style="color: #4a5568;"></i>Parte 3: Construcción de Organizaciones Inteligentes</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">Según Peter Senge, una organización inteligente es aquella donde la gente expande continuamente su aptitud para crear los resultados que desea. Esto requiere dominar cinco disciplinas:</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Pensamiento Sistémico:</strong> ver las interrelaciones y no solo los eventos aislados.</li>
+                                        <li><strong>Dominio Personal:</strong> claridad y profundidad en lo que cada persona busca.</li>
+                                        <li><strong>Modelos Mentales:</strong> revelar y ajustar los supuestos que limitan la acción.</li>
+                                        <li><strong>Visión Compartida:</strong> generar compromiso con un propósito común.</li>
+                                        <li><strong>Aprendizaje en Equipo:</strong> dialogar y pensar juntos para superar la suma individual.</li>
+                                    </ul>
+                                    <p class="text-sm leading-relaxed mt-3">El diseño de procesos debe integrar herramientas tecnológicas que faciliten el aprendizaje social y las comunidades de práctica. En la Universidad de Córdoba, el autoaprendizaje se traduce en mejora continua de la calidad educativa, donde el conocimiento individual se convierte en patrimonio colectivo institucional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Aplica el aprendizaje organizacional: analiza un caso con Argyris y domina las cinco disciplinas de Senge. El plan de gestión del cambio digital se desarrolla en el taller presencial con el docente.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-argyris">
+                                <i class="fa-solid fa-arrows-rotate"></i> Caso Argyris
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-senge">
+                                <i class="fa-solid fa-puzzle-piece"></i> 5 Disciplinas
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Caso Argyris -->
+                        <div class="act-panel active" id="act-argyris">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">📊 Análisis de Caso (Argyris)</h3>
+                                <p class="text-sm mb-6">Identifica un caso de aprendizaje de bucle simple en tu entorno laboral y propón una intervención para convertirlo en bucle doble, reconociendo rutinas defensivas.</p>
+
+                                <div class="mb-6 p-4 rounded-lg" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #0ea5e9;">
+                                    <h4 class="font-bold text-sm mb-2" style="color: #0369a1;">
+                                        <i class="fa-solid fa-info-circle mr-2"></i>¿Cómo funciona?
+                                    </h4>
+                                    <div class="text-xs space-y-1" style="color: #0369a1;">
+                                        <p>📌 Describe un caso real de tu organización.</p>
+                                        <p>📌 Señala la acción ajustada sin cuestionar la norma (bucle simple).</p>
+                                        <p>📌 Identifica los supuestos o valores que deben revisarse (bucle doble).</p>
+                                        <p>📌 Detecta rutinas defensivas y propón una intervención.</p>
+                                        <p>📌 Genera el prompt para recibir retroalimentación en Google Gemini.</p>
+                                    </div>
+                                </div>
+
+                                <div id="argyris-form-container"></div>
+
+                                <div class="mt-4">
+                                    <label class="block text-sm font-bold mb-2" style="color: var(--heading)">Prompt generado para IA</label>
+                                    <textarea id="argyris-prompt" rows="6" readonly class="w-full px-4 py-2 border rounded-lg text-sm bg-gray-50 focus:outline-none" style="border-color: var(--line);" placeholder="Aquí aparecerá el prompt que debes pegar en Google Gemini..."></textarea>
+                                    <p class="text-xs mt-1" style="color: #6c757d;">Pega este prompt en Google Gemini para recibir la retroalimentación.</p>
+                                </div>
+
+                                <div id="argyris-message" class="hidden mt-4 p-3 rounded-lg text-sm font-semibold text-center" style="background: #D8EBF8; color: #0c7b8a;"></div>
+
+                                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" onclick="generarPromptArgyris()" class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300 hover:shadow-lg" style="background: #D8EBF8; color: #0c7b8a; border: 1px solid #D8EBF8;">
+                                        <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Generar y copiar prompt
+                                    </button>
+                                    <button type="button" onclick="limpiarArgyris()" class="btn-soft">
+                                        <i class="fa-solid fa-rotate-left mr-2"></i>Limpiar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Cinco Disciplinas de Senge -->
+                        <div class="act-panel" id="act-senge">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🧩 Cinco Disciplinas de Senge</h3>
+                                <p class="text-sm mb-6">Arrastra cada disciplina a la descripción correspondiente. En dispositivos móviles puedes hacer clic primero en la disciplina y luego en la casilla.</p>
+
+                                <div id="senge-game" class="space-y-4">
+                                    <div class="mb-4 p-4 rounded-lg" style="background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); border: 1px solid #17a2b8;">
+                                        <h4 class="font-bold text-sm mb-2" style="color: #0c7b8a;">
+                                            <i class="fa-solid fa-info-circle mr-2"></i>¿Cómo funciona?
+                                        </h4>
+                                        <div class="text-xs space-y-1" style="color: #0c7b8a;">
+                                            <p>� Lee las 5 descripciones.</p>
+                                            <p>📌 Arrastra la disciplina correcta a cada casilla.</p>
+                                            <p>📌 En móvil, haz clic en la disciplina y luego en la casilla.</p>
+                                            <p>📌 Presiona Verificar para conocer tu puntuación.</p>
+                                        </div>
+                                    </div>
+                                    <div id="senge-labels" class="senge-labels flex flex-wrap gap-2 justify-center min-h-[48px] p-3 rounded-lg border border-dashed" style="border-color: var(--line);"></div>
+                                    <div id="senge-descriptions" class="space-y-3"></div>
+                                </div>
+                                <div id="senge-result" class="hidden mt-4 p-4 rounded-lg text-sm"></div>
+
+                                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" onclick="verificarSenge()" class="btn-main">Verificar</button>
+                                    <button type="button" onclick="reiniciarSenge()" class="btn-soft">Reiniciar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- EVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 4</h2>
+                        <p class="mt-4 leading-relaxed">Evalúa tu comprensión sobre los ciclos de aprendizaje de Argyris y Schön, las rutinas defensivas, la teoría en uso y las organizaciones inteligentes según Peter Senge.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/3</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-summary" class="hidden mt-6">
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--heading);">Resumen</h3>
+                            <div id="summary-content" class="space-y-4"></div>
+                            <div class="mt-6"><button id="quiz-restart" type="button" class="btn-main">Reiniciar</button></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECURSOS -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas para el aprendizaje organizacional</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Recursos recomendados para documentar, reflexionar, colaborar y profundizar en el Tema 4.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Google Workspace (Docs + Forms) -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-brands fa-google" style="color: #4285f4; font-size: 1em;"></i> Google Workspace (Docs + Forms)
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Para documentar colaborativamente, recoger retroalimentación y alimentar ciclos de aprendizaje continuo.</p>
+                                    <a href="https://www.google.com/docs/about/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Docs
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.google.com/docs/about/" alt="QR Google Docs" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Miro -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-table-cells" style="color: #f06a6a; font-size: 1em;"></i> Miro
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Pizarra colaborativa para diagramar ciclos de aprendizaje de bucle doble, modelos mentales y rutinas defensivas.</p>
+                                    <a href="https://miro.com/templates/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Miro
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://miro.com/templates/" alt="QR Miro" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Google Gemini -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-robot" style="color: #8e75b2; font-size: 1em;"></i> Google Gemini
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Asistente de IA para analizar casos de aprendizaje organizacional y generar preguntas de reflexión según Argyris y Schön.</p>
+                                    <a href="https://gemini.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Gemini
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://gemini.google.com/" alt="QR Google Gemini" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Notion -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-cube" style="color: #000000; font-size: 1em;"></i> Notion
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Construye la base de conocimiento del equipo y da soporte a las comunidades de práctica.</p>
+                                    <a href="https://www.notion.so/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Notion
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.notion.so/" alt="QR Notion" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 5: Padlet -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-note-sticky" style="color: #f5c542; font-size: 1em;"></i> Padlet
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Recoge aportes colectivos, reflexiones y evidencias de aprendizaje de forma visual y rápida.</p>
+                                    <a href="https://padlet.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Padlet
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://padlet.com/" alt="QR Padlet" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliación según la Guía 4 del Tema 4.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+                        <!-- Ref 1: Argyris & Schön -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Argyris, C., & Schön, D. A.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Theory in Practice: Increasing Professional Effectiveness. (1974). Jossey-Bass.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://books.google.com/books/about/Theory_in_Practice.html?id=qmFHAAAAMAAJ" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver en Google Books
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://books.google.com/books/about/Theory_in_Practice.html?id=qmFHAAAAMAAJ" alt="QR Argyris y Schön" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Senge -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Senge, P. M.</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">La Quinta Disciplina. (1990). Ediciones Granica.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://books.google.com/books/about/La_quinta_disciplina.html?id=B2Nj49-ERykC" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver en Google Books
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://books.google.com/books/about/La_quinta_disciplina.html?id=B2Nj49-ERykC" alt="QR Senge" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: MentorDay -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">MentorDay</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Aprendizaje de Doble Bucle: Modelos de Reflexión para el Cambio. (2025).</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://mentorday.es/wikitips/aprendizaje-doble-bucle-primer-segundo-bucle-argyris-schon/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Abrir MentorDay
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://mentorday.es/wikitips/aprendizaje-doble-bucle-primer-segundo-bucle-argyris-schon/" alt="QR MentorDay" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: ConARH Blog -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">ConARH Blog</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">El Modelo de Aprendizaje Organizacional de Argyris. (2024).</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://conarh.org/blog/el-modelo-de-aprendizaje-organizacional-de-chris-argyris-y-donald-schoen" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Abrir ConARH Blog
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://conarh.org/blog/el-modelo-de-aprendizaje-organizacional-de-chris-argyris-y-donald-schoen" alt="QR ConARH" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navegación sidebar
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(link.dataset.target).classList.add('active');
+                
+                // Inicializar quiz cuando se navega a evaluación
+                if (link.dataset.target === 'evaluacion') {
+                    setTimeout(() => {
+                        renderQuiz();
+                    }, 100);
+                }
+            });
+        });
+
+        // Mobile nav
+        document.getElementById('mobile-nav').addEventListener('change', (e) => {
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(e.target.value).classList.add('active');
+        });
+
+        // Acordeón
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = btn.querySelector('.fa-chevron-down');
+                if (icon) icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Quiz - Preguntas acotadas según formato 088 y guía
+        const quizData = [
+            { 
+                q: "Según Argyris y Schön, ¿qué distingue al aprendizaje de bucle doble del aprendizaje de bucle simple?", 
+                options: [
+                    "Ajusta la acción para cumplir la norma sin cuestionarla", 
+                    "Reflexiona sobre los supuestos, objetivos y valores que generan el desajuste", 
+                    "Se limita a corregir errores técnicos de forma inmediata", 
+                    "Replica las rutinas defensivas de la organización"
+                ], 
+                correct: 1 
+            },
+            { 
+                q: "¿Qué son las rutinas defensivas en el aprendizaje organizacional?", 
+                options: [
+                    "Comportamientos diseñados para evitar incomodidad o conflicto, pero que perpetúan el error", 
+                    "Protocolos formales para responder ante emergencias organizacionales", 
+                    "Prácticas de mejora continua basadas en evidencia", 
+                    "Rutinas de trabajo que garantizan la eficiencia operativa"
+                ], 
+                correct: 0 
+            },
+            { 
+                q: "Según Peter Senge, ¿cuál de las siguientes es una de las cinco disciplinas de una organización inteligente?", 
+                options: [
+                    "Pensamiento Sistémico", 
+                    "Control de Calidad Total", 
+                    "Gestión por Competencias", 
+                    "Análisis de Puestos"
+                ], 
+                correct: 0 
+            }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        const quizBox = document.getElementById('quiz-box');
+        const quizSummary = document.getElementById('quiz-summary');
+
+        function renderQuiz() {
+            // Verificar que los elementos existan antes de renderizar
+            const quizTitle = document.getElementById('quiz-title');
+            const quizProgress = document.getElementById('quiz-progress');
+            const quizText = document.getElementById('quiz-text');
+            const quizOptions = document.getElementById('quiz-options');
+            
+            if (!quizTitle || !quizProgress || !quizText || !quizOptions) {
+                console.log('Elementos del quiz no encontrados, reintentando...');
+                setTimeout(renderQuiz, 100);
+                return;
+            }
+            
+            quizTitle.textContent = `Pregunta ${currentQ + 1}`;
+            quizProgress.textContent = `${currentQ + 1}/${quizData.length}`;
+            quizText.textContent = quizData[currentQ].q;
+            const opts = document.getElementById('quiz-options');
+            opts.innerHTML = '';
+            quizData[currentQ].options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = `quiz-option w-full text-left border rounded-lg p-4 transition-all ${answers[currentQ] === i ? 'border-[var(--accent)] bg-[var(--surface-soft)]' : 'border-[var(--line)] hover:bg-[var(--surface-soft)]'}`;
+                btn.innerHTML = `<span class="font-semibold">${String.fromCharCode(65+i)}.</span> ${opt}`;
+                btn.onclick = () => { answers[currentQ] = i; renderQuiz(); };
+                opts.appendChild(btn);
+            });
+            document.getElementById('quiz-prev').disabled = currentQ === 0;
+            document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQ < quizData.length - 1) { currentQ++; renderQuiz(); }
+            else {
+                quizBox.classList.add('hidden');
+                quizSummary.classList.remove('hidden');
+                let correct = 0;
+                let html = '';
+                quizData.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correct++;
+                    html += `<div class="p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}"><p class="font-semibold">${i+1}. ${q.q}</p><p class="text-sm mt-2">Tu respuesta: ${String.fromCharCode(65+answers[i])}. ${q.options[answers[i]]}</p>${!isCorrect ? `<p class="text-sm mt-1 text-green-700">Correcta: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}</p>` : ''}</div>`;
+                });
+                html += `<p class="text-center font-bold text-lg mt-4">Puntuación: ${correct}/${quizData.length} (${Math.round(correct/quizData.length*100)}%)</p>`;
+                document.getElementById('summary-content').innerHTML = html;
+            }
+        });
+
+        document.getElementById('quiz-prev').addEventListener('click', () => { if (currentQ > 0) { currentQ--; renderQuiz(); } });
+        document.getElementById('quiz-restart').addEventListener('click', () => { currentQ = 0; answers = []; quizBox.classList.remove('hidden'); quizSummary.classList.add('hidden'); renderQuiz(); });
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== CONTADORES =====
+        function updateCounter(fieldId) {
+            const field = document.getElementById(fieldId);
+            const counter = document.querySelector(`[data-counter-for="${fieldId}"]`);
+            const progressBar = document.querySelector(`[data-progress-for="${fieldId}"]`);
+            if (field && counter) {
+                const currentLength = field.value.length;
+                const maxLength = field.maxLength;
+                counter.textContent = `${currentLength}/${maxLength}`;
+                if (progressBar) {
+                    progressBar.style.width = `${(currentLength / maxLength) * 100}%`;
+                }
+            }
+        }
+
+        // ===== ACTIVIDAD 1: CASO ARGYRIS =====
+        const argyrisFields = [
+            { id: 'argyris-caso', label: 'Caso a analizar', max: 500, placeholder: 'Describe la organización, área o situación que vas a analizar...', rows: 4 },
+            { id: 'argyris-simple', label: 'Acción ajustada sin cuestionar la norma (bucle simple)', max: 300, placeholder: '¿Qué se hizo para corregir el síntoma sin cuestionar la regla?', rows: 3 },
+            { id: 'argyris-doble', label: 'Supuestos o valores a revisar (bucle doble)', max: 300, placeholder: '¿Qué creencias, objetivos o políticas deberían cuestionarse?', rows: 3 },
+            { id: 'argyris-defensivas', label: 'Rutinas defensivas identificadas', max: 300, placeholder: '¿Qué comportamientos evitan la reflexión y perpetúan el error?', rows: 3 },
+            { id: 'argyris-intervencion', label: 'Propuesta de intervención para pasar a bucle doble', max: 400, placeholder: '¿Qué acciones facilitarían la reflexión y el cambio transformador?', rows: 3 }
+        ];
+
+        function renderArgyrisForm() {
+            const container = document.getElementById('argyris-form-container');
+            if (!container) return;
+            container.innerHTML = argyrisFields.map(f => `
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2" style="color: var(--heading)">${f.label}</label>
+                    <textarea id="${f.id}" rows="${f.rows}" maxlength="${f.max}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2" style="border-color: var(--line);" placeholder="${f.placeholder}"></textarea>
+                    <div class="mt-1 flex items-center gap-2">
+                        <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="${f.id}">0/${f.max}</span>
+                        <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                            <div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="${f.id}"></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function initArgyrisCounters() {
+            argyrisFields.forEach(f => {
+                const field = document.getElementById(f.id);
+                if (field) {
+                    field.addEventListener('input', () => updateCounter(f.id));
+                    updateCounter(f.id);
+                }
+            });
+        }
+
+        function getArgyrisData() {
+            const data = {};
+            argyrisFields.forEach(f => data[f.id] = document.getElementById(f.id)?.value || '');
+            return data;
+        }
+
+        function validarArgyris() {
+            const d = getArgyrisData();
+            return argyrisFields.filter(f => !d[f.id].trim()).map(f => f.label);
+        }
+
+        function generarPromptArgyris() {
+            const missing = validarArgyris();
+            if (missing.length > 0) {
+                alert('Por favor complete todos los campos antes de generar el prompt:\n\n• ' + missing.join('\n• '));
+                return;
+            }
+            const d = getArgyrisData();
+            const prompt = `Actúa como un consultor experto en aprendizaje organizacional y en la teoría de Argyris y Schön. A continuación te comparto un caso analizado por un estudiante. Revisa la propuesta y da retroalimentación constructiva, profesional y didáctica.
+
+Caso a analizar:
+---
+${d['argyris-caso']}
+---
+
+Bucle simple (acción ajustada sin cuestionar la norma):
+${d['argyris-simple']}
+
+Bucle doble (supuestos o valores a revisar):
+${d['argyris-doble']}
+
+Rutinas defensivas identificadas:
+${d['argyris-defensivas']}
+
+Propuesta de intervención:
+${d['argyris-intervencion']}
+
+Por favor responde con:
+1. Evaluación general del análisis.
+2. ¿Es correcta la identificación del bucle simple? ¿Qué faltó?
+3. ¿Los supuestos o valores propuestos para el bucle doble son pertinentes?
+4. ¿Las rutinas defensivas detectadas son realistas y bien argumentadas?
+5. ¿La intervención promueve una reflexión transformadora?
+6. Preguntas o puntos que el estudiante debería revisar.`;
+            const promptBox = document.getElementById('argyris-prompt');
+            if (promptBox) promptBox.value = prompt;
+            copiarPromptArgyris(prompt);
+        }
+
+        function copiarPromptArgyris(prompt) {
+            const text = prompt || document.getElementById('argyris-prompt')?.value || '';
+            if (!text) return;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    mostrarMensajeArgyris('Prompt copiado al portapapeles. Pégalo en Google Gemini para recibir la retroalimentación.');
+                }).catch(() => {
+                    mostrarMensajeArgyris('No se pudo copiar automáticamente. Copia el prompt del recuadro.');
+                });
+            } else {
+                mostrarMensajeArgyris('Copia el prompt manualmente del recuadro.');
+            }
+        }
+
+        function mostrarMensajeArgyris(msg) {
+            const el = document.getElementById('argyris-message');
+            if (el) {
+                el.textContent = msg;
+                el.classList.remove('hidden');
+            }
+        }
+
+        function limpiarArgyris() {
+            renderArgyrisForm();
+            initArgyrisCounters();
+            const promptBox = document.getElementById('argyris-prompt');
+            if (promptBox) promptBox.value = '';
+            const msg = document.getElementById('argyris-message');
+            if (msg) {
+                msg.textContent = '';
+                msg.classList.add('hidden');
+            }
+        }
+
+        // ===== ACTIVIDAD 2: CINCO DISCIPLINAS DE SENGE =====
+        const sengeDisciplines = [
+            { key: 'sistemico', label: 'Pensamiento Sistémico', desc: 'Busca ver la organización como un conjunto interrelacionado, donde las decisiones afectan al todo y no solo a una parte.' },
+            { key: 'personal', label: 'Dominio Personal', desc: 'Cada persona clarifica su propósito, se compromete con el aprendizaje continuo y expande su capacidad de crear resultados.' },
+            { key: 'mentales', label: 'Modelos Mentales', desc: 'Se examinan las suposiciones internas que guían la percepción y la acción, permitiendo corregir sesgos limitantes.' },
+            { key: 'vision', label: 'Visión Compartida', desc: 'Construye un propósito común que alinea energías y compromisos hacia metas significativas para la organización.' },
+            { key: 'equipo', label: 'Aprendizaje en Equipo', desc: 'Fomenta el diálogo reflexivo y la coordinación entre miembros para que el equipo aprenda más allá de la suma individual.' }
+        ];
+
+        let sengeAnswers = Array(sengeDisciplines.length).fill(null);
+        let sengeSelectedKey = null;
+
+        function renderSengeGame() {
+            const labelsContainer = document.getElementById('senge-labels');
+            const descContainer = document.getElementById('senge-descriptions');
+            if (!labelsContainer || !descContainer) return;
+
+            const assignedKeys = new Set(sengeAnswers.filter(k => k));
+            labelsContainer.innerHTML = sengeDisciplines.map(d => {
+                const isSelected = sengeSelectedKey === d.key;
+                return `
+                    <div class="senge-label px-3 py-2 rounded-lg border text-sm font-semibold cursor-move select-none transition-all duration-200 hover:shadow-md ${assignedKeys.has(d.key) ? 'hidden' : ''}" 
+                         data-key="${d.key}" 
+                         draggable="true"
+                         style="${isSelected ? 'box-shadow: 0 0 0 2px #17a2b8;' : ''}">
+                        ${d.label}
+                    </div>
+                `;
+            }).join('');
+
+            descContainer.innerHTML = sengeDisciplines.map((d, i) => {
+                const assignedKey = sengeAnswers[i];
+                const assignedLabel = assignedKey ? sengeDisciplines.find(s => s.key === assignedKey)?.label : null;
+                return `
+                    <div class="senge-dropzone p-3 rounded-lg border transition-all duration-200" data-index="${i}">
+                        <div class="flex items-center gap-3">
+                            <span class="senge-number flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white">${i + 1}</span>
+                            <p class="text-sm flex-1">${d.desc}</p>
+                            <div class="senge-slot min-w-[160px] min-h-[42px] rounded-lg border border-dashed flex items-center justify-center text-xs px-2 text-center transition-all duration-200" style="${sengeSelectedKey ? 'background: #f0f9ff; border-color: #17a2b8;' : ''}">
+                                ${assignedLabel ? `<span class="senge-assigned text-sm font-semibold cursor-pointer" data-key="${assignedKey}" draggable="true">${assignedLabel}</span>` : '<span>Suelta aquí</span>'}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            attachSengeEvents();
+        }
+
+        function attachSengeEvents() {
+            const labelsContainer = document.getElementById('senge-labels');
+
+            document.querySelectorAll('.senge-label').forEach(el => {
+                el.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', el.dataset.key);
+                    el.classList.add('opacity-50');
+                });
+                el.addEventListener('dragend', () => {
+                    document.querySelectorAll('.senge-label').forEach(l => l.classList.remove('opacity-50'));
+                });
+                el.addEventListener('click', () => {
+                    sengeSelectedKey = sengeSelectedKey === el.dataset.key ? null : el.dataset.key;
+                    renderSengeGame();
+                });
+            });
+
+            document.querySelectorAll('.senge-dropzone').forEach(zone => {
+                const slot = zone.querySelector('.senge-slot');
+                zone.addEventListener('dragover', e => {
+                    e.preventDefault();
+                    slot.style.borderColor = '#17a2b8';
+                    slot.style.backgroundColor = '#D8EBF8';
+                });
+                zone.addEventListener('dragleave', () => {
+                    slot.style.borderColor = '';
+                    slot.style.backgroundColor = '';
+                });
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    const key = e.dataTransfer.getData('text/plain');
+                    assignSengeLabel(key, parseInt(zone.dataset.index));
+                    slot.style.borderColor = '';
+                    slot.style.backgroundColor = '';
+                });
+                zone.addEventListener('click', () => {
+                    const index = parseInt(zone.dataset.index);
+                    if (sengeSelectedKey) {
+                        assignSengeLabel(sengeSelectedKey, index);
+                    } else if (sengeAnswers[index]) {
+                        removeSengeAssignment(sengeAnswers[index]);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.senge-assigned').forEach(el => {
+                el.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', el.dataset.key);
+                    el.classList.add('opacity-50');
+                });
+                el.addEventListener('dragend', () => {
+                    document.querySelectorAll('.senge-assigned').forEach(l => l.classList.remove('opacity-50'));
+                });
+                el.addEventListener('click', e => {
+                    e.stopPropagation();
+                    removeSengeAssignment(el.dataset.key);
+                });
+            });
+
+            labelsContainer.addEventListener('dragover', e => e.preventDefault());
+            labelsContainer.addEventListener('drop', e => {
+                e.preventDefault();
+                const key = e.dataTransfer.getData('text/plain');
+                removeSengeAssignment(key);
+            });
+        }
+
+        function assignSengeLabel(key, index) {
+            sengeAnswers = sengeAnswers.map(k => k === key ? null : k);
+            sengeAnswers[index] = key;
+            sengeSelectedKey = null;
+            renderSengeGame();
+        }
+
+        function removeSengeAssignment(key) {
+            sengeAnswers = sengeAnswers.map(k => k === key ? null : k);
+            sengeSelectedKey = null;
+            renderSengeGame();
+        }
+
+        function initSengeGame() {
+            sengeAnswers = Array(sengeDisciplines.length).fill(null);
+            sengeSelectedKey = null;
+            renderSengeGame();
+        }
+
+        function verificarSenge() {
+            let correct = 0;
+            let html = '';
+            sengeDisciplines.forEach((d, i) => {
+                const answer = sengeAnswers[i] || '';
+                const isCorrect = answer === d.key;
+                if (isCorrect) correct++;
+                html += `<div class="p-3 rounded-lg mb-2 ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}">
+                    <p class="font-semibold text-sm">${i + 1}. ${d.desc}</p>
+                    <p class="text-xs mt-1">Tu respuesta: ${answer ? sengeDisciplines.find(s => s.key === answer)?.label || answer : 'Sin respuesta'}</p>
+                    ${!isCorrect ? `<p class="text-xs mt-1 text-green-700">Correcta: ${d.label}</p>` : ''}
+                </div>`;
+            });
+            html += `<p class="text-center font-bold text-lg mt-3">Puntuación: ${correct}/${sengeDisciplines.length}</p>`;
+            const result = document.getElementById('senge-result');
+            result.innerHTML = html;
+            result.classList.remove('hidden');
+        }
+
+        function reiniciarSenge() {
+            initSengeGame();
+            const result = document.getElementById('senge-result');
+            result.innerHTML = '';
+            result.classList.add('hidden');
+        }
+
+        // ===== FLIP CARDS Y DOMContentLoaded =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const flipCards = document.querySelectorAll('.flip-card');
+            flipCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+            });
+
+            renderArgyrisForm();
+            initArgyrisCounters();
+            initSengeGame();
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>

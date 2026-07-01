@@ -1,0 +1,29 @@
+
+
+Tema 4: Mejora de Procesos y Autoaprendizaje Organizacional
+
+
+Introducción:
+La excelencia operacional depende de la capacidad de la organización para aprender de su propia práctica. Este subtema integra la mejora de procesos con la teoría del aprendizaje organizacional de Argyris y Schön. El especialista aprenderá la diferencia crucial entre el aprendizaje de "bucle simple" (corregir errores) y el de "bucle doble" (cuestionar los valores que causaron el error). Se analiza cómo construir una "Organización Inteligente" capaz de autogestionar su conocimiento y evolucionar sus procedimientos de forma autónoma.
+Objetivos de Aprendizaje:
+1. Implementar metodologías de mejora continua que incorporen ciclos de retroalimentación de bucle doble para una transformación profunda.
+2. Identificar y mitigar "rutinas defensivas" que bloquean el aprendizaje colectivo y la innovación en los procesos.
+3. Diseñar infraestructuras de aprendizaje en el flujo de trabajo que fomenten la autonomía y la creación de conocimiento organizacional.
+Contenido:
+? Parte 1: Ciclos de Aprendizaje de Argyris y Schön: El aprendizaje organizacional ocurre cuando los desajustes entre intenciones y resultados son detectados y corregidos. El Aprendizaje de Bucle Simple es reactivo: se ajusta la acción para cumplir la norma sin cuestionarla (ej. bajar precios por baja de ventas). El Aprendizaje de Bucle Doble es reflexivo y transformador: se cuestionan los supuestos y objetivos mismos (ej. preguntarse si el modelo de negocio sigue siendo válido). El especialista debe incentivar este segundo nivel de aprendizaje para atacar las causas raíz de los problemas operativos y permitir que la organización se reinvente ante los desafíos de la era digital y la inteligencia artificial.
+? Parte 2: Teoría en Uso vs. Teoría Declarada: Existe a menudo una brecha entre lo que las organizaciones dicen que hacen (Teoría Declarada) y lo que realmente guía sus decisiones (Teoría en Uso). Las "rutinas defensivas" son comportamientos diseñados para evitar la incomodidad o el conflicto, pero que perpetúan el error y bloquean el aprendizaje. El especialista actúa como un facilitador que promueve la comunicación abierta, la reflexión crítica y la participación colaborativa, ayudando a los equipos a "desaprender" creencias limitantes. Este enfoque humanístico considera al individuo como el eje central y la palanca que impulsa el éxito organizacional a través de su energía psicológica y potencial.
+? Parte 3: Construcción de Organizaciones Inteligentes: Una organización inteligente es aquella donde la gente expande continuamente su aptitud para crear los resultados que desea. Según Peter Senge, esto requiere dominar cinco disciplinas: Pensamiento Sistémico, Dominio Personal, Modelos Mentales, Visión Compartida y Aprendizaje en Equipo. El diseño de procesos debe integrar herramientas tecnológicas que faciliten el aprendizaje social y las comunidades de práctica. En la Universidad de Córdoba, el autoaprendizaje se traduce en una mejora continua de la calidad educativa, donde el conocimiento individual de docentes y administrativos se convierte en patrimonio colectivo institucional para el desarrollo regional.
+Referencias para ampliación:
+? Argyris, C., & Schön, D. A. (1974). Theory in Practice: Increasing Professional Effectiveness. Jossey-Bass.
+? Senge, P. M. (1990). La Quinta Disciplina. Ediciones Granica.
+? MentorDay. (2025). Aprendizaje de Doble Bucle: Modelos de Reflexión para el Cambio.
+? ConARH Blog. (2024). El Modelo de Aprendizaje Organizacional de Argyris.
+
+
+Integración con Google Docs y Guía Práctica
+Este material de la Unidad 02 sirve como guía técnica para el desarrollo del Cuerpo de la Propuesta de Intervención.
+Actividades Sugeridas en el Aula Virtual:
+1. Simulacro de Diseño Organizacional: El estudiante debe proponer una red de equipos autónomos para una unidad funcional de su empresa, eliminando un nivel jerárquico.
+2. Taller de Gestión del Cambio: Creación de un plan de comunicación de 5 hitos para una transformación digital basada en los primeros 4 pasos de Kotter.
+3. Análisis de Caso (Argyris): Identificar un caso de "aprendizaje de bucle simple" en su entorno laboral y proponer la intervención para convertirlo en "bucle doble".
+Este diseño asegura que el especialista de la Universidad de Córdoba no solo aprenda conceptos, sino que adquiera las destrezas operativas y humanas para transformar positivamente sus organizaciones.
