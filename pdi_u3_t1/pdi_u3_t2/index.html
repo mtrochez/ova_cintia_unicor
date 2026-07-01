@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2: La RSE en la práctica y sus grupos de interés</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #4a5568; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .drag-card { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 14px; cursor: grab; transition: all 0.25s ease; }
+        #ova-embed .drag-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(86,145,81,0.15); }
+        #ova-embed .drag-card.dragging { opacity: 0.4; transform: scale(0.95); }
+        #ova-embed .drag-card.placed { opacity: 0.5; pointer-events: none; cursor: default; }
+        #ova-embed .drag-card.correct { border-color: #22c55e; background: #f0fdf4; }
+        #ova-embed .drag-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+        #ova-embed .drop-zone { background: var(--surface-soft); border: 2px dashed var(--line); border-radius: 12px; padding: 12px; min-height: 120px; transition: all 0.25s ease; display: flex; flex-direction: column; }
+        #ova-embed .drop-zone.drag-over { border-color: var(--accent); background: rgba(86,145,81,0.08); box-shadow: 0 0 0 3px rgba(86,145,81,0.15); }
+        #ova-embed .drop-zone-header { text-align: center; font-weight: 700; font-size: 0.8rem; color: #0c7b8a; padding: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        #ova-embed .drop-zone-header i { font-size: 1.2rem; }
+        #ova-embed .drop-zone-content { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        #ova-embed .drop-zone-content .drag-card { font-size: 0.75rem; padding: 8px 10px; }
+        #ova-embed .drop-zone-content .drag-card .text-sm { font-size: 0.7rem; }
+        #ova-embed .drop-zone-content .drag-card .text-xs { font-size: 0.65rem; }
+        #ova-embed .mobile-header { display: none; }
+        
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .flip-card { height: 220px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); }
+        }
+
+        /* Senge drag & drop colors */
+        #ova-embed .senge-labels { background: linear-gradient(135deg, #f8fbfd 0%, #eef8fb 100%) !important; border-color: #17a2b8 !important; }
+        #ova-embed .senge-label { background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); color: #0c7b8a; border-color: #17a2b8; }
+        #ova-embed .senge-label:hover { background: #17a2b8; color: #ffffff; border-color: #0c7b8a; }
+        #ova-embed .senge-dropzone { background: #ffffff; border-left: 4px solid #D8EBF8; border-color: var(--line); }
+        #ova-embed .senge-dropzone:hover { border-color: #17a2b8; }
+        #ova-embed .senge-number { background: #17a2b8; }
+        #ova-embed .senge-slot { background: #ffffff; border-color: #17a2b8; color: #17a2b8; }
+        #ova-embed .senge-assigned { background: #D8EBF8; color: #0c7b8a; border-radius: 6px; padding: 4px 10px; }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCION -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-earth-americas mr-2"></i>Unidad 3 — Tema 2</p>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-3">La RSE en la práctica y sus grupos de interés</h1>
+                        <p class="text-white/90 text-lg max-w-3xl">La Responsabilidad Social Empresarial ha evolucionado hacia una gestión proactiva e integrada de los impactos ASG (Ambiental, Social y Gobernanza).</p>
+                    </div>
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">La RSE como gestión estratégica de stakeholders</h2>
+                        <p class="mt-4 leading-relaxed">La <strong>Responsabilidad Social Empresarial (RSE)</strong> ha evolucionado de un enfoque filantrópico y reactivo hacia una gestión proactiva e integrada de los impactos <strong>ASG (Ambiental, Social y Gobernanza)</strong>. Este subtema profundiza en la <strong>Teoría de los Stakeholders de Edward Freeman</strong>, la cual sostiene que el éxito sostenible de una organización depende de su capacidad para gestionar los intereses de todos sus grupos de interés. El especialista aprenderá a realizar diagnósticos de materialidad que permitan identificar qué temas son realmente críticos para sus empleados, clientes y comunidades locales.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contexto de la Unidad</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">RSE, Sostenibilidad y Gestión del Talento</h3>
+                        <div class="consultant-route" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-people-group"></i></div>
+                                <h4>Teoría de Stakeholders</h4>
+                                <p>El éxito sostenible depende de gestionar los intereses de empleados, clientes, comunidades, sindicatos y generaciones futuras.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-leaf"></i></div>
+                                <h4>Dimensiones ASG</h4>
+                                <p>Ambiental, Social y de Gobernanza: el pilar Social incluye inclusión laboral, diversidad y equidad salarial liderados por Talento Humano.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <h4>Diagnóstico de Materialidad</h4>
+                                <p>Proceso estructurado para identificar qué temas son críticos para los stakeholders y articular la estrategia con los ODS de la Agenda 2030.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-users text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Stakeholders Primarios</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Empleados, familias, sindicatos y comunidades directamente impactadas por las políticas de RRHH de la organización.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Según Melé, el éxito económico no puede lograrse de modo sostenible sin tener en cuenta a empleados, clientes, distribuidores y comunidades.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-globe text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Impactos Positivos ASG</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Las organizaciones deben generar impactos positivos activos, no solo evitar daños. La sostenibilidad es el lenguaje de las empresas con futuro.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El gerente de TH lidera el componente Social (S): inclusión, diversidad, equidad salarial y derechos laborales; y Gobernanza (G): transparencia y anticorrupción.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-bullseye text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">ODS Agenda 2030</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Las organizaciones líderes articulan sus estrategias de RSE con los Objetivos de Desarrollo Sostenible de la ONU como marco de referencia.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El especialista diseña diagnósticos que identifican los puntos de dolor de los stakeholders y propone prácticas que mejoran el bienestar social a largo plazo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 2</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de mapear grupos de interés, aplicar criterios ASG en programas de talento humano y evaluar la relación entre la satisfacción de los stakeholders y la competitividad empresarial.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-people-group mr-2" style="color: #17a2b8;"></i>Mapeo de Stakeholders</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Mapear y clasificar los grupos de interés (stakeholders) primarios y secundarios, evaluando su nivel de influencia y legitimidad en la organización.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-leaf mr-2" style="color: #17a2b8;"></i>Criterios ASG</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Aplicar los criterios ASG (ESG) en el diseño de programas de talento humano para generar impactos positivos en el pilar social y de gobernanza.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-chart-line mr-2" style="color: #17a2b8;"></i>Competitividad Responsable</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Evaluar la relación entre la satisfacción de los stakeholders y la competitividad empresarial bajo modelos de gestión responsable.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 La RSE en la práctica y sus grupos de interés</h2>
+                        <p class="mt-4 leading-relaxed">Este tema desarrolla la Teoría de los Stakeholders, las tres dimensiones de la sostenibilidad corporativa (ASG) y el proceso de diagnóstico de buenas prácticas de RSE articulado con los ODS de la Agenda 2030.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"El éxito económico no puede lograrse de modo sostenible si los ejecutivos no tienen en cuenta a los empleados, clientes, distribuidores y comunidades."</p>
+                                <p class="text-sm mt-2 opacity-75">— Domènec Melé</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Conceptos clave -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📋 Conceptos clave de la RSE y los Stakeholders</h3>
+                        <p class="text-sm mb-6" style="color: var(--text);">Haz clic en cada tarjeta para descubrir los conceptos centrales del Tema 2.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-people-group text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Teoría de Stakeholders</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-people-group text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Edward Freeman (1984)</h4>
+                                        <p class="text-xs leading-relaxed">El éxito sostenible depende de gestionar los intereses de todos los grupos: empleados actuales, familias, sindicatos y generaciones futuras como stakeholders silenciosos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-leaf text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Dimensión Ambiental (A)</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-leaf text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Impacto ecológico</h4>
+                                        <p class="text-xs leading-relaxed">Evitar impactos negativos como el daño ambiental y generar impactos positivos activos en la gestión de recursos naturales y huella de carbono.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-users text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Dimensión Social (S)</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-users text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Talento Humano y RSE</h4>
+                                        <p class="text-xs leading-relaxed">El gerente de TH lidera este pilar: inclusión laboral, diversidad, equidad salarial y derechos laborales como ejes de la gestión responsable del capital humano.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-landmark text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Dimensión Gobernanza (G)</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-landmark text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Transparencia institucional</h4>
+                                        <p class="text-xs leading-relaxed">Asegurar transparencia en las formas de gobierno y la lucha contra la corrupción. La sostenibilidad se convierte en el lenguaje de las empresas con futuro.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">5</div>
+                                        <i class="fa-solid fa-magnifying-glass-chart text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Diagnóstico de RSE</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-magnifying-glass-chart text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Buena ciudadanía empresarial</h4>
+                                        <p class="text-xs leading-relaxed">Proceso que identifica qué le pide la sociedad a la empresa. Permite diseñar prácticas responsables que mejoren el bienestar social y la viabilidad económica a largo plazo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">6</div>
+                                        <i class="fa-solid fa-bullseye text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">ODS Agenda 2030</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-bullseye text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Marco estratégico global</h4>
+                                        <p class="text-xs leading-relaxed">Las organizaciones líderes articulan sus metas con los ODS del Pacto Mundial de la ONU, profesionalizando la gestión de la sostenibilidad en el área de talento humano.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">Estructura del Tema</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-people-group mr-2" style="color: #4a5568;"></i>Parte 1: La Teoría de los Grupos de Interés (Stakeholders)</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">El paradigma tradicional de orientación exclusiva al accionista ha sido desplazado por el reconocimiento de que la empresa es un sistema complejo de intereses interconectados. Según el profesor <strong>Domènec Melé</strong>, el éxito económico no puede lograrse de modo sostenible si los ejecutivos no tienen en cuenta a los empleados, clientes, distribuidores y comunidades.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Stakeholders primarios:</strong> empleados actuales directamente impactados por las políticas de RRHH.</li>
+                                        <li><strong>Stakeholders silenciosos:</strong> familias, sindicatos y generaciones futuras afectadas por las decisiones de sostenibilidad de hoy.</li>
+                                        <li><strong>Aplicación práctica:</strong> el especialista en TH identifica a todos los grupos impactados para diseñar intervenciones con legitimidad social.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-leaf mr-2" style="color: #4a5568;"></i>Parte 2: Dimensiones de la Sostenibilidad Corporativa</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">La sostenibilidad moderna se fundamenta en tres dimensiones integradas: <strong>Ambiental, Social y Económica</strong>. Las compañías no solo deben evitar impactos negativos —como la vulneración de derechos humanos o el daño ambiental—, sino generar impactos positivos activos.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Pilar Social (S):</strong> inclusión laboral, diversidad, equidad salarial y derechos laborales liderados por el gerente de TH.</li>
+                                        <li><strong>Pilar de Gobernanza (G):</strong> transparencia en las formas de gobierno y lucha activa contra la corrupción.</li>
+                                        <li><strong>Sostenibilidad:</strong> el lenguaje estratégico de las empresas con futuro en el siglo XXI.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-magnifying-glass-chart mr-2" style="color: #4a5568;"></i>Parte 3: Diagnóstico y Buenas Prácticas de RSE</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">Implementar la RSE requiere un proceso estructurado que inicie con un diagnóstico de qué le pide la sociedad a la empresa para ser una <strong>"buena ciudadana"</strong>. Las organizaciones líderes sustentam sus estrategias en los <strong>Objetivos de Desarrollo Sostenible (ODS)</strong> de la Agenda 2030.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Diagnóstico de materialidad:</strong> identifica los puntos de dolor de los stakeholders y las prioridades estratégicas de la organización.</li>
+                                        <li><strong>ODS como marco:</strong> articulan las metas corporativas con compromisos globales de sostenibilidad del Pacto Mundial de la ONU.</li>
+                                        <li><strong>Profesionalización:</strong> el especialista gestiona la sostenibilidad dentro del área de talento con rigor técnico y profundidad ética.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Pon en práctica la RSE y la Teoría de los Stakeholders: prioriza iniciativas con un presupuesto real, toma decisiones desde múltiples perspectivas y detecta el greenwashing en noticias empresariales, según la Guía 2.</p>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex border-b flex-wrap" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-tablero">
+                                <i class="fa-solid fa-sliders"></i> Tablero de Priorización
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-votos">
+                                <i class="fa-solid fa-person-booth"></i> Votación de Stakeholders
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-detecta">
+                                <i class="fa-solid fa-magnifying-glass"></i> Detecta la práctica RSE
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Tablero de Priorización RSE -->
+                        <div class="act-panel active" id="act-tablero">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">📊 Tablero de Priorización RSE</h3>
+                                <p class="text-sm mb-4">Tienes un presupuesto de <strong>$100 millones</strong> para invertir en 8 iniciativas de RSE. Asigna lo que consideres a cada una — una por vez — y al final compara con la propuesta experta.</p>
+
+                                <!-- Barra de progreso y presupuesto -->
+                                <div class="mb-4 flex items-center justify-between gap-4">
+                                    <div class="flex-1">
+                                        <div class="flex justify-between text-xs font-semibold mb-1" style="color:var(--text)">
+                                            <span id="tablero-paso-label">Iniciativa 1 de 8</span>
+                                            <span id="tablero-restante" class="font-extrabold" style="color:var(--accent)">$100M disponibles</span>
+                                        </div>
+                                        <div class="w-full h-2 rounded-full bg-gray-200 overflow-hidden">
+                                            <div id="tablero-progress-bar" class="h-full rounded-full transition-all duration-300" style="width:12.5%; background:var(--accent);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tarjeta de la iniciativa actual -->
+                                <div id="tablero-card" class="p-5 rounded-xl border-2 transition-all duration-300" style="border-color:var(--accent); background:var(--surface-soft);"></div>
+
+                                <!-- Resultado comparativo (oculto hasta el final) -->
+                                <div id="tablero-resultado" class="hidden mt-4 space-y-2"></div>
+                                <div id="tablero-message" class="hidden mt-3 p-3 rounded-lg text-sm font-semibold text-center" style="background: #D8EBF8; color: #0c7b8a;"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3 justify-center items-center">
+                                    <button type="button" id="tablero-btn-prev" onclick="pasoTablero(-1)" class="btn-soft"><i class="fa-solid fa-arrow-left mr-1"></i>Anterior</button>
+                                    <button type="button" id="tablero-btn-next" onclick="pasoTablero(1)" class="btn-main">Siguiente <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                                    <button type="button" id="tablero-btn-ver" onclick="verResultadoTablero()" class="btn-main hidden"><i class="fa-solid fa-chart-bar mr-2"></i>Ver resultado</button>
+                                    <button type="button" onclick="limpiarTablero()" class="btn-soft"><i class="fa-solid fa-rotate-left mr-1"></i>Reiniciar</button>
+                                    <select id="tablero-export-format" onchange="exportarTablero(this.value); this.value=''" class="px-3 py-2 rounded-lg font-bold text-sm border cursor-pointer" style="background:var(--surface-soft); border-color:var(--line); color:var(--heading);">
+                                        <option value="">⬇ Exportar</option>
+                                        <option value="word">📄 Word</option>
+                                        <option value="txt">📝 TXT</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Votación de Stakeholders -->
+                        <div class="act-panel" id="act-votos">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🗳️ Votación de Stakeholders</h3>
+                                <p class="text-sm mb-4">Una empresa minera quiere expandir operaciones en territorio rural colombiano. Asume el rol de <strong>3 stakeholders distintos</strong> y argumenta desde cada perspectiva. Descubre cómo cambia la decisión según quién tiene la voz.</p>
+
+                                <div class="mb-4 p-4 rounded-lg" style="background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); border: 1px solid #17a2b8;">
+                                    <h4 class="font-bold text-sm mb-2" style="color: #0c7b8a;"><i class="fa-solid fa-info-circle mr-2"></i>¿Cómo funciona?</h4>
+                                    <div class="text-xs space-y-1" style="color: #0c7b8a;">
+                                        <p>📌 Lee el dilema y el perfil de cada stakeholder.</p>
+                                        <p>📌 Vota (Apruebo / Rechazo / Me abstengo) y argumenta desde ese rol.</p>
+                                        <p>📌 Completa los 3 roles y presiona <strong>Ver panel de votos</strong>.</p>
+                                        <p>📌 Exporta tu análisis completo en Word o TXT.</p>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4 p-4 rounded-lg border" style="border-color: var(--line); background: var(--surface-soft);">
+                                    <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--heading)">Dilema organizacional</p>
+                                    <p class="text-sm leading-relaxed">La empresa <strong>MinCo S.A.</strong> quiere abrir una nueva planta extractiva en el municipio de San Marcos (Sucre). El proyecto generaría 400 empleos directos, pero afectaría las fuentes de agua de 3 comunidades campesinas y aumentaría las emisiones de CO₂ en un 18%. La junta directiva pide una decisión en 30 días.</p>
+                                </div>
+
+                                <div id="votos-roles" class="space-y-5"></div>
+                                <div id="votos-panel" class="hidden mt-6"></div>
+                                <div class="mt-6 flex flex-wrap gap-3 justify-center items-center">
+                                    <button type="button" onclick="verPanelVotos()" class="btn-main"><i class="fa-solid fa-users mr-2"></i>Ver panel de votos</button>
+                                    <button type="button" onclick="limpiarVotos()" class="btn-soft"><i class="fa-solid fa-rotate-left mr-2"></i>Limpiar</button>
+                                    <div class="relative">
+                                        <select id="votos-export-format" onchange="exportarVotos(this.value); this.value=''" class="px-4 py-2 rounded-lg font-bold text-sm border cursor-pointer" style="background: var(--surface-soft); border-color: var(--line); color: var(--heading);">
+                                            <option value="">⬇ Exportar</option>
+                                            <option value="word">📄 Word (.doc)</option>
+                                            <option value="txt">📝 TXT</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Detecta la práctica RSE -->
+                        <div class="act-panel" id="act-detecta">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🔍 Detecta la práctica RSE</h3>
+                                <p class="text-sm mb-4">Lee 6 noticias empresariales reales. Para cada una identifica: ¿qué <strong>dimensión ASG</strong>?, ¿qué <strong>stakeholders</strong>? y ¿<strong>buena práctica o greenwashing</strong>? Una noticia por vez.</p>
+
+                                <!-- Progreso -->
+                                <div class="mb-4">
+                                    <div class="flex justify-between text-xs font-semibold mb-1" style="color:var(--text)">
+                                        <span id="detecta-paso-label">Noticia 1 de 6</span>
+                                        <span id="detecta-score-mini" class="font-extrabold" style="color:var(--accent)">0 / 0 correctas</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-gray-200 overflow-hidden">
+                                        <div id="detecta-progress-bar" class="h-full rounded-full transition-all duration-300" style="width:16.6%; background:var(--accent);"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Tarjeta de noticia actual -->
+                                <div id="detecta-card" class="p-5 rounded-xl border-2 transition-all duration-300" style="border-color:var(--accent); background:var(--surface-soft);"></div>
+
+                                <!-- Resultado global -->
+                                <div id="detecta-resultado-global" class="hidden mt-4 p-4 rounded-xl text-center" style="background:var(--surface-soft); border: 2px solid var(--accent);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" id="detecta-btn-prev" onclick="pasoDetecta(-1)" class="btn-soft"><i class="fa-solid fa-arrow-left mr-1"></i>Anterior</button>
+                                    <button type="button" id="detecta-btn-verificar" onclick="verificarNoticiaActual()" class="btn-main"><i class="fa-solid fa-check mr-1"></i>Verificar</button>
+                                    <button type="button" id="detecta-btn-next" onclick="pasoDetecta(1)" class="btn-main hidden">Siguiente <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                                    <button type="button" onclick="reiniciarDetecta()" class="btn-soft"><i class="fa-solid fa-rotate-left mr-1"></i>Reiniciar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- EVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 2</h2>
+                        <p class="mt-4 leading-relaxed">Evalúa tu comprensión sobre la RSE en la práctica, la Teoría de los Stakeholders, las dimensiones ASG y el diagnóstico de materialidad, según la Guía 2 y el formato FDOC-088.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/4</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-summary" class="hidden mt-6">
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--heading);">Resumen</h3>
+                            <div id="summary-content" class="space-y-4"></div>
+                            <div class="mt-6"><button id="quiz-restart" type="button" class="btn-main">Reiniciar</button></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECURSOS -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas para la práctica de la RSE</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Recursos recomendados para desarrollar las actividades del Tema 2: auditoría de IA en selección, mapa de stakeholders, taller de SROI y portafolio de sostenibilidad, según la Guía 2 y el FDOC-088.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Miro — Mapa de Stakeholders -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-table-cells" style="color: #f06a6a; font-size: 1em;"></i> Miro — Matriz de Materialidad
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Pizarra colaborativa para construir el mapa de stakeholders y la matriz de materialidad del proyecto de intervención (Actividad 2 — Guía 2).</p>
+                                    <a href="https://miro.com/templates/stakeholder-mapping/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir plantilla
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://miro.com/templates/stakeholder-mapping/" alt="QR Miro" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Google Gemini -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-robot" style="color: #8e75b2; font-size: 1em;"></i> Google Gemini
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Asistente de IA para analizar algoritmos de selección de personal y recibir retroalimentación sobre el análisis de impacto ASG y SROI (Actividades 1 y 3 — Guía 2).</p>
+                                    <a href="https://gemini.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Gemini
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://gemini.google.com/" alt="QR Gemini" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Google Docs — Portafolio de Sostenibilidad -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-brands fa-google" style="color: #4285f4; font-size: 1em;"></i> Google Docs — Portafolio de Sostenibilidad
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Documenta el diagnóstico de RSE, el mapa de stakeholders y el cálculo de SROI del proyecto de intervención como evidencia de aprendizaje del Tema 2.</p>
+                                    <a href="https://www.google.com/docs/about/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Docs
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.google.com/docs/about/" alt="QR Google Docs" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: SDG Compass -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-compass" style="color: #2a7a4f; font-size: 1em;"></i> SDG Compass — GRI & UN Global Compact
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Guía práctica para que las empresas alineen sus estrategias con los ODS. Herramienta clave para diseñar el diagnóstico de materialidad del proyecto de intervención.</p>
+                                    <a href="https://sdgcompass.org/es/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir SDG Compass
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://sdgcompass.org/es/" alt="QR SDG Compass" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 5: Padlet — Reflexiones RSE -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-note-sticky" style="color: #f5c542; font-size: 1em;"></i> Padlet — Muro de RSE
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Comparte con el grupo casos reales de empresas con buenas prácticas ASG, reflexiones sobre stakeholders silenciosos y evidencias del diagnóstico de materialidad.</p>
+                                    <a href="https://padlet.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir Padlet
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://padlet.com/" alt="QR Padlet" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 6: Google Meet -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-video" style="color: #00832d; font-size: 1em;"></i> Google Meet
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Canal para videosesiones, tutorías virtuales y análisis sincrónico de casos de RSE, grupos de interés y sostenibilidad empresarial con el docente.</p>
+                                    <a href="https://meet.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Iniciar reunión
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://meet.google.com/" alt="QR Google Meet" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliación según la Guía 2 del Tema 2 — La RSE en la práctica y sus grupos de interés.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Ref 1: Freeman -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Freeman, R. E. (1984).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Strategic Management: A Stakeholder Approach. Pitman Publishing.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.scribd.com/doc/66150274/Strategic-Management-a-Stakeholder-Approach" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-book-open"></i> Ver en Scribd
+                                        </a>
+                                        <a href="https://pdfcoffee.com/strategic-management-a-stakeholder-approach-3-pdf-free.html" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-file-pdf"></i> Ver PDF
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.scribd.com/doc/66150274/Strategic-Management-a-Stakeholder-Approach" alt="QR Freeman" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Pacto Mundial ONU -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Pacto Mundial de la ONU. (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Guía de Sostenibilidad Empresarial y ODS. Red Española del Pacto Mundial.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.pactomundial.org/que-puedes-hacer-tu/ods/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Pacto Mundial — ODS
+                                        </a>
+                                        <a href="https://www.pactomundial.org/wp-content/uploads/2019/12/Gui%CC%81a-para-pymes-ante-los-ODS.pdf" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-file-pdf"></i> Guía ODS para empresas (PDF)
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.pactomundial.org/que-puedes-hacer-tu/ods/" alt="QR Pacto Mundial" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: Carbal Herrera -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Carbal Herrera, A., et al. (2024).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Teoría organizacional y sostenibilidad empresarial: Un análisis teórico.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.researchgate.net/publication/385811799_Teoria_organizacional_y_sostenibilidad_empresarial_Un_analisis_teorico" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver en ResearchGate
+                                        </a>
+                                        <a href="https://dialnet.unirioja.es/descarga/articulo/9770743.pdf" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-file-pdf"></i> Ver PDF en Dialnet
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://dialnet.unirioja.es/descarga/articulo/9770743.pdf" alt="QR Carbal Herrera" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: Dyllick & Hockerts -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Dyllick, T., & Hockerts, K. (2002).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Beyond the Business Case for Corporate Sustainability. Business Strategy and the Environment, 11(2), 130–141.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://onlinelibrary.wiley.com/doi/10.1002/bse.323" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver en Wiley Online
+                                        </a>
+                                        <a href="https://www.researchgate.net/publication/36386947_Beyond_the_Business_Case_for_Corporate_Sustainability" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-file-pdf"></i> Ver PDF en ResearchGate
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://onlinelibrary.wiley.com/doi/10.1002/bse.323" alt="QR Dyllick" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navegación sidebar
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(link.dataset.target).classList.add('active');
+                
+                // Inicializar quiz cuando se navega a evaluación
+                if (link.dataset.target === 'evaluacion') {
+                    setTimeout(() => {
+                        renderQuiz();
+                    }, 100);
+                }
+            });
+        });
+
+        // Mobile nav
+        document.getElementById('mobile-nav').addEventListener('change', (e) => {
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(e.target.value).classList.add('active');
+        });
+
+        // Acordeón
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = btn.querySelector('.fa-chevron-down');
+                if (icon) icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Quiz - Preguntas acotadas según formato FDOC-088 y Guía 2 - Tema 2
+        const quizData = [
+            { 
+                q: "Según la Guía 2 (Parte 1), ¿cuál es el planteamiento central de la Teoría de los Stakeholders de Edward Freeman?", 
+                options: [
+                    "El éxito de la empresa depende exclusivamente de maximizar el retorno al accionista en el corto plazo", 
+                    "El éxito sostenible de una organización depende de su capacidad para gestionar los intereses de todos sus grupos de interés", 
+                    "Los stakeholders son únicamente los empleados directos de la organización y sus directivos", 
+                    "La RSE es una estrategia de marketing para mejorar la imagen corporativa sin compromisos reales"
+                ], 
+                correct: 1 
+            },
+            { 
+                q: "De acuerdo con la Guía 2 (Parte 2), ¿cuál es el rol del gerente de Talento Humano en las dimensiones ASG de la sostenibilidad corporativa?", 
+                options: [
+                    "Liderar exclusivamente el componente Ambiental, reduciendo la huella de carbono de la organización", 
+                    "Gestionar los reportes financieros de sostenibilidad para los inversionistas externos", 
+                    "Liderar el componente Social (inclusión, diversidad, equidad salarial) y el de Gobernanza (transparencia y anticorrupción)", 
+                    "Supervisar el cumplimiento normativo ambiental ante las entidades reguladoras del Estado"
+                ], 
+                correct: 2 
+            },
+            { 
+                q: "Según la Guía 2 (Parte 3), ¿qué son los 'stakeholders silenciosos' en el marco de las decisiones de sostenibilidad?", 
+                options: [
+                    "Los empleados que no participan en los comités de ética de la organización", 
+                    "Los accionistas minoritarios que no asisten a las asambleas generales de la empresa", 
+                    "Las familias, sindicatos y generaciones futuras afectadas por las decisiones de sostenibilidad actuales", 
+                    "Los proveedores que no tienen voz en los procesos de negociación contractual"
+                ], 
+                correct: 2 
+            },
+            { 
+                q: "Según el FDOC-088 y la Guía 2, ¿con qué marco global articulan sus estrategias las organizaciones líderes en RSE para profesionalizar la gestión de la sostenibilidad?", 
+                options: [
+                    "Con los principios del Fondo Monetario Internacional para la gobernanza corporativa", 
+                    "Con los Objetivos de Desarrollo Sostenible (ODS) de la Agenda 2030 del Pacto Mundial de la ONU", 
+                    "Con los estándares ISO 9001 de gestión de calidad aplicados al talento humano", 
+                    "Con el Código de Integridad de la Universidad de Córdoba para la ética profesional"
+                ], 
+                correct: 1 
+            }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        const quizBox = document.getElementById('quiz-box');
+        const quizSummary = document.getElementById('quiz-summary');
+
+        function renderQuiz() {
+            // Verificar que los elementos existan antes de renderizar
+            const quizTitle = document.getElementById('quiz-title');
+            const quizProgress = document.getElementById('quiz-progress');
+            const quizText = document.getElementById('quiz-text');
+            const quizOptions = document.getElementById('quiz-options');
+            
+            if (!quizTitle || !quizProgress || !quizText || !quizOptions) {
+                console.log('Elementos del quiz no encontrados, reintentando...');
+                setTimeout(renderQuiz, 100);
+                return;
+            }
+            
+            quizTitle.textContent = `Pregunta ${currentQ + 1}`;
+            quizProgress.textContent = `${currentQ + 1}/${quizData.length}`;
+            quizText.textContent = quizData[currentQ].q;
+            const opts = document.getElementById('quiz-options');
+            opts.innerHTML = '';
+            quizData[currentQ].options.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = `quiz-option w-full text-left border rounded-lg p-4 transition-all ${answers[currentQ] === i ? 'border-[var(--accent)] bg-[var(--surface-soft)]' : 'border-[var(--line)] hover:bg-[var(--surface-soft)]'}`;
+                btn.innerHTML = `<span class="font-semibold">${String.fromCharCode(65+i)}.</span> ${opt}`;
+                btn.onclick = () => { answers[currentQ] = i; renderQuiz(); };
+                opts.appendChild(btn);
+            });
+            document.getElementById('quiz-prev').disabled = currentQ === 0;
+            document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQ < quizData.length - 1) { currentQ++; renderQuiz(); }
+            else {
+                quizBox.classList.add('hidden');
+                quizSummary.classList.remove('hidden');
+                let correct = 0;
+                let html = '';
+                quizData.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correct++;
+                    html += `<div class="p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}"><p class="font-semibold">${i+1}. ${q.q}</p><p class="text-sm mt-2">Tu respuesta: ${String.fromCharCode(65+answers[i])}. ${q.options[answers[i]]}</p>${!isCorrect ? `<p class="text-sm mt-1 text-green-700">Correcta: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}</p>` : ''}</div>`;
+                });
+                html += `<p class="text-center font-bold text-lg mt-4">Puntuación: ${correct}/${quizData.length} (${Math.round(correct/quizData.length*100)}%)</p>`;
+                document.getElementById('summary-content').innerHTML = html;
+            }
+        });
+
+        document.getElementById('quiz-prev').addEventListener('click', () => { if (currentQ > 0) { currentQ--; renderQuiz(); } });
+        document.getElementById('quiz-restart').addEventListener('click', () => { currentQ = 0; answers = []; quizBox.classList.remove('hidden'); quizSummary.classList.add('hidden'); renderQuiz(); });
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== UTILIDAD: SCROLL AL TOPE DE ACTIVIDAD =====
+        function scrollToActividad() {
+            const panel = document.querySelector('.act-panel.active');
+            if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== UTILIDAD: EXPORTAR =====
+        function descargarArchivo(nombre, contenido, tipo) {
+            const blob = new Blob([contenido], { type: tipo });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nombre; a.click();
+        }
+        function exportarComoWord(nombre, htmlContent) {
+            const doc = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>${nombre}</title></head><body>${htmlContent}</body></html>`;
+            descargarArchivo(nombre + '.doc', doc, 'application/msword');
+        }
+
+        // ===== ACTIVIDAD 1: TABLERO DE PRIORIZACIÓN RSE (paginado) =====
+        const tableroIniciativas = [
+            { id: 't1', label: 'Programa de equidad salarial de género', dim: 'S', dimNombre: 'Social', icono: 'fa-venus-mars', color: '#569151', stakeholders: 'Empleados y familias', experto: 20, razon: 'Mayor impacto directo en el bienestar de los empleados como stakeholders primarios.' },
+            { id: 't2', label: 'Reporte público de sostenibilidad (GRI)', dim: 'G', dimNombre: 'Gobernanza', icono: 'fa-file-contract', color: '#1d4ed8', stakeholders: 'Inversionistas y sociedad', experto: 10, razon: 'Fortalece la transparencia y la confianza con inversionistas ESG.' },
+            { id: 't3', label: 'Jardín infantil para hijos de empleados', dim: 'S', dimNombre: 'Social', icono: 'fa-children', color: '#569151', stakeholders: 'Empleados y familias', experto: 15, razon: 'Alta valoración por parte de los empleados, impacto en retención y clima laboral.' },
+            { id: 't4', label: 'Reducción de huella de carbono', dim: 'A', dimNombre: 'Ambiental', icono: 'fa-leaf', color: '#15803d', stakeholders: 'Comunidades y generaciones futuras', experto: 18, razon: 'Alineación directa con ODS 13 y demanda de fondos de inversión ESG.' },
+            { id: 't5', label: 'Línea ética y canal de denuncias anónimas', dim: 'G', dimNombre: 'Gobernanza', icono: 'fa-shield-halved', color: '#1d4ed8', stakeholders: 'Empleados y sociedad', experto: 8, razon: 'Costo relativamente bajo con alto impacto en la cultura de integridad.' },
+            { id: 't6', label: 'Inclusión laboral de personas con discapacidad', dim: 'S', dimNombre: 'Social', icono: 'fa-wheelchair', color: '#569151', stakeholders: 'Grupos vulnerables y empleados', experto: 12, razon: 'Cumplimiento normativo y diferenciación como empleador responsable.' },
+            { id: 't7', label: 'Gestión responsable de residuos industriales', dim: 'A', dimNombre: 'Ambiental', icono: 'fa-recycle', color: '#15803d', stakeholders: 'Comunidades aledañas y ambiente', experto: 10, razon: 'Mitiga riesgos legales y protege a stakeholders silenciosos: el entorno natural.' },
+            { id: 't8', label: 'Capacitación en derechos laborales y ODS', dim: 'S', dimNombre: 'Social', icono: 'fa-graduation-cap', color: '#569151', stakeholders: 'Empleados y sindicatos', experto: 7, razon: 'Bajo costo, alto impacto cultural a largo plazo.' }
+        ];
+        const TABLERO_TOTAL = 100;
+        let tableroStep = 0;
+        let tableroValues = Array(8).fill(0);
+
+        function renderTableroCard() {
+            const ini = tableroIniciativas[tableroStep];
+            const disponible = TABLERO_TOTAL - tableroValues.reduce((a, b) => a + b, 0) + tableroValues[tableroStep];
+            const card = document.getElementById('tablero-card'); if (!card) return;
+            card.innerHTML = `
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-lg flex-shrink-0" style="background:${ini.color}">
+                        <i class="fa-solid ${ini.icono}"></i>
+                    </div>
+                    <div>
+                        <p class="font-extrabold text-base leading-tight" style="color:var(--heading)">${ini.label}</p>
+                        <p class="text-xs mt-0.5" style="color:var(--text)">Dimensión <strong style="color:${ini.color}">${ini.dim} — ${ini.dimNombre}</strong> · ${ini.stakeholders}</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mb-2">
+                    <label class="text-sm font-bold" style="color:var(--heading)">¿Cuánto asignas?</label>
+                    <span class="text-2xl font-extrabold" style="color:var(--accent)" id="tablero-val-actual">$${tableroValues[tableroStep]}M</span>
+                </div>
+                <input type="range" id="tablero-slider-actual" min="0" max="${disponible + tableroValues[tableroStep]}" value="${tableroValues[tableroStep]}" step="1"
+                    class="w-full h-3 rounded-lg appearance-none cursor-pointer mb-3" style="accent-color:var(--accent);"
+                    oninput="onTableroSlide(${tableroStep}, this.value)">
+                <p class="text-xs text-center" style="color:var(--text)">Disponible restante: <strong id="tablero-disp-inline">${disponible}M</strong> de ${TABLERO_TOTAL}M</p>`;
+            const paso = document.getElementById('tablero-paso-label'); if (paso) paso.textContent = 'Iniciativa ' + (tableroStep + 1) + ' de ' + tableroIniciativas.length;
+            const bar = document.getElementById('tablero-progress-bar'); if (bar) bar.style.width = ((tableroStep + 1) / tableroIniciativas.length * 100) + '%';
+            actualizarRestanteTablero();
+            const btnPrev = document.getElementById('tablero-btn-prev'); if (btnPrev) btnPrev.classList.toggle('hidden', tableroStep === 0);
+            const btnNext = document.getElementById('tablero-btn-next'); if (btnNext) btnNext.classList.toggle('hidden', tableroStep === tableroIniciativas.length - 1);
+            const btnVer = document.getElementById('tablero-btn-ver'); if (btnVer) btnVer.classList.toggle('hidden', tableroStep !== tableroIniciativas.length - 1);
+        }
+
+        function onTableroSlide(idx, val) {
+            tableroValues[idx] = parseInt(val);
+            const disp = TABLERO_TOTAL - tableroValues.reduce((a, b) => a + b, 0);
+            const valEl = document.getElementById('tablero-val-actual'); if (valEl) valEl.textContent = '$' + val + 'M';
+            const dispEl = document.getElementById('tablero-disp-inline'); if (dispEl) dispEl.textContent = disp + 'M';
+            actualizarRestanteTablero();
+        }
+
+        function actualizarRestanteTablero() {
+            const usado = tableroValues.reduce((a, b) => a + b, 0);
+            const restEl = document.getElementById('tablero-restante'); if (restEl) restEl.textContent = '$' + (TABLERO_TOTAL - usado) + 'M disponibles';
+        }
+
+        function pasoTablero(dir) {
+            tableroStep = Math.max(0, Math.min(tableroIniciativas.length - 1, tableroStep + dir));
+            document.getElementById('tablero-resultado')?.classList.add('hidden');
+            renderTableroCard();
+        }
+
+        function verResultadoTablero() {
+            const usado = tableroValues.reduce((a, b) => a + b, 0);
+            const res = document.getElementById('tablero-resultado'); if (!res) return;
+            let html = '<p class="font-bold text-sm mb-3" style="color:var(--heading)">📊 Tu distribución vs. Propuesta experta</p>';
+            tableroIniciativas.forEach((ini, i) => {
+                const tuVal = tableroValues[i];
+                const expVal = ini.experto;
+                const diff = tuVal - expVal;
+                const pct = (tuVal / TABLERO_TOTAL) * 100;
+                const pctExp = (expVal / TABLERO_TOTAL) * 100;
+                html += `<div class="mb-3 p-3 rounded-lg" style="background:var(--surface); border:1px solid var(--line)">
+                    <p class="text-xs font-semibold mb-1" style="color:var(--heading)">${ini.label}</p>
+                    <div class="flex items-center gap-2 mb-1"><span class="text-xs w-20 flex-shrink-0" style="color:var(--accent)">Tú: $${tuVal}M</span>
+                    <div class="flex-1 h-2 rounded-full bg-gray-100 overflow-hidden"><div class="h-full rounded-full" style="width:${pct}%;background:var(--accent);opacity:0.8;"></div></div></div>
+                    <div class="flex items-center gap-2 mb-1"><span class="text-xs w-20 flex-shrink-0 text-gray-500">Exp: $${expVal}M</span>
+                    <div class="flex-1 h-2 rounded-full bg-gray-100 overflow-hidden"><div class="h-full rounded-full bg-gray-400" style="width:${pctExp}%;"></div></div></div>
+                    <p class="text-xs ${diff > 5 ? 'text-blue-600' : diff < -5 ? 'text-red-500' : 'text-green-600'}">${diff > 5 ? '↑ Más de lo sugerido' : diff < -5 ? '↓ Menos de lo sugerido' : '✓ Alineado'} · ${ini.razon}</p></div>`;
+            });
+            html += `<p class="text-xs mt-2 p-3 rounded-lg" style="background:#f0f9ff;color:#0369a1">💡 Total invertido: $${usado}M de $${TABLERO_TOTAL}M. La propuesta experta prioriza equidad salarial y reducción de huella de carbono como pilares de mayor impacto ASG.</p>`;
+            res.innerHTML = html; res.classList.remove('hidden');
+        }
+
+        function limpiarTablero() {
+            tableroStep = 0; tableroValues = Array(8).fill(0);
+            const res = document.getElementById('tablero-resultado'); if (res) { res.innerHTML = ''; res.classList.add('hidden'); }
+            renderTableroCard();
+            scrollToActividad();
+        }
+
+        function exportarTablero(formato) {
+            const usado = tableroValues.reduce((a, b) => a + b, 0);
+            if (usado === 0) { alert('Primero distribuye el presupuesto.'); return; }
+            const lineas = tableroIniciativas.map((ini, i) => ini.label + ' (Dim. ' + ini.dim + '): $' + tableroValues[i] + 'M');
+            const texto = 'TABLERO DE PRIORIZACIÓN RSE — Tema 2\nGerencia del Talento Humano y Desarrollo Organizacional\nUniversidad de Córdoba\n\nPresupuesto total: $' + TABLERO_TOTAL + 'M | Utilizado: $' + usado + 'M\n\nDISTRIBUCIÓN:\n' + lineas.join('\n');
+            if (formato === 'txt') { descargarArchivo('tablero-rse.txt', texto, 'text/plain'); }
+            else if (formato === 'word') { exportarComoWord('tablero-rse', '<h2>Tablero de Priorización RSE — Tema 2</h2><pre>' + texto + '</pre>'); }
+        }
+
+        function initTablero() { tableroStep = 0; tableroValues = Array(8).fill(0); renderTableroCard(); }
+
+        // ===== ACTIVIDAD 2: VOTACIÓN DE STAKEHOLDERS =====
+        const votosRoles = [
+            { id: 'v1', rol: 'Gerente de Talento Humano', icono: 'fa-user-tie', color: '#569151', perfil: 'Lideras el área de personas de MinCo S.A. Tu prioridad es el bienestar de los 400 empleados potenciales y el cumplimiento de los compromisos ODS de la empresa.', dim: 'S — Social' },
+            { id: 'v2', rol: 'Líder de comunidad campesina', icono: 'fa-house-flag', color: '#b45309', perfil: 'Representas a 3 comunidades rurales que dependen del agua del río que atraviesa la zona de la nueva planta. Tu prioridad es el agua, la tierra y el futuro de tus hijos.', dim: 'A — Ambiental' },
+            { id: 'v3', rol: 'Inversionista de largo plazo', icono: 'fa-chart-line', color: '#1d4ed8', perfil: 'Tienes el 12% de las acciones de MinCo. Tu prioridad es el retorno sostenible: sabes que los proyectos con alto riesgo ambiental pueden devaluar la empresa ante fondos ESG.', dim: 'G — Gobernanza' }
+        ];
+
+        function renderVotos() {
+            const cont = document.getElementById('votos-roles'); if (!cont) return;
+            cont.innerHTML = votosRoles.map(r => `
+                <div class="p-4 rounded-xl border" style="border-color: ${r.color}; border-left-width: 5px; background: var(--surface-soft);">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white" style="background:${r.color}"><i class="fa-solid ${r.icono}"></i></div>
+                        <div><p class="font-bold text-sm" style="color:${r.color}">${r.rol}</p><p class="text-xs" style="color:var(--text)">Dimensión ${r.dim}</p></div>
+                    </div>
+                    <p class="text-xs leading-relaxed mb-3 italic" style="color:var(--text)">"${r.perfil}"</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <label class="flex items-center gap-1.5 cursor-pointer text-sm font-semibold px-3 py-1.5 rounded-lg border" style="border-color:${r.color}">
+                            <input type="radio" name="voto-${r.id}" value="apruebo"> ✅ Apruebo
+                        </label>
+                        <label class="flex items-center gap-1.5 cursor-pointer text-sm font-semibold px-3 py-1.5 rounded-lg border" style="border-color:${r.color}">
+                            <input type="radio" name="voto-${r.id}" value="rechazo"> ❌ Rechazo
+                        </label>
+                        <label class="flex items-center gap-1.5 cursor-pointer text-sm font-semibold px-3 py-1.5 rounded-lg border" style="border-color:${r.color}">
+                            <input type="radio" name="voto-${r.id}" value="abstención"> ⚖️ Me abstengo
+                        </label>
+                    </div>
+                    <textarea id="arg-${r.id}" rows="2" maxlength="400" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none" style="border-color:var(--line);" placeholder="Argumenta tu voto desde la perspectiva de este stakeholder..."></textarea>
+                </div>
+            `).join('');
+        }
+
+        function verPanelVotos() {
+            const missing = votosRoles.filter(r => !document.querySelector(`input[name="voto-${r.id}"]:checked`) || !document.getElementById('arg-' + r.id)?.value.trim());
+            if (missing.length > 0) { alert('Completa el voto y el argumento de todos los roles antes de continuar.'); return; }
+            const panel = document.getElementById('votos-panel'); if (!panel) return;
+            const votos = votosRoles.map(r => ({ rol: r.rol, icono: r.icono, color: r.color, voto: document.querySelector(`input[name="voto-${r.id}"]:checked`)?.value || '', arg: document.getElementById('arg-' + r.id)?.value || '' }));
+            const aprueba = votos.filter(v => v.voto === 'apruebo').length;
+            const rechaza = votos.filter(v => v.voto === 'rechazo').length;
+            const decision = aprueba > rechaza ? '🟡 El proyecto se APROBARÍA con reservas' : aprueba < rechaza ? '🔴 El proyecto se RECHAZARÍA' : '⚖️ Empate — se requiere mediación';
+            let html = `<div class="p-4 rounded-xl text-center mb-4" style="background:var(--surface-soft); border: 2px solid var(--accent)"><p class="font-extrabold text-lg" style="color:var(--heading)">Resultado del panel de stakeholders</p><p class="text-base font-bold mt-1">${decision}</p><p class="text-xs mt-2" style="color:var(--text)">Aprueba: ${aprueba} · Rechaza: ${rechaza} · Abstención: ${3 - aprueba - rechaza}</p></div>`;
+            votos.forEach(v => { html += `<div class="p-3 rounded-lg border mb-2" style="border-left: 4px solid ${v.color}; background:var(--surface-soft)"><p class="font-bold text-sm" style="color:${v.color}"><i class="fa-solid ${v.icono} mr-1"></i>${v.rol} → ${v.voto.toUpperCase()}</p><p class="text-xs mt-1 leading-relaxed" style="color:var(--text)">${v.arg}</p></div>`; });
+            html += `<div class="mt-3 p-3 rounded-lg text-xs" style="background:#f0f9ff; color:#0369a1">💡 Este ejercicio ilustra la Teoría de Stakeholders de Freeman: las decisiones organizacionales sostenibles requieren considerar voces con diferente influencia y legitimidad, incluyendo las comunidades y las generaciones futuras como stakeholders silenciosos.</div>`;
+            panel.innerHTML = html; panel.classList.remove('hidden');
+        }
+
+        function limpiarVotos() {
+            votosRoles.forEach(r => { const radios = document.querySelectorAll(`input[name="voto-${r.id}"]`); radios.forEach(rb => rb.checked = false); const ta = document.getElementById('arg-' + r.id); if (ta) ta.value = ''; });
+            const p = document.getElementById('votos-panel'); if (p) { p.innerHTML = ''; p.classList.add('hidden'); }
+            scrollToActividad();
+        }
+
+        function exportarVotos(formato) {
+            const missing = votosRoles.filter(r => !document.querySelector(`input[name="voto-${r.id}"]:checked`));
+            if (missing.length > 0) { alert('Completa todos los votos antes de exportar.'); return; }
+            const votos = votosRoles.map(r => ({ rol: r.rol, voto: document.querySelector(`input[name="voto-${r.id}"]:checked`)?.value || '', arg: document.getElementById('arg-' + r.id)?.value || '' }));
+            const texto = `VOTACIÓN DE STAKEHOLDERS — Tema 2\nGerencia del Talento Humano y Desarrollo Organizacional\nUniversidad de Córdoba\n\nDilema: Expansión de MinCo S.A. en San Marcos, Sucre.\n\n${votos.map(v => `ROL: ${v.rol}\nVoto: ${v.voto.toUpperCase()}\nArgumento: ${v.arg}`).join('\n\n')}`;
+            if (formato === 'txt') { descargarArchivo('votacion-stakeholders.txt', texto, 'text/plain'); }
+            else if (formato === 'word') { exportarComoWord('votacion-stakeholders', '<h2>Votación de Stakeholders — Tema 2</h2>' + votos.map(v => `<h3>${v.rol} → ${v.voto}</h3><p>${v.arg}</p>`).join('')); }
+        }
+
+        function initVotos() { renderVotos(); }
+
+        // ===== ACTIVIDAD 3: DETECTA LA PRÁCTICA RSE (paginada) =====
+        const detectaNoticias = [
+            { titular: 'Ecopetrol publica su primer informe de sostenibilidad bajo estándares GRI con metas de carbono neutro al 2050.', dimCorrecta: 'G', stkCorrecto: 'inversionistas', tipoCorrecto: 'buena', expDim: 'Gobernanza (G): los informes de sostenibilidad son mecanismos de rendición de cuentas y transparencia corporativa.', expStk: 'Inversionistas y sociedad en general son los principales beneficiados de la transparencia.', expTipo: 'Buena práctica: compromisos medibles, verificables y alineados con estándares internacionales GRI.' },
+            { titular: 'Empresa textil lanza colección "eco-friendly" fabricada con telas convencionales, pero la empaca en bolsas biodegradables y la publicita como "100% sostenible".', dimCorrecta: 'A', stkCorrecto: 'consumidores', tipoCorrecto: 'greenwashing', expDim: 'Ambiental (A): el discurso apunta a lo ambiental, pero sin cambio real en el proceso productivo.', expStk: 'Los consumidores son el público objetivo del engaño — se les vende sostenibilidad sin sustancia.', expTipo: 'Greenwashing: el cambio es cosmético. El proceso productivo no cambia — clásico caso de lavado verde.' },
+            { titular: 'Bavaria implementa política de equidad salarial certificada, garantizando igual remuneración entre hombres y mujeres en todos los niveles jerárquicos.', dimCorrecta: 'S', stkCorrecto: 'empleados', tipoCorrecto: 'buena', expDim: 'Social (S): la equidad salarial es un pilar central del componente social desde la gestión de Talento Humano.', expStk: 'Los empleados, especialmente mujeres, son los beneficiarios directos de esta política.', expTipo: 'Buena práctica: política verificable, con certificación independiente y compromisos concretos y medibles.' },
+            { titular: 'Empresa de telecomunicaciones dona árboles por cada plan vendido, pero no divulga cuántos árboles sobreviven ni dónde se plantan.', dimCorrecta: 'A', stkCorrecto: 'consumidores', tipoCorrecto: 'greenwashing', expDim: 'Ambiental (A): la promesa de plantar árboles apunta directamente a la dimensión ambiental.', expStk: 'Los consumidores son el público objetivo del mensaje, pero no los verdaderos beneficiados.', expTipo: 'Greenwashing: sin trazabilidad, sin métricas públicas ni verificación independiente del impacto real.' },
+            { titular: 'Alpina implementa un canal ético anónimo para denuncias de acoso y corrupción, con seguimiento independiente y reporte público de casos resueltos.', dimCorrecta: 'G', stkCorrecto: 'empleados', tipoCorrecto: 'buena', expDim: 'Gobernanza (G): los mecanismos de denuncia y anticorrupción son el núcleo del pilar de gobernanza.', expStk: 'Los empleados son los principales usuarios y beneficiados de los canales éticos internos.', expTipo: 'Buena práctica: tiene anonimato, seguimiento externo y transparencia en resultados — estándares GRI G4.' },
+            { titular: 'Constructora incluye en su informe anual el logo de los 17 ODS sin describir ninguna meta, indicador ni acción concreta asociada a ninguno de ellos.', dimCorrecta: 'G', stkCorrecto: 'inversionistas', tipoCorrecto: 'greenwashing', expDim: 'Gobernanza (G): el uso de ODS en reportes corporativos es un mecanismo de transparencia y gobernanza.', expStk: 'Inversionistas e instituciones son los destinatarios de este tipo de informe anual.', expTipo: 'Greenwashing (SDG-washing): usar los logos ODS sin compromisos concretos es una práctica engañosa cada vez más denunciada.' }
+        ];
+        let detectaStep = 0;
+        let detectaResultados = [];
+
+        function renderDetectaCard() {
+            const n = detectaNoticias[detectaStep];
+            const card = document.getElementById('detecta-card'); if (!card) return;
+            const ya = detectaResultados[detectaStep];
+            const fbHtml = ya ? `<div class="mt-4 p-3 rounded-lg space-y-1.5 text-xs" style="background:var(--surface);border:1px solid var(--line)">
+                <p class="${ya.dimOk ? 'text-green-700' : 'text-red-600'}"><strong>Dimensión:</strong> ${ya.dimOk ? '✓ Correcto' : '✗ Incorrecto'} — ${n.expDim}</p>
+                <p class="${ya.stkOk ? 'text-green-700' : 'text-red-600'}"><strong>Stakeholders:</strong> ${ya.stkOk ? '✓ Correcto' : '✗ Incorrecto'} — ${n.expStk}</p>
+                <p class="${ya.tipoOk ? 'text-green-700' : 'text-red-600'}"><strong>Tipo:</strong> ${ya.tipoOk ? '✓ Correcto' : '✗ Incorrecto'} — ${n.expTipo}</p>
+                <p class="font-bold pt-1" style="color:var(--heading)">Puntuación: ${ya.score}/3</p>
+            </div>` : '';
+            card.innerHTML = `
+                <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--accent)">Noticia ${detectaStep + 1} de ${detectaNoticias.length}</p>
+                <p class="text-sm leading-relaxed font-semibold mb-5" style="color:var(--heading)">"${n.titular}"</p>
+                <div class="grid grid-cols-1 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color:var(--text)">¿Qué dimensión ASG representa?</label>
+                        <select id="detecta-dim" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none" style="border-color:var(--line);" ${ya ? 'disabled' : ''}>
+                            <option value="">Selecciona...</option>
+                            <option value="A" ${ya && ya.dim==='A' ? 'selected' : ''}>A — Ambiental</option>
+                            <option value="S" ${ya && ya.dim==='S' ? 'selected' : ''}>S — Social</option>
+                            <option value="G" ${ya && ya.dim==='G' ? 'selected' : ''}>G — Gobernanza</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color:var(--text)">¿Qué stakeholders están involucrados?</label>
+                        <select id="detecta-stk" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none" style="border-color:var(--line);" ${ya ? 'disabled' : ''}>
+                            <option value="">Selecciona...</option>
+                            <option value="empleados" ${ya && ya.stk==='empleados' ? 'selected' : ''}>Empleados</option>
+                            <option value="consumidores" ${ya && ya.stk==='consumidores' ? 'selected' : ''}>Consumidores</option>
+                            <option value="inversionistas" ${ya && ya.stk==='inversionistas' ? 'selected' : ''}>Inversionistas</option>
+                            <option value="comunidades" ${ya && ya.stk==='comunidades' ? 'selected' : ''}>Comunidades</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color:var(--text)">¿Buena práctica o greenwashing?</label>
+                        <select id="detecta-tipo" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none" style="border-color:var(--line);" ${ya ? 'disabled' : ''}>
+                            <option value="">Selecciona...</option>
+                            <option value="buena" ${ya && ya.tipo==='buena' ? 'selected' : ''}>✅ Buena práctica</option>
+                            <option value="greenwashing" ${ya && ya.tipo==='greenwashing' ? 'selected' : ''}>⚠️ Greenwashing</option>
+                        </select>
+                    </div>
+                </div>
+                ${fbHtml}`;
+            const paso = document.getElementById('detecta-paso-label'); if (paso) paso.textContent = 'Noticia ' + (detectaStep + 1) + ' de ' + detectaNoticias.length;
+            const bar = document.getElementById('detecta-progress-bar'); if (bar) bar.style.width = ((detectaStep + 1) / detectaNoticias.length * 100) + '%';
+            const totalCorr = detectaResultados.filter(Boolean).reduce((a, r) => a + r.score, 0);
+            const totalMax = detectaResultados.filter(Boolean).length * 3;
+            const mini = document.getElementById('detecta-score-mini'); if (mini) mini.textContent = totalCorr + ' / ' + totalMax + ' correctas';
+            const btnVerif = document.getElementById('detecta-btn-verificar'); if (btnVerif) btnVerif.classList.toggle('hidden', !!ya);
+            const btnNext = document.getElementById('detecta-btn-next');
+            if (btnNext) btnNext.classList.toggle('hidden', !ya || detectaStep === detectaNoticias.length - 1);
+            const btnPrev = document.getElementById('detecta-btn-prev'); if (btnPrev) btnPrev.classList.toggle('hidden', detectaStep === 0);
+            if (ya && detectaStep === detectaNoticias.length - 1 && detectaResultados.filter(Boolean).length === detectaNoticias.length) mostrarResultadoGlobal();
+        }
+
+        function verificarNoticiaActual() {
+            const n = detectaNoticias[detectaStep];
+            const dim = document.getElementById('detecta-dim')?.value;
+            const stk = document.getElementById('detecta-stk')?.value;
+            const tipo = document.getElementById('detecta-tipo')?.value;
+            if (!dim || !stk || !tipo) { alert('Selecciona una opción en los tres criterios.'); return; }
+            const dimOk = dim === n.dimCorrecta;
+            const stkOk = stk === n.stkCorrecto;
+            const tipoOk = tipo === n.tipoCorrecto;
+            detectaResultados[detectaStep] = { dim, stk, tipo, dimOk, stkOk, tipoOk, score: [dimOk, stkOk, tipoOk].filter(Boolean).length };
+            renderDetectaCard();
+        }
+
+        function pasoDetecta(dir) {
+            detectaStep = Math.max(0, Math.min(detectaNoticias.length - 1, detectaStep + dir));
+            const rg = document.getElementById('detecta-resultado-global'); if (rg) rg.classList.add('hidden');
+            renderDetectaCard();
+        }
+
+        function mostrarResultadoGlobal() {
+            const total = detectaResultados.filter(Boolean).reduce((a, r) => a + r.score, 0);
+            const max = detectaNoticias.length * 3;
+            const pct = Math.round((total / max) * 100);
+            const nivel = pct >= 80 ? '🟢 Excelente — dominas la identificación de prácticas RSE' : pct >= 55 ? '🟡 Bien encaminado — refuerza los conceptos de greenwashing' : '🔴 En proceso — revisa las dimensiones ASG y sus aplicaciones';
+            const rg = document.getElementById('detecta-resultado-global');
+            if (!rg) return;
+            rg.innerHTML = `<p class="font-extrabold text-lg mb-1" style="color:var(--heading)">Resultado global</p><p class="text-4xl font-black my-2" style="color:var(--accent)">${pct}%</p><p class="text-sm">${total} / ${max} respuestas correctas</p><p class="mt-3 font-semibold">${nivel}</p>`;
+            rg.classList.remove('hidden');
+        }
+
+        function reiniciarDetecta() {
+            detectaStep = 0; detectaResultados = [];
+            const rg = document.getElementById('detecta-resultado-global'); if (rg) { rg.innerHTML = ''; rg.classList.add('hidden'); }
+            renderDetectaCard();
+            scrollToActividad();
+        }
+
+        function initDetecta() { detectaStep = 0; detectaResultados = []; renderDetectaCard(); }
+
+        // ===== FLIP CARDS Y DOMContentLoaded =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const flipCards = document.querySelectorAll('.flip-card');
+            flipCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+            });
+
+            initTablero();
+            initVotos();
+            initDetecta();
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>
