@@ -1,0 +1,28 @@
+
+Tema 3: Teoría y Diseño Organizacional
+
+Introducción:
+El diseño organizacional es la arquitectura que permite que la estrategia cobre vida. Este subtema analiza la transición desde las estructuras burocráticas rígidas de la era industrial hacia los modelos ágiles, holocráticos y fractales que definen a las organizaciones más competitivas de 2025. El especialista aprenderá a utilizar herramientas de diagnóstico como las 7S de McKinsey para asegurar la coherencia entre estrategia, estructura, sistemas, valores, habilidades, estilo y personas, entendiendo la organización como una red de equipos autónomos.
+Objetivos de Aprendizaje:
+1. Diagnosticar la arquitectura organizacional actual utilizando el marco de las 7S de McKinsey, identificando desalineaciones críticas.
+2. Diferenciar los principios de la holocracia y el diseño helicoidal frente a las jerarquías tradicionales de mando y control.
+3. Proponer rediseños estructurales basados en la agilidad y la orquestación humano-IA para optimizar la toma de decisiones.
+Contenido:
+? Parte 1: Diagnóstico Integral con las 7S de McKinsey: Un diseño efectivo requiere una visión sistémica. El marco de las 7S propone que el éxito depende de la armonía entre siete factores: Strategy (dirección del negocio), Structure (jerarquías y roles), Systems (procesos), Shared Values (corazón de la organización), Skills (competencias), Style (liderazgo) y Staff (personas). El especialista utiliza esta herramienta para detectar si, por ejemplo, la falta de innovación se debe a una estructura demasiado vertical o a sistemas que castigan el error. En el contexto de 2025, las métricas y los datos (data literacy) son el soporte fundamental para sustentar estos diagnósticos y proponer cambios basados en evidencia.
+? Parte 2: Evolución hacia el Diseño Ágil y Holocrático: Las estructuras tradicionales son lentas y estáticas. El Agile Organization Design plantea una red de equipos autónomos que se coordinan entre sí y se disuelven según las prioridades del negocio. Modelos como la Holocracia eliminan los cargos fijos a favor de "roles" dinámicos y distribuyen la autoridad en círculos de decisión autónomos. Por otro lado, el modelo helicoidal de McKinsey busca equilibrar la estabilidad (centralización de capacidades) con la agilidad (descentralización de la entrega de valor). El especialista debe saber cuándo implementar estos modelos para encender la pasión de las personas y potenciar sus capacidades de respuesta ante un mercado volátil.
+? Parte 3: Simplicidad y Organizaciones Fractales: Las compañías líderes están reduciendo niveles jerárquicos y eliminando procesos redundantes para lograr la Simplicidad Organizacional. Una organización fractal es aquella donde cada unidad mínima (equipo) funciona como un microcosmos de la visión total, operando con principios de autoorganización y eficiencia. En 2025, el diseño organizacional no puede desligarse de la experiencia del empleado (EX): la flexibilidad laboral, el bienestar mental y la inclusión deben ser ejes integrados en la estructura misma. Para la Universidad de Córdoba, rediseñar para la agilidad significa agilizar la respuesta a las necesidades académicas y administrativas, promoviendo la autonomía responsable en todos sus niveles.
+Referencias para ampliación:
+? McKinsey & Co. (2025). The 7S Framework: A Strategic Assessment Tool.
+? Galbraith, J. R. (2014). Designing Organizations: Strategy, Structure, and Process.
+? OpenWebinars. (2024). Guía de Diseño Organizacional Ágil.
+? Latam University. (2025). Estrategias y Tendencias en Diseño y Desarrollo Organizacional. 
+
+
+------------------------------------------------------------------------------------------------
+Integración con Google Docs y Guía Práctica
+Este material de la Unidad 02 sirve como guía técnica para el desarrollo del Cuerpo de la Propuesta de Intervención.
+Actividades Sugeridas en el Aula Virtual:
+1. Simulacro de Diseño Organizacional: El estudiante debe proponer una red de equipos autónomos para una unidad funcional de su empresa, eliminando un nivel jerárquico.
+2. Taller de Gestión del Cambio: Creación de un plan de comunicación de 5 hitos para una transformación digital basada en los primeros 4 pasos de Kotter.
+3. Análisis de Caso (Argyris): Identificar un caso de "aprendizaje de bucle simple" en su entorno laboral y proponer la intervención para convertirlo en "bucle doble".
+Este diseño asegura que el especialista de la Universidad de Córdoba no solo aprenda conceptos, sino que adquiera las destrezas operativas y humanas para transformar positivamente sus organizaciones.
