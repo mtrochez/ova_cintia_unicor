@@ -1,0 +1,29 @@
+Tema 3: Del beneficio tradicional al beneficio compartido
+
+Introducción:
+El concepto de Valor Compartido (CSV), acuñado por Michael Porter y Mark Kramer, representa la evolución definitiva de la RSE. A diferencia de la filantropía, que suele ser una actividad periférica, el Valor Compartido se sitúa en el centro de la estrategia de negocio. Este subtema enseña cómo las empresas pueden generar valor económico de una manera que también cree valor para la sociedad al abordar sus necesidades y desafíos. Es una nueva forma de alcanzar el éxito económico que reinventa el capitalismo hacia una versión más inclusiva y competitiva.
+Objetivos de Aprendizaje:
+1. Diferenciar conceptual y operativamente la Responsabilidad Social Empresarial del modelo de Creación de Valor Compartido (CVC).
+2. Analizar las tres formas de crear valor compartido: reconcebir productos y mercados, redefinir la productividad en la cadena de valor y facilitar el desarrollo de clusters locales.
+3. Proponer iniciativas de gestión del talento que reduzcan costos operativos (como accidentes o rotación) mediante la mejora de condiciones sociales de los trabajadores.
+Contenido:
+? Parte 1: La Filosofía del Valor Compartido: El Valor Compartido se define como las políticas y prácticas operacionales que incrementan la competitividad de una empresa a la vez que mejoran las condiciones económicas y sociales en las comunidades donde opera. Mientras la RSE se enfoca en "hacer el bien" o en la distribución de valor ya creado, el Valor Compartido se enfoca en expandir el pastel económico y social simultáneamente. Es un comportamiento animado por el interés propio racional: si una empresa tiene éxito en una comunidad exitosa, su rentabilidad a largo plazo está asegurada. El especialista debe aprender a identificar estas intersecciones donde los problemas sociales (como la falta de capacitación) son, en realidad, costos empresariales que se pueden resolver con rentabilidad.
+? Parte 2: Estrategias de Creación de CVC: Existen tres vías fundamentales para generar valor compartido:
+1. Reinventando productos y mercados: Crear soluciones que resuelvan necesidades sociales reales (ej. telefonía de bajo costo o alimentos nutritivos para sectores vulnerables).
+2. Redefiniendo la productividad en la cadena de valor: Optimizar el uso de recursos y energía, pero también invertir en el capital humano. Por ejemplo, un programa de mejora de condiciones laborales reduce el ausentismo y aumenta la motivación, impactando directamente en la productividad.
+3. Desarrollo de clusters locales: Fortalecer a los proveedores locales para mejorar la calidad y eficiencia de la red logística, lo cual es percibido como apoyo a la comunidad y reduce la huella de carbono.
+? Parte 3: El Liderazgo ante el Valor Compartido: Incorporar el enfoque de valor compartido requiere energía, tenacidad y paciencia, ya que no es una solución cosmética, sino una transformación del ADN empresarial. Las empresas que no lo abracen se quedarán atrás en un mercado donde los consumidores prefieren marcas alineadas con valores conscientes. El gerente de talento humano actúa como el puente que conecta el éxito de la compañía con el progreso social, asegurando que los colaboradores entiendan y vivan el propósito superior de la organización. Casos como Nestlé o Patagonia demuestran que priorizar el entorno no riñe con la obtención de grandes beneficios económicos.
+Referencias para ampliación:
+? Porter, M., & Kramer, M. (2011). La creación de valor compartido. Harvard Business Review.
+? Porter, M., & Kramer, M. (2006). Estrategia y sociedad.
+? Díaz Cáceres, N. (2021). La creación de valor compartido: Estrategia de sostenibilidad.
+? UNIR Revista. (2024). La importancia del valor compartido en la empresa.
+
+---------------------------------------------------------------------------------------------------- 
+Integración con Google Docs y Portafolio de Ética
+Este material de la Unidad 03 concluye la fase de diseño del proyecto de intervención.
+Actividades Sugeridas en el Aula Virtual:
+1. Auditoría de IA: El estudiante evaluará un algoritmo de selección de personal hipotético bajo los 10 principios éticos de la UNESCO.
+2. Mapa de Stakeholders: Creación de una matriz de materialidad para el proyecto de intervención diseñado en la unidad 01.
+3. Taller de SROI: Cálculo del retorno social de una iniciativa de bienestar laboral utilizando simuladores en línea.
+Con este diseño pedagógico, el especialista de la Universidad de Córdoba está plenamente facultado para liderar intervenciones con rigor técnico y, sobre todo, con la profundidad ética que demanda la sociedad contemporánea.
