@@ -1,0 +1,28 @@
+Unidad 03: Ética Organizacional y Medición de Impacto
+
+
+La Unidad 03 cierra el ciclo de formación en intervención organizacional, moviendo el foco desde la eficiencia operativa hacia la legitimidad social y ética. En un mundo donde la sostenibilidad empresarial es el "lenguaje de las empresas con futuro", el especialista debe ser capaz de demostrar que sus intervenciones no solo generan retorno financiero, sino que también contribuyen a la justicia socioambiental y al bien común. Esta unidad proporciona las herramientas para cuantificar el impacto intangible y gestionar la ética en la frontera tecnológica del 2025.
+Tema 1: Fundamentos de la Ética Organizacional
+Introducción:
+La ética organizacional no es un conjunto de reglas prohibitivas, sino una disciplina de la gestión que analiza el carácter de la empresa y su toma de decisiones. Este subtema explora las dos grandes corrientes que guían el actuar profesional: la ética de las virtudes y la ética deontológica. El especialista debe comprender que la ética es intrínseca a la organización; no se trata de "ser ético para ser rentable", sino de reconocer que los recursos morales (diálogo, confianza y acuerdo) son imprescindibles para la coordinación humana efectiva en el siglo XXI.
+Objetivos de Aprendizaje:
+1. Contrastar los fundamentos de la ética de las virtudes y la deontología para resolver dilemas morales en la gestión del talento humano.
+2. Identificar la importancia de los "recursos morales" en la construcción de climas de entendimiento mutuo y resolución de conflictos.
+3. Analizar la relación entre la ética personal y la ética profesional del rol, evaluando mecanismos para mitigar conflictos de integridad en el trabajo.
+Contenido:
+? Parte 1: Ética de las Virtudes vs. Deontología: La ética deontológica se basa en la corrección de la acción mediante el cumplimiento de normas universales o el "deber ser", independientemente de las consecuencias inmediatas. Por el contrario, la ética de las virtudes, de raíz aristotélica, se centra en el carácter del agente. En el contexto administrativo, esto significa que ser un gestor ético implica cultivar disposiciones humanas (virtudes como la justicia, la veracidad y el valor) que permitan buscar el "bien interno" de la profesión. Para el especialista, esto implica que las reglas y códigos de conducta son necesarios, pero insuficientes si no van acompañados de una antropología integral que comprenda la acción humana y el autodominio del líder.
+? Parte 2: Los Recursos Morales como Activos Estratégicos: Autores como Domingo García Marzá proponen que la ética es algo intrínseco a cualquier sistema humano. El escenario actual otorga una importancia decisiva a los recursos morales: capacidades que nos conducen al entendimiento mutuo y al diálogo como mecanismos básicos para la satisfacción de intereses. Una organización ética es aquella que crea redes de reciprocidad y normas de confianza que generan valor individual y colectivo, al igual que el capital físico. El especialista debe actuar como un facilitador que activa estos recursos, permitiendo que la interacción humana no se base en la coacción o la manipulación, sino en acuerdos legítimos que fortalecen la cultura institucional.
+? Parte 3: Dilemas de Integridad y Ética del Rol: Todas las profesiones plantean cuestiones éticas complejas donde la moral personal puede chocar con las exigencias del puesto de trabajo (moral del rol). En la gestión del talento humano, esto ocurre frecuentemente en procesos de despido, reestructuración o manejo de información confidencial. La ética profesional debe entenderse como un campo que aplica principios generales a situaciones agobiantes dentro de profesiones específicas. El especialista de la Universidad de Córdoba debe fundamentar su actuar en el Código de Integridad institucional, promoviendo la honestidad, el respeto y la transparencia para prevenir la corrupción y favorecer siempre el interés general sobre el particular.
+Referencias para ampliación:
+? García-Marzá, D. (2004). Ética de la justicia: Una propuesta de ética aplicada a las organizaciones.
+? Scalzo, G., et al. (2019). Significado de la ética profesional en el currículo universitario.
+? UNODC. (2025). Módulo de Integridad y Ética: Ética Profesional.
+? Universidad de Córdoba. (2024). Código de Integridad Institucional.
+
+Integración con Google Docs y Portafolio de Ética
+Este material de la Unidad 03 concluye la fase de diseño del proyecto de intervención.
+Actividades Sugeridas en el Aula Virtual:
+1. Auditoría de IA: El estudiante evaluará un algoritmo de selección de personal hipotético bajo los 10 principios éticos de la UNESCO.
+2. Mapa de Stakeholders: Creación de una matriz de materialidad para el proyecto de intervención diseñado en la unidad 01.
+3. Taller de SROI: Cálculo del retorno social de una iniciativa de bienestar laboral utilizando simuladores en línea.
+Con este diseño pedagógico, el especialista de la Universidad de Córdoba está plenamente facultado para liderar intervenciones con rigor técnico y, sobre todo, con la profundidad ética que demanda la sociedad contemporánea.
