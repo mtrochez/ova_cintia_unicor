@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 5: Ética organizacional en el futuro y medición de impacto</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #9ca3af; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: var(--accent); }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; }
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; touch-action: manipulation; user-select: none; -webkit-tap-highlight-color: transparent; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .quiz-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #4a5568; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .drag-card { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 14px; cursor: grab; transition: all 0.25s ease; }
+        #ova-embed .drag-card:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(86,145,81,0.15); }
+        #ova-embed .drag-card.dragging { opacity: 0.4; transform: scale(0.95); }
+        #ova-embed .drag-card.placed { opacity: 0.5; pointer-events: none; cursor: default; }
+        #ova-embed .drag-card.correct { border-color: #22c55e; background: #f0fdf4; }
+        #ova-embed .drag-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+        #ova-embed .drop-zone { background: var(--surface-soft); border: 2px dashed var(--line); border-radius: 12px; padding: 12px; min-height: 120px; transition: all 0.25s ease; display: flex; flex-direction: column; }
+        #ova-embed .drop-zone.drag-over { border-color: var(--accent); background: rgba(86,145,81,0.08); box-shadow: 0 0 0 3px rgba(86,145,81,0.15); }
+        #ova-embed .drop-zone-header { text-align: center; font-weight: 700; font-size: 0.8rem; color: #0c7b8a; padding: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        #ova-embed .drop-zone-header i { font-size: 1.2rem; }
+        #ova-embed .drop-zone-content { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        #ova-embed .drop-zone-content .drag-card { font-size: 0.75rem; padding: 8px 10px; }
+        #ova-embed .drop-zone-content .drag-card .text-sm { font-size: 0.7rem; }
+        #ova-embed .drop-zone-content .drag-card .text-xs { font-size: 0.65rem; }
+        #ova-embed .mobile-header { display: none; }
+        
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .flip-card { height: 220px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); }
+        }
+
+        /* Senge drag & drop colors */
+        #ova-embed .senge-labels { background: linear-gradient(135deg, #f8fbfd 0%, #eef8fb 100%) !important; border-color: #17a2b8 !important; }
+        #ova-embed .senge-label { background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); color: #0c7b8a; border-color: #17a2b8; }
+        #ova-embed .senge-label:hover { background: #17a2b8; color: #ffffff; border-color: #0c7b8a; }
+        #ova-embed .senge-dropzone { background: #ffffff; border-left: 4px solid #D8EBF8; border-color: var(--line); }
+        #ova-embed .senge-dropzone:hover { border-color: #17a2b8; }
+        #ova-embed .senge-number { background: #17a2b8; }
+        #ova-embed .senge-slot { background: #ffffff; border-color: #17a2b8; color: #17a2b8; }
+        #ova-embed .senge-assigned { background: #D8EBF8; color: #0c7b8a; border-radius: 6px; padding: 4px 10px; }
+
+        /* Stakeholders map */
+        #ova-embed .stakeholder-chip {
+            background: var(--surface-soft);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--heading);
+            cursor: grab;
+            user-select: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        #ova-embed .stakeholder-chip:hover { transform: translateY(-2px); box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        #ova-embed .stakeholder-chip.dragging { opacity: 0.5; cursor: grabbing; }
+        #ova-embed .stakeholder-zone { transition: background-color 0.2s, border-color 0.2s; }
+        #ova-embed .stakeholder-zone.drag-over { background-color: rgba(86,145,81,0.15) !important; border-color: var(--accent) !important; }
+        #ova-embed .stakeholder-zone.correct-zone { border-color: #22c55e !important; background-color: #f0fdf4 !important; }
+        #ova-embed .stakeholder-zone.incorrect-zone { border-color: #ef4444 !important; background-color: #fef2f2 !important; }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de Intervención</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Proyecto de Intervención</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCION -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-microchip mr-2"></i>Unidad 3 — Tema 5</p>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Ética organizacional en el futuro y medición de impacto</h1>
+                        <p class="text-white/90 text-lg max-w-3xl">El futuro de la gestión humana exige una ética digital rigurosa y la capacidad de demostrar, con datos, los cambios sostenibles que la organización aporta a la sociedad.</p>
+                    </div>
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Introducción</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">De las buenas intenciones a la evidencia</h2>
+                        <p class="mt-4 leading-relaxed">El futuro de la gestión humana está indisolublemente ligado a la <strong>ética digital</strong> y a la <strong>medición de impacto</strong>. Este tema aborda los desafíos éticos de la <strong>Inteligencia Artificial (IA)</strong> en los procesos de talento humano y la necesidad de pasar de "contabilizar actividades" a "demostrar cambios sostenibles" en la sociedad. El especialista aprenderá a utilizar herramientas avanzadas como el <strong>SROI</strong> (Social Return on Investment) y plataformas de datos <strong>ESG</strong> para convertir la sostenibilidad en una ventaja competitiva basada en evidencia, y no solo en buenas intenciones.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contexto de la Unidad</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">Tres pilares del tema</h3>
+                        <div class="consultant-route" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-brain"></i></div>
+                                <h4>Ética Digital e IA</h4>
+                                <p>Principios de la UNESCO para el uso ético de la IA en procesos de talento humano.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-chart-line"></i></div>
+                                <h4>Medición de Impacto</h4>
+                                <p>Indicadores SMART y marcos como IRIS o SROI para demostrar cambios reales.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-server"></i></div>
+                                <h4>Tecnología y Rendición de Cuentas</h4>
+                                <p>Plataformas ESG, analítica digital y gobernanza de datos ante los stakeholders.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-shield-halved text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Guardián de la confianza</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">El especialista debe asegurar que la IA mejore la calidad de vida humana y no la reemplace de forma deshumanizada.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Principios como la explicabilidad, la privacidad, la supervisión humana y la inocuidad son pilares de la nueva ética digital.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-bullseye text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Indicadores SMART</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Medir el impacto social exige evaluar efectos directos e indirectos a corto y largo plazo.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Combinar métricas cuantitativas (empleos creados) con cualitativas (percepción de bienestar) mediante un modelo lógico.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-comments text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Comunicar el cambio</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Transformar datos fríos en narrativas de éxito que demuestren el propósito organizacional.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">La rendición de cuentas ética moviliza recursos y fortalece la reputación ante stakeholders en 2026.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 5</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de aplicar principios éticos de la IA en la gestión del talento humano, diseñar sistemas de medición de impacto socioambiental y utilizar herramientas de analítica digital para la rendición de cuentas ética ante los stakeholders.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-brain mr-2" style="color: #17a2b8;"></i>Ética digital en la IA</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Aplicar los principios de la UNESCO para el uso ético de la IA en procesos de talento humano (transparencia, privacidad y supervisión humana).</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-chart-line mr-2" style="color: #17a2b8;"></i>Medición de impacto</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Diseñar sistemas de medición de impacto social y ambiental utilizando indicadores SMART y marcos como IRIS o SROI.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-server mr-2" style="color: #17a2b8;"></i>Rendición de cuentas</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Utilizar herramientas de analítica digital para la gobernanza de datos y la rendición de cuentas ética ante los stakeholders en 2026.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Ética organizacional en el futuro y medición de impacto</h2>
+                        <p class="mt-4 leading-relaxed">Este tema desarrolla los desafíos éticos de la IA en la gestión humana, los métodos para medir el impacto socioambiental y las herramientas tecnológicas que permiten una rendición de cuentas ética y basada en evidencia.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"La sostenibilidad ya no se demuestra con buenas intenciones: se demuestra con datos que evidencian cambios reales en la sociedad y en el medio ambiente."</p>
+                                <p class="text-sm mt-2 opacity-75">— Adaptado de UNESCO (2025) y ESADE (2025)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: 3 partes -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📋 Los tres pilares del tema</h3>
+                        <p class="text-sm mb-6" style="color: var(--text);">Haz clic en cada tarjeta para descubrir los tres componentes centrales de este tema.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-brain text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Ética Digital e IA</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-brain text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Ética Digital e IA</h4>
+                                        <p class="text-xs leading-relaxed">Para 2026, la IA es una infraestructura de productividad. El gobierno de datos no es opcional: los modelos deben ser imparciales, explicables y respetuosos de los derechos humanos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-chart-line text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Medición de Impacto</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-chart-line text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Medición de Impacto</h4>
+                                        <p class="text-xs leading-relaxed">Evaluar efectos directos e indirectos, a corto y largo plazo, usando indicadores SMART y un modelo lógico que conecte recursos, actividades y resultados de cambio real.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-server text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Tecnología y ESG</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-server text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Tecnología y ESG</h4>
+                                        <p class="text-xs leading-relaxed">Plataformas que recopilan datos ESG de ERP, encuestas y sensores permiten cumplir normativas de reporte, identificar puntos críticos y comunicar el cambio con evidencia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">Estructura del Tema</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-brain mr-2" style="color: #4a5568;"></i>Parte 1: Ética Digital e Inteligencia Artificial en 2026</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">Para 2026, la IA generativa ha pasado de ser un asistente a ser una <strong>infraestructura de productividad</strong>. Esto plantea desafíos organizacionales críticos: el gobierno de datos no es opcional, y las empresas que no aseguren que sus modelos son imparciales y respetuosos con los derechos humanos enfrentarán riesgos regulatorios graves. El especialista debe actuar como el <strong>guardián de la confianza institucional</strong>, asegurando que la IA se emplee para mejorar la calidad de vida humana y no para su reemplazo deshumanizado.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Explicabilidad:</strong> entender por qué la IA tomó una decisión, especialmente en procesos de selección, evaluación y desarrollo del talento.</li>
+                                        <li><strong>Privacidad y supervisión humana:</strong> proteger los datos personales y garantizar que una persona pueda intervenir en decisiones automatizadas.</li>
+                                        <li><strong>Inocuidad:</strong> diseñar sistemas que no causen daño, discriminen ni reproduzcan sesgos históricos.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-chart-line mr-2" style="color: #4a5568;"></i>Parte 2: Métodos de Medición de Impacto Socioambiental</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">En el tercer sector y en la empresa privada, solo aquello capaz de demostrarse con datos genera verdadera confianza. Medir el impacto social se refiere a evaluar los <strong>efectos directos e indirectos</strong>, a corto y largo plazo, de una intervención en la sociedad. Herramientas como el <strong>SROI</strong> permiten comparar los beneficios sociales y ambientales frente a los costos financieros, asignando un valor monetario al impacto social.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Indicadores SMART:</strong> específicos, medibles, alcanzables, relevantes y con tiempo definido.</li>
+                                        <li><strong>Modelo lógico:</strong> conectar recursos, actividades, productos, resultados e impactos de cambio real.</li>
+                                        <li><strong>Métricas mixtas:</strong> combinar datos cuantitativos (empleos creados, reducción de emisiones) con cualitativos (percepción de bienestar, relatos de cambio).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-bold flex justify-between items-center" style="background: var(--surface-soft); color: #4a5568;">
+                                    <span><i class="fa-solid fa-server mr-2" style="color: #4a5568;"></i>Parte 3: Herramientas Tecnológicas para la Rendición de Cuentas</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed mb-3">La medición del impacto en 2026 se apoya en <strong>soluciones digitales</strong> que recopilan datos ESG automáticamente de diferentes fuentes (ERP, encuestas, sensores). Plataformas como <strong>Dcycle</strong> o <strong>Normative</strong> permiten estructurar esta información para cumplir con normativas internacionales de reporte, identificando puntos críticos donde mejorar el impacto y reducir costes.</p>
+                                    <ul class="text-sm leading-relaxed space-y-1">
+                                        <li><strong>Gobernanza de datos:</strong> asegurar la calidad, trazabilidad y seguridad de la información que sustenta las decisiones.</li>
+                                        <li><strong>Rendición de cuentas ética:</strong> comunicar resultados de manera estratégica y narrativa ante los stakeholders.</li>
+                                        <li><strong>Convertir datos en historias:</strong> demostrar cómo la organización cumple su propósito de formar una sociedad más justa e interconectada.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Audita el uso de IA en procesos de talento humano, mapea los grupos de interés de tu proyecto de intervención y diseña un sistema de medición de impacto con indicadores SMART.</p>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex border-b flex-wrap" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-caso">
+                                <i class="fa-solid fa-microchip"></i> Auditoría de IA
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-stakeholders">
+                                <i class="fa-solid fa-map"></i> Mapa de Stakeholders
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Auditoría de IA -->
+                        <div class="act-panel active" id="act-caso">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🔍 Auditoría de IA: ¿Qué principio ético de la UNESCO aplica?</h3>
+                                <p class="text-sm mb-4">Lee cada situación sobre un algoritmo de selección de personal e identifica el principio ético de la UNESCO que se pone en juego: <strong>transparencia, privacidad, supervisión humana, explicabilidad o inocuidad</strong>.</p>
+
+                                <div class="mb-4">
+                                    <div class="flex justify-between text-xs font-semibold mb-1" style="color:var(--text)">
+                                        <span id="caso-paso-label">Caso 1 de 5</span>
+                                        <span id="caso-score-mini" class="font-extrabold" style="color:var(--accent)">0 / 0 correctas</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-gray-200 overflow-hidden">
+                                        <div id="caso-progress-bar" class="h-full rounded-full transition-all duration-300" style="width:20%; background:var(--accent);"></div>
+                                    </div>
+                                </div>
+
+                                <div id="caso-card" class="p-5 rounded-xl border-2 transition-all duration-300" style="border-color:var(--accent); background:var(--surface-soft);"></div>
+                                <div id="caso-resultado-global" class="hidden mt-4 p-4 rounded-xl text-center" style="background:var(--surface-soft); border: 2px solid var(--accent);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" id="caso-btn-prev" onclick="pasoCaso(-1)" class="btn-soft"><i class="fa-solid fa-arrow-left mr-1"></i>Anterior</button>
+                                    <button type="button" id="caso-btn-verificar" onclick="verificarCaso()" class="btn-main"><i class="fa-solid fa-check mr-1"></i>Verificar</button>
+                                    <button type="button" id="caso-btn-next" onclick="pasoCaso(1)" class="btn-main hidden">Siguiente <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                                    <button type="button" onclick="reiniciarCaso()" class="btn-soft"><i class="fa-solid fa-rotate-left mr-1"></i>Reiniciar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Mapa de Stakeholders -->
+                        <div class="act-panel" id="act-stakeholders">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">🗺️ Mapa de Stakeholders</h3>
+                                <p class="text-sm mb-4">Para medir y reportar el impacto de una intervención es necesario identificar quiénes tienen poder e interés en el proyecto. Coloca cada stakeholder en el cuadrante que le corresponde.</p>
+
+                                <div class="mb-4 p-3 rounded-lg" style="background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); border: 1px solid #17a2b8;">
+                                    <p class="text-xs" style="color: #0c7b8a;"><i class="fa-solid fa-info-circle mr-1"></i> Arrastra cada ficha al cuadrante correcto. Luego presiona <strong>Verificar</strong> para recibir retroalimentación.</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <p class="text-xs font-bold mb-2" style="color:var(--heading)">Stakeholders disponibles:</p>
+                                    <div id="stakeholders-pool" class="flex flex-wrap gap-2 p-3 rounded-lg border border-dashed" style="border-color:var(--line); background:var(--surface-soft); min-height:60px;">
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="accionistas" data-correct="alto-poder-bajo-interes">Accionistas</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="empleados" data-correct="alto-poder-alto-interes">Empleados</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="comunidad" data-correct="bajo-poder-alto-interes">Comunidad local</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="proveedores" data-correct="bajo-poder-alto-interes">Proveedores locales</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="clientes" data-correct="alto-poder-alto-interes">Clientes</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="gobierno" data-correct="alto-poder-bajo-interes">Gobierno / regulador</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="sindicatos" data-correct="alto-poder-alto-interes">Sindicatos</div>
+                                        <div class="stakeholder-chip" draggable="true" data-stakeholder="medioambiente" data-correct="bajo-poder-bajo-interes">Medio ambiente</div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2 md:gap-3 mb-4">
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="alto-poder-alto-interes" style="border-color:var(--accent); background:#f0fdf4; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Alto poder / Alto interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Gestionar de cerca</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="alto-poder-bajo-interes" style="border-color:#f59e0b; background:#fffbeb; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Alto poder / Bajo interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Mantener satisfechos</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="bajo-poder-alto-interes" style="border-color:#3b82f6; background:#eff6ff; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Bajo poder / Alto interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Mantener informados</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                    <div class="stakeholder-zone p-3 rounded-lg border-2" data-zone="bajo-poder-bajo-interes" style="border-color:#6b7280; background:#f9fafb; min-height:120px;">
+                                        <p class="text-xs font-bold mb-2 text-center" style="color:var(--heading)">Bajo poder / Bajo interés</p>
+                                        <p class="text-xs text-center mb-2" style="color:#6c757d;">Monitorear</p>
+                                        <div class="zone-content flex flex-wrap gap-1"></div>
+                                    </div>
+                                </div>
+
+                                <div id="stakeholder-feedback" class="hidden mt-4 p-4 rounded-lg text-sm" style="background:#f0f9ff; color:#0369a1;"></div>
+
+                                <div class="mt-4 flex flex-wrap gap-3 justify-center">
+                                    <button type="button" onclick="verificarStakeholders()" class="btn-main"><i class="fa-solid fa-check mr-1"></i>Verificar</button>
+                                    <button type="button" onclick="reiniciarStakeholders()" class="btn-soft"><i class="fa-solid fa-rotate-left mr-1"></i>Reiniciar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- EVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 5</h2>
+                        <p class="mt-4 leading-relaxed">Evalúa tu comprensión sobre la ética digital e IA, los métodos de medición de impacto socioambiental y las herramientas tecnológicas para la rendición de cuentas ética.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/4</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-summary" class="hidden mt-6">
+                            <h3 class="text-xl font-bold mb-4" style="color: var(--heading);">Resumen</h3>
+                            <div id="summary-content" class="space-y-4"></div>
+                            <div class="mt-6"><button id="quiz-restart" type="button" class="btn-main">Reiniciar</button></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RECURSOS -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas prácticas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Aplicaciones y plataformas para diseñar indicadores de impacto, elaborar reportes ESG y colaborar en el proyecto de intervención.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Impact Management Project — Normas de impacto -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-bullseye" style="color: #2a7a4f; font-size: 1em;"></i> Impact Management Project — Normas de medición
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Conjunto de normas y herramientas para definir qué medir, planificar la recolección de datos y reportar resultados de impacto social.</p>
+                                    <a href="https://impactmanagementproject.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir IMP
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://impactmanagementproject.com/" alt="QR IMP" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: GRI Standards — Reportes ESG -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-file-lines" style="color: #f06a6a; font-size: 1em;"></i> GRI Standards — Reportes de sostenibilidad
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Estándares globales para reportar indicadores ambientales, sociales y de gobernanza (ESG) de forma comparable y verificable.</p>
+                                    <a href="https://www.globalreporting.org/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir GRI
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.globalreporting.org/" alt="QR GRI" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Google Meet -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-video" style="color: #00832d; font-size: 1em;"></i> Google Meet
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Canal para videosesiones, tutorías virtuales y análisis sincrónico de casos de ética digital, medición de impacto y discusión del proyecto de intervención con el docente.</p>
+                                    <a href="https://meet.google.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Iniciar reunión
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://meet.google.com/" alt="QR Google Meet" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliación del Tema 5 — Ética organizacional en el futuro y medición de impacto.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Ref 1: UNESCO 2025 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">UNESCO. (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Recomendación sobre la Ética de la Inteligencia Artificial.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.unesco.org/es/artificial-intelligence/recommendation-ethics" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver en UNESCO
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.unesco.org/es/artificial-intelligence/recommendation-ethics" alt="QR UNESCO IA" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: ESADE 2025 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">ESADE. (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Métodos avanzados de evaluación y análisis del impacto social.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.esade.edu/es/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver ESADE
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.esade.edu/es/" alt="QR ESADE" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: Social Value International 2025 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Social Value International. (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">The Standard on Social Value Measurement and SROI Guide.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://socialvalueint.org/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver SVI
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://socialvalueint.org/" alt="QR SVI" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: AI Now Institute 2024 -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">AI Now Institute. (2024).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">AI Now Institute Annual Report: Accountability and the Future of Artificial Intelligence.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://ainowinstitute.org/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-globe"></i> Ver AI Now
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://ainowinstitute.org/" alt="QR AI Now" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navegación sidebar
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+                document.getElementById(link.dataset.target).classList.add('active');
+                
+                // Inicializar quiz cuando se navega a evaluación
+                if (link.dataset.target === 'evaluacion') {
+                    setTimeout(() => {
+                        renderQuiz();
+                    }, 100);
+                }
+            });
+        });
+
+        // Mobile nav
+        document.getElementById('mobile-nav').addEventListener('change', (e) => {
+            document.querySelectorAll('.content-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(e.target.value).classList.add('active');
+        });
+
+        // Acordeón
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = btn.querySelector('.fa-chevron-down');
+                if (icon) icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Quiz - Preguntas acotadas del Tema 5
+        const quizData = [
+            {
+                q: "¿Cuál de los siguientes es un principio ético de la UNESCO para el uso de la IA en talento humano?",
+                options: [
+                    "Maximizar la velocidad de contratación sin importar el método",
+                    "Supervisión humana — garantizar intervención humana en decisiones automatizadas",
+                    "Reducir costos de personal eliminando todas las revisiones humanas",
+                    "Ocultar a los candidatos que se usa IA en la selección"
+                ],
+                correct: 1
+            },
+            {
+                q: "¿Qué herramienta permite comparar los beneficios sociales y ambientales frente a los costos financieros, asignando un valor monetario al impacto?",
+                options: [
+                    "SROI (Social Return on Investment)",
+                    "ROI tradicional únicamente",
+                    "Encuesta de clima laboral",
+                    "Matriz de stakeholders"
+                ],
+                correct: 0
+            },
+            {
+                q: "¿Qué significa que un indicador de impacto sea SMART?",
+                options: [
+                    "Solo medible con datos financieros",
+                    "Específico, medible, alcanzable, relevante y con tiempo definido",
+                    "Social, monetario, amplio, recurrente y temporal",
+                    "Subjetivo, manual, anual, revisable y teórico"
+                ],
+                correct: 1
+            },
+            {
+                q: "¿Cuál es el propósito de las plataformas ESG en la rendición de cuentas organizacional?",
+                options: [
+                    "Reemplazar completamente el juicio humano en decisiones estratégicas",
+                    "Recopilar, estructurar y reportar datos ambientales, sociales y de gobernanza para cumplir normativas y mejorar el impacto",
+                    "Eliminar la necesidad de comunicar resultados a los stakeholders",
+                    "Almacenar únicamente información financiera de la empresa"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        const quizBox = document.getElementById('quiz-box');
+        const quizSummary = document.getElementById('quiz-summary');
+
+        function renderQuiz() {
+            // Verificar que los elementos existan antes de renderizar
+            const quizTitle = document.getElementById('quiz-title');
+            const quizProgress = document.getElementById('quiz-progress');
+            const quizText = document.getElementById('quiz-text');
+            const quizOptions = document.getElementById('quiz-options');
+            
+            if (!quizTitle || !quizProgress || !quizText || !quizOptions) {
+                console.log('Elementos del quiz no encontrados, reintentando...');
+                setTimeout(renderQuiz, 100);
+                return;
+            }
+            
+            quizTitle.textContent = `Pregunta ${currentQ + 1}`;
+            quizProgress.textContent = `${currentQ + 1}/${quizData.length}`;
+            quizText.textContent = quizData[currentQ].q;
+            const opts = document.getElementById('quiz-options');
+            opts.innerHTML = '';
+            quizData[currentQ].options.forEach((opt, i) => {
+                const label = document.createElement('label');
+                const selected = answers[currentQ] === i;
+                label.className = `quiz-option w-full text-left border rounded-lg p-4 transition-all ${selected ? 'border-[var(--accent)] bg-[var(--surface-soft)]' : 'border-[var(--line)] hover:bg-[var(--surface-soft)]'}`;
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'quiz-option';
+                input.value = i;
+                input.checked = selected;
+                input.addEventListener('change', () => { answers[currentQ] = i; renderQuiz(); });
+                const span = document.createElement('span');
+                span.className = 'font-semibold';
+                span.textContent = `${String.fromCharCode(65+i)}. `;
+                label.appendChild(input);
+                label.appendChild(span);
+                label.appendChild(document.createTextNode(opt));
+                opts.appendChild(label);
+            });
+            document.getElementById('quiz-prev').disabled = currentQ === 0;
+            document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('quiz-next').addEventListener('click', () => {
+            if (currentQ < quizData.length - 1) { currentQ++; renderQuiz(); }
+            else {
+                quizBox.classList.add('hidden');
+                quizSummary.classList.remove('hidden');
+                let correct = 0;
+                let html = '';
+                quizData.forEach((q, i) => {
+                    const isCorrect = answers[i] === q.correct;
+                    if (isCorrect) correct++;
+                    html += `<div class="p-4 rounded-lg ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}"><p class="font-semibold">${i+1}. ${q.q}</p><p class="text-sm mt-2">Tu respuesta: ${String.fromCharCode(65+answers[i])}. ${q.options[answers[i]]}</p>${!isCorrect ? `<p class="text-sm mt-1 text-green-700">Correcta: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}</p>` : ''}</div>`;
+                });
+                html += `<p class="text-center font-bold text-lg mt-4">Puntuación: ${correct}/${quizData.length} (${Math.round(correct/quizData.length*100)}%)</p>`;
+                document.getElementById('summary-content').innerHTML = html;
+            }
+        });
+
+        document.getElementById('quiz-prev').addEventListener('click', () => { if (currentQ > 0) { currentQ--; renderQuiz(); } });
+        document.getElementById('quiz-restart').addEventListener('click', () => { currentQ = 0; answers = []; quizBox.classList.remove('hidden'); quizSummary.classList.add('hidden'); renderQuiz(); document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== UTILIDAD: SCROLL AL TOPE DE ACTIVIDAD =====
+        function scrollToActividad() {
+            const panel = document.querySelector('.act-panel.active');
+            if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== ACTIVIDAD 1: AUDITORÍA DE IA =====
+        const casosSituaciones = [
+            {
+                empresa: 'Selección de personal — Decisión automatizada sin intervención humana',
+                situacion: 'Un algoritmo descarta automáticamente hojas de vida sin que un profesional de talento humano revise el motivo. Los candidatos no pueden apelar ni saber por qué fueron rechazados.',
+                correcta: 'supervision',
+                opciones: [
+                    { valor: 'transparencia', etiqueta: 'Transparencia — informar claramente que se usa IA y cómo' },
+                    { valor: 'privacidad', etiqueta: 'Privacidad — proteger los datos personales de los candidatos' },
+                    { valor: 'supervision', etiqueta: 'Supervisión humana — garantizar intervención humana en decisiones automatizadas' },
+                    { valor: 'explicabilidad', etiqueta: 'Explicabilidad — entender por qué la IA tomó una decisión' },
+                    { valor: 'inocuidad', etiqueta: 'Inocuidad — evitar daños, sesgos o discriminación' }
+                ],
+                explicacion: 'Correcto: es Supervisión humana. La UNESCO exige que una persona pueda intervenir, revisar y apelar decisiones automatizadas que afecten derechos laborales.'
+            },
+            {
+                empresa: 'Evaluación de desempeño — Modelo opaco',
+                situacion: 'El sistema de evaluación de desempeño asigna puntuaciones a los empleados, pero ni los evaluados ni los gerentes comprenden qué variables ponderó el modelo para llegar a esos resultados.',
+                correcta: 'explicabilidad',
+                opciones: [
+                    { valor: 'transparencia', etiqueta: 'Transparencia — informar claramente que se usa IA y cómo' },
+                    { valor: 'privacidad', etiqueta: 'Privacidad — proteger los datos personales de los candidatos' },
+                    { valor: 'supervision', etiqueta: 'Supervisión humana — garantizar intervención humana en decisiones automatizadas' },
+                    { valor: 'explicabilidad', etiqueta: 'Explicabilidad — entender por qué la IA tomó una decisión' },
+                    { valor: 'inocuidad', etiqueta: 'Inocuidad — evitar daños, sesgos o discriminación' }
+                ],
+                explicacion: 'Correcto: es Explicabilidad. Se debe poder entender e interpretar las razones detrás de una decisión automatizada, especialmente si afecta la carrera de una persona.'
+            },
+            {
+                empresa: 'Reclutamiento — Sesgo histórico en los datos',
+                situacion: 'Un algoritmo de selección fue entrenado con datos históricos donde la mayoría de los contratados eran hombres jóvenes. El sistema comienza a penalizar automáticamente perfiles de mujeres mayores de 40 años.',
+                correcta: 'inocuidad',
+                opciones: [
+                    { valor: 'transparencia', etiqueta: 'Transparencia — informar claramente que se usa IA y cómo' },
+                    { valor: 'privacidad', etiqueta: 'Privacidad — proteger los datos personales de los candidatos' },
+                    { valor: 'supervision', etiqueta: 'Supervisión humana — garantizar intervención humana en decisiones automatizadas' },
+                    { valor: 'explicabilidad', etiqueta: 'Explicabilidad — entender por qué la IA tomó una decisión' },
+                    { valor: 'inocuidad', etiqueta: 'Inocuidad — evitar daños, sesgos o discriminación' }
+                ],
+                explicacion: 'Correcto: es Inocuidad. Los sistemas de IA no deben causar daño, reproducir sesgos históricos ni discriminar a grupos vulnerables.'
+            },
+            {
+                empresa: 'Aplicación de empleo — Datos sensibles sin consentimiento',
+                situacion: 'La plataforma de selección solicita a los candidatos información sobre su estado de salud, religión y vida familiar, sin explicar para qué se usarán ni obtener un consentimiento explícito.',
+                correcta: 'privacidad',
+                opciones: [
+                    { valor: 'transparencia', etiqueta: 'Transparencia — informar claramente que se usa IA y cómo' },
+                    { valor: 'privacidad', etiqueta: 'Privacidad — proteger los datos personales de los candidatos' },
+                    { valor: 'supervision', etiqueta: 'Supervisión humana — garantizar intervención humana en decisiones automatizadas' },
+                    { valor: 'explicabilidad', etiqueta: 'Explicabilidad — entender por qué la IA tomó una decisión' },
+                    { valor: 'inocuidad', etiqueta: 'Inocuidad — evitar daños, sesgos o discriminación' }
+                ],
+                explicacion: 'Correcto: es Privacidad. La recolección de datos sensibles requiere consentimiento informado, finalidad legítima y protección adecuada de la información personal.'
+            },
+            {
+                empresa: 'Onboarding digital — Uso de IA sin notificación',
+                situacion: 'La empresa utiliza un asistente virtual de IA para orientar a los nuevos empleados, pero no informa que sus conversaciones son analizadas por un sistema automatizado ni quién tiene acceso a esos registros.',
+                correcta: 'transparencia',
+                opciones: [
+                    { valor: 'transparencia', etiqueta: 'Transparencia — informar claramente que se usa IA y cómo' },
+                    { valor: 'privacidad', etiqueta: 'Privacidad — proteger los datos personales de los candidatos' },
+                    { valor: 'supervision', etiqueta: 'Supervisión humana — garantizar intervención humana en decisiones automatizadas' },
+                    { valor: 'explicabilidad', etiqueta: 'Explicabilidad — entender por qué la IA tomó una decisión' },
+                    { valor: 'inocuidad', etiqueta: 'Inocuidad — evitar daños, sesgos o discriminación' }
+                ],
+                explicacion: 'Correcto: es Transparencia. Las personas tienen derecho a saber cuándo interactúan con un sistema de IA, para qué se usan sus datos y quién tiene acceso a ellos.'
+            }
+        ];
+        let casoStep = 0;
+        let casoResultados = [];
+
+        function renderCasoCard() {
+            const c = casosSituaciones[casoStep];
+            const card = document.getElementById('caso-card'); if (!card) return;
+            const ya = casoResultados[casoStep];
+            const opcionesHtml = c.opciones.map(op =>
+                `<label class="flex items-start gap-2 cursor-pointer p-3 rounded-lg border transition-colors ${ya ? (op.valor === c.correcta ? 'border-green-500 bg-green-50' : (op.valor === ya.seleccion && op.valor !== c.correcta ? 'border-red-400 bg-red-50' : 'border-gray-200')) : 'border-gray-200 hover:border-gray-400'}" style="${ya ? 'cursor:default;' : ''}">
+                    <input type="radio" name="caso-opcion" value="${op.valor}" ${ya ? 'disabled' : ''} ${ya && ya.seleccion === op.valor ? 'checked' : ''} class="mt-0.5 flex-shrink-0">
+                    <span class="text-sm leading-snug">${op.etiqueta}</span>
+                </label>`
+            ).join('');
+            const fbHtml = ya ? `<div class="mt-4 p-3 rounded-lg text-xs leading-relaxed ${ya.correcto ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}" style="border:1px solid ${ya.correcto ? '#86efac' : '#fca5a5'}">
+                <p class="font-bold mb-1">${ya.correcto ? '✅ Correcto' : '❌ Incorrecto'}</p>
+                <p>${c.explicacion}</p>
+            </div>` : '';
+            card.innerHTML = `
+                <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--accent)">${c.empresa}</p>
+                <p class="text-sm leading-relaxed mb-4" style="color:var(--text)">${c.situacion}</p>
+                <p class="text-xs font-bold mb-2" style="color:var(--heading)">¿A qué categoría corresponde esta situación?</p>
+                <div class="space-y-2">${opcionesHtml}</div>
+                ${fbHtml}`;
+            const paso = document.getElementById('caso-paso-label'); if (paso) paso.textContent = 'Caso ' + (casoStep + 1) + ' de ' + casosSituaciones.length;
+            const bar = document.getElementById('caso-progress-bar'); if (bar) bar.style.width = ((casoStep + 1) / casosSituaciones.length * 100) + '%';
+            const correctas = casoResultados.filter(r => r && r.correcto).length;
+            const respondidas = casoResultados.filter(Boolean).length;
+            const mini = document.getElementById('caso-score-mini'); if (mini) mini.textContent = correctas + ' / ' + respondidas + ' correctas';
+            const btnVerif = document.getElementById('caso-btn-verificar'); if (btnVerif) btnVerif.classList.toggle('hidden', !!ya);
+            const btnNext = document.getElementById('caso-btn-next'); if (btnNext) btnNext.classList.toggle('hidden', !ya || casoStep === casosSituaciones.length - 1);
+            const btnPrev = document.getElementById('caso-btn-prev'); if (btnPrev) btnPrev.classList.toggle('hidden', casoStep === 0);
+            if (ya && casoStep === casosSituaciones.length - 1 && casoResultados.filter(Boolean).length === casosSituaciones.length) mostrarResultadoCaso();
+        }
+
+        function verificarCaso() {
+            const seleccionado = document.querySelector('input[name="caso-opcion"]:checked');
+            if (!seleccionado) { alert('Selecciona una opción antes de verificar.'); return; }
+            const correcto = seleccionado.value === casosSituaciones[casoStep].correcta;
+            casoResultados[casoStep] = { seleccion: seleccionado.value, correcto };
+            renderCasoCard();
+        }
+
+        function pasoCaso(dir) {
+            casoStep = Math.max(0, Math.min(casosSituaciones.length - 1, casoStep + dir));
+            const rg = document.getElementById('caso-resultado-global'); if (rg) rg.classList.add('hidden');
+            renderCasoCard();
+        }
+
+        function mostrarResultadoCaso() {
+            const correctas = casoResultados.filter(r => r && r.correcto).length;
+            const total = casosSituaciones.length;
+            const pct = Math.round((correctas / total) * 100);
+            const nivel = pct === 100 ? '🟢 Excelente — dominas los principios éticos de la UNESCO para la IA' : pct >= 60 ? '🟡 Bien encaminado — revisa los principios de transparencia, privacidad, supervisión, explicabilidad e inocuidad' : '🔴 En proceso — vuelve al Contenido para reforzar la ética digital y la IA';
+            const rg = document.getElementById('caso-resultado-global'); if (!rg) return;
+            rg.innerHTML = `<p class="font-extrabold text-lg mb-1" style="color:var(--heading)">Resultado del análisis</p><p class="text-4xl font-black my-2" style="color:var(--accent)">${pct}%</p><p class="text-sm">${correctas} de ${total} casos identificados correctamente</p><p class="mt-3 font-semibold">${nivel}</p>`;
+            rg.classList.remove('hidden');
+        }
+
+        function reiniciarCaso() {
+            casoStep = 0; casoResultados = [];
+            const rg = document.getElementById('caso-resultado-global'); if (rg) { rg.innerHTML = ''; rg.classList.add('hidden'); }
+            renderCasoCard();
+            scrollToActividad();
+        }
+
+        // ===== ACTIVIDAD 2: MAPA DE STAKEHOLDERS =====
+        function initStakeholders() {
+            const chips = document.querySelectorAll('.stakeholder-chip');
+            const zones = document.querySelectorAll('.stakeholder-zone');
+            const pool = document.getElementById('stakeholders-pool');
+            let draggedEl = null;
+
+            chips.forEach(chip => {
+                chip.addEventListener('dragstart', (e) => {
+                    draggedEl = chip;
+                    chip.classList.add('dragging');
+                    e.dataTransfer.setData('text/plain', chip.dataset.stakeholder);
+                });
+                chip.addEventListener('dragend', () => {
+                    chip.classList.remove('dragging');
+                    draggedEl = null;
+                    zones.forEach(z => z.classList.remove('drag-over'));
+                });
+                chip.addEventListener('click', () => {
+                    // Fallback táctil: si está en el pool, mover a la zona con menos fichas; si está en zona, volver al pool
+                    if (chip.parentElement.id === 'stakeholders-pool') {
+                        const zoneContents = document.querySelectorAll('.zone-content');
+                        let min = null;
+                        zoneContents.forEach(zc => { if (!min || zc.children.length < min.children.length) min = zc; });
+                        if (min) min.appendChild(chip);
+                    } else if (chip.parentElement.classList.contains('zone-content')) {
+                        pool.appendChild(chip);
+                    }
+                });
+            });
+
+            zones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('drag-over'); });
+                zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+                    if (draggedEl) {
+                        zone.querySelector('.zone-content').appendChild(draggedEl);
+                    }
+                });
+            });
+
+            pool.addEventListener('dragover', (e) => { e.preventDefault(); pool.classList.add('drag-over'); });
+            pool.addEventListener('dragleave', () => pool.classList.remove('drag-over'));
+            pool.addEventListener('drop', (e) => {
+                e.preventDefault();
+                pool.classList.remove('drag-over');
+                if (draggedEl) pool.appendChild(draggedEl);
+            });
+        }
+
+        function verificarStakeholders() {
+            const zones = document.querySelectorAll('.stakeholder-zone');
+            let correctas = 0;
+            let total = 0;
+            let feedback = [];
+            zones.forEach(zone => {
+                zone.classList.remove('correct-zone', 'incorrect-zone');
+                const zoneId = zone.dataset.zone;
+                const chips = zone.querySelectorAll('.stakeholder-chip');
+                let zoneCorrect = true;
+                chips.forEach(chip => {
+                    total++;
+                    if (chip.dataset.correct === zoneId) {
+                        correctas++;
+                    } else {
+                        zoneCorrect = false;
+                        feedback.push(`<span style="color:#ef4444">❌ ${chip.textContent}</span> debería estar en <strong>${zoneLabel(chip.dataset.correct)}</strong>.`);
+                    }
+                });
+                if (chips.length > 0 && zoneCorrect) zone.classList.add('correct-zone');
+                if (chips.length > 0 && !zoneCorrect) zone.classList.add('incorrect-zone');
+            });
+
+            const pool = document.getElementById('stakeholders-pool');
+            const pendientes = pool.querySelectorAll('.stakeholder-chip').length;
+
+            const fb = document.getElementById('stakeholder-feedback');
+            if (pendientes > 0) {
+                fb.innerHTML = `<p class="font-bold mb-2">⚠️ Faltan ${pendientes} stakeholder(s) por ubicar.</p><p>Arrastra todos los elementos antes de verificar.</p>`;
+                fb.classList.remove('hidden');
+                return;
+            }
+
+            const pct = Math.round((correctas / total) * 100);
+            let mensaje = `<p class="font-bold mb-2">Resultado: ${correctas} de ${total} correctas (${pct}%)</p>`;
+            if (pct === 100) mensaje += `<p>🟢 Excelente — identificaste bien el poder e interés de cada grupo.</p>`;
+            else if (pct >= 60) mensaje += `<p>🟡 Bien encaminado — revisa los grupos que tienen alto poder o alto interés.</p>`;
+            else mensaje += `<p>🔴 En proceso — vuelve al contenido y repasa la matriz de stakeholders.</p>`;
+            if (feedback.length > 0) mensaje += `<div class="mt-2 space-y-1">${feedback.join('')}</div>`;
+            fb.innerHTML = mensaje;
+            fb.classList.remove('hidden');
+        }
+
+        function zoneLabel(zoneId) {
+            return {
+                'alto-poder-alto-interes': 'Alto poder / Alto interés',
+                'alto-poder-bajo-interes': 'Alto poder / Bajo interés',
+                'bajo-poder-alto-interes': 'Bajo poder / Alto interés',
+                'bajo-poder-bajo-interes': 'Bajo poder / Bajo interés'
+            }[zoneId] || zoneId;
+        }
+
+        function reiniciarStakeholders() {
+            const pool = document.getElementById('stakeholders-pool');
+            document.querySelectorAll('.stakeholder-chip').forEach(chip => {
+                pool.appendChild(chip);
+            });
+            document.querySelectorAll('.stakeholder-zone').forEach(zone => zone.classList.remove('correct-zone', 'incorrect-zone'));
+            const fb = document.getElementById('stakeholder-feedback');
+            if (fb) { fb.innerHTML = ''; fb.classList.add('hidden'); }
+            scrollToActividad();
+        }
+
+        // ===== FLIP CARDS Y DOMContentLoaded =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const flipCards = document.querySelectorAll('.flip-card');
+            flipCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+            });
+
+            renderCasoCard();
+            renderQuiz();
+            initStakeholders();
+        });
+    </script>
+</body>
+</html>
