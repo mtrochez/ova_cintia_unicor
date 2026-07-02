@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa conceptual del curso - Proyecto de Intervención</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7f5;
+      --surface: #ffffff;
+      --surface-soft: #f5f7f5;
+      --text: #374151;
+      --muted: #6c757d;
+      --heading: #569151;
+      --accent: #569151;
+      --accent-deep: #3d6a3a;
+      --accent-soft: #16BAAF;
+      --accent-blue: #17a2b8;
+      --accent-blue-dark: #0c7b8a;
+      --accent-blue-light: #D8EBF8;
+      --line: #dee2e6;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
+      --radius-xl: 18px;
+      --radius-lg: 14px;
+      --radius-md: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 18px 14px 28px;
+    }
+
+    @media (min-width: 900px) {
+      .wrap { padding: 18px 18px 36px; }
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .hero {
+      background: var(--surface);
+      border: 1px solid #f1f5f9;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .grid-1col {
+      grid-template-columns: 1fr !important;
+    }
+
+    @media (min-width: 920px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .list {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 13.5px;
+    }
+
+    .list li { margin: 7px 0; }
+
+    .map {
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid #f1f5f9;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px;
+      overflow: hidden;
+    }
+
+    .map h2 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--heading);
+    }
+
+    .rubrica-banner {
+      margin-top: 18px;
+      background: var(--accent-blue-light);
+      border: 1px solid #a8d4e6;
+      border-radius: var(--radius-xl);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .rubrica-banner p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--accent-blue-dark);
+      font-weight: 600;
+    }
+
+    .rubrica-banner small {
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    .diagram {
+      margin-top: 14px;
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: var(--radius-xl);
+      padding: 12px 12px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .diagram svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .tree {
+      margin-top: 14px;
+      display: grid;
+      gap: 12px;
+    }
+
+    details.tree-item {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    details.tree-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35);
+      border-color: #17a2b8;
+    }
+
+    summary.tree-summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      user-select: none;
+    }
+
+    summary.tree-summary::-webkit-details-marker { display: none; }
+
+    .tree-title {
+      display: grid;
+      gap: 2px;
+    }
+
+    .tree-title strong {
+      color: var(--heading);
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .tree-title span {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .tree-toggle {
+      width: 34px;
+      height: 34px;
+      border-radius: 9999px;
+      border: 1px solid #b5d5b3;
+      background: #e8f0e9;
+      color: var(--accent-deep);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .tree-toggle::before { content: "+"; }
+
+    details[open] .tree-toggle::before { content: "–"; }
+
+    details[open] .tree-toggle {
+      background: #b5d5b3;
+      border-color: var(--accent);
+    }
+
+    .tree-body {
+      padding: 0 16px 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .tree-body p {
+      margin: 12px 0 0;
+      color: #334155;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .topic-links {
+      margin-top: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .topic-link {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-left: 4px solid transparent;
+      border-radius: var(--radius-md);
+      padding: 12px 12px;
+      display: grid;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .topic-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(23, 162, 184, 0.2);
+      border-left-color: #0c7b8a;
+      background: #f8fdfe;
+    }
+
+    .topic-link h3 {
+      margin: 0;
+      font-size: 14px;
+      color: var(--accent-blue-dark);
+      line-height: 1.35;
+    }
+
+    .topic-link small {
+      color: #64748b;
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      padding: 8px 0;
+    }
+
+    .btn-link:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    .btn-link:hover {
+      color: var(--accent-blue-dark);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+
+    .diagrama-ruta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 24px 12px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    .bloque {
+      border-radius: 14px;
+      padding: 20px 18px;
+      min-width: 180px;
+      max-width: 220px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .bloque-central {
+      min-width: 240px;
+      max-width: 280px;
+    }
+
+    .bloque-verde {
+      background: #eaf7f9;
+      border: 1.5px solid #9ed4d8;
+      border-left: 5px solid #17a2b8;
+    }
+
+    .bloque-turquesa {
+      background: #eaf7f9;
+      border: 1.5px solid #9ed4d8;
+      border-left: 5px solid #17a2b8;
+    }
+
+    .bloque-titulo {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .bloque-verde .bloque-titulo { color: #0c7b8a; }
+    .bloque-turquesa .bloque-titulo { color: #0c7b8a; }
+
+    .bloque-texto {
+      font-size: 12.5px;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .bloque-sub {
+      font-size: 11px;
+      color: #6c757d;
+      margin-top: 8px;
+    }
+
+    .unidad-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid #9ed4d8;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 7px;
+      font-size: 12px;
+      color: #374151;
+      line-height: 1.4;
+    }
+
+    .unidad-pill:last-child { margin-bottom: 0; }
+
+    .u-badge {
+      font-weight: 700;
+      font-size: 11px;
+      color: #0c7b8a;
+      flex-shrink: 0;
+    }
+
+    .flecha-ruta {
+      font-size: 22px;
+      color: #17a2b8;
+      padding: 0 10px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .mini-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 980px) {
+      .mini-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .node {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      padding: 14px 14px;
+      border-left: 6px solid #569151;
+    }
+
+    .node strong {
+      display: block;
+      color: var(--heading);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .node p {
+      margin: 0;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .footer {
+      margin-top: 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero" aria-label="Presentación">
+      <p class="eyebrow">Mapa conceptual del curso</p>
+      <h1>Proyecto de Intervención</h1>
+      <p class="sub">Especialización en Gerencia del Talento Humano y Desarrollo Organizacional</p>
+    </section>
+
+    <section class="grid grid-1col" aria-label="Objetivos">
+      <details id="obj" class="tree-item">
+        <summary class="tree-summary">
+          <div class="tree-title">
+            <strong>🎯 Objetivos de aprendizaje</strong>
+          </div>
+          <div class="tree-toggle" aria-hidden="true"></div>
+        </summary>
+        <div class="tree-body">
+          <ul class="list">
+            <li><strong>General:</strong> Preparar proyectos de intervención organizacional bajo políticas, estrategias de gestión, procesos administrativos y recursos disponibles, con el fin de resolver problemas priorizados, optimizar métodos y procedimientos y sustentar decisiones estratégicas.</li>
+            <li><strong>OE 1:</strong> Comprender los fundamentos conceptuales, normativos y metodológicos de los proyectos de intervención organizacional, identificando problemas y áreas de mejora en los procesos administrativos.</li>
+            <li><strong>OE 2:</strong> Analizar y formular planes de intervención aplicando estrategias de gestión y técnicas de dirección para optimizar procesos, garantizar cumplimiento normativo y generar valor organizacional.</li>
+            <li><strong>OE 3:</strong> Integrar principios éticos, de ciudadanía empresarial y responsabilidad social en la formulación de propuestas de intervención, sustentando decisiones estratégicas para la sostenibilidad organizacional.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="map" aria-label="Mapa conceptual">
+      <h2>🧭 Ruta de aprendizaje del curso</h2>
+
+      <div class="diagrama-ruta">
+        <!-- Bloque Propósito -->
+        <div class="bloque bloque-verde" data-target="obj" role="button" tabindex="0">
+          <div class="bloque-titulo">Propósito</div>
+          <div class="bloque-texto">Preparar proyectos de intervención organizacional</div>
+          <div class="bloque-sub">3 objetivos específicos</div>
+        </div>
+
+        <!-- Flecha -->
+        <div class="flecha-ruta">&#10140;</div>
+
+        <!-- Bloque Unidades -->
+        <div class="bloque bloque-turquesa bloque-central" data-target="u1" role="button" tabindex="0">
+          <div class="bloque-titulo">Unidades</div>
+          <div class="unidad-pill"><span class="u-badge">U1</span> Proyecto opción de grado</div>
+          <div class="unidad-pill"><span class="u-badge">U2</span> Plan de Intervención Organizacional</div>
+          <div class="unidad-pill"><span class="u-badge">U3</span> Ética Organizacional y Medición de Impacto</div>
+        </div>
+
+        <!-- Flecha -->
+        <div class="flecha-ruta">&#10140;</div>
+
+        <!-- Bloque Resultados -->
+        <div class="bloque bloque-turquesa" data-target="res" role="button" tabindex="0">
+          <div class="bloque-titulo">Resultados</div>
+          <div class="bloque-texto">Proyecto de intervención formulado, sustentado y con impacto medible</div>
+        </div>
+      </div>
+
+      <div class="mini-grid" aria-label="Elementos centrales">
+        <div class="node">
+          <strong>Idea central</strong>
+          <p>Intervenir para transformar: diagnóstico, formulación, ejecución y evaluación de proyectos organizacionales con criterio ético y estratégico.</p>
+        </div>
+
+        <div class="node">
+          <strong>Ruta por unidades</strong>
+          <p>Del marco conceptual y normativo (U1) al plan de intervención organizacional (U2) y a la ética con medición de impacto (U3).</p>
+        </div>
+      </div>
+
+      <div class="tree" aria-label="Jerarquía del curso">
+
+        <details id="u1" class="tree-item">
+          <summary class="tree-summary">
+            <div class="tree-title">
+              <strong>Unidad 1 — Proyecto opción de grado</strong>
+              <span>Fundamentos, diagnóstico y formulación de proyectos de intervención organizacional</span>
+            </div>
+            <div class="tree-toggle" aria-hidden="true"></div>
+          </summary>
+          <div class="tree-body">
+            <div class="topic-links">
+              <div class="topic-link">
+                <h3>Tema 1: Fundamentos conceptuales y normativos de los proyectos de intervención organizacional</h3>
+                <small>Marco conceptual, normativo y teórico de los proyectos de intervención.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u1_t1/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 2: Estrategias para la identificación y priorización de problemas en los procesos administrativos</h3>
+                <small>Técnicas para detectar y jerarquizar problemas organizacionales.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u1_t2/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 3: Modelos y metodologías de formulación de propuestas de intervención</h3>
+                <small>Enfoques y modelos para estructurar propuestas de intervención.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u1_t3/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 4: Herramientas de diagnóstico para la revisión de métodos y procedimientos</h3>
+                <small>Instrumentos y herramientas de análisis organizacional.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u1_t4/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 5: Diseño de proyectos orientados a la solución de problemas organizacionales</h3>
+                <small>Diseño y estructuración de proyectos de solución organizacional.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u1_t5/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details id="u2" class="tree-item">
+          <summary class="tree-summary">
+            <div class="tree-title">
+              <strong>Unidad 2 — Plan de Intervención Organizacional</strong>
+              <span>OD Intervention: cultura, cambio, diseño organizacional y consultoría</span>
+            </div>
+            <div class="tree-toggle" aria-hidden="true"></div>
+          </summary>
+          <div class="tree-body">
+            <div class="topic-links">
+              <div class="topic-link">
+                <h3>Tema 1: Comprensión de las Intervenciones en Cultura y Estructuras Organizacionales</h3>
+                <small>Naturaleza y tipos de intervenciones en cultura y estructura.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u2_t1/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 2: Desarrollo de la Cultura Estratégica para la Gestión del Cambio</h3>
+                <small>Estrategias para gestionar el cambio cultural en las organizaciones.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u2_t2/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 3: Teoría y Diseño Organizacional</h3>
+                <small>Fundamentos teóricos y modelos de diseño de organizaciones.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u2_t3/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 4: Mejora de Procesos y Autoaprendizaje Organizacional</h3>
+                <small>Metodologías de mejora continua y aprendizaje organizacional.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u2_t4/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 5: Habilidades de Consultoría de DO</h3>
+                <small>Competencias y herramientas del consultor en Desarrollo Organizacional.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u2_t5/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details id="u3" class="tree-item">
+          <summary class="tree-summary">
+            <div class="tree-title">
+              <strong>Unidad 3 — Ética Organizacional y Medición de Impacto</strong>
+              <span>RSE, ciudadanía empresarial y sostenibilidad organizacional</span>
+            </div>
+            <div class="tree-toggle" aria-hidden="true"></div>
+          </summary>
+          <div class="tree-body">
+            <div class="topic-links">
+              <div class="topic-link">
+                <h3>Tema 1: Fundamentos de la Ética Organizacional</h3>
+                <small>Principios, valores y marcos éticos en las organizaciones.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u3_t1/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 2: La RSE en la Práctica y sus Grupos de Interés</h3>
+                <small>Responsabilidad Social Empresarial aplicada y gestión de stakeholders.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u3_t2/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 3: Del Beneficio Tradicional al Beneficio Compartido</h3>
+                <small>Modelos de valor compartido y nuevos paradigmas empresariales.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u3_t3/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 4: Ciudadanía Empresarial: Un Rol más Amplio en la Sociedad</h3>
+                <small>La empresa como actor ciudadano y su impacto en la comunidad.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u3_t4/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+              <div class="topic-link">
+                <h3>Tema 5: Ética Organizacional en el Futuro y Medición de Impacto</h3>
+                <small>Tendencias éticas y herramientas para medir el impacto organizacional.</small>
+                <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_u3_t5/index.html" target="_blank" rel="noopener noreferrer">Abrir tema →</a>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+
+      <div class="rubrica-banner" aria-label="Rúbrica de evaluación">
+        <div>
+          <p>📋 Rúbrica de evaluación del Proyecto de Intervención</p>
+          <small>Criterios, niveles de desempeño e indicadores para la evaluación del trabajo de grado.</small>
+        </div>
+        <a class="btn-link" href="https://mtrochez.github.io/ova_cintia_unicor/pdi_rubrica/index.html" target="_blank" rel="noopener noreferrer">Ver rúbrica →</a>
+      </div>
+
+    </section>
+
+    <div class="footer">OVA independiente para inserción/enlace desde Moodle &mdash; Gerencia del Talento Humano · UNICOR</div>
+  </div>
+
+  <script>
+    (function () {
+      function openAndScroll(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (el.tagName && el.tagName.toLowerCase() === 'details') {
+          el.open = true;
+        }
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      const diagram = document.querySelector('.diagram');
+      if (!diagram) return;
+
+      diagram.addEventListener('click', (e) => {
+        const target = e.target.closest('[data-target]');
+        if (!target) return;
+        const id = target.getAttribute('data-target');
+        if (!id) return;
+        if (id === 'res') {
+          openAndScroll('u1');
+          return;
+        }
+        openAndScroll(id);
+      });
+    })();
+  </script>
+</body>
+</html>
