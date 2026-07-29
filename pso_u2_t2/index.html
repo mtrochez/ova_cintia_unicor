@@ -1,0 +1,1578 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 2: Modelos e instrumentos de diagnóstico cultural y de clima en entornos empresariales</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .matrix-export-btn { background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; border: 1px solid #17a2b8; cursor: pointer; }
+        #ova-embed .matrix-export-btn:hover { background: #17a2b8; color: white; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .mckinsey-tab-btn:hover { background: #D8EBF8 !important; color: #374151 !important; }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #495057; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .development-matrix { margin-top: 24px; padding: 24px; background: var(--surface-soft); border-radius: 12px; border: 1px solid var(--line); }
+        #ova-embed .matrix-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        #ova-embed .matrix-header h3 { margin: 0; color: var(--heading); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-table { width: 100%; border-collapse: collapse; }
+        #ova-embed .matrix-table th { padding: 12px 16px; text-align: left; font-weight: 700; color: var(--heading); border-bottom: 2px solid var(--accent); }
+        #ova-embed .matrix-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+        #ova-embed .matrix-table tr:last-child td { border-bottom: none; }
+        #ova-embed .matrix-check { color: var(--accent); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-empty { color: #adb5bd; }
+        #ova-embed .activity-subnav-btn { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 10px 20px; border: 1px solid var(--line); cursor: pointer; transition: all 0.25s ease; }
+        #ova-embed .activity-subnav-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        #ova-embed .activity-subnav-btn:hover:not(.active) { background: var(--surface-soft); }
+        #ova-embed .activity-section.hidden { display: none; }
+        #ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed var(--line); border-radius: 16px; background: var(--surface-soft); }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: #17a2b8; background: #D8EBF8; color: #0c7b8a; }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed .flip-card { perspective: 1000px; height: 200px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .denison-card, #ova-embed .ocai-card, #ova-embed .journey-card, #ova-embed .journey-stage-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        #ova-embed .denison-option-label { display: inline-flex; flex-direction: column; align-items: center; cursor: pointer; gap: 4px; }
+        #ova-embed .denison-option-label input { accent-color: var(--accent); }
+        #ova-embed .denison-bar-container, #ova-embed .ocai-bar-bg { background: var(--surface-soft); border-radius: 8px; height: 24px; overflow: hidden; }
+        #ova-embed .denison-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-deep)); transition: width 0.6s ease; }
+        #ova-embed .ocai-bar-fill { height: 100%; border-radius: 8px; transition: width 0.6s ease; }
+        #ova-embed .ocai-type-Clan { color: #e11d48; }
+        #ova-embed .ocai-type-Adhocracia { color: #d97706; }
+        #ova-embed .ocai-type-Mercado { color: #2563eb; }
+        #ova-embed .ocai-type-Jerarquia { color: #4b5563; }
+        #ova-embed .journey-stage-card textarea { resize: vertical; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología Organizacional y Bienestar Humano</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Psicología Organizacional y Bienestar Humano</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-chart-line mr-2"></i>Unidad 2 - Tema 2</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Modelos e instrumentos de diagnóstico cultural y de clima en entornos empresariales</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Medir la cultura y el clima es el primer paso para gestionarlos sin sesgos. Este subtema profundiza en herramientas de nivel internacional como el Modelo Denison, que vincula la cultura con la efectividad, y el OCAI, centrado en tipos culturales.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">🎯 Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed">El diagnóstico cultural y de clima laboral es una competencia clave del especialista en gestión del talento humano. En este tema se contrastan modelos reconocidos internacionalmente —Modelo Denison y OCAI— con herramientas emergentes de mapeo de la experiencia del empleado y analítica de sentimientos. El propósito es que el estudiante aprenda a diseñar sistemas de diagnóstico dinámico que integren datos cuantitativos y cualitativos, permitiendo intervenir de forma preventiva y basada en evidencia para fortalecer la cultura, el clima y el bienestar organizacional.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta del diagnóstico</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">Del mapeo a la intervención preventiva</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <h4>Mapeo</h4>
+                                <p>Identificar los "momentos de verdad" del Employee Journey.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-clipboard-list"></i></div>
+                                <h4>Medición</h4>
+                                <p>Aplicar Denison y OCAI para perfilar la cultura actual y deseada.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-chart-pie"></i></div>
+                                <h4>Análisis</h4>
+                                <p>Interpretar brechas culturales, clima y datos cualitativos.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-comments"></i></div>
+                                <h4>Diálogo</h4>
+                                <p>Conversar con líderes sobre el ADN organizacional y el cambio.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                                <h4>Intervención</h4>
+                                <p>Actuar preventivamente antes de que la desmotivación genere fuga de talento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-lightbulb text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Pregunta central</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">¿Cómo diagnosticar la cultura y el clima sin sesgos para intervenir con precisión?</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">La pregunta orienta la reflexión sobre la relación entre evidencia, percepción del empleado y decisiones estratégicas de gestión humana.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-route text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Enfoque</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Modelo Denison, OCAI, Employee Journey Mapping y análisis de sentimientos.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Se aborda el diagnóstico cultural en contextos empresariales colombianos, públicos y privados, hacia el 2026.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-award text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Producto esperado</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Diseño de un sistema de diagnóstico dinámico que combine modelos clásicos y analítica en tiempo real.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El especialista podrá construir propuestas de mejora en clima y cultura basadas en evidencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 2</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de aplicar el Modelo Denison, implementar el OCAI y diseñar sistemas de diagnóstico dinámico que integren el mapeo de la experiencia del empleado con la analítica de sentimientos.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-layer-group mr-2" style="color: #17a2b8;"></i>Aplicar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Las cuatro dimensiones del Modelo Denison (Misión, Adaptabilidad, Participación y Consistencia) para diagnosticar la efectividad cultural.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-chart-pie mr-2" style="color: #17a2b8;"></i>Implementar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">El Instrumento de Evaluación de la Cultura Organizacional (OCAI) para identificar la brecha entre la cultura actual y la cultura deseada.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-route mr-2" style="color: #17a2b8;"></i>Diseñar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Sistemas de diagnóstico dinámico que integren el mapeo de la experiencia del empleado (Employee Journey Map) con la analítica de sentimientos en 2026.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres partes fundamentales</h2>
+                        <p class="mt-4 leading-relaxed">Este tema se estructura en tres partes que abordan el diagnóstico de la cultura con el Modelo Denison, la tipología cultural del OCAI y el diagnóstico continuo mediante Employee Journey Mapping y analítica de sentimientos.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"Medir la cultura no basta: hay que escucharla, mapearla y transformarla antes de que se convierta en un riesgo organizacional."</p>
+                                <p class="mt-2 text-sm opacity-80">— Enfoque contemporáneo del diagnóstico cultural</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Cuatro dimensiones del Modelo Denison -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">🔄 Cuatro dimensiones del Modelo Denison</h3>
+                        <p class="text-xs mb-6" style="color: #6c757d;"><i class="fa-solid fa-hand-pointer mr-1"></i>Pasa el cursor sobre cada tarjeta para ver el detalle.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-flag text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Misión</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-flag text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Misión</h4>
+                                        <p class="text-xs leading-relaxed">Dirección, propósito, visión estratégica y alineación de objetivos para dar sentido al trabajo.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-arrows-rotate text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Adaptabilidad</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-arrows-rotate text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Adaptabilidad</h4>
+                                        <p class="text-xs leading-relaxed">Orientación al mercado, aprendizaje, cambio e innovación continua.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-users text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Participación</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-users text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Participación</h4>
+                                        <p class="text-xs leading-relaxed">Empoderamiento, trabajo en equipo, compromiso y desarrollo del potencial.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-scale-balanced text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Consistencia</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-scale-balanced text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Consistencia</h4>
+                                        <p class="text-xs leading-relaxed">Valores centrales, acuerdo, coordinación y estabilidad interna.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Acordeón de las Tres Partes -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📖 Desarrollo Temático</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-chart-line mr-2" style="color: #374151;"></i>Parte 1: El Modelo de Daniel Denison y la Efectividad</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">El modelo de Denison es uno de los más robustos porque demuestra cómo la cultura impacta en resultados de negocio (ROI, crecimiento, calidad). Se basa en cuatro rasgos esenciales: 1) <strong>Misión</strong> (dirección y propósito); 2) <strong>Adaptabilidad</strong> (orientación al mercado y aprendizaje); 3) <strong>Participación</strong> (empoderamiento y trabajo en equipo); y 4) <strong>Consistencia</strong> (valores centrales y acuerdo). Un diagnóstico con Denison revela si la organización es capaz de equilibrar la estabilidad interna con la flexibilidad externa, identificando qué áreas de práctica administrativa requieren intervención urgente para potenciar el compromiso.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-circle-nodes mr-2" style="color: #374151;"></i>Parte 2: El Modelo OCAI y los Valores en Competencia</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">El <strong>Organizational Culture Assessment Instrument (OCAI)</strong>, desarrollado por Cameron y Quinn, clasifica la cultura en cuatro tipos: <strong>Clan</strong> (colaborativa), <strong>Adhocracia</strong> (creativa), <strong>Mercado</strong> (competitiva) y <strong>Jerarquía</strong> (control). Este instrumento permite visualizar gráficamente el perfil cultural de la empresa y, lo más importante, el perfil que los empleados consideran necesario para alcanzar el éxito futuro. El especialista utiliza el OCAI para liderar conversaciones estratégicas sobre "cuándo y por qué cambiar", mitigando resistencias al hacer partícipes a los líderes de la redefinición del ADN organizacional.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-heart-pulse mr-2" style="color: #374151;"></i>Parte 3: Mapeo de la Experiencia (EX) y Diagnóstico Continuo en 2026</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">En el escenario de 2026, el diagnóstico evoluciona hacia el <strong>Employee Journey Mapping</strong>. Esta herramienta permite identificar puntos de fricción desde el reclutamiento hasta el retiro, evaluando cómo cada hito afecta la percepción del clima. La tecnología de inteligencia artificial permite hoy realizar diagnósticos en tiempo real mediante "análisis de sentimiento" en encuestas de pulso y comentarios internos, eliminando el sesgo de la encuesta anual burocrática. El gerente de talento humano utiliza estos datos para intervenir de forma preventiva, antes de que un patrón de desmotivación se convierta en una fuga de talento crítico.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Tres actividades interactivas para aplicar los modelos e instrumentos de diagnóstico cultural y de clima.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-denison">
+                                <i class="fa-solid fa-chart-line"></i> Cuestionario Denison
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-ocai">
+                                <i class="fa-solid fa-chart-pie"></i> Perfil cultural OCAI
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-journey">
+                                <i class="fa-solid fa-route"></i> Mapa de experiencia
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Cuestionario Denison -->
+                        <div class='act-panel active' id='act-denison'>
+                            <div class='section-card mt-4'>
+                                <h3 class='text-lg font-bold mb-2' style='color: var(--heading)'>Cuestionario Denison</h3>
+                                <p class='text-sm mb-4'>Responde 12 ítems sobre las cuatro dimensiones del Modelo Denison y obtén un perfil cultural simplificado con fortalezas y áreas de mejora.</p>
+
+                                <form id='denisonForm' class='space-y-6'>
+                                    <div class='denison-step'>
+                                        <div class='denison-card'>
+                                            <h4 class='text-lg font-bold text-[#569151] mb-4'><i class='fa-solid fa-flag mr-2'></i>1. Misión</h4>
+                                            <div class='space-y-4'>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>1. Los empleados comprenden y comparten la estrategia de la organización.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='m1'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>2. Los objetivos del área están alineados con el propósito institucional.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='m2'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>3. Se priorizan metas claras que orientan el trabajo diario.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='m3'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class='denison-step hidden'>
+                                        <div class='denison-card'>
+                                            <h4 class='text-lg font-bold text-[#569151] mb-4'><i class='fa-solid fa-arrows-rotate mr-2'></i>2. Adaptabilidad</h4>
+                                            <div class='space-y-4'>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>4. La organización responde rápido a los cambios del mercado o entorno.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='a1'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>5. Se aprende de los errores y se ajustan los procesos continuamente.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='a2'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>6. Se fomentan ideas nuevas y experimentación en los equipos.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='a3'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class='denison-step hidden'>
+                                        <div class='denison-card'>
+                                            <h4 class='text-lg font-bold text-[#569151] mb-4'><i class='fa-solid fa-users mr-2'></i>3. Participación</h4>
+                                            <div class='space-y-4'>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>7. Los colaboradores tienen autonomía para tomar decisiones en su trabajo.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='p1'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>8. Existe trabajo en equipo y colaboración entre áreas.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='p2'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>9. Los empleados se sienten comprometidos con los resultados de la organización.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='p3'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class='denison-step hidden'>
+                                        <div class='denison-card'>
+                                            <h4 class='text-lg font-bold text-[#569151] mb-4'><i class='fa-solid fa-scale-balanced mr-2'></i>4. Consistencia</h4>
+                                            <div class='space-y-4'>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>10. Los valores de la organización se aplican de manera coherente.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='c1'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>11. Existe acuerdo entre líderes sobre las prioridades y reglas del juego.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='c2'></div>
+                                                </div>
+                                                <div>
+                                                    <p class='font-medium text-sm mb-2'>12. Las prácticas administrativas son estables y predecibles.</p>
+                                                    <div class='flex justify-between gap-2 denison-options' data-question='c3'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class='denison-step hidden'>
+                                        <div class='denison-card'>
+                                            <h4 class='text-lg font-bold text-[#569151] mb-4'>Resultados por dimensión</h4>
+                                            <div id='denisonBars' class='space-y-4'></div>
+                                            <p class='mt-4 text-sm text-gray-600'><strong>Escala:</strong> 1 = Muy bajo, 3 = Medio, 5 = Muy alto. Los puntajes indican fortalezas y áreas de intervención.</p>
+                                        </div>
+                                        <div class='denison-card mt-4'>
+                                            <h4 class='text-base font-bold text-[#569151] mb-2'>Interpretación educativa</h4>
+                                            <p id='denisonInterpretacion' class='text-sm leading-relaxed'></p>
+                                        </div>
+                                    </div>
+
+                                    <div class='flex flex-wrap items-center gap-3 mt-4'>
+                                        <button type='button' id='denisonPrev' class='btn-soft' disabled>Anterior</button>
+                                        <button type='button' id='denisonNext' class='btn-main'>Siguiente</button>
+                                        <span id='denisonMessage' class='text-sm font-semibold' style='color: #dc2626;'></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Perfil cultural OCAI -->
+                        <div class='act-panel' id='act-ocai'>
+                            <div class='section-card mt-4'>
+                                <h3 class='text-lg font-bold mb-2' style='color: var(--heading)'>Perfil cultural OCAI</h3>
+                                <p class='text-sm mb-4'>Distribuye 100 puntos entre los cuatro tipos culturales (Clan, Adhocracia, Mercado, Jerarquía) para comparar la cultura actual con la deseada.</p>
+
+                                <div class='ocai-card mb-6'>
+                                    <h4 class='text-base font-bold text-[#569151] mb-2'>Instrucciones</h4>
+                                    <ol class='list-decimal list-inside text-sm space-y-1'>
+                                        <li>Lee las cuatro descripciones de cada dimensión.</li>
+                                        <li>Asigna puntos (0-100) a cada tipo según tu percepción de la cultura <strong>actual</strong>.</li>
+                                        <li>Repite para la cultura <strong>deseada</strong> (cómo debería ser la organización para triunfar).</li>
+                                        <li>La suma de cada fila debe ser exactamente 100.</li>
+                                    </ol>
+                                </div>
+
+                                <form id='ocaiForm' class='space-y-6'>
+                                    <div id='ocaiDimensions'></div>
+
+                                    <div id='ocaiResultsStep' class='ocai-step hidden'>
+                                        <div class='ocai-card'>
+                                            <h4 class='text-lg font-bold text-[#569151] mb-4'>Perfil cultural</h4>
+                                            <div class='grid md:grid-cols-2 gap-8'>
+                                                <div>
+                                                    <h5 class='font-bold mb-3'>Cultura actual</h5>
+                                                    <div id='ocaiActualBars' class='space-y-3'></div>
+                                                </div>
+                                                <div>
+                                                    <h5 class='font-bold mb-3'>Cultura deseada</h5>
+                                                    <div id='ocaiDeseadaBars' class='space-y-3'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='ocai-card mt-4'>
+                                            <h4 class='text-base font-bold text-[#569151] mb-2'>Brechas e interpretación</h4>
+                                            <p id='ocaiInterpretacion' class='text-sm leading-relaxed'></p>
+                                        </div>
+                                    </div>
+
+                                    <div class='flex flex-wrap items-center gap-3 mt-4'>
+                                        <button type='button' id='ocaiPrev' class='btn-soft' disabled>Anterior</button>
+                                        <button type='button' id='ocaiNext' class='btn-main'>Siguiente</button>
+                                        <span id='ocaiMessage' class='text-sm font-semibold' style='color: #dc2626;'></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Mapa de experiencia del empleado -->
+                        <div class='act-panel' id='act-journey'>
+                            <div class='section-card mt-4'>
+                                <h3 class='text-lg font-bold mb-2' style='color: var(--heading)'>Mapa de experiencia del empleado</h3>
+                                <p class='text-sm mb-4'>Mapea los momentos de verdad del ciclo de vida del talento, identifica emociones, fricciones y oportunidades para mejorar el clima.</p>
+
+                                <div class='journey-card mb-6'>
+                                    <h4 class='text-base font-bold text-[#569151] mb-2'>Instrucciones</h4>
+                                    <ul class='list-disc list-inside text-sm space-y-1'>
+                                        <li>Para cada etapa describe el momento clave vivido por el empleado.</li>
+                                        <li>Registra la emoción predominante (positiva, neutra o negativa).</li>
+                                        <li>Señala la fricción o dolor que afecta la percepción del clima.</li>
+                                        <li>Propón una acción concreta de mejora.</li>
+                                    </ul>
+                                </div>
+
+                                <form id='journeyForm' class='print-area space-y-6'>
+                                    <div class='journey-step'>
+                                        <div class='journey-stage-card'>
+                                            <h4 class='font-bold text-[#569151] mb-3'><i class='fa-solid fa-magnet mr-2'></i>1. Atracción</h4>
+                                            <label class='block text-xs font-semibold mb-1'>Momento de verdad</label>
+                                            <textarea name='journey_atraccion_momento' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Publicación de vacante, primer contacto con la marca empleadora...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Emoción / percepción</label>
+                                            <input type='text' maxlength='200' name='journey_atraccion_emocion' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Expectativa, confusión, entusiasmo'>
+                                            <label class='block text-xs font-semibold mb-1'>Fricción / problema</label>
+                                            <textarea name='journey_atraccion_friccion' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Información poco clara del proceso...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Oportunidad de mejora</label>
+                                            <textarea name='journey_atraccion_oportunidad' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm' style='border-color: var(--line);' placeholder='Ej.: Mejorar comunicación de la vacante...'></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class='journey-step hidden'>
+                                        <div class='journey-stage-card'>
+                                            <h4 class='font-bold text-[#569151] mb-3'><i class='fa-solid fa-user-check mr-2'></i>2. Incorporación</h4>
+                                            <label class='block text-xs font-semibold mb-1'>Momento de verdad</label>
+                                            <textarea name='journey_incorporacion_momento' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Primer día, onboarding, bienvenida...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Emoción / percepción</label>
+                                            <input type='text' maxlength='200' name='journey_incorporacion_emocion' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Ansiedad, pertenencia'>
+                                            <label class='block text-xs font-semibold mb-1'>Fricción / problema</label>
+                                            <textarea name='journey_incorporacion_friccion' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Falta de acompañamiento inicial...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Oportunidad de mejora</label>
+                                            <textarea name='journey_incorporacion_oportunidad' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm' style='border-color: var(--line);' placeholder='Ej.: Buddy o mentor de bienvenida...'></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class='journey-step hidden'>
+                                        <div class='journey-stage-card'>
+                                            <h4 class='font-bold text-[#569151] mb-3'><i class='fa-solid fa-seedling mr-2'></i>3. Desarrollo</h4>
+                                            <label class='block text-xs font-semibold mb-1'>Momento de verdad</label>
+                                            <textarea name='journey_desarrollo_momento' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Retroalimentación, capacitación, ascenso...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Emoción / percepción</label>
+                                            <input type='text' maxlength='200' name='journey_desarrollo_emocion' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Motivación, frustración'>
+                                            <label class='block text-xs font-semibold mb-1'>Fricción / problema</label>
+                                            <textarea name='journey_desarrollo_friccion' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Poca claridad de ruta de carrera...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Oportunidad de mejora</label>
+                                            <textarea name='journey_desarrollo_oportunidad' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm' style='border-color: var(--line);' placeholder='Ej.: Plan de desarrollo visible...'></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class='journey-step hidden'>
+                                        <div class='journey-stage-card'>
+                                            <h4 class='font-bold text-[#569151] mb-3'><i class='fa-solid fa-heart-pulse mr-2'></i>4. Retención</h4>
+                                            <label class='block text-xs font-semibold mb-1'>Momento de verdad</label>
+                                            <textarea name='journey_retencion_momento' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Encuesta de clima, reconocimiento, balance...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Emoción / percepción</label>
+                                            <input type='text' maxlength='200' name='journey_retencion_emocion' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Compromiso, desmotivación'>
+                                            <label class='block text-xs font-semibold mb-1'>Fricción / problema</label>
+                                            <textarea name='journey_retencion_friccion' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Carga laboral sostenida...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Oportunidad de mejora</label>
+                                            <textarea name='journey_retencion_oportunidad' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm' style='border-color: var(--line);' placeholder='Ej.: Revisión de carga y bienestar...'></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class='journey-step hidden'>
+                                        <div class='journey-stage-card md:col-span-2'>
+                                            <h4 class='font-bold text-[#569151] mb-3'><i class='fa-solid fa-person-walking-arrow-right mr-2'></i>5. Retiro</h4>
+                                            <label class='block text-xs font-semibold mb-1'>Momento de verdad</label>
+                                            <textarea name='journey_retiro_momento' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Renuncia, entrega de cargos, entrevista de salida...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Emoción / percepción</label>
+                                            <input type='text' maxlength='200' name='journey_retiro_emocion' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Tristeza, alivio, gratitud'>
+                                            <label class='block text-xs font-semibold mb-1'>Fricción / problema</label>
+                                            <textarea name='journey_retiro_friccion' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm mb-3' style='border-color: var(--line);' placeholder='Ej.: Proceso de salida burocrático...'></textarea>
+                                            <label class='block text-xs font-semibold mb-1'>Oportunidad de mejora</label>
+                                            <textarea name='journey_retiro_oportunidad' rows='2' maxlength='500' class='w-full border rounded-lg p-2 text-sm' style='border-color: var(--line);' placeholder='Ej.: Offboarding digno y retroalimentación...'></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class='journey-step hidden'>
+                                        <div class='journey-card'>
+                                            <h4 class='text-base font-bold text-[#569151] mb-2'>Borrador completado</h4>
+                                            <p class='text-sm mb-4'>Ya completaste las cinco etapas. Puedes descargar tu Employee Journey Map o limpiar para empezar de nuevo.</p>
+                                            <button type='button' class='btn-main flex items-center gap-2' onclick='descargarJourney()'>
+                                                <i class='fa-solid fa-download'></i> Descargar borrador
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class='flex flex-wrap items-center gap-3 mt-4'>
+                                        <button type='button' id='journeyPrev' class='btn-soft' disabled>Anterior</button>
+                                        <button type='button' id='journeyNext' class='btn-main'>Siguiente</button>
+                                        <button type='button' id='journeyDownload' class='btn-soft flex items-center gap-2'>
+                                            <i class='fa-solid fa-download' style='color: var(--accent);'></i> Descargar borrador
+                                        </button>
+                                        <span id='journeyMessage' class='text-sm font-semibold' style='color: #dc2626;'></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 2</h2>
+                        <p class="mt-4 leading-relaxed">Responde las 3 preguntas sobre modelos e instrumentos de diagnóstico cultural y de clima. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/3</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">Autoevaluación completada</h3>
+                            <p class="mt-2 font-semibold" style="color: var(--text);">Puntaje: <span id="quiz-score">0</span>/3</p>
+                            <p id="quiz-feedback" class="mt-2" style="color: var(--text);"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas y metodologías</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Recursos prácticos para diagnosticar la cultura y el clima organizacional. Haz clic para acceder o escanea el QR con tu celular.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: OCAI oficial -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-circle-nodes" style="color: #2563eb; font-size: 1em;"></i> OCAI oficial
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Página oficial del Organizational Culture Assessment Instrument, con información sobre el marco de valores competidores y opciones de evaluación.</p>
+                                    <a href="https://www.ocai-official.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir guía
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.ocai-official.com/" alt="QR OCAI oficial" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Denison Consulting -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-chart-line" style="color: #3d6a3a; font-size: 1em;"></i> Denison Consulting
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Sitio oficial del Modelo y la encuesta Denison, con guías de interpretación y preguntas frecuentes del DOCS.</p>
+                                    <a href="https://denisonconsulting.com/culture/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir guía
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://denisonconsulting.com/culture/" alt="QR Denison Consulting" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Plantilla Employee Journey Map (Miro) -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-route" style="color: #d97706; font-size: 1em;"></i> Plantilla Employee Journey Map
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Plantilla de Miroverse para mapear la experiencia del empleado a lo largo de su ciclo de vida en la organización.</p>
+                                    <a href="https://miro.com/es/plantillas/employee-experience-journey-map/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir guía
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://miro.com/es/plantillas/employee-experience-journey-map/" alt="QR Plantilla Employee Journey Map" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Escanea el QR o usa los enlaces para acceder a cada referencia desde la biblioteca virtual o Google Scholar.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Ref 1: Denison y Neale -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Denison, D. R., & Neale, W. S. (2000).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Denison Organizational Culture Survey.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://scholar.google.com/scholar?q=Denison+Neale+2000+Denison+Organizational+Culture+Survey" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://scholar.google.com/scholar?q=Denison+Neale+2000+Denison+Organizational+Culture+Survey" alt="QR Denison y Neale" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Cameron y Quinn -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Cameron, K. S., & Quinn, R. E. (2006).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Diagnosing and Changing Organizational Culture.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://scholar.google.com/scholar?q=Cameron+Quinn+2006+Diagnosing+Changing+Organizational+Culture" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://scholar.google.com/scholar?q=Cameron+Quinn+2006+Diagnosing+Changing+Organizational+Culture" alt="QR Cameron y Quinn" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: Icesi -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Icesi. (2026).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Certificación en Gestión de Cultura Organizacional: Herramientas de Diagnóstico.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.icesi.edu.co" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver sitio
+                                        </a>
+                                        <a href="https://scholar.google.com/scholar?q=Icesi+Certificacion+Gestion+Cultura+Organizacional+Herramientas+Diagnostico" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.icesi.edu.co" alt="QR Icesi" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: Beetween -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Beetween. (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Diagnóstico Organizacional: Medir sin sesgos.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://beetween.com" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver sitio
+                                        </a>
+                                        <a href="https://scholar.google.com/scholar?q=Beetween+Diagnostico+Organizacional+Medir+sin+sesgos+2025" target="_blank" class="bib-link">
+                                            <i class="fa-brands fa-google"></i> Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://beetween.com" alt="QR Beetween" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Character counters with progress bars
+        const textareas = document.querySelectorAll('textarea[maxlength]');
+        textareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Initialize justification textareas counters
+        const justifTextareas = document.querySelectorAll('.justif-textarea');
+        justifTextareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Copy text functionality
+        const copyBtns = document.querySelectorAll('[data-copy]');
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.copy;
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const originalText = btn.textContent;
+                    btn.textContent = '¡Copiado!';
+                    setTimeout(() => btn.textContent = originalText, 2000);
+                }
+            });
+        });
+
+        if (mobileNav) mobileNav.addEventListener('change', event => switchPane(event.target.value));
+
+        // Accordion functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.fa-chevron-down');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // McKinsey tabs functionality
+        const mckinseyTabBtns = document.querySelectorAll('.mckinsey-tab-btn');
+        const mckinseyTabPanes = document.querySelectorAll('.mckinsey-tab-pane');
+        mckinseyTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                mckinseyTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = '#17a2b8';
+                btn.style.color = 'white';
+                mckinseyTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Activity tabs functionality
+        const activityTabBtns = document.querySelectorAll('.activity-tab-btn');
+        const activityTabPanes = document.querySelectorAll('.activity-tab-pane');
+        activityTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                activityTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = 'var(--accent)';
+                btn.style.color = 'white';
+                activityTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Quiz functionality - one question at a time
+        const quizQuestions = [
+            {
+                question: "¿Qué dimensión del Modelo Denison se relaciona con el empoderamiento y el trabajo en equipo?",
+                options: [
+                    { value: "a", text: "Misión" },
+                    { value: "b", text: "Participación" },
+                    { value: "c", text: "Adaptabilidad" }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Cuántos tipos culturales propone el OCAI de Cameron y Quinn?",
+                options: [
+                    { value: "a", text: "Dos" },
+                    { value: "b", text: "Tres" },
+                    { value: "c", text: "Cuatro" }
+                ],
+                correct: "c"
+            },
+            {
+                question: "¿Qué permite integrar el Employee Journey Mapping con la analítica de sentimientos en 2026?",
+                options: [
+                    { value: "a", text: "Eliminar la percepción subjetiva del empleado." },
+                    { value: "b", text: "Diagnosticar en tiempo real y actuar preventivamente." },
+                    { value: "c", text: "Aplicar encuestas anuales más extensas y burocráticas." }
+                ],
+                correct: "b"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        const quizBox = document.getElementById('quiz-box');
+        const quizResults = document.getElementById('quiz-results');
+        const quizTitle = document.getElementById('quiz-title');
+        const quizProgress = document.getElementById('quiz-progress');
+        const quizText = document.getElementById('quiz-text');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizPrev = document.getElementById('quiz-prev');
+        const quizNext = document.getElementById('quiz-next');
+        const quizScore = document.getElementById('quiz-score');
+        const quizFeedback = document.getElementById('quiz-feedback');
+        const quizReview = document.getElementById('quiz-review');
+        const quizRestart = document.getElementById('quiz-restart');
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuestion];
+            quizTitle.textContent = `Pregunta ${currentQuestion + 1}`;
+            quizProgress.textContent = `${currentQuestion + 1}/${quizQuestions.length}`;
+            quizText.textContent = q.question;
+            
+            quizOptions.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                btn.dataset.value = opt.value;
+                if (userAnswers[currentQuestion] === opt.value) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => {
+                    userAnswers[currentQuestion] = opt.value;
+                    document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+                quizOptions.appendChild(btn);
+            });
+
+            quizPrev.disabled = currentQuestion === 0;
+            quizNext.textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        quizPrev.addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        });
+
+        quizNext.addEventListener('click', () => {
+            // Validate that current question is answered
+            if (!userAnswers[currentQuestion]) {
+                alert('Por favor selecciona una respuesta antes de continuar.');
+                return;
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            let score = 0;
+            let reviewHTML = '';
+
+            quizQuestions.forEach((q, i) => {
+                const userAnswer = userAnswers[i];
+                const isCorrect = userAnswer === q.correct;
+                if (isCorrect) score++;
+
+                const userOption = q.options.find(opt => opt.value === userAnswer);
+                const correctOption = q.options.find(opt => opt.value === q.correct);
+
+                reviewHTML += `
+                    <div class="p-4 rounded-lg" style="background: ${isCorrect ? 'var(--surface-soft)' : 'var(--surface)'}; border: 1px solid ${isCorrect ? 'var(--accent)' : 'var(--line)'};">
+                        <p class="font-bold" style="color: var(--heading);">Pregunta ${i + 1}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);">${q.question}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);"><strong>Tu respuesta:</strong> ${userOption ? userOption.text : 'Sin respuesta'}</p>
+                        ${!isCorrect ? `<p class="mt-1 text-sm" style="color: var(--accent);"><strong>Respuesta correcta:</strong> ${correctOption.text}</p>` : ''}
+                        <p class="mt-1 text-sm font-semibold" style="color: ${isCorrect ? 'var(--accent)' : '#dc2626'};">${isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>
+                    </div>
+                `;
+            });
+
+            quizScore.textContent = score;
+            quizFeedback.textContent = score === quizQuestions.length ? '¡Excelente! Has respondido todas las preguntas correctamente.' : score >= quizQuestions.length / 2 ? 'Buen trabajo. Revisa las respuestas incorrectas para mejorar.' : 'Te recomiendo repasar el contenido antes de intentar nuevamente.';
+            quizReview.innerHTML = reviewHTML;
+
+            quizBox.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        quizRestart.addEventListener('click', () => {
+            currentQuestion = 0;
+            userAnswers = {};
+            quizBox.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            renderQuestion();
+            // Scroll to top of evaluation section
+            document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Initialize quiz
+        if (quizBox) {
+            renderQuestion();
+        }
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== ACTIVIDAD: CUESTIONARIO DENISON =====
+        const denisonDimensiones = {
+            mision: { items: ['m1','m2','m3'], nombre: 'Misión', icon: 'fa-flag' },
+            adaptabilidad: { items: ['a1','a2','a3'], nombre: 'Adaptabilidad', icon: 'fa-arrows-rotate' },
+            participacion: { items: ['p1','p2','p3'], nombre: 'Participación', icon: 'fa-users' },
+            consistencia: { items: ['c1','c2','c3'], nombre: 'Consistencia', icon: 'fa-scale-balanced' }
+        };
+
+        function renderDenisonOptions() {
+            if (!document.getElementById('denisonForm')) return;
+            document.querySelectorAll('.denison-options[data-question]').forEach(container => {
+                const q = container.dataset.question;
+                const labels = [
+                    { val: 1, text: '1 - Totalmente en desacuerdo' },
+                    { val: 2, text: '2 - En desacuerdo' },
+                    { val: 3, text: '3 - Neutral' },
+                    { val: 4, text: '4 - De acuerdo' },
+                    { val: 5, text: '5 - Totalmente de acuerdo' }
+                ];
+                container.innerHTML = labels.map(l => `
+                    <label class='denison-option-label flex-1 text-xs text-center border rounded-lg p-2 hover:bg-green-50' style='border-color: var(--line); background: white;'>
+                        <input type='radio' name='${q}' value='${l.val}' required class='mb-1'>
+                        <span>${l.val}</span>
+                    </label>
+                `).join('');
+            });
+        }
+        renderDenisonOptions();
+
+        function validateDenisonStep(stepIdx) {
+            const step = document.querySelectorAll('#act-denison .denison-step')[stepIdx];
+            if (!step) return '';
+            const names = new Set();
+            step.querySelectorAll('input[type=radio]').forEach(r => names.add(r.name));
+            for (const n of names) {
+                if (!step.querySelector(`input[name='${n}']:checked`)) {
+                    return 'Responde las tres preguntas de esta dimensión antes de continuar.';
+                }
+            }
+            return '';
+        }
+
+        function validateDenisonAll() {
+            const steps = document.querySelectorAll('#act-denison .denison-step');
+            let msg = '';
+            steps.forEach((step, idx) => {
+                if (msg || idx > 3) return;
+                const names = new Set();
+                step.querySelectorAll('input[type=radio]').forEach(r => names.add(r.name));
+                for (const n of names) {
+                    if (!step.querySelector(`input[name='${n}']:checked`)) {
+                        msg = 'Responde todas las preguntas antes de ver los resultados.';
+                        break;
+                    }
+                }
+            });
+            return msg;
+        }
+
+        function calcularDenison() {
+            const datos = {};
+            for (const [key, dim] of Object.entries(denisonDimensiones)) {
+                let suma = 0;
+                for (const item of dim.items) {
+                    const val = parseFloat(document.querySelector(`#act-denison input[name='${item}']:checked`).value);
+                    suma += val;
+                }
+                datos[key] = suma / dim.items.length;
+            }
+            const bars = document.getElementById('denisonBars');
+            bars.innerHTML = '';
+            let menor = 5, mayor = 1, debil = '', fuerte = '';
+            for (const [key, dim] of Object.entries(denisonDimensiones)) {
+                const valor = datos[key];
+                if (valor < menor) { menor = valor; debil = dim.nombre; }
+                if (valor > mayor) { mayor = valor; fuerte = dim.nombre; }
+                const porcentaje = (valor / 5) * 100;
+                bars.innerHTML += `
+                    <div>
+                        <div class='flex justify-between mb-1'>
+                            <span class='font-semibold text-sm'><i class='fa-solid ${dim.icon} mr-1 text-[#569151]'></i>${dim.nombre}</span>
+                            <span class='font-bold text-sm'>${valor.toFixed(2)} / 5.0</span>
+                        </div>
+                        <div class='denison-bar-container'><div class='denison-bar-fill' style='width: ${porcentaje}%'></div></div>
+                    </div>
+                `;
+            }
+            document.getElementById('denisonInterpretacion').innerHTML = `
+                La dimensión más alta es <strong>${fuerte}</strong> (${mayor.toFixed(2)}), lo que representa una fortaleza cultural.
+                La dimensión más baja es <strong>${debil}</strong> (${menor.toFixed(2)}), por lo que es un área prioritaria de intervención.
+                Recuerda que este es un ejercicio educativo; un diagnóstico formal requiere el instrumento DOCS validado y una muestra representativa.
+            `;
+        }
+
+        function limpiarDenison() {
+            const form = document.getElementById('denisonForm');
+            if (form) form.reset();
+            const bars = document.getElementById('denisonBars');
+            if (bars) bars.innerHTML = '';
+            const interp = document.getElementById('denisonInterpretacion');
+            if (interp) interp.innerHTML = '';
+        }
+
+        // ===== ACTIVIDAD: OCAI =====
+        const ocaiTipos = [
+            { key: 'Clan', label: 'Clan (colaborativa)', color: '#e11d48', icon: 'fa-people-group' },
+            { key: 'Adhocracia', label: 'Adhocracia (creativa)', color: '#d97706', icon: 'fa-lightbulb' },
+            { key: 'Mercado', label: 'Mercado (competitiva)', color: '#2563eb', icon: 'fa-trophy' },
+            { key: 'Jerarquia', label: 'Jerarquía (control)', color: '#4b5563', icon: 'fa-sitemap' }
+        ];
+
+        const ocaiDimensiones = [
+            { id: 'dominante', nombre: '1. Característica dominante' },
+            { id: 'liderazgo', nombre: '2. Liderazgo organizacional' },
+            { id: 'gestion', nombre: '3. Gestión de los empleados' },
+            { id: 'pegamento', nombre: '4. Pegamento organizacional' },
+            { id: 'enfoque', nombre: '5. Enfoque estratégico' },
+            { id: 'exito', nombre: '6. Criterios de éxito' }
+        ];
+
+        function renderOCAIOptions() {
+            const container = document.getElementById('ocaiDimensions');
+            if (!container) return;
+            ocaiDimensiones.forEach((dim, idx) => {
+                const tipoInputs = ocaiTipos.map(t => `
+                    <div class='flex items-center justify-between gap-2 bg-gray-50 p-2 rounded-lg text-sm'>
+                        <span class='font-medium'><i class='fa-solid ${t.icon} mr-1' style='color:${t.color}'></i>${t.label}</span>
+                        <input type='number' min='0' max='100' step='1' name='ocai_actual_${dim.id}_${t.key}' data-dim='${dim.id}' data-tipo='${t.key}' data-modo='actual' oninput='actualizarSumaOCAI(this)' style='width:60px;text-align:center;border:1px solid var(--line);border-radius:6px;padding:4px;'>
+                    </div>
+                `).join('');
+                const desInputs = ocaiTipos.map(t => `
+                    <div class='flex items-center justify-between gap-2 bg-gray-50 p-2 rounded-lg text-sm'>
+                        <span class='font-medium'><i class='fa-solid ${t.icon} mr-1' style='color:${t.color}'></i>${t.label}</span>
+                        <input type='number' min='0' max='100' step='1' name='ocai_deseada_${dim.id}_${t.key}' data-dim='${dim.id}' data-tipo='${t.key}' data-modo='deseada' oninput='actualizarSumaOCAI(this)' style='width:60px;text-align:center;border:1px solid var(--line);border-radius:6px;padding:4px;'>
+                    </div>
+                `).join('');
+                container.innerHTML += `
+                    <div class='ocai-step ${idx === 0 ? '' : 'hidden'}'>
+                        <div class='ocai-card mb-4'>
+                            <h2 class='font-bold text-[#569151] mb-4'>${dim.nombre}</h2>
+                            <div class='grid md:grid-cols-2 gap-6'>
+                                <div>
+                                    <p class='text-sm font-semibold mb-2'>Actual <span class='text-xs font-normal text-gray-500' id='ocaiSuma_actual_${dim.id}'>Suma: 0/100</span></p>
+                                    <div class='space-y-2'>${tipoInputs}</div>
+                                </div>
+                                <div>
+                                    <p class='text-sm font-semibold mb-2'>Deseada <span class='text-xs font-normal text-gray-500' id='ocaiSuma_deseada_${dim.id}'>Suma: 0/100</span></p>
+                                    <div class='space-y-2'>${desInputs}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        renderOCAIOptions();
+
+        function actualizarSumaOCAI(input) {
+            const dim = input.dataset.dim;
+            const modo = input.dataset.modo;
+            const inputs = document.querySelectorAll(`#act-ocai input[data-dim='${dim}'][data-modo='${modo}']`);
+            let suma = 0;
+            inputs.forEach(i => suma += parseFloat(i.value) || 0);
+            const span = document.getElementById(`ocaiSuma_${modo}_${dim}`);
+            span.textContent = `Suma: ${suma}/100`;
+            span.style.color = suma === 100 ? '#16a34a' : (suma > 100 ? '#dc2626' : '#6b7280');
+        }
+
+        function validateOCAIAll() {
+            let msg = '';
+            ocaiDimensiones.forEach(dim => {
+                if (msg) return;
+                ['actual','deseada'].forEach(modo => {
+                    if (msg) return;
+                    const inputs = document.querySelectorAll(`#act-ocai input[data-dim='${dim.id}'][data-modo='${modo}']`);
+                    let suma = 0;
+                    inputs.forEach(i => suma += parseFloat(i.value) || 0);
+                    if (suma !== 100) {
+                        msg = `${dim.nombre} (${modo === 'actual' ? 'cultura actual' : 'cultura deseada'}) debe sumar 100. Suma actual: ${suma}.`;
+                    }
+                });
+            });
+            return msg;
+        }
+
+        function calcularOCAI() {
+            const resultados = { actual: {}, deseada: {} };
+            ocaiTipos.forEach(t => { resultados.actual[t.key] = 0; resultados.deseada[t.key] = 0; });
+            ocaiDimensiones.forEach(dim => {
+                ocaiTipos.forEach(t => {
+                    resultados.actual[t.key] += parseFloat(document.querySelector(`#act-ocai input[name='ocai_actual_${dim.id}_${t.key}']`).value) || 0;
+                    resultados.deseada[t.key] += parseFloat(document.querySelector(`#act-ocai input[name='ocai_deseada_${dim.id}_${t.key}']`).value) || 0;
+                });
+            });
+            const promedios = { actual: {}, deseada: {} };
+            ocaiTipos.forEach(t => {
+                promedios.actual[t.key] = resultados.actual[t.key] / ocaiDimensiones.length;
+                promedios.deseada[t.key] = resultados.deseada[t.key] / ocaiDimensiones.length;
+            });
+            function renderBarsOCAI(data, containerId) {
+                const c = document.getElementById(containerId);
+                c.innerHTML = '';
+                ocaiTipos.forEach(t => {
+                    const valor = data[t.key];
+                    c.innerHTML += `
+                        <div>
+                            <div class='flex justify-between text-sm mb-1'>
+                                <span class='font-semibold'><i class='fa-solid ${t.icon} mr-1' style='color:${t.color}'></i>${t.label}</span>
+                                <span class='font-bold'>${valor.toFixed(1)}%</span>
+                            </div>
+                            <div class='ocai-bar-bg'><div class='ocai-bar-fill' style='width: ${valor}%; background: ${t.color};'></div></div>
+                        </div>
+                    `;
+                });
+            }
+            renderBarsOCAI(promedios.actual, 'ocaiActualBars');
+            renderBarsOCAI(promedios.deseada, 'ocaiDeseadaBars');
+            const maxActual = ocaiTipos.reduce((a, b) => promedios.actual[b.key] > promedios.actual[a.key] ? b : a);
+            const maxDeseada = ocaiTipos.reduce((a, b) => promedios.deseada[b.key] > promedios.deseada[a.key] ? b : a);
+            let maxBrecha = 0, tipoBrecha = '';
+            ocaiTipos.forEach(t => {
+                const brecha = Math.abs(promedios.deseada[t.key] - promedios.actual[t.key]);
+                if (brecha > maxBrecha) { maxBrecha = brecha; tipoBrecha = t.key; }
+            });
+            document.getElementById('ocaiInterpretacion').innerHTML = `
+                El tipo cultural más fuerte <strong>actualmente</strong> es <strong>${maxActual.label}</strong> (${promedios.actual[maxActual.key].toFixed(1)}%).
+                El tipo más valorado para el <strong>futuro deseado</strong> es <strong>${maxDeseada.label}</strong> (${promedios.deseada[maxDeseada.key].toFixed(1)}%).
+                La mayor brecha se observa en <strong>${tipoBrecha}</strong> (${maxBrecha.toFixed(1)} puntos), lo que indica una prioridad de intervención.
+            `;
+        }
+
+        function limpiarOCAI() {
+            const form = document.getElementById('ocaiForm');
+            if (form) form.reset();
+            ocaiDimensiones.forEach(dim => {
+                const sa = document.getElementById(`ocaiSuma_actual_${dim.id}`);
+                const sd = document.getElementById(`ocaiSuma_deseada_${dim.id}`);
+                if (sa) { sa.textContent = 'Suma: 0/100'; sa.style.color = '#6b7280'; }
+                if (sd) { sd.textContent = 'Suma: 0/100'; sd.style.color = '#6b7280'; }
+            });
+            const ab = document.getElementById('ocaiActualBars');
+            const db = document.getElementById('ocaiDeseadaBars');
+            if (ab) ab.innerHTML = '';
+            if (db) db.innerHTML = '';
+            const interp = document.getElementById('ocaiInterpretacion');
+            if (interp) interp.innerHTML = '';
+        }
+
+        // ===== ACTIVIDAD: EMPLOYEE JOURNEY MAP =====
+        function descargarJourney() {
+            const form = document.getElementById('journeyForm');
+            const msg = document.getElementById('journeyMessage');
+            if (!form) return;
+            const data = new FormData(form);
+            let texto = 'EMPLOYEE JOURNEY MAP - DIAGNÓSTICO DE CLIMA\n\n';
+            const etapas = [
+                ['Atracción', 'journey_atraccion'],
+                ['Incorporación', 'journey_incorporacion'],
+                ['Desarrollo', 'journey_desarrollo'],
+                ['Retención', 'journey_retencion'],
+                ['Retiro', 'journey_retiro']
+            ];
+            etapas.forEach(([nombre, key]) => {
+                texto += `--- ${nombre} ---\n`;
+                texto += `Momento: ${data.get(key + '_momento') || ''}\n`;
+                texto += `Emoción: ${data.get(key + '_emocion') || ''}\n`;
+                texto += `Fricción: ${data.get(key + '_friccion') || ''}\n`;
+                texto += `Oportunidad: ${data.get(key + '_oportunidad') || ''}\n\n`;
+            });
+            const blob = new Blob([texto], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'employee-journey-map.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            if (msg) {
+                msg.style.color = '#16a34a';
+                msg.textContent = 'Borrador descargado correctamente.';
+            }
+        }
+
+        function limpiarJourney() {
+            const form = document.getElementById('journeyForm');
+            if (form) form.reset();
+        }
+
+        function setupJourneyLimits() {
+            const form = document.getElementById('journeyForm');
+            if (!form) return;
+            form.querySelectorAll('textarea, input[type=text]').forEach(field => {
+                const max = field.tagName === 'TEXTAREA' ? 500 : 200;
+                field.setAttribute('maxlength', String(max));
+                const counter = document.createElement('p');
+                counter.className = 'text-xs text-right text-slate-500 mt-1';
+                field.insertAdjacentElement('afterend', counter);
+                const updateCounter = () => {
+                    counter.textContent = `${field.value.length} / ${max} caracteres`;
+                };
+                field.addEventListener('input', updateCounter);
+                updateCounter();
+            });
+        }
+        setupJourneyLimits();
+
+        const journeyDownloadBtn = document.getElementById('journeyDownload');
+        if (journeyDownloadBtn) journeyDownloadBtn.addEventListener('click', descargarJourney);
+
+        // ===== STEPPER GENÉRICO =====
+        function setupStepper(containerId, prevId, nextId, messageId, finishText, validateStep, onFinish, onReset) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            const steps = container.querySelectorAll('.denison-step, .ocai-step, .journey-step');
+            const prevBtn = document.getElementById(prevId);
+            const nextBtn = document.getElementById(nextId);
+            const msgEl = document.getElementById(messageId);
+            let current = 0;
+            const total = steps.length;
+
+            function render() {
+                steps.forEach((s, i) => s.classList.toggle('hidden', i !== current));
+                prevBtn.disabled = current === 0;
+                if (current === total - 1) {
+                    nextBtn.textContent = 'Reiniciar';
+                } else if (current === total - 2) {
+                    nextBtn.textContent = finishText;
+                } else {
+                    nextBtn.textContent = 'Siguiente';
+                }
+            }
+
+            function goNext() {
+                if (msgEl) msgEl.textContent = '';
+                if (current < total - 2) {
+                    const err = validateStep ? validateStep(current) : '';
+                    if (err) { if (msgEl) msgEl.textContent = err; return; }
+                    current++;
+                    render();
+                } else if (current === total - 2) {
+                    const err = validateStep ? validateStep(current) : '';
+                    if (err) { if (msgEl) msgEl.textContent = err; return; }
+                    if (onFinish) onFinish();
+                    current++;
+                    render();
+                } else {
+                    if (onReset) onReset();
+                    current = 0;
+                    render();
+                    if (container && container.scrollIntoView) {
+                        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
+
+            function goPrev() {
+                if (current > 0) { current--; render(); }
+            }
+
+            prevBtn.addEventListener('click', goPrev);
+            nextBtn.addEventListener('click', goNext);
+            render();
+        }
+
+        setupStepper('act-denison', 'denisonPrev', 'denisonNext', 'denisonMessage', 'Ver resultados',
+            (idx) => idx === 3 ? validateDenisonAll() : validateDenisonStep(idx),
+            () => { calcularDenison(); return true; },
+            limpiarDenison
+        );
+
+        setupStepper('act-ocai', 'ocaiPrev', 'ocaiNext', 'ocaiMessage', 'Ver perfil',
+            (idx) => idx === ocaiDimensiones.length - 1 ? validateOCAIAll() : '',
+            () => { calcularOCAI(); return true; },
+            limpiarOCAI
+        );
+
+        setupStepper('act-journey', 'journeyPrev', 'journeyNext', 'journeyMessage', 'Finalizar',
+            () => '',
+            () => { return true; },
+            limpiarJourney
+        );
+
+    });
+</script>
+</body>
+</html>
