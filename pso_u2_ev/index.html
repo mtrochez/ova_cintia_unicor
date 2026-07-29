@@ -1,0 +1,1384 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2: Gestión de la Cultura Organizacional y Clima Laboral</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .matrix-export-btn { background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid #17a2b8; cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .matrix-export-btn:hover { background: #17a2b8; color: white; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }
+        #ova-embed .phase-card { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid #17a2b8; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .phase-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .deliverable-card { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .deliverable-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(86, 145, 81, 0.25); border-color: var(--accent); }
+        #ova-embed .sim-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .sim-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .score-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; border-radius: 50%; font-weight: 700; color: white; background: var(--accent); }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología organizacional y bienestar humano</h1>
+                <p class="eyebrow" style="text-transform:none;letter-spacing:0;">Unidad 2: Cultura Organizacional y Clima Laboral</p>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="diagnostico">Diagnóstico</option>
+            <option value="actividades">Actividades</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <h1>Psicología organizacional y bienestar humano</h1>
+                    <p class="eyebrow" style="text-transform:none;letter-spacing:0;font-size:0.9rem;margin-top:6px;">Unidad 2: Cultura Organizacional y Clima Laboral</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-building-columns"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="diagnostico"><i class="fa-solid fa-clipboard-list"></i> Diagnóstico</a>
+                <a href="#" class="sidebar-link" data-target="actividades"><i class="fa-solid fa-person-chalkboard"></i> Actividades</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-graduation-cap mr-2"></i>Unidad 2</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Gestión de la Cultura Organizacional y Clima Laboral</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Activos intangibles que determinan la personalidad y el estado de ánimo de las organizaciones.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">Introducción</h3>
+                        <p class="mt-4 leading-relaxed">La Unidad 2 profundiza en los activos intangibles más críticos de la organización: su personalidad (Cultura) y su estado de ánimo (Clima). En el horizonte de 2026, el especialista debe trascender el papel de observador para convertirse en un gestor activo de la "agilidad cultural", asegurando que los valores declarados se vivan en la práctica operativa diaria y que el ambiente de trabajo sea un motor de alto rendimiento y compromiso psicológico.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-building mr-2" style="color: #17a2b8;"></i>Agilidad cultural</h3><p class="mt-2">Gestionar la cultura para que los valores declarados se vivan en la práctica operativa diaria.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-heart-pulse mr-2" style="color: #17a2b8;"></i>Clima laboral positivo</h3><p class="mt-2">Convertir el ambiente de trabajo en un motor de alto rendimiento y compromiso psicológico.</p></div>
+                    </div>
+                </section>
+
+                <section id="diagnostico" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">AEM Psicología organizacional y bienestar humano · UA02</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📋 Autoreporte de Expectativas y Motivación</h2>
+                        <p class="mt-4 leading-relaxed">Este cuestionario corresponde al segundo curso del primer semestre de la especialización. Su propósito es conocer su perspectiva como profesional en ejercicio sobre las prácticas de atracción, selección y retención de talento, la cultura y el clima organizacional, y el liderazgo en su contexto laboral. Las respuestas aportarán al equipo docente elementos para orientar la mediación pedagógica y generarán insumos para la investigación sobre psicología y bienestar organizacional en la región Caribe colombiana. No es calificable; su cumplimiento es obligatorio como evidencia de participación (AEM).</p>
+                        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-regular fa-clock mr-1"></i> Tiempo estimado: 15 a 20 minutos</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-lock mr-1"></i> Confidencial</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-list-check mr-1"></i> 9 preguntas</span>
+                        </div>
+                        <p class="mt-4 text-sm" style="color: #6c757d;"><strong>Instrucción:</strong> Responda con sinceridad. No hay respuestas correctas ni incorrectas. Sus respuestas son confidenciales y se usarán de forma agregada para fines académicos e investigativos.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="diag-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="diag-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="diag-progress" class="text-sm font-bold" style="color: var(--text);">1/9</span>
+                            </div>
+                            <p id="diag-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <p id="diag-hint" class="mt-1 text-xs" style="color: #6c757d;"></p>
+                            <div id="diag-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="diag-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="diag-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="diag-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">¡Diagnóstico completado!</h3>
+                            <p class="mt-2" style="color: var(--text);">Gracias por compartir su perspectiva como profesional en ejercicio. Sus respuestas serán tratadas de forma agregada y confidencial para orientar las mediaciones pedagógicas y como insumo para investigación sobre la realidad organizacional de la región Caribe.</p>
+                            <div id="diag-summary" class="mt-5 space-y-3"></div>
+                            <div class="mt-5 flex gap-3 flex-wrap">
+                                <button id="diag-save" type="button" class="btn-main flex items-center gap-2"><i class="fa-solid fa-save"></i> Guardar diagnóstico</button>
+                                <div style="position: relative; display: inline-block;">
+                                    <button id="diag-export" type="button" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar respuestas <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                                    <div id="export-dropdown" class="hidden" style="position: absolute; top: 100%; left: 0; z-index: 100; min-width: 180px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-top: 4px; overflow: hidden;">
+                                        <button id="export-txt" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-lines" style="color: var(--accent);"></i> Texto (.txt)</button>
+                                        <button id="export-word" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-word" style="color: #2563eb;"></i> Word (.doc)</button>
+                                    </div>
+                                </div>
+                                <button id="diag-restart" type="button" class="btn-soft">Reiniciar</button>
+                            </div>
+                            <div id="diag-save-feedback" class="mt-3 hidden text-sm font-semibold" style="color: var(--accent);"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividades" class="content-pane">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-person-chalkboard mr-2"></i>Actividades</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Integración virtual y guía de aplicación para especialistas</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Material de la Unidad 2 para liderar transformaciones culturales y de clima.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">Actividades sugeridas en el Aula Virtual</h3>
+                        <p class="mt-4 leading-relaxed">Este material de la Unidad 2 constituye el marco técnico para liderar transformaciones culturales y de clima.</p>
+                    </div>
+                    <div class="mt-6 flex gap-2 overflow-x-auto pb-2">
+                        <button type="button" class="activity-tab-btn btn-main" data-target="act-1"><i class="fa-solid fa-flask mr-2"></i>Actividad 1</button>
+                        <button type="button" class="activity-tab-btn btn-soft" data-target="act-2"><i class="fa-solid fa-chart-pie mr-2"></i>Actividad 2</button>
+                        <button type="button" class="activity-tab-btn btn-soft" data-target="act-3"><i class="fa-solid fa-people-arrows mr-2"></i>Actividad 3</button>
+                    </div>
+
+                    <div id="act-1" class="activity-tab block space-y-4">
+                        <div class="section-card">
+                            <h4 class="text-xl font-bold" style="color: var(--heading)"><i class="fa-solid fa-flask mr-2" style="color: #17a2b8;"></i>1. Simulacro OCAI</h4>
+                            <p class="mt-2 leading-relaxed"><strong>Objetivo:</strong> Los estudiantes realizarán el test OCAI para una organización hipotética y diseñarán el plan de transición para pasar de una "Cultura de Jerarquía" a una "Cultura de Adhocracia" asistida por IA.</p>
+
+                            <div class="mt-4 grid md:grid-cols-2 gap-4">
+                                <div class="phase-card">
+                                    <h5 class="font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-list-ol mr-2" style="color: #17a2b8;"></i>Fases de la actividad</h5>
+                                    <ol class="list-decimal list-inside text-sm space-y-1" style="color: var(--text);">
+                                        <li>Aplicar el test OCAI a una organización hipotética del sector salud, educación o servicios de la región Caribe.</li>
+                                        <li>Interpretar el perfil cultural dominante como <em>Cultura de Jerarquía</em>.</li>
+                                        <li>Usar una herramienta de IA para proponer rutas de transición hacia una <em>Cultura de Adhocracia</em>.</li>
+                                        <li>Diseñar el plan de intervención con acciones concretas, responsables e indicadores.</li>
+                                        <li>Validar críticamente las sugerencias de la IA y ajustar el plan.</li>
+                                    </ol>
+                                </div>
+                                <div class="deliverable-card">
+                                    <h5 class="font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-file-circle-check mr-2" style="color: var(--accent);"></i>Entregable</h5>
+                                    <p class="text-sm" style="color: var(--text);">Informe breve o infografía (máx. 4 diapositivas / 2 páginas) que incluya:</p>
+                                    <ul class="list-disc list-inside text-sm mt-1 space-y-1" style="color: var(--text);">
+                                        <li>Resultados del OCAI interpretados.</li>
+                                        <li>Plan de transición con 3 ejes: liderazgo, procesos y rituales culturales.</li>
+                                        <li>Indicadores de avance a 6, 12 y 24 meses.</li>
+                                        <li>Reflexión final sobre el uso ético de la IA.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p class="mt-4 text-sm" style="color: #6c757d;"><i class="fa-regular fa-clock mr-1"></i> Tiempo estimado: 2 a 3 horas de trabajo autónomo + foro de discusión.</p>
+
+                            <div class="mt-6 sim-card rounded-xl">
+                                <h5 class="font-bold text-lg mb-2" style="color: var(--heading);"><i class="fa-solid fa-sliders mr-2" style="color: #17a2b8;"></i>Simulador OCAI</h5>
+                                <p class="text-sm mb-4" style="color: var(--text);">Registre la organización hipotética y responda las 6 dimensiones del OCAI, una por paso. Al final obtendrá el perfil cultural, un prompt para IA y podrá redactar el plan de transición hacia una Cultura de Adhocracia.</p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Organización hipotética:</label>
+                                        <input type="text" id="ocai-org" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" placeholder="Ej: Hospital Universitario del Caribe, Universidad de Córdoba...">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Sector:</label>
+                                        <select id="ocai-sector" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);">
+                                            <option value="">Seleccione un sector</option>
+                                            <option value="salud">Salud</option>
+                                            <option value="educacion">Educación</option>
+                                            <option value="servicios">Servicios</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="w-full rounded-full h-2" style="background: var(--line);">
+                                        <div id="ocai-progress" class="h-2 rounded-full transition-all duration-300" style="background: var(--accent); width: 0%;"></div>
+                                    </div>
+                                    <p id="ocai-progress-text" class="text-xs font-semibold mt-1" style="color: var(--text);">Paso 1 de 6</p>
+                                </div>
+                                <div id="ocai-quiz"></div>
+                                <div class="flex justify-between mt-4">
+                                    <button id="ocai-prev" type="button" class="btn-soft hidden"><i class="fa-solid fa-arrow-left mr-2"></i>Anterior</button>
+                                    <div class="flex-1"></div>
+                                    <button id="ocai-next" type="button" class="btn-main" disabled>Siguiente</button>
+                                </div>
+                                <div id="ocai-result" class="hidden mt-4 p-4 rounded-lg" style="background: var(--surface); border: 1px solid var(--accent);"></div>
+                                <div id="ocai-plan" class="hidden mt-4 p-4 rounded-xl" style="background: var(--surface-soft); border: 1px solid var(--line);">
+                                    <h6 class="font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Paso 1: Generar rutas de transición con IA</h6>
+                                    <p class="text-sm mb-2" style="color: var(--text);">Copie el siguiente prompt, péguelo en ChatGPT, Copilot o Gemini y pida rutas de transición hacia una Cultura de Adhocracia.</p>
+                                    <textarea id="ocai-prompt" readonly class="w-full p-3 rounded-lg border resize-none text-sm" style="border-color: var(--line); min-height: 160px; background: #f8f9fa;"></textarea>
+                                    <button id="ocai-copy-prompt" type="button" class="btn-soft mt-2"><i class="fa-regular fa-copy mr-2"></i>Copiar prompt</button>
+
+                                    <h6 class="font-bold mt-4 mb-2" style="color: var(--heading);"><i class="fa-solid fa-pen-to-square mr-2"></i>Paso 2: Redacte su plan final</h6>
+                                    <p class="text-sm mb-2" style="color: var(--text);">Pegue las sugerencias de la IA, ajústelas con su criterio profesional y escriba el plan definitivo.</p>
+                                    <textarea id="ocai-plan-text" maxlength="800" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 120px;" placeholder="Pegue aquí las sugerencias generadas por IA, ajústelas y escriba su plan final..."></textarea>
+                                    <span id="ocai-plan-counter" class="block text-xs font-semibold mt-1">0/800</span>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <div style="position: relative; display: inline-block;">
+                                            <button id="ocai-export" type="button" class="matrix-export-btn flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                                            <div id="ocai-export-dropdown" class="hidden" style="position: absolute; top: 100%; left: 0; z-index: 100; min-width: 180px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-top: 4px; overflow: hidden;">
+                                                <button id="ocai-export-txt" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-lines" style="color: var(--accent);"></i> Texto (.txt)</button>
+                                                <button id="ocai-export-word" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-word" style="color: #2563eb;"></i> Word (.doc)</button>
+                                            </div>
+                                        </div>
+                                        <button id="ocai-clean" type="button" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-rotate-left"></i> Limpiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="act-2" class="activity-tab hidden space-y-4">
+                        <div class="section-card">
+                            <h4 class="text-xl font-bold" style="color: var(--heading)"><i class="fa-solid fa-chart-pie mr-2" style="color: #17a2b8;"></i>2. Laboratorio de Dashboards</h4>
+                            <p class="mt-2 leading-relaxed"><strong>Objetivo:</strong> Identificar relaciones entre indicadores de clima laboral y resultados financieros mediante un dashboard interactivo, como si se trabajara en PowerBI/Tableau.</p>
+
+                            <div class="mt-4 grid md:grid-cols-2 gap-4">
+                                <div class="phase-card">
+                                    <h5 class="font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-list-ol mr-2" style="color: #17a2b8;"></i>Fases de la actividad</h5>
+                                    <ol class="list-decimal list-inside text-sm space-y-1" style="color: var(--text);">
+                                        <li>Explorar el caso de la Clínica del Caribe y sus datos trimestrales.</li>
+                                        <li>Seleccionar cada trimestre y comparar indicadores de clima con finanzas.</li>
+                                        <li>Detectar patrones: ¿qué variables de clima acompañan mejores resultados?</li>
+                                        <li>Formular una hipótesis sobre la relación cultura-clima-resultados.</li>
+                                        <li>Proponer 3 acciones de intervención basadas en los datos.</li>
+                                    </ol>
+                                </div>
+                                <div class="deliverable-card">
+                                    <h5 class="font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-file-circle-check mr-2" style="color: var(--accent);"></i>Entregable</h5>
+                                    <p class="text-sm" style="color: var(--text);">Breve informe (máx. 1 página) o diapositiva que incluya:</p>
+                                    <ul class="list-disc list-inside text-sm mt-1 space-y-1" style="color: var(--text);">
+                                        <li>Captura del dashboard con el trimestre más representativo.</li>
+                                        <li>Hipótesis sobre la relación entre clima y resultados financieros.</li>
+                                        <li>3 acciones de mejora con indicador de seguimiento.</li>
+                                        <li>Reflexión sobre uso ético de los datos de clima.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p class="mt-4 text-sm" style="color: #6c757d;"><i class="fa-regular fa-clock mr-1"></i> Tiempo estimado: 2 a 3 horas de trabajo autónomo + foro de discusión.</p>
+
+                            <div class="mt-6 sim-card rounded-xl">
+                                <h5 class="font-bold text-lg mb-2" style="color: var(--heading);"><i class="fa-solid fa-chart-line mr-2" style="color: #17a2b8;"></i>Dashboard interactivo</h5>
+                                <p class="text-sm mb-4" style="color: var(--text);">Personalice el caso de estudio. Si no tiene uno propio, puede usar el ejemplo sugerido.</p>
+
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Organización:</label>
+                                        <input type="text" id="dash-org" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" value="Clínica del Caribe" placeholder="Nombre de la organización...">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Sector:</label>
+                                        <select id="dash-sector" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);">
+                                            <option value="Salud" selected>Salud</option>
+                                            <option value="Educación">Educación</option>
+                                            <option value="Servicios">Servicios</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <p class="text-sm mb-4" style="color: var(--text);">Caso: <strong id="dash-case-name">Clínica del Caribe</strong> (sector <span id="dash-case-sector">Salud</span>, región Caribe). Seleccione un trimestre y observe cómo los indicadores de clima laboral se vinculan con los resultados financieros.</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <button type="button" class="dashboard-period btn-soft" data-period="Q1">Trimestre 1</button>
+                                    <button type="button" class="dashboard-period btn-soft" data-period="Q2">Trimestre 2</button>
+                                    <button type="button" class="dashboard-period btn-soft" data-period="Q3">Trimestre 3</button>
+                                    <button type="button" class="dashboard-period btn-soft" data-period="Q4">Trimestre 4</button>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="p-4 rounded-xl" style="background: var(--surface-soft);">
+                                        <h6 class="font-bold text-sm mb-3" style="color: var(--heading);"><i class="fa-solid fa-heart-pulse mr-2" style="color: #17a2b8;"></i>Indicadores de clima laboral</h6>
+                                        <div class="space-y-3">
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Satisfacción laboral</span><strong id="dash-sat">78%</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-sat" class="h-2 rounded-full transition-all duration-300" style="width: 78%; background: #17a2b8;"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Compromiso organizacional</span><strong id="dash-com">72%</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-com" class="h-2 rounded-full transition-all duration-300" style="width: 72%; background: var(--accent);"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Ausentismo</span><strong id="dash-abs">8%</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-abs" class="h-2 rounded-full transition-all duration-300" style="width: 8%; background: #dc3545;"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Rotación voluntaria</span><strong id="dash-rot">5%</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-rot" class="h-2 rounded-full transition-all duration-300" style="width: 5%; background: #fd7e14;"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 rounded-xl" style="background: var(--surface-soft);">
+                                        <h6 class="font-bold text-sm mb-3" style="color: var(--heading);"><i class="fa-solid fa-coins mr-2" style="color: var(--accent);"></i>Resultados financieros</h6>
+                                        <div class="space-y-3">
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Productividad (%)</span><strong id="dash-prod">82%</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-prod" class="h-2 rounded-full transition-all duration-300" style="width: 82%; background: #17a2b8;"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Ingresos ($M)</span><strong id="dash-ing">$4.2M</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-ing" class="h-2 rounded-full transition-all duration-300" style="width: 70%; background: var(--accent);"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Margen operativo (%)</span><strong id="dash-marg">12%</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-marg" class="h-2 rounded-full transition-all duration-300" style="width: 48%; background: #ffc107;"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-sm mb-1"><span>Costo por rotación ($M)</span><strong id="dash-costo">$0.4M</strong></div>
+                                                <div class="w-full rounded-full h-2" style="background: var(--line);"><div id="bar-costo" class="h-2 rounded-full transition-all duration-300" style="width: 20%; background: #dc3545;"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 p-4 rounded-xl" style="background: #D8EBF8; border: 1px solid #17a2b8;">
+                                    <p class="text-sm font-bold" style="color: #0c7b8a;"><i class="fa-solid fa-lightbulb mr-2"></i>Insight del trimestre</p>
+                                    <p id="dash-insight" class="text-sm mt-1" style="color: var(--text);">El trimestre 1 muestra un clima laboral moderado. El ausentismo y la rotación aún son bajos, pero la productividad financiera tiene espacio de mejora.</p>
+                                </div>
+
+                                <div class="mt-4 p-4 rounded-xl" style="background: #ffffff; border: 1px solid var(--line);">
+                                    <h6 class="font-bold text-sm mb-2" style="color: var(--heading);"><i class="fa-solid fa-pen-to-square mr-2" style="color: #17a2b8;"></i>Editar datos del caso</h6>
+                                    <p class="text-xs mb-2" style="color: #6c757d;">Modifique los valores numéricos; el dashboard y el CSV descargable se actualizarán automáticamente.</p>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-sm text-center border-collapse">
+                                            <thead>
+                                                <tr style="background: var(--surface-soft);">
+                                                    <th class="p-2 text-left">Indicador</th>
+                                                    <th class="p-2">Trimestre 1</th>
+                                                    <th class="p-2">Trimestre 2</th>
+                                                    <th class="p-2">Trimestre 3</th>
+                                                    <th class="p-2">Trimestre 4</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="dash-table-body"></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="flex gap-2 mt-3">
+                                        <button id="dash-reset" type="button" class="btn-soft"><i class="fa-solid fa-rotate-left mr-1"></i> Restaurar ejemplo</button>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <button id="dash-csv" type="button" class="matrix-export-btn flex items-center gap-2"><i class="fa-solid fa-file-csv"></i> Descargar datos CSV</button>
+                                </div>
+
+                                <div class="mt-4 p-4 rounded-xl" style="background: #f8f9fa; border: 1px solid var(--line);">
+                                    <h6 class="font-bold text-sm mb-2" style="color: var(--heading);"><i class="fa-solid fa-book-open mr-2" style="color: #17a2b8;"></i>Guía para importar a Power BI o Tableau</h6>
+                                    <ol class="list-decimal list-inside text-sm space-y-1" style="color: var(--text);">
+                                        <li>Descargue el archivo CSV con los datos del caso.</li>
+                                        <li>Abra <strong>Power BI Desktop</strong> o <strong>Tableau Public</strong>.</li>
+                                        <li>En Power BI seleccione <em>Obtener datos > Texto/CSV</em>; en Tableau seleccione <em>Conectar > Archivo de texto</em>.</li>
+                                        <li>Importe el CSV y revise que las columnas numéricas se reconozcan correctamente.</li>
+                                        <li>Cree gráficos de barras o líneas que relacionen los indicadores de clima con los financieros.</li>
+                                        <li>Guarde el reporte y compártalo según las instrucciones de su docente.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="act-3" class="activity-tab hidden space-y-4">
+                        <div class="section-card">
+                            <h4 class="text-xl font-bold" style="color: var(--heading)"><i class="fa-solid fa-people-arrows mr-2" style="color: #17a2b8;"></i>3. Taller de Ritualización</h4>
+                            <p class="mt-2 leading-relaxed"><strong>Objetivo:</strong> Diseñar un ritual de integración que fortalezca la pertenencia, el reconocimiento y la colaboración de un equipo multicultural en modalidad híbrida.</p>
+
+                            <div class="mt-4 grid md:grid-cols-2 gap-4">
+                                <div class="phase-card">
+                                    <h5 class="font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-list-ol mr-2" style="color: #17a2b8;"></i>Fases de la actividad</h5>
+                                    <ol class="list-decimal list-inside text-sm space-y-1" style="color: var(--text);">
+                                        <li>Caracterizar al equipo y el reto de integración.</li>
+                                        <li>Definir el propósito y la frecuencia del ritual.</li>
+                                        <li>Seleccionar momentos y prácticas inclusivas.</li>
+                                        <li>Establecer roles, recursos e indicador de seguimiento.</li>
+                                        <li>Presentar y ajustar el diseño con base en la retroalimentación.</li>
+                                    </ol>
+                                </div>
+                                <div class="deliverable-card">
+                                    <h5 class="font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-file-circle-check mr-2" style="color: var(--accent);"></i>Entregable</h5>
+                                    <p class="text-sm" style="color: var(--text);">Ficha de diseño del ritual que incluya:</p>
+                                    <ul class="list-disc list-inside text-sm mt-1 space-y-1" style="color: var(--text);">
+                                        <li>Propósito, participantes y frecuencia.</li>
+                                        <li>Secuencia de momentos y responsables.</li>
+                                        <li>Medidas de inclusión para el trabajo híbrido.</li>
+                                        <li>Indicador y meta para evaluar el ritual.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p class="mt-4 text-sm" style="color: #6c757d;"><i class="fa-regular fa-clock mr-1"></i> Tiempo estimado: 2 horas de trabajo autónomo + socialización con el equipo.</p>
+
+                            <div class="mt-6 sim-card rounded-xl">
+                                <h5 class="font-bold text-lg mb-2" style="color: var(--heading);"><i class="fa-solid fa-hands-holding-circle mr-2" style="color: #17a2b8;"></i>Diseñador de ritual de integración</h5>
+                                <p class="text-sm mb-4" style="color: var(--text);">Complete los campos para construir una ficha que pueda adaptar a su organización. El ejemplo corresponde a un equipo multicultural en modalidad híbrida.</p>
+
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Nombre del equipo:</label>
+                                        <input id="ritual-team" type="text" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" value="Equipo de Atención Integral" placeholder="Nombre del equipo...">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Contexto de trabajo:</label>
+                                        <select id="ritual-context" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);">
+                                            <option value="Híbrido" selected>Híbrido</option>
+                                            <option value="Remoto">Remoto</option>
+                                            <option value="Presencial">Presencial</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Propósito del ritual:</label>
+                                        <select id="ritual-purpose" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);">
+                                            <option value="Fortalecer la pertenencia y la integración cultural" selected>Fortalecer la pertenencia e integración</option>
+                                            <option value="Reconocer logros y contribuciones del equipo">Reconocer logros y contribuciones</option>
+                                            <option value="Mejorar la coordinación y comunicación del equipo">Mejorar coordinación y comunicación</option>
+                                            <option value="Acompañar la bienvenida de nuevos integrantes">Acompañar la bienvenida de nuevos integrantes</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Frecuencia:</label>
+                                        <select id="ritual-frequency" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);">
+                                            <option value="Semanal">Semanal</option>
+                                            <option value="Quincenal" selected>Quincenal</option>
+                                            <option value="Mensual">Mensual</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Participantes:</label>
+                                        <input id="ritual-participants" type="text" maxlength="150" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" value="Todo el equipo y líder facilitador" placeholder="Ej. Equipo comercial, líder y nuevos ingresos">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-2" style="color: var(--heading);">Indicador de seguimiento:</label>
+                                        <input id="ritual-indicator" type="text" maxlength="150" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" value="Participación y percepción de pertenencia" placeholder="Ej. Participación y percepción de pertenencia">
+                                    </div>
+                                </div>
+
+                                <fieldset class="mt-5">
+                                    <legend class="text-sm font-bold mb-2" style="color: var(--heading);">Seleccione los momentos del ritual:</legend>
+                                    <div class="grid md:grid-cols-2 gap-3">
+                                        <label class="p-3 rounded-lg cursor-pointer" style="background: var(--surface-soft); border: 1px solid var(--line);"><input class="ritual-moment mr-2" type="checkbox" value="Apertura de conexión: cada participante comparte brevemente cómo llega al encuentro."> <strong>Apertura de conexión</strong><span class="block text-xs ml-6 mt-1">Check-in breve e inclusivo.</span></label>
+                                        <label class="p-3 rounded-lg cursor-pointer" style="background: var(--surface-soft); border: 1px solid var(--line);"><input class="ritual-moment mr-2" type="checkbox" value="Voces del equipo: se comparte una experiencia, práctica o perspectiva cultural de forma voluntaria."> <strong>Voces del equipo</strong><span class="block text-xs ml-6 mt-1">Espacio seguro para la diversidad.</span></label>
+                                        <label class="p-3 rounded-lg cursor-pointer" style="background: var(--surface-soft); border: 1px solid var(--line);"><input class="ritual-moment mr-2" type="checkbox" value="Reconocimiento entre pares: se visibiliza una contribución concreta de un compañero o compañera."> <strong>Reconocimiento entre pares</strong><span class="block text-xs ml-6 mt-1">Valoración de aportes y logros.</span></label>
+                                        <label class="p-3 rounded-lg cursor-pointer" style="background: var(--surface-soft); border: 1px solid var(--line);"><input class="ritual-moment mr-2" type="checkbox" value="Cierre con compromiso: el equipo define una acción concreta y recuerda el próximo encuentro."> <strong>Cierre con compromiso</strong><span class="block text-xs ml-6 mt-1">Acuerdo breve y seguimiento.</span></label>
+                                    </div>
+                                </fieldset>
+
+                                <div class="mt-4 p-4 rounded-xl" style="background: #D8EBF8; border: 1px solid #17a2b8;">
+                                    <p class="text-sm font-bold" style="color: #0c7b8a;"><i class="fa-solid fa-universal-access mr-2"></i>Medida de inclusión</p>
+                                    <p class="text-sm mt-1" style="color: var(--text);">Para la modalidad híbrida, facilite conexión virtual, comparta la agenda antes del encuentro, alterne horarios cuando existan zonas horarias diferentes y no obligue a revelar información personal o cultural.</p>
+                                </div>
+
+                                <div class="mt-4 p-4 rounded-xl" style="background: #ffffff; border: 1px solid var(--line);">
+                                    <h6 class="font-bold text-sm mb-2" style="color: var(--heading);"><i class="fa-solid fa-clipboard-list mr-2" style="color: #17a2b8;"></i>Ficha de ritual</h6>
+                                    <div id="ritual-output" class="text-sm leading-relaxed" style="color: var(--text);"></div>
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        <button id="ritual-export" type="button" class="matrix-export-btn flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar ficha</button>
+                                        <button id="ritual-reset" type="button" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-rotate-left"></i> Restaurar ejemplo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <p class="leading-relaxed">Este diseño pedagógico garantiza que el especialista de la Universidad de Córdoba domine las herramientas científicas y tecnológicas para construir organizaciones saludables, éticas y altamente competitivas.</p>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Character counters for textareas and text inputs
+        const fields = document.querySelectorAll('textarea[maxlength], input[type="text"][maxlength]');
+        fields.forEach(field => {
+            const counter = document.querySelector(`[data-counter-for="${field.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${field.id}"]`);
+            if (counter) {
+                const update = () => {
+                    const current = field.value.length;
+                    const max = field.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) progress.style.width = `${(current / max) * 100}%`;
+                };
+                field.addEventListener('input', update);
+                update();
+            }
+        });
+
+        // Copy buttons
+        document.querySelectorAll('[data-copy]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = document.getElementById(btn.dataset.copy);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const original = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado';
+                    setTimeout(() => btn.innerHTML = original, 2000);
+                }
+            });
+        });
+
+        // ===== DIAGNÓSTICO =====
+        const diagQuestions = [
+            { num: 1, id: 'd1', question: '¿Cómo describiría la cultura predominante en las organizaciones de su sector en la región?', hint: 'Seleccione una opción.', type: 'radio', options: [
+                { value: 'jerarquica', text: 'Jerárquica y controladora' }, { value: 'resultados', text: 'Orientada a resultados' }, { value: 'personas', text: 'Orientada a personas' }, { value: 'innovadora', text: 'Innovadora y flexible' }, { value: 'mixta', text: 'Mixta' }
+            ]},
+            { num: 2, id: 'd2', question: '¿Ha participado en algún proceso formal de medición del clima laboral en su organización?', hint: 'Seleccione una opción.', type: 'radio', options: [
+                { value: 'si', text: 'Sí' }, { value: 'no', text: 'No' }, { value: 'en-proceso', text: 'Actualmente en proceso' }
+            ]},
+            { num: 3, id: 'd3', question: '¿Considera que el estilo de liderazgo de los directivos de su organización favorece un clima laboral positivo?', hint: 'Escala: 1 = Lo deteriora activamente · 5 = Es su principal impulsor', type: 'radio', options: [
+                { value: '1', text: '1 - Lo deteriora activamente' }, { value: '2', text: '2 - Lo deteriora parcialmente' }, { value: '3', text: '3 - Tiene un efecto neutro' }, { value: '4', text: '4 - Lo favorece parcialmente' }, { value: '5', text: '5 - Es su principal impulsor' }
+            ]},
+            { num: 4, id: 'd4', question: '¿Qué tanto cree que el clima laboral influye en la productividad y la calidad del servicio en su sector?', hint: 'Escala: 1 = Ninguna influencia · 5 = Influencia decisiva', type: 'radio', options: [
+                { value: '1', text: '1 - Ninguna influencia' }, { value: '2', text: '2 - Influencia escasa' }, { value: '3', text: '3 - Influencia moderada' }, { value: '4', text: '4 - Influencia alta' }, { value: '5', text: '5 - Influencia decisiva' }
+            ]},
+            { num: 5, id: 'd5', question: '¿Su organización ha implementado acciones concretas para transformar su cultura organizacional en los últimos tres años?', hint: 'Seleccione una opción.', type: 'radio', options: [
+                { value: 'si-visibles', text: 'Sí, con resultados visibles' }, { value: 'si-sin-claros', text: 'Sí, pero sin resultados claros' }, { value: 'en-proceso', text: 'En proceso' }, { value: 'no', text: 'No' }
+            ]},
+            { num: 6, id: 'd6', question: '¿Cree que la cultura organizacional de las empresas de su región está preparada para adaptarse a los cambios del entorno actual (digitalización, postpandemia, diversidad)?', hint: 'Escala: 1 = Muy rígida e impermeable · 5 = Muy adaptable', type: 'radio', options: [
+                { value: '1', text: '1 - Muy rígida e impermeable' }, { value: '2', text: '2 - Rígida' }, { value: '3', text: '3 - Moderadamente adaptable' }, { value: '4', text: '4 - Adaptable' }, { value: '5', text: '5 - Muy adaptable' }
+            ]},
+            { num: 7, id: 'd7', question: '¿Qué factores considera que más afectan negativamente el clima laboral en las organizaciones donde ha trabajado?', hint: 'Puede seleccionar varias opciones.', type: 'checkbox', options: [
+                { value: 'liderazgo-autoritario', text: 'Liderazgo autoritario' }, { value: 'inequidad', text: 'Inequidad' }, { value: 'falta-reconocimiento', text: 'Falta de reconocimiento' }, { value: 'sobrecarga', text: 'Sobrecarga laboral' }, { value: 'comunicacion-deficiente', text: 'Comunicación deficiente' }, { value: 'inseguridad', text: 'Inseguridad laboral' }, { value: 'otro', text: 'Otro' }
+            ]},
+            { num: 8, id: 'd8', question: '¿En su organización se promueve el reconocimiento explícito y frecuente del desempeño destacado de los colaboradores?', hint: 'Escala: 1 = Nunca · 5 = Siempre, de forma sistemática', type: 'radio', options: [
+                { value: '1', text: '1 - Nunca' }, { value: '2', text: '2 - Casi nunca' }, { value: '3', text: '3 - A veces' }, { value: '4', text: '4 - Frecuentemente' }, { value: '5', text: '5 - Siempre, de forma sistemática' }
+            ]},
+            { num: 9, id: 'd9', question: '¿Considera que la diversidad —de género, edad, origen étnico— en los equipos de trabajo mejora los resultados organizacionales?', hint: 'Escala: 1 = No lo creo · 5 = Totalmente de acuerdo', type: 'radio', options: [
+                { value: '1', text: '1 - No lo creo' }, { value: '2', text: '2 - Lo dudo' }, { value: '3', text: '3 - Neutral' }, { value: '4', text: '4 - De acuerdo' }, { value: '5', text: '5 - Totalmente de acuerdo' }
+            ]}
+        ];
+
+        let currentDiag = 0;
+        let diagAnswers = JSON.parse(localStorage.getItem('diagnostico_u02_cultura_clima') || '{}');
+
+        const diagBox = document.getElementById('diag-box');
+        const diagResults = document.getElementById('diag-results');
+
+        function renderDiag() {
+            const q = diagQuestions[currentDiag];
+            document.getElementById('diag-title').textContent = `Pregunta ${q.num}`;
+            document.getElementById('diag-progress').textContent = `${currentDiag + 1}/${diagQuestions.length}`;
+            document.getElementById('diag-text').textContent = q.question;
+            document.getElementById('diag-hint').textContent = q.hint || '';
+            const opts = document.getElementById('diag-options');
+            opts.innerHTML = '';
+
+            if (q.type === 'radio' || q.type === 'radio-text') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    if (diagAnswers[q.id] === opt.value) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        diagAnswers[q.id] = opt.value;
+                        opts.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                    });
+                    opts.appendChild(btn);
+                });
+                if (q.type === 'radio-text') {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mt-4';
+                    wrap.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">Descripción breve (opcional):</label>
+                        <textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 70px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id + '_text'] || ''}</textarea>
+                        <span class="mt-1 block text-xs font-semibold" id="diag-text-counter">${(diagAnswers[q.id + '_text'] || '').length}/${q.textMax}</span>`;
+                    opts.appendChild(wrap);
+                    const ta = wrap.querySelector('#diag-text-input');
+                    const counter = wrap.querySelector('#diag-text-counter');
+                    ta.addEventListener('input', () => { diagAnswers[q.id + '_text'] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+                }
+            } else if (q.type === 'checkbox') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    const saved = diagAnswers[q.id] || [];
+                    if (saved.includes(opt.value)) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        let arr = diagAnswers[q.id] || [];
+                        if (arr.includes(opt.value)) { arr = arr.filter(v => v !== opt.value); btn.classList.remove('selected'); }
+                        else { arr.push(opt.value); btn.classList.add('selected'); }
+                        diagAnswers[q.id] = arr;
+                        const otroDiv = opts.querySelector('.otro-wrapper');
+                        if (otroDiv) otroDiv.style.display = arr.includes('otro') ? 'block' : 'none';
+                    });
+                    opts.appendChild(btn);
+                });
+                const otroDiv = document.createElement('div');
+                otroDiv.className = 'otro-wrapper mt-3';
+                otroDiv.style.display = (diagAnswers[q.id] || []).includes('otro') ? 'block' : 'none';
+                otroDiv.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">¿Cuál otro factor? (opcional):</label>
+                    <input type="text" data-otro-for="${q.id}" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" placeholder="Escriba el otro factor..." value="${diagAnswers[q.id + '_otro'] || ''}">
+                    <span class="mt-1 block text-xs font-semibold" data-otro-count="${q.id}">${(diagAnswers[q.id + '_otro'] || '').length}/100</span>`;
+                opts.appendChild(otroDiv);
+                const otroInput = otroDiv.querySelector('input');
+                otroInput.addEventListener('input', () => {
+                    diagAnswers[q.id + '_otro'] = otroInput.value;
+                    const c = otroDiv.querySelector('span');
+                    if (c) c.textContent = `${otroInput.value.length}/100`;
+                });
+            } else if (q.type === 'textarea') {
+                const wrap = document.createElement('div');
+                wrap.innerHTML = `<textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 120px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id] || ''}</textarea>
+                    <span class="mt-1 block text-xs font-semibold" id="diag-char-count">${(diagAnswers[q.id] || '').length}/${q.textMax}</span>`;
+                opts.appendChild(wrap);
+                const ta = wrap.querySelector('#diag-text-input');
+                const counter = wrap.querySelector('#diag-char-count');
+                ta.addEventListener('input', () => { diagAnswers[q.id] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+            }
+            document.getElementById('diag-prev').disabled = currentDiag === 0;
+            document.getElementById('diag-next').textContent = currentDiag === diagQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('diag-prev').addEventListener('click', () => { if (currentDiag > 0) { currentDiag--; renderDiag(); } });
+        document.getElementById('diag-next').addEventListener('click', () => {
+            const q = diagQuestions[currentDiag];
+            if ((q.type === 'radio' || q.type === 'radio-text') && !diagAnswers[q.id]) { alert('Por favor selecciona una respuesta antes de continuar.'); return; }
+            if (currentDiag < diagQuestions.length - 1) { currentDiag++; renderDiag(); }
+            else { showDiagResults(); }
+        });
+
+        function showDiagResults() {
+            let summaryHTML = '';
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers[q.id + '_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers[q.id + '_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                }
+                summaryHTML += `<div class="p-3 rounded-lg" style="background: var(--surface); border: 1px solid var(--line); overflow: hidden;">
+                    <p class="text-xs font-bold mb-1" style="color: var(--accent);">Pregunta ${q.num}</p>
+                    <p class="text-sm font-bold" style="color: var(--heading);">${q.question}</p>
+                    <p class="mt-1 text-sm" style="color: var(--text); white-space: pre-wrap; word-break: break-word;">${ansText}</p>
+                </div>`;
+            });
+            document.getElementById('diag-summary').innerHTML = summaryHTML;
+            diagBox.classList.add('hidden');
+            diagResults.classList.remove('hidden');
+        }
+
+        document.getElementById('diag-save').addEventListener('click', () => {
+            localStorage.setItem('diagnostico_u02_cultura_clima', JSON.stringify(diagAnswers));
+            const fb = document.getElementById('diag-save-feedback');
+            fb.textContent = '✓ Diagnóstico guardado correctamente en este navegador.';
+            fb.classList.remove('hidden');
+        });
+
+        document.getElementById('diag-restart').addEventListener('click', () => {
+            currentDiag = 0; diagAnswers = {}; diagBox.classList.remove('hidden'); diagResults.classList.add('hidden'); renderDiag();
+            document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        const exportDropdown = document.getElementById('export-dropdown');
+        document.getElementById('diag-export').addEventListener('click', (e) => { e.stopPropagation(); exportDropdown.classList.toggle('hidden'); });
+        document.addEventListener('click', () => exportDropdown.classList.add('hidden'));
+
+        function buildDiagExportLines() {
+            const lines = [];
+            lines.push('AEM PSICOLOGÍA ORGANIZACIONAL Y BIENESTAR HUMANO');
+            lines.push('Unidad 2: Gestión de la Cultura Organizacional y Clima Laboral');
+            lines.push('Fecha: ' + new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' }));
+            lines.push('='.repeat(60));
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers[q.id + '_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers[q.id + '_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                }
+                lines.push(`PREGUNTA ${q.num}: ${q.question}`);
+                lines.push(`RESPUESTA: ${ansText}`);
+                lines.push('');
+            });
+            return lines.join('\n');
+        }
+
+        document.getElementById('export-txt').addEventListener('click', () => {
+            const blob = new Blob([buildDiagExportLines()], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U2.txt';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('export-word').addEventListener('click', () => {
+            const lines = buildDiagExportLines().split('\n').map(l => l ? `<p>${l}</p>` : '<br>').join('');
+            const html = `<html><head><meta charset='utf-8'><title>Diagnóstico U2</title></head><body><h2>AEM Psicología organizacional y bienestar humano</h2><h3>Unidad 2: Gestión de la Cultura Organizacional y Clima Laboral</h3>${lines}</body></html>`;
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U2.doc';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        // ===== ACTIVIDAD 1: SIMULADOR OCAI =====
+        const ocaiData = [
+            { dimension: 'Dominante', options: [
+                { type: 'clan', text: 'La organización se siente como una gran familia; se valoran el desarrollo humano y la participación.' },
+                { type: 'adhocracia', text: 'Es un lugar dinámico y emprendedor, donde se apuesta por la innovación y la creatividad.' },
+                { type: 'mercado', text: 'Se orienta a resultados y competencia; lo importante es ganar y cumplir metas exigentes.' },
+                { type: 'jerarquia', text: 'Es una estructura formal y controlada; se priorizan procedimientos claros, estabilidad y eficiencia.' }
+            ]},
+            { dimension: 'Liderazgo', options: [
+                { type: 'clan', text: 'Los líderes actúan como mentores, facilitadores o padres/madres de la organización.' },
+                { type: 'adhocracia', text: 'Los líderes son emprendedores, innovadores y asumen riesgos.' },
+                { type: 'mercado', text: 'Los líderes son competitivos, orientados a resultados y productividad.' },
+                { type: 'jerarquia', text: 'Los líderes son coordinadores u organizadores que garantizan eficiencia y control.' }
+            ]},
+            { dimension: 'Enfoque administrativo', options: [
+                { type: 'clan', text: 'La gestión se basa en el trabajo en equipo, la participación y el compromiso.' },
+                { type: 'adhocracia', text: 'La gestión fomenta la creatividad, la experimentación y la libertad individual.' },
+                { type: 'mercado', text: 'La gestión se enfoca en la competencia y el logro de objetivos medibles.' },
+                { type: 'jerarquia', text: 'La gestión se basa en reglas, procedimientos y una estructura estable.' }
+            ]},
+            { dimension: 'Unión', options: [
+                { type: 'clan', text: 'La unión proviene del compromiso, la lealtad y la tradición.' },
+                { type: 'adhocracia', text: 'La unión surge de la innovación y el compromiso con proyectos nuevos.' },
+                { type: 'mercado', text: 'La unión se da por el logro de metas y la competencia por resultados.' },
+                { type: 'jerarquia', text: 'La unión se basa en las normas y en el cumplimiento de procedimientos.' }
+            ]},
+            { dimension: 'Énfasis estratégico', options: [
+                { type: 'clan', text: 'Se enfatiza el desarrollo humano, la confianza y el compromiso a largo plazo.' },
+                { type: 'adhocracia', text: 'Se enfatiza la innovación, el crecimiento y la obtención de recursos.' },
+                { type: 'mercado', text: 'Se enfatiza el logro de objetivos agresivos y la superación de la competencia.' },
+                { type: 'jerarquia', text: 'Se enfatiza la permanencia y la estabilidad mediante procedimientos eficientes.' }
+            ]},
+            { dimension: 'Criterios de éxito', options: [
+                { type: 'clan', text: 'El éxito se mide por el desarrollo del talento, el compromiso y el bienestar de las personas.' },
+                { type: 'adhocracia', text: 'El éxito se mide por la innovación, productos/servicios nuevos y liderazgo en el mercado.' },
+                { type: 'mercado', text: 'El éxito se mide por el cumplimiento de metas, ganancias y posición frente a la competencia.' },
+                { type: 'jerarquia', text: 'El éxito se mide por la eficiencia, la planificación y la ausencia de errores.' }
+            ]}
+        ];
+        let ocaiStep = 0;
+        let ocaiAnswers = Array(ocaiData.length).fill(null);
+        const sectorLabels = { salud: 'Salud', educacion: 'Educación', servicios: 'Servicios', otro: 'Otro' };
+        const nombres = { clan: 'Clan', adhocracia: 'Adhocracia', mercado: 'Mercado', jerarquia: 'Jerarquía' };
+        const ocaiOrgInput = document.getElementById('ocai-org');
+        const ocaiSectorInput = document.getElementById('ocai-sector');
+        const ocaiQuiz = document.getElementById('ocai-quiz');
+        const ocaiProgress = document.getElementById('ocai-progress');
+        const ocaiProgressText = document.getElementById('ocai-progress-text');
+        const ocaiPrevBtn = document.getElementById('ocai-prev');
+        const ocaiNextBtn = document.getElementById('ocai-next');
+        const ocaiResult = document.getElementById('ocai-result');
+        const ocaiPlan = document.getElementById('ocai-plan');
+        const ocaiPromptText = document.getElementById('ocai-prompt');
+        const ocaiCopyPromptBtn = document.getElementById('ocai-copy-prompt');
+        const ocaiPlanText = document.getElementById('ocai-plan-text');
+        const ocaiPlanCounter = document.getElementById('ocai-plan-counter');
+        const ocaiExportBtn = document.getElementById('ocai-export');
+        const ocaiExportDropdown = document.getElementById('ocai-export-dropdown');
+        const ocaiExportTxtBtn = document.getElementById('ocai-export-txt');
+        const ocaiExportWordBtn = document.getElementById('ocai-export-word');
+        const ocaiCleanBtn = document.getElementById('ocai-clean');
+
+        function getOcaiOrgInfo() {
+            const orgName = ocaiOrgInput ? ocaiOrgInput.value.trim() : '';
+            const orgSector = ocaiSectorInput ? (sectorLabels[ocaiSectorInput.value] || 'No especificado') : 'No especificado';
+            return { orgName, orgSector };
+        }
+
+        function renderOcai() {
+            if (!ocaiQuiz) return;
+            ocaiQuiz.innerHTML = '';
+            if (ocaiStep < 0 || ocaiStep >= ocaiData.length) return;
+            const q = ocaiData[ocaiStep];
+            const wrap = document.createElement('div');
+            wrap.className = 'mb-2';
+            const title = document.createElement('p');
+            title.className = 'font-bold text-lg mb-3';
+            title.style.color = 'var(--heading)';
+            title.textContent = `Paso ${ocaiStep + 1} de ${ocaiData.length}: ${q.dimension}`;
+            wrap.appendChild(title);
+            const grid = document.createElement('div');
+            grid.className = 'grid md:grid-cols-2 gap-3';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'quiz-option mb-2 text-left';
+                btn.innerHTML = `<span class="font-bold block mb-1" style="color: var(--accent);">${nombres[opt.type]}</span>${opt.text}`;
+                btn.dataset.type = opt.type;
+                if (ocaiAnswers[ocaiStep] === opt.type) btn.classList.add('selected');
+                btn.addEventListener('click', () => {
+                    ocaiAnswers[ocaiStep] = opt.type;
+                    if (ocaiStep < ocaiData.length - 1) {
+                        ocaiStep++;
+                        renderOcai();
+                        updateOcaiProgress();
+                    } else {
+                        renderOcai();
+                        updateOcaiProgress();
+                        ocaiCheckComplete();
+                    }
+                });
+                grid.appendChild(btn);
+            });
+            wrap.appendChild(grid);
+            ocaiQuiz.appendChild(wrap);
+            updateOcaiNav();
+        }
+
+        function updateOcaiProgress() {
+            const pct = ((ocaiStep) / ocaiData.length) * 100;
+            if (ocaiProgress) ocaiProgress.style.width = `${pct}%`;
+            if (ocaiProgressText) ocaiProgressText.textContent = `Paso ${ocaiStep + 1} de ${ocaiData.length}`;
+        }
+
+        function updateOcaiNav() {
+            if (ocaiPrevBtn) {
+                ocaiPrevBtn.classList.toggle('hidden', ocaiStep === 0);
+                ocaiPrevBtn.disabled = ocaiStep === 0;
+            }
+            if (ocaiNextBtn) {
+                const answered = ocaiAnswers[ocaiStep] !== null;
+                if (ocaiStep === ocaiData.length - 1) {
+                    ocaiNextBtn.textContent = answered ? 'Ver perfil' : 'Siguiente';
+                } else {
+                    ocaiNextBtn.textContent = 'Siguiente';
+                }
+                ocaiNextBtn.disabled = !answered;
+            }
+        }
+
+        if (ocaiPrevBtn) {
+            ocaiPrevBtn.addEventListener('click', () => {
+                if (ocaiStep > 0) {
+                    ocaiStep--;
+                    renderOcai();
+                    updateOcaiProgress();
+                    ocaiResult.classList.add('hidden');
+                    ocaiPlan.classList.add('hidden');
+                    if (ocaiQuiz) ocaiQuiz.classList.remove('hidden');
+                    if (ocaiNextBtn) ocaiNextBtn.classList.remove('hidden');
+                    if (ocaiProgress && ocaiProgress.parentElement) ocaiProgress.parentElement.classList.remove('hidden');
+                    if (ocaiProgressText) ocaiProgressText.classList.remove('hidden');
+                }
+            });
+        }
+        if (ocaiNextBtn) {
+            ocaiNextBtn.addEventListener('click', () => {
+                if (ocaiStep < ocaiData.length - 1) {
+                    if (ocaiAnswers[ocaiStep] !== null) {
+                        ocaiStep++;
+                        renderOcai();
+                        updateOcaiProgress();
+                    }
+                } else {
+                    ocaiCheckComplete();
+                }
+            });
+        }
+
+        function ocaiCheckComplete() {
+            if (ocaiAnswers.includes(null)) return;
+            const counts = { clan: 0, adhocracia: 0, mercado: 0, jerarquia: 0 };
+            ocaiAnswers.forEach(a => counts[a]++);
+            const max = Math.max(...Object.values(counts));
+            const dominantes = Object.keys(counts).filter(k => counts[k] === max);
+            if (!ocaiResult || !ocaiPlan) return;
+            const { orgName, orgSector } = getOcaiOrgInfo();
+            let resultHTML = '';
+            if (orgName) {
+                resultHTML += `<p class="text-sm mb-2" style="color: var(--text);"><strong>Organización:</strong> ${orgName} <span class="ml-2">(<strong>Sector:</strong> ${orgSector})</span></p>`;
+            }
+            resultHTML += `<p class="font-bold text-lg" style="color: var(--heading);">Perfil cultural predominante: <strong>${dominantes.map(k => nombres[k]).join(' / ')}</strong></p>`;
+            resultHTML += `<div class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold" style="color: var(--text);">`;
+            Object.keys(counts).forEach(k => {
+                resultHTML += `<div class="p-2 rounded text-center" style="background: var(--surface-soft);">${nombres[k]}: ${counts[k]}</div>`;
+            });
+            resultHTML += `</div>`;
+            if (dominantes.includes('jerarquia')) {
+                resultHTML += `<p class="mt-3 text-sm" style="color: var(--text);">El perfil indica una cultura dominante de <strong>Jerarquía</strong>. A continuación encontrará un prompt para IA que le ayudará a diseñar el plan de transición hacia una <strong>Cultura de Adhocracia</strong>.</p>`;
+            } else if (dominantes.includes('adhocracia')) {
+                resultHTML += `<p class="mt-3 text-sm" style="color: var(--text);">El perfil ya muestra una cultura orientada a la <strong>Adhocracia</strong>. Reflexione sobre cómo consolidarla sin perder estabilidad.</p>`;
+            } else {
+                resultHTML += `<p class="mt-3 text-sm" style="color: var(--text);">Diseñe un plan que fortalezca la <strong>Adhocracia</strong>, reduciendo rigideces y fomentando la innovación.</p>`;
+            }
+            ocaiResult.innerHTML = resultHTML;
+            ocaiResult.classList.remove('hidden');
+            ocaiPlan.classList.remove('hidden');
+            if (ocaiPromptText) {
+                const promptText = `Actúa como consultor experto en cultura organizacional y bienestar laboral. La organización "${orgName || 'la organización hipotética'}" del sector ${orgSector || 'no especificado'} tiene un perfil cultural dominante de ${dominantes.map(k => nombres[k]).join(' / ')} según el modelo OCAI (puntuaciones: Clan ${counts.clan}, Adhocracia ${counts.adhocracia}, Mercado ${counts.mercado}, Jerarquía ${counts.jerarquia}). El objetivo es diseñar una ruta de transición hacia una Cultura de Adhocracia en el contexto de la región Caribe colombiana, considerando digitalización, diversidad e inclusión, y trabajo híbrido. Proporciona 5 acciones concretas para cada uno de estos 3 ejes: (1) liderazgo y desarrollo de personas, (2) estructura y procesos, y (3) símbolos y rituales culturales. Incluye indicadores sugeridos a 6, 12 y 24 meses, y una reflexión sobre riesgos éticos y posibles resistencias al cambio.`;
+                ocaiPromptText.value = promptText;
+            }
+            if (ocaiQuiz) ocaiQuiz.classList.add('hidden');
+            if (ocaiPrevBtn) ocaiPrevBtn.classList.add('hidden');
+            if (ocaiNextBtn) ocaiNextBtn.classList.add('hidden');
+            if (ocaiProgress && ocaiProgress.parentElement) ocaiProgress.parentElement.classList.add('hidden');
+            if (ocaiProgressText) ocaiProgressText.classList.add('hidden');
+        }
+
+        if (ocaiPlanText && ocaiPlanCounter) {
+            ocaiPlanText.addEventListener('input', () => {
+                ocaiPlanCounter.textContent = `${ocaiPlanText.value.length}/800`;
+            });
+        }
+        if (ocaiCopyPromptBtn && ocaiPromptText) {
+            ocaiCopyPromptBtn.addEventListener('click', () => {
+                ocaiPromptText.select();
+                document.execCommand('copy');
+                const original = ocaiCopyPromptBtn.innerHTML;
+                ocaiCopyPromptBtn.innerHTML = '<i class="fa-solid fa-check mr-2"></i>Prompt copiado';
+                setTimeout(() => ocaiCopyPromptBtn.innerHTML = original, 2000);
+            });
+        }
+
+        function buildOcaiExportLines() {
+            const counts = { clan: 0, adhocracia: 0, mercado: 0, jerarquia: 0 };
+            ocaiAnswers.forEach(a => counts[a]++);
+            const max = Math.max(...Object.values(counts));
+            const dominantes = Object.keys(counts).filter(k => counts[k] === max);
+            const plan = ocaiPlanText ? ocaiPlanText.value.trim() : '';
+            const { orgName, orgSector } = getOcaiOrgInfo();
+            const lines = [];
+            lines.push('SIMULACRO OCAI - UNIDAD 2');
+            if (orgName) {
+                lines.push('Organización: ' + orgName);
+                lines.push('Sector: ' + orgSector);
+            }
+            lines.push('Perfil cultural predominante: ' + dominantes.map(k => nombres[k]).join(' / '));
+            lines.push('Puntuaciones:');
+            lines.push(`- Clan: ${counts.clan}`);
+            lines.push(`- Adhocracia: ${counts.adhocracia}`);
+            lines.push(`- Mercado: ${counts.mercado}`);
+            lines.push(`- Jerarquía: ${counts.jerarquia}`);
+            lines.push('');
+            lines.push('Plan de transición a Cultura de Adhocracia asistido por IA:');
+            lines.push(plan || 'Sin plan escrito aún.');
+            return lines.join('\n');
+        }
+
+        if (ocaiExportBtn && ocaiExportDropdown && ocaiExportTxtBtn && ocaiExportWordBtn) {
+            ocaiExportBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                ocaiExportDropdown.classList.toggle('hidden');
+            });
+            ocaiExportTxtBtn.addEventListener('click', () => {
+                ocaiExportDropdown.classList.add('hidden');
+                const blob = new Blob([buildOcaiExportLines()], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Simulacro_OCAI_U2.txt';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            });
+            ocaiExportWordBtn.addEventListener('click', () => {
+                ocaiExportDropdown.classList.add('hidden');
+                const lines = buildOcaiExportLines().split('\n').map(l => l ? `<p>${l}</p>` : '<br>').join('');
+                const { orgName } = getOcaiOrgInfo();
+                const html = `<html><head><meta charset='utf-8'><title>Simulacro OCAI U2</title></head><body><h2>AEM Psicología organizacional y bienestar humano</h2><h3>Unidad 2: Gestión de la Cultura Organizacional y Clima Laboral</h3><h4>Simulacro OCAI${orgName ? ' - ' + orgName : ''}</h4>${lines}</body></html>`;
+                const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Simulacro_OCAI_U2.doc';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            });
+            document.addEventListener('click', (e) => {
+                if (!ocaiExportBtn.contains(e.target) && !ocaiExportDropdown.contains(e.target)) {
+                    ocaiExportDropdown.classList.add('hidden');
+                }
+            });
+        }
+
+        function ocaiClean() {
+            ocaiStep = 0;
+            ocaiAnswers = Array(ocaiData.length).fill(null);
+            if (ocaiOrgInput) ocaiOrgInput.value = '';
+            if (ocaiSectorInput) ocaiSectorInput.value = '';
+            if (ocaiPlanText) ocaiPlanText.value = '';
+            if (ocaiPlanCounter) ocaiPlanCounter.textContent = '0/800';
+            if (ocaiPromptText) ocaiPromptText.value = '';
+            if (ocaiResult) ocaiResult.classList.add('hidden');
+            if (ocaiPlan) ocaiPlan.classList.add('hidden');
+            if (ocaiQuiz) ocaiQuiz.classList.remove('hidden');
+            if (ocaiPrevBtn) ocaiPrevBtn.classList.add('hidden');
+            if (ocaiNextBtn) {
+                ocaiNextBtn.classList.remove('hidden');
+                ocaiNextBtn.disabled = true;
+                ocaiNextBtn.textContent = 'Siguiente';
+            }
+            if (ocaiProgress && ocaiProgress.parentElement) ocaiProgress.parentElement.classList.remove('hidden');
+            if (ocaiProgressText) ocaiProgressText.classList.remove('hidden');
+            if (ocaiExportDropdown) ocaiExportDropdown.classList.add('hidden');
+            updateOcaiProgress();
+            renderOcai();
+            const simulador = ocaiOrgInput ? ocaiOrgInput.closest('.mt-6') : null;
+            if (simulador) simulador.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (ocaiCleanBtn) ocaiCleanBtn.addEventListener('click', ocaiClean);
+
+        updateOcaiProgress();
+        renderOcai();
+
+        // ===== DASHBOARD ACTIVIDAD 2 =====
+        const metrics = [
+            { key: 'sat', label: 'Satisfacción (%)', type: 'pct', max: 100, step: 1 },
+            { key: 'com', label: 'Compromiso (%)', type: 'pct', max: 100, step: 1 },
+            { key: 'abs', label: 'Ausentismo (%)', type: 'pct', max: 100, step: 1 },
+            { key: 'rot', label: 'Rotación (%)', type: 'pct', max: 100, step: 1 },
+            { key: 'prod', label: 'Productividad (%)', type: 'pct', max: 100, step: 1 },
+            { key: 'ing', label: 'Ingresos ($M)', type: 'money', max: 20, step: 0.1 },
+            { key: 'marg', label: 'Margen operativo (%)', type: 'pct', max: 100, step: 1 },
+            { key: 'costo', label: 'Costo rotación ($M)', type: 'money', max: 10, step: 0.1 }
+        ];
+        const periods = ['Q1', 'Q2', 'Q3', 'Q4'];
+
+        let dashboardData = {
+            Q1: { sat: 78, com: 72, abs: 8, rot: 5, prod: 82, ing: 4.2, marg: 12, costo: 0.4, insight: 'El trimestre 1 muestra un clima laboral moderado. El ausentismo y la rotación aún son bajos, pero la productividad financiera tiene espacio de mejora.' },
+            Q2: { sat: 70, com: 65, abs: 12, rot: 9, prod: 75, ing: 3.8, marg: 10, costo: 0.7, insight: 'El trimestre 2 refleja un descenso del clima: caen satisfacción y compromiso, suben ausentismo y rotación, y los resultados financieros se deterioran.' },
+            Q3: { sat: 85, com: 80, abs: 6, rot: 3, prod: 88, ing: 4.9, marg: 15, costo: 0.2, insight: 'En el trimestre 3 el clima laboral mejora notablemente. Menor rotación y ausentismo coinciden con mayor productividad, ingresos y margen.' },
+            Q4: { sat: 90, com: 86, abs: 4, rot: 2, prod: 92, ing: 5.3, marg: 18, costo: 0.1, insight: 'El trimestre 4 es el mejor escenario: clima laboral alto, baja rotación, ausentismo mínimo y finanzas sólidas. Se evidencia una relación positiva entre bienestar y resultados.' }
+        };
+        const dashboardDefaults = JSON.parse(JSON.stringify(dashboardData));
+        let activePeriod = 'Q1';
+
+        function updateDashboard(period) {
+            activePeriod = period;
+            const d = dashboardData[period];
+            if (!d) return;
+            const ids = {
+                'dash-sat': d.sat + '%', 'bar-sat': d.sat + '%',
+                'dash-com': d.com + '%', 'bar-com': d.com + '%',
+                'dash-abs': d.abs + '%', 'bar-abs': d.abs + '%',
+                'dash-rot': d.rot + '%', 'bar-rot': d.rot + '%',
+                'dash-prod': d.prod + '%', 'bar-prod': d.prod + '%',
+                'dash-ing': '$' + d.ing.toFixed(1) + 'M', 'bar-ing': ((d.ing / 6) * 100).toFixed(1) + '%',
+                'dash-marg': d.marg + '%', 'bar-marg': ((d.marg / 25) * 100).toFixed(1) + '%',
+                'dash-costo': '$' + d.costo.toFixed(1) + 'M', 'bar-costo': ((d.costo / 1) * 100).toFixed(1) + '%'
+            };
+            Object.keys(ids).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (id.startsWith('bar-')) el.style.width = ids[id];
+                    else el.textContent = ids[id];
+                }
+            });
+            const insightEl = document.getElementById('dash-insight');
+            if (insightEl) insightEl.textContent = d.insight;
+            document.querySelectorAll('.dashboard-period').forEach(btn => {
+                if (btn.dataset.period === period) {
+                    btn.classList.remove('btn-soft');
+                    btn.classList.add('btn-main');
+                } else {
+                    btn.classList.remove('btn-main');
+                    btn.classList.add('btn-soft');
+                }
+            });
+        }
+
+        document.querySelectorAll('.dashboard-period').forEach(btn => {
+            btn.addEventListener('click', () => updateDashboard(btn.dataset.period));
+        });
+
+        const dashOrg = document.getElementById('dash-org');
+        const dashSector = document.getElementById('dash-sector');
+        const dashCaseName = document.getElementById('dash-case-name');
+        const dashCaseSector = document.getElementById('dash-case-sector');
+        const dashCsvBtn = document.getElementById('dash-csv');
+        const dashTableBody = document.getElementById('dash-table-body');
+        const dashResetBtn = document.getElementById('dash-reset');
+
+        function formatDashInputValue(metric, value) {
+            return metric.type === 'money' ? value.toFixed(1) : Math.round(value);
+        }
+
+        function renderDashTable() {
+            if (!dashTableBody) return;
+            dashTableBody.innerHTML = '';
+            metrics.forEach(m => {
+                const tr = document.createElement('tr');
+                tr.style.borderBottom = '1px solid var(--line)';
+                tr.innerHTML = `<td class="p-2 text-left" style="color: var(--heading);">${m.label}</td>` + periods.map(p => `<td class="p-1"><input type="number" min="0" max="${m.max}" step="${m.step}" data-period="${p}" data-metric="${m.key}" value="${formatDashInputValue(m, dashboardData[p][m.key])}" class="w-full p-2 rounded border text-center" style="border-color: var(--line);"></td>`).join('');
+                dashTableBody.appendChild(tr);
+            });
+            dashTableBody.querySelectorAll('input').forEach(input => {
+                input.addEventListener('change', () => {
+                    const p = input.dataset.period;
+                    const k = input.dataset.metric;
+                    const metric = metrics.find(m => m.key === k);
+                    let v = parseFloat(input.value);
+                    if (isNaN(v) || v < 0) v = 0;
+                    const max = metric ? parseFloat(metric.max) : 100;
+                    if (v > max) v = max;
+                    dashboardData[p][k] = v;
+                    input.value = formatDashInputValue(metric, v);
+                    if (activePeriod === p) updateDashboard(p);
+                });
+            });
+        }
+
+        function updateCaseInfo() {
+            if (dashCaseName) dashCaseName.textContent = dashOrg ? (dashOrg.value.trim() || 'Organización sin nombre') : 'Clínica del Caribe';
+            if (dashCaseSector) dashCaseSector.textContent = dashSector ? dashSector.value : 'Salud';
+        }
+        if (dashOrg) dashOrg.addEventListener('input', updateCaseInfo);
+        if (dashSector) dashSector.addEventListener('change', updateCaseInfo);
+
+        function buildDashboardCsv() {
+            const org = dashOrg ? dashOrg.value.trim() : 'Clínica del Caribe';
+            const sector = dashSector ? dashSector.value : 'Salud';
+            const header = 'Trimestre,Organizacion,Sector,Satisfaccion,Compromiso,Ausentismo,Rotacion,Productividad,Ingresos_MUSD,Margen_Operativo_Pct,Costo_Rotacion_MUSD';
+            const rows = Object.keys(dashboardData).map(p => {
+                const d = dashboardData[p];
+                return `${p},"${org.replace(/"/g, '""')}","${sector.replace(/"/g, '""')}",${d.sat},${d.com},${d.abs},${d.rot},${d.prod},${d.ing},${d.marg},${d.costo}`;
+            });
+            return [header, ...rows].join('\n');
+        }
+
+        if (dashCsvBtn) {
+            dashCsvBtn.addEventListener('click', () => {
+                const csv = buildDashboardCsv();
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                const orgSlug = (dashOrg ? dashOrg.value.trim() : 'Caso').replace(/\s+/g, '_') || 'Caso';
+                a.download = `Dashboard_${orgSlug}_U2.csv`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        if (dashResetBtn) {
+            dashResetBtn.addEventListener('click', () => {
+                dashboardData = JSON.parse(JSON.stringify(dashboardDefaults));
+                renderDashTable();
+                updateDashboard(activePeriod);
+            });
+        }
+
+        updateDashboard('Q1');
+        updateCaseInfo();
+        renderDashTable();
+
+        const ritualTeam = document.getElementById('ritual-team');
+        const ritualContext = document.getElementById('ritual-context');
+        const ritualPurpose = document.getElementById('ritual-purpose');
+        const ritualFrequency = document.getElementById('ritual-frequency');
+        const ritualParticipants = document.getElementById('ritual-participants');
+        const ritualIndicator = document.getElementById('ritual-indicator');
+        const ritualOutput = document.getElementById('ritual-output');
+        const ritualExport = document.getElementById('ritual-export');
+        const ritualReset = document.getElementById('ritual-reset');
+        const ritualDefaults = {
+            team: 'Equipo de Atención Integral', context: 'Híbrido',
+            purpose: 'Fortalecer la pertenencia y la integración cultural', frequency: 'Quincenal',
+            participants: 'Todo el equipo y líder facilitador', indicator: 'Participación y percepción de pertenencia'
+        };
+
+        function escapeHtml(value) {
+            const div = document.createElement('div');
+            div.textContent = value;
+            return div.innerHTML;
+        }
+
+        function getRitualData() {
+            return {
+                team: ritualTeam ? ritualTeam.value.trim() || 'Equipo sin nombre' : ritualDefaults.team,
+                context: ritualContext ? ritualContext.value : ritualDefaults.context,
+                purpose: ritualPurpose ? ritualPurpose.value : ritualDefaults.purpose,
+                frequency: ritualFrequency ? ritualFrequency.value : ritualDefaults.frequency,
+                participants: ritualParticipants ? ritualParticipants.value.trim() || 'Participantes por definir' : ritualDefaults.participants,
+                indicator: ritualIndicator ? ritualIndicator.value.trim() || 'Indicador por definir' : ritualDefaults.indicator,
+                moments: Array.from(document.querySelectorAll('.ritual-moment:checked')).map(input => input.value)
+            };
+        }
+
+        function getRitualText(data) {
+            const sequence = data.moments.length ? data.moments.map((moment, index) => `${index + 1}. ${moment}`).join('\n') : 'No se han seleccionado momentos para el ritual.';
+            return `FICHA DE DISEÑO DE RITUAL DE INTEGRACIÓN\n\nEquipo: ${data.team}\nContexto de trabajo: ${data.context}\nPropósito: ${data.purpose}\nFrecuencia: ${data.frequency}\nParticipantes: ${data.participants}\nIndicador de seguimiento: ${data.indicator}\n\nSECUENCIA DEL RITUAL\n${sequence}\n\nMEDIDA DE INCLUSIÓN\nGarantizar una participación equitativa, compartir la agenda antes del encuentro, ofrecer acceso para participantes remotos y respetar la participación voluntaria al compartir experiencias personales o culturales.`;
+        }
+
+        function renderRitual() {
+            if (!ritualOutput) return;
+            const data = getRitualData();
+            const sequence = data.moments.length ? `<ol class="list-decimal list-inside mt-2 space-y-1">${data.moments.map(moment => `<li>${escapeHtml(moment)}</li>`).join('')}</ol>` : '<p class="mt-2">Seleccione al menos un momento para el ritual.</p>';
+            ritualOutput.innerHTML = `<p><strong>Equipo:</strong> ${escapeHtml(data.team)}</p><p><strong>Contexto:</strong> ${escapeHtml(data.context)}</p><p><strong>Propósito:</strong> ${escapeHtml(data.purpose)}</p><p><strong>Frecuencia:</strong> ${escapeHtml(data.frequency)}</p><p><strong>Participantes:</strong> ${escapeHtml(data.participants)}</p><p><strong>Indicador:</strong> ${escapeHtml(data.indicator)}</p><p class="font-bold mt-3" style="color: var(--heading);">Secuencia del ritual</p>${sequence}`;
+        }
+
+        [ritualTeam, ritualContext, ritualPurpose, ritualFrequency, ritualParticipants, ritualIndicator].filter(Boolean).forEach(input => {
+            input.addEventListener('input', renderRitual);
+            input.addEventListener('change', renderRitual);
+        });
+        document.querySelectorAll('.ritual-moment').forEach(input => input.addEventListener('change', renderRitual));
+
+        if (ritualReset) {
+            ritualReset.addEventListener('click', () => {
+                if (ritualTeam) ritualTeam.value = ritualDefaults.team;
+                if (ritualContext) ritualContext.value = ritualDefaults.context;
+                if (ritualPurpose) ritualPurpose.value = ritualDefaults.purpose;
+                if (ritualFrequency) ritualFrequency.value = ritualDefaults.frequency;
+                if (ritualParticipants) ritualParticipants.value = ritualDefaults.participants;
+                if (ritualIndicator) ritualIndicator.value = ritualDefaults.indicator;
+                document.querySelectorAll('.ritual-moment').forEach(input => input.checked = false);
+                renderRitual();
+            });
+        }
+
+        if (ritualExport) {
+            ritualExport.addEventListener('click', () => {
+                const data = getRitualData();
+                const blob = new Blob([getRitualText(data)], { type: 'text/plain;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `Ritual_${data.team.replace(/[^a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+/g, '_') || 'equipo'}_U2.txt`;
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        renderRitual();
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        function switchActivityTab(targetId) {
+            document.querySelectorAll('.activity-tab').forEach(tab => tab.classList.add('hidden'));
+            document.querySelectorAll('.activity-tab').forEach(tab => tab.classList.remove('block'));
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('block');
+            }
+            document.querySelectorAll('.activity-tab-btn').forEach(btn => {
+                if (btn.dataset.target === targetId) {
+                    btn.classList.remove('btn-soft');
+                    btn.classList.add('btn-main');
+                } else {
+                    btn.classList.remove('btn-main');
+                    btn.classList.add('btn-soft');
+                }
+            });
+        }
+        document.querySelectorAll('.activity-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => switchActivityTab(btn.dataset.target));
+        });
+
+        renderOcai();
+
+        renderDiag();
+    });
+</script>
+</body>
+</html>
+
+
+
