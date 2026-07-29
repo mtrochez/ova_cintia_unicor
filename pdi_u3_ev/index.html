@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades Evaluativas Unidad 3: Ética Organizacional y Medición de Impacto</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+        }
+
+        /* Senge drag & drop colors */
+        #ova-embed .senge-labels { background: linear-gradient(135deg, #f8fbfd 0%, #eef8fb 100%) !important; border-color: #17a2b8 !important; }
+        #ova-embed .senge-label { background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); color: #0c7b8a; border-color: #17a2b8; }
+        #ova-embed .senge-label:hover { background: #17a2b8; color: #ffffff; border-color: #0c7b8a; }
+        #ova-embed .senge-dropzone { background: #ffffff; border-left: 4px solid #D8EBF8; border-color: var(--line); }
+        #ova-embed .senge-dropzone:hover { border-color: #17a2b8; }
+        #ova-embed .senge-number { background: #17a2b8; }
+        #ova-embed .senge-slot { background: #ffffff; border-color: #17a2b8; color: #17a2b8; }
+        #ova-embed .senge-assigned { background: #D8EBF8; color: #0c7b8a; border-radius: 6px; padding: 4px 10px; }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de intervención</h1>
+                <p class="eyebrow" style="text-transform:none;letter-spacing:0;">Unidad 3: Ética Organizacional y Medición de Impacto</p>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="diagnostico">Diagnóstico</option>
+            <option value="actividad1">Actividad 1</option>
+            <option value="actividad2">Actividad 2</option>
+            <option value="actividad3">Actividad 3</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <h1>Proyecto de intervención</h1>
+                    <p class="eyebrow" style="text-transform:none;letter-spacing:0;font-size:0.9rem;margin-top:6px;">Unidad 3: Ética Organizacional y Medición de Impacto</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="diagnostico"><i class="fa-solid fa-clipboard-list"></i> Diagnóstico</a>
+                <a href="#" class="sidebar-link" data-target="actividad1"><i class="fa-solid fa-robot"></i> Actividad 1</a>
+                <a href="#" class="sidebar-link" data-target="actividad2"><i class="fa-solid fa-people-arrows"></i> Actividad 2</a>
+                <a href="#" class="sidebar-link" data-target="actividad3"><i class="fa-solid fa-chart-line"></i> Actividad 3</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-graduation-cap mr-2"></i>Unidad 3</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Ética Organizacional y Medición de Impacto</h2>
+                        <p class="text-lg leading-relaxed opacity-95">La legitimidad social y la sostenibilidad empresarial como lenguaje de las organizaciones con futuro. El especialista demuestra que sus intervenciones generan retorno financiero, justicia socioambiental y bien común.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">Introducción</h3>
+                        <p class="mt-4 leading-relaxed">La Unidad 3 cierra el ciclo de formación en intervención organizacional, moviendo el foco desde la eficiencia operativa hacia la legitimidad social y ética. En un mundo donde la sostenibilidad empresarial es el "lenguaje de las empresas con futuro", el especialista debe ser capaz de demostrar que sus intervenciones no solo generan retorno financiero, sino que también contribuyen a la justicia socioambiental y al bien común. Esta unidad proporciona las herramientas para cuantificar el impacto intangible y gestionar la ética en la frontera tecnológica del 2025.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card" style="transition: all 0.3s ease;"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-scale-balanced mr-2" style="color: #17a2b8;"></i>Legitimidad social y ética</h3><p class="mt-2">El foco se desplaza hacia la sostenibilidad empresarial, la justicia socioambiental y el bien común como fundamento de las intervenciones.</p></div>
+                        <div class="mini-card" style="transition: all 0.3s ease;"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-chart-line mr-2" style="color: #17a2b8;"></i>Medición del impacto intangible</h3><p class="mt-2">Cuantificar el retorno social y humano de las intervenciones, gestionando la ética en la frontera tecnológica contemporánea.</p></div>
+                    </div>
+                </section>
+
+                <section id="diagnostico" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Diagnóstico · UA03 · Ética Organizacional y Medición de Impacto</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📋 Percepciones sobre ética, transparencia e indicadores de gestión</h2>
+                        <p class="mt-4 leading-relaxed">Este cuestionario abre la experiencia formativa de la Especialización en Gerencia del Talento Humano y Desarrollo Organizacional. No tiene respuestas correctas ni incorrectas. Su propósito es doble: permite al equipo docente conocer su perspectiva como profesional en ejercicio para orientar las mediaciones pedagógicas del curso, y genera insumos para investigación sobre la realidad organizacional de la región Caribe colombiana. Sus respuestas son confidenciales y serán tratadas de forma agregada. El cuestionario no es calificable; su cumplimiento es de carácter obligatorio como evidencia de participación (AEM).<br><br>
+                        Tiempo estimado de respuesta: 15 a 20 minutos.<br>
+                        <strong>Instrucción:</strong> Responda con sinceridad. No hay respuestas correctas ni incorrectas. Sus respuestas son confidenciales y se usarán de forma agregada para fines académicos e investigativos.</p>
+                        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-regular fa-clock mr-1"></i> Tiempo estimado: 15 a 20 minutos</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-lock mr-1"></i> Confidencial</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-list-check mr-1"></i> 8 preguntas</span>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="diag-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="diag-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="diag-progress" class="text-sm font-bold" style="color: var(--text);">1/8</span>
+                            </div>
+                            <p id="diag-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <p id="diag-hint" class="mt-1 text-xs" style="color: #6c757d;"></p>
+                            <div id="diag-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="diag-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="diag-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="diag-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">¡Diagnóstico completado!</h3>
+                            <p class="mt-2" style="color: var(--text);">Gracias por compartir su perspectiva como profesional en ejercicio. Sus respuestas serán tratadas de forma agregada y confidencial para orientar las mediaciones pedagógicas y como insumo para investigación sobre la realidad organizacional de la región Caribe.</p>
+                            <div id="diag-summary" class="mt-5 space-y-3"></div>
+                            <div class="mt-5 flex gap-3 flex-wrap">
+                                <button id="diag-save" type="button" class="btn-main flex items-center gap-2"><i class="fa-solid fa-save"></i> Guardar diagnóstico</button>
+                                <div style="position: relative; display: inline-block;">
+                                    <button id="diag-export" type="button" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar respuestas <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                                    <div id="export-dropdown" class="hidden" style="position: absolute; top: 100%; left: 0; z-index: 100; min-width: 180px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-top: 4px; overflow: hidden;">
+                                        <button id="export-txt" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-lines" style="color: var(--accent);"></i> Texto (.txt)</button>
+                                        <button id="export-word" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-word" style="color: #2563eb;"></i> Word (.doc)</button>
+                                    </div>
+                                </div>
+                                <button id="diag-restart" type="button" class="btn-soft">Reiniciar</button>
+                            </div>
+                            <div id="diag-save-feedback" class="mt-3 hidden text-sm font-semibold" style="color: var(--accent);"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad1" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad sugerida · Aula Virtual</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🤖 Actividad 1 — Auditoría de IA Ética</h2>
+                        <p class="mt-4 leading-relaxed">Evalúa un algoritmo de selección de personal hipotético bajo los <strong>10 principios éticos de la UNESCO</strong> para la IA. Identifica riesgos, sesgos y propón medidas de mitigación desde la ética organizacional.</p>
+                    </div>
+
+                    <div class="section-card mt-6">
+                        <div class="mb-6 p-4 rounded-lg" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #0ea5e9;">
+                            <h4 class="font-bold text-sm mb-2" style="color: #0369a1;">
+                                <i class="fa-solid fa-info-circle mr-2"></i>¿Cómo funciona?
+                            </h4>
+                            <div class="text-xs space-y-1" style="color: #0369a1;">
+                                <p>📌 Describe el algoritmo de selección de personal a auditar.</p>
+                                <p>📌 Identifica qué principios éticos de la UNESCO podrían vulnerarse.</p>
+                                <p>📌 Analiza los sesgos presentes (género, edad, origen, etc.).</p>
+                                <p>📌 Propón medidas de mitigación desde la ética de las virtudes y la deontología.</p>
+                                <p>📌 Genera el prompt para recibir retroalimentación en Google Gemini.</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-xs font-semibold mb-1" style="color: var(--heading);">
+                                <span id="a1-step-label">Paso 1 de 5</span>
+                                <span id="a1-step-pct">0 de 5 completados</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-gray-200 overflow-hidden">
+                                <div id="a1-prog-bar" class="h-full rounded-full transition-all duration-400" style="width: 20%; background: var(--accent);"></div>
+                            </div>
+                            <div class="flex justify-between mt-2" id="a1-step-dots"></div>
+                        </div>
+
+                        <div id="argyris-form-container"></div>
+
+                        <div class="mt-5 flex items-center justify-between gap-3">
+                            <button type="button" id="a1-prev" class="btn-soft flex items-center gap-2 px-5 py-3" style="visibility:hidden">
+                                <i class="fa-solid fa-chevron-left"></i> Anterior
+                            </button>
+                            <button type="button" id="a1-next" class="btn-main flex items-center gap-2 px-5 py-3">
+                                Siguiente <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div id="a1-finish-btns" class="hidden mt-5 flex flex-wrap gap-3 justify-center">
+                            <button type="button" onclick="generarPromptArgyris()" class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300 hover:shadow-lg" style="background: #D8EBF8; color: #0c7b8a; border: 1px solid #D8EBF8;">
+                                <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Generar y copiar prompt
+                            </button>
+                            <button type="button" onclick="limpiarArgyris()" class="btn-soft">
+                                <i class="fa-solid fa-rotate-left mr-2"></i>Limpiar
+                            </button>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="block text-sm font-bold mb-2" style="color: var(--heading)">Prompt generado para IA</label>
+                            <textarea id="argyris-prompt" rows="6" readonly class="w-full px-4 py-2 border rounded-lg text-sm bg-gray-50 focus:outline-none" style="border-color: var(--line);" placeholder="Aquí aparecerá el prompt que debes pegar en Google Gemini..."></textarea>
+                            <p class="text-xs mt-1" style="color: #6c757d;">Pega este prompt en Google Gemini para recibir la retroalimentación.</p>
+                        </div>
+
+                        <div id="argyris-message" class="hidden mt-4 p-3 rounded-lg text-sm font-semibold text-center" style="background: #D8EBF8; color: #0c7b8a;"></div>
+                    </div>
+                </section>
+
+                <section id="actividad2" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad sugerida · Aula Virtual</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🗺️ Actividad 2 — Mapa de Stakeholders</h2>
+                        <p class="mt-4 leading-relaxed">Arrastra cada parte interesada a la categoría correcta de la matriz de materialidad del proyecto de intervención diseñado en la Unidad 1.</p>
+                    </div>
+
+                    <div class="section-card mt-6">
+                        <div id="senge-game" class="space-y-4">
+                            <div class="mb-4 p-4 rounded-lg" style="background: linear-gradient(135deg, #D8EBF8 0%, #e6f3fa 100%); border: 1px solid #17a2b8;">
+                                <h4 class="font-bold text-sm mb-2" style="color: #0c7b8a;">
+                                    <i class="fa-solid fa-info-circle mr-2"></i>¿Cómo funciona?
+                                </h4>
+                                <div class="text-xs space-y-1" style="color: #0c7b8a;">
+                                    <p>📌 Lee las 5 descripciones de stakeholders.</p>
+                                    <p>📌 Arrastra el tipo de actor a la categoría correspondiente.</p>
+                                    <p>📌 En móvil, haz clic en el actor y luego en la casilla.</p>
+                                    <p>📌 Presiona Verificar para conocer tu puntuación.</p>
+                                </div>
+                            </div>
+                            <div id="senge-labels" class="senge-labels flex flex-wrap gap-2 justify-center min-h-[48px] p-3 rounded-lg border border-dashed" style="border-color: var(--line);"></div>
+                            <div id="senge-descriptions" class="space-y-3"></div>
+                        </div>
+                        <div id="senge-result" class="hidden mt-4 p-4 rounded-lg text-sm"></div>
+
+                        <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                            <button type="button" onclick="verificarSenge()" class="btn-main">Verificar</button>
+                            <button type="button" onclick="reiniciarSenge()" class="btn-soft">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad3" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad sugerida · Aula Virtual</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📊 Actividad 3 — Taller de SROI</h2>
+                        <p class="mt-4 leading-relaxed">Calcula el <strong>Retorno Social de la Inversión (SROI)</strong> de una iniciativa de bienestar laboral. Describe la iniciativa, identifica los beneficios sociales y estima el impacto ético y económico.</p>
+                    </div>
+
+                    <div class="section-card mt-6">
+                        <div class="mb-6 p-4 rounded-lg" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1px solid #16a34a;">
+                            <h4 class="font-bold text-sm mb-2" style="color: #15803d;">
+                                <i class="fa-solid fa-info-circle mr-2"></i>¿Cómo funciona?
+                            </h4>
+                            <div class="text-xs space-y-1" style="color: #15803d;">
+                                <p>📌 Describe la iniciativa de bienestar laboral a evaluar.</p>
+                                <p>📌 Identifica los grupos beneficiados (stakeholders).</p>
+                                <p>📌 Estima los beneficios sociales cuantificables e intangibles.</p>
+                                <p>📌 Calcula la inversión total y el ratio SROI estimado.</p>
+                                <p>📌 Genera el prompt para recibir retroalimentación en Google Gemini.</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-xs font-semibold mb-1" style="color: var(--heading);">
+                                <span id="a3-step-label">Paso 1 de 5</span>
+                                <span id="a3-step-pct">0 de 5 completados</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-gray-200 overflow-hidden">
+                                <div id="a3-prog-bar" class="h-full rounded-full transition-all duration-400" style="width: 20%; background: var(--accent);"></div>
+                            </div>
+                            <div class="flex justify-between mt-2" id="a3-step-dots"></div>
+                        </div>
+
+                        <div id="sroi-form-container"></div>
+
+                        <div class="mt-5 flex items-center justify-between gap-3">
+                            <button type="button" id="a3-prev" class="btn-soft flex items-center gap-2 px-5 py-3" style="visibility:hidden">
+                                <i class="fa-solid fa-chevron-left"></i> Anterior
+                            </button>
+                            <button type="button" id="a3-next" class="btn-main flex items-center gap-2 px-5 py-3">
+                                Siguiente <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div id="a3-finish-btns" class="hidden mt-5 flex flex-wrap gap-3 justify-center">
+                            <button type="button" onclick="generarPromptSROI()" class="px-4 py-2 rounded-lg font-bold text-sm transition-all duration-300 hover:shadow-lg" style="background: #dcfce7; color: #15803d; border: 1px solid #16a34a;">
+                                <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Generar y copiar prompt
+                            </button>
+                            <button type="button" onclick="limpiarSROI()" class="btn-soft">
+                                <i class="fa-solid fa-rotate-left mr-2"></i>Limpiar
+                            </button>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="block text-sm font-bold mb-2" style="color: var(--heading)">Prompt generado para IA</label>
+                            <textarea id="sroi-prompt" rows="6" readonly class="w-full px-4 py-2 border rounded-lg text-sm bg-gray-50 focus:outline-none" style="border-color: var(--line);" placeholder="Aquí aparecerá el prompt que debes pegar en Google Gemini..."></textarea>
+                            <p class="text-xs mt-1" style="color: #6c757d;">Pega este prompt en Google Gemini para recibir la retroalimentación.</p>
+                        </div>
+
+                        <div id="sroi-message" class="hidden mt-4 p-3 rounded-lg text-sm font-semibold text-center" style="background: #dcfce7; color: #15803d;"></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // ===== DIAGNÓSTICO =====
+        const diagQuestions = [
+            { id: 'd1', question: '¿Ha sido testigo de prácticas antiéticas en la gestión del talento humano (discriminación, acoso, nepotismo, manipulación de evaluaciones)?', hint: 'Seleccione una opción.', type: 'radio', options: [
+                { value: 'si', text: 'Sí' }, { value: 'no', text: 'No' }, { value: 'prefiero-no-responder', text: 'Prefiero no responder' }
+            ]},
+            { id: 'd2', question: '¿Su organización cuenta con un código de ética o de conducta formalmente establecido y conocido por los colaboradores?', hint: 'Seleccione una opción.', type: 'radio', options: [
+                { value: 'si-conocido-aplicado', text: 'Sí, conocido y aplicado' },
+                { value: 'si-poco-conocido', text: 'Sí, pero poco conocido' },
+                { value: 'no-existe', text: 'No existe' },
+                { value: 'no-lo-se', text: 'No lo sé' }
+            ]},
+            { id: 'd3', question: '¿Qué tan importante considera medir el impacto de las intervenciones de gestión humana con indicadores cuantitativos?', hint: 'Escala: 1 = Nada importante · 5 = Fundamental', type: 'radio', options: [
+                { value: '1', text: '1 - Nada importante' }, { value: '2', text: '2 - Poco importante' }, { value: '3', text: '3 - Moderadamente importante' }, { value: '4', text: '4 - Importante' }, { value: '5', text: '5 - Fundamental' }
+            ]},
+            { id: 'd4', question: '¿Su organización mide actualmente algún indicador de gestión del talento humano?', hint: 'Seleccione todas las opciones que apliquen.', type: 'checkbox', options: [
+                { value: 'rotacion', text: 'Rotación' }, { value: 'ausentismo', text: 'Ausentismo' }, { value: 'clima-laboral', text: 'Clima laboral' }, { value: 'desempeno', text: 'Desempeño' }, { value: 'accidentalidad', text: 'Accidentalidad' }, { value: 'ninguno', text: 'Ninguno' }
+            ]},
+            { id: 'd5', question: '¿Cree que la rendición de cuentas en gestión humana —hacia directivos, colaboradores y sociedad— mejora los resultados organizacionales?', hint: 'Escala: 1 = No lo creo · 5 = Totalmente de acuerdo', type: 'radio', options: [
+                { value: '1', text: '1 - No lo creo' }, { value: '2', text: '2 - Lo dudo' }, { value: '3', text: '3 - Estoy indeciso/a' }, { value: '4', text: '4 - Estoy de acuerdo' }, { value: '5', text: '5 - Totalmente de acuerdo' }
+            ]},
+            { id: 'd6', question: '¿En su experiencia, las decisiones de despido, ascenso y reconocimiento en su organización siguen criterios éticos y objetivos?', hint: 'Escala: 1 = Nunca · 5 = Siempre', type: 'radio', options: [
+                { value: '1', text: '1 - Nunca' }, { value: '2', text: '2 - Casi nunca' }, { value: '3', text: '3 - Algunas veces' }, { value: '4', text: '4 - Casi siempre' }, { value: '5', text: '5 - Siempre' }
+            ]},
+            { id: 'd7', question: '¿Considera que la Universidad de Córdoba debería comprometerse activamente en la formación ética de los gerentes de talento humano de la región?', hint: 'Escala: 1 = No es su rol · 5 = Es su responsabilidad central', type: 'radio', options: [
+                { value: '1', text: '1 - No es su rol' }, { value: '2', text: '2 - Poco relevante' }, { value: '3', text: '3 - Relevante, pero no central' }, { value: '4', text: '4 - Muy relevante' }, { value: '5', text: '5 - Es su responsabilidad central' }
+            ]},
+            { id: 'd8', question: '¿Qué tema relacionado con ética o medición de impacto organizacional le gustaría ver investigado o publicado como resultado de este programa?', hint: 'Máx. 150 palabras.', type: 'textarea', textMax: 1000, textPlaceholder: 'Escriba aquí su propuesta de tema (máx. 150 palabras)...' }
+        ];
+
+        let currentDiag = 0;
+        let diagAnswers = JSON.parse(localStorage.getItem('diagnostico_u03') || '{}');
+
+        const diagBox = document.getElementById('diag-box');
+        const diagResults = document.getElementById('diag-results');
+
+        function renderDiag() {
+            const q = diagQuestions[currentDiag];
+            document.getElementById('diag-title').textContent = `Pregunta ${currentDiag + 1}`;
+            document.getElementById('diag-progress').textContent = `${currentDiag + 1}/${diagQuestions.length}`;
+            document.getElementById('diag-text').textContent = q.question;
+            document.getElementById('diag-hint').textContent = q.hint || '';
+            const opts = document.getElementById('diag-options');
+            opts.innerHTML = '';
+
+            if (q.type === 'radio' || q.type === 'radio-text' || q.type === 'radio-likert') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    if (diagAnswers[q.id] === opt.value) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        diagAnswers[q.id] = opt.value;
+                        opts.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                    });
+                    opts.appendChild(btn);
+                });
+                if (q.type === 'radio-likert') {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mt-5 p-4 rounded-xl';
+                    wrap.style.cssText = 'background: var(--surface-soft); border: 1px solid var(--line);';
+                    wrap.innerHTML = `<label class="block text-sm font-bold mb-3" style="color: var(--heading);">${q.likertLabel}:</label>
+                        <div class="flex flex-wrap gap-2" id="diag-likert-opts">
+                            ${[1,2,3,4,5].map(n => `<button type="button" class="quiz-option" style="width:auto;padding:10px 20px;" data-likert="${n}" ${diagAnswers[q.likertKey] == n ? 'class="quiz-option selected"' : ''}>${n}</button>`).join('')}
+                        </div>`;
+                    opts.appendChild(wrap);
+                    wrap.querySelectorAll('[data-likert]').forEach(btn => {
+                        if (diagAnswers[q.likertKey] == btn.dataset.likert) btn.classList.add('selected');
+                        btn.addEventListener('click', () => {
+                            diagAnswers[q.likertKey] = btn.dataset.likert;
+                            wrap.querySelectorAll('[data-likert]').forEach(b => b.classList.remove('selected'));
+                            btn.classList.add('selected');
+                        });
+                    });
+                }
+                if (q.type === 'radio-text') {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mt-4';
+                    wrap.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">Descripción breve (opcional):</label>
+                        <textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 70px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id + '_text'] || ''}</textarea>
+                        <span class="mt-1 block text-xs font-semibold" id="diag-text-counter">${(diagAnswers[q.id + '_text'] || '').length}/${q.textMax}</span>`;
+                    opts.appendChild(wrap);
+                    const ta = wrap.querySelector('#diag-text-input');
+                    const counter = wrap.querySelector('#diag-text-counter');
+                    ta.addEventListener('input', () => { diagAnswers[q.id + '_text'] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+                }
+            } else if (q.type === 'checkbox') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    const saved = diagAnswers[q.id] || [];
+                    if (saved.includes(opt.value)) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        let arr = diagAnswers[q.id] || [];
+                        if (arr.includes(opt.value)) { arr = arr.filter(v => v !== opt.value); btn.classList.remove('selected'); }
+                        else { arr.push(opt.value); btn.classList.add('selected'); }
+                        diagAnswers[q.id] = arr;
+                        const otro = opts.querySelector('#otro-wrapper');
+                        if (otro) otro.style.display = arr.includes('otro') ? 'block' : 'none';
+                    });
+                    opts.appendChild(btn);
+                });
+                const otro = document.createElement('div');
+                otro.id = 'otro-wrapper';
+                otro.style.display = (diagAnswers[q.id] || []).includes('otro') ? 'block' : 'none';
+                otro.className = 'mt-3';
+                otro.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">¿Cuál otro problema? (opcional):</label>
+                    <input type="text" id="d3-otro-input" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" placeholder="Describe el otro tipo de problema..." value="${diagAnswers['d3_otro'] || ''}">
+                    <span class="mt-1 block text-xs font-semibold" id="otro-char-count">${(diagAnswers['d3_otro'] || '').length}/100</span>`;
+                opts.appendChild(otro);
+                const otroInput = otro.querySelector('#d3-otro-input');
+                otro.querySelector('#otro-char-count').addEventListener = null;
+                otroInput.addEventListener('input', () => {
+                    diagAnswers['d3_otro'] = otroInput.value;
+                    const c = otro.querySelector('#otro-char-count');
+                    if (c) c.textContent = `${otroInput.value.length}/100`;
+                });
+            } else if (q.type === 'textarea') {
+                const wrap = document.createElement('div');
+                wrap.innerHTML = `<textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 120px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id] || ''}</textarea>
+                    <span class="mt-1 block text-xs font-semibold" id="diag-char-count">${(diagAnswers[q.id] || '').length}/${q.textMax}</span>`;
+                opts.appendChild(wrap);
+                const ta = wrap.querySelector('#diag-text-input');
+                const counter = wrap.querySelector('#diag-char-count');
+                ta.addEventListener('input', () => { diagAnswers[q.id] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+            }
+            document.getElementById('diag-prev').disabled = currentDiag === 0;
+            document.getElementById('diag-next').textContent = currentDiag === diagQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('diag-prev').addEventListener('click', () => { if (currentDiag > 0) { currentDiag--; renderDiag(); } });
+        document.getElementById('diag-next').addEventListener('click', () => {
+            const q = diagQuestions[currentDiag];
+            if ((q.type === 'radio' || q.type === 'radio-text' || q.type === 'radio-likert') && !diagAnswers[q.id]) { alert('Por favor selecciona una respuesta antes de continuar.'); return; }
+            if (currentDiag < diagQuestions.length - 1) { currentDiag++; renderDiag(); }
+            else { showDiagResults(); }
+        });
+
+        function showDiagResults() {
+            let summaryHTML = '';
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers['d3_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                    if (q.type === 'radio-likert' && diagAnswers[q.likertKey]) ansText += ` — Efectividad: ${diagAnswers[q.likertKey]}/5`;
+                }
+                summaryHTML += `<div class="p-3 rounded-lg" style="background: var(--surface); border: 1px solid var(--line); overflow: hidden;">
+                    <p class="text-xs font-bold mb-1" style="color: var(--accent);">Pregunta ${i + 1}</p>
+                    <p class="text-sm font-bold" style="color: var(--heading);">${q.question}</p>
+                    <p class="mt-1 text-sm" style="color: var(--text); white-space: pre-wrap; word-break: break-word;">${ansText}</p>
+                </div>`;
+            });
+            document.getElementById('diag-summary').innerHTML = summaryHTML;
+            diagBox.classList.add('hidden');
+            diagResults.classList.remove('hidden');
+        }
+
+        document.getElementById('diag-save').addEventListener('click', () => {
+            localStorage.setItem('diagnostico_u03', JSON.stringify(diagAnswers));
+            const fb = document.getElementById('diag-save-feedback');
+            fb.textContent = '✓ Diagnóstico guardado correctamente en este navegador.';
+            fb.classList.remove('hidden');
+        });
+
+        document.getElementById('diag-restart').addEventListener('click', () => {
+            currentDiag = 0; diagAnswers = {}; localStorage.removeItem('diagnostico_u03'); diagBox.classList.remove('hidden'); diagResults.classList.add('hidden'); renderDiag();
+            document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        const exportDropdown = document.getElementById('export-dropdown');
+        document.getElementById('diag-export').addEventListener('click', (e) => { e.stopPropagation(); exportDropdown.classList.toggle('hidden'); });
+        document.addEventListener('click', () => exportDropdown.classList.add('hidden'));
+
+        function buildDiagExportLines() {
+            const lines = [];
+            lines.push('DIAGNÓSTICO: PERCEPCIONES SOBRE ÉTICA, TRANSPARENCIA E INDICADORES DE GESTIÓN');
+            lines.push('Especialización en Gerencia del Talento Humano y Desarrollo Organizacional — Unidad 3');
+            lines.push('Fecha: ' + new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' }));
+            lines.push('='.repeat(60));
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers['d3_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                    if (q.type === 'radio-likert' && diagAnswers[q.likertKey]) ansText += ` — Efectividad: ${diagAnswers[q.likertKey]}/5`;
+                }
+                lines.push(`PREGUNTA ${i + 1}: ${q.question}`);
+                lines.push(`RESPUESTA: ${ansText}`);
+                lines.push('');
+            });
+            return lines.join('\n');
+        }
+
+        document.getElementById('export-txt').addEventListener('click', () => {
+            const blob = new Blob([buildDiagExportLines()], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U3.txt';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('export-word').addEventListener('click', () => {
+            const lines = buildDiagExportLines().split('\n').map(l => l ? `<p>${l}</p>` : '<br>').join('');
+            const html = `<html><head><meta charset='utf-8'><title>Diagnóstico U3</title></head><body><h2>Percepciones sobre Ética, Transparencia e Indicadores — Unidad 3</h2>${lines}</body></html>`;
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U3.doc';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        renderDiag();
+
+                // ===== CONTADORES =====
+        function updateCounter(fieldId) {
+            const field = document.getElementById(fieldId);
+            const counter = document.querySelector(`[data-counter-for="${fieldId}"]`);
+            const progressBar = document.querySelector(`[data-progress-for="${fieldId}"]`);
+            if (field && counter) {
+                const currentLength = field.value.length;
+                const maxLength = field.maxLength;
+                counter.textContent = `${currentLength}/${maxLength}`;
+                if (progressBar) {
+                    progressBar.style.width = `${(currentLength / maxLength) * 100}%`;
+                }
+            }
+        }
+
+
+        // ===== WIZARD GENÉRICO PARA FORMULARIOS =====
+        function buildFormWizard(fields, options) {
+            const container = document.getElementById(options.containerId);
+            const dotsEl = document.getElementById(options.dotsId);
+            const prevBtn = document.getElementById(options.prevId);
+            const nextBtn = document.getElementById(options.nextId);
+            const finishEl = document.getElementById(options.finishId);
+            const progBar = document.getElementById(options.progBarId);
+            const stepLabel = document.getElementById(options.stepLabelId);
+            const stepPct = document.getElementById(options.stepPctId);
+            const state = { current: 0 };
+
+            function renderCards() {
+                container.innerHTML = fields.map((f, idx) => `
+                    <div class="wizard-card p-5 rounded-xl border-2" data-step="${idx}" style="background: var(--surface-soft); border-color: var(--line); display: ${idx === state.current ? 'block' : 'none'};">
+                        <label class="flex items-start gap-3 font-bold mb-2" style="color: var(--heading);">
+                            <span class="text-sm font-black" style="color: var(--accent);">${idx + 1}</span>
+                            <span>${f.label}</span>
+                        </label>
+                        <textarea id="${f.id}" rows="${f.rows}" maxlength="${f.max}" class="w-full p-4 rounded-lg border bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);" placeholder="${f.placeholder}"></textarea>
+                        <div class="mt-2 flex items-center gap-2">
+                            <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="${f.id}">0/${f.max}</span>
+                            <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden"><div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="${f.id}"></div></div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            function renderDots() {
+                dotsEl.innerHTML = fields.map((f, idx) => `
+                    <button type="button" data-dot-step="${idx}" title="${f.label}" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--line);font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.2s;background:white;color:var(--text);">${idx + 1}</button>
+                `).join('');
+                dotsEl.querySelectorAll('button').forEach(btn => {
+                    btn.addEventListener('click', () => goTo(parseInt(btn.dataset.dotStep)));
+                });
+            }
+
+            function updateDot(idx) {
+                const dot = dotsEl.querySelector(`[data-dot-step="${idx}"]`);
+                if (!dot) return;
+                const field = document.getElementById(fields[idx].id);
+                const filled = field && field.value.trim().length > 0;
+                dot.style.background = idx === state.current ? 'var(--accent)' : filled ? '#d1fae5' : 'white';
+                dot.style.color = idx === state.current ? 'white' : 'var(--text)';
+                dot.style.borderColor = idx === state.current ? 'var(--accent)' : filled ? 'var(--accent)' : 'var(--line)';
+            }
+
+            function update() {
+                const total = fields.length;
+                container.querySelectorAll('.wizard-card').forEach((c, i) => {
+                    c.style.display = i === state.current ? 'block' : 'none';
+                });
+                const pct = Math.round(((state.current + 1) / total) * 100);
+                progBar.style.width = `${pct}%`;
+                stepLabel.textContent = `Paso ${state.current + 1} de ${total}`;
+                const filled = fields.filter(f => {
+                    const el = document.getElementById(f.id);
+                    return el && el.value.trim().length > 0;
+                }).length;
+                stepPct.textContent = `${filled} de ${total} completados`;
+                fields.forEach((_, i) => updateDot(i));
+                prevBtn.style.visibility = state.current === 0 ? 'hidden' : 'visible';
+                if (state.current === total - 1) {
+                    nextBtn.style.display = 'none';
+                    finishEl.classList.remove('hidden');
+                } else {
+                    nextBtn.style.display = 'flex';
+                    finishEl.classList.add('hidden');
+                }
+            }
+
+            function goTo(idx) {
+                state.current = Math.max(0, Math.min(idx, fields.length - 1));
+                update();
+            }
+
+            prevBtn.addEventListener('click', () => goTo(state.current - 1));
+            nextBtn.addEventListener('click', () => goTo(state.current + 1));
+
+            renderCards();
+            renderDots();
+            update();
+
+            return { state, goTo, update };
+        }
+
+        // ===== ACTIVIDAD 1: AUDITORÍA DE IA =====
+        const argyrisFields = [
+            { id: 'argyris-caso', label: 'Descripción del algoritmo de selección', max: 500, placeholder: 'Describe el algoritmo hipotético de selección de personal: criterios que usa, datos que procesa, nivel de automatización...', rows: 4 },
+            { id: 'argyris-simple', label: 'Principios éticos de la UNESCO posiblemente vulnerados', max: 300, placeholder: '¿Qué principios de la UNESCO para la IA podrían vulnerarse? (proporcionalidad, no maleficencia, equidad, privacidad, transparencia...)', rows: 3 },
+            { id: 'argyris-doble', label: 'Sesgos identificados', max: 300, placeholder: 'Describe los sesgos detectados: género, edad, etnia, nivel socioeconómico, discapacidad, etc.', rows: 3 },
+            { id: 'argyris-defensivas', label: 'Medidas de mitigación desde la ética de las virtudes y la deontología', max: 300, placeholder: 'Propón medidas concretas para corregir los sesgos y hacer el algoritmo más ético...', rows: 3 },
+            { id: 'argyris-intervencion', label: 'Conclusión ética sobre el uso del algoritmo', max: 400, placeholder: 'Concluye si el uso de este algoritmo es ético o debe ser modificado/descartado y por qué...', rows: 3 }
+        ];
+
+        let argyrisWizard;
+
+        function renderArgyrisForm() {
+            argyrisWizard = buildFormWizard(argyrisFields, {
+                containerId: 'argyris-form-container',
+                dotsId: 'a1-step-dots',
+                prevId: 'a1-prev',
+                nextId: 'a1-next',
+                finishId: 'a1-finish-btns',
+                progBarId: 'a1-prog-bar',
+                stepLabelId: 'a1-step-label',
+                stepPctId: 'a1-step-pct'
+            });
+        }
+
+        function initArgyrisCounters() {
+            argyrisFields.forEach(f => {
+                const field = document.getElementById(f.id);
+                if (field) {
+                    field.addEventListener('input', () => {
+                        updateCounter(f.id);
+                        argyrisWizard.update();
+                    });
+                    updateCounter(f.id);
+                }
+            });
+            argyrisWizard.update();
+        }
+
+        function getArgyrisData() {
+            const data = {};
+            argyrisFields.forEach(f => data[f.id] = document.getElementById(f.id)?.value || '');
+            return data;
+        }
+
+        function validarArgyris() {
+            const d = getArgyrisData();
+            return argyrisFields.filter(f => !d[f.id].trim()).map(f => f.label);
+        }
+
+        function generarPromptArgyris() {
+            const missing = validarArgyris();
+            if (missing.length > 0) {
+                alert('Por favor complete todos los campos antes de generar el prompt:\n\n• ' + missing.join('\n• '));
+                return;
+            }
+            const d = getArgyrisData();
+            const prompt = `Actúa como experto en ética de la inteligencia artificial y gestión del talento humano. Un estudiante de la especialización en GTHDO ha realizado una auditoría ética de un algoritmo de selección de personal bajo los principios UNESCO para la IA. Revisa el análisis y da retroalimentación constructiva y didáctica.
+
+Algoritmo auditado:
+---
+${d['argyris-caso']}
+---
+
+Principios éticos de la UNESCO posiblemente vulnerados:
+${d['argyris-simple']}
+
+Sesgos identificados:
+${d['argyris-doble']}
+
+Medidas de mitigación desde la ética de las virtudes y la deontología:
+${d['argyris-defensivas']}
+
+Conclusión ética sobre el uso del algoritmo:
+${d['argyris-intervencion']}
+
+Por favor responde con:
+1. Evaluación general de la auditoría.
+2. ¿Los principios UNESCO identificados son los más relevantes para este caso?
+3. ¿Los sesgos detectados son los más críticos? ¿Falta alguno?
+4. ¿Las medidas de mitigación son viables y éticamente sólidas?
+5. ¿La conclusión está bien fundamentada desde la ética organizacional?
+6. Puntos que el estudiante debería profundizar.`;
+            const promptBox = document.getElementById('argyris-prompt');
+            if (promptBox) promptBox.value = prompt;
+            copiarPromptArgyris(prompt);
+        }
+
+        function copiarPromptArgyris(prompt) {
+            const text = prompt || document.getElementById('argyris-prompt')?.value || '';
+            if (!text) return;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    mostrarMensajeArgyris('Prompt copiado al portapapeles. Pégalo en Google Gemini para recibir la retroalimentación.');
+                }).catch(() => {
+                    mostrarMensajeArgyris('No se pudo copiar automáticamente. Copia el prompt del recuadro.');
+                });
+            } else {
+                mostrarMensajeArgyris('Copia el prompt manualmente del recuadro.');
+            }
+        }
+
+        function mostrarMensajeArgyris(msg) {
+            const el = document.getElementById('argyris-message');
+            if (el) {
+                el.textContent = msg;
+                el.classList.remove('hidden');
+            }
+        }
+
+        function limpiarArgyris() {
+            argyrisFields.forEach(f => {
+                const field = document.getElementById(f.id);
+                if (field) { field.value = ''; updateCounter(f.id); }
+            });
+            argyrisWizard.goTo(0);
+            argyrisWizard.update();
+            const promptBox = document.getElementById('argyris-prompt');
+            if (promptBox) promptBox.value = '';
+            const msg = document.getElementById('argyris-message');
+            if (msg) {
+                msg.textContent = '';
+                msg.classList.add('hidden');
+            }
+            document.getElementById('actividad1')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== ACTIVIDAD 2: MAPA DE STAKEHOLDERS =====
+        const sengeDisciplines = [
+            { key: 'primario', label: 'Stakeholder Primario', desc: 'Directamente afectado por la intervención: recibe beneficios o impactos directos (ej. trabajadores beneficiados por el programa de bienestar).' },
+            { key: 'secundario', label: 'Stakeholder Secundario', desc: 'Involucrado indirectamente: puede influir o verse afectado de forma mediata (ej. familia de los empleados, proveedores de la organización).' },
+            { key: 'clave', label: 'Stakeholder Clave', desc: 'Tiene poder de decisión o puede bloquear la intervención: su aprobación es indispensable (ej. dirección general, junta directiva).' },
+            { key: 'excluido', label: 'Stakeholder Excluido', desc: 'Grupo afectado que no participa en el proceso de decisión pero cuyo interés debe considerarse éticamente (ej. comunidades aledañas, grupos vulnerables).' },
+            { key: 'facilitador', label: 'Stakeholder Facilitador', desc: 'Apoya la implementación sin ser el destinatario directo: aporta recursos, conocimiento o legitimidad (ej. área de RRHH, consultores externos).' }
+        ];
+
+        let sengeAnswers = Array(sengeDisciplines.length).fill(null);
+        let sengeSelectedKey = null;
+
+        function renderSengeGame() {
+            const labelsContainer = document.getElementById('senge-labels');
+            const descContainer = document.getElementById('senge-descriptions');
+            if (!labelsContainer || !descContainer) return;
+
+            const assignedKeys = new Set(sengeAnswers.filter(k => k));
+            labelsContainer.innerHTML = sengeDisciplines.map(d => {
+                const isSelected = sengeSelectedKey === d.key;
+                return `
+                    <div class="senge-label px-3 py-2 rounded-lg border text-sm font-semibold cursor-move select-none transition-all duration-200 hover:shadow-md ${assignedKeys.has(d.key) ? 'hidden' : ''}" 
+                         data-key="${d.key}" 
+                         draggable="true"
+                         style="${isSelected ? 'box-shadow: 0 0 0 2px #17a2b8;' : ''}">
+                        ${d.label}
+                    </div>
+                `;
+            }).join('');
+
+            descContainer.innerHTML = sengeDisciplines.map((d, i) => {
+                const assignedKey = sengeAnswers[i];
+                const assignedLabel = assignedKey ? sengeDisciplines.find(s => s.key === assignedKey)?.label : null;
+                return `
+                    <div class="senge-dropzone p-3 rounded-lg border transition-all duration-200" data-index="${i}">
+                        <div class="flex items-center gap-3">
+                            <span class="senge-number flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold text-white">${i + 1}</span>
+                            <p class="text-sm flex-1">${d.desc}</p>
+                            <div class="senge-slot min-w-[160px] min-h-[42px] rounded-lg border border-dashed flex items-center justify-center text-xs px-2 text-center transition-all duration-200" style="${sengeSelectedKey ? 'background: #f0f9ff; border-color: #17a2b8;' : ''}">
+                                ${assignedLabel ? `<span class="senge-assigned text-sm font-semibold cursor-pointer" data-key="${assignedKey}" draggable="true">${assignedLabel}</span>` : '<span>Suelta aquí</span>'}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            attachSengeEvents();
+        }
+
+        function attachSengeEvents() {
+            const labelsContainer = document.getElementById('senge-labels');
+
+            document.querySelectorAll('.senge-label').forEach(el => {
+                el.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', el.dataset.key);
+                    el.classList.add('opacity-50');
+                });
+                el.addEventListener('dragend', () => {
+                    document.querySelectorAll('.senge-label').forEach(l => l.classList.remove('opacity-50'));
+                });
+                el.addEventListener('click', () => {
+                    sengeSelectedKey = sengeSelectedKey === el.dataset.key ? null : el.dataset.key;
+                    renderSengeGame();
+                });
+            });
+
+            document.querySelectorAll('.senge-dropzone').forEach(zone => {
+                const slot = zone.querySelector('.senge-slot');
+                zone.addEventListener('dragover', e => {
+                    e.preventDefault();
+                    slot.style.borderColor = '#17a2b8';
+                    slot.style.backgroundColor = '#D8EBF8';
+                });
+                zone.addEventListener('dragleave', () => {
+                    slot.style.borderColor = '';
+                    slot.style.backgroundColor = '';
+                });
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    const key = e.dataTransfer.getData('text/plain');
+                    assignSengeLabel(key, parseInt(zone.dataset.index));
+                    slot.style.borderColor = '';
+                    slot.style.backgroundColor = '';
+                });
+                zone.addEventListener('click', () => {
+                    const index = parseInt(zone.dataset.index);
+                    if (sengeSelectedKey) {
+                        assignSengeLabel(sengeSelectedKey, index);
+                    } else if (sengeAnswers[index]) {
+                        removeSengeAssignment(sengeAnswers[index]);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.senge-assigned').forEach(el => {
+                el.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', el.dataset.key);
+                    el.classList.add('opacity-50');
+                });
+                el.addEventListener('dragend', () => {
+                    document.querySelectorAll('.senge-assigned').forEach(l => l.classList.remove('opacity-50'));
+                });
+                el.addEventListener('click', e => {
+                    e.stopPropagation();
+                    removeSengeAssignment(el.dataset.key);
+                });
+            });
+
+            labelsContainer.addEventListener('dragover', e => e.preventDefault());
+            labelsContainer.addEventListener('drop', e => {
+                e.preventDefault();
+                const key = e.dataTransfer.getData('text/plain');
+                removeSengeAssignment(key);
+            });
+        }
+
+        function assignSengeLabel(key, index) {
+            sengeAnswers = sengeAnswers.map(k => k === key ? null : k);
+            sengeAnswers[index] = key;
+            sengeSelectedKey = null;
+            renderSengeGame();
+        }
+
+        function removeSengeAssignment(key) {
+            sengeAnswers = sengeAnswers.map(k => k === key ? null : k);
+            sengeSelectedKey = null;
+            renderSengeGame();
+        }
+
+        function initSengeGame() {
+            sengeAnswers = Array(sengeDisciplines.length).fill(null);
+            sengeSelectedKey = null;
+            renderSengeGame();
+        }
+
+        function verificarSenge() {
+            let correct = 0;
+            let html = '';
+            sengeDisciplines.forEach((d, i) => {
+                const answer = sengeAnswers[i] || '';
+                const isCorrect = answer === d.key;
+                if (isCorrect) correct++;
+                html += `<div class="p-3 rounded-lg mb-2 ${isCorrect ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}">
+                    <p class="font-semibold text-sm">${i + 1}. ${d.desc}</p>
+                    <p class="text-xs mt-1">Tu respuesta: ${answer ? sengeDisciplines.find(s => s.key === answer)?.label || answer : 'Sin respuesta'}</p>
+                    ${!isCorrect ? `<p class="text-xs mt-1 text-green-700">Correcta: ${d.label}</p>` : ''}
+                </div>`;
+            });
+            html += `<p class="text-center font-bold text-lg mt-3">Puntuación: ${correct}/${sengeDisciplines.length}</p>`;
+            const result = document.getElementById('senge-result');
+            result.innerHTML = html;
+            result.classList.remove('hidden');
+        }
+
+        function reiniciarSenge() {
+            initSengeGame();
+            const result = document.getElementById('senge-result');
+            result.innerHTML = '';
+            result.classList.add('hidden');
+            document.getElementById('actividad2')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== ACTIVIDAD 3: TALLER SROI =====
+        const sroiFields = [
+            { id: 'sroi-iniciativa', label: 'Descripción de la iniciativa de bienestar laboral', max: 500, placeholder: 'Describe la iniciativa: nombre, objetivo, duración, área de la organización donde se implementa...', rows: 4 },
+            { id: 'sroi-stakeholders', label: 'Grupos beneficiados (stakeholders)', max: 300, placeholder: 'Identifica quiénes se benefician directamente: empleados, familias, comunidad, organización...', rows: 3 },
+            { id: 'sroi-beneficios', label: 'Beneficios sociales estimados (cuantitativos e intangibles)', max: 400, placeholder: 'Ej: reducción de ausentismo, mejora del clima, disminución de rotación, bienestar emocional, fortalecimiento de confianza...', rows: 3 },
+            { id: 'sroi-inversion', label: 'Inversión total estimada (en pesos o USD)', max: 200, placeholder: 'Ej: $5.000.000 COP en capacitaciones, espacios de bienestar y horas de personal...', rows: 2 },
+            { id: 'sroi-ratio', label: 'Ratio SROI estimado y justificación ética', max: 400, placeholder: 'Ej: por cada $1 invertido se generan $3 en valor social. Justifica desde la ética organizacional y los recursos morales...', rows: 3 }
+        ];
+
+        let sroiWizard;
+
+        function renderSROIForm() {
+            sroiWizard = buildFormWizard(sroiFields, {
+                containerId: 'sroi-form-container',
+                dotsId: 'a3-step-dots',
+                prevId: 'a3-prev',
+                nextId: 'a3-next',
+                finishId: 'a3-finish-btns',
+                progBarId: 'a3-prog-bar',
+                stepLabelId: 'a3-step-label',
+                stepPctId: 'a3-step-pct'
+            });
+        }
+
+        function initSROICounters() {
+            sroiFields.forEach(f => {
+                const field = document.getElementById(f.id);
+                if (field) {
+                    field.addEventListener('input', () => {
+                        updateCounter(f.id);
+                        sroiWizard.update();
+                    });
+                    updateCounter(f.id);
+                }
+            });
+            sroiWizard.update();
+        }
+
+        function generarPromptSROI() {
+            const data = {};
+            sroiFields.forEach(f => data[f.id] = document.getElementById(f.id)?.value || '');
+            const missing = sroiFields.filter(f => !data[f.id].trim()).map(f => f.label);
+            if (missing.length > 0) {
+                alert('Por favor complete todos los campos antes de generar el prompt:\n\n• ' + missing.join('\n• '));
+                return;
+            }
+            const prompt = `Actúa como experto en medición de impacto social y ética organizacional. Un estudiante de la especialización en GTHDO ha realizado un ejercicio de cálculo de SROI para una iniciativa de bienestar laboral. Revisa el análisis y da retroalimentación constructiva y didáctica.
+
+Iniciativa de bienestar laboral:
+---
+${data['sroi-iniciativa']}
+---
+
+Grupos beneficiados (stakeholders):
+${data['sroi-stakeholders']}
+
+Beneficios sociales estimados:
+${data['sroi-beneficios']}
+
+Inversión total estimada:
+${data['sroi-inversion']}
+
+Ratio SROI estimado y justificación ética:
+${data['sroi-ratio']}
+
+Por favor responde con:
+1. Evaluación general del ejercicio SROI.
+2. ¿Los stakeholders identificados son los más relevantes?
+3. ¿Los beneficios sociales están bien definidos y son medibles?
+4. ¿El ratio SROI estimado es razonable para este tipo de iniciativa?
+5. ¿La justificación ética conecta correctamente con los recursos morales y la ética organizacional?
+6. Recomendaciones para mejorar el cálculo y la argumentación.`;
+            const promptBox = document.getElementById('sroi-prompt');
+            if (promptBox) promptBox.value = prompt;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(prompt).then(() => {
+                    const el = document.getElementById('sroi-message');
+                    if (el) { el.textContent = 'Prompt copiado al portapapeles. Pégalo en Google Gemini.'; el.classList.remove('hidden'); }
+                }).catch(() => {
+                    const el = document.getElementById('sroi-message');
+                    if (el) { el.textContent = 'Copia el prompt manualmente del recuadro.'; el.classList.remove('hidden'); }
+                });
+            }
+        }
+
+        function limpiarSROI() {
+            sroiFields.forEach(f => {
+                const field = document.getElementById(f.id);
+                if (field) { field.value = ''; updateCounter(f.id); }
+            });
+            sroiWizard.goTo(0);
+            sroiWizard.update();
+            const promptBox = document.getElementById('sroi-prompt');
+            if (promptBox) promptBox.value = '';
+            const msg = document.getElementById('sroi-message');
+            if (msg) { msg.textContent = ''; msg.classList.add('hidden'); }
+            document.getElementById('actividad3')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Exponer funciones usadas en atributos onclick al ámbito global
+        window.verificarSenge = verificarSenge;
+        window.reiniciarSenge = reiniciarSenge;
+        window.assignSengeLabel = assignSengeLabel;
+        window.removeSengeAssignment = removeSengeAssignment;
+        window.generarPromptArgyris = generarPromptArgyris;
+        window.limpiarArgyris = limpiarArgyris;
+        window.generarPromptSROI = generarPromptSROI;
+        window.limpiarSROI = limpiarSROI;
+
+        // Inicializar actividades
+        renderArgyrisForm();
+        initArgyrisCounters();
+        initSengeGame();
+        renderSROIForm();
+        initSROICounters();
+
+
+
+    });
+</script>
+</body>
+</html>
