@@ -1,0 +1,1206 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3: Modelos de retención de talento humano integrados a la gestión del desempeño</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .matrix-export-btn { background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; border: 1px solid #17a2b8; cursor: pointer; }
+        #ova-embed .matrix-export-btn:hover { background: #17a2b8; color: white; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .mckinsey-tab-btn:hover { background: #D8EBF8 !important; color: #374151 !important; }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #495057; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .development-matrix { margin-top: 24px; padding: 24px; background: var(--surface-soft); border-radius: 12px; border: 1px solid var(--line); }
+        #ova-embed .matrix-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        #ova-embed .matrix-header h3 { margin: 0; color: var(--heading); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-table { width: 100%; border-collapse: collapse; }
+        #ova-embed .matrix-table th { padding: 12px 16px; text-align: left; font-weight: 700; color: var(--heading); border-bottom: 2px solid var(--accent); }
+        #ova-embed .matrix-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+        #ova-embed .matrix-table tr:last-child td { border-bottom: none; }
+        #ova-embed .matrix-check { color: var(--accent); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-empty { color: #adb5bd; }
+        #ova-embed .activity-subnav-btn { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 10px 20px; border: 1px solid var(--line); cursor: pointer; transition: all 0.25s ease; }
+        #ova-embed .activity-subnav-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        #ova-embed .activity-subnav-btn:hover:not(.active) { background: var(--surface-soft); }
+        #ova-embed .activity-section.hidden { display: none; }
+        #ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed var(--line); border-radius: 16px; background: var(--surface-soft); }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: #17a2b8; background: #D8EBF8; color: #0c7b8a; }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología Organizacional y Bienestar Humano</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Psicología Organizacional y Bienestar Humano</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-bullseye mr-2"></i>Unidad 1 - Tema 3</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Modelos de retención de talento humano integrados a la gestión del desempeño</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Retener talento en 2026 significa diseñar experiencias laborales sostenibles donde el bienestar y el rendimiento avancen en paralelo.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">🎯 Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed">Este tema profundiza en modelos de motivación y en cómo la gestión del desempeño se convierte en un motor de desarrollo profesional. El especialista aprenderá que el salario ya no es el único factor diferenciador; pesan más el propósito, la flexibilidad laboral y el "salario emocional". Se aborda la integración entre el compromiso afectivo, la evaluación continua y el bienestar integral como palancas de retención sostenible.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta estratégica</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">El modelo de retención y gestión del desempeño</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-heart-pulse"></i></div>
+                                <h4>Motivación</h4>
+                                <p>Factores intrínsecos: reconocimiento, crecimiento y propósito (Herzberg).</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-link"></i></div>
+                                <h4>Compromiso</h4>
+                                <p>Compromiso afectivo como ancla emocional frente a la rotación.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-rotate"></i></div>
+                                <h4>Feedback 360°</h4>
+                                <p>Visión múltiple del desempeño para fortalecer la autopercepción.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-bullseye"></i></div>
+                                <h4>OKRs</h4>
+                                <p>Alineación ágil de objetivos individuales y de negocio.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-spa"></i></div>
+                                <h4>Bienestar</h4>
+                                <p>Presencialidad estratégica, desconexión digital y beneficios a la carta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-lightbulb text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Pregunta central</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">¿Cómo diseñar modelos de retención que integren bienestar emocional, gestión del desempeño y flexibilidad laboral?</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">La pregunta orienta la reflexión sobre experiencias laborales sostenibles donde rendimiento y bienestar avanzan juntos.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-route text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Enfoque</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Motivación (Herzberg), compromiso afectivo (Meyer & Allen), evaluación 360° y OKRs, bienestar integral en trabajo híbrido.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Se articulan modelos de retención, sistemas de desempeño y estrategias de bienestar para el contexto laboral 2026.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-award text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Producto esperado</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Capacidad para diseñar planes de retención, sistemas de evaluación 360°/OKRs y estrategias de bienestar en modelos híbridos.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El especialista aplicará modelos de motivación, diseñará OKRs y propondrá presencialidad estratégica y desconexión digital.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 3</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de analizar la motivación intrínseca y el bienestar emocional como palancas de retención, diseñar sistemas de evaluación del desempeño de 360° y OKRs, y proponer estrategias de presencialidad estratégica y desconexión digital para modelos de trabajo híbrido.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-heart-pulse mr-2" style="color: #17a2b8;"></i>Analizar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">El impacto de la motivación intrínseca y el bienestar emocional en la reducción de la propensión a la rotación.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-rotate mr-2" style="color: #17a2b8;"></i>Diseñar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Sistemas de evaluación del desempeño de 360 grados y OKRs que fomenten el crecimiento y la autopercepción del colaborador.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-spa mr-2" style="color: #17a2b8;"></i>Diseñar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Estrategias de "presencialidad estratégica" y desconexión digital para los modelos de trabajo híbridos del 2026.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres partes fundamentales</h2>
+                        <p class="mt-4 leading-relaxed">Este tema se estructura en tres partes que abordan los modelos de retención y motivación, la gestión del desempeño mediante Feedback 360° y OKRs, y el bienestar integral como ventaja competitiva para el trabajo híbrido en 2026.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"El salario ya no es el único factor diferenciador; pesan más el propósito, la flexibilidad laboral y el salario emocional."</p>
+                                <p class="mt-2 text-sm opacity-80">— Enfoque contemporáneo de retención y bienestar organizacional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Pilares de la Retención y el Desempeño -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">🔄 Pilares de la Retención y el Desempeño</h3>
+                        <p class="text-xs mb-6" style="color: #6c757d;"><i class="fa-solid fa-hand-pointer mr-1"></i>Pasa el cursor sobre cada tarjeta para ver el detalle.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-heart-pulse text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Motivación</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-heart-pulse text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Motivación</h4>
+                                        <p class="text-xs leading-relaxed">Factores intrínsecos de Herzberg que impulsan la retención.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-link text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Compromiso</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-link text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Compromiso</h4>
+                                        <p class="text-xs leading-relaxed">Compromiso afectivo (Meyer & Allen) que reduce la intención de rotación y fortalece la identidad laboral.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-rotate text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Feedback 360°</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-rotate text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Feedback 360°</h4>
+                                        <p class="text-xs leading-relaxed">Evaluación que integra múltiples perspectivas para mejorar la autopercepción e identificar alto potencial.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-bullseye text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">OKRs</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-bullseye text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">OKRs</h4>
+                                        <p class="text-xs leading-relaxed">Objectives and Key Results para alinear objetivos individuales con los de negocio de forma ágil.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">5</div>
+                                        <i class="fa-solid fa-spa text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Bienestar</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-spa text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Bienestar</h4>
+                                        <p class="text-xs leading-relaxed">Presencialidad estratégica, desconexión digital y beneficios a la carta según etapa de vida.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Acordeón de las Tres Partes -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📖 Desarrollo Temático</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-heart-pulse mr-2" style="color: #374151;"></i>Parte 1: Modelos de Retención y Motivación</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">Los colaboradores motivados exhiben mayores niveles de compromiso afectivo. Según la <strong>teoría herzbergiana</strong>, es necesario ofrecer factores motivacionales como el reconocimiento, el crecimiento y el propósito. En perfiles de alto rendimiento, la retención se logra mediante la <strong>flexibilidad radical</strong> y la exposición a proyectos estratégicos. Las organizaciones con culturas sólidas aumentan su retención hasta en un 40%, porque generan pertenencia, confianza y sentido de identidad.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-rotate mr-2" style="color: #374151;"></i>Parte 2: Gestión del Desempeño 360° y OKRs</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La evaluación debe integrarse en el flujo de trabajo diario. El <strong>Feedback 360 Grados</strong> proporciona una visión total al incluir múltiples perspectivas (jefe, pares, colaboradores y autoevaluación), mejorando la autopercepción e identificando talentos de alto potencial. El uso de <strong>OKRs</strong> (Objectives and Key Results) permite una alineación ágil de los objetivos individuales con los de negocio, celebrando victorias a corto plazo que mantienen alta la moral del equipo.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-spa mr-2" style="color: #374151;"></i>Parte 3: Bienestar Integral como Ventaja de Futuro</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">En 2026, el enfoque en la <strong>salud mental integrada al diseño del trabajo</strong> es un pilar cultural. Las organizaciones líderes implementan la <strong>"presencialidad estratégica"</strong>, priorizando la oficina para actividades de co-creación mientras garantizan autonomía total en el resto de la jornada. El bienestar profesional se sustenta en la capacidad de <strong>desconexión digital</strong> y en beneficios "a la carta" adaptados a la etapa de vida del colaborador.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Dos actividades interactivas para aplicar los conceptos de motivación (Herzberg), gestión del desempeño con OKRs y bienestar integral en el trabajo híbrido.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-paradigmas">
+                                <i class="fa-solid fa-heart-pulse"></i> Motivación vs. Higiene
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-crucigrama">
+                                <i class="fa-solid fa-bullseye"></i> Empareja el OKR
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Motivación vs. Higiene -->
+                        <div class="act-panel active" id="act-paradigmas">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Motivación vs. Higiene</h3>
+                                <p class="text-sm mb-4">Según la <strong>teoría bifactorial de Herzberg</strong>, algunos factores generan satisfacción y motivación real (motivacionales), mientras que otros solo evitan la insatisfacción si están ausentes (higiénicos). Clasifica cada factor.</p>
+
+                                <div class="space-y-5" id="paradigmas-questions">
+                                    <!-- Preguntas generadas por JS -->
+                                </div>
+
+                                <div id="paradigmas-summary" class="hidden mt-5 p-5 rounded-xl" style="background: var(--surface-soft); border: 2px solid var(--line);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="evaluateParadigmas()">
+                                        <i class="fa-solid fa-check-double"></i> Verificar
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="clearParadigmas()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Empareja el OKR -->
+                        <div class="act-panel" id="act-crucigrama">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Empareja el OKR</h3>
+                                <p class="text-sm mb-4">Cada <strong>Objetivo</strong> cualitativo debe ir acompañado de su <strong>Resultado Clave</strong> medible. Haz clic primero en un Objetivo y luego en el Resultado Clave que mejor lo mida.</p>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-bold text-sm mb-3" style="color: var(--heading);"><i class="fa-solid fa-bullseye mr-1"></i> Objetivos</h4>
+                                        <div class="space-y-3" id="okr-objectives">
+                                            <!-- Objetivos generados por JS -->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm mb-3" style="color: var(--heading);"><i class="fa-solid fa-chart-line mr-1"></i> Resultados Clave</h4>
+                                        <div class="space-y-3" id="okr-keyresults">
+                                            <!-- Resultados generados por JS -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="star-summary" class="hidden mt-5 p-5 rounded-xl" style="background: var(--surface-soft); border: 2px solid var(--line);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="clearStar()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 3</h2>
+                        <p class="mt-4 leading-relaxed">Responde las 4 preguntas sobre modelos de retención de talento, compromiso organizacional, bienestar laboral, feedback 360° y OKRs. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/4</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">Autoevaluación completada</h3>
+                            <p class="mt-2 font-semibold" style="color: var(--text);">Puntaje: <span id="quiz-score">0</span>/4</p>
+                            <p id="quiz-feedback" class="mt-2" style="color: var(--text);"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Herramientas y metodologías</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Plantillas y guías descargables para aplicar lo aprendido: evaluación 360°, OKRs, encuesta de clima laboral y plan de bienestar. Haz clic para acceder o escanea el QR con tu celular.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Plantilla Evaluación 360° -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-rotate" style="color: #7c3aed; font-size: 1em;"></i> Plantilla Evaluación 360°
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Formato en Excel descargable para realizar evaluaciones de desempeño 360° con autoevaluación, jefe, pares y subordinados.</p>
+                                    <a href="https://www.crehana.com/business/descargables/evaluacion-360-excel/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Descargar plantilla
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.crehana.com/business/descargables/evaluacion-360-excel/" alt="QR Plantilla Evaluación 360" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Plantilla OKRs -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-bullseye" style="color: #f59e0b; font-size: 1em;"></i> Plantilla de OKRs
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Plantilla gratuita en Excel, PDF y Google Sheets para definir objetivos, resultados clave y dar seguimiento al progreso.</p>
+                                    <a href="https://www.hubspot.es/resources/templates/okr" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Descargar plantilla
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.hubspot.es/resources/templates/okr" alt="QR Plantilla OKRs" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Plantilla Encuesta de Clima Laboral -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-clipboard-list" style="color: #0f9d58; font-size: 1em;"></i> Encuesta de Clima Laboral
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Plantilla en Excel con 100 preguntas filtrables para evaluar satisfacción, ambiente y bienestar del equipo.</p>
+                                    <a href="https://nailted.com/blog/es/plantilla-de-encuesta-de-clima-laboral/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Descargar plantilla
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://nailted.com/blog/es/plantilla-de-encuesta-de-clima-laboral/" alt="QR Encuesta Clima Laboral" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Kit de Bienestar Laboral -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-spa" style="color: #e11d48; font-size: 1em;"></i> Kit de Bienestar Laboral
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Kit de Runa HR con formatos editables para diagnosticar, implementar y dar seguimiento al bienestar organizacional.</p>
+                                    <a href="https://recursos.runahr.com/pe-kit-bienestar-laboral" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Descargar kit
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://recursos.runahr.com/pe-kit-bienestar-laboral" alt="QR Kit Bienestar" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Escanea el QR o usa los enlaces para acceder directamente a cada referencia.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Ref 1: Meyer & Allen -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Meyer, J., & Allen, N. (1997).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Commitment in the Workplace: Theory, Research, and Application.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://books.google.com/books/about/Commitment_in_the_Workplace.html?id=WPQoCgAAQBAJ" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-book-open"></i> Ver en Google Books
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://books.google.com/books/about/Commitment_in_the_Workplace.html?id=WPQoCgAAQBAJ" alt="QR Meyer Allen" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Deel -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Deel. (2026).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Flexibilidad real y desconexión digital como práctica cultural.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.deel.com/es/blog/tendencias-bienestar-laboral/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver artículo
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.deel.com/es/blog/tendencias-bienestar-laboral/" alt="QR Deel" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: WorkMeter -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">WorkMeter. (2026).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Plan de bienestar laboral para empresas modernas.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.workmeter.com/blog/plan-de-bienestar-laboral-para-empresas/" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver artículo
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.workmeter.com/blog/plan-de-bienestar-laboral-para-empresas/" alt="QR WorkMeter" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: HRider -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">HRider. (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Feedback 360 para el desarrollo profesional.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.hrider.net/en/blog/7251/1/feedback-360-para-el-desarrollo-profesional.html" target="_blank" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver artículo
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.hrider.net/en/blog/7251/1/feedback-360-para-el-desarrollo-profesional.html" alt="QR HRider" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Character counters with progress bars
+        const textareas = document.querySelectorAll('textarea[maxlength]');
+        textareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Initialize justification textareas counters
+        const justifTextareas = document.querySelectorAll('.justif-textarea');
+        justifTextareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Copy text functionality
+        const copyBtns = document.querySelectorAll('[data-copy]');
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.copy;
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const originalText = btn.textContent;
+                    btn.textContent = '¡Copiado!';
+                    setTimeout(() => btn.textContent = originalText, 2000);
+                }
+            });
+        });
+
+        if (mobileNav) mobileNav.addEventListener('change', event => switchPane(event.target.value));
+
+        // Accordion functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.fa-chevron-down');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // McKinsey tabs functionality
+        const mckinseyTabBtns = document.querySelectorAll('.mckinsey-tab-btn');
+        const mckinseyTabPanes = document.querySelectorAll('.mckinsey-tab-pane');
+        mckinseyTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                mckinseyTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = '#17a2b8';
+                btn.style.color = 'white';
+                mckinseyTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Activity tabs functionality
+        const activityTabBtns = document.querySelectorAll('.activity-tab-btn');
+        const activityTabPanes = document.querySelectorAll('.activity-tab-pane');
+        activityTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                activityTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = 'var(--accent)';
+                btn.style.color = 'white';
+                activityTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Quiz functionality - one question at a time
+        const quizQuestions = [
+            {
+                question: "Según el modelo de Meyer y Allen, ¿qué tipo de compromiso se refiere al apego emocional y la identificación con la organización?",
+                options: [
+                    { value: "a", text: "Compromiso normativo." },
+                    { value: "b", text: "Compromiso de continuidad." },
+                    { value: "c", text: "Compromiso afectivo." }
+                ],
+                correct: "c"
+            },
+            {
+                question: "Según la teoría bifactorial de Herzberg, ¿qué función cumplen los factores higiénicos?",
+                options: [
+                    { value: "a", text: "Generan motivación intrínseca y alta satisfacción laboral." },
+                    { value: "b", text: "Evitan la insatisfacción cuando están presentes, pero no motivan por sí solos." },
+                    { value: "c", text: "Son los únicos responsables del compromiso afectivo del colaborador." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Cuál de los siguientes enunciados es un Resultado Clave válido dentro de un OKR?",
+                options: [
+                    { value: "a", text: "Mejorar el bienestar del equipo de trabajo." },
+                    { value: "b", text: "Reducir el ausentismo del departamento de 15% a 8% en el trimestre." },
+                    { value: "c", text: "Ser la empresa con mejor clima laboral del sector." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Cuál es la principal ventaja de integrar el feedback 360° con la gestión del desempeño?",
+                options: [
+                    { value: "a", text: "Eliminar por completo las evaluaciones anuales de desempeño." },
+                    { value: "b", text: "Obtener una visión más completa del desempeño desde múltiples fuentes." },
+                    { value: "c", text: "Sustituir el diálogo directo entre líder y colaborador." }
+                ],
+                correct: "b"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        const quizBox = document.getElementById('quiz-box');
+        const quizResults = document.getElementById('quiz-results');
+        const quizTitle = document.getElementById('quiz-title');
+        const quizProgress = document.getElementById('quiz-progress');
+        const quizText = document.getElementById('quiz-text');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizPrev = document.getElementById('quiz-prev');
+        const quizNext = document.getElementById('quiz-next');
+        const quizScore = document.getElementById('quiz-score');
+        const quizFeedback = document.getElementById('quiz-feedback');
+        const quizReview = document.getElementById('quiz-review');
+        const quizRestart = document.getElementById('quiz-restart');
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuestion];
+            quizTitle.textContent = `Pregunta ${currentQuestion + 1}`;
+            quizProgress.textContent = `${currentQuestion + 1}/${quizQuestions.length}`;
+            quizText.textContent = q.question;
+            
+            quizOptions.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                btn.dataset.value = opt.value;
+                if (userAnswers[currentQuestion] === opt.value) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => {
+                    userAnswers[currentQuestion] = opt.value;
+                    document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+                quizOptions.appendChild(btn);
+            });
+
+            quizPrev.disabled = currentQuestion === 0;
+            quizNext.textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        quizPrev.addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        });
+
+        quizNext.addEventListener('click', () => {
+            // Validate that current question is answered
+            if (!userAnswers[currentQuestion]) {
+                alert('Por favor selecciona una respuesta antes de continuar.');
+                return;
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            let score = 0;
+            let reviewHTML = '';
+
+            quizQuestions.forEach((q, i) => {
+                const userAnswer = userAnswers[i];
+                const isCorrect = userAnswer === q.correct;
+                if (isCorrect) score++;
+
+                const userOption = q.options.find(opt => opt.value === userAnswer);
+                const correctOption = q.options.find(opt => opt.value === q.correct);
+
+                reviewHTML += `
+                    <div class="p-4 rounded-lg" style="background: ${isCorrect ? 'var(--surface-soft)' : 'var(--surface)'}; border: 1px solid ${isCorrect ? 'var(--accent)' : 'var(--line)'};">
+                        <p class="font-bold" style="color: var(--heading);">Pregunta ${i + 1}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);">${q.question}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);"><strong>Tu respuesta:</strong> ${userOption ? userOption.text : 'Sin respuesta'}</p>
+                        ${!isCorrect ? `<p class="mt-1 text-sm" style="color: var(--accent);"><strong>Respuesta correcta:</strong> ${correctOption.text}</p>` : ''}
+                        <p class="mt-1 text-sm font-semibold" style="color: ${isCorrect ? 'var(--accent)' : '#dc2626'};">${isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>
+                    </div>
+                `;
+            });
+
+            quizScore.textContent = score;
+            quizFeedback.textContent = score === quizQuestions.length ? '¡Excelente! Has respondido todas las preguntas correctamente.' : score >= quizQuestions.length / 2 ? 'Buen trabajo. Revisa las respuestas incorrectas para mejorar.' : 'Te recomiendo repasar el contenido antes de intentar nuevamente.';
+            quizReview.innerHTML = reviewHTML;
+
+            quizBox.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        quizRestart.addEventListener('click', () => {
+            currentQuestion = 0;
+            userAnswers = {};
+            quizBox.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            renderQuestion();
+            // Scroll to top of evaluation section
+            document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Initialize quiz
+        if (quizBox) {
+            renderQuestion();
+        }
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== ACTIVIDAD 1: MOTIVACIÓN VS. HIGIENE =====
+        const paradigmasQuestions = [
+            { text: "Recibir reconocimiento público por un proyecto bien ejecutado.", correct: "motivacional", explanation: "El reconocimiento es un factor motivacional de Herzberg: genera satisfacción y compromiso afectivo." },
+            { text: "Contar con un salario competitivo y puntual.", correct: "higienico", explanation: "El salario es un factor higiénico: su ausencia genera insatisfacción, pero su presencia no motiva por sí sola." },
+            { text: "Tener autonomía para decidir cómo organizar el trabajo diario.", correct: "motivacional", explanation: "La autonomía y responsabilidad son factores motivacionales que fortalecen el compromiso." },
+            { text: "Disponer de condiciones físicas adecuadas en la oficina (iluminación, ergonomía).", correct: "higienico", explanation: "Las condiciones del entorno son factores higiénicos que evitan malestar pero no generan motivación real." },
+            { text: "Acceder a proyectos estratégicos que impulsen el crecimiento profesional.", correct: "motivacional", explanation: "El crecimiento y la realización personal son factores motivacionales clave en perfiles de alto rendimiento." },
+            { text: "Contar con políticas claras de vacaciones y descanso remunerado.", correct: "higienico", explanation: "Las políticas de descanso son higiénicas: garantizan bienestar básico sin ser motivadores per se." }
+        ];
+
+        function renderParadigmas() {
+            const container = document.getElementById('paradigmas-questions');
+            if (!container) return;
+            container.innerHTML = paradigmasQuestions.map((q, i) => `
+                <div class="p-5 rounded-xl border-2 paradigma-card" data-idx="${i}" style="background: var(--surface-soft); border-color: var(--line);">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #6c757d;">Factor ${i+1}</p>
+                    <p class="font-semibold mb-4" style="color: var(--heading);">${q.text}</p>
+                    <div class="flex flex-wrap gap-3">
+                        <label class="flex items-center gap-1.5 text-sm font-semibold cursor-pointer px-3 py-1.5 rounded-lg border transition-all" style="border-color: var(--line); background: white;">
+                            <input type="radio" name="paradigma-${i}" value="motivacional" class="paradigma-radio"> <i class="fa-solid fa-heart-pulse" style="color: #0f9d58;"></i> Motivacional
+                        </label>
+                        <label class="flex items-center gap-1.5 text-sm font-semibold cursor-pointer px-3 py-1.5 rounded-lg border transition-all" style="border-color: var(--line); background: white;">
+                            <input type="radio" name="paradigma-${i}" value="higienico" class="paradigma-radio"> <i class="fa-solid fa-shield-heart" style="color: #4285f4;"></i> Higiénico
+                        </label>
+                    </div>
+                    <div class="paradigma-feedback mt-3 hidden"></div>
+                </div>
+            `).join('');
+        }
+
+        window.evaluateParadigmas = function() {
+            let totalCorrect = 0;
+            paradigmasQuestions.forEach((q, i) => {
+                const card = document.querySelector(`.paradigma-card[data-idx="${i}"]`);
+                const selected = document.querySelector(`input[name="paradigma-${i}"]:checked`);
+                const feedbackDiv = card.querySelector('.paradigma-feedback');
+                const isCorrect = selected && selected.value === q.correct;
+                if (isCorrect) totalCorrect++;
+
+                card.querySelectorAll('label').forEach(l => { l.style.borderColor = 'var(--line)'; l.style.background = 'white'; });
+                if (selected) {
+                    const selectedLabel = selected.parentElement;
+                    selectedLabel.style.borderColor = isCorrect ? 'var(--accent)' : '#dc2626';
+                    selectedLabel.style.background = isCorrect ? '#f0fdf4' : '#fef2f2';
+                }
+
+                card.style.borderColor = isCorrect ? 'var(--accent)' : '#dc2626';
+                feedbackDiv.innerHTML = `<p class="text-xs"><span>${isCorrect ? '✅' : '❌'}</span> ${q.explanation}</p>`;
+                feedbackDiv.classList.remove('hidden');
+            });
+
+            const summary = document.getElementById('paradigmas-summary');
+            const pct = Math.round((totalCorrect / paradigmasQuestions.length) * 100);
+            let msg = pct >= 75 ? '¡Excelente! Distinguies correctamente los factores motivacionales e higiénicos de Herzberg.' : pct >= 50 ? 'Buen avance. Revisa la retroalimentación para identificar mejor cada tipo de factor.' : 'Necesitas repasar la teoría bifactorial de Herzberg. Recuerda: motivación real vs. ausencia de insatisfacción.';
+            summary.innerHTML = `
+                <p class="text-lg font-bold" style="color: var(--heading);">Resultado: ${totalCorrect}/${paradigmasQuestions.length} aciertos (${pct}%)</p>
+                <div class="w-full h-3 rounded-full bg-gray-200 mt-3 overflow-hidden">
+                    <div class="h-full rounded-full transition-all duration-500" style="width: ${pct}%; background: ${pct >= 75 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};"></div>
+                </div>
+                <p class="mt-3 text-sm font-semibold" style="color: ${pct >= 75 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};">${msg}</p>
+            `;
+            summary.classList.remove('hidden');
+        }
+
+        window.clearParadigmas = function() {
+            document.querySelectorAll('.paradigma-radio').forEach(r => r.checked = false);
+            document.querySelectorAll('.paradigma-card').forEach(card => {
+                card.style.borderColor = 'var(--line)';
+                const fb = card.querySelector('.paradigma-feedback');
+                fb.classList.add('hidden');
+                fb.innerHTML = '';
+                card.querySelectorAll('label').forEach(l => { l.style.borderColor = 'var(--line)'; l.style.background = 'white'; });
+            });
+            document.getElementById('paradigmas-summary').classList.add('hidden');
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ===== ACTIVIDAD 2: EMPAREJA EL OKR =====
+        const okrPairs = [
+            { objective: "Mejorar el bienestar y la retención del talento clave en el área comercial.", keyResult: "Reducir la rotación voluntaria del equipo comercial de 18% a 10% en el próximo trimestre." },
+            { objective: "Elevar el nivel de engagement y autonomía del equipo de desarrollo.", keyResult: "Alcanzar un puntaje de 4.2/5 en la encuesta de clima laboral en el trimestre." },
+            { objective: "Fortalecer la cultura de feedback continuo en toda la organización.", keyResult: "Implementar evaluaciones 360° en el 100% de los equipos de liderazgo durante el semestre." },
+            { objective: "Aumentar la productividad del trabajo híbrido sin sacrificar el bienestar.", keyResult: "Reducir el promedio de horas extra semanales reportadas en un 25% en los próximos tres meses." }
+        ];
+
+        let selectedObjectiveIndex = null;
+
+        function renderStar() {
+            const objectivesContainer = document.getElementById('okr-objectives');
+            const keyResultsContainer = document.getElementById('okr-keyresults');
+            if (!objectivesContainer || !keyResultsContainer) return;
+
+            const shuffledKeyResults = okrPairs.map((p, i) => ({ text: p.keyResult, originalIndex: i }))
+                .sort(() => Math.random() - 0.5);
+
+            objectivesContainer.innerHTML = okrPairs.map((p, i) => `
+                <div class="okr-card objective-card p-4 rounded-xl border-2 cursor-pointer transition-all" data-idx="${i}" style="background: var(--surface-soft); border-color: var(--line);"
+                    onclick="selectObjective(${i})">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: #6c757d;">Objetivo ${i+1}</p>
+                    <p class="text-sm font-semibold" style="color: var(--heading);">${p.objective}</p>
+                </div>
+            `).join('');
+
+            keyResultsContainer.innerHTML = shuffledKeyResults.map((kr) => `
+                <div class="okr-card keyresult-card p-4 rounded-xl border-2 cursor-pointer transition-all" data-idx="${kr.originalIndex}" style="background: var(--surface-soft); border-color: var(--line);"
+                    onclick="selectKeyResult(${kr.originalIndex})">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: #6c757d;">Resultado Clave</p>
+                    <p class="text-sm font-semibold" style="color: var(--heading);">${kr.text}</p>
+                </div>
+            `).join('');
+        }
+
+        window.selectObjective = function(index) {
+            const card = document.querySelector(`.objective-card[data-idx="${index}"]`);
+            if (card.classList.contains('matched')) return;
+            selectedObjectiveIndex = index;
+            document.querySelectorAll('.objective-card').forEach(c => {
+                if (!c.classList.contains('matched')) {
+                    c.style.borderColor = 'var(--line)';
+                    c.style.background = 'var(--surface-soft)';
+                }
+            });
+            card.style.borderColor = '#17a2b8';
+            card.style.background = '#D8EBF8';
+            document.getElementById('star-summary').classList.add('hidden');
+        }
+
+        window.selectKeyResult = function(index) {
+            if (selectedObjectiveIndex === null) {
+                showStarSummary('⚠️ Selecciona primero un Objetivo.', 'warning');
+                return;
+            }
+            const keyResultCard = document.querySelector(`.keyresult-card[data-idx="${index}"]`);
+            if (keyResultCard.classList.contains('matched')) return;
+
+            const isCorrect = selectedObjectiveIndex === index;
+            const objectiveCard = document.querySelector(`.objective-card[data-idx="${selectedObjectiveIndex}"]`);
+
+            if (isCorrect) {
+                objectiveCard.classList.add('matched');
+                keyResultCard.classList.add('matched');
+                objectiveCard.style.borderColor = 'var(--accent)';
+                objectiveCard.style.background = '#f0fdf4';
+                keyResultCard.style.borderColor = 'var(--accent)';
+                keyResultCard.style.background = '#f0fdf4';
+                objectiveCard.insertAdjacentHTML('beforeend', '<p class="mt-2 text-xs font-bold" style="color: var(--accent);">✅ Emparejado correctamente</p>');
+                keyResultCard.insertAdjacentHTML('beforeend', '<p class="mt-2 text-xs font-bold" style="color: var(--accent);">✅ Emparejado correctamente</p>');
+                selectedObjectiveIndex = null;
+                document.getElementById('star-summary').classList.add('hidden');
+                checkAllMatched();
+            } else {
+                objectiveCard.style.borderColor = '#dc2626';
+                objectiveCard.style.background = '#fef2f2';
+                keyResultCard.style.borderColor = '#dc2626';
+                keyResultCard.style.background = '#fef2f2';
+                showStarSummary('❌ Ese Resultado Clave no corresponde a ese Objetivo. Intenta de nuevo.', 'error');
+                setTimeout(() => {
+                    if (!objectiveCard.classList.contains('matched')) {
+                        objectiveCard.style.borderColor = 'var(--line)';
+                        objectiveCard.style.background = 'var(--surface-soft)';
+                    }
+                    if (!keyResultCard.classList.contains('matched')) {
+                        keyResultCard.style.borderColor = 'var(--line)';
+                        keyResultCard.style.background = 'var(--surface-soft)';
+                    }
+                }, 1000);
+            }
+        }
+
+        function showStarSummary(message, type) {
+            const summary = document.getElementById('star-summary');
+            const color = type === 'error' ? '#dc2626' : type === 'warning' ? '#d97706' : 'var(--accent)';
+            summary.innerHTML = `<p class="text-sm font-semibold" style="color: ${color};">${message}</p>`;
+            summary.classList.remove('hidden');
+        }
+
+        function checkAllMatched() {
+            const total = document.querySelectorAll('.objective-card').length;
+            const matched = document.querySelectorAll('.objective-card.matched').length;
+            if (total === matched) {
+                const summary = document.getElementById('star-summary');
+                summary.innerHTML = `
+                    <p class="text-lg font-bold" style="color: var(--heading);">¡Felicitaciones! Emparejaste todos los OKRs correctamente.</p>
+                    <p class="mt-2 text-sm">Demuestras que entiendes la diferencia entre Objetivos cualitativos y Resultados Clave medibles.</p>
+                `;
+                summary.classList.remove('hidden');
+            }
+        }
+
+        window.clearStar = function() {
+            selectedObjectiveIndex = null;
+            document.getElementById('star-summary').classList.add('hidden');
+            renderStar();
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Renderizar actividades al cargar
+        renderStar();
+        renderParadigmas();
+
+    });
+</script>
+</body>
+</html>
