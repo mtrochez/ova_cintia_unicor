@@ -1,0 +1,1036 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Análisis de brechas en procesos de reclutamiento y selección con base en indicadores de rotación</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #495057; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: #17a2b8; background: #D8EBF8; color: #0c7b8a; }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología Organizacional y Bienestar Humano</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Psicología Organizacional y Bienestar Humano</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-bullseye mr-2"></i>Unidad 1 - Tema 4</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Análisis de brechas en procesos de reclutamiento y selección con base en indicadores de rotación</h2>
+                        <p class="text-lg leading-relaxed opacity-95">La rotación de personal es un síntoma de procesos de selección fallidos o de tensiones insoportables. People Analytics permite diagnosticar brechas de talento y asegurar la continuidad operativa.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">🎯 Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed">Este tema enseña a utilizar métricas de People Analytics para diagnosticar brechas de talento y desajustes en el mercado laboral. El especialista aprenderá a calcular e interpretar la tasa de rotación, el tiempo de contratación y el costo de rotación; identificar brechas de habilidades entre la demanda productiva y la oferta de talento digital; e implementar modelos predictivos y prescriptivos que automaticen la prevención del agotamiento emocional y la fuga de talento.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta estratégica</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">Del dato a la decisión: ruta de People Analytics</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-chart-line"></i></div>
+                                <h4>Indicadores</h4>
+                                <p>Calcular tasa de rotación, tiempo de contratación y costo de rotación.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <h4>Diagnóstico</h4>
+                                <p>Detectar skill gaps entre competencias actuales y demanda digital.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-brain"></i></div>
+                                <h4>Modelado</h4>
+                                <p>Usar datos demográficos y encuestas de pulso para explicar caídas de compromiso.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-coins"></i></div>
+                                <h4>ROI</h4>
+                                <p>Justificar inversiones en capital humano con evidencia cuantitativa.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-gauge-high"></i></div>
+                                <h4>Tableros</h4>
+                                <p>Automatizar alertas de riesgo y decisiones rápidas basadas en evidencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-lightbulb text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Pregunta central</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">¿Cómo transformar los datos de rotación y contratación en decisiones que reduzcan brechas de talento y fortalezcan la continuidad operativa?</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">La pregunta orienta el análisis de indicadores, skill gaps y modelos predictivos para gestionar el talento con evidencia.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-route text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Enfoque</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">People Analytics, indicadores de rotación y contratación, diagnóstico de skill gaps, analítica predictiva y prescriptiva.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Se articulan métricas de gestión humana, brechas de habilidades digitales y tableros de control para prevenir la fuga de talento.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-award text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Producto esperado</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Capacidad para calcular indicadores clave, diagnosticar brechas de habilidades y proponer modelos predictivos de retención.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El especialista interpretará tasas de rotación, identificará competencias críticas y diseñará alertas automatizadas de riesgo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 4</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de calcular e interpretar los indicadores clave de gestión humana, identificar brechas de habilidades entre la demanda sectorial y la oferta de talento digital, e implementar modelos predictivos y prescriptivos de People Analytics para prevenir la fuga de talento.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-chart-line mr-2" style="color: #17a2b8;"></i>Calcular</h3>
+                            <p class="mt-2 text-sm leading-relaxed">La tasa de rotación, el tiempo de contratación y el costo de rotación, interpretando su impacto en la salud laboral y la eficiencia de atracción.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-magnifying-glass-chart mr-2" style="color: #17a2b8;"></i>Identificar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Brechas de habilidades (skill gaps) entre la demanda del sector productivo y la oferta de talento en la era digital.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-brain mr-2" style="color: #17a2b8;"></i>Implementar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Modelos predictivos y prescriptivos de analítica para automatizar la prevención del agotamiento emocional y la fuga de talento.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres partes fundamentales</h2>
+                        <p class="mt-4 leading-relaxed">Este tema se estructura en tres partes que abordan los indicadores críticos de rotación y contratación, el diagnóstico de brechas de habilidades en la era digital, y el uso de People Analytics predictivo para anticipar riesgos de fuga de talento en 2026.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"Analizar por qué las personas se van y cuánto tiempo toma reemplazarlas es vital para optimizar la inversión en capital humano y asegurar la continuidad operativa."</p>
+                                <p class="mt-2 text-sm opacity-80">— Enfoque de People Analytics para la gestión del talento</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Pilares del People Analytics -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">🔄 Pilares del People Analytics</h3>
+                        <p class="text-xs mb-6" style="color: #6c757d;"><i class="fa-solid fa-hand-pointer mr-1"></i>Pasa el cursor sobre cada tarjeta para ver el detalle.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-chart-line text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Tasa de rotación</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-chart-line text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Tasa de rotación</h4>
+                                        <p class="text-xs leading-relaxed">Mide la salud del ambiente laboral y la estabilidad del talento en la organización.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-stopwatch text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Tiempo de contratación</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-stopwatch text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Tiempo de contratación</h4>
+                                        <p class="text-xs leading-relaxed">Revela la eficiencia de la atracción y la velocidad para cubrir vacantes críticas.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-coins text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Costo de rotación</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-coins text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Costo de rotación</h4>
+                                        <p class="text-xs leading-relaxed">Cuantifica la liquidación, la pérdida de productividad y la curva de aprendizaje del reemplazo.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-puzzle-piece text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Skill gap</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-puzzle-piece text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Skill gap</h4>
+                                        <p class="text-xs leading-relaxed">Diferencia entre competencias actuales y las requeridas para la transformación tecnológica.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">5</div>
+                                        <i class="fa-solid fa-brain text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Analytics predictivo</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-brain text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Analytics predictivo</h4>
+                                        <p class="text-xs leading-relaxed">Modelos de causalidad que anticipan caídas en el compromiso y automatizan alertas de riesgo.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Acordeón de las Tres Partes -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📖 Desarrollo Temático</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-chart-line mr-2" style="color: #374151;"></i>Parte 1: Indicadores Críticos de Rotación y Contratación</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">El especialista debe dominar fórmulas clave para diagnosticar la salud del talento. La <strong>tasa de rotación</strong> mide la salud del ambiente laboral; el <strong>tiempo de contratación</strong> revela la eficiencia de la atracción; y el <strong>costo de rotación</strong> debe cuantificar no solo la liquidación, sino la pérdida de productividad y la memoria institucional durante la curva de aprendizaje del nuevo integrante. Interpretar estos tres indicadores en conjunto permite detectar si el problema está en la selección, en la experiencia laboral o en la velocidad de reemplazo.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-puzzle-piece mr-2" style="color: #374151;"></i>Parte 2: Diagnóstico de la Brecha de Habilidades (Skill Gap)</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">América Latina enfrenta una <strong>brecha de habilidades crítica</strong>, intensificada por la digitalización. El análisis de brechas permite detectar la diferencia entre las competencias actuales y las requeridas para la transformación tecnológica (IA, Big Data). El gerente de talento humano utiliza este diagnóstico para priorizar programas de <strong>upskilling internos</strong> que resultan más rentables que la búsqueda externa constante, alineando la formación con la estrategia de negocio.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-brain mr-2" style="color: #374151;"></i>Parte 3: People Analytics Predictivo en 2026</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">Las organizaciones maduras utilizan datos demográficos y <strong>encuestas de pulso</strong> para crear modelos de causalidad que expliquen caídas en el compromiso. El uso de People Analytics permite justificar inversiones con datos de <strong>ROI</strong> y anticipar riesgos operativos. La integración de estas métricas en <strong>tableros de control automatizados</strong> facilita una toma de decisiones rápida basada en evidencia científica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Dos actividades interactivas para aplicar People Analytics: calcular indicadores de rotación y diagnosticar brechas en procesos de selección.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-calculadora">
+                                <i class="fa-solid fa-calculator"></i> Calculadora de rotación
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-caso">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i> Diagnóstico de brechas
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Calculadora de rotación y costo de reemplazo -->
+                        <div class="act-panel active" id="act-calculadora">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Calculadora de rotación y costo de reemplazo</h3>
+                                <p class="text-sm mb-4">Ingresa los datos de una área o empresa para calcular la <strong>tasa de rotación</strong>, el <strong>costo de reemplazo</strong> y el <strong>tiempo de cubrimiento</strong>. Estos indicadores son el punto de partida para identificar brechas en reclutamiento y selección.</p>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-bold mb-1" style="color: var(--heading);">Total de empleados</label>
+                                        <input type="number" id="calc-empleados" class="w-full p-2 rounded-lg border text-sm" style="border-color: var(--line); background: white;" placeholder="Ej: 120">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-1" style="color: var(--heading);">Salidas en el periodo</label>
+                                        <input type="number" id="calc-salidas" class="w-full p-2 rounded-lg border text-sm" style="border-color: var(--line); background: white;" placeholder="Ej: 18">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-1" style="color: var(--heading);">Salario promedio mensual (COP)</label>
+                                        <input type="number" id="calc-salario" class="w-full p-2 rounded-lg border text-sm" style="border-color: var(--line); background: white;" placeholder="Ej: 3500000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-1" style="color: var(--heading);">Costo de reclutamiento y selección por vacante (COP)</label>
+                                        <input type="number" id="calc-reclutamiento" class="w-full p-2 rounded-lg border text-sm" style="border-color: var(--line); background: white;" placeholder="Ej: 2500000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-1" style="color: var(--heading);">Días promedio para cubrir una vacante</label>
+                                        <input type="number" id="calc-dias" class="w-full p-2 rounded-lg border text-sm" style="border-color: var(--line); background: white;" placeholder="Ej: 45">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold mb-1" style="color: var(--heading);">Costo estimado de productividad perdida por vacante (COP)</label>
+                                        <input type="number" id="calc-productividad" class="w-full p-2 rounded-lg border text-sm" style="border-color: var(--line); background: white;" placeholder="Ej: 1500000">
+                                    </div>
+                                </div>
+
+                                <div id="calc-resultado" class="hidden mt-5 p-5 rounded-xl" style="background: var(--surface-soft); border: 2px solid var(--line);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="calcularRotacion()">
+                                        <i class="fa-solid fa-calculator"></i> Calcular
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="limpiarCalculadora()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Caso de diagnóstico de brechas -->
+                        <div class="act-panel" id="act-caso">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Caso: diagnóstico de brechas de selección</h3>
+                                <p class="text-sm mb-4">La empresa <strong>FinTech Nova</strong> ha crecido rápidamente y necesita contratar 30 desarrolladores en los próximos 6 meses. En el último año, el área de Tecnología presentó los siguientes datos:</p>
+
+                                <ul class="list-disc list-inside text-sm mb-4 space-y-1" style="color: var(--text);">
+                                    <li>Rotación anual del área: <strong>28%</strong>.</li>
+                                    <li>Tiempo promedio para cubrir una vacante: <strong>68 días</strong>.</li>
+                                    <li>Costo de reemplazo por desarrollador: <strong>2.5 salarios mensuales</strong>.</li>
+                                    <li>A los seis meses, el <strong>45% de los contratados</strong> no cumple las competencias técnicas requeridas.</li>
+                                    <li>Proceso actual: publicación en portal genérico, filtro de CV, entrevista con RRHH, oferta.</li>
+                                </ul>
+
+                                <div class="space-y-5" id="caso-questions">
+                                    <!-- Preguntas generadas por JS -->
+                                </div>
+
+                                <div id="caso-summary" class="hidden mt-5 p-5 rounded-xl" style="background: var(--surface-soft); border: 2px solid var(--line);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="evaluarCaso()">
+                                        <i class="fa-solid fa-check-double"></i> Verificar
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="limpiarCaso()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 4</h2>
+                        <p class="mt-4 leading-relaxed">Responde las 4 preguntas sobre indicadores de rotación, brechas de habilidades y People Analytics predictivo. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/4</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">Autoevaluación completada</h3>
+                            <p class="mt-2 font-semibold" style="color: var(--text);">Puntaje: <span id="quiz-score">0</span>/4</p>
+                            <p id="quiz-feedback" class="mt-2" style="color: var(--text);"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Recomendados</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Referencias para ampliar la lectura sobre People Analytics, madurez analítica, brechas de habilidades e indicadores de RRHH.</p>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: PwC -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-chart-pie" style="color: #7c3aed; font-size: 1em;"></i> PwC — People Analytics
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">PwC (2025). Genera Valor con People Analytics: Planeación del Talento.</p>
+                                    <a href="https://www.pwc.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.pwc.com/" alt="QR PwC" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: ESAN -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-layer-group" style="color: #f59e0b; font-size: 1em;"></i> ESAN — Madurez analítica
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">ESAN (2025). Niveles de Madurez Analítica en la Gestión del Personal.</p>
+                                    <a href="https://www.esan.edu.pe/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.esan.edu.pe/" alt="QR ESAN" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Cepal -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-earth-americas" style="color: #0f9d58; font-size: 1em;"></i> Cepal — Brechas de habilidades
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Cepal (2025). Brechas de habilidades y costos en América Latina.</p>
+                                    <a href="https://www.cepal.org/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.cepal.org/" alt="QR Cepal" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Lapzo -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-list-check" style="color: #e11d48; font-size: 1em;"></i> Lapzo — Indicadores de RRHH
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Lapzo (2025). Indicadores de RRHH claves para tu empresa.</p>
+                                    <a href="https://www.lapzo.com/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.lapzo.com/" alt="QR Lapzo" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas del Tema 4</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Selección del formato 088 directamente relacionada con reclutamiento, selección, rotación, gestión del talento humano y brechas de competencias.</p>
+                    </div>
+
+                    <div class="mt-6 space-y-3">
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <p class="font-semibold text-sm" style="color: var(--text);">Redondo Urina, A. E. <span class="italic">Dirección del talento humano en la empresa.</span></p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <a href="http://ezproxyucor.unicordoba.edu.co:2048/login?url=https://ebookcentral.proquest.com/lib/unicordobasp/search.action?query=Direcci%C3%B3n+del+talento+humano+en+la+empresa+Redondo+Urina" target="_blank" class="bib-link"><i class="fa-solid fa-book"></i> EbookCentral</a>
+                                <a href="https://scholar.google.com/scholar?q=Direcci%C3%B3n+del+talento+humano+en+la+empresa+Redondo+Urina" target="_blank" class="bib-link"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <p class="font-semibold text-sm" style="color: var(--text);">Sanabria Pulido, P. P. <span class="italic">Gestión estratégica del talento humano en el sector público: estado del arte, diagnóstico y recomendaciones para el caso colombiano.</span></p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <a href="http://ezproxyucor.unicordoba.edu.co:2048/login?url=https://ebookcentral.proquest.com/lib/unicordobasp/search.action?query=Gesti%C3%B3n+estrat%C3%A9gica+del+talento+humano+en+el+sector+p%C3%BAblico+Sanabria+Pulido" target="_blank" class="bib-link"><i class="fa-solid fa-book"></i> EbookCentral</a>
+                                <a href="https://scholar.google.com/scholar?q=Gesti%C3%B3n+estrat%C3%A9gica+del+talento+humano+en+el+sector+p%C3%BAblico+Sanabria+Pulido" target="_blank" class="bib-link"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <p class="font-semibold text-sm" style="color: var(--text);">Alles, M. A. <span class="italic">Comportamiento organizacional: cómo lograr un cambio cultural a través de gestión por competencias.</span></p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <a href="http://ezproxyucor.unicordoba.edu.co:2048/login?url=https://ebookcentral.proquest.com/lib/unicordobasp/search.action?query=Comportamiento+organizacional+gesti%C3%B3n+por+competencias+Alles" target="_blank" class="bib-link"><i class="fa-solid fa-book"></i> EbookCentral</a>
+                                <a href="https://scholar.google.com/scholar?q=Comportamiento+organizacional+gesti%C3%B3n+por+competencias+Alles" target="_blank" class="bib-link"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <p class="font-semibold text-sm" style="color: var(--text);">Strauss, G. C. N. <span class="italic">Personnel, the human problems of management / Personal: problemas humanos de la administración.</span></p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <a href="http://ezproxyucor.unicordoba.edu.co:2048/login?url=https://ebookcentral.proquest.com/lib/unicordobasp/search.action?query=Personnel+human+problems+of+management+Strauss" target="_blank" class="bib-link"><i class="fa-solid fa-book"></i> EbookCentral</a>
+                                <a href="https://scholar.google.com/scholar?q=Personnel+human+problems+of+management+Strauss" target="_blank" class="bib-link"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <p class="font-semibold text-sm" style="color: var(--text);">Schermerhorn, J. R. O. <span class="italic">Organizational behavior / Comportamiento organizacional.</span></p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <a href="http://ezproxyucor.unicordoba.edu.co:2048/login?url=https://ebookcentral.proquest.com/lib/unicordobasp/search.action?query=Organizational+behavior+Schermerhorn" target="_blank" class="bib-link"><i class="fa-solid fa-book"></i> EbookCentral</a>
+                                <a href="https://scholar.google.com/scholar?q=Organizational+behavior+Schermerhorn" target="_blank" class="bib-link"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <p class="font-semibold text-sm" style="color: var(--text);">McGregor, D. <span class="italic">El lado humano de las organizaciones.</span></p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <a href="http://ezproxyucor.unicordoba.edu.co:2048/login?url=https://ebookcentral.proquest.com/lib/unicordobasp/search.action?query=El+lado+humano+de+las+organizaciones+McGregor" target="_blank" class="bib-link"><i class="fa-solid fa-book"></i> EbookCentral</a>
+                                <a href="https://scholar.google.com/scholar?q=El+lado+humano+de+las+organizaciones+McGregor" target="_blank" class="bib-link"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-6 section-card no-hover" style="border-left: 4px solid var(--accent);">
+                        <p class="text-sm font-semibold" style="color: var(--heading);"><i class="fa-solid fa-circle-info mr-2"></i>Nota sobre acceso institucional</p>
+                        <p class="text-xs mt-2 leading-relaxed" style="color: var(--text);">Los enlaces de EbookCentral están configurados con el proxy de la Universidad de Córdoba. Para acceder, el usuario debe estar autenticado con sus credenciales institucionales. En caso de que un docID no corresponda exactamente al título, se recomienda buscar el título directamente en <a href="https://ebookcentral.proquest.com/lib/unicordobasp" target="_blank" class="font-bold underline" style="color: var(--accent);">ebookcentral.proquest.com/lib/unicordobasp</a>.</p>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Accordion functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.fa-chevron-down');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Quiz functionality - one question at a time
+        const quizQuestions = [
+            {
+                question: "¿Qué mide principalmente la tasa de rotación en una organización?",
+                options: [
+                    { value: "a", text: "La salud del ambiente laboral y la estabilidad del talento." },
+                    { value: "b", text: "El tiempo promedio para cubrir una vacante." },
+                    { value: "c", text: "El costo total de un proceso de selección." }
+                ],
+                correct: "a"
+            },
+            {
+                question: "¿Qué revela el indicador de tiempo de contratación?",
+                options: [
+                    { value: "a", text: "La satisfacción general del empleado." },
+                    { value: "b", text: "La eficiencia del proceso de atracción y selección." },
+                    { value: "c", text: "El nivel de compromiso afectivo con la organización." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "Al calcular el costo de rotación, ¿qué elementos deben incluirse además de la liquidación?",
+                options: [
+                    { value: "a", text: "Solo el salario del nuevo empleado." },
+                    { value: "b", text: "La pérdida de productividad y la memoria institucional durante la curva de aprendizaje." },
+                    { value: "c", text: "El costo de las vacaciones de todo el equipo." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Qué tipo de People Analytics permite anticipar riesgos de fuga de talento usando datos demográficos y encuestas de pulso?",
+                options: [
+                    { value: "a", text: "People Analytics descriptivo." },
+                    { value: "b", text: "People Analytics predictivo." },
+                    { value: "c", text: "People Analytics correctivo." }
+                ],
+                correct: "b"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        const quizBox = document.getElementById('quiz-box');
+        const quizResults = document.getElementById('quiz-results');
+        const quizTitle = document.getElementById('quiz-title');
+        const quizProgress = document.getElementById('quiz-progress');
+        const quizText = document.getElementById('quiz-text');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizPrev = document.getElementById('quiz-prev');
+        const quizNext = document.getElementById('quiz-next');
+        const quizScore = document.getElementById('quiz-score');
+        const quizFeedback = document.getElementById('quiz-feedback');
+        const quizReview = document.getElementById('quiz-review');
+        const quizRestart = document.getElementById('quiz-restart');
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuestion];
+            quizTitle.textContent = `Pregunta ${currentQuestion + 1}`;
+            quizProgress.textContent = `${currentQuestion + 1}/${quizQuestions.length}`;
+            quizText.textContent = q.question;
+            
+            quizOptions.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                btn.dataset.value = opt.value;
+                if (userAnswers[currentQuestion] === opt.value) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => {
+                    userAnswers[currentQuestion] = opt.value;
+                    document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+                quizOptions.appendChild(btn);
+            });
+
+            quizPrev.disabled = currentQuestion === 0;
+            quizNext.textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        quizPrev.addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        });
+
+        quizNext.addEventListener('click', () => {
+            // Validate that current question is answered
+            if (!userAnswers[currentQuestion]) {
+                alert('Por favor selecciona una respuesta antes de continuar.');
+                return;
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            let score = 0;
+            let reviewHTML = '';
+
+            quizQuestions.forEach((q, i) => {
+                const userAnswer = userAnswers[i];
+                const isCorrect = userAnswer === q.correct;
+                if (isCorrect) score++;
+
+                const userOption = q.options.find(opt => opt.value === userAnswer);
+                const correctOption = q.options.find(opt => opt.value === q.correct);
+
+                reviewHTML += `
+                    <div class="p-4 rounded-lg" style="background: ${isCorrect ? 'var(--surface-soft)' : 'var(--surface)'}; border: 1px solid ${isCorrect ? 'var(--accent)' : 'var(--line)'};">
+                        <p class="font-bold" style="color: var(--heading);">Pregunta ${i + 1}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);">${q.question}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);"><strong>Tu respuesta:</strong> ${userOption ? userOption.text : 'Sin respuesta'}</p>
+                        ${!isCorrect ? `<p class="mt-1 text-sm" style="color: var(--accent);"><strong>Respuesta correcta:</strong> ${correctOption.text}</p>` : ''}
+                        <p class="mt-1 text-sm font-semibold" style="color: ${isCorrect ? 'var(--accent)' : '#dc2626'};">${isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>
+                    </div>
+                `;
+            });
+
+            quizScore.textContent = score;
+            quizFeedback.textContent = score === quizQuestions.length ? '¡Excelente! Has respondido todas las preguntas correctamente.' : score >= quizQuestions.length / 2 ? 'Buen trabajo. Revisa las respuestas incorrectas para mejorar.' : 'Te recomiendo repasar el contenido antes de intentar nuevamente.';
+            quizReview.innerHTML = reviewHTML;
+
+            quizBox.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        quizRestart.addEventListener('click', () => {
+            currentQuestion = 0;
+            userAnswers = {};
+            quizBox.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            renderQuestion();
+            // Scroll to top of evaluation section
+            document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Initialize quiz
+        if (quizBox) {
+            renderQuestion();
+        }
+
+        // ===== PESTAÑAS DE ACTIVIDADES =====
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        // ===== ACTIVIDAD 1: CALCULADORA DE ROTACIÓN Y COSTO DE REEMPLAZO =====
+        window.calcularRotacion = function() {
+            const empleados = parseFloat(document.getElementById('calc-empleados').value);
+            const salidas = parseFloat(document.getElementById('calc-salidas').value);
+            const salario = parseFloat(document.getElementById('calc-salario').value);
+            const reclutamiento = parseFloat(document.getElementById('calc-reclutamiento').value);
+            const dias = parseFloat(document.getElementById('calc-dias').value);
+            const productividad = parseFloat(document.getElementById('calc-productividad').value);
+
+            if ([empleados, salidas, salario, reclutamiento, dias, productividad].some(v => isNaN(v) || v < 0)) {
+                alert('Por favor completa todos los campos con valores numéricos válidos.');
+                return;
+            }
+
+            const tasaRotacion = (salidas / empleados) * 100;
+            const costoPorVacante = reclutamiento + productividad;
+            const costoTotal = costoPorVacante * salidas;
+            const salariosEquivalentes = costoTotal / salario;
+
+            const rotacionInterpretacion = tasaRotacion > 20 ? 'alta' : tasaRotacion > 10 ? 'moderada' : 'baja';
+            const diasInterpretacion = dias > 45 ? 'alto' : dias > 30 ? 'moderado' : 'bajo';
+
+            const resultado = document.getElementById('calc-resultado');
+            resultado.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-3 rounded-lg" style="background: white; border: 1px solid var(--line);">
+                        <p class="text-xs font-bold uppercase tracking-widest" style="color: #6c757d;">Tasa de rotación</p>
+                        <p class="text-2xl font-extrabold" style="color: var(--heading);">${tasaRotacion.toFixed(1)}%</p>
+                        <p class="text-xs mt-1" style="color: var(--text);">Nivel: <strong>${rotacionInterpretacion}</strong></p>
+                    </div>
+                    <div class="p-3 rounded-lg" style="background: white; border: 1px solid var(--line);">
+                        <p class="text-xs font-bold uppercase tracking-widest" style="color: #6c757d;">Tiempo de cubrimiento</p>
+                        <p class="text-2xl font-extrabold" style="color: var(--heading);">${dias.toFixed(0)} días</p>
+                        <p class="text-xs mt-1" style="color: var(--text);">Nivel: <strong>${diasInterpretacion}</strong></p>
+                    </div>
+                    <div class="p-3 rounded-lg" style="background: white; border: 1px solid var(--line);">
+                        <p class="text-xs font-bold uppercase tracking-widest" style="color: #6c757d;">Costo por reemplazo</p>
+                        <p class="text-2xl font-extrabold" style="color: var(--heading);">$${costoPorVacante.toLocaleString('es-CO')}</p>
+                        <p class="text-xs mt-1" style="color: var(--text);">Equivalente a ${(costoPorVacante / salario).toFixed(1)} salarios mensuales</p>
+                    </div>
+                    <div class="p-3 rounded-lg" style="background: white; border: 1px solid var(--line);">
+                        <p class="text-xs font-bold uppercase tracking-widest" style="color: #6c757d;">Costo total del periodo</p>
+                        <p class="text-2xl font-extrabold" style="color: var(--heading);">$${costoTotal.toLocaleString('es-CO')}</p>
+                        <p class="text-xs mt-1" style="color: var(--text);">Equivalente a ${salariosEquivalentes.toFixed(1)} salarios mensuales</p>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 rounded-lg" style="background: var(--surface); border: 1px solid var(--line);">
+                    <p class="text-sm font-semibold" style="color: var(--heading);">Interpretación:</p>
+                    <p class="text-sm mt-1" style="color: var(--text);">Una rotación de <strong>${tasaRotacion.toFixed(1)}%</strong> con <strong>${dias.toFixed(0)} días</strong> para cubrir una vacante sugiere que el proceso de selección ${tasaRotacion > 20 ? 'tiene brechas serias: posiblemente atrae perfiles que no encajan o no filtra competencias críticas.' : tasaRotacion > 10 ? 'presenta oportunidades de mejora en la atracción y el ajuste cultural-técnico.' : 'está controlado, pero conviene seguir monitoreando la calidad de la contratación.'}</p>
+                </div>
+            `;
+            resultado.classList.remove('hidden');
+        }
+
+        window.limpiarCalculadora = function() {
+            ['calc-empleados', 'calc-salidas', 'calc-salario', 'calc-reclutamiento', 'calc-dias', 'calc-productividad'].forEach(id => {
+                document.getElementById(id).value = '';
+            });
+            document.getElementById('calc-resultado').classList.add('hidden');
+            document.getElementById('calc-resultado').innerHTML = '';
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ===== ACTIVIDAD 2: CASO DE DIAGNÓSTICO DE BRECHAS =====
+        const casoQuestions = [
+            {
+                text: "¿Cuál es la brecha principal del proceso de selección actual de FinTech Nova?",
+                options: [
+                    { value: "a", text: "El salario ofrecido es inferior al mercado.", correct: false, feedback: "El caso no menciona compensación como problema; el 45% de los contratados no cumple competencias técnicas, lo que apunta a un filtro de selección inadecuado." },
+                    { value: "b", text: "El proceso no filtra adecuadamente las competencias técnicas requeridas.", correct: true, feedback: "Correcto. El 45% de incumplimiento de competencias técnicas a los seis meses indica una brecha en la evaluación de habilidades durante la selección." },
+                    { value: "c", text: "Falta capacitación en habilidades blandas.", correct: false, feedback: "Las habilidades blandas no son el problema central; la brecha es técnica y del proceso de selección." }
+                ]
+            },
+            {
+                text: "¿Qué indicador de People Analytics priorizarías para diagnosticar primero la eficiencia del proceso?",
+                options: [
+                    { value: "a", text: "Tiempo para cubrir una vacante (time-to-fill).", correct: false, feedback: "Aunque 68 días es alto, el problema principal no es la velocidad, sino la calidad de la contratación." },
+                    { value: "b", text: "Tasa de rotación voluntaria.", correct: false, feedback: "La rotación es una consecuencia, pero no revela por qué los contratados no cumplen las competencias." },
+                    { value: "c", text: "Calidad de contratación (hiring quality) o tasa de éxito a los seis meses.", correct: true, feedback: "Correcto. La calidad de contratación mide si los seleccionados cumplen las competencias y permanecen, lo que explica tanto la rotación como el incumplimiento técnico." }
+                ]
+            },
+            {
+                text: "¿Qué intervención es más pertinente para cerrar la brecha de selección?",
+                options: [
+                    { value: "a", text: "Agregar una prueba técnica o caso práctico validado por el líder de área.", correct: true, feedback: "Correcto. Validar competencias técnicas con una prueba o caso práctico reduce la brecha entre el perfil requerido y el perfil real de los contratados." },
+                    { value: "b", text: "Publicar la vacante en más portales de empleo.", correct: false, feedback: "Más volumen de candidatos no resuelve el problema de calidad; puede incluso aumentar el tiempo de filtrado." },
+                    { value: "c", text: "Aumentar el número de entrevistas con RRHH.", correct: false, feedback: "Más entrevistas de RRHH sin un criterio técnico no garantiza que el candidato cumpla las competencias requeridas." }
+                ]
+            }
+        ];
+
+        function renderCaso() {
+            const container = document.getElementById('caso-questions');
+            if (!container) return;
+            container.innerHTML = casoQuestions.map((q, i) => `
+                <div class="p-5 rounded-xl border-2 caso-card" data-idx="${i}" style="background: var(--surface-soft); border-color: var(--line);">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #6c757d;">Pregunta ${i+1}</p>
+                    <p class="font-semibold mb-4" style="color: var(--heading);">${q.text}</p>
+                    <div class="space-y-2">
+                        ${q.options.map(opt => `
+                            <label class="flex items-start gap-2 text-sm font-semibold cursor-pointer p-3 rounded-lg border transition-all" style="border-color: var(--line); background: white;">
+                                <input type="radio" name="caso-${i}" value="${opt.value}" class="caso-radio mt-1">
+                                <span style="color: var(--text);">${opt.text}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="caso-feedback mt-3 hidden"></div>
+                </div>
+            `).join('');
+        }
+
+        window.evaluarCaso = function() {
+            let totalCorrect = 0;
+            casoQuestions.forEach((q, i) => {
+                const card = document.querySelector(`.caso-card[data-idx="${i}"]`);
+                const selected = document.querySelector(`input[name="caso-${i}"]:checked`);
+                const selectedOption = q.options.find(o => o.value === (selected ? selected.value : null));
+                const isCorrect = selectedOption && selectedOption.correct;
+                if (isCorrect) totalCorrect++;
+
+                const feedbackDiv = card.querySelector('.caso-feedback');
+                card.querySelectorAll('label').forEach(l => { l.style.borderColor = 'var(--line)'; l.style.background = 'white'; });
+                if (selected) {
+                    const selectedLabel = selected.parentElement;
+                    selectedLabel.style.borderColor = isCorrect ? 'var(--accent)' : '#dc2626';
+                    selectedLabel.style.background = isCorrect ? '#f0fdf4' : '#fef2f2';
+                }
+
+                card.style.borderColor = isCorrect ? 'var(--accent)' : '#dc2626';
+                feedbackDiv.innerHTML = `<p class="text-xs"><span>${isCorrect ? '✅' : '❌'}</span> ${selectedOption ? selectedOption.feedback : 'Selecciona una respuesta.'}</p>`;
+                feedbackDiv.classList.remove('hidden');
+            });
+
+            const summary = document.getElementById('caso-summary');
+            const pct = Math.round((totalCorrect / casoQuestions.length) * 100);
+            let msg = pct >= 80 ? '¡Excelente! Identificaste correctamente la brecha de selección, el indicador clave y la intervención más pertinente.' : pct >= 50 ? 'Buen avance. Revisa la retroalimentación para fortalecer el análisis de brechas en selección.' : 'Necesitas repasar el contenido del Tema 4. Recuerda: diagnosticar primero la calidad de contratación y luego intervenir el filtro técnico.';
+            summary.innerHTML = `
+                <p class="text-lg font-bold" style="color: var(--heading);">Resultado: ${totalCorrect}/${casoQuestions.length} aciertos (${pct}%)</p>
+                <div class="w-full h-3 rounded-full bg-gray-200 mt-3 overflow-hidden">
+                    <div class="h-full rounded-full transition-all duration-500" style="width: ${pct}%; background: ${pct >= 80 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};"></div>
+                </div>
+                <p class="mt-3 text-sm font-semibold" style="color: ${pct >= 80 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};">${msg}</p>
+            `;
+            summary.classList.remove('hidden');
+        }
+
+        window.limpiarCaso = function() {
+            document.querySelectorAll('.caso-radio').forEach(r => r.checked = false);
+            document.querySelectorAll('.caso-card').forEach(card => {
+                card.style.borderColor = 'var(--line)';
+                const fb = card.querySelector('.caso-feedback');
+                fb.classList.add('hidden');
+                fb.innerHTML = '';
+                card.querySelectorAll('label').forEach(l => { l.style.borderColor = 'var(--line)'; l.style.background = 'white'; });
+            });
+            document.getElementById('caso-summary').classList.add('hidden');
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Renderizar actividades al cargar
+        renderCaso();
+
+    });
+</script>
+</body>
+</html>
