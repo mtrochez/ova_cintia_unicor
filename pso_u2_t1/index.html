@@ -1,0 +1,1066 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1: Teorías y enfoques sobre cultura organizacional y clima laboral</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #495057; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: #17a2b8; background: #D8EBF8; color: #0c7b8a; }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed .flip-card { perspective: 1000px; height: 240px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología Organizacional y Bienestar Humano</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Psicología Organizacional y Bienestar Humano</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-users-viewfinder mr-2"></i>Unidad 2 — Tema 1</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Teorías y enfoques sobre cultura organizacional y clima laboral</h2>
+                        <p class="text-lg leading-relaxed opacity-95">La cultura organizacional es el "software invisible" que dicta cómo se hacen las cosas; el clima laboral es la percepción diaria de los empleados sobre ese entorno. Comprender su diferencia e interdependencia es la base para diseñar intervenciones de bienestar que perduren.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">🎯 Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed">Este tema inicia la Unidad 2 estableciendo los fundamentos conceptuales para diagnosticar e intervenir la cultura y el clima organizacional. El especialista aprenderá a contrastar ambos conceptos y sus variables críticas; analizar el impacto de una cultura inclusiva y colaborativa en la productividad y satisfacción; y proyectar la transición hacia modelos de agilidad cultural y organizaciones líquidas como respuesta a la volatilidad del entorno hacia el 2026.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta estratégica</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">De la percepción al significado: ruta cultura–clima</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-layer-group"></i></div>
+                                <h4>Cultura</h4>
+                                <p>Sistema de supuestos, valores y creencias que define "cómo se hacen las cosas aquí".</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-temperature-half"></i></div>
+                                <h4>Clima</h4>
+                                <p>Percepción temporal sobre liderazgo, autonomía y apoyo; manifestación medible de la cultura.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-bolt"></i></div>
+                                <h4>Agilidad cultural</h4>
+                                <p>Toma de decisiones distribuida, aprendizaje del error y aceptación de la incertidumbre.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-water"></i></div>
+                                <h4>Org. líquida</h4>
+                                <p>Redes de equipos que se forman y disuelven según prioridades estratégicas.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-heart-pulse"></i></div>
+                                <h4>Bienestar</h4>
+                                <p>Variable crítica de negocio para evitar el colapso por agotamiento cognitivo en entornos BANI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-lightbulb text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Pregunta central</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">¿Cómo diferenciar cultura y clima organizacional para diseñar intervenciones de bienestar que sean sostenibles en el tiempo?</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">La respuesta articula diagnóstico cultural, medición del clima y transformación de valores como ejes de una gestión del talento humana integral.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-route text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Enfoque</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Teoría de Schein, agilidad cultural, organizaciones líquidas, liderazgo violeta y resiliencia ante entornos BANI.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Se integran los enfoques clásicos de cultura organizacional con las nuevas teorías de adaptación colectiva y bienestar psicológico.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-award text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Producto esperado</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Capacidad para diagnosticar cultura y clima, estructurar intervenciones y proyectar escenarios de agilidad cultural.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El especialista será capaz de leer un contexto organizacional, identificar brechas culturales y proponer planes de mejora en clima orientados al bienestar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 1</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de contrastar los conceptos de cultura y clima organizacional; analizar el impacto de una cultura inclusiva y colaborativa en la productividad y satisfacción del talento humano; y proyectar la transición hacia modelos de agilidad cultural y organizaciones líquidas como respuesta a la volatilidad del entorno hacia el 2026.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-code-compare mr-2" style="color: #17a2b8;"></i>Contrastar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Los conceptos de cultura y clima organizacional, identificando sus variables críticas y su nivel de interdependencia para diagnosticar el estado actual de una organización.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-chart-line mr-2" style="color: #17a2b8;"></i>Analizar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">El impacto de una cultura inclusiva y colaborativa en el incremento demostrado de la productividad y la satisfacción del talento humano.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-forward mr-2" style="color: #17a2b8;"></i>Proyectar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">La transición hacia modelos de agilidad cultural y organizaciones líquidas como respuesta a la volatilidad del entorno hacia el 2026.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres enfoques para comprender cultura y clima</h2>
+                        <p class="mt-4 leading-relaxed">Este tema distingue los conceptos clásicos de cultura y clima organizacional, contrasta la agilidad cultural con la agilidad de procesos, y proyecta los modelos emergentes de organizaciones líquidas y liderazgo violeta para responder a la volatilidad del entorno hacia el 2026.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"Un clima laboral positivo mejora el desempeño, pero si la cultura subyacente es rígida o penaliza el error, cualquier mejora en el clima será efímera."</p>
+                                <p class="mt-2 text-sm opacity-80">— Enfoque de E. Schein sobre cultura organizacional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Conceptos clave del Tema 1 -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">🔄 Conceptos clave de cultura y clima</h3>
+                        <p class="text-xs mb-6" style="color: #6c757d;"><i class="fa-solid fa-hand-pointer mr-1"></i>Pasa el cursor sobre cada tarjeta para ver el detalle.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">1</div>
+                                        <i class="fa-solid fa-layer-group text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Cultura organizacional</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-layer-group text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Cultura organizacional</h4>
+                                        <p class="text-xs leading-relaxed">"Software" de la empresa: supuestos, valores y creencias que definen cómo se enfrentan problemas de adaptación e integración.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">2</div>
+                                        <i class="fa-solid fa-temperature-half text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Clima laboral</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-temperature-half text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Clima laboral</h4>
+                                        <p class="text-xs leading-relaxed">Percepción temporal de los empleados sobre liderazgo, autonomía y apoyo; medible y visible.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">3</div>
+                                        <i class="fa-solid fa-bolt text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Agilidad cultural</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-bolt text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Agilidad cultural</h4>
+                                        <p class="text-xs leading-relaxed">Capacidad de decidir, aprender del error y aceptar la incertidumbre como parte normal del funcionamiento.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">4</div>
+                                        <i class="fa-solid fa-water text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Organización líquida</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-water text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Organización líquida</h4>
+                                        <p class="text-xs leading-relaxed">Estructuras flexibles basadas en redes de equipos que se forman y disuelven según prioridades estratégicas.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">5</div>
+                                        <i class="fa-solid fa-gem text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Liderazgo violeta</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-gem text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Liderazgo violeta</h4>
+                                        <p class="text-xs leading-relaxed">Integra variables económicas, tecnológicas y humanas con pensamiento sistémico para liderar la transformación.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="text-3xl font-black mb-2" style="opacity:0.4;">6</div>
+                                        <i class="fa-solid fa-heart-pulse text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Entorno BANI</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-heart-pulse text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Entorno BANI</h4>
+                                        <p class="text-xs leading-relaxed">Mundo quebradizo, ansioso, no lineal e incomprensible, donde el bienestar psicológico es clave del negocio.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Acordeón de las Tres Partes -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📖 Desarrollo Temático</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-book-open mr-2" style="color: #374151;"></i>Parte 1: Enfoques Clásicos y Diferenciación Conceptual</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La <strong>cultura organizacional</strong> se entiende como el "software" de la empresa: un conjunto de supuestos básicos que un grupo ha inventado o desarrollado al aprender a enfrentar sus problemas de adaptación externa e integración interna. El <strong>clima laboral</strong>, por su parte, es la manifestación superficial de esa cultura, medible a través de la percepción de los empleados sobre el liderazgo, la autonomía y el apoyo recibido. Un clima laboral positivo mejora significativamente el desempeño, pero si la cultura subyacente es rígida o penaliza el error, cualquier mejora en el clima será efímera. Esta distinción es fundamental para intervenir de manera estratégica y sostenible.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-bolt mr-2" style="color: #374151;"></i>Parte 2: Cultura de Agilidad frente a Agilidad de Procesos</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La tendencia para 2025-2026 resalta que la <strong>agilidad de procesos</strong> (cómo se ejecuta el trabajo) es estéril si no está respaldada por una <strong>agilidad cultural</strong> (cómo se decide y aprende). Muchas organizaciones optimizan flujos de trabajo pero mantienen creencias que refuerzan el control excesivo. Una cultura ágil se caracteriza por la <strong>toma de decisiones distribuida</strong>, el <strong>aprendizaje sistemático del error</strong> y la <strong>aceptación de la incertidumbre</strong> como parte del funcionamiento normal. En las organizaciones con alta agilidad cultural, hasta el 81% de los colaboradores se adaptan rápidamente a los cambios, superando drásticamente a las empresas tradicionales.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-water mr-2" style="color: #374151;"></i>Parte 3: El Desafío de la Cultura Líquida y el Rendimiento en 2026</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">Bajo el concepto de <strong>"organizaciones líquidas"</strong>, las estructuras rígidas y estáticas son reemplazadas por redes de equipos que se forman y disuelven según prioridades estratégicas. Este enfoque exige un <strong>liderazgo "violeta"</strong> que integre variables económicas, tecnológicas y humanas, priorizando el pensamiento sistémico. Hacia el 2026, la cultura ya no será una lista de valores en la pared, sino una <strong>capacidad colectiva de resiliencia</strong> ante entornos BANI (quebradizos y ansiosos), donde el <strong>bienestar psicológico</strong> se trata como una variable crítica del negocio para evitar el colapso por agotamiento cognitivo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Actividades de Aprendizaje</h2>
+                        <p class="mt-4 leading-relaxed">Dos actividades interactivas para aplicar los contenidos del Tema 1: un ejercicio de contraste entre cultura y clima organizacional, y un caso de diagnóstico sobre agilidad cultural.</p>
+                    </div>
+
+                    <!-- Pestañas de actividades -->
+                    <div class="mt-6">
+                        <div class="flex border-b" style="border-color: var(--line);">
+                            <button type="button" class="act-tab active" data-act-target="act-contraste">
+                                <i class="fa-solid fa-code-compare"></i> Contraste cultura–clima
+                            </button>
+                            <button type="button" class="act-tab" data-act-target="act-caso">
+                                <i class="fa-solid fa-briefcase"></i> Caso de agilidad cultural
+                            </button>
+                        </div>
+
+                        <!-- Panel 1: Contraste cultura–clima -->
+                        <div class="act-panel active" id="act-contraste">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Contraste cultura–clima organizacional</h3>
+                                <p class="text-sm mb-5">Lee cada afirmación y clasifícala como <strong>cultura</strong> (sistema profundo de valores, supuestos y creencias) o <strong>clima</strong> (percepción temporal del entorno de trabajo). El sistema te dará retroalimentación inmediata.</p>
+
+                                <div class="space-y-4" id="contrast-checks">
+                                    <!-- Generado por JS -->
+                                </div>
+
+                                <div id="contrast-resultado" class="hidden mt-5 p-5 rounded-xl" style="background: var(--surface-soft); border: 2px solid var(--line);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="verificarContraste()">
+                                        <i class="fa-solid fa-clipboard-check"></i> Verificar respuestas
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="limpiarContraste()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 2: Caso de agilidad cultural -->
+                        <div class="act-panel" id="act-caso">
+                            <div class="section-card mt-4">
+                                <h3 class="text-lg font-bold mb-2" style="color: var(--heading)">Caso: agilidad cultural en Innovación Digital S.A.S.</h3>
+                                <p class="text-sm mb-4">La empresa <strong>Innovación Digital S.A.S.</strong> adoptó hace un año metodologías ágiles (Scrum, sprints, reuniones diarias). Los tiempos de entrega mejoraron, pero los equipos siguen esperando la aprobación del gerente para decisiones menores, y los colaboradores evitan proponer ideas nuevas por temor a cometer errores. La rotación de talento joven ha crecido y el clima de innovación se estancó. Contexto adicional:</p>
+
+                                <ul class="list-disc list-inside text-sm mb-5 space-y-1" style="color: var(--text);">
+                                    <li>Los procesos están optimizados, pero las <strong>creencias sobre el control</strong> y el error no han cambiado.</li>
+                                    <li>El gerente general considera que la agilidad ya está implementada porque se usan herramientas ágiles.</li>
+                                    <li>Los colaboradores reportan alta carga laboral y ansiedad ante la incertidumbre.</li>
+                                    <li>La dirección quiere preparar a la empresa para proyectos dinámicos del 2026.</li>
+                                </ul>
+
+                                <div class="space-y-5" id="caso-questions">
+                                    <!-- Preguntas generadas por JS -->
+                                </div>
+
+                                <div id="caso-summary" class="hidden mt-5 p-5 rounded-xl" style="background: var(--surface-soft); border: 2px solid var(--line);"></div>
+
+                                <div class="mt-5 flex flex-wrap gap-3">
+                                    <button type="button" class="btn-main flex items-center gap-2" onclick="evaluarCaso()">
+                                        <i class="fa-solid fa-check-double"></i> Verificar
+                                    </button>
+                                    <button type="button" class="btn-soft flex items-center gap-2" onclick="limpiarCaso()">
+                                        <i class="fa-solid fa-rotate-left" style="color: var(--accent);"></i> Reiniciar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Cuestionario del Tema 1</h2>
+                        <p class="mt-4 leading-relaxed">Responde las 4 preguntas sobre cultura y clima organizacional, agilidad cultural, organizaciones líquidas y bienestar psicológico en entornos BANI. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/4</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">Autoevaluación completada</h3>
+                            <p class="mt-2 font-semibold" style="color: var(--text);">Puntaje: <span id="quiz-score">0</span>/4</p>
+                            <p id="quiz-feedback" class="mt-2" style="color: var(--text);"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Recursos digitales de ampliación</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Materiales web e informes para profundizar sobre cultura organizacional, clima laboral, agilidad cultural y organizaciones líquidas.</p>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Harvard Business Review -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-newspaper" style="color: #7c3aed; font-size: 1em;"></i> Harvard Business Review — Cultura organizacional
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Harvard Business Review. Artículos y casos de liderazgo, cultura organizacional y transformación empresarial para complementar la teoría.</p>
+                                    <a href="https://hbr.org/topic/culture" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://hbr.org/topic/culture" alt="QR HBR" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Deloitte -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-chart-pie" style="color: #f59e0b; font-size: 1em;"></i> Deloitte — Global Human Capital Trends 2025
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Deloitte (2025). Global Human Capital Trends: Culture and Performance. Informe anual sobre tendencias globales de capital humano, cultura y desempeño.</p>
+                                    <a href="https://www2.deloitte.com/us/en/insights/focus/human-capital-trends.html" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www2.deloitte.com/us/en/insights/focus/human-capital-trends.html" alt="QR Deloitte" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Mercer -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-heart-pulse" style="color: #0f9d58; font-size: 1em;"></i> Mercer — Global Talent Trends 2024
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Mercer (2024). Global Talent Trends: The Heart of Employee Experience. Perspectivas sobre experiencia del empleado, bienestar y transformación cultural.</p>
+                                    <a href="https://www.mercer.com/insights/trends/global-talent-trends.html" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.mercer.com/insights/trends/global-talent-trends.html" alt="QR Mercer" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: OpenWebinars -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading)">
+                                        <i class="fa-solid fa-rotate" style="color: #e11d48; font-size: 1em;"></i> OpenWebinars — Cultura Organizacional Ágil
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">OpenWebinars (2025). Cultura Organizacional Ágil: Claves para el cambio continuo. Recurso formativo sobre cultura ágil y cambio organizacional.</p>
+                                    <a href="https://openwebinars.net/" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Consultar recurso
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://openwebinars.net/" alt="QR OpenWebinars" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias bibliográficas del Tema 1</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Selección de las referencias académicas más relevantes para comprender cultura organizacional, clima laboral y cambio cultural.</p>
+                    </div>
+
+                    <div class="mt-6 space-y-3">
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <p class="font-semibold text-sm" style="color: var(--text);">Schein, E. H. (2010). <span class="italic">Organizational Culture and Leadership.</span> Jossey-Bass.</p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        <a href="https://archive.org/details/EdgarHScheinOrganizationalCultureAndLeadership" target="_blank" class="bib-link"><i class="fa-solid fa-book-open"></i> Ver en Internet Archive</a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://archive.org/details/EdgarHScheinOrganizationalCultureAndLeadership" alt="QR Schein" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <p class="font-semibold text-sm" style="color: var(--text);">Alles, M. A. <span class="italic">Comportamiento organizacional: cómo lograr un cambio cultural a través de gestión por competencias.</span></p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        <a href="https://www.todostuslibros.com/libros/comportamiento-organizacional_978-950-641-499-3" target="_blank" class="bib-link"><i class="fa-solid fa-globe"></i> Ver en Todostuslibros</a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://www.todostuslibros.com/libros/comportamiento-organizacional_978-950-641-499-3" alt="QR Alles" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <p class="font-semibold text-sm" style="color: var(--text);">Chiavenato, I. <span class="italic">Comportamento organizacional / Comportamiento organizacional.</span></p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        <a href="https://books.google.com/books/about/Comportamiento_organizacional.html?id=kmFOtwAACAAJ" target="_blank" class="bib-link"><i class="fa-solid fa-book-open"></i> Ver en Google Books</a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://books.google.com/books/about/Comportamiento_organizacional.html?id=kmFOtwAACAAJ" alt="QR Chiavenato" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card border-l-4 no-hover" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <p class="font-semibold text-sm" style="color: var(--text);">Robbins, S. P. <span class="italic">Comportamiento organizacional: conceptos, controversia y aplicaciones.</span></p>
+                                    <div class="mt-2 flex flex-wrap gap-2">
+                                        <a href="https://books.google.com/books/about/Comportamiento_organizacional.html?id=OWBokj2RqBYC" target="_blank" class="bib-link"><i class="fa-solid fa-book-open"></i> Ver en Google Books</a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://books.google.com/books/about/Comportamiento_organizacional.html?id=OWBokj2RqBYC" alt="QR Robbins" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-6 section-card no-hover" style="border-left: 4px solid var(--accent);">
+                        <p class="text-sm font-semibold" style="color: var(--heading);"><i class="fa-solid fa-circle-info mr-2"></i>Nota sobre acceso</p>
+                        <p class="text-xs mt-2 leading-relaxed" style="color: var(--text);">Los botones de acceso enlazan a la página del editor o a búsquedas en plataformas abiertas. Las obras completas también pueden consultarse a través del catálogo institucional de la Universidad de Córdoba en <a href="https://ebookcentral.proquest.com/lib/unicordobasp" target="_blank" class="font-bold underline" style="color: var(--accent);">ebookcentral.proquest.com/lib/unicordobasp</a> con credenciales institucionales.</p>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Accordion functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.fa-chevron-down');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Quiz functionality - one question at a time
+        const quizQuestions = [
+            {
+                question: "¿Cuál es la principal diferencia entre cultura y clima organizacional según Edgar Schein?",
+                options: [
+                    { value: "a", text: "No existe diferencia; ambos conceptos son sinónimos." },
+                    { value: "b", text: "La cultura es el sistema profundo de supuestos, valores y creencias; el clima es la percepción temporal del ambiente de trabajo." },
+                    { value: "c", text: "La cultura se mide con encuestas de satisfacción laboral; el clima no se puede medir." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Qué significa desarrollar agilidad cultural en una organización?",
+                options: [
+                    { value: "a", text: "Aplicar metodologías ágiles como Scrum en todos los procesos operativos." },
+                    { value: "b", text: "Cambiar los supuestos, valores y comportamientos para adaptarse con rapidez y resiliencia." },
+                    { value: "c", text: "Reducir el número de niveles jerárquicos eliminando cargos directivos." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Cuál es una característica central de las organizaciones líquidas?",
+                options: [
+                    { value: "a", text: "Estructuras rígidas y permanentes que garantizan estabilidad a largo plazo." },
+                    { value: "b", text: "Liderazgo paternalista y centralizado en una sola persona." },
+                    { value: "c", text: "Estructuras flexibles, colaborativas y adaptables al cambio continuo." }
+                ],
+                correct: "c"
+            },
+            {
+                question: "En un entorno BANI (Brítico, Ansioso, No lineal, Incomprensible), ¿por qué el bienestar psicológico es especialmente relevante?",
+                options: [
+                    { value: "a", text: "Ayuda a las personas a regular la incertidumbre, mantener el rendimiento y prevenir el agotamiento." },
+                    { value: "b", text: "Elimina la complejidad y la ambigüedad inherentes al entorno." },
+                    { value: "c", text: "Sustituye la necesidad de una estrategia organizacional clara." }
+                ],
+                correct: "a"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        const quizBox = document.getElementById('quiz-box');
+        const quizResults = document.getElementById('quiz-results');
+        const quizTitle = document.getElementById('quiz-title');
+        const quizProgress = document.getElementById('quiz-progress');
+        const quizText = document.getElementById('quiz-text');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizPrev = document.getElementById('quiz-prev');
+        const quizNext = document.getElementById('quiz-next');
+        const quizScore = document.getElementById('quiz-score');
+        const quizFeedback = document.getElementById('quiz-feedback');
+        const quizReview = document.getElementById('quiz-review');
+        const quizRestart = document.getElementById('quiz-restart');
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuestion];
+            quizTitle.textContent = `Pregunta ${currentQuestion + 1}`;
+            quizProgress.textContent = `${currentQuestion + 1}/${quizQuestions.length}`;
+            quizText.textContent = q.question;
+            
+            quizOptions.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                btn.dataset.value = opt.value;
+                if (userAnswers[currentQuestion] === opt.value) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => {
+                    userAnswers[currentQuestion] = opt.value;
+                    document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+                quizOptions.appendChild(btn);
+            });
+
+            quizPrev.disabled = currentQuestion === 0;
+            quizNext.textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        quizPrev.addEventListener('click', () => {
+            if (currentQuestion > 0) { currentQuestion--; renderQuestion(); }
+        });
+
+        quizNext.addEventListener('click', () => {
+            if (!userAnswers[currentQuestion]) {
+                alert('Por favor selecciona una respuesta antes de continuar.');
+                return;
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            let score = 0;
+            let reviewHTML = '';
+
+            quizQuestions.forEach((q, i) => {
+                const userAnswer = userAnswers[i];
+                const isCorrect = userAnswer === q.correct;
+                if (isCorrect) score++;
+
+                const userOption = q.options.find(opt => opt.value === userAnswer);
+                const correctOption = q.options.find(opt => opt.value === q.correct);
+
+                reviewHTML += `
+                    <div class="p-4 rounded-lg" style="background: ${isCorrect ? 'var(--surface-soft)' : 'var(--surface)'}; border: 1px solid ${isCorrect ? 'var(--accent)' : 'var(--line)'};">
+                        <p class="font-bold" style="color: var(--heading);">Pregunta ${i + 1}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);">${q.question}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);"><strong>Tu respuesta:</strong> ${userOption ? userOption.text : 'Sin respuesta'}</p>
+                        ${!isCorrect ? `<p class="mt-1 text-sm" style="color: var(--accent);"><strong>Respuesta correcta:</strong> ${correctOption.text}</p>` : ''}
+                        <p class="mt-1 text-sm font-semibold" style="color: ${isCorrect ? 'var(--accent)' : '#dc2626'};">${isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>
+                    </div>
+                `;
+            });
+
+            quizScore.textContent = score;
+            quizFeedback.textContent = score === quizQuestions.length ? '¡Excelente! Has respondido todas las preguntas correctamente.' : score >= quizQuestions.length / 2 ? 'Buen trabajo. Revisa las respuestas incorrectas para mejorar.' : 'Te recomiendo repasar el contenido antes de intentar nuevamente.';
+            quizReview.innerHTML = reviewHTML;
+
+            quizBox.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        quizRestart.addEventListener('click', () => {
+            currentQuestion = 0;
+            userAnswers = {};
+            quizBox.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            renderQuestion();
+            document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        if (quizBox) renderQuestion();
+
+        document.querySelectorAll('.act-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.act-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.act-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.actTarget).classList.add('active');
+            });
+        });
+
+        const contrastItems = [
+            {
+                id: 'contrast-1',
+                texto: 'En esta organización se cree que "el error es parte del aprendizaje" y se comparten lecciones sin culpabilizar a las personas.',
+                correct: 'cultura',
+                cultura: { alerta: 'Correcto: Cultura', msg: 'Se trata de un supuesto profundo compartido sobre el error y el aprendizaje, es decir, un valor cultural estable.', color: 'var(--accent)', bg: '#f0fdf4' },
+                clima: { alerta: 'Incorrecto', msg: 'No es solo una percepción temporal del ambiente; describe una creencia estable del grupo.', color: '#dc2626', bg: '#fef2f2' }
+            },
+            {
+                id: 'contrast-2',
+                texto: 'Durante los últimos tres meses los equipos perciben alta presión por plazos ajustados y poco reconocimiento.',
+                correct: 'clima',
+                clima: { alerta: 'Correcto: Clima', msg: 'Es una percepción situacional del ambiente de trabajo en un período determinado.', color: 'var(--accent)', bg: '#f0fdf4' },
+                cultura: { alerta: 'Incorrecto', msg: 'Se trata de una percepción temporal (clima), no de un valor profundo e históricamente arraigado.', color: '#dc2626', bg: '#fef2f2' }
+            },
+            {
+                id: 'contrast-3',
+                texto: 'La toma de decisiones importantes siempre requiere aprobación del máximo dirigente; centralización histórica del poder.',
+                correct: 'cultura',
+                cultura: { alerta: 'Correcto: Cultura', msg: 'La centralización es un patrón de creencias y prácticas arraigadas sobre cómo se ejerce el poder.', color: 'var(--accent)', bg: '#f0fdf4' },
+                clima: { alerta: 'Incorrecto', msg: 'No es un clima temporal; es un modelo estable de liderazgo y control.', color: '#dc2626', bg: '#fef2f2' }
+            },
+            {
+                id: 'contrast-4',
+                texto: 'Tras la implementación de sprints, los colaboradores sienten que pueden proponer ideas sin temor a sanción.',
+                correct: 'clima',
+                clima: { alerta: 'Correcto: Clima', msg: 'Es una percepción del ambiente psicosocial que se puede modificar con prácticas concretas.', color: 'var(--accent)', bg: '#f0fdf4' },
+                cultura: { alerta: 'Incorrecto', msg: 'Si bien refuerza la cultura, la afirmación describe una percepción temporal del entorno laboral (clima).', color: '#dc2626', bg: '#fef2f2' }
+            }
+        ];
+
+        function renderContraste() {
+            const container = document.getElementById('contrast-checks');
+            document.getElementById('contrast-resultado').classList.add('hidden');
+            if (!container) return;
+            container.innerHTML = contrastItems.map(item => `
+                <div class="p-4 rounded-xl border contrast-card" id="card-${item.id}" style="background: var(--surface-soft); border-color: var(--line);">
+                    <p class="text-sm font-semibold mb-3" style="color: var(--heading);">${item.texto}</p>
+                    <div class="flex gap-4">
+                        <label class="flex items-center gap-2 text-sm cursor-pointer font-semibold">
+                            <input type="radio" name="${item.id}" value="cultura" class="contrast-radio"> Cultura
+                        </label>
+                        <label class="flex items-center gap-2 text-sm cursor-pointer font-semibold">
+                            <input type="radio" name="${item.id}" value="clima" class="contrast-radio"> Clima
+                        </label>
+                    </div>
+                    <div class="contrast-feedback mt-3 hidden p-3 rounded-lg text-xs font-semibold"></div>
+                </div>
+            `).join('');
+        }
+
+        window.verificarContraste = function() {
+            let correctCount = 0;
+            let answeredCount = 0;
+            contrastItems.forEach(item => {
+                const selected = document.querySelector(`input[name="${item.id}"]:checked`);
+                const card = document.getElementById(`card-${item.id}`);
+                const fb = card.querySelector('.contrast-feedback');
+                if (!selected) {
+                    fb.innerHTML = '⚠️ Selecciona una opción para este ítem.';
+                    fb.style.background = '#fef9c3';
+                    fb.style.color = '#92400e';
+                    fb.classList.remove('hidden');
+                    return;
+                }
+                answeredCount++;
+                const isCorrect = selected.value === item.correct;
+                if (isCorrect) correctCount++;
+                const result = item[selected.value];
+                card.style.borderColor = isCorrect ? 'var(--accent)' : '#dc2626';
+                fb.innerHTML = `<span>${result.alerta}:</span> ${result.msg}`;
+                fb.style.background = result.bg;
+                fb.style.color = result.color;
+                fb.classList.remove('hidden');
+            });
+
+            const summary = document.getElementById('contrast-resultado');
+            if (answeredCount === contrastItems.length) {
+                const pct = Math.round((correctCount / contrastItems.length) * 100);
+                const msg = pct === 100 ? '¡Excelente! Diferencias correctamente cultura y clima organizacional.' : pct >= 50 ? `Acertaste ${correctCount} de ${contrastItems.length}. Revisa las retroalimentaciones para afianzar el contraste.` : `Acertaste ${correctCount} de ${contrastItems.length}. Te sugiero revisar la diferencia entre cultura (profunda y estable) y clima (percepción temporal).`;
+                summary.innerHTML = `
+                    <p class="text-base font-bold" style="color: var(--heading);">Resultado: ${correctCount}/${contrastItems.length} aciertos</p>
+                    <div class="w-full h-3 rounded-full bg-gray-200 mt-2 overflow-hidden">
+                        <div class="h-full rounded-full transition-all duration-500" style="width: ${pct}%; background: ${pct === 100 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};"></div>
+                    </div>
+                    <p class="mt-2 text-sm font-semibold" style="color: ${pct === 100 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};">${msg}</p>
+                `;
+                summary.classList.remove('hidden');
+            }
+        }
+
+        window.limpiarContraste = function() {
+            document.querySelectorAll('.contrast-radio').forEach(r => r.checked = false);
+            contrastItems.forEach(item => {
+                const card = document.getElementById(`card-${item.id}`);
+                card.style.borderColor = 'var(--line)';
+                const fb = card.querySelector('.contrast-feedback');
+                fb.classList.add('hidden');
+                fb.innerHTML = '';
+            });
+            document.getElementById('contrast-resultado').classList.add('hidden');
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const casoQuestions = [
+            {
+                text: "¿Cuál es el problema principal que enfrenta Innovación Digital S.A.S.?",
+                options: [
+                    { value: "a", text: "No usar suficientes herramientas ágiles como Scrum y sprints.", correct: false, feedback: "La empresa ya usa herramientas ágiles; el problema es que las prácticas culturales no las acompañan." },
+                    { value: "b", text: "Agilidad de procesos sin agilidad cultural: los supuestos de control y miedo al error siguen vigentes.", correct: true, feedback: "Correcto. La cultura no cambió junto con los procesos, lo que genera fricción, estrés y estancamiento." },
+                    { value: "c", text: "La rotación se debe exclusivamente a salarios bajos.", correct: false, feedback: "No hay evidencia de salarios bajos; el caso señala miedo al error, control centralizado y carga laboral." }
+                ]
+            },
+            {
+                text: "¿Qué acción prioriza para desarrollar agilidad cultural?",
+                options: [
+                    { value: "a", text: "Reducir el número de reuniones diarias para evitar fatiga.", correct: false, feedback: "Disminuir reuniones no ataca los supuestos culturales de control y miedo al error." },
+                    { value: "b", text: "Distribuir la toma de decisiones y promover espacios seguros para experimentar.", correct: true, feedback: "Correcto. La agilidad cultural requiere empoderamiento, psychological safety y tolerancia al error." },
+                    { value: "c", text: "Comprar más licencias de software de gestión de proyectos.", correct: false, feedback: "Las herramientas tecnológicas no sustituyen un cambio cultural profundo." }
+                ]
+            },
+            {
+                text: "¿Por qué el bienestar psicológico es crítico en este contexto BANI / 2026?",
+                options: [
+                    { value: "a", text: "Porque reduce la imagen externa de la empresa ante clientes.", correct: false, feedback: "El bienestar psicológico impacta primero en el talento interno, no en la imagen externa." },
+                    { value: "b", text: "Porque evita agotamiento cognitivo, ansiedad y rotación de talento clave.", correct: true, feedback: "Correcto. En entornos inciertos, el bienestar psicológico protege el capital humano y sostiene el rendimiento." },
+                    { value: "c", text: "Porque es un requisito legal obligatorio de las metodologías ágiles.", correct: false, feedback: "El bienestar psicológico no es un requisito de Scrum; es un factor de sostenibilidad del desempeño." }
+                ]
+            }
+        ];
+
+        function renderCaso() {
+            const container = document.getElementById('caso-questions');
+            if (!container) return;
+            container.innerHTML = casoQuestions.map((q, i) => `
+                <div class="p-5 rounded-xl border-2 caso-card" data-idx="${i}" style="background: var(--surface-soft); border-color: var(--line);">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #6c757d;">Pregunta ${i+1}</p>
+                    <p class="font-semibold mb-4" style="color: var(--heading);">${q.text}</p>
+                    <div class="space-y-2">
+                        ${q.options.map(opt => `
+                            <label class="flex items-start gap-2 text-sm font-semibold cursor-pointer p-3 rounded-lg border transition-all" style="border-color: var(--line); background: white;">
+                                <input type="radio" name="caso-${i}" value="${opt.value}" class="caso-radio mt-1">
+                                <span style="color: var(--text);">${opt.text}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="caso-feedback mt-3 hidden"></div>
+                </div>
+            `).join('');
+        }
+
+        window.evaluarCaso = function() {
+            let totalCorrect = 0;
+            casoQuestions.forEach((q, i) => {
+                const card = document.querySelector(`.caso-card[data-idx="${i}"]`);
+                const selected = document.querySelector(`input[name="caso-${i}"]:checked`);
+                const selectedOption = q.options.find(o => o.value === (selected ? selected.value : null));
+                const isCorrect = selectedOption && selectedOption.correct;
+                if (isCorrect) totalCorrect++;
+
+                const feedbackDiv = card.querySelector('.caso-feedback');
+                card.querySelectorAll('label').forEach(l => { l.style.borderColor = 'var(--line)'; l.style.background = 'white'; });
+                if (selected) {
+                    const selectedLabel = selected.parentElement;
+                    selectedLabel.style.borderColor = isCorrect ? 'var(--accent)' : '#dc2626';
+                    selectedLabel.style.background = isCorrect ? '#f0fdf4' : '#fef2f2';
+                }
+
+                card.style.borderColor = isCorrect ? 'var(--accent)' : '#dc2626';
+                feedbackDiv.innerHTML = `<p class="text-xs"><span>${isCorrect ? '✅' : '❌'}</span> ${selectedOption ? selectedOption.feedback : 'Selecciona una respuesta.'}</p>`;
+                feedbackDiv.classList.remove('hidden');
+            });
+
+            const summary = document.getElementById('caso-summary');
+            const pct = Math.round((totalCorrect / casoQuestions.length) * 100);
+            let msg = pct >= 80 ? '¡Excelente! Comprendes cómo diagnosticar y promover agilidad cultural en contextos de transformación organizacional.' : pct >= 50 ? 'Buen avance. Revisa la retroalimentación para fortalecer tu análisis de cultura, clima y bienestar.' : 'Repasa el contenido del Tema 1. Recuerda: la agilidad cultural va más allá de las herramientas; implica cambiar supuestos, valores y comportamientos.';
+            summary.innerHTML = `
+                <p class="text-lg font-bold" style="color: var(--heading);">Resultado: ${totalCorrect}/${casoQuestions.length} aciertos (${pct}%)</p>
+                <div class="w-full h-3 rounded-full bg-gray-200 mt-3 overflow-hidden">
+                    <div class="h-full rounded-full transition-all duration-500" style="width: ${pct}%; background: ${pct >= 80 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};"></div>
+                </div>
+                <p class="mt-3 text-sm font-semibold" style="color: ${pct >= 80 ? 'var(--accent)' : pct >= 50 ? '#d97706' : '#dc2626'};">${msg}</p>
+            `;
+            summary.classList.remove('hidden');
+        }
+
+        window.limpiarCaso = function() {
+            document.querySelectorAll('.caso-radio').forEach(r => r.checked = false);
+            document.querySelectorAll('.caso-card').forEach(card => {
+                card.style.borderColor = 'var(--line)';
+                const fb = card.querySelector('.caso-feedback');
+                fb.classList.add('hidden');
+                fb.innerHTML = '';
+                card.querySelectorAll('label').forEach(l => { l.style.borderColor = 'var(--line)'; l.style.background = 'white'; });
+            });
+            document.getElementById('caso-summary').classList.add('hidden');
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        renderContraste();
+        renderCaso();
+
+    });
+</script>
+</body>
+</html>
