@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades Evaluativas Unidad 1: Proyecto Opción de Grado</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .matrix-export-btn { background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; border: 1px solid #17a2b8; cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .matrix-export-btn:hover { background: #17a2b8; color: white; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .bpmn-key { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; transition: all 0.2s; }
+        #ova-embed .bpmn-key:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .bpmn-symbol-demo { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 8px; background: var(--surface-soft); border: 1px solid var(--line); font-size: 1.25rem; }
+        #ova-embed .score-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; border-radius: 50%; font-weight: 700; color: white; background: var(--accent); }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Proyecto de intervención</h1>
+                <p class="eyebrow" style="text-transform:none;letter-spacing:0;">Unidad 1: Proyecto Opción de grado</p>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="diagnostico">Diagnóstico</option>
+            <option value="actividad1">Actividad 1</option>
+            <option value="actividad2">Actividad 2</option>
+            <option value="actividad3">Actividad 3</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <h1>Proyecto de intervención</h1>
+                    <p class="eyebrow" style="text-transform:none;letter-spacing:0;font-size:0.9rem;margin-top:6px;">Unidad 1: Proyecto Opción de grado</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="diagnostico"><i class="fa-solid fa-clipboard-list"></i> Diagnóstico</a>
+                <a href="#" class="sidebar-link" data-target="actividad1"><i class="fa-solid fa-sitemap"></i> Actividad 1</a>
+                <a href="#" class="sidebar-link" data-target="actividad2"><i class="fa-solid fa-list-check"></i> Actividad 2</a>
+                <a href="#" class="sidebar-link" data-target="actividad3"><i class="fa-solid fa-comments"></i> Actividad 3</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-graduation-cap mr-2"></i>Unidad 1</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Proyecto Opción de Grado</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Punto de partida para la consolidación del perfil de egreso del especialista. Transforme una inquietud administrativa en un problema de investigación e intervención estructurado.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">Introducción</h3>
+                        <p class="mt-4 leading-relaxed">La Unidad 1 constituye el punto de partida para la consolidación del perfil de egreso del especialista. Bajo el marco del Decreto 1330 de 2019, los programas de especialización deben garantizar la profundización en un área del conocimiento y el desarrollo de competencias para la aplicación práctica del saber. En esta unidad, el estudiante transformará una inquietud administrativa en un problema de investigación e intervención estructurado, cumpliendo con los requisitos institucionales para la obtención de su título profesional.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card" style="transition: all 0.3s ease;"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-scale-balanced mr-2" style="color: #17a2b8;"></i>Marco normativo</h3><p class="mt-2">El Decreto 1330 de 2019 orienta la calidad de los posgrados y las opciones de grado en Colombia.</p></div>
+                        <div class="mini-card" style="transition: all 0.3s ease;"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-bullseye mr-2" style="color: #17a2b8;"></i>Propósito</h3><p class="mt-2">Convertir una inquietud administrativa en un proyecto de intervención aplicado y sostenible.</p></div>
+                    </div>
+                </section>
+
+                <section id="diagnostico" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Diagnóstico · UA01 · Proyecto opción de grado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📋 Percepciones sobre diagnóstico organizacional y capacidad investigativa</h2>
+                        <p class="mt-4 leading-relaxed">Este cuestionario abre la experiencia formativa de la Especialización en Gerencia del Talento Humano y Desarrollo Organizacional. No tiene respuestas correctas ni incorrectas. Su propósito es doble: permite al equipo docente conocer su perspectiva como profesional en ejercicio para orientar las mediaciones pedagógicas del curso, y genera insumos para investigación sobre la realidad organizacional de la región Caribe colombiana. Sus respuestas son confidenciales y serán tratadas de forma agregada. El cuestionario no es calificable; su cumplimiento es de carácter obligatorio como evidencia de participación (AEM).</p>
+                        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-regular fa-clock mr-1"></i> Tiempo estimado: 15 a 20 minutos</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-lock mr-1"></i> Confidencial</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-list-check mr-1"></i> 8 preguntas</span>
+                        </div>
+                        <p class="mt-4 text-sm" style="color: #6c757d;"><strong>Instrucción:</strong> Responda con sinceridad. No hay respuestas correctas ni incorrectas. Sus respuestas son confidenciales y se usarán de forma agregada para fines académicos e investigativos.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="diag-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="diag-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="diag-progress" class="text-sm font-bold" style="color: var(--text);">1/8</span>
+                            </div>
+                            <p id="diag-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <p id="diag-hint" class="mt-1 text-xs" style="color: #6c757d;"></p>
+                            <div id="diag-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="diag-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="diag-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="diag-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">¡Diagnóstico completado!</h3>
+                            <p class="mt-2" style="color: var(--text);">Gracias por compartir su perspectiva como profesional en ejercicio. Sus respuestas serán tratadas de forma agregada y confidencial para orientar las mediaciones pedagógicas y como insumo para investigación sobre la realidad organizacional de la región Caribe.</p>
+                            <div id="diag-summary" class="mt-5 space-y-3"></div>
+                            <div class="mt-5 flex gap-3 flex-wrap">
+                                <button id="diag-save" type="button" class="btn-main flex items-center gap-2"><i class="fa-solid fa-save"></i> Guardar diagnóstico</button>
+                                <div style="position: relative; display: inline-block;">
+                                    <button id="diag-export" type="button" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar respuestas <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                                    <div id="export-dropdown" class="hidden" style="position: absolute; top: 100%; left: 0; z-index: 100; min-width: 180px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-top: 4px; overflow: hidden;">
+                                        <button id="export-txt" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-lines" style="color: var(--accent);"></i> Texto (.txt)</button>
+                                        <button id="export-word" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-word" style="color: #2563eb;"></i> Word (.doc)</button>
+                                    </div>
+                                </div>
+                                <button id="diag-restart" type="button" class="btn-soft">Reiniciar</button>
+                            </div>
+                            <div id="diag-save-feedback" class="mt-3 hidden text-sm font-semibold" style="color: var(--accent);"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad1" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad sugerida · Aula Virtual</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">1️⃣ Taller de Mapeo BPMN</h2>
+                        <p class="mt-4 leading-relaxed">Diagrama un proceso administrativo de tu organización usando la notación BPMN básica. Identifica actores, flujos y puntos de dolor. Este ejercicio es el primer paso para reconocer oportunidades de mejora antes de formular tu proyecto de intervención.</p>
+                    </div>
+
+                    <div class="section-card mt-6">
+                        <!-- Elementos BPMN visuales -->
+                        <div class="mb-6 p-4 rounded-xl" style="background: var(--surface-soft);">
+                            <p class="text-xs font-bold mb-3" style="color: var(--heading);"><i class="fa-solid fa-shapes mr-2"></i>Elementos BPMN básicos:</p>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+                                <div class="p-3 rounded-lg bg-white border" style="border-color: var(--line);">
+                                    <div class="bpmn-symbol-demo mx-auto mb-2 rounded-full border-2" style="border-color: var(--heading);"></div>
+                                    <p class="text-xs font-medium">Inicio/Fin</p>
+                                </div>
+                                <div class="p-3 rounded-lg bg-white border" style="border-color: var(--line);">
+                                    <div class="bpmn-symbol-demo mx-auto mb-2" style="border-radius: 4px; border: 2px solid #2563eb;"></div>
+                                    <p class="text-xs font-medium">Actividad</p>
+                                </div>
+                                <div class="p-3 rounded-lg bg-white border" style="border-color: var(--line);">
+                                    <div class="bpmn-symbol-demo mx-auto mb-2" style="transform: rotate(45deg); border-radius: 4px; border: 2px solid #d97706;"><i class="fa-solid fa-question" style="transform: rotate(-45deg);"></i></div>
+                                    <p class="text-xs font-medium">Decisión</p>
+                                </div>
+                                <div class="p-3 rounded-lg bg-white border" style="border-color: var(--line);">
+                                    <div class="bpmn-symbol-demo mx-auto mb-2" style="border: none; background: transparent;"><i class="fa-solid fa-arrow-right" style="color: var(--text);"></i></div>
+                                    <p class="text-xs font-medium">Flujo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formulario de mapeo -->
+                        <div class="space-y-5">
+                            <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);"><i class="fa-solid fa-tag" style="color: var(--accent);"></i>Nombre del proceso a mapear</label>
+                                <input type="text" id="bpmn-process" maxlength="100" class="w-full p-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);" placeholder="Ej: Proceso de contratación de personal">
+                                <div class="mt-2 flex items-center gap-2"><span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="bpmn-process">0/100</span></div>
+                            </div>
+
+                            <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);"><i class="fa-solid fa-users" style="color: var(--accent);"></i>Actores involucrados</label>
+                                <input type="text" id="bpmn-actors" maxlength="150" class="w-full p-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);" placeholder="Ej: Gerente de RRHH, Analista, Jefe de área (separados por comas)">
+                                <div class="mt-2 flex items-center gap-2"><span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="bpmn-actors">0/150</span></div>
+                            </div>
+
+                            <div class="p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                <label class="flex items-center gap-2 font-bold mb-3" style="color: var(--heading);"><i class="fa-solid fa-arrows-split-up-and-left" style="color: var(--accent);"></i>Descripción del flujo del proceso</label>
+                                <p class="text-xs mb-3" style="color: #6c757d;">Haz clic en los símbolos para insertarlos en tu descripción:</p>
+                                <div class="flex flex-wrap gap-2 mb-4 mt-2">
+                                    <button type="button" class="bpmn-key" data-insert="● " title="Evento Inicio/Fin">● Inicio/Fin</button>
+                                    <button type="button" class="bpmn-key" data-insert="▢ " title="Actividad/Tarea">▢ Actividad</button>
+                                    <button type="button" class="bpmn-key" data-insert="◆ " title="Gateway/Decisión">◆ Decisión</button>
+                                    <button type="button" class="bpmn-key" data-insert="→ " title="Flujo de secuencia">→ Flujo</button>
+                                </div>
+                                <textarea id="bpmn-flow" maxlength="800" class="w-full p-4 rounded-lg border bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line); min-height: 140px;" placeholder="Ejemplo:&#10;● Inicio: Solicitud recibida&#10;▢ Revisar documentación&#10;◆ ¿Documentación completa?&#10;→ Si: ▢ Procesar solicitud&#10;→ No: ▢ Solicitar documentos adicionales"></textarea>
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="bpmn-flow">0/800</span>
+                                    <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden"><div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="bpmn-flow"></div></div>
+                                </div>
+                            </div>
+
+                            <div class="p-5 rounded-xl border-2" style="background: linear-gradient(135deg, rgba(218,165,32,0.08) 0%, rgba(184,134,11,0.05) 100%); border-color: #DAA520;">
+                                <label class="flex items-center gap-2 font-bold mb-3" style="color: #B8860B;"><i class="fa-solid fa-triangle-exclamation" style="color: #DAA520;"></i>Puntos de dolor / Cuellos de botella</label>
+                                <p class="text-xs mb-3" style="color: #6c757d;">Identifica las ineficiencias, demoras o problemas detectados en el proceso.</p>
+                                <textarea id="bpmn-pain" maxlength="500" class="w-full p-4 rounded-lg border bg-white resize-none focus:outline-none focus:ring-2 focus:ring-amber-500" style="border-color: #DAA520; min-height: 100px;" placeholder="Ej: Demora en aprobación de perfiles (3-5 días), falta de comunicación entre áreas..."></textarea>
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: #B8860B;" data-counter-for="bpmn-pain">0/500</span>
+                                    <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden"><div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: #DAA520;" data-progress-for="bpmn-pain"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <div class="relative inline-block" id="bpmn-export-dropdown">
+                                <button type="button" class="btn-main flex items-center gap-2" onclick="toggleBpmnExportMenu()">
+                                    <i class="fa-solid fa-download"></i> Exportar <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </button>
+                                <div id="bpmn-export-menu" class="hidden absolute left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border z-10" style="border-color: var(--line);">
+                                    <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-t-lg" onclick="exportBpmnToWord()">
+                                        <i class="fa-solid fa-file-word text-blue-600"></i><span>Word (.doc)</span>
+                                    </button>
+                                    <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-b-lg" onclick="exportBpmnToTxt()">
+                                        <i class="fa-solid fa-file-lines text-gray-600"></i><span>TXT (.txt)</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-soft flex items-center gap-2" onclick="copyBpmnWork()">
+                                <i class="fa-solid fa-copy"></i> Copiar trabajo
+                            </button>
+                            <button type="button" class="btn-soft flex items-center gap-2" onclick="clearBpmnForm()">
+                                <i class="fa-solid fa-eraser" style="color: var(--accent);"></i> Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad2" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad sugerida · Aula Virtual</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">2️⃣ Clasificación de Problemas Organizacionales</h2>
+                        <p class="mt-4 leading-relaxed">Analiza tres problemas organizacionales identificados por ti y clasifícalos según su alcance, gravedad y urgencia. Justifica tu respuesta para cada uno.</p>
+                    </div>
+
+                    <div class="section-card mt-6">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--heading)">📊 Matriz de Priorización A-G-U</h3>
+                        <p class="mb-4 text-sm" style="color: #6c757d;">Escribe el problema que vas a clasificar y selecciona un nivel para cada criterio. Recuerda: <strong>1 = muy bajo</strong> y <strong>5 = muy alto</strong>.</p>
+
+                        <div class="space-y-6">
+                            <div class="a2-problema-card p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                <label class="block font-bold mb-2" style="color: var(--heading);">1. Describe el problema organizacional:</label>
+                                <input type="text" id="a2-problema-1" maxlength="200" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);" placeholder="Ej: Baja rotación de personal en áreas clave...">
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="a2-problema-1">0/200</span>
+                                </div>
+                                <div class="grid md:grid-cols-3 gap-4 mt-4 mb-4">
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Alcance:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="1" data-criterion="alcance" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Gravedad:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="1" data-criterion="gravedad" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Urgencia:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="1" data-criterion="urgencia" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Justifica tu clasificación:</label>
+                                <textarea id="a2-justif-1" maxlength="500" class="a2-justif w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 80px;" placeholder="Explica por qué asignaste esos niveles de alcance, gravedad y urgencia..."></textarea>
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="a2-justif-1">0/500</span>
+                                    <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden"><div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="a2-justif-1"></div></div>
+                                </div>
+                            </div>
+
+                            <div class="a2-problema-card p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                <label class="block font-bold mb-2" style="color: var(--heading);">2. Describe el problema organizacional:</label>
+                                <input type="text" id="a2-problema-2" maxlength="200" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);" placeholder="Ej: Falta de capacitación digital en personal administrativo...">
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="a2-problema-2">0/200</span>
+                                </div>
+                                <div class="grid md:grid-cols-3 gap-4 mt-4 mb-4">
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Alcance:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="2" data-criterion="alcance" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Gravedad:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="2" data-criterion="gravedad" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Urgencia:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="2" data-criterion="urgencia" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Justifica tu clasificación:</label>
+                                <textarea id="a2-justif-2" maxlength="500" class="a2-justif w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 80px;" placeholder="Explica por qué asignaste esos niveles de alcance, gravedad y urgencia..."></textarea>
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="a2-justif-2">0/500</span>
+                                    <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden"><div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="a2-justif-2"></div></div>
+                                </div>
+                            </div>
+
+                            <div class="a2-problema-card p-5 rounded-xl border-2" style="background: var(--surface-soft); border-color: var(--line);">
+                                <label class="block font-bold mb-2" style="color: var(--heading);">3. Describe el problema organizacional:</label>
+                                <input type="text" id="a2-problema-3" maxlength="200" class="w-full p-3 rounded-lg border bg-white" style="border-color: var(--line);" placeholder="Ej: Sistema de nómina obsoleto y propenso a errores...">
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="a2-problema-3">0/200</span>
+                                </div>
+                                <div class="grid md:grid-cols-3 gap-4 mt-4 mb-4">
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Alcance:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="3" data-criterion="alcance" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Gravedad:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="3" data-criterion="gravedad" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Urgencia:</label>
+                                        <select class="a2-score w-full p-3 rounded-lg border" data-row="3" data-criterion="urgencia" style="border-color: var(--line);">
+                                            <option value="0">—</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="block font-bold text-sm mb-2" style="color: var(--heading);">Justifica tu clasificación:</label>
+                                <textarea id="a2-justif-3" maxlength="500" class="a2-justif w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 80px;" placeholder="Explica por qué asignaste esos niveles de alcance, gravedad y urgencia..."></textarea>
+                                <div class="mt-2 flex items-center gap-2">
+                                    <span class="text-xs font-semibold" style="color: var(--heading);" data-counter-for="a2-justif-3">0/500</span>
+                                    <div class="w-24 h-1.5 rounded-full bg-gray-200 overflow-hidden"><div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="a2-justif-3"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <button type="button" id="a2-save" class="btn-main flex items-center justify-center gap-2 py-3 px-4">
+                                <i class="fa-solid fa-floppy-disk"></i><span>Guardar</span>
+                            </button>
+                            <div style="position: relative;">
+                                <button id="a2-export-btn" type="button" class="matrix-export-btn w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-semibold transition-all duration-200" style="background: #D8EBF8; color: #0c7b8a; border: 1px solid #17a2b8;">
+                                    <i class="fa-solid fa-file-export"></i><span>Exportar</span><i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                                </button>
+                                <div id="a2-export-menu" style="display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: white; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 50; min-width: 160px;">
+                                    <button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-t-lg" onclick="exportActivity2('word')" style="color: #374151;"><i class="fa-solid fa-file-word mr-2" style="color: #2b579a;"></i>Word</button>
+                                    <button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 rounded-b-lg" onclick="exportActivity2('txt')" style="color: #374151;"><i class="fa-solid fa-file-lines mr-2" style="color: #6c757d;"></i>TXT</button>
+                                </div>
+                            </div>
+                            <button type="button" id="a2-reset" class="btn-soft flex items-center justify-center gap-2 py-3 px-4">
+                                <i class="fa-solid fa-rotate-right"></i><span>Limpiar</span>
+                            </button>
+                        </div>
+                        <div id="a2-feedback" class="mt-4 hidden p-4 rounded-lg" style="background: var(--surface-soft);"></div>
+                    </div>
+                </section>
+
+                <section id="actividad3" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad sugerida · Aula Virtual</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">3️⃣ Foro Normativo</h2>
+                        <p class="mt-4 leading-relaxed">Debate sobre las implicaciones del Decreto 1330 de 2019 en el rigor de los trabajos de grado de especialización en Colombia. Reflexiona sobre cómo la normativa afecta la calidad, la autonomía del estudiante y la pertinencia social del proyecto de intervención.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div class="p-5 rounded-xl mb-6" style="background: var(--surface-soft); border: 1px solid var(--line);">
+                            <h4 class="font-bold mb-2" style="color: var(--heading);">Preguntas orientadoras</h4>
+                            <ul class="list-disc list-inside text-sm space-y-1" style="color: var(--text);">
+                                <li>¿Cómo define el Decreto 1330 de 2019 las opciones de grado en especialización?</li>
+                                <li>¿Qué papel juega el proyecto aplicado en la transferencia social del conocimiento?</li>
+                                <li>¿Cómo garantiza la normativa el rigor académico sin perder pertinencia regional?</li>
+                            </ul>
+                        </div>
+                        <label class="block font-bold mb-2" style="color: var(--heading);">Tu participación en el foro</label>
+                        <textarea id="a3-text" maxlength="2500" class="w-full min-h-[260px] p-4 border rounded-xl bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-600" style="border-color: var(--line);" placeholder="Redacta aquí tu intervención argumentada sobre el Decreto 1330 y su impacto en los trabajos de grado..."></textarea>
+                        <div class="mt-3 flex items-center gap-2">
+                            <span class="text-sm font-semibold" style="color: var(--heading);" data-counter-for="a3-text">0/2500</span>
+                            <div class="w-32 h-2 rounded-full bg-gray-200 overflow-hidden"><div class="h-full rounded-full transition-all duration-300" style="width: 0%; background: var(--accent);" data-progress-for="a3-text"></div></div>
+                        </div>
+                        <div class="mt-5 flex flex-wrap gap-3 justify-end">
+                            <button type="button" id="a3-save" class="btn-main flex items-center gap-2"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                            <button type="button" class="btn-main flex items-center gap-2" data-copy="a3-text"><i class="fa-solid fa-copy"></i> Copiar</button>
+                            <div class="relative inline-block" id="a3-export-dropdown">
+                                <button type="button" id="a3-export-btn" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                                <div id="a3-export-menu" class="hidden absolute right-0 mt-1 w-48 bg-white rounded-lg shadow-lg border z-10" style="border-color: var(--line);">
+                                    <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-t-lg" onclick="exportActivity3('word')"><i class="fa-solid fa-file-word text-blue-600"></i><span>Word (.doc)</span></button>
+                                    <button type="button" class="w-full text-left px-4 py-3 hover:bg-gray-50 flex items-center gap-2 rounded-b-lg" onclick="exportActivity3('txt')"><i class="fa-solid fa-file-lines text-gray-600"></i><span>TXT (.txt)</span></button>
+                                </div>
+                            </div>
+                            <button type="button" id="a3-reset" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-rotate-right"></i> Limpiar</button>
+                        </div>
+                        <div id="a3-feedback" class="mt-4 hidden p-4 rounded-lg" style="background: var(--surface-soft);"></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Character counters for textareas and text inputs
+        const fields = document.querySelectorAll('textarea[maxlength], input[type="text"][maxlength]');
+        fields.forEach(field => {
+            const counter = document.querySelector(`[data-counter-for="${field.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${field.id}"]`);
+            if (counter) {
+                const update = () => {
+                    const current = field.value.length;
+                    const max = field.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) progress.style.width = `${(current / max) * 100}%`;
+                };
+                field.addEventListener('input', update);
+                update();
+            }
+        });
+
+        // Copy buttons
+        document.querySelectorAll('[data-copy]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = document.getElementById(btn.dataset.copy);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const original = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado';
+                    setTimeout(() => btn.innerHTML = original, 2000);
+                }
+            });
+        });
+
+        // ===== DIAGNÓSTICO =====
+        const diagQuestions = [
+            { id: 'd1', question: '¿Qué tan urgente considera que su organización necesita un diagnóstico formal de sus procesos internos?', hint: 'Escala: 1 = Nada urgente · 5 = Muy urgente', type: 'radio', options: [
+                { value: '1', text: '1 - Nada urgente' }, { value: '2', text: '2 - Poco urgente' }, { value: '3', text: '3 - Moderadamente urgente' }, { value: '4', text: '4 - Urgente' }, { value: '5', text: '5 - Muy urgente' }
+            ]},
+            { id: 'd2', question: '¿Ha observado en su entorno laboral problemas recurrentes que nunca se han abordado desde una perspectiva organizacional sistemática?', hint: 'Puede agregar una descripción breve opcional.', type: 'radio-text', options: [
+                { value: 'si', text: 'Sí' }, { value: 'no', text: 'No' }
+            ], textPlaceholder: 'Describe brevemente los problemas observados (opcional)...', textMax: 300 },
+            { id: 'd3', question: '¿Qué tipo de problema organizacional considera más relevante de abordar en su contexto laboral?', hint: 'Puede seleccionar más de una opción.', type: 'checkbox', options: [
+                { value: 'estructura', text: 'Estructura' }, { value: 'cultura', text: 'Cultura' }, { value: 'procesos', text: 'Procesos' },
+                { value: 'liderazgo', text: 'Liderazgo' }, { value: 'tecnologia', text: 'Tecnología' }, { value: 'comunicacion', text: 'Comunicación' }, { value: 'otro', text: 'Otro' }
+            ]},
+            { id: 'd4', question: '¿Tiene alguna idea o hipótesis sobre una intervención que podría transformar su organización? Descríbala brevemente.', hint: 'Pregunta abierta · Máx. 100 palabras.', type: 'textarea', textPlaceholder: 'Describe tu idea o hipótesis de intervención...', textMax: 600 },
+            { id: 'd5', question: '¿Qué tan familiarizado/a está con metodologías de investigación aplicada como diagnóstico organizacional, investigación-acción o estudio de caso?', hint: 'Escala: 1 = Nada familiarizado/a · 5 = Muy familiarizado/a', type: 'radio', options: [
+                { value: '1', text: '1 - Nada familiarizado/a' }, { value: '2', text: '2 - Poco familiarizado/a' }, { value: '3', text: '3 - Moderadamente familiarizado/a' }, { value: '4', text: '4 - Bastante familiarizado/a' }, { value: '5', text: '5 - Muy familiarizado/a' }
+            ]},
+            { id: 'd6', question: '¿En su organización se toman decisiones basadas en datos e indicadores o predominan las decisiones intuitivas?', hint: 'Selecciona la opción que mejor describe tu organización.', type: 'radio', options: [
+                { value: 'siempre-datos', text: 'Siempre datos' }, { value: 'mayoria-datos', text: 'Mayoría datos' }, { value: 'equilibrio', text: 'Equilibrio' }, { value: 'mayoria-intuicion', text: 'Mayoría intuición' }, { value: 'siempre-intuicion', text: 'Siempre intuición' }
+            ]},
+            { id: 'd7', question: '¿Considera que las organizaciones de su región tienen capacidad real para implementar proyectos de intervención organizacional?', hint: 'Escala: 1 = Ninguna capacidad · 5 = Plena capacidad', type: 'radio', options: [
+                { value: '1', text: '1 - Ninguna capacidad' }, { value: '2', text: '2 - Poca capacidad' }, { value: '3', text: '3 - Capacidad moderada' }, { value: '4', text: '4 - Buena capacidad' }, { value: '5', text: '5 - Plena capacidad' }
+            ]},
+            { id: 'd8', question: '¿Estaría dispuesto/a a realizar su proyecto de grado en la organización donde trabaja actualmente?', hint: 'Selecciona la opción que mejor aplica a tu situación.', type: 'radio', options: [
+                { value: 'si', text: 'Sí' }, { value: 'no', text: 'No' }, { value: 'tal-vez', text: 'Tal vez' }, { value: 'no-trabajo', text: 'No trabajo actualmente' }
+            ]}
+        ];
+
+        let currentDiag = 0;
+        let diagAnswers = JSON.parse(localStorage.getItem('diagnostico_u01') || '{}');
+
+        const diagBox = document.getElementById('diag-box');
+        const diagResults = document.getElementById('diag-results');
+
+        function renderDiag() {
+            const q = diagQuestions[currentDiag];
+            document.getElementById('diag-title').textContent = `Pregunta ${currentDiag + 1}`;
+            document.getElementById('diag-progress').textContent = `${currentDiag + 1}/${diagQuestions.length}`;
+            document.getElementById('diag-text').textContent = q.question;
+            document.getElementById('diag-hint').textContent = q.hint || '';
+            const opts = document.getElementById('diag-options');
+            opts.innerHTML = '';
+
+            if (q.type === 'radio' || q.type === 'radio-text') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    if (diagAnswers[q.id] === opt.value) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        diagAnswers[q.id] = opt.value;
+                        opts.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                    });
+                    opts.appendChild(btn);
+                });
+                if (q.type === 'radio-text') {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mt-4';
+                    wrap.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">Descripción breve (opcional):</label>
+                        <textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 70px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id + '_text'] || ''}</textarea>
+                        <span class="mt-1 block text-xs font-semibold" id="diag-text-counter">${(diagAnswers[q.id + '_text'] || '').length}/${q.textMax}</span>`;
+                    opts.appendChild(wrap);
+                    const ta = wrap.querySelector('#diag-text-input');
+                    const counter = wrap.querySelector('#diag-text-counter');
+                    ta.addEventListener('input', () => { diagAnswers[q.id + '_text'] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+                }
+            } else if (q.type === 'checkbox') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    const saved = diagAnswers[q.id] || [];
+                    if (saved.includes(opt.value)) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        let arr = diagAnswers[q.id] || [];
+                        if (arr.includes(opt.value)) { arr = arr.filter(v => v !== opt.value); btn.classList.remove('selected'); }
+                        else { arr.push(opt.value); btn.classList.add('selected'); }
+                        diagAnswers[q.id] = arr;
+                        const otro = opts.querySelector('#otro-wrapper');
+                        if (otro) otro.style.display = arr.includes('otro') ? 'block' : 'none';
+                    });
+                    opts.appendChild(btn);
+                });
+                const otro = document.createElement('div');
+                otro.id = 'otro-wrapper';
+                otro.style.display = (diagAnswers[q.id] || []).includes('otro') ? 'block' : 'none';
+                otro.className = 'mt-3';
+                otro.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">¿Cuál otro problema? (opcional):</label>
+                    <input type="text" id="d3-otro-input" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" placeholder="Describe el otro tipo de problema..." value="${diagAnswers['d3_otro'] || ''}">
+                    <span class="mt-1 block text-xs font-semibold" id="otro-char-count">${(diagAnswers['d3_otro'] || '').length}/100</span>`;
+                opts.appendChild(otro);
+                const otroInput = otro.querySelector('#d3-otro-input');
+                otro.querySelector('#otro-char-count').addEventListener = null;
+                otroInput.addEventListener('input', () => {
+                    diagAnswers['d3_otro'] = otroInput.value;
+                    const c = otro.querySelector('#otro-char-count');
+                    if (c) c.textContent = `${otroInput.value.length}/100`;
+                });
+            } else if (q.type === 'textarea') {
+                const wrap = document.createElement('div');
+                wrap.innerHTML = `<textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 120px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id] || ''}</textarea>
+                    <span class="mt-1 block text-xs font-semibold" id="diag-char-count">${(diagAnswers[q.id] || '').length}/${q.textMax}</span>`;
+                opts.appendChild(wrap);
+                const ta = wrap.querySelector('#diag-text-input');
+                const counter = wrap.querySelector('#diag-char-count');
+                ta.addEventListener('input', () => { diagAnswers[q.id] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+            }
+            document.getElementById('diag-prev').disabled = currentDiag === 0;
+            document.getElementById('diag-next').textContent = currentDiag === diagQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('diag-prev').addEventListener('click', () => { if (currentDiag > 0) { currentDiag--; renderDiag(); } });
+        document.getElementById('diag-next').addEventListener('click', () => {
+            const q = diagQuestions[currentDiag];
+            if ((q.type === 'radio' || q.type === 'radio-text') && !diagAnswers[q.id]) { alert('Por favor selecciona una respuesta antes de continuar.'); return; }
+            if (currentDiag < diagQuestions.length - 1) { currentDiag++; renderDiag(); }
+            else { showDiagResults(); }
+        });
+
+        function showDiagResults() {
+            let summaryHTML = '';
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers['d3_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                }
+                summaryHTML += `<div class="p-3 rounded-lg" style="background: var(--surface); border: 1px solid var(--line); overflow: hidden;">
+                    <p class="text-xs font-bold mb-1" style="color: var(--accent);">Pregunta ${i + 1}</p>
+                    <p class="text-sm font-bold" style="color: var(--heading);">${q.question}</p>
+                    <p class="mt-1 text-sm" style="color: var(--text); white-space: pre-wrap; word-break: break-word;">${ansText}</p>
+                </div>`;
+            });
+            document.getElementById('diag-summary').innerHTML = summaryHTML;
+            diagBox.classList.add('hidden');
+            diagResults.classList.remove('hidden');
+        }
+
+        document.getElementById('diag-save').addEventListener('click', () => {
+            localStorage.setItem('diagnostico_u01', JSON.stringify(diagAnswers));
+            const fb = document.getElementById('diag-save-feedback');
+            fb.textContent = '✓ Diagnóstico guardado correctamente en este navegador.';
+            fb.classList.remove('hidden');
+        });
+
+        document.getElementById('diag-restart').addEventListener('click', () => {
+            currentDiag = 0; diagAnswers = {}; diagBox.classList.remove('hidden'); diagResults.classList.add('hidden'); renderDiag();
+            document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        const exportDropdown = document.getElementById('export-dropdown');
+        document.getElementById('diag-export').addEventListener('click', (e) => { e.stopPropagation(); exportDropdown.classList.toggle('hidden'); });
+        document.addEventListener('click', () => exportDropdown.classList.add('hidden'));
+
+        function buildDiagExportLines() {
+            const lines = [];
+            lines.push('DIAGNÓSTICO DE CONTEXTO ORGANIZACIONAL');
+            lines.push('Especialización en Gerencia del Talento Humano y Desarrollo Organizacional — Unidad 1');
+            lines.push('Fecha: ' + new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' }));
+            lines.push('='.repeat(60));
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers['d3_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                }
+                lines.push(`PREGUNTA ${i + 1}: ${q.question}`);
+                lines.push(`RESPUESTA: ${ansText}`);
+                lines.push('');
+            });
+            return lines.join('\n');
+        }
+
+        document.getElementById('export-txt').addEventListener('click', () => {
+            const blob = new Blob([buildDiagExportLines()], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U1.txt';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('export-word').addEventListener('click', () => {
+            const lines = buildDiagExportLines().split('\n').map(l => l ? `<p>${l}</p>` : '<br>').join('');
+            const html = `<html><head><meta charset='utf-8'><title>Diagnóstico U1</title></head><body><h2>Diagnóstico de Contexto Organizacional</h2>${lines}</body></html>`;
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U1.doc';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        renderDiag();
+
+        // ===== BPMN =====
+        document.querySelectorAll('.bpmn-key').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const textarea = document.getElementById('bpmn-flow');
+                const insertText = btn.getAttribute('data-insert');
+                const start = textarea.selectionStart;
+                const end = textarea.selectionEnd;
+                const text = textarea.value;
+                textarea.value = text.substring(0, start) + insertText + text.substring(end);
+                textarea.focus();
+                textarea.setSelectionRange(start + insertText.length, start + insertText.length);
+                textarea.dispatchEvent(new Event('input'));
+            });
+        });
+
+        function getBpmnValues() {
+            return {
+                process: document.getElementById('bpmn-process').value,
+                actors: document.getElementById('bpmn-actors').value,
+                flow: document.getElementById('bpmn-flow').value,
+                pain: document.getElementById('bpmn-pain').value
+            };
+        }
+
+        function buildBpmnText() {
+            const v = getBpmnValues();
+            return `TALLER DE MAPEO BPMN - UNIDAD 1\n\nProceso: ${v.process}\nActores: ${v.actors}\n\nFlujo del proceso:\n${v.flow}\n\nPuntos de dolor / Cuellos de botella:\n${v.pain}`;
+        }
+
+        window.copyBpmnWork = function() {
+            navigator.clipboard.writeText(buildBpmnText()).then(() => alert('¡Trabajo copiado al portapapeles!'));
+        };
+
+        window.toggleBpmnExportMenu = function() {
+            document.getElementById('bpmn-export-menu').classList.toggle('hidden');
+        };
+
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('bpmn-export-dropdown');
+            if (dropdown && !dropdown.contains(e.target)) document.getElementById('bpmn-export-menu').classList.add('hidden');
+        });
+
+        window.exportBpmnToTxt = function() {
+            const v = getBpmnValues();
+            const text = `TALLER DE MAPEO BPMN - UNIDAD 1\n\nPROCESO: ${v.process}\n\nACTORES INVOLUCRADOS:\n${v.actors}\n\nDESCRIPCIÓN DEL FLUJO:\n${v.flow}\n\nPUNTOS DE DOLOR / CUELLOS DE BOTELLA:\n${v.pain}\n\n---\nGenerado desde OVA Gerencia del Talento Humano - Unidad 1`;
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = `Taller_BPMN_${v.process.replace(/\s+/g, '_') || 'Proceso'}.txt`;
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            document.getElementById('bpmn-export-menu').classList.add('hidden');
+        };
+
+        window.exportBpmnToWord = function() {
+            const v = getBpmnValues();
+            const html = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Taller BPMN</title></head><body>
+                <h2>Taller de Mapeo BPMN - Unidad 1</h2>
+                <p><strong>Proceso:</strong> ${v.process}</p>
+                <p><strong>Actores involucrados:</strong> ${v.actors}</p>
+                <h3>Descripción del flujo:</h3><p>${v.flow.replace(/\n/g, '<br>')}</p>
+                <h3>Puntos de dolor / Cuellos de botella:</h3><p>${v.pain.replace(/\n/g, '<br>')}</p>
+            </body></html>`;
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = `Taller_BPMN_${v.process.replace(/\s+/g, '_') || 'Proceso'}.doc`;
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            document.getElementById('bpmn-export-menu').classList.add('hidden');
+        };
+
+        window.clearBpmnForm = function() {
+            ['bpmn-process', 'bpmn-actors', 'bpmn-flow', 'bpmn-pain'].forEach(id => {
+                document.getElementById(id).value = '';
+                const counter = document.querySelector(`[data-counter-for="${id}"]`);
+                const progress = document.querySelector(`[data-progress-for="${id}"]`);
+                const max = document.getElementById(id).getAttribute('maxlength');
+                if (counter) counter.textContent = `0/${max}`;
+                if (progress) progress.style.width = '0%';
+            });
+            localStorage.removeItem('bpmnWorkshop');
+        };
+
+        // ===== ACTIVIDAD 2: CLASIFICACIÓN A-G-U =====
+        function getA2RowData(row) {
+            return {
+                problema: document.getElementById(`a2-problema-${row}`)?.value || '',
+                alcance: document.querySelector(`.a2-score[data-row="${row}"][data-criterion="alcance"]`)?.value || '0',
+                gravedad: document.querySelector(`.a2-score[data-row="${row}"][data-criterion="gravedad"]`)?.value || '0',
+                urgencia: document.querySelector(`.a2-score[data-row="${row}"][data-criterion="urgencia"]`)?.value || '0',
+                justificacion: document.getElementById(`a2-justif-${row}`)?.value || ''
+            };
+        }
+
+        function getA2Total(row) {
+            const d = getA2RowData(row);
+            return (parseInt(d.alcance) || 0) + (parseInt(d.gravedad) || 0) + (parseInt(d.urgencia) || 0);
+        }
+
+        document.getElementById('a2-save').addEventListener('click', () => {
+            const data = [];
+            [1, 2, 3].forEach(row => data.push(getA2RowData(row)));
+            localStorage.setItem('actividad2_u01', JSON.stringify(data));
+            const fb = document.getElementById('a2-feedback');
+            fb.innerHTML = '<div style="color: #059669;"><i class="fa-solid fa-check-circle mr-2"></i>¡Tu matriz ha sido guardada correctamente!</div>';
+            fb.classList.remove('hidden');
+            setTimeout(() => fb.classList.add('hidden'), 3000);
+        });
+
+        document.getElementById('a2-reset').addEventListener('click', () => {
+            [1, 2, 3].forEach(row => {
+                document.getElementById(`a2-problema-${row}`).value = '';
+                document.querySelectorAll(`.a2-score[data-row="${row}"]`).forEach(sel => sel.value = '0');
+                const justif = document.getElementById(`a2-justif-${row}`);
+                justif.value = '';
+                justif.dispatchEvent(new Event('input'));
+            });
+            document.getElementById(`a2-problema-1`).dispatchEvent(new Event('input'));
+            document.getElementById(`a2-problema-2`).dispatchEvent(new Event('input'));
+            document.getElementById(`a2-problema-3`).dispatchEvent(new Event('input'));
+            localStorage.removeItem('actividad2_u01');
+            const fb = document.getElementById('a2-feedback');
+            fb.innerHTML = '<div style="color: #6b7280;"><i class="fa-solid fa-rotate-right mr-2"></i>El formulario ha sido limpiado.</div>';
+            fb.classList.remove('hidden');
+            setTimeout(() => fb.classList.add('hidden'), 3000);
+        });
+
+        const a2ExportBtn = document.getElementById('a2-export-btn');
+        const a2ExportMenu = document.getElementById('a2-export-menu');
+        if (a2ExportBtn && a2ExportMenu) {
+            a2ExportBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                a2ExportMenu.style.display = a2ExportMenu.style.display === 'none' ? 'block' : 'none';
+            });
+            document.addEventListener('click', () => a2ExportMenu.style.display = 'none');
+        }
+
+        window.exportActivity2 = function(format) {
+            const rows = [];
+            [1, 2, 3].forEach(row => {
+                const d = getA2RowData(row);
+                rows.push({ ...d, total: getA2Total(row) });
+            });
+
+            const title = 'Matriz de Priorización de Problemas Organizacionales';
+            const subtitle = 'Gerencia de Talento Humano y Desarrollo Organizacional — Unidad 1';
+            const date = new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            if (format === 'txt') {
+                let content = `${title}\n${subtitle}\nFecha: ${date}\n${'='.repeat(60)}\n\n`;
+                rows.forEach((r, i) => {
+                    content += `${i + 1}. ${r.problema || 'Sin problema'}\n   Alcance: ${r.alcance}\n   Gravedad: ${r.gravedad}\n   Urgencia: ${r.urgencia}\n   Total: ${r.total}\n   Justificación: ${r.justificacion || 'Sin justificación'}\n\n`;
+                });
+                content += 'Generado desde OVA Gerencia del Talento Humano - Unidad 1';
+                downloadText(content, 'Matriz_Priorizacion_U1.txt');
+            } else {
+                let htmlRows = '';
+                rows.forEach((r, i) => {
+                    htmlRows += `<tr><td>${i + 1}</td><td>${r.problema || 'Sin problema'}</td><td>${r.alcance}</td><td>${r.gravedad}</td><td>${r.urgencia}</td><td>${r.total}</td><td>${r.justificacion || 'Sin justificación'}</td></tr>`;
+                });
+                const html = `<html><head><meta charset='utf-8'><title>Matriz A-G-U</title></head><body style="font-family: Calibri, sans-serif; font-size: 12pt; line-height: 1.6;"><h2>${title}</h2><p><strong>${subtitle}</strong></p><p>Fecha: ${date}</p><hr><table border='1' cellpadding='8'><tr><th>#</th><th>Problema</th><th>Alcance</th><th>Gravedad</th><th>Urgencia</th><th>Total</th><th>Justificación</th></tr>${htmlRows}</table><hr><p><em>Generado desde OVA Gerencia del Talento Humano - Unidad 1</em></p></body></html>`;
+                downloadHtml(html, 'Matriz_Priorizacion_U1.doc');
+            }
+            if (a2ExportMenu) a2ExportMenu.style.display = 'none';
+        };
+
+        // ===== ACTIVIDAD 3: FORO NORMATIVO =====
+        document.getElementById('a3-save').addEventListener('click', () => {
+            localStorage.setItem('actividad3_u01', document.getElementById('a3-text').value);
+            const fb = document.getElementById('a3-feedback');
+            fb.textContent = '✓ Participación en el foro guardada correctamente.';
+            fb.classList.remove('hidden');
+        });
+
+        document.getElementById('a3-reset').addEventListener('click', () => {
+            document.getElementById('a3-text').value = '';
+            document.getElementById('a3-text').dispatchEvent(new Event('input'));
+            document.getElementById('a3-feedback').classList.add('hidden');
+        });
+
+        document.getElementById('a3-export-btn').addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('a3-export-menu').classList.toggle('hidden'); });
+        document.addEventListener('click', () => document.getElementById('a3-export-menu').classList.add('hidden'));
+
+        window.exportActivity3 = function(format) {
+            const text = document.getElementById('a3-text').value;
+            if (format === 'txt') {
+                downloadText(`FORO NORMATIVO - UNIDAD 1\n\n${text}\n\nGenerado desde OVA Gerencia del Talento Humano - Unidad 1`, 'Foro_Normativo_U1.txt');
+            } else {
+                downloadHtml(`<html><head><meta charset='utf-8'><title>Foro Normativo</title></head><body><h2>Foro Normativo - Unidad 1</h2><p>${text.replace(/\n/g, '<br>')}</p></body></html>`, 'Foro_Normativo_U1.doc');
+            }
+            document.getElementById('a3-export-menu').classList.add('hidden');
+        };
+
+        function downloadText(text, filename) {
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = filename;
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadHtml(html, filename) {
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = filename;
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        // Restore saved data
+        const savedA2 = localStorage.getItem('actividad2_u01');
+        if (savedA2) {
+            const data = JSON.parse(savedA2);
+            [1, 2, 3].forEach((row, i) => {
+                const r = data[i] || {};
+                const problema = document.getElementById(`a2-problema-${row}`);
+                if (problema) problema.value = r.problema || '';
+                const justif = document.getElementById(`a2-justif-${row}`);
+                if (justif) justif.value = r.justificacion || '';
+                const alcance = document.querySelector(`.a2-score[data-row="${row}"][data-criterion="alcance"]`);
+                if (alcance) alcance.value = r.alcance || '0';
+                const gravedad = document.querySelector(`.a2-score[data-row="${row}"][data-criterion="gravedad"]`);
+                if (gravedad) gravedad.value = r.gravedad || '0';
+                const urgencia = document.querySelector(`.a2-score[data-row="${row}"][data-criterion="urgencia"]`);
+                if (urgencia) urgencia.value = r.urgencia || '0';
+            });
+            document.getElementById('a2-problema-1').dispatchEvent(new Event('input'));
+            document.getElementById('a2-problema-2').dispatchEvent(new Event('input'));
+            document.getElementById('a2-problema-3').dispatchEvent(new Event('input'));
+            document.getElementById('a2-justif-1').dispatchEvent(new Event('input'));
+            document.getElementById('a2-justif-2').dispatchEvent(new Event('input'));
+            document.getElementById('a2-justif-3').dispatchEvent(new Event('input'));
+        }
+        const savedA3 = localStorage.getItem('actividad3_u01');
+        if (savedA3) document.getElementById('a3-text').value = savedA3;
+    });
+</script>
+</body>
+</html>
