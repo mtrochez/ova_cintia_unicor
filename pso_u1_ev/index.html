@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1: Atracción, Selección y Retención del Talento Humano</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .matrix-export-btn { background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; border: 1px solid #17a2b8; cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .matrix-export-btn:hover { background: #17a2b8; color: white; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: var(--accent); background: var(--surface-soft); color: var(--accent); }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .score-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; border-radius: 50%; font-weight: 700; color: white; background: var(--accent); }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología organizacional y bienestar humano</h1>
+                <p class="eyebrow" style="text-transform:none;letter-spacing:0;">Unidad 1: Atracción, Selección y Retención</p>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="diagnostico">Diagnóstico</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <h1>Psicología organizacional y bienestar humano</h1>
+                    <p class="eyebrow" style="text-transform:none;letter-spacing:0;font-size:0.9rem;margin-top:6px;">Unidad 1: Atracción, Selección y Retención</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="diagnostico"><i class="fa-solid fa-clipboard-list"></i> Diagnóstico</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-graduation-cap mr-2"></i>Unidad 1</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Atracción, Selección y Retención del Talento Humano</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Una perspectiva psicológica y estratégica para vincular, desarrollar y fidelizar el talento humano.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">Introducción</h3>
+                        <p class="mt-4 leading-relaxed">La Unidad 1 aborda el ciclo de vida del colaborador desde una perspectiva psicológica y estratégica. El especialista aprenderá que atraer y retener talento no es una tarea administrativa mecánica, sino un proceso de vinculación humana basado en el ajuste cultural, la motivación intrínseca y la equidad.</p>
+                        <p class="mt-4 leading-relaxed">En el contexto de la formación de líderes para el año 2026, se enfatiza la gestión del talento con idoneidad, mérito y un firme enfoque en la sostenibilidad del bienestar humano.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-people-group mr-2" style="color: #17a2b8;"></i>Vinculación humana</h3><p class="mt-2">La atracción y selección se orientan al ajuste cultural, las competencias y la equidad.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color: var(--heading)"><i class="fa-solid fa-heart-pulse mr-2" style="color: #17a2b8;"></i>Bienestar sostenible</h3><p class="mt-2">La retención se fortalece mediante la motivación intrínseca y el bienestar de las personas.</p></div>
+                    </div>
+                </section>
+
+                <section id="diagnostico" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">AEM Psicología organizacional y bienestar humano · UA01</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📋 Percepciones sobre prácticas de gestión de personas y competitividad laboral</h2>
+                        <p class="mt-4 leading-relaxed">Este cuestionario corresponde al segundo curso del primer semestre de la especialización. Su propósito es conocer su perspectiva como profesional en ejercicio sobre las prácticas de atracción, selección y retención de talento, la cultura y el clima organizacional, y el liderazgo en su contexto laboral. Las respuestas aportarán al equipo docente elementos para orientar la mediación pedagógica y generarán insumos para la investigación sobre psicología y bienestar organizacional en la región Caribe colombiana. No es calificable; su cumplimiento es obligatorio como evidencia de participación (AEM).</p>
+                        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-regular fa-clock mr-1"></i> Tiempo estimado: 15 a 20 minutos</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-lock mr-1"></i> Confidencial</span>
+                            <span class="px-3 py-1 rounded-full" style="background: var(--surface-soft); color: var(--heading);"><i class="fa-solid fa-list-check mr-1"></i> 5 preguntas</span>
+                        </div>
+                        <p class="mt-4 text-sm" style="color: #6c757d;"><strong>Instrucción:</strong> Responda con sinceridad. No hay respuestas correctas ni incorrectas. Sus respuestas son confidenciales y se usarán de forma agregada para fines académicos e investigativos.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="diag-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="diag-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="diag-progress" class="text-sm font-bold" style="color: var(--text);">1/5</span>
+                            </div>
+                            <p id="diag-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <p id="diag-hint" class="mt-1 text-xs" style="color: #6c757d;"></p>
+                            <div id="diag-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="diag-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="diag-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="diag-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">¡Diagnóstico completado!</h3>
+                            <p class="mt-2" style="color: var(--text);">Gracias por compartir su perspectiva como profesional en ejercicio. Sus respuestas serán tratadas de forma agregada y confidencial para orientar las mediaciones pedagógicas y como insumo para investigación sobre la realidad organizacional de la región Caribe.</p>
+                            <div id="diag-summary" class="mt-5 space-y-3"></div>
+                            <div class="mt-5 flex gap-3 flex-wrap">
+                                <button id="diag-save" type="button" class="btn-main flex items-center gap-2"><i class="fa-solid fa-save"></i> Guardar diagnóstico</button>
+                                <div style="position: relative; display: inline-block;">
+                                    <button id="diag-export" type="button" class="btn-soft flex items-center gap-2"><i class="fa-solid fa-file-export"></i> Exportar respuestas <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i></button>
+                                    <div id="export-dropdown" class="hidden" style="position: absolute; top: 100%; left: 0; z-index: 100; min-width: 180px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-top: 4px; overflow: hidden;">
+                                        <button id="export-txt" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-lines" style="color: var(--accent);"></i> Texto (.txt)</button>
+                                        <button id="export-word" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 16px; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; color: var(--text); font-weight: 500;" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'"><i class="fa-solid fa-file-word" style="color: #2563eb;"></i> Word (.doc)</button>
+                                    </div>
+                                </div>
+                                <button id="diag-restart" type="button" class="btn-soft">Reiniciar</button>
+                            </div>
+                            <div id="diag-save-feedback" class="mt-3 hidden text-sm font-semibold" style="color: var(--accent);"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Character counters for textareas and text inputs
+        const fields = document.querySelectorAll('textarea[maxlength], input[type="text"][maxlength]');
+        fields.forEach(field => {
+            const counter = document.querySelector(`[data-counter-for="${field.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${field.id}"]`);
+            if (counter) {
+                const update = () => {
+                    const current = field.value.length;
+                    const max = field.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) progress.style.width = `${(current / max) * 100}%`;
+                };
+                field.addEventListener('input', update);
+                update();
+            }
+        });
+
+        // Copy buttons
+        document.querySelectorAll('[data-copy]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = document.getElementById(btn.dataset.copy);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const original = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado';
+                    setTimeout(() => btn.innerHTML = original, 2000);
+                }
+            });
+        });
+
+        // ===== DIAGNÓSTICO =====
+        const diagQuestions = [
+            { id: 'd1', question: '¿Considera que las organizaciones de su región logran atraer talento humano de calidad en competencia con las grandes ciudades del país?', hint: 'Escala: 1 = Muy en desacuerdo · 5 = Muy de acuerdo', type: 'radio', options: [
+                { value: '1', text: '1 - Muy en desacuerdo' }, { value: '2', text: '2 - En desacuerdo' }, { value: '3', text: '3 - Ni de acuerdo ni en desacuerdo' }, { value: '4', text: '4 - De acuerdo' }, { value: '5', text: '5 - Muy de acuerdo' }
+            ]},
+            { id: 'd2', question: '¿Cuál cree que es la principal razón por la que los mejores profesionales abandonan las organizaciones de su región?', hint: 'Seleccione una opción.', type: 'radio', options: [
+                { value: 'salarios-bajos', text: 'Salarios bajos' }, { value: 'falta-desarrollo', text: 'Falta de desarrollo' }, { value: 'clima-laboral', text: 'Clima laboral' }, { value: 'mejores-oportunidades', text: 'Mejores oportunidades fuera' }, { value: 'inestabilidad', text: 'Inestabilidad' }, { value: 'otro', text: 'Otro' }
+            ]},
+            { id: 'd3', question: '¿Su organización tiene definido un perfil de cargo y competencias para los puestos clave?', hint: 'Seleccione la opción que mejor describe su organización.', type: 'radio', options: [
+                { value: 'documentado-actualizado', text: 'Sí, documentado y actualizado' }, { value: 'desactualizado', text: 'Sí, pero desactualizado' }, { value: 'informal', text: 'Informal' }, { value: 'no-existe', text: 'No existe' }
+            ]},
+            { id: 'd4', question: '¿Qué tan efectivos considera los procesos de inducción y onboarding de las organizaciones donde ha trabajado?', hint: 'Escala: 1 = Muy deficientes · 5 = Muy efectivos', type: 'radio', options: [
+                { value: '1', text: '1 - Muy deficientes' }, { value: '2', text: '2 - Deficientes' }, { value: '3', text: '3 - Moderadamente efectivos' }, { value: '4', text: '4 - Efectivos' }, { value: '5', text: '5 - Muy efectivos' }
+            ]},
+            { id: 'd5', question: '¿Cree que las redes sociales y plataformas digitales han transformado la forma en que las organizaciones de su región reclutan talento?', hint: 'Escala: 1 = Ningún cambio · 5 = Transformación total', type: 'radio', options: [
+                { value: '1', text: '1 - Ningún cambio' }, { value: '2', text: '2 - Cambio limitado' }, { value: '3', text: '3 - Cambio moderado' }, { value: '4', text: '4 - Cambio significativo' }, { value: '5', text: '5 - Transformación total' }
+            ]}
+        ];
+
+        let currentDiag = 0;
+        let diagAnswers = JSON.parse(localStorage.getItem('diagnostico_u01_atraccion_seleccion_retencion') || '{}');
+
+        const diagBox = document.getElementById('diag-box');
+        const diagResults = document.getElementById('diag-results');
+
+        function renderDiag() {
+            const q = diagQuestions[currentDiag];
+            document.getElementById('diag-title').textContent = `Pregunta ${currentDiag + 1}`;
+            document.getElementById('diag-progress').textContent = `${currentDiag + 1}/${diagQuestions.length}`;
+            document.getElementById('diag-text').textContent = q.question;
+            document.getElementById('diag-hint').textContent = q.hint || '';
+            const opts = document.getElementById('diag-options');
+            opts.innerHTML = '';
+
+            if (q.type === 'radio' || q.type === 'radio-text') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    if (diagAnswers[q.id] === opt.value) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        diagAnswers[q.id] = opt.value;
+                        opts.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                    });
+                    opts.appendChild(btn);
+                });
+                if (q.type === 'radio-text') {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'mt-4';
+                    wrap.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">Descripción breve (opcional):</label>
+                        <textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 70px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id + '_text'] || ''}</textarea>
+                        <span class="mt-1 block text-xs font-semibold" id="diag-text-counter">${(diagAnswers[q.id + '_text'] || '').length}/${q.textMax}</span>`;
+                    opts.appendChild(wrap);
+                    const ta = wrap.querySelector('#diag-text-input');
+                    const counter = wrap.querySelector('#diag-text-counter');
+                    ta.addEventListener('input', () => { diagAnswers[q.id + '_text'] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+                }
+            } else if (q.type === 'checkbox') {
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option';
+                    btn.textContent = opt.text;
+                    btn.dataset.value = opt.value;
+                    const saved = diagAnswers[q.id] || [];
+                    if (saved.includes(opt.value)) btn.classList.add('selected');
+                    btn.addEventListener('click', () => {
+                        let arr = diagAnswers[q.id] || [];
+                        if (arr.includes(opt.value)) { arr = arr.filter(v => v !== opt.value); btn.classList.remove('selected'); }
+                        else { arr.push(opt.value); btn.classList.add('selected'); }
+                        diagAnswers[q.id] = arr;
+                        const otro = opts.querySelector('#otro-wrapper');
+                        if (otro) otro.style.display = arr.includes('otro') ? 'block' : 'none';
+                    });
+                    opts.appendChild(btn);
+                });
+                const otro = document.createElement('div');
+                otro.id = 'otro-wrapper';
+                otro.style.display = (diagAnswers[q.id] || []).includes('otro') ? 'block' : 'none';
+                otro.className = 'mt-3';
+                otro.innerHTML = `<label class="block text-sm font-bold mb-2" style="color: var(--heading);">¿Cuál otro problema? (opcional):</label>
+                    <input type="text" id="d3-otro-input" maxlength="100" class="w-full p-3 rounded-lg border" style="border-color: var(--line);" placeholder="Describe el otro tipo de problema..." value="${diagAnswers['d3_otro'] || ''}">
+                    <span class="mt-1 block text-xs font-semibold" id="otro-char-count">${(diagAnswers['d3_otro'] || '').length}/100</span>`;
+                opts.appendChild(otro);
+                const otroInput = otro.querySelector('#d3-otro-input');
+                otro.querySelector('#otro-char-count').addEventListener = null;
+                otroInput.addEventListener('input', () => {
+                    diagAnswers['d3_otro'] = otroInput.value;
+                    const c = otro.querySelector('#otro-char-count');
+                    if (c) c.textContent = `${otroInput.value.length}/100`;
+                });
+            } else if (q.type === 'textarea') {
+                const wrap = document.createElement('div');
+                wrap.innerHTML = `<textarea id="diag-text-input" maxlength="${q.textMax}" class="w-full p-3 rounded-lg border resize-none" style="border-color: var(--line); min-height: 120px;" placeholder="${q.textPlaceholder}">${diagAnswers[q.id] || ''}</textarea>
+                    <span class="mt-1 block text-xs font-semibold" id="diag-char-count">${(diagAnswers[q.id] || '').length}/${q.textMax}</span>`;
+                opts.appendChild(wrap);
+                const ta = wrap.querySelector('#diag-text-input');
+                const counter = wrap.querySelector('#diag-char-count');
+                ta.addEventListener('input', () => { diagAnswers[q.id] = ta.value; counter.textContent = `${ta.value.length}/${q.textMax}`; });
+            }
+            document.getElementById('diag-prev').disabled = currentDiag === 0;
+            document.getElementById('diag-next').textContent = currentDiag === diagQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        document.getElementById('diag-prev').addEventListener('click', () => { if (currentDiag > 0) { currentDiag--; renderDiag(); } });
+        document.getElementById('diag-next').addEventListener('click', () => {
+            const q = diagQuestions[currentDiag];
+            if ((q.type === 'radio' || q.type === 'radio-text') && !diagAnswers[q.id]) { alert('Por favor selecciona una respuesta antes de continuar.'); return; }
+            if (currentDiag < diagQuestions.length - 1) { currentDiag++; renderDiag(); }
+            else { showDiagResults(); }
+        });
+
+        function showDiagResults() {
+            let summaryHTML = '';
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers['d3_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                }
+                summaryHTML += `<div class="p-3 rounded-lg" style="background: var(--surface); border: 1px solid var(--line); overflow: hidden;">
+                    <p class="text-xs font-bold mb-1" style="color: var(--accent);">Pregunta ${i + 1}</p>
+                    <p class="text-sm font-bold" style="color: var(--heading);">${q.question}</p>
+                    <p class="mt-1 text-sm" style="color: var(--text); white-space: pre-wrap; word-break: break-word;">${ansText}</p>
+                </div>`;
+            });
+            document.getElementById('diag-summary').innerHTML = summaryHTML;
+            diagBox.classList.add('hidden');
+            diagResults.classList.remove('hidden');
+        }
+
+        document.getElementById('diag-save').addEventListener('click', () => {
+            localStorage.setItem('diagnostico_u01_atraccion_seleccion_retencion', JSON.stringify(diagAnswers));
+            const fb = document.getElementById('diag-save-feedback');
+            fb.textContent = '✓ Diagnóstico guardado correctamente en este navegador.';
+            fb.classList.remove('hidden');
+        });
+
+        document.getElementById('diag-restart').addEventListener('click', () => {
+            currentDiag = 0; diagAnswers = {}; diagBox.classList.remove('hidden'); diagResults.classList.add('hidden'); renderDiag();
+            document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        const exportDropdown = document.getElementById('export-dropdown');
+        document.getElementById('diag-export').addEventListener('click', (e) => { e.stopPropagation(); exportDropdown.classList.toggle('hidden'); });
+        document.addEventListener('click', () => exportDropdown.classList.add('hidden'));
+
+        function buildDiagExportLines() {
+            const lines = [];
+            lines.push('AEM PSICOLOGÍA ORGANIZACIONAL Y BIENESTAR HUMANO');
+            lines.push('Unidad 1: Atracción, Selección y Retención del Talento Humano');
+            lines.push('Fecha: ' + new Date().toLocaleDateString('es-CO', { year: 'numeric', month: 'long', day: 'numeric' }));
+            lines.push('='.repeat(60));
+            diagQuestions.forEach((q, i) => {
+                const ans = diagAnswers[q.id];
+                let ansText = 'Sin respuesta';
+                if (q.type === 'checkbox') {
+                    let vals = (ans && ans.length > 0) ? [...ans] : [];
+                    if (vals.includes('otro') && diagAnswers['d3_otro']) vals = vals.map(v => v === 'otro' ? `Otro: ${diagAnswers['d3_otro']}` : v);
+                    ansText = vals.length > 0 ? vals.join(', ') : 'Sin selección';
+                } else if (q.type === 'textarea') { ansText = ans || 'Sin respuesta'; }
+                else {
+                    const opt = (q.options || []).find(o => o.value === ans);
+                    ansText = opt ? opt.text : 'Sin respuesta';
+                    if (q.type === 'radio-text' && diagAnswers[q.id + '_text']) ansText += ` — "${diagAnswers[q.id + '_text']}"`;
+                }
+                lines.push(`PREGUNTA ${i + 1}: ${q.question}`);
+                lines.push(`RESPUESTA: ${ansText}`);
+                lines.push('');
+            });
+            return lines.join('\n');
+        }
+
+        document.getElementById('export-txt').addEventListener('click', () => {
+            const blob = new Blob([buildDiagExportLines()], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U1.txt';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('export-word').addEventListener('click', () => {
+            const lines = buildDiagExportLines().split('\n').map(l => l ? `<p>${l}</p>` : '<br>').join('');
+            const html = `<html><head><meta charset='utf-8'><title>Diagnóstico U1</title></head><body><h2>AEM Psicología organizacional y bienestar humano</h2><h3>Unidad 1: Atracción, Selección y Retención del Talento Humano</h3>${lines}</body></html>`;
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = 'Diagnostico_U1.doc';
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+
+        renderDiag();
+    });
+</script>
+</body>
+</html>
+
+
+
