@@ -1,0 +1,1377 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 4: Aplicación de técnicas disruptivas para enfrentar la resistencia al cambio en equipos de trabajo</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        #ova-embed {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(86, 145, 81, 0.12), transparent 34%),
+                linear-gradient(135deg, #e8f0e9 0%, #f0f4f1 48%, #e8f0e9 100%);
+        }
+        #ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+        #ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+        #ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+        #ova-embed .sidebar { width: 280px; background: #f0f4f1; box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 20px 0; }
+        #ova-embed .brand-shell { padding: 0 20px 20px; }
+        #ova-embed .logo-orb { width: 120px; height: 120px; margin: 0 auto 16px; background: var(--surface-soft); border-radius: 50%; border: 2px solid #dee2e6; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        #ova-embed .logo-orb img { width: 80%; height: 80%; object-fit: contain; }
+        #ova-embed .brand-copy { text-align: center; }
+        #ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.1rem; line-height: 1.4; }
+        #ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #6c757d; }
+        #ova-embed .sidebar-nav { margin-top: 12px; padding-bottom: 20px; }
+        #ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-left: 4px solid transparent; color: #495057; font-weight: 500; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(13, 110, 253, 0.08); color: var(--accent); border-left-color: var(--accent); }
+        #ova-embed .layout { display: flex; min-height: 100vh; }
+        #ova-embed .main { flex: 1; min-width: 0; padding: 32px; }
+        #ova-embed .content-stage { position: relative; max-width: 1200px; margin: 0 auto; }
+        #ova-embed .hero { background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white; border-radius: 16px; padding: 40px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        #ova-embed .hero::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .hero::after { content: ''; position: absolute; bottom: -30%; left: -30%; width: 80%; height: 80%; background: radial-gradient(circle, rgba(22, 186, 175, 0.15) 0%, transparent 70%); border-radius: 50%; }
+        #ova-embed .section-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 32px; transition: all 0.3s ease; }
+        #ova-embed .section-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(23, 162, 184, 0.25), 0 0 0 1px rgba(23, 162, 184, 0.35); border-left-color: #0c7b8a !important; }
+        #ova-embed .section-card.no-hover { transition: none; }
+        #ova-embed .section-card.no-hover:hover { transform: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left-color: inherit !important; }
+        #ova-embed .mini-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        #ova-embed .mini-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(23, 162, 184, 0.25); border-color: #17a2b8; }
+        #ova-embed .mini-card .hover-indicator { position: absolute; top: 16px; right: 16px; color: var(--accent); opacity: 0.5; font-size: 0.9rem; transition: opacity 0.3s ease; }
+        #ova-embed .mini-card:hover .hover-indicator { opacity: 1; }
+        #ova-embed .mini-card .hover-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; opacity: 0; }
+        #ova-embed .mini-card:hover .hover-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+        #ova-embed .btn-main { background: var(--accent); color: white; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: none; cursor: pointer; transition: background 0.25s ease; }
+        #ova-embed .btn-main:hover { background: var(--accent-deep); }
+        #ova-embed .btn-soft { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 12px 24px; border: 1px solid var(--line); cursor: pointer; transition: all 0.2s ease; }
+        #ova-embed .btn-soft:hover { background: #e9ecef; border-color: #adb5bd; }
+        #ova-embed .matrix-export-btn { background: #D8EBF8; color: #0c7b8a; font-weight: 600; border-radius: 8px; border: 1px solid #17a2b8; cursor: pointer; }
+        #ova-embed .matrix-export-btn:hover { background: #17a2b8; color: white; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3); }
+        #ova-embed .bib-link { background: var(--surface-soft); color: var(--heading); border: 1px solid var(--line); font-weight: 700; font-size: 0.75rem; border-radius: 8px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; transition: all 0.25s ease; }
+        #ova-embed .bib-link:hover { background: #D8EBF8; color: #0c7b8a; border-color: #17a2b8; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.25); }
+        #ova-embed .mckinsey-tab-btn:hover { background: #D8EBF8 !important; color: #374151 !important; }
+        #ova-embed .consultant-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+        #ova-embed .consultant-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #17a2b8, #0c7b8a, #17a2b8, transparent); opacity: 0.6; }
+        #ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+        #ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: var(--surface); border: 2px solid #17a2b8; box-shadow: 0 8px 18px rgba(23,162,184,0.2); display: flex; align-items: center; justify-content: center; color: #0c7b8a; font-size: 1.25rem; }
+        #ova-embed .route-stop h4 { margin: 0; color: #0c7b8a; font-weight: 700; font-size: 0.98rem; }
+        #ova-embed .route-stop p { margin: 8px 0 0; color: #495057; font-size: 0.84rem; line-height: 1.45; }
+        #ova-embed .development-matrix { margin-top: 24px; padding: 24px; background: var(--surface-soft); border-radius: 12px; border: 1px solid var(--line); }
+        #ova-embed .matrix-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        #ova-embed .matrix-header h3 { margin: 0; color: var(--heading); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-table { width: 100%; border-collapse: collapse; }
+        #ova-embed .matrix-table th { padding: 12px 16px; text-align: left; font-weight: 700; color: var(--heading); border-bottom: 2px solid var(--accent); }
+        #ova-embed .matrix-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+        #ova-embed .matrix-table tr:last-child td { border-bottom: none; }
+        #ova-embed .matrix-check { color: var(--accent); font-size: 1.25rem; font-weight: 700; }
+        #ova-embed .matrix-empty { color: #adb5bd; }
+        #ova-embed .activity-subnav-btn { background: var(--surface); color: #495057; font-weight: 600; border-radius: 8px; padding: 10px 20px; border: 1px solid var(--line); cursor: pointer; transition: all 0.25s ease; }
+        #ova-embed .activity-subnav-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        #ova-embed .activity-subnav-btn:hover:not(.active) { background: var(--surface-soft); }
+        #ova-embed .activity-section.hidden { display: none; }
+        #ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed var(--line); border-radius: 16px; background: var(--surface-soft); }
+        #ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+        #ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); transition: all 0.25s ease; }
+        #ova-embed .quiz-option:hover { background: #D8EBF8; border-color: #17a2b8; }
+        #ova-embed .quiz-option.selected { border-color: #17a2b8; background: #D8EBF8; color: #0c7b8a; }
+        #ova-embed .mobile-header { display: none; }
+        #ova-embed .flip-card { perspective: 1000px; height: 200px; cursor: pointer; }
+        #ova-embed .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+        #ova-embed .flip-card:hover .flip-card-inner,
+        #ova-embed .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        #ova-embed .flip-card-front, #ova-embed .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        #ova-embed .flip-card-front { background: linear-gradient(135deg, #D8EBF8 0%, #b8d4e8 100%); color: #374151; box-shadow: 0 4px 16px rgba(216,235,248,0.4); }
+        #ova-embed .flip-card-back { background: var(--surface); border: 2px solid #D8EBF8; color: var(--text); transform: rotateY(180deg); }
+        #ova-embed .act-tab { padding: 14px 24px; font-weight: 700; font-size: 0.85rem; color: #6c757d; border: 1px solid var(--line); border-bottom: 3px solid transparent; background: var(--surface); cursor: pointer; border-radius: 10px 10px 0 0; transition: all 0.25s ease; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(23,162,184,0.1); }
+        #ova-embed .act-tab:hover { color: #0c7b8a; background: #D8EBF8; box-shadow: 0 4px 12px rgba(23,162,184,0.2); }
+        #ova-embed .act-tab.active { color: #0c7b8a; border-bottom-color: #17a2b8; background: #D8EBF8; box-shadow: 0 4px 14px rgba(23,162,184,0.25); }
+        #ova-embed .act-panel { display: none; }
+        #ova-embed .act-panel.active { display: block; }
+        #ova-embed .denison-card, #ova-embed .ocai-card, #ova-embed .journey-card, #ova-embed .journey-stage-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        #ova-embed .denison-option-label { display: inline-flex; flex-direction: column; align-items: center; cursor: pointer; gap: 4px; }
+        #ova-embed .denison-option-label input { accent-color: var(--accent); }
+        #ova-embed .denison-bar-container, #ova-embed .ocai-bar-bg { background: var(--surface-soft); border-radius: 8px; height: 24px; overflow: hidden; }
+        #ova-embed .denison-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-deep)); transition: width 0.6s ease; }
+        #ova-embed .ocai-bar-fill { height: 100%; border-radius: 8px; transition: width 0.6s ease; }
+        #ova-embed .ocai-type-Clan { color: #e11d48; }
+        #ova-embed .ocai-type-Adhocracia { color: #d97706; }
+        #ova-embed .ocai-type-Mercado { color: #2563eb; }
+        #ova-embed .ocai-type-Jerarquia { color: #4b5563; }
+        #ova-embed .journey-stage-card textarea { resize: vertical; }
+        @media (max-width: 900px) {
+            #ova-embed .layout { display: block; }
+            #ova-embed .sidebar { display: none; }
+            #ova-embed .mobile-header { display: block; padding: 18px; background: var(--surface); box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05); }
+            #ova-embed .main { padding: 18px; }
+            #ova-embed .hero { padding: 24px; }
+            #ova-embed .consultant-route { grid-template-columns: 1fr; }
+            #ova-embed .consultant-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--accent), var(--accent-deep), var(--accent), transparent); }
+        }
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología Organizacional y Bienestar Humano</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Especialización en Gerencias del Talento Humano y Desarrollo Organizacional</p>
+                    <h1>Psicología Organizacional y Bienestar Humano</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-users-viewfinder"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-sitemap"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-hands-holding-circle"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-clipboard-check"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-box-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-open"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-lightbulb mr-2"></i>Unidad 3 - Tema 4</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Aplicación de técnicas disruptivas para enfrentar la resistencia al cambio en equipos de trabajo</h2>
+                        <p class="text-lg leading-relaxed opacity-95">La resistencia al cambio es una respuesta psicológica natural al miedo y a la pérdida de control percibida. Este subtema aborda técnicas disruptivas como la Seguridad Psicológica y el uso de Agentes de IA para mitigar la fricción. El especialista aprenderá que la resistencia activa (sabotaje) y pasiva (falta de compromiso) son oportunidades para renegociar el contrato emocional con el colaborador y fortalecer el vínculo de confianza.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color: var(--heading)">🎯 Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed">El especialista aprenderá a identificar las fuentes de resistencia psicológica en procesos de transformación digital, implementar climas de Seguridad Psicológica que permitan riesgos interpersonales y "fallos inteligentes", e integrar la orquestación humano-IA como técnica disruptiva para facilitar la aceptación de nuevos procesos en 2026.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta del cambio</p>
+                        <h3 class="mt-3 text-2xl font-extrabold" style="color: var(--heading)">De la resistencia a la adopción colaborativa</h3>
+                        <div class="consultant-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-ear-listen"></i></div>
+                                <h4>Escuchar</h4>
+                                <p>Abrir canales de comunicación bilateral donde las preocupaciones sean escuchadas y validadas.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-handshake"></i></div>
+                                <h4>Co-diseñar</h4>
+                                <p>Involucrar a los empleados en el diseño del cambio para generar apropiación.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-shield-heart"></i></div>
+                                <h4>Seguridad</h4>
+                                <p>Construir un clima donde admitir errores y desafiar supuestos no implique castigo.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-robot"></i></div>
+                                <h4>Agentización</h4>
+                                <p>Integrar agentes autónomos de IA que compartan objetivos con las personas.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-people-arrows"></i></div>
+                                <h4>Confianza</h4>
+                                <p>Renegociar el contrato emocional y anclar el cambio en una cultura de aprendizaje.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-lightbulb text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Pregunta central</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">¿Cómo transformar la resistencia al cambio en una oportunidad de renegociación del contrato emocional?</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">La reflexión orienta el uso de técnicas disruptivas para fortalecer el vínculo de confianza con los colaboradores.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-route text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Enfoque</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Seguridad Psicológica, participación activa, justicia procedimental y orquestación humano-agente 2026.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">Se estudian técnicas para reducir la fricción del cambio y convertir la resistencia en curiosidad colectiva.</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <div class="hover-indicator"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: var(--surface-soft); color: var(--accent);"><i class="fa-solid fa-award text-lg"></i></div>
+                                <h4 class="font-bold" style="color: var(--heading)">Producto esperado</h4>
+                            </div>
+                            <p class="text-sm" style="color: var(--text)">Diseño de una intervención de cambio que combine escucha, seguridad psicológica y habilitación con IA.</p>
+                            <div class="hover-content">
+                                <p class="text-xs" style="color: var(--text)">El especialista podrá proponer acciones concretas para enfrentar la resistencia activa y pasiva en equipos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivos de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">🎯 Metas del Tema 4</h2>
+                        <p class="mt-5 leading-relaxed text-lg">Al finalizar este tema, el especialista será capaz de identificar las fuentes de resistencia psicológica, implementar climas de Seguridad Psicológica e integrar la orquestación humano-IA para facilitar la aceptación de nuevos procesos.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-6">
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-magnifying-glass mr-2" style="color: #17a2b8;"></i>Identificar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Las fuentes de resistencia psicológica (miedo al fracaso, desconfianza, falta de información) en procesos de transformación digital.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-shield-heart mr-2" style="color: #17a2b8;"></i>Implementar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">Climas de Seguridad Psicológica que permitan riesgos interpersonales y "fallos inteligentes" sin temor a castigo.</p>
+                        </div>
+                        <div class="section-card" style="border-left: 6px solid #D8EBF8;">
+                            <h3 class="font-bold text-lg" style="color: var(--heading)"><i class="fa-solid fa-robot mr-2" style="color: #17a2b8;"></i>Integrar</h3>
+                            <p class="mt-2 text-sm leading-relaxed">La orquestación humano-IA como técnica para reducir la carga operativa y facilitar la aceptación de nuevos procesos en 2026.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📚 Tres partes fundamentales</h2>
+                        <p class="mt-4 leading-relaxed">Este tema desarrolla las <strong>técnicas disruptivas para enfrentar la resistencia al cambio</strong>, articulando la psicología de la resistencia, la Seguridad Psicológica como motor y la orquestación humano-agente en 2026.</p>
+                    </div>
+
+                    <!-- Frase destacada -->
+                    <div class="mt-6 p-6 rounded-xl" style="background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%); color: white;">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-quote-left text-3xl opacity-50"></i>
+                            <div>
+                                <p class="text-lg font-medium italic">"La seguridad psicológica no es comodidad; es la confianza de que el equipo es un lugar para correr riesgos interpersonales, admitir errores y aprender juntos."</p>
+                                <p class="mt-2 text-sm opacity-80">— Amy Edmondson</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flip Cards: Tres partes del tema -->
+                    <div class="mt-8 section-card">
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--heading)">🔄 Tres técnicas para transformar la resistencia</h3>
+                        <p class="text-xs mb-6" style="color: #6c757d;"><i class="fa-solid fa-hand-pointer mr-1"></i>Pasa el cursor sobre cada tarjeta para ver el detalle.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <i class="fa-solid fa-brain text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Psicología de la resistencia</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-brain text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Parte 1</h4>
+                                        <p class="text-xs leading-relaxed">La resistencia nace de la desconfianza o falta de destreza. Se mitiga con participación activa, justicia procedimental y comunicación bilateral.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <i class="fa-solid fa-shield-heart text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Seguridad psicológica</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-shield-heart text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Parte 2</h4>
+                                        <p class="text-xs leading-relaxed">Clima donde los equipos admiten errores y desafían supuestos sin ser penalizados. El líder fomenta la vulnerabilidad y la curiosidad colectiva.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <i class="fa-solid fa-robot text-2xl mb-3"></i>
+                                        <h4 class="font-bold text-sm uppercase tracking-wide">Agentes de IA</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <i class="fa-solid fa-robot text-xl mb-2" style="color: #374151;"></i>
+                                        <h4 class="font-bold text-sm mb-2" style="color: #374151;">Parte 3</h4>
+                                        <p class="text-xs leading-relaxed">Orquestación humano-agente que libera hasta un 25% del tiempo para tareas estratégicas, comunicada con transparencia para evitar el miedo al reemplazo.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Acordeón de las Tres Partes -->
+                    <div class="mt-6 section-card">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--heading)">📖 Desarrollo Temático</h3>
+                        <div class="space-y-3">
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-brain mr-2" style="color: #374151;"></i>Parte 1: Psicología de la Resistencia y Técnicas de Mitigación</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La resistencia nace de la desconfianza en los líderes o en la falta de destreza ante lo nuevo. Técnicas efectivas incluyen la participación activa (involucrar a los empleados en el codiseño del cambio) y la justicia procedimental (asegurar que las reglas sean consistentes para todos). El especialista debe anticiparse a la falta de información, estableciendo canales de comunicación bilateral donde las preocupaciones de los trabajadores sean escuchadas y validadas, no ignoradas, permitiendo que el cambio sea percibido como un beneficio común y no como una imposición externa.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-shield-heart mr-2" style="color: #374151;"></i>Parte 2: Seguridad Psicológica como Motor de Cambio</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">La firma Amy Edmondson define la Seguridad Psicológica como un clima donde los equipos pueden admitir errores o desafiar supuestos sin ser penalizados. En entornos de disrupción, esta es la herramienta definitiva para vencer el miedo. Cuando el líder demuestra vulnerabilidad sobre sus propias necesidades de aprendizaje, fomenta un entorno donde los demás se atreven a ser ágiles. Las organizaciones de alto rendimiento combinan alta ambición con franqueza absoluta, reduciendo la ansiedad y transformando la resistencia en una curiosidad colectiva que impulsa la innovación.</p>
+                                </div>
+                            </div>
+                            <div class="border rounded-lg overflow-hidden" style="border-color: var(--line);">
+                                <button class="accordion-btn w-full px-5 py-4 text-left font-semibold flex justify-between items-center" style="background: var(--surface-soft); color: #374151;">
+                                    <span><i class="fa-solid fa-robot mr-2" style="color: #374151;"></i>Parte 3: Agentes de IA y "Agentización" en 2026</span>
+                                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="accordion-content hidden px-5 py-4 bg-white">
+                                    <p class="text-sm leading-relaxed">Para 2026, una técnica disruptiva para enfrentar la resistencia será la orquestación humano-agente. Al integrar agentes autónomos de IA que comparten objetivos con las personas, se libera hasta un 25% del tiempo de los colaboradores para enfocarse en tareas de valor estratégico. Este proceso de "agentización" debe ser comunicado con total transparencia para evitar el miedo al reemplazo. La IA deja de ser una amenaza externa para convertirse en una infraestructura que facilita el trabajo, permitiendo que el equipo experimente el cambio como un habilitador de su propio crecimiento profesional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metodología y actividades -->
+                    <div class="mt-6 grid md:grid-cols-2 gap-6">
+                        <div class="section-card">
+                            <h3 class="text-lg font-bold mb-3" style="color: var(--heading)"><i class="fa-solid fa-chalkboard-user mr-2"></i>Metodología</h3>
+                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
+                                <li>Aprendizaje Basado en Problemas (ABP)</li>
+                                <li>Aprendizaje Basado en Proyectos</li>
+                                <li>Learning by Doing</li>
+                                <li>Aprendizaje autónomo centrado en el estudiante</li>
+                                <li>Evaluación continua sumativa y formativa</li>
+                            </ul>
+                        </div>
+                        <div class="section-card">
+                            <h3 class="text-lg font-bold mb-3" style="color: var(--heading)"><i class="fa-solid fa-user-graduate mr-2"></i>Trabajo independiente</h3>
+                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
+                                <li>Lecturas asignadas</li>
+                                <li>Indagación y profundización</li>
+                                <li>Tareas y ejercicios prácticos</li>
+                                <li>Preparación para evaluaciones</li>
+                                <li>Participación en foros</li>
+                                <li>Proyectos y trabajos de curso</li>
+                                <li>Presentación y sustentación oral</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Práctica</p>
+                        <h2 class="mt-4 text-2xl md:text-3xl font-extrabold" style="color: var(--heading)">🎭 Simulación: conversación con un colaborador resistente</h2>
+                        <p class="mt-3 text-sm leading-relaxed">Asume el rol de líder, elige un personaje resistente y redacta un guion de conversación que transforme la resistencia en curiosidad. Al final conectas el plan con la orquestación humano-agente.</p>
+                    </div>
+
+                    <!-- Stepper header -->
+                    <div class="section-card mt-4 p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span id="actStepTitle" class="text-sm font-bold" style="color: var(--heading);">Paso 1 de 4 — Caso</span>
+                            <div class="w-28 h-2 rounded-full overflow-hidden" style="background: #e5e7eb;"><div id="actProgressBar" class="h-full rounded-full transition-all" style="width: 25%; background: var(--accent);"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Caso y personaje -->
+                    <div class="act-step section-card mt-4 p-4 md:p-6" id="actStep0">
+                        <h3 class="text-base font-bold mb-3" style="color: var(--heading)"><i class="fa-solid fa-people-group mr-2"></i>Paso 1: Elige tu caso y personaje resistente</h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text);">El área de operaciones debe adoptar agentes autónomos de IA. El anuncio se hizo por chat grupal y sin consulta. Ahora debes conversar cara a cara con uno de los colaboradores resistentes.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <label class="p-4 rounded-lg cursor-pointer transition-all hover:shadow-md" style="background: var(--surface-soft); border: 1px solid var(--line);">
+                                <input type="radio" name="actPersonaje" value="ana" class="w-4 h-4 mb-2" style="accent-color: var(--accent);" checked>
+                                <p class="font-bold text-sm" style="color: var(--heading);">Ana — Resistencia activa</p>
+                                <p class="text-xs" style="color: var(--text);">Dice en voz alta: "La IA nos va a dejar sin trabajo. No pienso usarla." Baja colaboración, discute las decisiones.</p>
+                            </label>
+                            <label class="p-4 rounded-lg cursor-pointer transition-all hover:shadow-md" style="background: var(--surface-soft); border: 1px solid var(--line);">
+                                <input type="radio" name="actPersonaje" value="luis" class="w-4 h-4 mb-2" style="accent-color: var(--accent);">
+                                <p class="font-bold text-sm" style="color: var(--heading);">Luis — Resistencia pasiva</p>
+                                <p class="text-xs" style="color: var(--text);">No dice nada en reuniones, cumple el mínimo y por chat comenta: "Que usen los demás, a mí no me toca."</p>
+                            </label>
+                        </div>
+                        <div class="mt-4 pt-4" style="border-top: 1px dashed var(--line);">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="useCasePropio" class="w-4 h-4 rounded" style="accent-color: var(--accent);">
+                                <span class="text-sm font-bold" style="color: var(--heading);">Prefiero trabajar con mi propio caso</span>
+                            </label>
+                            <div id="casePropioBox" class="hidden mt-3">
+                                <textarea id="casePropioText" rows="4" maxlength="800" class="w-full p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Describe brevemente tu caso: quién resiste, qué cambio se propone y qué dices tú como líder..."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="casePropioText">0</span>/800</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Diagnóstico de la resistencia -->
+                    <div class="act-step section-card mt-4 p-4 md:p-6 hidden" id="actStep1" style="border-left: 6px solid #dc2626;">
+                        <h3 class="text-lg font-extrabold mb-1" style="color: var(--heading);"><i class="fa-solid fa-brain mr-2" style="color: #dc2626;"></i>Paso 2: Diagnóstico del personaje</h3>
+                        <p class="text-xs mb-4" style="color: #6c757d;">Antes de hablar, identifica qué siente y por qué.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">1. ¿Qué tipo de resistencia muestra y qué necesidad emocional hay detrás?</label>
+                                <textarea id="res1" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Activa o pasiva; miedo, pérdida de control, desconfianza, falta de reconocimiento..."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="res1">0</span>/800</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">2. ¿Qué crees que no le han dicho o escuchado sobre el cambio?</label>
+                                <textarea id="res2" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Vacíos de información, promesas incumplidas, historias de cambios anteriores mal gestionados..."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="res2">0</span>/800</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">3. ¿Qué barras de Seguridad Psicológica han sido dañadas?</label>
+                                <textarea id="res3" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Autonomía, competencia, relación, reconocimiento, justicia..."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="res3">0</span>/800</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Guion de conversación -->
+                    <div class="act-step section-card mt-4 p-4 md:p-6 hidden" id="actStep2" style="border-left: 6px solid #16BAAF;">
+                        <h3 class="text-lg font-extrabold mb-1" style="color: var(--heading);"><i class="fa-solid fa-shield-heart mr-2" style="color: #16BAAF;"></i>Paso 3: Redacta el guion de conversación</h3>
+                        <p class="text-xs mb-4" style="color: #6c757d;">Escribe literalmente lo que dirías en cada momento. Sé concreto.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">1. Apertura: ¿qué dices primero para bajar la defensa?</label>
+                                <textarea id="safe1" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Saludo, reconocimiento de su valor, invitación a escuchar antes de decidir."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="safe1">0</span>/800</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">2. Escucha y validación: ¿qué preguntas harías y qué escucharías?</label>
+                                <textarea id="safe2" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Preguntas abiertas, parafraseo de sus temores, reconocimiento legítimo de la incertidumbre."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="safe2">0</span>/800</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">3. Cierre acordado: ¿qué propones y qué decisión dejas en sus manos?</label>
+                                <textarea id="safe3" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Ofrecer prueba piloto, decidir juntos el primer agente a usar, acuerdo de revisión."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="safe3">0</span>/800</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Cierre y orquestación humano-agente -->
+                    <div class="act-step section-card mt-4 p-4 md:p-6 hidden" id="actStep3" style="border-left: 6px solid #3b82f6;">
+                        <h3 class="text-lg font-extrabold mb-1" style="color: var(--heading);"><i class="fa-solid fa-robot mr-2" style="color: #3b82f6;"></i>Paso 4: Conecta la conversación con la orquestación</h3>
+                        <p class="text-xs mb-4" style="color: #6c757d;">Cierra la conversación con un plan concreto de integración humano-agente.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">1. ¿Qué tareas propondrías delegar primero a un agente de IA?</label>
+                                <textarea id="ai1" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Una tarea repetitiva, poco riesgosa y que libere tiempo valioso para el colaborador."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="ai1">0</span>/800</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">2. ¿Qué acuerdo de transparencia harías con el equipo?</label>
+                                <textarea id="ai2" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Quién supervisa, qué decide el agente, qué revisa el humano, frecuencia de retroalimentación."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="ai2">0</span>/800</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold" style="color: var(--heading);">3. ¿Cómo medirías que la conversación y el agente generan confianza?</label>
+                                <textarea id="ai3" rows="3" maxlength="800" class="w-full mt-1 p-3 rounded-lg text-sm act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Indicadores: clima de seguridad, uso voluntario, tiempo liberado, resultados del piloto."></textarea>
+                                <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="ai3">0</span>/800</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-4 rounded-xl" style="background: var(--surface-soft); border: 1px solid var(--line);">
+                            <h4 class="text-sm font-bold mb-2" style="color: var(--heading);"><i class="fa-solid fa-wand-magic-sparkles mr-2" style="color: #4285f4;"></i>Revisión con IA</h4>
+                            <p class="text-xs mb-3" style="color: var(--text);">Revisa el prompt que se enviará a Gemini, edítalo si lo deseas y luego cópialo para recibir retroalimentación sobre tu simulación.</p>
+                            <textarea id="actReviewPrompt" rows="6" maxlength="3000" class="w-full p-3 rounded-lg text-xs act-field" style="border: 1px solid var(--line); background: var(--surface); color: var(--text); resize: vertical;" placeholder="Aquí aparecerá el prompt con tu simulación..."></textarea>
+                            <p class="text-xs text-right mt-1" style="color: #6c757d;"><span class="char-count" data-for="actReviewPrompt">0</span>/3000</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <button id="actBuildPrompt" type="button" class="btn-soft text-xs"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i>Generar prompt</button>
+                                <button id="actCopyPrompt" type="button" class="btn-main text-xs"><i class="fa-solid fa-copy mr-1"></i>Copiar y abrir Gemini</button>
+                            </div>
+                            <p id="actReviewMsg" class="text-xs mt-2 font-semibold" style="color: #059669;"></p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation + save + export -->
+                    <div class="section-card mt-4 p-4">
+                        <div class="flex justify-between items-center gap-3">
+                            <button id="actPrev" type="button" class="btn-soft" disabled>Anterior</button>
+                            <div class="flex items-center gap-3 flex-wrap justify-center">
+                                <button id="actSave" type="button" class="matrix-export-btn" style="padding:10px 20px;border-radius:8px;"><i class="fa-solid fa-floppy-disk mr-1"></i>Guardar</button>
+                                <button id="actClear" type="button" class="matrix-export-btn" style="padding:10px 20px;border-radius:8px;"><i class="fa-solid fa-trash-can mr-1"></i>Limpiar</button>
+                                <div class="relative hidden" id="actExportWrap" style="display:inline-block;">
+                                    <button id="actExportBtn" type="button" class="matrix-export-btn" style="padding:10px 20px;border-radius:8px;"><i class="fa-solid fa-file-export mr-1"></i>Exportar <i class="fa-solid fa-caret-down ml-1"></i></button>
+                                    <div id="actExportMenu" class="hidden" style="position:absolute;bottom:110%;left:50%;transform:translateX(-50%);min-width:150px;background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.12);z-index:50;overflow:hidden;">
+                                        <button id="actExportWord" type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-slate-100 transition-colors" style="color:var(--text);"><i class="fa-solid fa-file-word mr-2" style="color:#2b579a;"></i>Word (.doc)</button>
+                                        <button id="actExportTxt" type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-slate-100 transition-colors" style="color:var(--text);border-top:1px solid var(--line);"><i class="fa-solid fa-file-lines mr-2" style="color:#6c757d;"></i>Texto (.txt)</button>
+                                    </div>
+                                </div>
+                                <span id="actSaveMsg" class="text-xs font-semibold" style="color: #059669;"></span>
+                            </div>
+                            <button id="actNext" type="button" class="btn-main">Siguiente</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">✅ Autoevaluación del Tema 4</h2>
+                        <p class="mt-4 leading-relaxed">Responde las 5 preguntas sobre la psicología de la resistencia, la Seguridad Psicológica y la orquestación humano-agente. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="quiz-title" class="text-xl font-extrabold" style="color: var(--heading);">Pregunta 1</h3>
+                                <span id="quiz-progress" class="text-sm font-bold" style="color: var(--text);">1/5</span>
+                            </div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold" style="color: var(--text);"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="quiz-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="quiz-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl" style="background: var(--surface-soft); border: 1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color: var(--heading);">Autoevaluación completada</h3>
+                            <p class="mt-2 font-semibold" style="color: var(--text);">Puntaje: <span id="quiz-score">0</span>/5</p>
+                            <p id="quiz-feedback" class="mt-2" style="color: var(--text);"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📦 Recursos para profundizar</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Videos, herramientas y presentaciones seleccionados para afianzar la comprensión del Tema 4.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Recurso 1: Video seguridad psicológica -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading);">
+                                        <i class="fa-solid fa-circle-play" style="color: #dc2626; font-size: 1em;"></i> Video: Construir un lugar de trabajo psicológicamente seguro
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Amy Edmondson explica qué es la Seguridad Psicológica, por qué importa y cómo los líderes pueden crear equipos donde hablar y equivocarse no tenga consecuencias negativas.</p>
+                                    <a href="https://www.youtube.com/watch?v=LhoLuui9gX8" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Ver video
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DLhoLuui9gX8" alt="QR Video Amy Edmondson seguridad psicológica" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 2: Herramienta Google re:Work -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading);">
+                                        <i class="fa-solid fa-clipboard-check" style="color: #7c3aed; font-size: 1em;"></i> Herramienta: Guía de efectividad de equipos de Google re:Work
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Guía con encuesta de Seguridad Psicológica y los cinco pilares de equipos efectivos. Útil para evaluar y mejorar el clima de un equipo.</p>
+                                    <a href="https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Abrir guía
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https%3A%2F%2Frework.withgoogle.com%2Fintl%2Fen%2Fguides%2Funderstand-team-effectiveness" alt="QR Google reWork team effectiveness" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 3: Video agentes de IA -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading);">
+                                        <i class="fa-solid fa-circle-play" style="color: #dc2626; font-size: 1em;"></i> Video: La Revolución de los Agentes de IA
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Explicación en español sobre qué son los agentes de IA, cómo se orquestan, el protocolo MCP y la capa de gobernanza o harness.</p>
+                                    <a href="https://www.youtube.com/watch?v=V9m488HiLyA" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Ver video
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DV9m488HiLyA" alt="QR Video Agentes de IA" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recurso 4: Presentación Genially resistencia al cambio -->
+                        <div class="section-card border-l-4 hover:shadow-lg transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-3">
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-sm flex items-center gap-2" style="color: var(--heading);">
+                                        <i class="fa-solid fa-person-chalkboard" style="color: #0ea5e9; font-size: 1em;"></i> Presentación: Resistencia al cambio
+                                    </h3>
+                                    <p class="mt-2 text-xs leading-relaxed" style="color: var(--text);">Presentación interactiva de Genially sobre los tipos de resistencia, sus causas y estrategias para gestionarla en equipos de trabajo.</p>
+                                    <a href="https://view.genially.com/6667843dff33da0013b078cf/presentation-resistencia-al-cambio" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg text-white btn-main" style="text-decoration: none;">
+                                        Ver presentación
+                                    </a>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https%3A%2F%2Fview.genially.com%2F6667843dff33da0013b078cf%2Fpresentation-resistencia-al-cambio" alt="QR Presentación Resistencia al Cambio" class="rounded" style="border: 1px solid var(--line);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color: var(--heading)">📖 Referencias para ampliación</h2>
+                        <p class="mt-3 text-sm" style="color: var(--text);">Escanea el QR o usa los enlaces para acceder directamente a cada referencia.</p>
+                    </div>
+                    <div class="mt-6 space-y-4">
+
+                        <!-- Ref 1: Edmondson -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Edmondson, A. C. (2018).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth.</p>
+                                    <p class="text-xs mt-1" style="color: var(--text);">Wiley.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://scholar.google.com/scholar?q=Edmondson+2018+%22The+Fearless+Organization%22+psychological+safety" target="_blank" rel="noopener noreferrer" class="bib-link">
+                                            <i class="fa-solid fa-graduation-cap"></i> Buscar en Google Scholar
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https%3A%2F%2Fscholar.google.com%2Fscholar%3Fq%3DEdmondson%2B2018%2B%2522The%2BFearless%2BOrganization%2522%2Bpsychological%2Bsafety" alt="QR Edmondson The Fearless Organization en Google Scholar" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 2: Grant -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">Grant, A. (2026).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Challenge Networks: The Mechanics of Growth through Honesty.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://knowledge.wharton.upenn.edu/article/why-you-need-a-challenge-network/" target="_blank" rel="noopener noreferrer" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver artículo
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https%3A%2F%2Fknowledge.wharton.upenn.edu%2Farticle%2Fwhy-you-need-a-challenge-network%2F" alt="QR Grant Challenge Network - Wharton" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 3: UNESCO -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">UNESCO (2025).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Recommendation on the Ethics of AI: Transparency and Human Oversight.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000381137.locale=en" target="_blank" rel="noopener noreferrer" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver documento
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https%3A%2F%2Funesdoc.unesco.org%2Fark%3A%2F48223%2Fpf0000381137.locale%3Den" alt="QR UNESCO Recommendation on the Ethics of AI" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ref 4: TIMIA -->
+                        <div class="section-card border-l-4 hover:shadow-md transition-shadow" style="border-color: var(--accent);">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-xl" style="color: var(--accent);">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm" style="color: var(--heading);">TIMIA (2026).</p>
+                                    <p class="italic text-sm leading-relaxed mt-1">Predicciones sobre IA Multimodal y Riesgos Operativos.</p>
+                                    <div class="mt-3 flex flex-wrap gap-3">
+                                        <a href="https://www.technocio.com/timia-comparte-cinco-predicciones-sobre-inteligencia-artificial-y-transformacion-digital-para-2026/" target="_blank" rel="noopener noreferrer" class="bib-link">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver documento
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 flex flex-col items-center gap-1">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https%3A%2F%2Fwww.technocio.com%2Ftimia-comparte-cinco-predicciones-sobre-inteligencia-artificial-y-transformacion-digital-para-2026%2F" alt="QR TIMIA predicciones IA 2026 en Technocio" class="rounded" style="border: 1px solid var(--line);">
+                                    <p class="text-xs" style="color: #6c757d;">Escanear</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color: var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const contentPanes = document.querySelectorAll('.content-pane');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        function switchPane(targetId) {
+            contentPanes.forEach(pane => pane.classList.remove('active'));
+            const pane = document.getElementById(targetId);
+            if (pane) pane.classList.add('active');
+            sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+            if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+        }
+
+        sidebarLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            switchPane(link.dataset.target);
+        }));
+
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+        }
+
+        // Character counters with progress bars
+        const textareas = document.querySelectorAll('textarea[maxlength]');
+        textareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Initialize justification textareas counters
+        const justifTextareas = document.querySelectorAll('.justif-textarea');
+        justifTextareas.forEach(textarea => {
+            const counter = document.querySelector(`[data-counter-for="${textarea.id}"]`);
+            const progress = document.querySelector(`[data-progress-for="${textarea.id}"]`);
+            if (counter) {
+                const updateCounter = () => {
+                    const current = textarea.value.length;
+                    const max = textarea.maxLength;
+                    counter.textContent = `${current}/${max}`;
+                    if (progress) {
+                        const percentage = (current / max) * 100;
+                        progress.style.width = `${percentage}%`;
+                    }
+                };
+                textarea.addEventListener('input', updateCounter);
+                updateCounter();
+            }
+        });
+
+        // Copy text functionality
+        const copyBtns = document.querySelectorAll('[data-copy]');
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.copy;
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.select();
+                    document.execCommand('copy');
+                    const originalText = btn.textContent;
+                    btn.textContent = '¡Copiado!';
+                    setTimeout(() => btn.textContent = originalText, 2000);
+                }
+            });
+        });
+
+        if (mobileNav) mobileNav.addEventListener('change', event => switchPane(event.target.value));
+
+        // Accordion functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.fa-chevron-down');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // McKinsey tabs functionality
+        const mckinseyTabBtns = document.querySelectorAll('.mckinsey-tab-btn');
+        const mckinseyTabPanes = document.querySelectorAll('.mckinsey-tab-pane');
+        mckinseyTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                mckinseyTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = '#17a2b8';
+                btn.style.color = 'white';
+                mckinseyTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Activity tabs functionality
+        const activityTabBtns = document.querySelectorAll('.activity-tab-btn');
+        const activityTabPanes = document.querySelectorAll('.activity-tab-pane');
+        activityTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                activityTabBtns.forEach(b => {
+                    b.style.background = 'var(--surface-soft)';
+                    b.style.color = 'var(--heading)';
+                });
+                btn.style.background = 'var(--accent)';
+                btn.style.color = 'white';
+                activityTabPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                    pane.classList.remove('active');
+                });
+                const targetPane = document.querySelector(`[data-content="${targetTab}"]`);
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+
+        // Quiz functionality - one question at a time
+        const quizQuestions = [
+            {
+                question: "La resistencia al cambio surge principalmente de...",
+                options: [
+                    { value: "a", text: "Un exceso de información clara y oportuna sobre el cambio." },
+                    { value: "b", text: "La desconfianza en los líderes o la falta de destreza ante lo nuevo." },
+                    { value: "c", text: "La alta participación de los empleados en el codiseño del cambio." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Cuál de las siguientes técnicas es efectiva para mitigar la resistencia al cambio?",
+                options: [
+                    { value: "a", text: "Aplicar capacitación obligatoria inmediata sin consulta previa." },
+                    { value: "b", text: "Establecer reglas diferentes según el área para ganar tiempo." },
+                    { value: "c", text: "Participación activa, justicia procedimental y comunicación bilateral." }
+                ],
+                correct: "c"
+            },
+            {
+                question: "Según Amy Edmondson, la Seguridad Psicológica se define como un clima donde...",
+                options: [
+                    { value: "a", text: "No se exige ambición ni se persiguen resultados exigentes." },
+                    { value: "b", text: "Los equipos pueden admitir errores o desafiar supuestos sin ser penalizados." },
+                    { value: "c", text: "Se evita toda discusión para mantener la armonía del grupo." }
+                ],
+                correct: "b"
+            },
+            {
+                question: "¿Qué actitud del líder fomenta más efectivamente la Seguridad Psicológica en un equipo?",
+                options: [
+                    { value: "a", text: "Demostrar vulnerabilidad sobre sus propias necesidades de aprendizaje." },
+                    { value: "b", text: "Mostrar siempre tener la respuesta correcta ante cualquier problema." },
+                    { value: "c", text: "Penalizar los errores para presionar el mejor desempeño continuo." }
+                ],
+                correct: "a"
+            },
+            {
+                question: "Según el contenido del Tema 4, la orquestación humano-agente en 2026 podría liberar hasta...",
+                options: [
+                    { value: "a", text: "Un 10% del tiempo de los colaboradores." },
+                    { value: "b", text: "Un 25% del tiempo de los colaboradores." },
+                    { value: "c", text: "Un 50% del tiempo de los colaboradores." }
+                ],
+                correct: "b"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        const quizBox = document.getElementById('quiz-box');
+        const quizResults = document.getElementById('quiz-results');
+        const quizTitle = document.getElementById('quiz-title');
+        const quizProgress = document.getElementById('quiz-progress');
+        const quizText = document.getElementById('quiz-text');
+        const quizOptions = document.getElementById('quiz-options');
+        const quizPrev = document.getElementById('quiz-prev');
+        const quizNext = document.getElementById('quiz-next');
+        const quizScore = document.getElementById('quiz-score');
+        const quizFeedback = document.getElementById('quiz-feedback');
+        const quizReview = document.getElementById('quiz-review');
+        const quizRestart = document.getElementById('quiz-restart');
+
+        function renderQuestion() {
+            const q = quizQuestions[currentQuestion];
+            quizTitle.textContent = `Pregunta ${currentQuestion + 1}`;
+            quizProgress.textContent = `${currentQuestion + 1}/${quizQuestions.length}`;
+            quizText.textContent = q.question;
+            
+            quizOptions.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                btn.dataset.value = opt.value;
+                if (userAnswers[currentQuestion] === opt.value) {
+                    btn.classList.add('selected');
+                }
+                btn.addEventListener('click', () => {
+                    userAnswers[currentQuestion] = opt.value;
+                    document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+                quizOptions.appendChild(btn);
+            });
+
+            quizPrev.disabled = currentQuestion === 0;
+            quizNext.textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+        }
+
+        quizPrev.addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+            }
+        });
+
+        quizNext.addEventListener('click', () => {
+            // Validate that current question is answered
+            if (!userAnswers[currentQuestion]) {
+                alert('Por favor selecciona una respuesta antes de continuar.');
+                return;
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            let score = 0;
+            let reviewHTML = '';
+
+            quizQuestions.forEach((q, i) => {
+                const userAnswer = userAnswers[i];
+                const isCorrect = userAnswer === q.correct;
+                if (isCorrect) score++;
+
+                const userOption = q.options.find(opt => opt.value === userAnswer);
+                const correctOption = q.options.find(opt => opt.value === q.correct);
+
+                reviewHTML += `
+                    <div class="p-4 rounded-lg" style="background: ${isCorrect ? 'var(--surface-soft)' : 'var(--surface)'}; border: 1px solid ${isCorrect ? 'var(--accent)' : 'var(--line)'};">
+                        <p class="font-bold" style="color: var(--heading);">Pregunta ${i + 1}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);">${q.question}</p>
+                        <p class="mt-2 text-sm" style="color: var(--text);"><strong>Tu respuesta:</strong> ${userOption ? userOption.text : 'Sin respuesta'}</p>
+                        ${!isCorrect ? `<p class="mt-1 text-sm" style="color: var(--accent);"><strong>Respuesta correcta:</strong> ${correctOption.text}</p>` : ''}
+                        <p class="mt-1 text-sm font-semibold" style="color: ${isCorrect ? 'var(--accent)' : '#dc2626'};">${isCorrect ? '✓ Correcto' : '✗ Incorrecto'}</p>
+                    </div>
+                `;
+            });
+
+            quizScore.textContent = score;
+            quizFeedback.textContent = score === quizQuestions.length ? '¡Excelente! Has respondido todas las preguntas correctamente.' : score >= quizQuestions.length / 2 ? 'Buen trabajo. Revisa las respuestas incorrectas para mejorar.' : 'Te recomiendo repasar el contenido antes de intentar nuevamente.';
+            quizReview.innerHTML = reviewHTML;
+
+            quizBox.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        quizRestart.addEventListener('click', () => {
+            currentQuestion = 0;
+            userAnswers = {};
+            quizBox.classList.remove('hidden');
+            quizResults.classList.add('hidden');
+            renderQuestion();
+            // Scroll to top of evaluation section
+            document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Initialize quiz
+        if (quizBox) {
+            renderQuestion();
+        }
+
+        // ===== ACTIVIDAD: STEPPER + PLANTILLAS =====
+        const actFieldIds = ['casePropioText','res1','res2','res3','safe1','safe2','safe3','ai1','ai2','ai3','actReviewPrompt'];
+        const ACT_KEY = 'ova_tema4_actividad';
+        const actStepLabels = ['Personaje', 'Diagnóstico', 'Guion de conversación', 'Orquestación'];
+        const actSteps = document.querySelectorAll('.act-step');
+        const actStepTitle = document.getElementById('actStepTitle');
+        const actProgressBar = document.getElementById('actProgressBar');
+        const actPrev = document.getElementById('actPrev');
+        const actNext = document.getElementById('actNext');
+        let actCurrentStep = 0;
+
+        const actExportWrap = document.getElementById('actExportWrap');
+
+        function renderActStep() {
+            actSteps.forEach((s, i) => s.classList.toggle('hidden', i !== actCurrentStep));
+            actStepTitle.textContent = `Paso ${actCurrentStep + 1} de ${actSteps.length} — ${actStepLabels[actCurrentStep]}`;
+            actProgressBar.style.width = `${((actCurrentStep + 1) / actSteps.length) * 100}%`;
+            actPrev.disabled = actCurrentStep === 0;
+            actNext.textContent = actCurrentStep === actSteps.length - 1 ? 'Guardar y finalizar' : 'Siguiente';
+            if (actExportWrap) {
+                if (actCurrentStep === actSteps.length - 1) { actExportWrap.classList.remove('hidden'); actExportWrap.style.display = 'inline-block'; }
+                else { actExportWrap.classList.add('hidden'); actExportWrap.style.display = 'none'; }
+            }
+        }
+
+        if (actPrev) actPrev.addEventListener('click', () => {
+            if (actCurrentStep > 0) { actCurrentStep--; renderActStep(); document.getElementById('actividad').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+
+        if (actNext) actNext.addEventListener('click', () => {
+            if (actCurrentStep < actSteps.length - 1) {
+                saveActData();
+                actCurrentStep++;
+                renderActStep();
+                document.getElementById('actividad').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                saveActData();
+            }
+        });
+
+        // Toggle caso propio
+        const useCasePropio = document.getElementById('useCasePropio');
+        const casePropioBox = document.getElementById('casePropioBox');
+        if (useCasePropio) {
+            useCasePropio.addEventListener('change', function() {
+                casePropioBox.classList.toggle('hidden', !this.checked);
+            });
+        }
+
+        // Load saved data
+        function loadActData() {
+            try {
+                const saved = JSON.parse(localStorage.getItem(ACT_KEY));
+                if (!saved) return;
+                actFieldIds.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && saved[id]) el.value = saved[id];
+                });
+                if (saved._usePropio && useCasePropio) {
+                    useCasePropio.checked = true;
+                    casePropioBox.classList.remove('hidden');
+                }
+                if (saved._personaje) {
+                    const r = document.querySelector(`input[name="actPersonaje"][value="${saved._personaje}"]`);
+                    if (r) r.checked = true;
+                }
+            } catch(e) {}
+        }
+
+        // Save data
+        function saveActData() {
+            const data = {};
+            actFieldIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) data[id] = el.value;
+            });
+            if (useCasePropio) data._usePropio = useCasePropio.checked;
+            const personajeSel = document.querySelector('input[name="actPersonaje"]:checked');
+            if (personajeSel) data._personaje = personajeSel.value;
+            localStorage.setItem(ACT_KEY, JSON.stringify(data));
+            const msg = document.getElementById('actSaveMsg');
+            if (msg) {
+                msg.textContent = '✓ Guardado';
+                setTimeout(() => { msg.textContent = ''; }, 3000);
+            }
+        }
+
+        const actSave = document.getElementById('actSave');
+        if (actSave) actSave.addEventListener('click', saveActData);
+
+        // Clear data
+        const actClear = document.getElementById('actClear');
+        if (actClear) actClear.addEventListener('click', () => {
+            actFieldIds.forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+            if (useCasePropio) { useCasePropio.checked = false; casePropioBox.classList.add('hidden'); }
+            document.querySelectorAll('input[name="actPersonaje"]').forEach(r => r.checked = false);
+            const defaultPersonaje = document.querySelector('input[name="actPersonaje"][value="ana"]');
+            if (defaultPersonaje) defaultPersonaje.checked = true;
+            localStorage.removeItem(ACT_KEY);
+            document.querySelectorAll('.char-count').forEach(c => c.textContent = '0');
+            actCurrentStep = 0;
+            renderActStep();
+            const msg = document.getElementById('actSaveMsg');
+            if (msg) { msg.textContent = '✓ Limpiado'; setTimeout(() => { msg.textContent = ''; }, 3000); }
+            document.getElementById('actividad').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Export dropdown toggle
+        const actExportBtn = document.getElementById('actExportBtn');
+        const actExportMenu = document.getElementById('actExportMenu');
+        if (actExportBtn && actExportMenu) {
+            actExportBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                actExportMenu.classList.toggle('hidden');
+            });
+            document.addEventListener('click', () => actExportMenu.classList.add('hidden'));
+            actExportMenu.addEventListener('click', () => actExportMenu.classList.add('hidden'));
+        }
+
+        // Character counters
+        document.querySelectorAll('.act-field').forEach(ta => {
+            const counter = document.querySelector(`.char-count[data-for="${ta.id}"]`);
+            if (!counter) return;
+            const update = () => { counter.textContent = ta.value.length; };
+            ta.addEventListener('input', update);
+            update();
+        });
+
+        // Build export content
+        function buildExportText() {
+            const labels = {
+                casePropioText: 'MI CASO PROPIO',
+                res1: '1. ¿Qué tipo de resistencia muestra y qué necesidad emocional hay detrás?',
+                res2: '2. ¿Qué crees que no le han dicho o escuchado sobre el cambio?',
+                res3: '3. ¿Qué barras de Seguridad Psicológica han sido dañadas?',
+                safe1: '1. Apertura: ¿qué dices primero para bajar la defensa?',
+                safe2: '2. Escucha y validación: ¿qué preguntas harías y qué escucharías?',
+                safe3: '3. Cierre acordado: ¿qué propones y qué decisión dejas en sus manos?',
+                ai1: '1. ¿Qué tareas propondrías delegar primero a un agente de IA?',
+                ai2: '2. ¿Qué acuerdo de transparencia harías con el equipo?',
+                ai3: '3. ¿Cómo medirías que la conversación y el agente generan confianza?'
+            };
+            let text = 'ACTIVIDAD — SIMULACIÓN: CONVERSACIÓN CON UN COLABORADOR RESISTENTE\n';
+            text += 'Tema 4: Aplicación de técnicas disruptivas para enfrentar la resistencia al cambio en equipos de trabajo\n';
+            text += '='.repeat(60) + '\n\n';
+
+            const cp = document.getElementById('casePropioText');
+            const personajeEl = document.querySelector('input[name="actPersonaje"]:checked');
+            const personaje = personajeEl ? personajeEl.value : 'ana';
+            if (cp && cp.value.trim()) {
+                text += 'MI CASO PROPIO\n' + '-'.repeat(40) + '\n' + cp.value.trim() + '\n\n';
+            } else {
+                text += 'PERSONAJE SELECCIONADO\n' + '-'.repeat(40) + '\n' + (personaje === 'ana' ? 'Ana — Resistencia activa' : 'Luis — Resistencia pasiva') + '\n\n';
+            }
+
+            text += 'PASO 2: DIAGNÓSTICO DEL PERSONAJE\n' + '-'.repeat(40) + '\n';
+            ['res1','res2','res3'].forEach(id => {
+                const el = document.getElementById(id);
+                text += '\n' + labels[id] + '\n' + (el && el.value.trim() ? el.value.trim() : '(sin respuesta)') + '\n';
+            });
+
+            text += '\n\nPASO 3: GUION DE CONVERSACIÓN\n' + '-'.repeat(40) + '\n';
+            ['safe1','safe2','safe3'].forEach(id => {
+                const el = document.getElementById(id);
+                text += '\n' + labels[id] + '\n' + (el && el.value.trim() ? el.value.trim() : '(sin respuesta)') + '\n';
+            });
+
+            text += '\n\nPASO 4: ORQUESTACIÓN HUMANO-AGENTE\n' + '-'.repeat(40) + '\n';
+            ['ai1','ai2','ai3'].forEach(id => {
+                const el = document.getElementById(id);
+                text += '\n' + labels[id] + '\n' + (el && el.value.trim() ? el.value.trim() : '(sin respuesta)') + '\n';
+            });
+
+            return text;
+        }
+
+        // Export TXT
+        document.getElementById('actExportTxt')?.addEventListener('click', () => {
+            const blob = new Blob([buildExportText()], { type: 'text/plain;charset=utf-8' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Actividad_Tema4_SimulacionConversacion.txt';
+            a.click();
+            URL.revokeObjectURL(a.href);
+        });
+
+        // Export Word (.doc HTML)
+        document.getElementById('actExportWord')?.addEventListener('click', () => {
+            const text = buildExportText();
+            const html = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"><title>Actividad Tema 4</title>
+<style>body{font-family:Calibri,sans-serif;font-size:11pt;line-height:1.6}h1{font-size:14pt;color:#17a2b8}h2{font-size:12pt;color:#333;margin-top:18pt}p{margin:4pt 0}</style></head>
+<body>${text.split('\n').map(line => {
+                if (line.startsWith('ACTIVIDAD')) return '<h1>' + line + '</h1>';
+                if (line.startsWith('PASO') || line.startsWith('PERSONAJE') || line.startsWith('MI CASO')) return '<h2>' + line + '</h2>';
+                if (line.startsWith('=') || line.startsWith('-')) return '<hr>';
+                if (line.startsWith('Tema 4:')) return '<p><em>' + line + '</em></p>';
+                return '<p>' + line + '</p>';
+            }).join('')}</body></html>`;
+            const blob = new Blob([html], { type: 'application/msword' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'Actividad_Tema4_SimulacionConversacion.doc';
+            a.click();
+            URL.revokeObjectURL(a.href);
+        });
+
+        // Review with AI
+        const actReviewMsg = document.getElementById('actReviewMsg');
+
+        function getPersonajeText() {
+            const personajeEl = document.querySelector('input[name="actPersonaje"]:checked');
+            const personaje = personajeEl ? personajeEl.value : 'ana';
+            const personajes = {
+                ana: 'Ana — Resistencia activa: dice en voz alta "La IA nos va a dejar sin trabajo. No pienso usarla", baja colaboración, discute decisiones.',
+                luis: 'Luis — Resistencia pasiva: no dice nada en reuniones, cumple el mínimo y por chat comenta "Que usen los demás, a mí no me toca".'
+            };
+            return 'Personaje seleccionado: ' + personajes[personaje];
+        }
+
+        function buildReviewPrompt() {
+            const cp = document.getElementById('casePropioText');
+            let caseText = 'Caso: Equipo de operaciones ante la agentización. El área debe adoptar agentes autónomos de IA. El anuncio fue por chat grupal y sin consulta.';
+            if (cp && cp.value.trim()) {
+                caseText = cp.value.trim();
+            } else {
+                caseText += '\n' + getPersonajeText();
+            }
+            const getVal = id => {
+                const el = document.getElementById(id);
+                return el && el.value.trim() ? el.value.trim() : '(sin respuesta)';
+            };
+            return `Actúa como un experto en psicología organizacional, gestión del cambio e IA. Revisa la siguiente simulación de conversación con un colaborador resistente y ofrece retroalimentación constructiva.
+
+CASO Y PERSONAJE:
+${caseText}
+
+PASO 2 — Diagnóstico del personaje:
+1. Tipo de resistencia y necesidad emocional: ${getVal('res1')}
+2. Lo que no le han dicho o escuchado: ${getVal('res2')}
+3. Barras de Seguridad Psicológica dañadas: ${getVal('res3')}
+
+PASO 3 — Guion de conversación:
+1. Apertura: ${getVal('safe1')}
+2. Escucha y validación: ${getVal('safe2')}
+3. Cierre acordado: ${getVal('safe3')}
+
+PASO 4 — Orquestación humano-agente:
+1. Tareas a delegar primero: ${getVal('ai1')}
+2. Acuerdo de transparencia: ${getVal('ai2')}
+3. Medición de confianza: ${getVal('ai3')}
+
+Por favor, evalúa la simulación en tres aspectos:
+- Fortalezas del guion: ¿qué momentos generan Seguridad Psicológica y renegocian el contrato emocional?
+- Riesgos o fallas: ¿qué partes podrían sonar defensivas, unidireccionales o minimizar los temores del colaborador?
+- Sugerencias concretas: proporciona tres recomendaciones priorizadas para mejorar la conversación y reducir la resistencia.`;
+        }
+
+        const actBuildPrompt = document.getElementById('actBuildPrompt');
+        if (actBuildPrompt) {
+            actBuildPrompt.addEventListener('click', () => {
+                const promptBox = document.getElementById('actReviewPrompt');
+                if (promptBox) {
+                    promptBox.value = buildReviewPrompt();
+                    const counter = document.querySelector('.char-count[data-for="actReviewPrompt"]');
+                    if (counter) counter.textContent = promptBox.value.length;
+                    if (actReviewMsg) {
+                        actReviewMsg.textContent = '✓ Prompt generado. Puedes editarlo antes de copiar.';
+                        setTimeout(() => { actReviewMsg.textContent = ''; }, 4000);
+                    }
+                }
+            });
+        }
+
+        const actCopyPrompt = document.getElementById('actCopyPrompt');
+        if (actCopyPrompt) {
+            actCopyPrompt.addEventListener('click', () => {
+                const promptBox = document.getElementById('actReviewPrompt');
+                const prompt = promptBox && promptBox.value.trim() ? promptBox.value.trim() : buildReviewPrompt();
+                if (promptBox && !promptBox.value.trim()) promptBox.value = prompt;
+                navigator.clipboard.writeText(prompt).then(() => {
+                    if (actReviewMsg) {
+                        actReviewMsg.textContent = '✓ Prompt copiado. Abriendo Gemini...';
+                        setTimeout(() => { actReviewMsg.textContent = ''; }, 4000);
+                    }
+                    window.open('https://gemini.google.com/', '_blank', 'noopener,noreferrer');
+                }).catch(() => {
+                    if (actReviewMsg) {
+                        actReviewMsg.textContent = 'No se pudo copiar automáticamente. Copia el texto del campo y pégalo en Gemini.';
+                    }
+                });
+            });
+        }
+
+        loadActData();
+        renderActStep();
+
+    });
+</script>
+</body>
+</html>
