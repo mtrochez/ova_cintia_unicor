@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3: Liderazgo Disruptivo y Gestión del Cambio</title>
+    <script>tailwind.config={important:'#ova-embed',corePlugins:{preflight:false}};</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html{scroll-behavior:smooth}
+        #ova-embed{--bg:#e8f0e9;--surface:#ffffff;--surface-soft:#f1f3f5;--text:#374151;--heading:#569151;--line:#dee2e6;--accent:#569151;--accent-deep:#3d6a3a;--accent-soft:#16BAAF;--shadow:0 4px 6px rgba(0,0,0,0.1);font-family:'Poppins',sans-serif;width:100%;min-height:100vh;color:var(--text);background:radial-gradient(circle at top left,rgba(86,145,81,0.12),transparent 34%),linear-gradient(135deg,#e8f0e9 0%,#f0f4f1 48%,#e8f0e9 100%)}
+        #ova-embed *,#ova-embed *::before,#ova-embed *::after{box-sizing:border-box}
+        #ova-embed .content-pane{opacity:0;transform:translateY(12px);pointer-events:none;position:absolute;left:0;right:0;top:0;visibility:hidden;width:100%;z-index:0;transition:opacity .35s,transform .35s,visibility 0s .35s}
+        #ova-embed .content-pane.active{opacity:1;transform:translateY(0);pointer-events:auto;position:relative;visibility:visible;z-index:1;transition:opacity .35s,transform .35s,visibility 0s}
+        #ova-embed .sidebar{width:280px;background:#f0f4f1;box-shadow:2px 0 8px rgba(0,0,0,.05);border-right:1px solid var(--line);flex-shrink:0;display:flex;flex-direction:column;padding:20px 0}
+        #ova-embed .brand-shell{padding:0 20px 20px}
+        #ova-embed .logo-orb{width:120px;height:120px;margin:0 auto 16px;background:var(--surface-soft);border-radius:50%;border:2px solid #dee2e6;display:flex;align-items:center;justify-content:center;padding:10px}
+        #ova-embed .logo-orb img{width:80%;height:80%;object-fit:contain}
+        #ova-embed .brand-copy{text-align:center}
+        #ova-embed .brand-copy h1{margin:0;font-weight:700;color:var(--heading);font-size:1.1rem;line-height:1.4}
+        #ova-embed .eyebrow{margin:0 0 8px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#6c757d}
+        #ova-embed .sidebar-nav{margin-top:12px;padding-bottom:20px}
+        #ova-embed .sidebar-link{width:100%;display:flex;align-items:center;gap:12px;padding:12px 20px;border-left:4px solid transparent;color:#495057;font-weight:500;text-decoration:none;transition:all .25s}
+        #ova-embed .sidebar-link:hover,#ova-embed .sidebar-link.active{background:rgba(13,110,253,.08);color:var(--accent);border-left-color:var(--accent)}
+        #ova-embed .layout{display:flex;min-height:100vh}
+        #ova-embed .main{flex:1;min-width:0;padding:32px}
+        #ova-embed .content-stage{position:relative;max-width:1200px;margin:0 auto}
+        #ova-embed .hero{background:linear-gradient(135deg,var(--heading) 0%,var(--accent-deep) 100%);color:#fff;border-radius:16px;padding:40px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+        #ova-embed .hero::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%}
+        #ova-embed .hero::after{content:'';position:absolute;bottom:-30%;left:-30%;width:80%;height:80%;background:radial-gradient(circle,rgba(22,186,175,.15) 0%,transparent 70%);border-radius:50%}
+        #ova-embed .section-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);padding:32px;transition:all .3s}
+        #ova-embed .section-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(23,162,184,.25)}
+        #ova-embed .section-card.no-hover{transition:none}
+        #ova-embed .section-card.no-hover:hover{transform:none;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+        #ova-embed .mini-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.05);transition:all .3s}
+        #ova-embed .mini-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(23,162,184,.25);border-color:#17a2b8}
+        #ova-embed .btn-main{background:var(--accent);color:#fff;font-weight:600;border-radius:8px;padding:12px 24px;border:none;cursor:pointer;transition:background .25s}
+        #ova-embed .btn-main:hover{background:var(--accent-deep)}
+        #ova-embed .btn-soft{background:var(--surface);color:#495057;font-weight:600;border-radius:8px;padding:12px 24px;border:1px solid var(--line);cursor:pointer;transition:all .2s}
+        #ova-embed .btn-soft:hover{background:#e9ecef;border-color:#adb5bd}
+        #ova-embed .matrix-export-btn{background:#D8EBF8;color:#0c7b8a;font-weight:600;border-radius:8px;padding:12px 24px;border:1px solid #17a2b8;cursor:pointer;transition:all .2s}
+        #ova-embed .matrix-export-btn:hover{background:#17a2b8;color:#fff}
+        #ova-embed .phase-card{background:var(--surface);border:1px solid var(--line);border-left:4px solid #17a2b8;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:all .3s}
+        #ova-embed .deliverable-card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:all .3s}
+        #ova-embed .sim-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:all .3s}
+        #ova-embed .quiz-option{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:12px 14px;cursor:pointer;font-weight:600;color:var(--text);transition:all .25s}
+        #ova-embed .quiz-option:hover{background:#D8EBF8;border-color:#17a2b8}
+        #ova-embed .quiz-option.selected{border-color:var(--accent);background:var(--surface-soft);color:var(--accent)}
+        #ova-embed .mobile-header{display:none}
+        #ova-embed textarea,#ova-embed input,#ova-embed select{font-family:inherit}
+        #ova-embed .feedback-box{padding:16px;border-radius:12px;margin-top:16px}
+        #ova-embed .feedback-box.success{background:#e8f5e9;border:1px solid #a5d6a7}
+        #ova-embed .feedback-box.warning{background:#fff3e0;border:1px solid #ffcc80}
+        #ova-embed .feedback-box.error{background:#fce4ec;border:1px solid #f48fb1}
+        #ova-embed .rubric-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700}
+        #ova-embed .rubric-badge.abstracto{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+        #ova-embed .rubric-badge.relacional{background:#e3f2fd;color:#1565c0;border:1px solid #90caf9}
+        #ova-embed .rubric-badge.uniestructural{background:#fce4ec;color:#c62828;border:1px solid #f48fb1}
+        #ova-embed .export-dropdown{position:absolute;top:100%;left:0;margin-top:4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:50;min-width:200px;overflow:hidden}
+        #ova-embed .export-dropdown-item{display:block;width:100%;text-align:left;padding:12px 16px;border:none;background:none;cursor:pointer;font-weight:500;color:var(--text);transition:background .2s}
+        #ova-embed .export-dropdown-item:hover{background:#D8EBF8;color:#0c7b8a}
+        @media(max-width:900px){#ova-embed .layout{display:block}#ova-embed .sidebar{display:none}#ova-embed .mobile-header{display:block;padding:18px;background:var(--surface);box-shadow:0 2px 14px rgba(0,0,0,.05)}#ova-embed .main{padding:18px}#ova-embed .hero{padding:24px}}
+    </style>
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="logo.webp" alt="Logo"></div>
+            <div>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Psicología organizacional y bienestar humano</h1>
+                <p class="eyebrow" style="text-transform:none;letter-spacing:0;">Unidad 3: Liderazgo Disruptivo y Gestión del Cambio</p>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="diagnostico">Diagnóstico</option>
+            <option value="actividades">Actividades</option>
+        </select>
+    </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="logo.webp" alt="Logo"></div>
+                <div class="brand-copy">
+                    <h1>Psicología organizacional y bienestar humano</h1>
+                    <p class="eyebrow" style="text-transform:none;letter-spacing:0;font-size:.9rem;margin-top:6px;">Unidad 3: Liderazgo Disruptivo y Gestión del Cambio</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-building-columns"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="diagnostico"><i class="fa-solid fa-clipboard-list"></i> Diagnóstico</a>
+                <a href="#" class="sidebar-link" data-target="actividades"><i class="fa-solid fa-person-chalkboard"></i> Actividades</a>
+            </nav>
+        </aside>
+        <main class="main">
+            <div class="content-stage">
+                <!-- INTRODUCCIÓN -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-graduation-cap mr-2"></i>Unidad 3</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Liderazgo Disruptivo y Gestión del Cambio</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Estrategias para navegar la complejidad de la era digital y facilitar transformaciones organizacionales profundas.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color:var(--heading)">Introducción</h3>
+                        <p class="mt-4 leading-relaxed">La Unidad 3 posiciona al especialista como un estratega del cambio capaz de navegar la complejidad de la era digital. En el horizonte del 2026, el liderazgo no se define por la jerarquía, sino por la capacidad de romper paradigmas obsoletos y facilitar una transición cultural donde la innovación y la sostenibilidad humana sean los ejes del éxito organizacional. Este material proporciona los marcos teóricos y prácticos para liderar transformaciones profundas y gestionar la resistencia humana con empatía y rigor científico.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold" style="color:var(--heading)"><i class="fa-solid fa-bolt mr-2" style="color:#17a2b8;"></i>Liderazgo disruptivo</h3><p class="mt-2">Romper paradigmas obsoletos y facilitar transiciones culturales donde la innovación sea el eje del éxito organizacional.</p></div>
+                        <div class="mini-card"><h3 class="font-bold" style="color:var(--heading)"><i class="fa-solid fa-arrows-rotate mr-2" style="color:#17a2b8;"></i>Gestión del cambio</h3><p class="mt-2">Liderar transformaciones profundas y gestionar la resistencia humana con empatía y rigor científico.</p></div>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-book-open mt-1" style="color:#17a2b8;font-size:1.2rem;"></i>
+                            <div>
+                                <h4 class="font-bold" style="color:var(--heading);">Metodología: Learning by Doing</h4>
+                                <p class="mt-1 text-sm leading-relaxed">Estas actividades se ejecutan bajo la lógica de <strong>Aprendizaje autónomo centrado en el estudiante</strong>, tal como lo define el programa académico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DIAGNÓSTICO -->
+                <section id="diagnostico" class="content-pane">
+                    <div class="section-card no-hover">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">AEM Psicología organizacional y bienestar humano · UA03</p>
+                        <h2 class="mt-4 text-3xl font-extrabold" style="color:var(--heading)">Autoreporte de Expectativas y Motivación</h2>
+                        <p class="mt-4 leading-relaxed">Cuestionario del tercer módulo. Su propósito es conocer su perspectiva sobre el liderazgo disruptivo, la gestión del cambio y la seguridad psicológica en su contexto laboral. No es calificable; su cumplimiento es obligatorio como evidencia de participación (AEM).</p>
+                        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                            <span class="px-3 py-1 rounded-full" style="background:var(--surface-soft);color:var(--heading);"><i class="fa-regular fa-clock mr-1"></i>15-20 min</span>
+                            <span class="px-3 py-1 rounded-full" style="background:var(--surface-soft);color:var(--heading);"><i class="fa-solid fa-lock mr-1"></i>Confidencial</span>
+                            <span class="px-3 py-1 rounded-full" style="background:var(--surface-soft);color:var(--heading);"><i class="fa-solid fa-list-check mr-1"></i>9 preguntas</span>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="diag-box">
+                            <div class="flex justify-between items-center gap-4">
+                                <h3 id="diag-title" class="text-xl font-extrabold" style="color:var(--heading);">Pregunta 1</h3>
+                                <span id="diag-progress" class="text-sm font-bold">1/9</span>
+                            </div>
+                            <p id="diag-text" class="mt-4 text-lg font-semibold"></p>
+                            <p id="diag-hint" class="mt-1 text-xs" style="color:#6c757d;"></p>
+                            <div id="diag-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3">
+                                <button id="diag-prev" type="button" class="btn-soft">Anterior</button>
+                                <button id="diag-next" type="button" class="btn-main">Siguiente</button>
+                            </div>
+                        </div>
+                        <div id="diag-results" class="hidden mt-6 p-5 rounded-2xl" style="background:var(--surface-soft);border:1px solid var(--accent);">
+                            <h3 class="text-xl font-extrabold" style="color:var(--heading);">¡Diagnóstico completado!</h3>
+                            <p class="mt-2">Gracias por compartir su perspectiva. Sus respuestas serán tratadas de forma agregada y confidencial.</p>
+                            <div id="diag-summary" class="mt-5 space-y-3"></div>
+                            <div class="mt-5 flex gap-3 flex-wrap">
+                                <button id="diag-save" type="button" class="btn-main"><i class="fa-solid fa-save mr-2"></i>Guardar</button>
+                                <button id="diag-export-txt" type="button" class="btn-soft"><i class="fa-solid fa-file-lines mr-2"></i>Exportar .txt</button>
+                                <button id="diag-restart" type="button" class="btn-soft">Reiniciar</button>
+                            </div>
+                            <div id="diag-save-feedback" class="mt-3 hidden text-sm font-semibold" style="color:var(--accent);"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTIVIDADES -->
+                <section id="actividades" class="content-pane">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-person-chalkboard mr-2"></i>Actividades</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Integración con Google Docs y Herramientas de Transformación</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Actividades prácticas para aplicar los conceptos de liderazgo y gestión del cambio. Unidad 3.</p>
+                    </div>
+                    <div class="section-card mt-6 no-hover">
+                        <h3 class="text-2xl font-extrabold" style="color:var(--heading)">Actividades Sugeridas en el Aula Virtual</h3>
+                        <p class="mt-4 leading-relaxed">En estas actividades pondrás en práctica las estrategias de liderazgo disruptivo y gestión del cambio estudiadas en la Unidad 3, aplicándolas a situaciones organizacionales reales.</p>
+                        <div class="mt-4 p-3 rounded-lg" style="background:#D8EBF8;border:1px solid #17a2b8;">
+                            <p class="text-sm"><i class="fa-solid fa-star mr-2" style="color:#0c7b8a;"></i><strong>Niveles de desempeño:</strong> <span class="rubric-badge abstracto">Abstracto Ampliado (4.6–5.0)</span> innovadora y original · <span class="rubric-badge relacional">Relacional (3.8–4.5)</span> coherente pero convencional</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex gap-2 overflow-x-auto pb-2">
+                        <button type="button" class="activity-tab-btn btn-main" data-target="act-1"><i class="fa-solid fa-users-gear mr-2"></i>Actividad 1</button>
+                        <button type="button" class="activity-tab-btn btn-soft" data-target="act-2"><i class="fa-solid fa-shield-heart mr-2"></i>Actividad 2</button>
+                        <button type="button" class="activity-tab-btn btn-soft" data-target="act-3"><i class="fa-solid fa-leaf mr-2"></i>Actividad 3</button>
+                    </div>
+
+                    <!-- ACT 1: Coalición Guía -->
+                    <div id="act-1" class="activity-tab block space-y-4">
+                        <div class="section-card">
+                            <h4 class="text-xl font-bold" style="color:var(--heading)"><i class="fa-solid fa-users-gear mr-2" style="color:#17a2b8;"></i>1. Simulacro de Coalición Guía</h4>
+                            <p class="mt-2 leading-relaxed"><strong>Objetivo:</strong> Identificar actores clave y redactar una visión de cambio que genere sentido de urgencia en la organización.</p>
+                            <div class="mt-4 p-4 rounded-xl" style="background:#D8EBF8;border:1px solid #17a2b8;">
+                                <p class="text-sm font-bold" style="color:#0c7b8a;"><i class="fa-solid fa-circle-info mr-2"></i>Instrucciones</p>
+                                <p class="text-sm mt-1">Identifica a 5 líderes influyentes de tu organización. Luego, redacta una "declaración de visión de cambio" de 2 párrafos que genere un alto sentido de urgencia en tu equipo.</p>
+                            </div>
+                            <div class="mt-6 sim-card rounded-xl">
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2" style="color:var(--heading);"><i class="fa-solid fa-user-tie mr-2" style="color:#17a2b8;"></i>Líderes influyentes (5)</label>
+                                    <textarea id="coal-leaders" maxlength="1500" class="w-full p-3 rounded-lg border resize-none" style="border-color:var(--line);min-height:140px;" placeholder="Liste 5 líderes influyentes, uno por línea. Incluya nombre/rol y por qué tiene capacidad de influencia real."></textarea>
+                                    <span id="coal-leaders-counter" class="block text-xs font-semibold mt-1">0/1500</span>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2" style="color:var(--heading);"><i class="fa-solid fa-bullhorn mr-2" style="color:#17a2b8;"></i>Declaración de visión de cambio (2 párrafos)</label>
+                                    <textarea id="coal-vision" maxlength="2000" class="w-full p-3 rounded-lg border resize-none" style="border-color:var(--line);min-height:180px;" placeholder="Redacte su declaración en exactamente 2 párrafos que genere sentido de urgencia."></textarea>
+                                    <span id="coal-vision-counter" class="block text-xs font-semibold mt-1">0/2000</span>
+                                </div>
+                                <label class="flex items-start gap-3 p-3 rounded-lg cursor-pointer" style="background:var(--surface-soft);border:1px solid var(--line);"><input type="checkbox" id="coal-ia-etica" class="mt-1"><div><strong class="text-sm" style="color:var(--heading);">Declaración de uso ético de IA</strong><span class="block text-xs mt-1" style="color:#6c757d;">Declaro que he utilizado herramientas de IA de forma ética y transparente, validando críticamente las sugerencias y asumiendo autoría del producto final.</span></div></label>
+                                <div class="mt-4 p-3 rounded-lg" style="background:#fff3e0;border:1px solid #ffcc80;">
+                                    <p class="text-sm"><i class="fa-solid fa-wand-magic-sparkles mr-2" style="color:#e65100;"></i><strong>¿Cómo funciona?</strong> Al presionar "Evaluar y generar prompt", el sistema revisará tu trabajo y generará un <strong>prompt especializado</strong> que podrás copiar y pegar en ChatGPT, Copilot o Gemini para recibir retroalimentación experta personalizada de un Experto en Gestión del Cambio Organizacional.</p>
+                                </div>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <button id="coal-evaluate" type="button" class="btn-main"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Evaluar y generar prompt</button>
+                                    <div class="relative inline-block">
+                                        <button id="coal-export-btn" type="button" class="matrix-export-btn"><i class="fa-solid fa-file-export mr-2"></i>Exportar <i class="fa-solid fa-caret-down ml-1"></i></button>
+                                        <div id="coal-export-menu" class="export-dropdown hidden">
+                                            <button type="button" class="export-dropdown-item" data-format="txt"><i class="fa-solid fa-file-lines mr-2"></i>Exportar como TXT</button>
+                                            <button type="button" class="export-dropdown-item" data-format="word"><i class="fa-solid fa-file-word mr-2"></i>Exportar como Word</button>
+                                        </div>
+                                    </div>
+                                    <button id="coal-clean" type="button" class="btn-soft"><i class="fa-solid fa-rotate-left mr-2"></i>Limpiar</button>
+                                </div>
+                                <div id="coal-feedback" class="hidden"></div>
+                                <div id="coal-prompt-area" class="hidden mt-4 p-4 rounded-xl" style="background:var(--surface-soft);border:1px solid var(--line);">
+                                    <h6 class="font-bold mb-2" style="color:var(--heading);"><i class="fa-solid fa-wand-magic-sparkles mr-2" style="color:#e65100;"></i>Prompt generado para IA</h6>
+                                    <p class="text-sm mb-2" style="color:var(--text);">Copie este prompt y péguelo en <strong>ChatGPT, Copilot o Gemini</strong> para recibir retroalimentación experta sobre su propuesta.</p>
+                                    <textarea id="coal-prompt-text" readonly class="w-full p-3 rounded-lg border resize-none text-sm" style="border-color:var(--line);min-height:160px;background:#f8f9fa;"></textarea>
+                                    <button id="coal-copy-prompt" type="button" class="btn-soft mt-2"><i class="fa-regular fa-copy mr-2"></i>Copiar prompt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACT 2: Seguridad Psicológica -->
+                    <div id="act-2" class="activity-tab hidden space-y-4">
+                        <div class="section-card">
+                            <h4 class="text-xl font-bold" style="color:var(--heading)"><i class="fa-solid fa-shield-heart mr-2" style="color:#17a2b8;"></i>2. Laboratorio de Seguridad Psicológica</h4>
+                            <p class="mt-2 leading-relaxed"><strong>Objetivo:</strong> Diseñar protocolos de aprendizaje organizacional basados en la confianza y el análisis técnico, eliminando la cultura del castigo.</p>
+                            <div class="mt-4 p-4 rounded-xl" style="background:#D8EBF8;border:1px solid #17a2b8;">
+                                <p class="text-sm font-bold" style="color:#0c7b8a;"><i class="fa-solid fa-circle-info mr-2"></i>Instrucciones</p>
+                                <p class="text-sm mt-1">Diseña un protocolo para una "Reunión de Análisis de Error" (After Action Review). Es <strong>obligatorio</strong> que el protocolo incluya una regla que prohíba explícitamente la búsqueda de culpables, centrándose solo en la mejora del proceso.</p>
+                            </div>
+                            <div class="mt-6 sim-card rounded-xl">
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2" style="color:var(--heading);"><i class="fa-solid fa-pen-to-square mr-2" style="color:#17a2b8;"></i>Protocolo de Reunión de Análisis de Error (AAR)</label>
+                                    <textarea id="aar-protocol" maxlength="5000" class="w-full p-3 rounded-lg border resize-none" style="border-color:var(--line);min-height:300px;" placeholder="Redacte su protocolo completo.&#10;&#10;OBLIGATORIO incluir:&#10;- Regla que PROHÍBA EXPLÍCITAMENTE la búsqueda de culpables&#10;- Enfoque en mejora del proceso (no juicios personales)&#10;- Secuencia de la reunión&#10;- Roles y responsabilidades&#10;- Mecanismos de seguridad psicológica"></textarea>
+                                    <span id="aar-counter" class="block text-xs font-semibold mt-1">0/5000</span>
+                                </div>
+                                <label class="flex items-start gap-3 p-3 rounded-lg cursor-pointer" style="background:var(--surface-soft);border:1px solid var(--line);"><input type="checkbox" id="aar-ia-etica" class="mt-1"><div><strong class="text-sm" style="color:var(--heading);">Declaración de uso ético de IA</strong><span class="block text-xs mt-1" style="color:#6c757d;">Declaro que he utilizado herramientas de IA de forma ética y transparente, validando críticamente las sugerencias y asumiendo autoría del producto final.</span></div></label>
+                                <div class="mt-4 p-3 rounded-lg" style="background:#fff3e0;border:1px solid #ffcc80;">
+                                    <p class="text-sm"><i class="fa-solid fa-wand-magic-sparkles mr-2" style="color:#e65100;"></i><strong>¿Cómo funciona?</strong> Al presionar "Evaluar y generar prompt", el sistema revisará tu protocolo y generará un <strong>prompt especializado</strong> que podrás copiar y pegar en ChatGPT, Copilot o Gemini para recibir retroalimentación de un Facilitador de Equipos de Alto Rendimiento.</p>
+                                </div>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <button id="aar-evaluate" type="button" class="btn-main"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Evaluar y generar prompt</button>
+                                    <div class="relative inline-block">
+                                        <button id="aar-export-btn" type="button" class="matrix-export-btn"><i class="fa-solid fa-file-export mr-2"></i>Exportar <i class="fa-solid fa-caret-down ml-1"></i></button>
+                                        <div id="aar-export-menu" class="export-dropdown hidden">
+                                            <button type="button" class="export-dropdown-item" data-format="txt"><i class="fa-solid fa-file-lines mr-2"></i>Exportar como TXT</button>
+                                            <button type="button" class="export-dropdown-item" data-format="word"><i class="fa-solid fa-file-word mr-2"></i>Exportar como Word</button>
+                                        </div>
+                                    </div>
+                                    <button id="aar-clean" type="button" class="btn-soft"><i class="fa-solid fa-rotate-left mr-2"></i>Limpiar</button>
+                                </div>
+                                <div id="aar-feedback" class="hidden"></div>
+                                <div id="aar-prompt-area" class="hidden mt-4 p-4 rounded-xl" style="background:var(--surface-soft);border:1px solid var(--line);">
+                                    <h6 class="font-bold mb-2" style="color:var(--heading);"><i class="fa-solid fa-wand-magic-sparkles mr-2" style="color:#e65100;"></i>Prompt generado para IA</h6>
+                                    <p class="text-sm mb-2" style="color:var(--text);">Copie este prompt y péguelo en <strong>ChatGPT, Copilot o Gemini</strong> para recibir retroalimentación experta sobre su protocolo.</p>
+                                    <textarea id="aar-prompt-text" readonly class="w-full p-3 rounded-lg border resize-none text-sm" style="border-color:var(--line);min-height:160px;background:#f8f9fa;"></textarea>
+                                    <button id="aar-copy-prompt" type="button" class="btn-soft mt-2"><i class="fa-regular fa-copy mr-2"></i>Copiar prompt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACT 3: Matriz ESG -->
+                    <div id="act-3" class="activity-tab hidden space-y-4">
+                        <div class="section-card">
+                            <h4 class="text-xl font-bold" style="color:var(--heading)"><i class="fa-solid fa-leaf mr-2" style="color:#17a2b8;"></i>3. Matriz de Impacto ESG</h4>
+                            <p class="mt-2 leading-relaxed"><strong>Objetivo:</strong> Evaluar procesos de transformación digital bajo la lente de la sostenibilidad y los criterios ambientales, sociales y de gobernanza.</p>
+                            <div class="mt-4 p-4 rounded-xl" style="background:#D8EBF8;border:1px solid #17a2b8;">
+                                <p class="text-sm font-bold" style="color:#0c7b8a;"><i class="fa-solid fa-circle-info mr-2"></i>Instrucciones</p>
+                                <p class="text-sm mt-1">Evalúa el impacto de un proceso de transformación digital propuesto. Debes calificar (de 1 a 5) y justificar cómo este proceso afecta las dimensiones Ambiental, Social y de Gobernanza (ESG).</p>
+                            </div>
+                            <div class="mt-6 sim-card rounded-xl">
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2" style="color:var(--heading);">Proceso de transformación digital:</label>
+                                    <input type="text" id="esg-process" maxlength="200" class="w-full p-3 rounded-lg border" style="border-color:var(--line);" placeholder="Ej: Implementación de telemedicina con IA...">
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-sm border-collapse" style="min-width:600px;">
+                                        <thead><tr style="background:var(--surface-soft);"><th class="p-3 text-left" style="width:22%;">Dimensión</th><th class="p-3 text-center" style="width:12%;">Calif. (1-5)</th><th class="p-3 text-center" style="width:8%;">Peso</th><th class="p-3 text-left">Justificación</th></tr></thead>
+                                        <tbody>
+                                            <tr style="background:#e8f5e9;border-bottom:2px solid #a5d6a7;"><td class="p-3"><i class="fa-solid fa-seedling mr-1" style="color:#2e7d32;"></i><strong>Ambiental (E)</strong><br><span class="text-xs" style="color:#6c757d;">Huella ecológica, recursos</span></td><td class="p-3 text-center"><select id="esg-e-score" class="w-full p-2 rounded border text-center font-bold" style="border-color:#a5d6a7;"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td class="p-3 text-center text-xs font-bold" style="color:#6c757d;">20%</td><td class="p-3"><textarea id="esg-e-just" maxlength="500" class="w-full p-2 rounded border resize-none text-sm" style="border-color:var(--line);min-height:70px;" placeholder="Justifique..."></textarea></td></tr>
+                                            <tr style="background:#e3f2fd;border-bottom:2px solid #90caf9;"><td class="p-3"><i class="fa-solid fa-people-group mr-1" style="color:#1565c0;"></i><strong>Social (S)</strong><br><span class="text-xs" style="color:#6c757d;">Bienestar, inclusión</span><br><span class="text-xs font-bold" style="color:#c62828;">Mayor peso</span></td><td class="p-3 text-center"><select id="esg-s-score" class="w-full p-2 rounded border text-center font-bold" style="border-color:#90caf9;"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td class="p-3 text-center text-xs font-bold" style="color:#c62828;">50%</td><td class="p-3"><textarea id="esg-s-just" maxlength="500" class="w-full p-2 rounded border resize-none text-sm" style="border-color:var(--line);min-height:70px;" placeholder="Justifique. Incluya sostenibilidad humana..."></textarea></td></tr>
+                                            <tr style="background:#fce4ec;border-bottom:2px solid #f48fb1;"><td class="p-3"><i class="fa-solid fa-building-shield mr-1" style="color:#c62828;"></i><strong>Gobernanza (G)</strong><br><span class="text-xs" style="color:#6c757d;">Transparencia, ética</span></td><td class="p-3 text-center"><select id="esg-g-score" class="w-full p-2 rounded border text-center font-bold" style="border-color:#f48fb1;"><option value="">--</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td class="p-3 text-center text-xs font-bold" style="color:#6c757d;">30%</td><td class="p-3"><textarea id="esg-g-just" maxlength="500" class="w-full p-2 rounded border resize-none text-sm" style="border-color:var(--line);min-height:70px;" placeholder="Justifique..."></textarea></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <label class="flex items-start gap-3 p-3 rounded-lg cursor-pointer mt-4" style="background:var(--surface-soft);border:1px solid var(--line);"><input type="checkbox" id="esg-ia-etica" class="mt-1"><div><strong class="text-sm" style="color:var(--heading);">Declaración de uso ético de IA</strong><span class="block text-xs mt-1" style="color:#6c757d;">Declaro que he utilizado herramientas de IA de forma ética y transparente, validando críticamente las sugerencias y asumiendo autoría del producto final.</span></div></label>
+                                <div class="mt-4 p-3 rounded-lg" style="background:#fff3e0;border:1px solid #ffcc80;">
+                                    <p class="text-sm"><i class="fa-solid fa-wand-magic-sparkles mr-2" style="color:#e65100;"></i><strong>¿Cómo funciona?</strong> Al presionar "Evaluar y generar prompt", el sistema revisará tu matriz y generará un <strong>prompt especializado</strong> que podrás copiar y pegar en ChatGPT, Copilot o Gemini para recibir retroalimentación de un Auditor de Sostenibilidad y ESG.</p>
+                                </div>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <button id="esg-evaluate" type="button" class="btn-main"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Evaluar y generar prompt</button>
+                                    <div class="relative inline-block">
+                                        <button id="esg-export-btn" type="button" class="matrix-export-btn"><i class="fa-solid fa-file-export mr-2"></i>Exportar <i class="fa-solid fa-caret-down ml-1"></i></button>
+                                        <div id="esg-export-menu" class="export-dropdown hidden">
+                                            <button type="button" class="export-dropdown-item" data-format="txt"><i class="fa-solid fa-file-lines mr-2"></i>Exportar como TXT</button>
+                                            <button type="button" class="export-dropdown-item" data-format="word"><i class="fa-solid fa-file-word mr-2"></i>Exportar como Word</button>
+                                        </div>
+                                    </div>
+                                    <button id="esg-clean" type="button" class="btn-soft"><i class="fa-solid fa-rotate-left mr-2"></i>Limpiar</button>
+                                </div>
+                                <div id="esg-feedback" class="hidden"></div>
+                                <div id="esg-prompt-area" class="hidden mt-4 p-4 rounded-xl" style="background:var(--surface-soft);border:1px solid var(--line);">
+                                    <h6 class="font-bold mb-2" style="color:var(--heading);"><i class="fa-solid fa-wand-magic-sparkles mr-2" style="color:#e65100;"></i>Prompt generado para IA</h6>
+                                    <p class="text-sm mb-2" style="color:var(--text);">Copie este prompt y péguelo en <strong>ChatGPT, Copilot o Gemini</strong> para recibir retroalimentación experta sobre su matriz ESG.</p>
+                                    <textarea id="esg-prompt-text" readonly class="w-full p-3 rounded-lg border resize-none text-sm" style="border-color:var(--line);min-height:160px;background:#f8f9fa;"></textarea>
+                                    <button id="esg-copy-prompt" type="button" class="btn-soft mt-2"><i class="fa-regular fa-copy mr-2"></i>Copiar prompt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card mt-6 no-hover">
+                        <p class="leading-relaxed">Este diseño pedagógico asegura que el especialista de la Universidad de Córdoba esté plenamente preparado para liderar el cambio con visión de futuro, ética y sostenibilidad.</p>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="font-bold text-lg" style="color:var(--heading)">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const contentPanes = document.querySelectorAll('.content-pane');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    function switchPane(targetId) {
+        contentPanes.forEach(pane => pane.classList.remove('active'));
+        const pane = document.getElementById(targetId);
+        if (pane) pane.classList.add('active');
+        sidebarLinks.forEach(link => link.classList.toggle('active', link.dataset.target === targetId));
+        if (mobileNav && mobileNav.value !== targetId) mobileNav.value = targetId;
+    }
+
+    sidebarLinks.forEach(link => link.addEventListener('click', e => {
+        e.preventDefault();
+        switchPane(link.dataset.target);
+    }));
+    if (mobileNav) mobileNav.addEventListener('change', () => switchPane(mobileNav.value));
+
+    // Activity tabs
+    document.querySelectorAll('.activity-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.activity-tab').forEach(t => t.classList.add('hidden'));
+            document.querySelectorAll('.activity-tab-btn').forEach(b => { b.classList.remove('btn-main'); b.classList.add('btn-soft'); });
+            btn.classList.remove('btn-soft'); btn.classList.add('btn-main');
+            const target = document.getElementById(btn.dataset.target);
+            if (target) { target.classList.remove('hidden'); target.classList.add('block'); }
+        });
+    });
+
+    // ===== DIAGNÓSTICO =====
+    const diagQuestions = [
+        { num:1, id:'d1', question:'¿Cómo describiría el estilo de liderazgo predominante en su organización?', hint:'Seleccione una opción.', type:'radio', options:[
+            {value:'autoritario',text:'Autoritario y directivo'},{value:'transaccional',text:'Transaccional (recompensas y castigos)'},{value:'transformacional',text:'Transformacional e inspirador'},{value:'disruptivo',text:'Disruptivo e innovador'},{value:'laissez-faire',text:'Laissez-faire (poco intervencionista)'}
+        ]},
+        { num:2, id:'d2', question:'¿Su organización ha atravesado un proceso importante de cambio en los últimos tres años?', hint:'Seleccione una opción.', type:'radio', options:[
+            {value:'si-exitoso',text:'Sí, con resultados exitosos'},{value:'si-parcial',text:'Sí, con resultados parciales'},{value:'si-fallido',text:'Sí, pero fracasó'},{value:'en-proceso',text:'Actualmente en proceso'},{value:'no',text:'No'}
+        ]},
+        { num:3, id:'d3', question:'¿Qué tan preparada está su organización para afrontar una transformación digital profunda?', hint:'1 = Nada preparada · 5 = Totalmente preparada', type:'radio', options:[
+            {value:'1',text:'1 - Nada preparada'},{value:'2',text:'2 - Poco preparada'},{value:'3',text:'3 - Moderadamente preparada'},{value:'4',text:'4 - Bastante preparada'},{value:'5',text:'5 - Totalmente preparada'}
+        ]},
+        { num:4, id:'d4', question:'¿Cuál es la principal fuente de resistencia al cambio organizacional?', hint:'Seleccione una opción.', type:'radio', options:[
+            {value:'miedo',text:'Miedo a lo desconocido'},{value:'perdida-poder',text:'Pérdida de poder o estatus'},{value:'falta-comunicacion',text:'Falta de comunicación clara'},{value:'desconfianza',text:'Desconfianza en el liderazgo'},{value:'sobrecarga',text:'Sobrecarga de trabajo durante la transición'}
+        ]},
+        { num:5, id:'d5', question:'¿Considera que en su organización existe seguridad psicológica para reportar errores sin temor a represalias?', hint:'1 = Nunca · 5 = Siempre', type:'radio', options:[
+            {value:'1',text:'1 - Nunca, hay temor generalizado'},{value:'2',text:'2 - Rara vez'},{value:'3',text:'3 - A veces, depende del líder'},{value:'4',text:'4 - Frecuentemente'},{value:'5',text:'5 - Siempre, es parte de la cultura'}
+        ]},
+        { num:6, id:'d6', question:'¿Qué importancia le otorga su organización a los criterios ESG en sus decisiones estratégicas?', hint:'1 = Ninguna · 5 = Es un eje central', type:'radio', options:[
+            {value:'1',text:'1 - Ninguna importancia'},{value:'2',text:'2 - Importancia baja'},{value:'3',text:'3 - Importancia moderada'},{value:'4',text:'4 - Alta importancia'},{value:'5',text:'5 - Es un eje central de la estrategia'}
+        ]},
+        { num:7, id:'d7', question:'¿Qué competencias considera más importantes para un líder del cambio en la era digital?', hint:'Puede seleccionar varias.', type:'checkbox', options:[
+            {value:'vision-estrategica',text:'Visión estratégica'},{value:'empatia',text:'Empatía y escucha activa'},{value:'comunicacion',text:'Comunicación persuasiva'},{value:'resiliencia',text:'Resiliencia ante la incertidumbre'},{value:'pensamiento-critico',text:'Pensamiento crítico'},{value:'alfabetizacion-digital',text:'Alfabetización digital'}
+        ]},
+        { num:8, id:'d8', question:'¿Ha participado en la formación de una coalición o equipo guía para liderar un cambio organizacional?', hint:'Seleccione una opción.', type:'radio', options:[
+            {value:'si-lider',text:'Sí, como líder de la coalición'},{value:'si-miembro',text:'Sí, como miembro del equipo'},{value:'no-pero-interes',text:'No, pero me interesa'},{value:'no',text:'No'}
+        ]},
+        { num:9, id:'d9', question:'¿Cree que la sostenibilidad (humana y ambiental) debe ser un criterio obligatorio en todo proceso de transformación organizacional?', hint:'1 = No lo creo · 5 = Totalmente de acuerdo', type:'radio', options:[
+            {value:'1',text:'1 - No lo creo'},{value:'2',text:'2 - Lo dudo'},{value:'3',text:'3 - Neutral'},{value:'4',text:'4 - De acuerdo'},{value:'5',text:'5 - Totalmente de acuerdo'}
+        ]}
+    ];
+
+    let currentDiag = 0;
+    let diagAnswers = JSON.parse(localStorage.getItem('diagnostico_u03') || '{}');
+    const diagBox = document.getElementById('diag-box');
+    const diagResults = document.getElementById('diag-results');
+
+    function renderDiag() {
+        const q = diagQuestions[currentDiag];
+        document.getElementById('diag-title').textContent = 'Pregunta ' + q.num;
+        document.getElementById('diag-progress').textContent = (currentDiag + 1) + '/' + diagQuestions.length;
+        document.getElementById('diag-text').textContent = q.question;
+        document.getElementById('diag-hint').textContent = q.hint || '';
+        const opts = document.getElementById('diag-options');
+        opts.innerHTML = '';
+        if (q.type === 'radio') {
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                if (diagAnswers[q.id] === opt.value) btn.classList.add('selected');
+                btn.addEventListener('click', () => {
+                    diagAnswers[q.id] = opt.value;
+                    opts.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+                opts.appendChild(btn);
+            });
+        } else {
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = opt.text;
+                const saved = diagAnswers[q.id] || [];
+                if (saved.includes(opt.value)) btn.classList.add('selected');
+                btn.addEventListener('click', () => {
+                    let arr = diagAnswers[q.id] || [];
+                    if (arr.includes(opt.value)) { arr = arr.filter(v => v !== opt.value); btn.classList.remove('selected'); }
+                    else { arr.push(opt.value); btn.classList.add('selected'); }
+                    diagAnswers[q.id] = arr;
+                });
+                opts.appendChild(btn);
+            });
+        }
+        document.getElementById('diag-prev').disabled = currentDiag === 0;
+        document.getElementById('diag-next').textContent = currentDiag === diagQuestions.length - 1 ? 'Finalizar' : 'Siguiente';
+    }
+
+    document.getElementById('diag-prev').addEventListener('click', () => { if (currentDiag > 0) { currentDiag--; renderDiag(); } });
+    document.getElementById('diag-next').addEventListener('click', () => {
+        const q = diagQuestions[currentDiag];
+        if (q.type === 'radio' && !diagAnswers[q.id]) { alert('Selecciona una respuesta.'); return; }
+        if (currentDiag < diagQuestions.length - 1) { currentDiag++; renderDiag(); }
+        else { showDiagResults(); }
+    });
+
+    function getAnswerText(q) {
+        const ans = diagAnswers[q.id];
+        if (q.type === 'checkbox') return (ans && ans.length) ? ans.join(', ') : 'Sin selección';
+        const opt = (q.options || []).find(o => o.value === ans);
+        return opt ? opt.text : 'Sin respuesta';
+    }
+
+    function showDiagResults() {
+        let html = '';
+        diagQuestions.forEach(q => {
+            html += '<div class="p-3 rounded-lg" style="background:var(--surface);border:1px solid var(--line);"><p class="text-xs font-bold mb-1" style="color:var(--accent);">Pregunta ' + q.num + '</p><p class="text-sm font-bold" style="color:var(--heading);">' + q.question + '</p><p class="mt-1 text-sm">' + getAnswerText(q) + '</p></div>';
+        });
+        document.getElementById('diag-summary').innerHTML = html;
+        diagBox.classList.add('hidden');
+        diagResults.classList.remove('hidden');
+    }
+
+    document.getElementById('diag-save').addEventListener('click', () => {
+        localStorage.setItem('diagnostico_u03', JSON.stringify(diagAnswers));
+        const fb = document.getElementById('diag-save-feedback');
+        fb.textContent = '✓ Guardado correctamente.';
+        fb.classList.remove('hidden');
+    });
+
+    document.getElementById('diag-export-txt').addEventListener('click', () => {
+        const lines = ['AEM - UNIDAD 3: LIDERAZGO DISRUPTIVO Y GESTIÓN DEL CAMBIO', 'Fecha: ' + new Date().toLocaleDateString('es-CO', {year:'numeric',month:'long',day:'numeric'}), ''];
+        diagQuestions.forEach(q => { lines.push('P' + q.num + ': ' + q.question); lines.push('R: ' + getAnswerText(q)); lines.push(''); });
+        downloadTxt(lines.join('\n'), 'Diagnostico_U3.txt');
+    });
+
+    document.getElementById('diag-restart').addEventListener('click', () => {
+        currentDiag = 0; diagAnswers = {};
+        diagBox.classList.remove('hidden'); diagResults.classList.add('hidden');
+        renderDiag();
+    });
+
+    renderDiag();
+
+    // ===== ACTIVIDAD 1: COALICIÓN GUÍA =====
+    const coalLeaders = document.getElementById('coal-leaders');
+    const coalVision = document.getElementById('coal-vision');
+    const coalFeedback = document.getElementById('coal-feedback');
+
+    coalLeaders.addEventListener('input', () => { document.getElementById('coal-leaders-counter').textContent = coalLeaders.value.length + '/1500'; });
+    coalVision.addEventListener('input', () => { document.getElementById('coal-vision-counter').textContent = coalVision.value.length + '/2000'; });
+
+    document.getElementById('coal-evaluate').addEventListener('click', () => {
+        const leaders = coalLeaders.value.trim();
+        const vision = coalVision.value.trim();
+        const iaEtica = document.getElementById('coal-ia-etica').checked;
+        let issues = [];
+
+        if (!leaders || !vision) {
+            showFeedback(coalFeedback, 'error', 'Campos incompletos', 'Complete ambos campos antes de evaluar.');
+            return;
+        }
+
+        const leaderLines = leaders.split('\n').filter(l => l.trim().length > 5);
+        if (leaderLines.length < 5) issues.push('Se identificaron ' + leaderLines.length + ' líderes, se requieren 5 con capacidad de influencia real.');
+
+        const paragraphs = vision.split(/\n\s*\n/).filter(p => p.trim().length > 10);
+        if (paragraphs.length !== 2) issues.push('La visión tiene ' + paragraphs.length + ' párrafo(s), se requieren exactamente 2.');
+
+        const urgencyWords = ['urgente','urgencia','inmediato','ahora','crítico','vital','transformar','no podemos esperar','riesgo','oportunidad','imperativo','necesario','indispensable','apremiante','amenaza','competitividad'];
+        const hasUrgency = urgencyWords.some(w => vision.toLowerCase().includes(w));
+        if (!hasUrgency && vision.length > 20) issues.push('La visión es pasiva: no genera sentido de urgencia claro. Hágala más movilizadora (rúbrica de Síntesis y pensamiento crítico).');
+
+        if (!iaEtica) issues.push('Debe marcar la Declaración de uso ético de IA.');
+
+        let level, levelClass;
+        if (issues.length === 0 && leaderLines.length >= 5 && paragraphs.length === 2 && hasUrgency) {
+            level = 'Abstracto Ampliado (4.6–5.0)'; levelClass = 'abstracto';
+        } else if (issues.length <= 2 && leaders.length > 30 && vision.length > 50) {
+            level = 'Relacional (3.8–4.5)'; levelClass = 'relacional';
+        } else {
+            level = 'Uniestructural (requiere mejoras)'; levelClass = 'uniestructural';
+        }
+
+        let html = '<div class="flex items-center gap-2 mb-2"><span class="rubric-badge ' + levelClass + '">' + level + '</span></div>';
+        html += '<p class="text-sm font-bold" style="color:var(--heading);"><i class="fa-solid fa-clipboard-check mr-2"></i>Experto en Gestión del Cambio Organizacional</p>';
+        if (levelClass === 'abstracto') html += '<p class="text-sm mt-1">Excelente: líderes con influencia real, visión de 2 párrafos con alto sentido de urgencia.</p>';
+        else if (levelClass === 'relacional') html += '<p class="text-sm mt-1">Coherente pero convencional. Revise las observaciones para hacerla más movilizadora.</p>';
+        else html += '<p class="text-sm mt-1">La propuesta necesita ajustes significativos.</p>';
+        if (issues.length) { html += '<ul class="list-disc list-inside text-sm mt-2 space-y-1">'; issues.forEach(i => html += '<li>' + i + '</li>'); html += '</ul>'; }
+
+        coalFeedback.className = 'feedback-box ' + (levelClass === 'abstracto' ? 'success' : levelClass === 'relacional' ? 'warning' : 'error') + ' mt-4';
+        coalFeedback.innerHTML = html;
+        coalFeedback.classList.remove('hidden');
+
+        var coalPrompt = 'Actúa como un Experto en Gestión del Cambio Organizacional. Evalúa la propuesta del estudiante asegurando que:\n';
+        coalPrompt += '1) Los 5 líderes identificados tengan capacidad de influencia real.\n';
+        coalPrompt += '2) La visión de cambio tenga exactamente 2 párrafos.\n';
+        coalPrompt += '3) El tono genere un sentido de urgencia claro.\n';
+        coalPrompt += 'Si la visión es pasiva o muy larga, califica como "Relacional" e indica cómo hacerla más movilizadora basándote en la rúbrica de "Síntesis y pensamiento crítico".\n';
+        coalPrompt += 'Usa los niveles de la rúbrica oficial: Abstracto Ampliado (4.6-5.0) si es innovadora y original, Relacional (3.8-4.5) si es coherente pero convencional.\n\n';
+        coalPrompt += '--- PROPUESTA DEL ESTUDIANTE ---\n\n';
+        coalPrompt += 'LÍDERES INFLUYENTES:\n' + leaders + '\n\n';
+        coalPrompt += 'DECLARACIÓN DE VISIÓN DE CAMBIO:\n' + vision;
+        document.getElementById('coal-prompt-text').value = coalPrompt;
+        document.getElementById('coal-prompt-area').classList.remove('hidden');
+    });
+
+    document.getElementById('coal-copy-prompt').addEventListener('click', function() {
+        var el = document.getElementById('coal-prompt-text');
+        el.select(); document.execCommand('copy');
+        this.innerHTML = '<i class="fa-solid fa-check mr-2"></i>Prompt copiado';
+        var self = this;
+        setTimeout(function() { self.innerHTML = '<i class="fa-regular fa-copy mr-2"></i>Copiar prompt'; }, 2000);
+    });
+
+    setupExportDropdown('coal-export-btn', 'coal-export-menu', function(format) {
+        const lines = ['SIMULACRO DE COALICIÓN GUÍA - UNIDAD 3', 'Fecha: ' + new Date().toLocaleDateString('es-CO',{year:'numeric',month:'long',day:'numeric'}), '', 'LÍDERES INFLUYENTES:', coalLeaders.value.trim() || '(Sin registrar)', '', 'DECLARACIÓN DE VISIÓN DE CAMBIO:', coalVision.value.trim() || '(Sin redactar)', '', 'DECLARACIÓN USO ÉTICO IA: ' + (document.getElementById('coal-ia-etica').checked ? 'Sí' : 'No')];
+        var content = lines.join('\n');
+        if (format === 'txt') downloadTxt(content, 'Coalicion_Guia_U3.txt');
+        else downloadWord(content, 'Coalicion_Guia_U3');
+    });
+
+    document.getElementById('coal-clean').addEventListener('click', () => {
+        coalLeaders.value = ''; coalVision.value = '';
+        document.getElementById('coal-leaders-counter').textContent = '0/1500';
+        document.getElementById('coal-vision-counter').textContent = '0/2000';
+        document.getElementById('coal-ia-etica').checked = false;
+        coalFeedback.classList.add('hidden');
+        document.getElementById('coal-prompt-area').classList.add('hidden');
+        document.getElementById('act-1').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // ===== ACTIVIDAD 2: LABORATORIO SEGURIDAD PSICOLÓGICA =====
+    const aarProtocol = document.getElementById('aar-protocol');
+    const aarFeedback = document.getElementById('aar-feedback');
+
+    aarProtocol.addEventListener('input', () => { document.getElementById('aar-counter').textContent = aarProtocol.value.length + '/5000'; });
+
+    document.getElementById('aar-evaluate').addEventListener('click', () => {
+        const protocol = aarProtocol.value.trim();
+        const iaEtica = document.getElementById('aar-ia-etica').checked;
+        let issues = [];
+
+        if (!protocol) {
+            showFeedback(aarFeedback, 'error', 'Protocolo vacío', 'Redacte su protocolo AAR antes de evaluar.');
+            return;
+        }
+
+        const lower = protocol.toLowerCase();
+
+        const noCulpablePatterns = ['prohib', 'no buscar culpable', 'sin culpable', 'no señalar', 'no culpabiliz', 'prohibido señalar', 'prohibido buscar', 'no se permite señalar', 'no se permite buscar', 'queda prohibido', 'no se buscarán culpable', 'no habrá señalamiento'];
+        const hasNoCulpable = noCulpablePatterns.some(w => lower.includes(w));
+
+        if (!hasNoCulpable) {
+            issues.push('CRÍTICO: No se encontró una regla que PROHÍBA EXPLÍCITAMENTE la búsqueda de culpables. Este es un requisito obligatorio.');
+        }
+
+        const learningWords = ['aprendizaje', 'mejora del proceso', 'lección', 'mejora continua', 'análisis técnico', 'aprender del error', 'oportunidad de mejora', 'proceso', 'sistema'];
+        const hasLearning = learningWords.some(w => lower.includes(w));
+        if (!hasLearning) issues.push('No se evidencia un enfoque claro en el aprendizaje técnico y la mejora del proceso.');
+
+        const judgmentWords = ['culpa de', 'responsable del error fue', 'castigo', 'sanción por el error', 'despido por'];
+        const hasJudgment = judgmentWords.some(w => lower.includes(w));
+        if (hasJudgment) issues.push('El protocolo parece permitir juicios personales. La seguridad psicológica es el eje del éxito organizacional en 2026.');
+
+        if (!iaEtica) issues.push('Debe marcar la Declaración de uso ético de IA.');
+        if (protocol.length < 200) issues.push('El protocolo es muy breve. Desarrolle la secuencia, roles y mecanismos de seguridad psicológica.');
+
+        let level, levelClass;
+        if (issues.length === 0 && hasNoCulpable && hasLearning && protocol.length >= 500) {
+            level = 'Abstracto Ampliado (4.6–5.0)'; levelClass = 'abstracto';
+        } else if (hasNoCulpable && issues.length <= 2) {
+            level = 'Relacional (3.8–4.5)'; levelClass = 'relacional';
+        } else {
+            level = 'Uniestructural (requiere mejoras)'; levelClass = 'uniestructural';
+        }
+
+        let html = '<div class="flex items-center gap-2 mb-2"><span class="rubric-badge ' + levelClass + '">' + level + '</span></div>';
+        html += '<p class="text-sm font-bold" style="color:var(--heading);"><i class="fa-solid fa-clipboard-check mr-2"></i>Facilitador de Equipos de Alto Rendimiento</p>';
+        if (!hasNoCulpable) {
+            html += '<p class="text-sm mt-2 font-bold" style="color:#c62828;">La seguridad psicológica es el eje del éxito organizacional en 2026. Sin la prohibición explícita de buscar culpables, el protocolo no cumple el estándar mínimo de un AAR efectivo.</p>';
+        } else if (levelClass === 'abstracto') {
+            html += '<p class="text-sm mt-1">Excelente protocolo. Incluye prohibición de culpables, enfoque en aprendizaje técnico y mecanismos de seguridad psicológica robustos.</p>';
+        } else {
+            html += '<p class="text-sm mt-1">El protocolo incluye la regla de prohibición pero puede fortalecerse.</p>';
+        }
+        if (issues.length) { html += '<ul class="list-disc list-inside text-sm mt-2 space-y-1">'; issues.forEach(i => html += '<li>' + i + '</li>'); html += '</ul>'; }
+
+        aarFeedback.className = 'feedback-box ' + (levelClass === 'abstracto' ? 'success' : levelClass === 'relacional' ? 'warning' : 'error') + ' mt-4';
+        aarFeedback.innerHTML = html;
+        aarFeedback.classList.remove('hidden');
+
+        var aarPrompt = 'Actúa como un Facilitador de Equipos de Alto Rendimiento. Tu función es validar el protocolo de "Reunión de Análisis de Error" (After Action Review).\n';
+        aarPrompt += 'Debes verificar estrictamente que el estudiante haya incluido la prohibición de buscar culpables y se centre en el aprendizaje técnico.\n';
+        aarPrompt += 'Si el protocolo permite juicios personales, califica como "Uniestructural" y explica que la seguridad psicológica es el eje del éxito organizacional en 2026.\n';
+        aarPrompt += 'Usa los niveles de la rúbrica oficial: Abstracto Ampliado (4.6-5.0) si es innovadora y original, Relacional (3.8-4.5) si es coherente pero convencional.\n\n';
+        aarPrompt += '--- PROTOCOLO DEL ESTUDIANTE ---\n\n';
+        aarPrompt += protocol;
+        document.getElementById('aar-prompt-text').value = aarPrompt;
+        document.getElementById('aar-prompt-area').classList.remove('hidden');
+    });
+
+    document.getElementById('aar-copy-prompt').addEventListener('click', function() {
+        var el = document.getElementById('aar-prompt-text');
+        el.select(); document.execCommand('copy');
+        this.innerHTML = '<i class="fa-solid fa-check mr-2"></i>Prompt copiado';
+        var self = this;
+        setTimeout(function() { self.innerHTML = '<i class="fa-regular fa-copy mr-2"></i>Copiar prompt'; }, 2000);
+    });
+
+    setupExportDropdown('aar-export-btn', 'aar-export-menu', function(format) {
+        const lines = ['PROTOCOLO AFTER ACTION REVIEW - UNIDAD 3', 'Fecha: ' + new Date().toLocaleDateString('es-CO',{year:'numeric',month:'long',day:'numeric'}), '', aarProtocol.value.trim() || '(Sin redactar)', '', 'DECLARACIÓN USO ÉTICO IA: ' + (document.getElementById('aar-ia-etica').checked ? 'Sí' : 'No')];
+        var content = lines.join('\n');
+        if (format === 'txt') downloadTxt(content, 'Protocolo_AAR_U3.txt');
+        else downloadWord(content, 'Protocolo_AAR_U3');
+    });
+
+    document.getElementById('aar-clean').addEventListener('click', () => {
+        aarProtocol.value = '';
+        document.getElementById('aar-counter').textContent = '0/5000';
+        document.getElementById('aar-ia-etica').checked = false;
+        aarFeedback.classList.add('hidden');
+        document.getElementById('aar-prompt-area').classList.add('hidden');
+        document.getElementById('act-2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // ===== ACTIVIDAD 3: MATRIZ ESG =====
+    const esgProcess = document.getElementById('esg-process');
+    const esgFeedback = document.getElementById('esg-feedback');
+
+    document.getElementById('esg-evaluate').addEventListener('click', () => {
+        const process = esgProcess.value.trim();
+        const eScore = document.getElementById('esg-e-score').value;
+        const sScore = document.getElementById('esg-s-score').value;
+        const gScore = document.getElementById('esg-g-score').value;
+        const eJust = document.getElementById('esg-e-just').value.trim();
+        const sJust = document.getElementById('esg-s-just').value.trim();
+        const gJust = document.getElementById('esg-g-just').value.trim();
+        const iaEtica = document.getElementById('esg-ia-etica').checked;
+        let issues = [];
+
+        if (!process) issues.push('Describa el proceso de transformación digital.');
+        if (!eScore || !sScore || !gScore) issues.push('Asigne calificación (1-5) a las tres dimensiones.');
+        if (eJust.length < 20) issues.push('Justificación Ambiental insuficiente.');
+        if (sJust.length < 20) issues.push('Justificación Social insuficiente. Esta dimensión tiene mayor peso.');
+        if (gJust.length < 20) issues.push('Justificación Gobernanza insuficiente.');
+
+        const socialKw = ['sostenibilidad humana','bienestar','inclusión','equidad','salud mental','calidad de vida','dignidad','derechos','personas'];
+        const hasSocialDepth = socialKw.some(w => sJust.toLowerCase().includes(w));
+        if (sJust.length >= 20 && !hasSocialDepth) issues.push('La justificación Social no menciona sostenibilidad humana ni bienestar. Criterio clave (Rigor técnico y calidad en evidencias).');
+
+        if (!iaEtica) issues.push('Debe marcar la Declaración de uso ético de IA.');
+
+        if (!eScore && !sScore && !gScore) {
+            showFeedback(esgFeedback, 'error', 'Matriz vacía', 'Complete la calificación y justificación.');
+            return;
+        }
+
+        const eVal = parseInt(eScore) || 0;
+        const sVal = parseInt(sScore) || 0;
+        const gVal = parseInt(gScore) || 0;
+        const weighted = (eVal * 0.2 + sVal * 0.5 + gVal * 0.3).toFixed(1);
+
+        let level, levelClass;
+        if (issues.length === 0 && hasSocialDepth && eJust.length >= 50 && sJust.length >= 50 && gJust.length >= 50) {
+            level = 'Abstracto Ampliado (4.6–5.0)'; levelClass = 'abstracto';
+        } else if (issues.length <= 2 && eScore && sScore && gScore) {
+            level = 'Relacional (3.8–4.5)'; levelClass = 'relacional';
+        } else {
+            level = 'Uniestructural (requiere mejoras)'; levelClass = 'uniestructural';
+        }
+
+        let html = '<div class="flex items-center gap-2 mb-2"><span class="rubric-badge ' + levelClass + '">' + level + '</span></div>';
+        html += '<p class="text-sm font-bold" style="color:var(--heading);"><i class="fa-solid fa-clipboard-check mr-2"></i>Auditor de Sostenibilidad y ESG</p>';
+        html += '<p class="text-sm mt-1"><strong>Puntaje ponderado:</strong> ' + weighted + ' / 5.0 (E:20% S:50% G:30%)</p>';
+        html += '<div class="mt-2 grid grid-cols-3 gap-2 text-xs text-center">';
+        html += '<div class="p-2 rounded" style="background:#e8f5e9;"><strong>E:</strong> ' + (eScore || '-') + '/5</div>';
+        html += '<div class="p-2 rounded" style="background:#e3f2fd;"><strong>S:</strong> ' + (sScore || '-') + '/5</div>';
+        html += '<div class="p-2 rounded" style="background:#fce4ec;"><strong>G:</strong> ' + (gScore || '-') + '/5</div></div>';
+        if (issues.length) { html += '<ul class="list-disc list-inside text-sm mt-2 space-y-1">'; issues.forEach(i => html += '<li>' + i + '</li>'); html += '</ul>'; }
+
+        esgFeedback.className = 'feedback-box ' + (levelClass === 'abstracto' ? 'success' : levelClass === 'relacional' ? 'warning' : 'error') + ' mt-4';
+        esgFeedback.innerHTML = html;
+        esgFeedback.classList.remove('hidden');
+
+        var esgPrompt = 'Actúa como un Auditor de Sostenibilidad y ESG. Evalúa la matriz del estudiante verificando que la calificación y justificación cubra las tres dimensiones: Ambiental, Social y de Gobernanza.\n';
+        esgPrompt += 'Debes dar mayor peso a la dimensión Social, verificando si se menciona la sostenibilidad humana o el impacto en el bienestar.\n';
+        esgPrompt += 'Califica basándote en el criterio de "Rigor técnico y calidad en evidencias".\n';
+        esgPrompt += 'Usa los niveles de la rúbrica oficial: Abstracto Ampliado (4.6-5.0) si es innovadora y original, Relacional (3.8-4.5) si es coherente pero convencional.\n\n';
+        esgPrompt += '--- MATRIZ ESG DEL ESTUDIANTE ---\n\n';
+        esgPrompt += 'Proceso de transformación digital: ' + process + '\n\n';
+        esgPrompt += 'AMBIENTAL (E) - Calificación: ' + (eScore || '-') + '/5\n';
+        esgPrompt += 'Justificación: ' + (eJust || '(Sin justificar)') + '\n\n';
+        esgPrompt += 'SOCIAL (S) - Calificación: ' + (sScore || '-') + '/5\n';
+        esgPrompt += 'Justificación: ' + (sJust || '(Sin justificar)') + '\n\n';
+        esgPrompt += 'GOBERNANZA (G) - Calificación: ' + (gScore || '-') + '/5\n';
+        esgPrompt += 'Justificación: ' + (gJust || '(Sin justificar)');
+        document.getElementById('esg-prompt-text').value = esgPrompt;
+        document.getElementById('esg-prompt-area').classList.remove('hidden');
+    });
+
+    document.getElementById('esg-copy-prompt').addEventListener('click', function() {
+        var el = document.getElementById('esg-prompt-text');
+        el.select(); document.execCommand('copy');
+        this.innerHTML = '<i class="fa-solid fa-check mr-2"></i>Prompt copiado';
+        var self = this;
+        setTimeout(function() { self.innerHTML = '<i class="fa-regular fa-copy mr-2"></i>Copiar prompt'; }, 2000);
+    });
+
+    setupExportDropdown('esg-export-btn', 'esg-export-menu', function(format) {
+        const process = esgProcess.value.trim();
+        const eScore = document.getElementById('esg-e-score').value;
+        const sScore = document.getElementById('esg-s-score').value;
+        const gScore = document.getElementById('esg-g-score').value;
+        const eJust = document.getElementById('esg-e-just').value.trim();
+        const sJust = document.getElementById('esg-s-just').value.trim();
+        const gJust = document.getElementById('esg-g-just').value.trim();
+        const iaEtica = document.getElementById('esg-ia-etica').checked;
+        const eVal = parseInt(eScore)||0, sVal = parseInt(sScore)||0, gVal = parseInt(gScore)||0;
+        const weighted = (eVal*0.2+sVal*0.5+gVal*0.3).toFixed(1);
+        const lines = [
+            'MATRIZ DE IMPACTO ESG - UNIDAD 3',
+            'Fecha: ' + new Date().toLocaleDateString('es-CO',{year:'numeric',month:'long',day:'numeric'}),
+            '', 'Proceso: ' + (process || '(Sin especificar)'),
+            '', 'AMBIENTAL (E) - Peso 20%', 'Calificación: ' + (eScore||'-') + '/5', 'Justificación: ' + (eJust||'(Sin justificar)'),
+            '', 'SOCIAL (S) - Peso 50%', 'Calificación: ' + (sScore||'-') + '/5', 'Justificación: ' + (sJust||'(Sin justificar)'),
+            '', 'GOBERNANZA (G) - Peso 30%', 'Calificación: ' + (gScore||'-') + '/5', 'Justificación: ' + (gJust||'(Sin justificar)'),
+            '', 'PUNTAJE PONDERADO: ' + weighted + '/5.0',
+            '', 'DECLARACIÓN USO ÉTICO IA: ' + (iaEtica ? 'Sí' : 'No')
+        ];
+        var content = lines.join('\n');
+        if (format === 'txt') downloadTxt(content, 'Matriz_ESG_U3.txt');
+        else downloadWord(content, 'Matriz_ESG_U3');
+    });
+
+    document.getElementById('esg-clean').addEventListener('click', () => {
+        esgProcess.value = '';
+        document.getElementById('esg-e-score').value = '';
+        document.getElementById('esg-s-score').value = '';
+        document.getElementById('esg-g-score').value = '';
+        document.getElementById('esg-e-just').value = '';
+        document.getElementById('esg-s-just').value = '';
+        document.getElementById('esg-g-just').value = '';
+        document.getElementById('esg-ia-etica').checked = false;
+        esgFeedback.classList.add('hidden');
+        document.getElementById('esg-prompt-area').classList.add('hidden');
+        document.getElementById('act-3').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // ===== UTILIDADES =====
+    function showFeedback(el, type, title, msg) {
+        el.className = 'feedback-box ' + type + ' mt-4';
+        el.innerHTML = '<p class="font-bold" style="color:' + (type === 'error' ? '#c62828' : '#2e7d32') + ';"><i class="fa-solid fa-triangle-exclamation mr-2"></i>' + title + '</p><p class="text-sm mt-1">' + msg + '</p>';
+        el.classList.remove('hidden');
+    }
+
+    function downloadTxt(content, filename) {
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    function downloadWord(content, filename) {
+        const htmlContent = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>' + filename + '</title></head><body><pre style="font-family:Calibri,sans-serif;font-size:12pt;white-space:pre-wrap;">' + content.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</pre></body></html>';
+        const blob = new Blob([htmlContent], { type: 'application/msword' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = filename + '.doc';
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    function setupExportDropdown(btnId, menuId, exportFn) {
+        const btn = document.getElementById(btnId);
+        const menu = document.getElementById(menuId);
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelectorAll('.export-dropdown').forEach(d => { if (d.id !== menuId) d.classList.add('hidden'); });
+            menu.classList.toggle('hidden');
+        });
+        menu.querySelectorAll('.export-dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menu.classList.add('hidden');
+                exportFn(this.dataset.format);
+            });
+        });
+    }
+
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.export-dropdown').forEach(d => d.classList.add('hidden'));
+    });
+});
+</script>
+</body>
+</html>
