@@ -1,0 +1,27 @@
+Tema 5: Ética organizacional en el futuro y medición de impacto.
+
+
+Introducción:
+El futuro de la gestión humana está indisolublemente ligado a la ética digital y la medición de impacto. Este subtema aborda los desafíos éticos de la Inteligencia Artificial (IA) y la necesidad de pasar de "contabilizar actividades" a "demostrar cambios sostenibles" en la sociedad. El especialista aprenderá a utilizar herramientas avanzadas como el SROI (Social Return on Investment) y plataformas de datos ESG para convertir la sostenibilidad en una ventaja competitiva basada en evidencia y no solo en buenas intenciones.
+Objetivos de Aprendizaje:
+1.	Aplicar los principios de la UNESCO para el uso ético de la IA en procesos de talento humano (transparencia, privacidad y supervisión humana).
+2.	Diseñar sistemas de medición de impacto social y ambiental utilizando indicadores SMART y marcos como IRIS o SROI.
+3.	Utilizar herramientas de analítica digital para la gobernanza de datos y la rendición de cuentas ética ante los stakeholders en 2026.
+Contenido:
+●	Parte 1: Ética Digital e Inteligencia Artificial en 2026: Para 2026, la IA generativa habrá pasado de ser un asistente a ser una infraestructura de productividad. Esto plantea desafíos organizacionales críticos: el gobierno de datos no es opcional, y las empresas que no aseguren que sus modelos son imparciales y respetuosos con los derechos humanos enfrentarán riesgos regulatorios graves. El especialista debe actuar como el guardián de la confianza institucional, asegurando que la IA se emplee para mejorar la calidad de vida humana y no para su reemplazo deshumanizado. Principios como la explicabilidad (entender por qué la IA tomó una decisión) y la inocuidad son pilares de esta nueva ética digital.
+●	Parte 2: Métodos de Medición de Impacto Socioambiental: En el tercer sector y en la empresa privada, solo aquello capaz de demostrarse con datos genera verdadera confianza. Medir el impacto social se refiere a evaluar los efectos directos e indirectos, a corto y largo plazo, de una intervención en la sociedad. Herramientas como el SROI (Social Return on Investment) permiten comparar los beneficios sociales y ambientales frente a los costos financieros, asignando un valor monetario al impacto social. El especialista debe combinar métricas cuantitativas (ej. empleos creados) con cualitativas (percepción de bienestar), utilizando un "modelo lógico" para conectar recursos, actividades y resultados de cambio real.
+●	Parte 3: Herramientas Tecnológicas para la Rendición de Cuentas: La medición del impacto en 2025 se apoya en soluciones digitales que recopilan datos ESG automáticamente de diferentes fuentes (ERP, encuestas, sensores). Plataformas como Dcycle o Normative permiten estructurar esta información para cumplir con normativas internacionales de reporte, identificando puntos críticos donde mejorar el impacto y reducir costes. Comunicar el cambio de manera estratégica y narrativa es el paso final para movilizar recursos y fortalecer la reputación organizacional. Para el especialista, esto significa transformar los datos fríos en historias de éxito que demuestren cómo la organización cumple con su propósito de formar una sociedad más justa e interconectada.
+Referencias para ampliación:
+●	UNESCO. (2025). Recomendación sobre la Ética de la Inteligencia Artificial.
+●	ESADE. (2025). Métodos avanzados de evaluación y análisis del impacto social.
+●	Impact Solutions Center. (2025). Medición del Impacto Social: Guía Completa.
+●	TIMIA. (2026). Predicciones sobre IA y Transformación Digital Responsable.
+________________________________________
+
+Integración con Google Docs y Portafolio de Ética
+Este material de la Unidad 03 concluye la fase de diseño del proyecto de intervención.
+Actividades Sugeridas en el Aula Virtual:
+1.	Auditoría de IA: El estudiante evaluará un algoritmo de selección de personal hipotético bajo los 10 principios éticos de la UNESCO.
+2.	Mapa de Stakeholders: Creación de una matriz de materialidad para el proyecto de intervención diseñado en la unidad 01.
+3.	Taller de SROI: Cálculo del retorno social de una iniciativa de bienestar laboral utilizando simuladores en línea.
+Con este diseño pedagógico, el especialista de la Universidad de Córdoba está plenamente facultado para liderar intervenciones con rigor técnico y, sobre todo, con la profundidad ética que demanda la sociedad 
