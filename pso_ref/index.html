@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Referencias bibliográficas — Psicología Organizacional y Bienestar Humano</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a2e1a;
+      --paper: #f7faf7;
+      --primary: #1a472a;
+      --primary-light: #2e7d32;
+      --accent: #0097a7;
+      --accent-light: #e0f2f1;
+      --outline: rgba(26, 46, 26, 0.08);
+      --shadow-soft: 0 18px 35px -30px rgba(26, 46, 26, 0.45);
+      --shadow-strong: 0 28px 60px -40px rgba(26, 46, 26, 0.6);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100%;
+      background:
+        radial-gradient(900px 320px at 8% -12%, rgba(0, 151, 167, 0.14), transparent 60%),
+        radial-gradient(700px 320px at 96% 6%, rgba(46, 125, 50, 0.12), transparent 55%),
+        linear-gradient(120deg, rgba(26, 71, 42, 0.06), transparent 60%),
+        repeating-linear-gradient(90deg, rgba(26, 46, 26, 0.03), rgba(26, 46, 26, 0.03) 1px, transparent 1px, transparent 140px),
+        var(--paper);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      top: -210px;
+      right: -140px;
+      background: radial-gradient(circle, rgba(0, 151, 167, 0.35), transparent 70%);
+      opacity: 0.8;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      bottom: -240px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(46, 125, 50, 0.25), transparent 70%);
+      opacity: 0.8;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-font {
+      font-family: "Playfair Display", serif;
+    }
+
+    .filter-panel {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--outline);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(8px);
+    }
+
+    .unit-section {
+      scroll-margin-top: 2rem;
+    }
+
+    .unit-header {
+      border-left: 5px solid var(--accent);
+      background: linear-gradient(90deg, rgba(0, 151, 167, 0.08), transparent);
+    }
+
+    #references-container {
+      grid-auto-rows: 1fr;
+      align-items: stretch;
+    }
+
+    .reference-card {
+      position: relative;
+      border: 1px solid var(--outline);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      box-shadow: var(--shadow-soft);
+      height: 100%;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.3, 0.7, 0.4, 1), box-shadow 0.35s ease, opacity 0.25s ease, filter 0.25s ease;
+    }
+
+    .card-citation {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      line-clamp: 6;
+    }
+
+    .card-actions {
+      margin-top: auto;
+    }
+
+    .reference-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(140px 140px at 90% 8%, rgba(0, 151, 167, 0.15), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .reference-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 30px 50px -40px rgba(26, 46, 26, 0.6);
+    }
+
+    .reference-card:hover::after {
+      opacity: 1;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.55s cubic-bezier(0.3, 0.7, 0.4, 1) both;
+      animation-delay: var(--delay, 0ms);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .filter-chip {
+      border: 1px solid rgba(26, 46, 26, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      box-shadow: 0 10px 20px -16px rgba(26, 46, 26, 0.4);
+    }
+
+    .filter-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 26px -18px rgba(26, 46, 26, 0.5);
+    }
+
+    .filter-chip:focus-visible {
+      outline: 3px solid rgba(0, 151, 167, 0.35);
+      outline-offset: 2px;
+    }
+
+    .filter-chip.is-active {
+      background: var(--accent-light);
+      border-color: rgba(0, 151, 167, 0.4);
+      color: #006978;
+      box-shadow: 0 18px 30px -20px rgba(0, 151, 167, 0.5);
+    }
+
+    .platform-chip {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .platform-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px -16px rgba(26, 46, 26, 0.5);
+    }
+
+    .type-pill {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .reference-card:hover .type-pill {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px -18px rgba(26, 46, 26, 0.4);
+    }
+
+    .reference-card img {
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 12px 22px -16px rgba(26, 46, 26, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .reference-card:hover img {
+      transform: scale(1.04);
+      box-shadow: 0 18px 30px -20px rgba(26, 46, 26, 0.55);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen">
+    <header class="hero bg-gradient-to-r from-[#1a472a] via-[#2e7d32] to-[#0097a7] text-white" aria-label="Presentación">
+      <div class="container mx-auto px-4 py-10">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 overflow-hidden flex items-center justify-center">
+              <img src="logo.webp" alt="Logo CINTIA - Universidad de Córdoba" class="w-full h-full object-contain" onerror="this.style.display='none'" />
+            </div>
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wider text-white/80">Especialización en Gerencia del Talento Humano y Desarrollo Organizacional</p>
+              <h1 class="title-font text-3xl md:text-4xl font-semibold mt-1">Referencias bibliográficas</h1>
+              <p class="text-white/90 mt-1">C02 · Psicología Organizacional y Bienestar Humano</p>
+            </div>
+          </div>
+          <div class="self-start md:self-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-white/90">
+            Universidad de Córdoba
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-10">
+      <section class="filter-panel mb-8" aria-label="Acerca del acceso">
+        <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div>
+            <h2 class="title-font text-2xl text-[#1a472a] mb-2">Acceso a los recursos</h2>
+            <p class="text-slate-600 text-sm max-w-2xl">
+              Los enlaces de <strong>EbookCentral</strong> están configurados con el proxy institucional de la Universidad de Córdoba
+              (<code>ezproxyucor.unicordoba.edu.co</code>). Para acceder se requieren credenciales institucionales. Si un docID no corresponde exactamente al título, se recomienda buscar directamente en <a href="https://ebookcentral.proquest.com/lib/unicordobasp" target="_blank" rel="noopener noreferrer" class="text-[#006978] font-semibold underline hover:text-[#0097a7]">ebookcentral.proquest.com/lib/unicordobasp</a>.
+            </p>
+          </div>
+          <div class="shrink-0 rounded-2xl bg-[#f0f9f0] border border-[#1a472a]/10 px-4 py-3">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#1a472a] mb-2">Leyenda de plataformas</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="platform-chip inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-3 py-1 text-xs font-semibold text-[#006978]"><span class="w-2 h-2 rounded-full bg-[#0097a7]"></span> EbookCentral</span>
+              <span class="platform-chip inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-3 py-1 text-xs font-semibold text-sky-700"><span class="w-2 h-2 rounded-full bg-sky-500"></span> Google Scholar</span>
+              <span class="platform-chip inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-3 py-1 text-xs font-semibold text-amber-700"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Dialnet</span>
+              <span class="platform-chip inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-3 py-1 text-xs font-semibold text-emerald-700"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> ResearchGate</span>
+              <span class="platform-chip inline-flex items-center gap-1 rounded-full bg-white border border-slate-200 px-3 py-1 text-xs font-semibold text-indigo-700"><span class="w-2 h-2 rounded-full bg-indigo-500"></span> Repositorio</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="filter-panel mb-8" aria-label="Filtros">
+        <div class="mb-4">
+          <label for="reference-search" class="block text-sm font-semibold text-slate-700">Buscar</label>
+          <input id="reference-search" type="search" placeholder="Escribe autor, título o palabra clave" class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-800 shadow-sm outline-none focus:border-[#0097a7] focus:ring-4 focus:ring-[#0097a7]/10" autocomplete="off" />
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por unidad de aprendizaje">
+            <button class="filter-chip is-active px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-unit="" aria-pressed="true">Todas las UA</button>
+            <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-unit="UA01" aria-pressed="false">UA01</button>
+            <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-unit="UA02" aria-pressed="false">UA02</button>
+            <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-unit="UA03" aria-pressed="false">UA03</button>
+          </div>
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por tipo de recurso">
+            <button class="filter-chip is-active px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="" aria-pressed="true">Todos</button>
+            <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="libro" aria-pressed="false">Libros</button>
+            <button class="filter-chip px-4 py-2 rounded-full bg-white text-slate-700" type="button" data-type="documento" aria-pressed="false">Documentos</button>
+          </div>
+        </div>
+      </section>
+
+      <div id="references-container" aria-label="Lista de referencias por unidad de aprendizaje"></div>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white/70 mt-12">
+      <div class="mx-auto max-w-6xl px-4 py-8 text-center text-sm text-slate-600">
+        <p class="font-semibold text-[#1a472a]">Especialización en Gerencia del Talento Humano y Desarrollo Organizacional</p>
+        <p class="mt-1">Universidad de Córdoba — Acceso vía Proxy Institucional <code>ezproxyucor.unicordoba.edu.co</code></p>
+        <p class="mt-3 text-xs text-slate-500">Centro de Innovación en TIC para el apoyo de la Academia — CINTIA</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const units = {
+      UA01: 'Atracción, Selección y Retención del Talento Humano',
+      UA02: 'Gestión de la cultura organizacional y clima laboral',
+      UA03: 'Liderazgo disruptivo y gestión del cambio'
+    };
+
+    const platformMeta = {
+      ebookcentral: { label: 'EbookCentral', color: 'bg-[#0097a7]/10 text-[#006978] border-[#0097a7]/20 hover:bg-[#0097a7]/20' },
+      google: { label: 'Google Scholar', color: 'bg-sky-50 text-sky-700 border-sky-200 hover:bg-sky-100' },
+      dialnet: { label: 'Dialnet', color: 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100' },
+      researchgate: { label: 'ResearchGate', color: 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100' },
+      repositorio: { label: 'Repositorio', color: 'bg-indigo-50 text-indigo-700 border-indigo-200 hover:bg-indigo-100' }
+    };
+
+    function buildLink(platform, author, title) {
+      const q = encodeURIComponent(title);
+      const aq = encodeURIComponent(`${author} ${title}`);
+      switch (platform) {
+        case 'ebookcentral':
+          return `https://ezproxyucor.unicordoba.edu.co/login?url=https://ebookcentral.proquest.com/lib/unicordobasp/search.action?query=${q}`;
+        case 'google':
+          return `https://scholar.google.com/scholar?q=${aq}`;
+        case 'dialnet':
+          return `https://dialnet.unirioja.es/servlet/busqueda?tipo=1&query=${q}`;
+        case 'researchgate':
+          return `https://www.researchgate.net/search/publication?q=${q}`;
+        case 'repositorio':
+          return `https://repositorio.unicordoba.edu.co/busqueda?search=${q}`;
+        default:
+          return '#';
+      }
+    }
+
+    const rawItems = [
+      {
+        key: 'werther_administracion_personal',
+        unit: 'UA01',
+        author: 'Werther, W. B.',
+        title: 'Administración de personal y recursos humanos',
+        type: 'libro',
+        platforms: ['ebookcentral', 'google']
+      },
+      {
+        key: 'chiavenato_gestion_talento_humano',
+        unit: 'UA01',
+        author: 'Chiavenato, I.',
+        title: 'Gestión del talento humano',
+        type: 'libro',
+        platforms: ['ebookcentral', 'google', 'researchgate']
+      },
+      {
+        key: 'vivanco_talento_humano_implicaciones',
+        unit: 'UA01',
+        author: 'Vivanco Vargas, M.',
+        title: 'El talento humano y sus implicaciones en el trabajo',
+        type: 'libro',
+        platforms: ['google']
+      },
+      {
+        key: 'chiavenato_comportamiento_organizacional',
+        unit: 'UA02',
+        author: 'Chiavenato, I.',
+        title: 'Comportamiento organizacional',
+        type: 'libro',
+        platforms: ['ebookcentral', 'google', 'researchgate']
+      },
+      {
+        key: 'robbins_comportamiento_organizacional',
+        unit: 'UA02',
+        author: 'Robbins, S. P.',
+        title: 'Comportamiento organizacional',
+        type: 'libro',
+        platforms: ['ebookcentral', 'google', 'researchgate']
+      },
+      {
+        key: 'davis_comportamiento_humano_trabajo',
+        unit: 'UA02',
+        author: 'Davis, K.',
+        title: 'El comportamiento humano en el trabajo',
+        type: 'libro',
+        platforms: ['ebookcentral', 'google', 'researchgate']
+      },
+      {
+        key: 'aguirre_clima_laboral_hospital',
+        unit: 'UA02',
+        author: 'Aguirre Sierra, M. C.',
+        title: 'Evaluación clima laboral – E.S.E. Hospital San Jerónimo, Montería 2016',
+        type: 'documento',
+        platforms: ['researchgate', 'google']
+      },
+      {
+        key: 'muchinsky_psicologia_aplicada_trabajo',
+        unit: 'UA03',
+        author: 'Muchinsky, P. M.',
+        title: 'Psicología aplicada al trabajo',
+        type: 'libro',
+        platforms: ['ebookcentral', 'google', 'researchgate']
+      },
+      {
+        key: 'papalia_desarrollo_humano',
+        unit: 'UA03',
+        author: 'Papalia, D. E.',
+        title: 'Desarrollo humano',
+        type: 'libro',
+        platforms: ['ebookcentral', 'google', 'researchgate']
+      },
+      {
+        key: 'kaufmann_introduccion_comportamiento_humano',
+        unit: 'UA03',
+        author: 'Kaufmann, H.',
+        title: 'Introducción al estudio del comportamiento humano',
+        type: 'libro',
+        platforms: ['google', 'researchgate']
+      }
+    ];
+
+    function normalizeText(text) {
+      return (text || '').replace(/\s+/g, ' ').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    const items = rawItems.map(it => ({ ...it, searchText: normalizeText(`${it.author} ${it.title} ${it.unit} ${units[it.unit]}`) }));
+
+    const container = document.getElementById('references-container');
+    const searchInput = document.getElementById('reference-search');
+    const unitPills = Array.from(document.querySelectorAll('.filter-chip[data-unit]'));
+    const typePills = Array.from(document.querySelectorAll('.filter-chip[data-type]'));
+
+    const state = {
+      unit: '',
+      type: '',
+      query: ''
+    };
+
+    const typeMeta = {
+      libro: {
+        label: 'Libro',
+        border: 'border-[#2e7d32]',
+        pill: 'bg-[#f0f9f0] text-[#1a472a]'
+      },
+      documento: {
+        label: 'Documento',
+        border: 'border-[#0097a7]',
+        pill: 'bg-[#e0f2f1] text-[#006978]'
+      }
+    };
+
+    function createPlatformLinks(platforms, author, title) {
+      return platforms.map(p => {
+        const meta = platformMeta[p] || { label: p, color: 'bg-slate-50 text-slate-700 border-slate-200' };
+        const url = buildLink(p, author, title);
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="platform-chip inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-semibold ${meta.color}"><span class="w-1.5 h-1.5 rounded-full"></span>${meta.label}</a>`;
+      }).join('');
+    }
+
+    function createCard(item, idx) {
+      const meta = typeMeta[item.type] || { label: 'Recurso', border: 'border-slate-300', pill: 'bg-slate-50 text-slate-700' };
+      const article = document.createElement('article');
+      article.className = `reference-card fade-in bg-white rounded-xl p-5 border-l-4 ${meta.border}`;
+      article.dataset.type = item.type;
+      article.dataset.unit = item.unit;
+      article.style.setProperty('--delay', `${idx * 45}ms`);
+
+      const refNum = String(idx + 1).padStart(2, '0');
+      const links = createPlatformLinks(item.platforms, item.author, item.title);
+      const primaryUrl = buildLink(item.platforms[0], item.author, item.title);
+      const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(primaryUrl)}`;
+
+      article.innerHTML = `
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Referencia ${refNum}</p>
+            <h3 class="title-font text-lg text-[#1a472a] mt-1 leading-snug">${item.title}</h3>
+            <p class="text-slate-700 text-sm font-medium mt-1">${item.author}</p>
+          </div>
+          <span class="type-pill uppercase shrink-0 ${meta.pill} px-2 py-1 rounded-full">${meta.label}</span>
+        </div>
+        <div class="card-actions mt-auto pt-4 flex items-end justify-between gap-3">
+          <div class="flex flex-wrap gap-2">
+            ${links}
+          </div>
+          <a href="${primaryUrl}" target="_blank" rel="noopener noreferrer" title="Abrir recurso principal / Código QR" class="shrink-0">
+            <img src="${qrUrl}" alt="Código QR para ${item.title}" class="h-16 w-16 rounded-xl border border-slate-200 bg-white p-1 hover:scale-105 transition-transform" />
+          </a>
+        </div>
+      `;
+
+      return article;
+    }
+
+    function render(list) {
+      container.innerHTML = '';
+
+      if (!list.length) {
+        const empty = document.createElement('div');
+        empty.className = 'rounded-2xl border border-slate-200 bg-white/80 p-8 text-center text-slate-600 shadow-sm';
+        empty.textContent = 'No hay referencias para mostrar con los filtros seleccionados.';
+        container.appendChild(empty);
+        return;
+      }
+
+      // Sin filtro de unidad: un único grid sin headers de unidad.
+      if (!state.unit) {
+        const grid = document.createElement('div');
+        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5';
+        list.forEach((item, idx) => {
+          grid.appendChild(createCard(item, idx));
+        });
+        container.appendChild(grid);
+        return;
+      }
+
+      // Con unidad filtrada: mostrar solo esa sección con su header.
+      const section = document.createElement('section');
+      section.className = 'unit-section';
+      section.setAttribute('aria-labelledby', `unit-${state.unit}`);
+
+      const header = document.createElement('div');
+      header.className = 'unit-header rounded-r-xl px-5 py-4 mb-5';
+      header.innerHTML = `
+        <p class="text-xs font-bold uppercase tracking-widest text-[#0097a7]">${state.unit}</p>
+        <h2 id="unit-${state.unit}" class="title-font text-xl md:text-2xl text-[#1a472a] mt-1">${units[state.unit]}</h2>
+      `;
+      section.appendChild(header);
+
+      const grid = document.createElement('div');
+      grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5';
+      list.forEach((item, idx) => {
+        grid.appendChild(createCard(item, idx));
+      });
+      section.appendChild(grid);
+      container.appendChild(section);
+    }
+
+    function applyFilters() {
+      const query = normalizeText(state.query || '');
+      const filtered = items.filter((it) => {
+        if (state.unit && it.unit !== state.unit) return false;
+        if (state.type && it.type !== state.type) return false;
+        if (query && !it.searchText.includes(query)) return false;
+        return true;
+      });
+
+      filtered.sort((a, b) => a.unit.localeCompare(b.unit) || a.author.localeCompare(b.author));
+      render(filtered);
+    }
+
+    function updatePills(pills, activeValue, key) {
+      pills.forEach(p => {
+        const val = p.getAttribute(`data-${key}`) || '';
+        const active = val === activeValue;
+        p.classList.toggle('is-active', active);
+        p.setAttribute('aria-pressed', String(active));
+      });
+    }
+
+    unitPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        state.unit = pill.getAttribute('data-unit') || '';
+        updatePills(unitPills, state.unit, 'unit');
+        applyFilters();
+      });
+    });
+
+    typePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        state.type = pill.getAttribute('data-type') || '';
+        updatePills(typePills, state.type, 'type');
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        state.query = searchInput.value || '';
+        applyFilters();
+      });
+    }
+
+    applyFilters();
+  </script>
+</body>
+</html>
