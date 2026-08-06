@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rúbrica de Evaluación - Psicología Organizacional y Bienestar Humano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #e8f0e9;
+            --surface: #ffffff;
+            --surface-soft: #f1f3f5;
+            --text: #374151;
+            --heading: #569151;
+            --line: #dee2e6;
+            --accent: #569151;
+            --accent-deep: #3d6a3a;
+            --accent-soft: #16BAAF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        h1, h2, h3 {
+            color: var(--heading);
+        }
+
+        .ova-header {
+            background: linear-gradient(135deg, var(--heading) 0%, var(--accent-deep) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        th {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .level-cell {
+            transition: all 0.2s ease;
+        }
+
+        .level-cell:hover {
+            background-color: rgba(86, 145, 81, 0.08);
+        }
+
+        @media print {
+            @page {
+                size: letter landscape;
+                margin: 1cm;
+            }
+            
+            .no-print { display: none !important; }
+            
+            body { 
+                background: white !important; 
+                padding: 0 !important; 
+                margin: 0 !important;
+            }
+
+            .container-print {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                transform: scale(0.88);
+                transform-origin: top left;
+            }
+
+            .shadow-2xl { box-shadow: none !important; }
+            .rounded-3xl { border-radius: 0 !important; }
+            
+            th { 
+                background-color: #e8f0e9 !important; 
+                color: #374151 !important; 
+                font-size: 8pt !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            td { 
+                font-size: 7pt !important; 
+                border: 1px solid #dee2e6 !important;
+                padding: 6px !important;
+            }
+
+            .ova-header { 
+                background: #569151 !important; 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .bg-surface-soft { background-color: #f1f3f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            
+            h1 { font-size: 1.2rem !important; }
+            .text-xs { font-size: 7pt !important; }
+
+            header.ova-header { padding: 16px !important; }
+            .px-8.py-4 { padding: 10px 16px !important; }
+            
+            tr { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden border border-[#dee2e6] container-print">
+        
+        <header class="ova-header p-8 text-white relative">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm border border-white/30">
+                            <i class="fa-solid fa-clipboard-check text-[#16BAAF] text-xl"></i>
+                        </div>
+                        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Rúbrica de Evaluación</h1>
+                    </div>
+                    <p class="text-green-100 font-medium text-sm md:text-base">Psicología Organizacional y Bienestar Humano</p>
+                    <div class="flex flex-wrap gap-4 mt-4 text-[11px] uppercase tracking-wider font-semibold text-green-200">
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-graduation-cap text-sm"></i> Gerencias del Talento Humano y Desarrollo Organizacional</span>
+                        <span class="flex items-center gap-1"><i class="fa-solid fa-map-pin text-sm"></i> Virtual</span>
+                    </div>
+                </div>
+                <div class="no-print flex gap-2">
+                    <button onclick="window.print()" class="flex items-center gap-2 bg-white text-[#569151] px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg hover:bg-[#f1f3f5] transition-all active:scale-95 border border-[#dee2e6]">
+                        <i class="fa-solid fa-print"></i> Imprimir Rúbrica
+                    </button>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+        </header>
+
+        <div class="px-8 py-4 bg-[#f1f3f5] border-b border-[#dee2e6] flex flex-wrap gap-6 text-[12px] text-[#374151]">
+            <div class="flex items-center gap-2"><strong class="text-[#569151]">Créditos:</strong> 2</div>
+            <div class="flex items-center gap-2"><strong class="text-[#569151]">Horas trabajo autónomo:</strong> 80</div>
+            <div class="flex items-center gap-2"><strong class="text-[#569151]">Horas tutoría virtual:</strong> 16</div>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full">
+                <thead>
+                    <tr class="bg-[#f1f3f5] text-[#374151]">
+                        <th class="p-4 text-left border-b border-[#dee2e6] text-xs font-bold uppercase tracking-wider w-64">Criterios e Indicadores</th>
+                        <th class="p-4 border-b border-[#dee2e6] text-center">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Prestructural</span>
+                            <span class="text-[9px] opacity-70 font-medium">(0.0 – 2.0)</span>
+                        </th>
+                        <th class="p-4 border-b border-[#dee2e6] text-center">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Uniestructural</span>
+                            <span class="text-[9px] opacity-70 font-medium">(2.1 – 2.9)</span>
+                        </th>
+                        <th class="p-4 border-b border-[#dee2e6] text-center">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Multiestructural</span>
+                            <span class="text-[9px] opacity-70 font-medium">(3.0 – 3.7)</span>
+                        </th>
+                        <th class="p-4 border-b border-[#dee2e6] text-center bg-[#e8f0e9]/50">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Relacional</span>
+                            <span class="text-[9px] opacity-70 font-medium">(3.8 – 4.5)</span>
+                        </th>
+                        <th class="p-4 border-b border-[#dee2e6] text-center bg-[#16BAAF]/10">
+                            <span class="block text-[10px] font-bold uppercase tracking-tighter">Abstracto ampliado</span>
+                            <span class="text-[9px] opacity-70 font-medium">(4.6 – 5.0)</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-[#f1f3f5] text-[11px] leading-relaxed">
+                    <tr>
+                        <td class="p-4 bg-[#f1f3f5]/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-[#569151] text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">1</span>
+                                <div>
+                                    <p class="font-bold text-[#569151]">Dominio del contenido</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-[#6c757d] italic">Presenta ideas confusas o erróneas, sin conexión con el contenido del curso.</td>
+                        <td class="p-4 level-cell">Identifica solo un concepto de manera parcial, con limitaciones en su explicación.</td>
+                        <td class="p-4 level-cell">Reconoce varios conceptos y los utiliza de forma descriptiva, aunque sin articulación profunda.</td>
+                        <td class="p-4 level-cell bg-[#e8f0e9]/30">Relaciona conceptos y teorías de manera coherente, con explicaciones claras y fundamentadas.</td>
+                        <td class="p-4 level-cell bg-[#16BAAF]/10 font-medium text-[#3d6a3a] border-l-2 border-[#16BAAF]">Integra conceptos avanzados con profundidad y precisión, demostrando comprensión crítica y aplicabilidad en diversos contextos.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 bg-[#f1f3f5]/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-[#569151] text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">2</span>
+                                <div>
+                                    <p class="font-bold text-[#569151]">Síntesis y pensamiento crítico</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-[#6c757d] italic">Presenta información desorganizada, sin análisis ni pertinencia académica.</td>
+                        <td class="p-4 level-cell">Se limita a un solo argumento o idea sin suficiente desarrollo crítico.</td>
+                        <td class="p-4 level-cell">Expone varias ideas o fuentes, pero de forma más descriptiva que analítica.</td>
+                        <td class="p-4 level-cell bg-[#e8f0e9]/30">Establece relaciones lógicas entre ideas y fuentes, argumentando de forma clara y fundamentada.</td>
+                        <td class="p-4 level-cell bg-[#16BAAF]/10 font-medium text-[#3d6a3a] border-l-2 border-[#16BAAF]">Analiza, compara y transforma ideas en conclusiones originales, generando aportes innovadores y aplicables.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 bg-[#f1f3f5]/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-[#569151] text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">3</span>
+                                <div>
+                                    <p class="font-bold text-[#569151]">Aplicación práctica de conceptos</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-[#6c757d] italic">No logra aplicar los conceptos; sus respuestas carecen de relación práctica.</td>
+                        <td class="p-4 level-cell">Usa de forma aislada un concepto, con escasa relación con el contexto.</td>
+                        <td class="p-4 level-cell">Aplica algunos conceptos de manera correcta, pero sin integrar plenamente teoría y práctica.</td>
+                        <td class="p-4 level-cell bg-[#e8f0e9]/30">Traslada los conceptos teóricos a la práctica con coherencia, aportando soluciones pertinentes.</td>
+                        <td class="p-4 level-cell bg-[#16BAAF]/10 font-medium text-[#3d6a3a] border-l-2 border-[#16BAAF]">Aplica los conocimientos a situaciones reales o simuladas con propuestas innovadoras, pertinentes y bien justificadas.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 bg-[#f1f3f5]/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-[#569151] text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">4</span>
+                                <div>
+                                    <p class="font-bold text-[#569151]">Rigor técnico y calidad en evidencias</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-[#6c757d] italic">No presenta evidencias ni aplica criterios técnicos adecuados.</td>
+                        <td class="p-4 level-cell">Aporta evidencias mínimas o aplica parcialmente las normas.</td>
+                        <td class="p-4 level-cell">Presenta algunas evidencias y normas técnicas, pero con vacíos o errores menores.</td>
+                        <td class="p-4 level-cell bg-[#e8f0e9]/30">Sustenta ideas con evidencias confiables y aplica normas técnicas de forma consistente.</td>
+                        <td class="p-4 level-cell bg-[#16BAAF]/10 font-medium text-[#3d6a3a] border-l-2 border-[#16BAAF]">Utiliza evidencias sólidas, normas técnicas y metodológicas con precisión y coherencia impecables.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 bg-[#f1f3f5]/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-[#569151] text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">5</span>
+                                <div>
+                                    <p class="font-bold text-[#569151]">Participación dinámica y constructiva</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-[#6c757d] italic">No participa o lo hace de forma inadecuada, sin aportar al aprendizaje.</td>
+                        <td class="p-4 level-cell">Participa de manera ocasional, con aportes limitados o poco relevantes.</td>
+                        <td class="p-4 level-cell">Interviene con cierta frecuencia, aunque sus aportes tienden a ser más descriptivos que críticos.</td>
+                        <td class="p-4 level-cell bg-[#e8f0e9]/30">Participa de forma activa y respetuosa, aportando ideas pertinentes al desarrollo del tema.</td>
+                        <td class="p-4 level-cell bg-[#16BAAF]/10 font-medium text-[#3d6a3a] border-l-2 border-[#16BAAF]">Contribuye de manera proactiva, argumentada y respetuosa, enriqueciendo significativamente el aprendizaje colectivo.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 bg-[#f1f3f5]/50">
+                            <div class="flex items-start gap-2">
+                                <span class="bg-[#569151] text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold">6</span>
+                                <div>
+                                    <p class="font-bold text-[#569151]">Originalidad, propiedad intelectual y uso ético de IA</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="p-4 level-cell text-[#6c757d] italic">Incurren en plagio, copia directa o uso indebido de IA (presentar como propio lo generado sin declarar), sin reconocimiento de fuentes ni ética académica.</td>
+                        <td class="p-4 level-cell">Presenta ideas poco originales; uso inadecuado o poco transparente de IA, con deficiencias notorias en citación y reconocimiento de fuentes.</td>
+                        <td class="p-4 level-cell">Realiza aportes en parte originales, con escasa innovación; utiliza IA con responsabilidad básica pero con fallas menores en la declaración o citación.</td>
+                        <td class="p-4 level-cell bg-[#e8f0e9]/30">Presenta propuestas propias con creatividad y un uso adecuado de IA, declarando su apoyo en el trabajo y citando las fuentes de forma correcta.</td>
+                        <td class="p-4 level-cell bg-[#16BAAF]/10 font-medium text-[#3d6a3a] border-l-2 border-[#16BAAF]">Produce trabajos auténticos, creativos e innovadores, con alto valor agregado. Integra herramientas de IA de manera ética, transparente y correctamente citada, respetando siempre la propiedad intelectual.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="p-6 bg-[#f1f3f5] border-t border-[#dee2e6]">
+            <div class="flex flex-col md:flex-row justify-end items-center gap-4">
+                <div class="text-right">
+                    <p class="text-[10px] font-bold text-[#569151] uppercase tracking-tighter">Universidad de Córdoba</p>
+                    <p class="text-[9px] text-[#6c757d]">Facultad de Educación y Ciencias Humanas</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
