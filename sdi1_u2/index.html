@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminario Proyecto de Investigación I - Unidad 2</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--
+  Unidad 2: Tejiendo el marco referencial: antecedentes y teoría al servicio de tu problema
+  Contenido de las 7 secciones tomado de guia_unidad2_seminario_2.docx
+  (aprobado por la docente). Actividad interactiva (sección 4) es una sola
+  actividad ("Construyendo mi marco referencial") + una pestaña de Rúbrica,
+  tomada de "RÚBRICAS PARA EVALUAR EL ESTADO DE LAS PROPUESTAS" (Tabla 2:
+  criterios de Estado del arte, Marco teórico, Marco legal y Marco
+  contextual).
+-->
+<div id="ova-embed"
+     data-storage-key="ova_seminario1_u2_progress"
+     data-course-title="Seminario Proyecto de Investigación I"
+     data-unit-label="Unidad 2 - Tejiendo el marco referencial: antecedentes y teoría">
+
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="img/logo-maestria.jpeg" alt="Logo Maestría en Didáctica de las Ciencias Naturales"></div>
+            <div>
+                <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Seminario Proyecto de Investigación I</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="img/logo-maestria.jpeg" alt="Logo Maestría en Didáctica de las Ciencias Naturales"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                    <h1>Seminario Proyecto de Investigación I</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-compass"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-scroll"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-feather-pointed"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-magnifying-glass-chart"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-folder-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-atlas"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+
+                <!-- 1. INTRODUCCIÓN -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-compass mr-2"></i>Unidad 2</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Tejiendo el marco referencial: antecedentes y teoría al servicio de tu problema</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Con el problema ya delimitado en la Unidad 1, es momento de dar sustento teórico y contextual a tu proyecto. Esta unidad te invita a dialogar con quienes ya han investigado sobre categorías similares a las tuyas, y a construir el marco teórico que dará sentido y significado a tu problema de investigación en didáctica de las ciencias naturales.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-magnifying-glass mr-2 text-green-700"></i>Pregunta central</h3><p class="mt-2 text-slate-700">¿Cómo construir un marco referencial que dialogue con los antecedentes investigativos y sustente teóricamente tu problema de investigación?</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-timeline mr-2 text-green-700"></i>Enfoque</h3><p class="mt-2 text-slate-700">Construcción del marco referencial: antecedentes (mediante revisión sistemática con cadenas de búsqueda) y marco teórico del proyecto de investigación.</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-chalkboard-user mr-2 text-green-700"></i>Producto esperado</h3><p class="mt-2 text-slate-700">Un informe de avance del proyecto que evidencie el marco referencial estructurado —antecedentes y marco teórico— con rigurosidad, especificidad científica y estilo propio, original y creativo.</p></div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta de la unidad</p>
+                        <h3 class="mt-3 text-2xl font-extrabold text-green-800">Del problema al marco referencial</h3>
+                        <div class="route" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                            <div class="route-stop"><div class="route-node">1</div><h4>Origen y funciones</h4><p>Características, ventajas y limitantes del marco referencial.</p></div>
+                            <div class="route-stop"><div class="route-node">2</div><h4>Antecedentes</h4><p>Revisión sistemática con cadenas de búsqueda en español e inglés.</p></div>
+                            <div class="route-stop"><div class="route-node">3</div><h4>Marco teórico</h4><p>Selección y articulación de teorías y autores clave del proyecto.</p></div>
+                            <div class="route-stop"><div class="route-node">4</div><h4>Articulación</h4><p>Relación entre categorías de estudio, marco teórico y problema.</p></div>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <h3 class="text-2xl font-extrabold text-green-800">Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed text-slate-700">Al finalizar esta unidad, el maestrante analizará el origen, las características, las ventajas y las limitaciones del marco referencial, relacionando los elementos constitutivos de los antecedentes con el marco teórico del proyecto de investigación, para dar sentido y significado al problema de investigación.</p>
+                    </div>
+                </section>
+
+                <!-- 2. OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivo de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Meta de la Unidad 2</h2>
+                        <p class="mt-5 text-slate-700 leading-relaxed text-lg">Analizar el origen, las características y las limitaciones del marco referencial, y relacionar los antecedentes con el marco teórico del proyecto, de modo que ambos den sentido y significado al problema de investigación.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-magnifying-glass mr-2 ic-accent"></i>Analizar</h3><p class="mt-2">El origen, las características, las ventajas y las limitaciones del marco referencial en un proyecto de investigación.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-list-check mr-2 ic-info"></i>Sistematizar</h3><p class="mt-2">Los antecedentes investigativos mediante una revisión con cadenas de búsqueda en español e inglés.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-drafting-compass mr-2 ic-warm"></i>Construir</h3><p class="mt-2">El marco teórico del proyecto de investigación, seleccionando autores y teorías pertinentes a las categorías de estudio.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-link mr-2 ic-plum"></i>Articular</h3><p class="mt-2">Las categorías de estudio con el marco teórico y los elementos del planteamiento del problema.</p></div>
+                    </div>
+                </section>
+
+                <!-- 3. CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Construyendo el marco referencial</h2>
+                        <p class="mt-4 text-slate-700">A continuación se desarrollan los cuatro núcleos temáticos de la unidad. Cada uno incluye una idea clave y un ejemplo aplicado al campo de la didáctica de las ciencias naturales.</p>
+                    </div>
+                    <div class="content-grid mt-6">
+                        <details class="content-card content-card--1">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-layer-group"></i> Tema 1</span>
+                                    <h3>Origen, características, ventajas y limitantes del Marco Referencial</h3>
+                                    <p class="content-teaser">Qué es el marco referencial y por qué le da solidez conceptual a tu proyecto.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">El marco referencial reúne los antecedentes y el marco teórico del proyecto: es el espacio donde se argumenta, valida y valora el proceso investigativo, aportando elementos teóricos que precisan y fortalecen la propuesta. Conocer sus ventajas (dar solidez conceptual) y sus limitantes (el riesgo de volverse una lista de citas sin articulación) permite construirlo con mayor rigor.</p>
+                                <div class="key-note"><strong>Clave:</strong> un marco referencial no es un resumen de lecturas, sino una construcción argumentativa que sostiene y da sentido al problema planteado.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> en un proyecto sobre la enseñanza de la biodiversidad, el marco referencial no se limita a enumerar definiciones de "biodiversidad", sino que argumenta por qué esas conceptualizaciones son pertinentes para el problema didáctico identificado.</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--2">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-magnifying-glass"></i> Tema 2</span>
+                                    <h3>Antecedentes: revisión sistemática con cadenas de búsqueda</h3>
+                                    <p class="content-teaser">Cómo consolidar los antecedentes con cadenas de búsqueda en español e inglés.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">Los antecedentes se consolidan mediante una revisión sistemática apoyada en cadenas de búsqueda —combinaciones de términos y operadores— construidas en español e inglés a partir de las categorías y subcategorías del estudio. Como apoyo conceptual opcional para organizar esta revisión, puede consultarse la metodología PRISMA; su desarrollo profundo se trabaja en otro curso del programa, por lo que aquí se usa solo como referencia orientadora, no como requisito evaluable.</p>
+                                <div class="key-note"><strong>Clave:</strong> una cadena de búsqueda bien construida (con operadores como AND/OR y sinónimos de las categorías de estudio) amplía y precisa los resultados de la revisión.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> para un estudio sobre estrategias didácticas y biodiversidad, una cadena de búsqueda podría ser: ("enseñanza" OR "didáctica") AND ("biodiversidad" OR "biological diversity") AND ("educación secundaria" OR "secondary education").</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--3">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-book-open"></i> Tema 3</span>
+                                    <h3>Marco teórico del proyecto de investigación</h3>
+                                    <p class="content-teaser">Seleccionar y articular las teorías, conceptos y autores que sustentan tus categorías de estudio.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">El marco teórico selecciona y articula las teorías, conceptos y autores que sustentan las categorías de estudio del proyecto. No se trata de acumular citas, sino de construir una argumentación teórica coherente que dialogue directamente con el problema planteado en la Unidad 1.</p>
+                                <div class="key-note"><strong>Clave:</strong> cada categoría de estudio debe tener un respaldo teórico explícito; una categoría sin teoría asociada debilita el rigor del proyecto.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> si una categoría de estudio es "aprendizaje significativo de conceptos biológicos", el marco teórico debe desarrollar los referentes conceptuales pertinentes y relacionarlos con el contexto de enseñanza de la biodiversidad.</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--4">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-puzzle-piece"></i> Tema 4</span>
+                                    <h3>Articulación contexto–teoría–texto</h3>
+                                    <p class="content-teaser">Cómo se conectan las categorías de estudio, el marco teórico y el problema en el texto final.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">Esta articulación es un espacio de argumentación, validación y valoración del proceso investigativo: busca que las categorías de estudio, el marco teórico y los elementos del planteamiento del problema se relacionen de forma explícita y coherente en el texto final del proyecto.</p>
+                                <div class="key-note"><strong>Clave:</strong> la coherencia del proyecto se evidencia cuando un lector puede rastrear la misma categoría de estudio desde el problema, pasando por el marco teórico, hasta los objetivos.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> si el problema señala dificultades de comprensión conceptual, el marco teórico debe desarrollar teorías sobre comprensión conceptual en ciencias, y no derivar hacia temas teóricos no relacionados.</p>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- 4. ACTIVIDAD INTERACTIVA -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Actividades de la Unidad 2</h2>
+                        <p class="mt-4 text-slate-700 leading-relaxed">La preparación del marco referencial es un espacio académico de argumentación, validación y valoración del proceso investigativo, que busca aportar elementos teóricos para precisar y fortalecer el trabajo investigativo de los estudiantes.</p>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <button type="button" class="activity-subnav-btn btn-main" data-activity-section="activity-marco">1. Marco referencial</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="activity-rubrica">2. Rúbrica</button>
+                    </div>
+
+                    <div id="activity-marco" class="activity-section activity-ledger mt-4" data-export-scope="marco" data-export-title="Construyendo mi marco referencial — Unidad 2">
+                        <div class="ledger-heading">
+                            <div class="ledger-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad</p>
+                                <h3 class="mt-2 text-2xl font-extrabold text-green-800">Construyendo mi marco referencial</h3>
+                            </div>
+                        </div>
+                        <div class="purpose-note"><strong>Propósito:</strong> Sistematizar los antecedentes de tu proyecto mediante una revisión con cadenas de búsqueda, y construir el marco teórico articulado con tus categorías de estudio.</div>
+
+                        <div class="field-panel">
+                            <label class="field-title" for="categorias-estudio">Categorías de estudio del proyecto</label>
+                            <p class="field-hint">Las mismas categorías definidas a partir de tu problema de investigación (Unidad 1). Escribe una y presiona "Agregar" (o Enter).</p>
+                            <div class="item-list" data-item-for="categorias-estudio" data-item-max="6">
+                                <div class="item-list-row">
+                                    <input type="text" class="item-list-input" maxlength="80" placeholder="Ej.: estrategias didácticas, comprensión conceptual, biodiversidad...">
+                                    <button type="button" class="item-list-add btn-soft"><i class="fa-solid fa-plus"></i> Agregar</button>
+                                </div>
+                                <div class="item-list-chips"></div>
+                            </div>
+                            <textarea id="categorias-estudio" data-track class="item-list-native"></textarea>
+
+                            <label class="field-title" for="cadena-busqueda">Cadena(s) de búsqueda utilizada(s)</label>
+                            <p class="field-hint">Escríbelas en español e inglés, con operadores como AND/OR y sinónimos de tus categorías.</p>
+                            <textarea id="cadena-busqueda" data-track maxlength="350" class="mt-2 w-full min-h-[110px] p-4 border rounded-xl bg-white resize-none" placeholder='("enseñanza" OR "didáctica") AND ("biodiversidad" OR "biological diversity")...'></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="cadena-busqueda">0/350</span>
+
+                            <label class="field-title" for="bases-datos">Bases de datos o repositorios consultados</label>
+                            <p class="field-hint">Marca todas las que hayas usado.</p>
+                            <div class="chip-multi" data-choice-for="bases-datos">
+                                <button type="button" class="chip-toggle" data-chip-value="Biblioteca Universidad de Córdoba"><i class="fa-solid fa-book"></i> Biblioteca UniCórdoba</button>
+                                <button type="button" class="chip-toggle" data-chip-value="Google Scholar"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</button>
+                                <button type="button" class="chip-toggle" data-chip-value="Redalyc"><i class="fa-solid fa-layer-group"></i> Redalyc</button>
+                                <button type="button" class="chip-toggle" data-chip-value="Scielo"><i class="fa-solid fa-flask"></i> Scielo</button>
+                                <button type="button" class="chip-toggle" data-chip-value="RedCol"><i class="fa-solid fa-network-wired"></i> RedCol</button>
+                                <button type="button" class="chip-toggle" data-chip-value="SpringerOpen"><i class="fa-solid fa-globe"></i> SpringerOpen</button>
+                                <button type="button" class="chip-toggle" data-chip-value="Latindex"><i class="fa-solid fa-list"></i> Latindex</button>
+                                <button type="button" class="chip-toggle" data-chip-other data-chip-value="Otra"><i class="fa-solid fa-ellipsis"></i> Otra</button>
+                            </div>
+                            <div class="chip-other-wrap" data-choice-for="bases-datos">
+                                <input type="text" maxlength="80" placeholder="Escribe otra base de datos o repositorio...">
+                            </div>
+                            <input type="hidden" id="bases-datos" data-track class="chip-multi-native">
+
+                            <label class="field-title" for="sintesis-antecedentes">Síntesis de antecedentes</label>
+                            <p class="field-hint">Resume los hallazgos principales de mínimo 3 antecedentes y su relación con tu problema.</p>
+                            <textarea id="sintesis-antecedentes" data-track maxlength="600" class="mt-2 w-full min-h-[150px] p-4 border rounded-xl bg-white resize-none" placeholder="Antecedente 1: ... Antecedente 2: ... Antecedente 3: ..."></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="sintesis-antecedentes">0/600</span>
+
+                            <label class="field-title" for="marco-teorico">Marco teórico</label>
+                            <p class="field-hint">Autores, teorías o conceptos clave seleccionados para cada categoría de estudio.</p>
+                            <textarea id="marco-teorico" data-track maxlength="500" class="mt-2 w-full min-h-[130px] p-4 border rounded-xl bg-white resize-none" placeholder="Categoría 1: autor/teoría... Categoría 2: autor/teoría..."></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="marco-teorico">0/500</span>
+
+                            <label class="field-title" for="reflexion-articulacion">Reflexión de articulación</label>
+                            <p class="field-hint">¿Cómo el marco teórico da sentido y significado a tu problema de investigación?</p>
+                            <textarea id="reflexion-articulacion" data-track maxlength="400" class="mt-2 w-full min-h-[110px] p-4 border rounded-xl bg-white resize-none"></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="reflexion-articulacion">0/400</span>
+
+                            <div class="key-note mt-5"><strong>Nota:</strong> si deseas dar mayor rigurosidad a tu revisión de antecedentes, puedes apoyarte de manera opcional en la metodología PRISMA; no es un requisito evaluable en este curso.</div>
+
+                            <div class="mt-5 flex justify-between items-center gap-3 flex-wrap">
+                                <span class="local-save-status" data-status-for="marco"></span>
+                                <div class="flex gap-2 flex-wrap">
+                                    <button type="button" class="btn-danger-soft local-clear-btn" data-clear-scope="marco"><i class="fa-solid fa-eraser"></i> Limpiar</button>
+                                    <button type="button" class="btn-soft local-save-btn" data-status-target="marco"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                                    <div class="export-menu-wrap">
+                                        <button type="button" class="btn-soft export-toggle" data-export-scope="marco"><i class="fa-solid fa-file-export"></i>Exportar</button>
+                                        <div class="export-menu hidden">
+                                            <button type="button" class="export-option" data-export-format="word" data-export-scope="marco"><i class="fa-solid fa-file-word"></i> Word</button>
+                                            <button type="button" class="export-option" data-export-format="pdf" data-export-scope="marco"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-5 text-sm text-slate-600 leading-relaxed">Este ejercicio corresponde al trabajo independiente de la unidad: lectura reflexiva de textos científicos relacionados con las categorías de estudio, e implementación de una búsqueda bibliográfica sistemática a partir de cadenas de búsqueda en inglés y español.</p>
+                    </div>
+
+                    <div id="activity-rubrica" class="activity-section hidden mt-4">
+                        <div class="content-grid">
+                            <details class="content-card content-card--rubrica">
+                                <summary>
+                                    <div class="content-summary-main">
+                                        <span class="content-code"><i class="fa-solid fa-table-list"></i> Rúbrica</span>
+                                        <h3>Rúbrica de evaluación de esta unidad</h3>
+                                        <p class="content-teaser">Así se evalúa tu estado del arte, marco teórico, marco legal y marco contextual — revísala antes de entregar.</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down content-chevron"></i>
+                                </summary>
+                                <div class="content-body">
+                                    <p class="text-sm text-slate-600">Tomada de "Rúbricas para evaluar el estado de las propuestas" (criterios de Estado del arte, Marco teórico, Marco legal y Marco contextual). Escala de 2 a 5, donde 5 es el nivel más alto.</p>
+                                    <div class="mt-4 rubric-table-wrap">
+                                        <table class="rubric-table">
+                                            <thead>
+                                                <tr><th>Criterio</th><th>Excelente (5)</th><th>Bueno (4)</th><th>Satisfactorio (3)</th><th>Deficiente (2)</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Estado del arte — análisis del conocimiento</td><td>Presenta un análisis exhaustivo del estado actual del conocimiento del problema en los últimos 5 años.</td><td>Describe adecuadamente el estado del arte.</td><td>Muestra un estado del arte limitado.</td><td>No presenta o presenta muy débilmente el estado del arte.</td></tr>
+                                                <tr><td>Estado del arte — cobertura de investigaciones</td><td>Incluye mínimo 20 investigaciones distribuidas claramente en los planos internacional, nacional, regional y local.</td><td>Presenta al menos 15 investigaciones recientes, abordando varios planos (internacional, nacional, regional o local).</td><td>Presenta menos de 15 investigaciones.</td><td>No se identifican investigaciones recientes.</td></tr>
+                                                <tr><td>Estado del arte — relación con el proyecto</td><td>Relaciona explícitamente estos estudios con el proyecto, destacando avances y aportes relevantes.</td><td>Establece relación con el proyecto, aunque con menor profundidad o detalle.</td><td>Los aportes y avances son superficiales o poco relacionados con el proyecto.</td><td>No se muestra relación de investigaciones realizadas con el proyecto.</td></tr>
+                                                <tr><td>Marco teórico</td><td>Define claramente la perspectiva teórica asumida, con aportes precisos de autores y teorías relevantes. Usa bases de datos y revistas indexadas reconocidas, mostrando dominio amplio y actualización en el tema.</td><td>Presenta un marco teórico claro con aportes de autores relevantes, utiliza fuentes académicas confiables, aunque puede faltar actualización o profundidad en algunos conceptos.</td><td>El marco teórico es básico, con citas limitadas o poco actualizadas; se evidencia poco manejo de bases de datos o falta de precisión en la relación con el problema.</td><td>El marco teórico es insuficiente o ausente, sin referencia a autores ni teorías reconocidas ni relación clara con el problema.</td></tr>
+                                                <tr><td>Marco legal</td><td>Presenta con precisión los fundamentos legales relacionados con el estudio, mostrando análisis crítico y aporte a la reflexión investigativa. Incluye leyes, normativas o reglamentos vigentes con referencias claras y actualizadas.</td><td>Describe los fundamentos legales pertinentes, aunque con menor profundidad analítica o con menor relación directa al debate del estudio.</td><td>Muestra un marco legal limitado, con referencias superficiales o poco actuales; el aporte reflexivo es débil o poco claro.</td><td>No incluye marco legal o éste es irrelevante, impreciso o desactualizado.</td></tr>
+                                                <tr><td>Marco contextual</td><td>Precisa claramente el contexto sociológico, pedagógico y didáctico relacionado con la investigación, señalando condiciones y factores relevantes que afectan el estudio. Hace un análisis integrado y completo del entorno.</td><td>Describe adecuadamente el marco contextual, aunque alguno de los ámbitos (sociológico, pedagógico o didáctico) puede ser menos desarrollado o explicitado.</td><td>El marco contextual es superficial o incompleto, con análisis poco claros o poco relacionados con el estudio.</td><td>No presenta marco contextual o es totalmente insuficiente y sin relación con la investigación.</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. AUTOEVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Cuestionario de la Unidad 2</h2><p class="mt-4 text-slate-700">Responde las siguientes 10 preguntas para verificar tu comprensión de los contenidos de la unidad. Las preguntas están alineadas con los criterios de evaluación de la Unidad 2 y con los criterios transversales de la rúbrica del curso. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p></div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4"><h3 id="quiz-title" class="text-xl font-extrabold text-green-800">Pregunta 1</h3><span id="quiz-progress" class="text-sm font-bold text-slate-500">1/10</span></div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold text-slate-700"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3"><button id="quiz-prev" type="button" class="btn-soft">Anterior</button><button id="quiz-next" type="button" class="btn-main">Siguiente</button></div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl bg-green-50 border border-green-200">
+                            <h3 class="text-xl font-extrabold text-green-800">Autoevaluación completada</h3>
+                            <p class="mt-2 text-green-800 font-semibold">Puntaje: <span id="quiz-score">0</span>/10</p>
+                            <p id="quiz-feedback" class="mt-2 text-green-800"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                    <script type="application/json" id="quiz-data">
+                    [
+                        { "question": "¿Cuál es la función del marco referencial dentro del proyecto de investigación?", "options": ["Sustituir la pregunta de investigación.", "Reemplazar los objetivos específicos.", "Relacionar los antecedentes con el marco teórico para dar sentido y significado al problema de investigación.", "Servir solo como introducción decorativa del documento."], "correct": 2 },
+                        { "question": "¿Qué es una cadena de búsqueda en el contexto de la revisión de antecedentes?", "options": ["Una lista de autores citados sin relación con el tema.", "Una combinación de términos y operadores usada para buscar literatura relacionada con las categorías del estudio, en español e inglés.", "El número de páginas del estado del arte.", "El orden cronológico de publicación de los antecedentes."], "correct": 1 },
+                        { "question": "Según el plan de curso, la revisión sistemática de antecedentes en esta unidad se apoya conceptualmente en:", "options": ["La traducción completa de los antecedentes al inglés.", "El uso obligatorio de R y bibliometrix.", "La metodología PRISMA, como referencia opcional, no obligatoria en este curso.", "Un examen oral individual."], "correct": 2 },
+                        { "question": "¿Qué papel cumple el marco teórico en relación con las categorías de estudio del proyecto?", "options": ["No tiene relación con las categorías de estudio.", "Sustenta conceptualmente las categorías y las articula con el planteamiento del problema.", "Reemplaza la necesidad de una pregunta de investigación.", "Sirve solo para completar el número de páginas exigido."], "correct": 1 },
+                        { "question": "¿Cuál es un criterio de calidad para el estado del arte que se construye en esta unidad, según el plan de curso?", "options": ["Basarse exclusivamente en un solo autor.", "No requerir ninguna cita bibliográfica.", "Rigurosidad, especificidad científica y estilo propio, original y creativo.", "Ser una copia literal de un antecedente ya publicado."], "correct": 2 },
+                        { "question": "La relación \"contexto – teoría – texto\" que se trabaja en el acompañamiento docente de esta unidad busca principalmente:", "options": ["Sustituir la pregunta de investigación por una cita textual.", "Construir un marco teórico que dialogue con el contexto del problema y se refleje coherentemente en el texto del proyecto.", "Memorizar teorías sin relacionarlas con el problema.", "Eliminar la necesidad de antecedentes."], "correct": 1 },
+                        { "question": "¿Por qué se recomienda realizar la búsqueda de antecedentes tanto en español como en inglés?", "options": ["Porque es un requisito de traducción del documento final.", "Porque los antecedentes en español no son válidos académicamente.", "Porque reduce el tiempo de trabajo independiente.", "Para ampliar la cobertura y rigurosidad de la revisión, accediendo a más literatura relevante sobre las categorías de estudio."], "correct": 3 },
+                        { "question": "Un maestrante entrega un marco teórico con citas de varios autores, pero sin ninguna relación explícita con sus categorías de estudio. Según los criterios de evaluación de la unidad, esto refleja:", "options": ["Un marco teórico ejemplar y completo.", "Baja caracterización sistemática del marco referencial en relación con las categorías de investigación.", "Cumplimiento total de los criterios de rigor científico.", "Una justificación institucional sólida."], "correct": 1 },
+                        { "question": "Sobre el uso de herramientas de análisis bibliométrico como R (bibliometrix) en esta unidad, el plan de curso y la docente indican que:", "options": ["Están prohibidas en el programa.", "Reemplazan la necesidad de leer los antecedentes.", "Pueden mencionarse como recurso complementario opcional, pero no son obligatorias ni el foco de esta unidad.", "Son de uso obligatorio para aprobar la unidad."], "correct": 2 },
+                        { "question": "¿Cuál es el producto esperado al finalizar la Unidad 2, según las evidencias del plan de curso?", "options": ["Un instrumento de recolección de datos validado.", "Un árbol de problemas ajustado.", "Una matriz de consistencia metodológica.", "Un informe de avance del proyecto con el marco referencial (antecedentes y marco teórico) estructurado con rigor y estilo propio."], "correct": 3 }
+                    ]
+                    </script>
+                </section>
+
+                <!-- 6. RECURSOS (máximo 4) -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Materiales de apoyo</h2></div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-database mr-2 text-green-700"></i>Biblioteca Universidad de Córdoba</h3><p class="mt-2 text-slate-700">Bases de datos para apoyar la búsqueda sistemática de antecedentes y del marco teórico.</p><div class="mt-4"><a class="btn-main" href="https://biblioteca.unicordoba.edu.co/bases-de-datos/" target="_blank" rel="noopener">Abrir bases de datos</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://biblioteca.unicordoba.edu.co/bases-de-datos/" alt="Código QR — Biblioteca Universidad de Córdoba" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-globe mr-2 text-green-700"></i>Redalyc</h3><p class="mt-2 text-slate-700">Repositorio de acceso abierto para localizar antecedentes en revistas iberoamericanas.</p><div class="mt-4"><a class="btn-main" href="https://www.redalyc.org/" target="_blank" rel="noopener">Abrir Redalyc</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.redalyc.org/" alt="Código QR — Redalyc" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-book mr-2 text-green-700"></i>Scielo</h3><p class="mt-2 text-slate-700">Biblioteca científica electrónica útil para ubicar antecedentes en español y portugués.</p><div class="mt-4"><a class="btn-main" href="https://www.scielo.org/es/" target="_blank" rel="noopener">Abrir Scielo</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.scielo.org/es/" alt="Código QR — Scielo" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-file-lines mr-2 text-green-700"></i>Declaración PRISMA 2020</h3><p class="mt-2 text-slate-700">Guía de referencia opcional para quienes deseen dar mayor estructura a su revisión de antecedentes.</p><div class="mt-4"><a class="btn-main" href="https://www.revespcardiol.org/es-declaracion-prisma-2020-una-guia-articulo-S0300893221002748" target="_blank" rel="noopener">Ver artículo</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.revespcardiol.org/es-declaracion-prisma-2020-una-guia-articulo-S0300893221002748" alt="Código QR — Declaración PRISMA 2020" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500">Nota: la Declaración PRISMA se ofrece solo como referencia orientadora; su desarrollo profundo se trabaja en otro curso del programa y no es un requisito evaluable en este seminario.</p>
+                </section>
+
+                <!-- 7. BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Referencias orientadoras</h2></div>
+                    <div class="mt-6 space-y-4">
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Gallego Ramos, J. R. (2018). <em>Cómo se construye el marco teórico de la investigación</em>. Cadernos de Pesquisa, 48(169), 830-854.</p><a class="ref-link mt-2" href="https://www.scielo.br/j/cp/a/xpbhxtDHLrGHfLPthJHQNwK/?lang=es" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.scielo.br/j/cp/a/xpbhxtDHLrGHfLPthJHQNwK/?lang=es" alt="Código QR — Gallego Ramos, Cómo se construye el marco teórico" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Guevara Patiño, R. (2016). <em>El estado del arte en la investigación: ¿análisis de los conocimientos acumulados o indagación por nuevos sentidos?</em> Folios, 44, 165-179.</p><a class="ref-link mt-2" href="https://revistas.upn.edu.co/index.php/RF/article/view/3966" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://revistas.upn.edu.co/index.php/RF/article/view/3966" alt="Código QR — Guevara Patiño, El estado del arte en la investigación" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Gómez Vargas, M., Galeano Higuita, C., &amp; Jaramillo Muñoz, D. A. (2015). <em>El estado del arte: una metodología de investigación</em>. Revista Colombiana de Ciencias Sociales, 6(2), 423-442.</p><a class="ref-link mt-2" href="https://revistas.ucatolicaluisamigo.edu.co/index.php/rccs/article/view/1469" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://revistas.ucatolicaluisamigo.edu.co/index.php/rccs/article/view/1469" alt="Código QR — Gómez, Galeano y Jaramillo, El estado del arte" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
