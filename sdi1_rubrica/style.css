@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+#ova-embed {
+  --heading: #14532d;
+  --heading-2: #1b5e20;
+  --accent: #5b9c46;
+  --bg: #f4f9f2;
+  --warm: #d9822e;
+  --warm-deep: #a85f1c;
+  --warm-soft: #faead2;
+  --info: #1f6fb2;
+  --accent-teal: #0e7c86;
+  --accent-plum: #9c3f6b;
+  --ink: #1f2d23;
+
+  font-family: 'Poppins', sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+#ova-embed h1, #ova-embed h2, #ova-embed h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+#ova-embed .rubrica-shell {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(20, 83, 45, 0.14);
+  border: 1px solid rgba(91, 156, 70, 0.25);
+}
+
+/* ---------- Header ---------- */
+#ova-embed .rubrica-header {
+  background: linear-gradient(135deg, var(--heading) 0%, var(--heading-2) 55%, var(--accent) 100%);
+}
+
+#ova-embed .header-icon-badge {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #faead2;
+  font-size: 1.1rem;
+}
+
+#ova-embed .header-glow-warm {
+  position: absolute;
+  top: -6rem;
+  left: -6rem;
+  width: 18rem;
+  height: 18rem;
+  background: var(--warm);
+  opacity: 0.25;
+  border-radius: 9999px;
+  filter: blur(60px);
+}
+
+#ova-embed .header-glow-green {
+  position: absolute;
+  bottom: -8rem;
+  right: -6rem;
+  width: 20rem;
+  height: 20rem;
+  background: var(--accent);
+  opacity: 0.3;
+  border-radius: 9999px;
+  filter: blur(70px);
+}
+
+#ova-embed .print-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #faead2;
+  color: var(--heading);
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  border: 1px solid var(--warm-soft);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#ova-embed .print-btn:hover {
+  background: #ffffff;
+}
+
+#ova-embed .print-btn:active {
+  transform: scale(0.96);
+}
+
+/* ---------- Info strip + intro ---------- */
+#ova-embed .info-strip {
+  background: var(--warm-soft);
+  border-bottom: 1px solid rgba(216, 130, 46, 0.25);
+  color: var(--warm-deep);
+}
+
+#ova-embed .intro-note {
+  border-bottom: 1px solid rgba(91, 156, 70, 0.2);
+  color: #2f3f34;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+#ova-embed .intro-note strong {
+  color: var(--heading);
+}
+
+/* ---------- Table ---------- */
+#ova-embed .rubrica-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+#ova-embed .rubrica-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  color: var(--heading);
+  padding: 1rem;
+  border-bottom: 2px solid rgba(91, 156, 70, 0.3);
+}
+
+#ova-embed .crit-col {
+  width: 17rem;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+#ova-embed .level-col {
+  text-align: center;
+  min-width: 13rem;
+}
+
+#ova-embed .level-col--mid {
+  background: rgba(91, 156, 70, 0.12) !important;
+}
+
+#ova-embed .level-col--top {
+  background: var(--warm-soft) !important;
+}
+
+#ova-embed .level-name {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+#ova-embed .level-range {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+#ova-embed .rubrica-table tbody tr {
+  border-bottom: 1px solid rgba(91, 156, 70, 0.15);
+}
+
+#ova-embed .crit-cell {
+  padding: 1rem;
+  background: rgba(244, 249, 242, 0.6);
+  vertical-align: top;
+  border-left: 4px solid transparent;
+}
+
+#ova-embed .crit-title {
+  font-weight: 700;
+  color: var(--heading);
+}
+
+#ova-embed .crit-badge {
+  width: 1.35rem;
+  height: 1.35rem;
+  min-width: 1.35rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+#ova-embed .crit-badge--1, #ova-embed .crit-row--1 .crit-cell { }
+#ova-embed .crit-badge--1 { background: var(--accent); }
+#ova-embed .crit-badge--2 { background: var(--info); }
+#ova-embed .crit-badge--3 { background: var(--warm); }
+#ova-embed .crit-badge--4 { background: var(--accent-teal); }
+
+#ova-embed .crit-row--1 .crit-cell { border-left-color: var(--accent); }
+#ova-embed .crit-row--2 .crit-cell { border-left-color: var(--info); }
+#ova-embed .crit-row--3 .crit-cell { border-left-color: var(--warm); }
+#ova-embed .crit-row--4 .crit-cell { border-left-color: var(--accent-teal); }
+
+#ova-embed .level-cell {
+  padding: 1rem;
+  vertical-align: top;
+  color: #33443a;
+  transition: background-color 0.15s ease;
+}
+
+#ova-embed .level-cell:hover {
+  background-color: rgba(91, 156, 70, 0.08);
+}
+
+#ova-embed .level-cell--low {
+  font-style: italic;
+  color: #7c8c81;
+}
+
+#ova-embed .level-cell--mid {
+  background: rgba(91, 156, 70, 0.07);
+}
+
+#ova-embed .level-cell--top {
+  background: rgba(250, 234, 210, 0.45);
+  font-weight: 600;
+  color: var(--warm-deep);
+  border-left: 2px solid var(--warm);
+}
+
+/* ---------- Footer ---------- */
+#ova-embed .rubrica-footer {
+  background: var(--bg);
+  border-top: 1px solid rgba(91, 156, 70, 0.2);
+}
+
+#ova-embed .footer-line-strong {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--heading);
+}
+
+#ova-embed .footer-line {
+  font-size: 0.65rem;
+  color: #5c6f61;
+}
+
+/* ---------- Print ---------- */
+@media print {
+  @page {
+    size: letter landscape;
+    margin: 1cm;
+  }
+
+  .no-print { display: none !important; }
+
+  body {
+    background: #fff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #ova-embed .rubrica-shell {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  #ova-embed .rubrica-table thead th {
+    background: var(--bg) !important;
+    color: var(--heading) !important;
+    font-size: 8pt !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #ova-embed .level-cell,
+  #ova-embed .crit-cell {
+    font-size: 7pt !important;
+    border: 1px solid rgba(91, 156, 70, 0.3) !important;
+    padding: 6px !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #ova-embed .rubrica-header {
+    padding: 16px !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #ova-embed .rubrica-table tbody tr {
+    page-break-inside: avoid;
+  }
+}
