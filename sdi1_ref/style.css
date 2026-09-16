@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+#ova-embed {
+  --heading: #14532d;
+  --heading-2: #1b5e20;
+  --accent: #5b9c46;
+  --accent-deep: #1b5e20;
+  --bg: #f4f9f2;
+  --surface-soft: #eaf6e6;
+  --line: #cfe6c8;
+  --warm: #d9822e;
+  --warm-deep: #a85f1c;
+  --warm-soft: #faead2;
+  --info: #1f6fb2;
+  --accent-teal: #0e7c86;
+  --accent-teal-deep: #0b5f66;
+  --accent-plum: #9c3f6b;
+  --accent-plum-deep: #7a2f52;
+  --ink: #1f2d23;
+
+  font-family: 'Poppins', sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+#ova-embed h1, #ova-embed h2, #ova-embed h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+#ova-embed .refs-shell {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(20, 83, 45, 0.14);
+  border: 1px solid rgba(91, 156, 70, 0.25);
+}
+
+/* ---------- Header (mismo patrón que la Rúbrica) ---------- */
+#ova-embed .refs-header {
+  background: linear-gradient(135deg, var(--heading) 0%, var(--heading-2) 55%, var(--accent) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#ova-embed .header-icon-badge {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #faead2;
+  font-size: 1.1rem;
+}
+
+#ova-embed .header-glow-warm {
+  position: absolute;
+  top: -6rem;
+  left: -6rem;
+  width: 18rem;
+  height: 18rem;
+  background: var(--warm);
+  opacity: 0.25;
+  border-radius: 9999px;
+  filter: blur(60px);
+}
+
+#ova-embed .header-glow-green {
+  position: absolute;
+  bottom: -8rem;
+  right: -6rem;
+  width: 20rem;
+  height: 20rem;
+  background: var(--accent);
+  opacity: 0.3;
+  border-radius: 9999px;
+  filter: blur(70px);
+}
+
+#ova-embed .print-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #faead2;
+  color: var(--heading);
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  border: 1px solid var(--warm-soft);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#ova-embed .print-btn:hover { background: #ffffff; }
+#ova-embed .print-btn:active { transform: scale(0.96); }
+
+/* ---------- Info strip + intro (mismo patrón que la Rúbrica) ---------- */
+#ova-embed .info-strip {
+  background: var(--warm-soft);
+  border-bottom: 1px solid rgba(216, 130, 46, 0.25);
+  color: var(--warm-deep);
+}
+
+#ova-embed .intro-note {
+  border-bottom: 1px solid rgba(91, 156, 70, 0.2);
+  color: #2f3f34;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  background: var(--bg);
+}
+
+#ova-embed .intro-note strong { color: var(--heading); }
+
+/* ---------- Panel de filtros ---------- */
+#ova-embed .filter-panel {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 14px rgba(20, 83, 45, 0.07);
+}
+
+#ova-embed .filter-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--heading);
+}
+
+#ova-embed .search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#ova-embed .search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(91, 156, 70, 0.14);
+}
+
+#ova-embed .filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid var(--line);
+  background: #ffffff;
+  color: #46543c;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+#ova-embed .filter-chip:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+#ova-embed .filter-chip.is-active {
+  border-color: var(--heading);
+  background: var(--heading);
+  color: #ffffff;
+}
+
+/* ---------- Tarjetas de referencia ---------- */
+#ova-embed .refs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.1rem;
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+#ova-embed .reference-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 10px 22px rgba(20, 83, 45, 0.07);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.3, 0.7, 0.4, 1), box-shadow 0.3s ease;
+}
+
+#ova-embed .reference-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 30px -18px rgba(20, 83, 45, 0.22);
+}
+
+#ova-embed .reference-card--info { border-left-color: var(--info); }
+#ova-embed .reference-card--warm { border-left-color: var(--warm); }
+#ova-embed .reference-card--teal { border-left-color: var(--accent-teal); }
+#ova-embed .reference-card--plum { border-left-color: var(--accent-plum); }
+
+#ova-embed .ref-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #94a396;
+}
+
+#ova-embed .ref-title {
+  margin-top: 0.4rem;
+  font-size: 1.06rem;
+  font-weight: 800;
+  color: var(--heading);
+  line-height: 1.32;
+}
+
+#ova-embed .ref-citation {
+  margin-top: 0.6rem;
+  font-size: 0.86rem;
+  color: #4a5a4e;
+  line-height: 1.55;
+  flex: 1;
+}
+
+#ova-embed .type-pill {
+  flex-shrink: 0;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+}
+
+#ova-embed .type-pill--libro { background: rgba(91, 156, 70, 0.14); color: var(--accent-deep); }
+#ova-embed .type-pill--articulo { background: rgba(31, 111, 178, 0.12); color: var(--info); }
+
+#ova-embed .ref-actions {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#ova-embed .ref-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--info);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+#ova-embed .ref-link:hover { text-decoration: underline; }
+
+#ova-embed .qr-box {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  overflow: hidden;
+}
+
+#ova-embed .qr-box img { width: 100%; height: 100%; }
+
+#ova-embed .empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px dashed var(--line);
+  background: #ffffff;
+  color: #56634b;
+}
+
+#ova-embed .fade-in {
+  animation: refFadeIn 0.5s cubic-bezier(0.3, 0.7, 0.4, 1) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes refFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ova-embed * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Footer (mismo patrón que la Rúbrica) ---------- */
+#ova-embed .refs-footer {
+  background: var(--bg);
+  border-top: 1px solid rgba(91, 156, 70, 0.2);
+}
+
+#ova-embed .footer-line-strong {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--heading);
+}
+
+#ova-embed .footer-line { font-size: 0.65rem; color: #5c6f61; }
+
+/* ---------- Impresión ---------- */
+@media print {
+  @page { margin: 1.2cm; }
+  .no-print { display: none !important; }
+  body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+  #ova-embed .refs-shell { max-width: 100% !important; width: 100% !important; margin: 0 !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; }
+  #ova-embed .refs-grid { grid-template-columns: 1fr 1fr !important; }
+  #ova-embed .reference-card { box-shadow: none !important; border: 1px solid rgba(91, 156, 70, 0.3) !important; break-inside: avoid; }
+  #ova-embed .refs-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
