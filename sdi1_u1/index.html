@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminario Proyecto de Investigación I - Unidad 1</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--
+  Unidad 1: Construcción y Delimitación del Objeto de Estudio
+  Contenido de las 7 secciones tomado de guia_unidad1_seminario_1.docx
+  (aprobado por la docente). Actividad interactiva (sección 4) incluye la
+  rúbrica de evaluación de la unidad, tomada de
+  "RÚBRICAS PARA EVALUAR EL ESTADO DE LAS PROPUESTAS" (criterios de
+  Problema de investigación y de Objetivos).
+-->
+<div id="ova-embed"
+     data-storage-key="ova_seminario1_u1_progress"
+     data-course-title="Seminario Proyecto de Investigación I"
+     data-unit-label="Unidad 1 - Construcción y Delimitación del Objeto de Estudio">
+
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="img/logo-maestria.jpeg" alt="Logo Maestría en Didáctica de las Ciencias Naturales"></div>
+            <div>
+                <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Seminario Proyecto de Investigación I</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="img/logo-maestria.jpeg" alt="Logo Maestría en Didáctica de las Ciencias Naturales"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                    <h1>Seminario Proyecto de Investigación I</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-compass"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-scroll"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-feather-pointed"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-magnifying-glass-chart"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-folder-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-atlas"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+
+                <!-- 1. INTRODUCCIÓN -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-compass mr-2"></i>Unidad 1</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Del vacío al problema: construyendo el punto de partida de tu investigación</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Toda investigación nace de una inquietud, una tensión o un vacío que el maestrante identifica en su práctica educativa. Esta primera unidad es un espacio de ambientación: aquí aprenderás a mirar esa inquietud con rigor, a delimitarla con claridad y a convertirla en el punto de partida sólido de tu proyecto de investigación en didáctica de las ciencias naturales.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-magnifying-glass mr-2 text-green-700"></i>Pregunta central</h3><p class="mt-2 text-slate-700">¿Cómo delimitar con claridad y rigor el problema que dará origen a tu proyecto de investigación en didáctica de las ciencias naturales?</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-timeline mr-2 text-green-700"></i>Enfoque</h3><p class="mt-2 text-slate-700">Ambientación al problema de investigación: un acercamiento progresivo a la idea, su delimitación, su justificación y sus objetivos, antes de avanzar hacia el marco referencial (Unidad 2) y el diseño metodológico (Unidad 3).</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-chalkboard-user mr-2 text-green-700"></i>Producto esperado</h3><p class="mt-2 text-slate-700">Un documento breve (máximo dos páginas) que integre la estructura inicial del problema de investigación: la red de escenarios problémicos, la pregunta de investigación, la justificación y los objetivos general y específicos.</p></div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta de la unidad</p>
+                        <h3 class="mt-3 text-2xl font-extrabold text-green-800">De la inquietud al planteamiento del problema</h3>
+                        <div class="route">
+                            <div class="route-stop"><div class="route-node">1</div><h4>Concreción de la idea</h4><p>De una inquietud general a un foco investigativo delimitado.</p></div>
+                            <div class="route-stop"><div class="route-node">2</div><h4>Árbol de problemas</h4><p>Causas, tensiones y vacíos, mediante la red de escenarios problémicos.</p></div>
+                            <div class="route-stop"><div class="route-node">3</div><h4>Pregunta de investigación</h4><p>El eje articulador que conecta problema, objetivos y metodología.</p></div>
+                            <div class="route-stop"><div class="route-node">4</div><h4>Justificación</h4><p>La relevancia del estudio en cuatro dimensiones: social, académica, disciplinar e institucional.</p></div>
+                            <div class="route-stop"><div class="route-node">5</div><h4>Objetivos</h4><p>Formulación del objetivo general y los objetivos específicos.</p></div>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <h3 class="text-2xl font-extrabold text-green-800">Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed text-slate-700">Al finalizar esta unidad, el maestrante integrará de manera coherente los elementos constitutivos del planteamiento del problema —interrogantes, justificación y objetivos— del proyecto de investigación, delimitando con claridad las categorías del estudio y contrastándolas con la teoría relacionada.</p>
+                    </div>
+                </section>
+
+                <!-- 2. OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivo de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Meta de la Unidad 1</h2>
+                        <p class="mt-5 text-slate-700 leading-relaxed text-lg">Delimitar y estructurar el problema de investigación de manera coherente y rigurosa, integrando la pregunta, la justificación y los objetivos como base para el desarrollo del proyecto de investigación en didáctica de las ciencias naturales.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-diagram-project mr-2 ic-accent"></i>Delimitar</h3><p class="mt-2">El problema de investigación mediante la construcción de un árbol de problemas y una red de escenarios problémicos que sinteticen la tensión o el vacío que sustenta el proyecto.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-circle-question mr-2 ic-info"></i>Formular</h3><p class="mt-2">Una pregunta de investigación clara, delimitada en el tiempo y el espacio, que se articule directamente con el problema planteado.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-scale-balanced mr-2 ic-warm"></i>Justificar</h3><p class="mt-2">La investigación desde las dimensiones social, académica, disciplinar e institucional.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-bullseye mr-2 ic-plum"></i>Plantear</h3><p class="mt-2">El objetivo general y los objetivos específicos del proyecto, garantizando coherencia entre lo que se investiga y hasta dónde se pretende llegar.</p></div>
+                    </div>
+                </section>
+
+                <!-- 3. CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Construyendo el planteamiento del problema</h2>
+                        <p class="mt-4 text-slate-700">A continuación se desarrollan los cinco núcleos temáticos de la unidad. Cada uno incluye una idea clave y un ejemplo aplicado al campo de la didáctica de las ciencias naturales.</p>
+                    </div>
+                    <div class="content-grid mt-6">
+                        <details class="content-card content-card--1">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-lightbulb"></i> Tema 1</span>
+                                    <h3>Concreción de la idea de investigación</h3>
+                                    <p class="content-teaser">Cómo pasar de una inquietud general a un foco investigativo concreto y delimitado.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">Toda investigación parte de una inquietud amplia que debe irse afinando hasta convertirse en un foco investigativo concreto. Este tránsito implica pasar de preguntas generales sobre la práctica docente a un objeto de estudio delimitado, viable y pertinente para el campo de la didáctica de las ciencias naturales.</p>
+                                <div class="key-note"><strong>Clave:</strong> una buena idea de investigación no es la más ambiciosa, sino la más delimitada y sustentable con los recursos y el tiempo disponibles.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> un maestrante que observa dificultades de sus estudiantes para comprender el concepto de biodiversidad puede concretar su idea inicial ("a los estudiantes no les interesa la biología") en un foco investigativo delimitado: "estrategias didácticas para la comprensión del concepto de biodiversidad en estudiantes de básica secundaria".</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--2">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-diagram-project"></i> Tema 2</span>
+                                    <h3>Delimitación del problema mediante el árbol de problemas</h3>
+                                    <p class="content-teaser">Identificar causas y efectos del problema con el árbol de problemas y la red de escenarios problémicos.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">Delimitar el problema implica identificar sus causas, sus efectos y las tensiones que lo originan. El árbol de problemas es la herramienta que permite visualizar esta estructura: el tronco representa el problema central, las raíces sus causas y las ramas sus efectos o consecuencias en el aula o la comunidad educativa. A partir de este ejercicio se construye la red de escenarios problémicos, que sintetiza de forma concreta la tensión o el vacío que sustenta el proyecto.</p>
+                                <div class="key-note"><strong>Clave:</strong> un problema bien delimitado distingue entre síntomas (lo que se observa) y causas (lo que lo origina); confundir ambos lleva a investigaciones mal enfocadas.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> en el árbol de problemas sobre la enseñanza de la biodiversidad, una causa raíz podría ser "ausencia de estrategias didácticas contextualizadas", y un efecto "bajo desempeño en pruebas sobre pensamiento científico".</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--3">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-circle-question"></i> Tema 3</span>
+                                    <h3>La pregunta de investigación como eje articulador</h3>
+                                    <p class="content-teaser">La pregunta que articula problema, objetivos y metodología a lo largo de todo el proyecto.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">La pregunta de investigación traduce el problema en un interrogante orientador que guiará todo el proyecto. Debe ser clara, estar delimitada en el tiempo y el espacio, y responder directamente al problema identificado, de modo que exista coherencia entre el problema, la pregunta, los objetivos y la futura metodología.</p>
+                                <div class="key-note"><strong>Clave:</strong> una pregunta de investigación demasiado amplia o ambigua compromete la viabilidad de todo el proyecto.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> "¿Qué estrategias didácticas contextualizadas favorecen la comprensión del concepto de biodiversidad en estudiantes de grado octavo de una institución rural del departamento de Córdoba?"</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--4">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-scale-balanced"></i> Tema 4</span>
+                                    <h3>Justificación: relevancia social, académica, disciplinar e institucional</h3>
+                                    <p class="content-teaser">Por qué vale la pena investigar: cuatro dimensiones que sustentan la justificación del proyecto.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">La justificación argumenta por qué vale la pena realizar la investigación, respondiendo a cuatro dimensiones: social (impacto en la comunidad educativa), académica (aporte al conocimiento sobre didáctica de las ciencias), disciplinar (contribución al campo específico) e institucional (relación con las líneas de investigación del programa).</p>
+                                <div class="key-note"><strong>Clave:</strong> una justificación sólida se apoya en antecedentes investigativos, no solo en la opinión o experiencia personal del maestrante.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> justificar la investigación sobre biodiversidad mostrando su relevancia social (fortalecer la conciencia ambiental en la comunidad), académica (aportar al estado del arte sobre enseñanza de la biología), disciplinar (didáctica de las ciencias naturales) e institucional (línea de investigación del programa de la Maestría).</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--5">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-bullseye"></i> Tema 5</span>
+                                    <h3>Objetivos: del objetivo general a los específicos</h3>
+                                    <p class="content-teaser">Cómo el objetivo general se desglosa en objetivos específicos coherentes y alcanzables.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">El objetivo general expresa el propósito global del estudio; los objetivos específicos lo desglosan en acciones concretas, secuenciales y alcanzables. Debe existir coherencia entre el qué se investiga y hasta dónde se pretende llegar.</p>
+                                <div class="key-note"><strong>Clave:</strong> los objetivos específicos no son actividades del curso, sino los pasos investigativos que, sumados, permiten alcanzar el objetivo general.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> objetivo general: "Diseñar estrategias didácticas contextualizadas para la enseñanza del concepto de biodiversidad". Objetivos específicos: identificar las dificultades de comprensión existentes; caracterizar el contexto educativo; diseñar y validar la estrategia didáctica.</p>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- 4. ACTIVIDAD INTERACTIVA -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Actividades de la Unidad 1</h2>
+                        <p class="mt-4 text-slate-700 leading-relaxed">La metodología de esta unidad es dialógica y explicativa: se abordan preguntas problémicas que el maestrante debe responder tanto antes como durante la sesión de trabajo, con aportes del docente, retroalimentación y discusión colectiva sobre los problemas de investigación en construcción.</p>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <button type="button" class="activity-subnav-btn btn-main" data-activity-section="activity-arbol">1. Árbol de problemas</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="activity-pjo">2. Pregunta, justificación y objetivos</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="activity-rubrica">3. Rúbrica</button>
+                    </div>
+
+                    <div id="activity-arbol" class="activity-section activity-ledger mt-4" data-export-scope="arbol" data-export-title="Árbol de problemas — Unidad 1">
+                        <div class="ledger-heading">
+                            <div class="ledger-icon"><i class="fa-solid fa-sitemap"></i></div>
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad</p>
+                                <h3 class="mt-2 text-2xl font-extrabold text-green-800">Construyendo mi árbol de problemas</h3>
+                            </div>
+                        </div>
+                        <div class="purpose-note"><strong>Propósito:</strong> Construir el árbol de problemas de tu propio proyecto de investigación y, a partir de él, redactar la pregunta de investigación, la justificación y los objetivos.</div>
+
+                        <div class="field-panel">
+                            <label class="field-title" for="problema-central">Problema central identificado (tronco del árbol)</label>
+                            <textarea id="problema-central" data-track maxlength="300" class="mt-2 w-full min-h-[90px] p-4 border rounded-xl bg-white resize-none" placeholder="Describe en una frase clara y concreta el problema central de tu investigación..."></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="problema-central">0/300</span>
+
+                            <p class="field-title">Causas del problema (raíces) — mínimo 2</p>
+                            <p class="field-hint">Escribe una causa y presiona "Agregar" (o Enter). Puedes agregar hasta 4.</p>
+                            <div class="item-list" data-item-for="causas" data-item-max="4">
+                                <div class="item-list-row">
+                                    <input type="text" class="item-list-input" maxlength="200" placeholder="Una causa raíz del problema...">
+                                    <button type="button" class="item-list-add btn-soft"><i class="fa-solid fa-plus"></i> Agregar</button>
+                                </div>
+                                <div class="item-list-chips"></div>
+                            </div>
+                            <textarea id="causas" data-track class="item-list-native"></textarea>
+
+                            <p class="field-title">Efectos o consecuencias del problema (ramas) — mínimo 2</p>
+                            <p class="field-hint">Escribe un efecto y presiona "Agregar" (o Enter). Puedes agregar hasta 4.</p>
+                            <div class="item-list" data-item-for="efectos" data-item-max="4">
+                                <div class="item-list-row">
+                                    <input type="text" class="item-list-input" maxlength="200" placeholder="Un efecto o consecuencia observable...">
+                                    <button type="button" class="item-list-add btn-soft"><i class="fa-solid fa-plus"></i> Agregar</button>
+                                </div>
+                                <div class="item-list-chips"></div>
+                            </div>
+                            <textarea id="efectos" data-track class="item-list-native"></textarea>
+
+                            <label class="field-title" for="sintesis">Síntesis del problema (red de escenarios problémicos)</label>
+                            <p class="field-hint">Describe de forma concreta la tensión o el vacío que sustenta tu proyecto.</p>
+                            <textarea id="sintesis" data-track maxlength="500" class="mt-2 w-full min-h-[130px] p-4 border rounded-xl bg-white resize-none" placeholder="Sintetiza en un párrafo la red de escenarios problémicos que rodea tu problema de investigación..."></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="sintesis">0/500</span>
+
+                            <div class="mt-5 flex justify-between items-center gap-3 flex-wrap">
+                                <span class="local-save-status" data-status-for="arbol"></span>
+                                <div class="flex gap-2 flex-wrap">
+                                    <button type="button" class="btn-danger-soft local-clear-btn" data-clear-scope="arbol"><i class="fa-solid fa-eraser"></i> Limpiar</button>
+                                    <button type="button" class="btn-soft local-save-btn" data-status-target="arbol"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                                    <div class="export-menu-wrap">
+                                        <button type="button" class="btn-soft export-toggle" data-export-scope="arbol"><i class="fa-solid fa-file-export"></i>Exportar</button>
+                                        <div class="export-menu hidden">
+                                            <button type="button" class="export-option" data-export-format="word" data-export-scope="arbol"><i class="fa-solid fa-file-word"></i> Word</button>
+                                            <button type="button" class="export-option" data-export-format="pdf" data-export-scope="arbol"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="activity-pjo" class="activity-section activity-ledger hidden mt-4" data-export-scope="pjo" data-export-title="Pregunta, justificación y objetivos — Unidad 1">
+                        <div class="ledger-heading">
+                            <div class="ledger-icon ledger-icon--pjo"><i class="fa-solid fa-bullseye"></i></div>
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad</p>
+                                <h3 class="mt-2 text-2xl font-extrabold text-green-800">Pregunta, justificación y objetivos</h3>
+                            </div>
+                        </div>
+                        <div class="purpose-note">A partir de tu árbol de problemas, redacta ahora la pregunta de investigación, la justificación y los objetivos de tu proyecto.</div>
+
+                        <div class="field-panel">
+                            <label class="field-title" for="pregunta">Pregunta de investigación</label>
+                            <p class="field-hint">Debe responder directamente al problema, delimitada en tiempo y espacio.</p>
+                            <textarea id="pregunta" data-track maxlength="400" class="mt-2 w-full min-h-[100px] p-4 border rounded-xl bg-white resize-none" placeholder="¿Qué... favorece/permite/mejora... en... (población, contexto, tiempo)?"></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="pregunta">0/400</span>
+
+                            <p class="field-title">Justificación — un párrafo breve por cada dimensión</p>
+                            <div class="mt-3 grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-600" for="justif-social">Dimensión social</label>
+                                    <textarea id="justif-social" data-track maxlength="350" class="mt-2 w-full min-h-[110px] p-3 border rounded-xl bg-white resize-none" placeholder="Impacto en la comunidad educativa..."></textarea>
+                                    <span class="mt-1 block text-xs font-semibold text-slate-500" data-counter-for="justif-social">0/350</span>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-600" for="justif-academica">Dimensión académica</label>
+                                    <textarea id="justif-academica" data-track maxlength="350" class="mt-2 w-full min-h-[110px] p-3 border rounded-xl bg-white resize-none" placeholder="Aporte al conocimiento sobre didáctica de las ciencias..."></textarea>
+                                    <span class="mt-1 block text-xs font-semibold text-slate-500" data-counter-for="justif-academica">0/350</span>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-600" for="justif-disciplinar">Dimensión disciplinar</label>
+                                    <textarea id="justif-disciplinar" data-track maxlength="350" class="mt-2 w-full min-h-[110px] p-3 border rounded-xl bg-white resize-none" placeholder="Contribución al campo específico..."></textarea>
+                                    <span class="mt-1 block text-xs font-semibold text-slate-500" data-counter-for="justif-disciplinar">0/350</span>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-600" for="justif-institucional">Dimensión institucional</label>
+                                    <textarea id="justif-institucional" data-track maxlength="350" class="mt-2 w-full min-h-[110px] p-3 border rounded-xl bg-white resize-none" placeholder="Relación con las líneas de investigación del programa..."></textarea>
+                                    <span class="mt-1 block text-xs font-semibold text-slate-500" data-counter-for="justif-institucional">0/350</span>
+                                </div>
+                            </div>
+
+                            <label class="field-title" for="objetivo-general">Objetivo general</label>
+                            <textarea id="objetivo-general" data-track maxlength="300" class="mt-2 w-full min-h-[90px] p-4 border rounded-xl bg-white resize-none" placeholder="Expresa el propósito global del estudio..."></textarea>
+                            <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="objetivo-general">0/300</span>
+
+                            <p class="field-title">Objetivos específicos — de 2 a 4</p>
+                            <p class="field-hint">Escribe un objetivo específico y presiona "Agregar" (o Enter).</p>
+                            <div class="item-list" data-item-for="objetivos-especificos" data-item-max="4">
+                                <div class="item-list-row">
+                                    <input type="text" class="item-list-input" maxlength="200" placeholder="Un objetivo específico...">
+                                    <button type="button" class="item-list-add btn-soft"><i class="fa-solid fa-plus"></i> Agregar</button>
+                                </div>
+                                <div class="item-list-chips"></div>
+                            </div>
+                            <textarea id="objetivos-especificos" data-track class="item-list-native"></textarea>
+
+                            <div class="mt-5 flex justify-between items-center gap-3 flex-wrap">
+                                <span class="local-save-status" data-status-for="pjo"></span>
+                                <div class="flex gap-2 flex-wrap">
+                                    <button type="button" class="btn-danger-soft local-clear-btn" data-clear-scope="pjo"><i class="fa-solid fa-eraser"></i> Limpiar</button>
+                                    <button type="button" class="btn-soft local-save-btn" data-status-target="pjo"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                                    <div class="export-menu-wrap">
+                                        <button type="button" class="btn-soft export-toggle" data-export-scope="pjo"><i class="fa-solid fa-file-export"></i>Exportar</button>
+                                        <div class="export-menu hidden">
+                                            <button type="button" class="export-option" data-export-format="word" data-export-scope="pjo"><i class="fa-solid fa-file-word"></i> Word</button>
+                                            <button type="button" class="export-option" data-export-format="pdf" data-export-scope="pjo"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-5 text-sm text-slate-600 leading-relaxed">Este ejercicio corresponde al trabajo independiente de la unidad: presenta un documento no mayor a dos páginas con la estructura del problema de investigación, argumentando su relevancia (apoyada en antecedentes investigativos) y su pertinencia para el campo de la didáctica de las ciencias.</p>
+                    </div>
+
+                    <div id="activity-rubrica" class="activity-section hidden mt-4">
+                        <div class="content-grid">
+                            <details class="content-card content-card--rubrica">
+                                <summary>
+                                    <div class="content-summary-main">
+                                        <span class="content-code"><i class="fa-solid fa-table-list"></i> Rúbrica</span>
+                                        <h3>Rúbrica de evaluación de esta unidad</h3>
+                                        <p class="content-teaser">Así se evalúa tu avance del problema de investigación y los objetivos — revísala antes de entregar.</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down content-chevron"></i>
+                                </summary>
+                                <div class="content-body">
+                                    <p class="text-sm text-slate-600">Tomada de "Rúbricas para evaluar el estado de las propuestas" (criterios de Problema de investigación y de Objetivos). Escala de 2 a 5, donde 5 es el nivel más alto.</p>
+                                    <div class="mt-4 rubric-table-wrap">
+                                        <table class="rubric-table">
+                                            <thead>
+                                                <tr><th>Criterio</th><th>Excelente (5)</th><th>Bueno (4)</th><th>Satisfactorio (3)</th><th>Deficiente (2)</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Contexto internacional en la descripción del problema</td><td>Describe de manera completa y clara la relevancia y los antecedentes del problema en el ámbito internacional, citando fuentes pertinentes.</td><td>Presenta la relevancia internacional del problema, aunque con poca profundidad o con algunos vacíos.</td><td>Menciona el contexto internacional de forma superficial o desorganizada.</td><td>No se menciona, o el contexto internacional es irrelevante.</td></tr>
+                                                <tr><td>Contexto nacional en la descripción del problema</td><td>Analiza detalladamente la situación del problema en el país, utilizando datos y referencias actualizados.</td><td>Expone el problema a nivel nacional, pero con menor profundidad o detalla aspectos limitados.</td><td>Describe el contexto nacional de manera incompleta o poco clara.</td><td>Omite el contexto nacional o la información resulta irrelevante.</td></tr>
+                                                <tr><td>Contexto regional en la descripción del problema</td><td>Presenta claramente cómo el problema afecta o se manifiesta en la región, con datos pertinentes.</td><td>Menciona el contexto regional con suficiente claridad, pero podría profundizar más.</td><td>Incluye el contexto regional de manera superficial o desorganizada.</td><td>No se menciona el contexto regional o es irrelevante.</td></tr>
+                                                <tr><td>Contexto local en la descripción del problema</td><td>Explica en detalle la importancia y manifestación del problema en el ámbito local, con ejemplos y datos.</td><td>Describe el problema a nivel local, pero sin suficiente detalle o profundidad.</td><td>Menciona el contexto local de forma superficial y con escasa justificación.</td><td>Omite el contexto local o la información es irrelevante.</td></tr>
+                                                <tr><td>Margen conceptual en la descripción del problema</td><td>Explica claramente el marco conceptual del problema, describe lo que se conoce, señala las contribuciones clave.</td><td>El marco conceptual es relevante y se explican contribuciones importantes.</td><td>El margen conceptual está apenas descrito, con escasas contribuciones.</td><td>No se justifica el margen conceptual.</td></tr>
+                                                <tr><td>Revisión de literatura en la descripción del problema</td><td>Cita documentos sobresalientes y actualizados (últimos 5 años). Todo es pertinente y coherente.</td><td>Algunas de las referencias no son actuales o carecen de profundidad.</td><td>Las referencias usadas son poco pertinentes o desactualizadas.</td><td>No se citan documentos relevantes o actualizados.</td></tr>
+                                                <tr><td>Concordancia entre pregunta de investigación, problema y título</td><td>La pregunta de investigación está completamente alineada con el problema y el título; existe una coherencia lógica clara.</td><td>Existe correspondencia básica, aunque con ligeras inconsistencias en la formulación o enfoque.</td><td>Hay problemas notorios de coherencia entre los elementos, aunque se reconoce la intención.</td><td>No hay una relación clara entre la pregunta, el problema y el título, o están desconectados entre sí.</td></tr>
+                                                <tr><td>Relación de los objetivos con el problema y la pregunta de investigación</td><td>Los objetivos están directamente vinculados y claramente relacionados con el problema y la pregunta.</td><td>Los objetivos tienen una relación evidente, con pequeñas desconexiones puntuales.</td><td>La relación entre los objetivos, el problema y la pregunta es inconsistente o poco clara.</td><td>No existe relación, o está confusa, entre los objetivos, el problema y la pregunta.</td></tr>
+                                                <tr><td>Coherencia entre objetivo general y objetivos específicos</td><td>Hay una clara jerarquía: el objetivo general guía y se refleja perfectamente en los objetivos específicos.</td><td>Existe coherencia general, aunque algunos objetivos específicos podrían alinearse mejor entre sí.</td><td>La relación jerárquica entre general y específicos es débil o poco clara.</td><td>No hay coherencia entre el objetivo general y los objetivos específicos, o están mal organizados.</td></tr>
+                                                <tr><td>Coherencia entre objetivos y título de la investigación</td><td>Existe correspondencia clara entre objetivos y título, ambos se apoyan mutuamente en contenido y foco.</td><td>El título y los objetivos están relacionados, aunque la conexión podría ser más explícita.</td><td>La relación entre el título y los objetivos es débil o indirecta.</td><td>No existe relación aparente entre los objetivos y el título.</td></tr>
+                                                <tr><td>Coherencia entre objetivos y pregunta de investigación</td><td>Se muestra una coherencia clara entre el objetivo general, los objetivos específicos y la pregunta de investigación.</td><td>Los objetivos son mayormente coherentes con la pregunta, salvo algunos aspectos.</td><td>Algunos objetivos no guardan coherencia con la pregunta de investigación.</td><td>Los objetivos no guardan relación con la pregunta de investigación.</td></tr>
+                                                <tr><td>Viabilidad, claridad y concreción según pregunta y metodología</td><td>Los objetivos son claros, específicos, alcanzables y coherentes con la pregunta planteada y la metodología empleada.</td><td>Son mayormente claros y viables, aunque algunos podrían definirse mejor o ser más concretos.</td><td>Los objetivos son difusos, poco claros o con viabilidad limitada.</td><td>Los objetivos son confusos, irreales o incoherentes con la metodología.</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. AUTOEVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Cuestionario de la Unidad 1</h2><p class="mt-4 text-slate-700">Responde las siguientes 10 preguntas para verificar tu comprensión de los contenidos de la unidad. Las preguntas están alineadas con los criterios de evaluación de la Unidad 1 y con los criterios transversales de la rúbrica del curso. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p></div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4"><h3 id="quiz-title" class="text-xl font-extrabold text-green-800">Pregunta 1</h3><span id="quiz-progress" class="text-sm font-bold text-slate-500">1/10</span></div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold text-slate-700"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3"><button id="quiz-prev" type="button" class="btn-soft">Anterior</button><button id="quiz-next" type="button" class="btn-main">Siguiente</button></div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl bg-green-50 border border-green-200">
+                            <h3 class="text-xl font-extrabold text-green-800">Autoevaluación completada</h3>
+                            <p class="mt-2 text-green-800 font-semibold">Puntaje: <span id="quiz-score">0</span>/10</p>
+                            <p id="quiz-feedback" class="mt-2 text-green-800"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                    <script type="application/json" id="quiz-data">
+                    [
+                        { "question": "¿Qué se entiende por \"red de escenarios problémicos\" en la construcción del problema de investigación?", "options": ["Una lista de temas de interés personal sin relación con la teoría.", "El cronograma de actividades del proyecto.", "La representación de las tensiones y vacíos que rodean el problema y sus posibles relaciones causales.", "La bibliografía citada en el marco teórico."], "correct": 2 },
+                        { "question": "¿Cuál es la función principal de la pregunta de investigación dentro del proyecto?", "options": ["Reemplazar la justificación del estudio.", "Ser el eje articulador que conecta el problema con los objetivos y la metodología.", "Servir únicamente como título del proyecto.", "No tiene relación con los objetivos."], "correct": 1 },
+                        { "question": "Según el plan de curso, ¿qué dimensiones debe contemplar una justificación completa?", "options": ["Únicamente la dimensión económica.", "Solo la dimensión personal del investigador.", "Únicamente la dimensión metodológica.", "Social, académica, disciplinar e institucional."], "correct": 3 },
+                        { "question": "¿Qué diferencia existe entre el objetivo general y los objetivos específicos de un proyecto de investigación?", "options": ["No existe diferencia, son sinónimos.", "Los específicos siempre deben formularse antes que el general.", "El general expresa el propósito global del estudio y los específicos lo desglosan en acciones concretas y alcanzables.", "El objetivo general se refiere solo a la metodología."], "correct": 2 },
+                        { "question": "¿Cuál es el propósito del árbol de problemas como herramienta metodológica?", "options": ["Organizar cronológicamente las actividades del curso.", "Visualizar las causas y efectos del problema para delimitarlo con mayor claridad.", "Sustituir la revisión de antecedentes.", "Evaluar el desempeño del docente."], "correct": 1 },
+                        { "question": "Un maestrante presenta un problema de investigación sin conexión clara con los antecedentes del campo. Según los criterios de evaluación de la Unidad 1, esto afecta principalmente:", "options": ["Solo la ortografía del documento.", "La extensión del documento.", "El uso de referencias en formato APA.", "La coherencia y el rigor entre el planteamiento, los objetivos y la justificación."], "correct": 3 },
+                        { "question": "¿Por qué es importante que la pregunta de investigación esté delimitada en tiempo y espacio?", "options": ["Porque permite que el estudio sea viable y evaluable dentro de los recursos y el contexto disponibles.", "Porque así se evita citar antecedentes.", "Porque reduce la necesidad de justificar el estudio.", "Porque elimina la necesidad de definir objetivos."], "correct": 0 },
+                        { "question": "La postura crítica y reflexiva del maestrante frente a su propuesta de investigación (criterio transversal de la rúbrica) se evidencia principalmente cuando:", "options": ["Copia literalmente la justificación de otro trabajo.", "Evita cualquier retroalimentación docente.", "Se limita a enumerar los objetivos sin análisis.", "Valora y cuestiona los aportes formativos de su propia propuesta, más allá de describirla."], "correct": 3 },
+                        { "question": "¿Qué elemento garantiza la \"coherencia entre el problema y la estructura del proyecto de investigación\"?", "options": ["Que el proyecto tenga más de 50 páginas.", "Que el problema, la pregunta, la justificación y los objetivos respondan a la misma tensión o vacío identificado.", "Que se use el mismo autor en todas las citas.", "Que el objetivo general se formule al final del proyecto."], "correct": 1 },
+                        { "question": "¿Cuál es el producto esperado al finalizar la Unidad 1, según los criterios de evaluación del curso?", "options": ["Un instrumento de recolección de datos validado por expertos.", "Un estado del arte completo con revisión sistemática PRISMA.", "Un documento breve (máx. 2 páginas) que integre la estructura del problema: escenarios problémicos, pregunta, justificación y objetivos.", "Una matriz de consistencia metodológica."], "correct": 2 }
+                    ]
+                    </script>
+                </section>
+
+                <!-- 6. RECURSOS (máximo 4) -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Materiales de apoyo</h2></div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-database mr-2 text-green-700"></i>Biblioteca Universidad de Córdoba</h3><p class="mt-2 text-slate-700">Bases de datos para apoyar la búsqueda de antecedentes que sustenten la justificación del problema.</p><div class="mt-4"><a class="btn-main" href="https://biblioteca.unicordoba.edu.co/bases-de-datos/" target="_blank" rel="noopener">Abrir bases de datos</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://biblioteca.unicordoba.edu.co/bases-de-datos/" alt="Código QR — Biblioteca Universidad de Córdoba" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-globe mr-2 text-green-700"></i>Red Colombiana de Información Científica</h3><p class="mt-2 text-slate-700">Repositorio nacional de Minciencias, útil para ubicar investigaciones previas relacionadas con el problema planteado.</p><div class="mt-4"><a class="btn-main" href="https://redcol.minciencias.gov.co/" target="_blank" rel="noopener">Abrir repositorio</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://redcol.minciencias.gov.co/" alt="Código QR — Red Colombiana de Información Científica" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-video mr-2 text-green-700"></i>¿Cómo hacer un árbol de problemas?</h3><p class="mt-2 text-slate-700">Tutorial audiovisual con la definición, los pasos, la estructura y un ejemplo, como apoyo a la actividad de la unidad.</p><div class="mt-4"><a class="btn-main" href="https://www.youtube.com/watch?v=L205OLlIcC0" target="_blank" rel="noopener">Ver video</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.youtube.com/watch?v=L205OLlIcC0" alt="Código QR — video árbol de problemas" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500">Nota: la plantilla/formato de árbol de problemas será compartida directamente por la docente en clase.</p>
+                </section>
+
+                <!-- 7. BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Referencias orientadoras</h2></div>
+                    <div class="mt-6 space-y-4">
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Asti Vera, A. (1973). <em>Metodología de la Investigación</em>. Buenos Aires, Argentina: Editorial Kapelusz.</p><a class="ref-link mt-2" href="https://archive.org/details/bwb_S0-BMA-410" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://archive.org/details/bwb_S0-BMA-410" alt="Código QR — Asti Vera, Metodología de la Investigación" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Sautu, R., Boniolo, P., Dalle, P., &amp; Elbert, R. (2005). <em>Manual de metodología. Construcción del marco teórico, formulación de los objetivos y elección de la metodología</em>. Buenos Aires: CLACSO Libros.</p><a class="ref-link mt-2" href="https://biblioteca-repositorio.clacso.edu.ar/handle/CLACSO/14733" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://biblioteca-repositorio.clacso.edu.ar/handle/CLACSO/14733" alt="Código QR — Sautu et al., Manual de metodología" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Ñaupas, H., Mejía, E., Novoa, E., &amp; Villagómez, A. (2014). <em>Metodología de la investigación. Cuantitativa-cualitativa y redacción de tesis</em>. Bogotá: Ediciones U.</p><a class="ref-link mt-2" href="https://books.google.com/books/about/Metodolog%C3%ADa_de_la_investigaci%C3%B3n_cuanti.html?id=VzOjDwAAQBAJ" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://books.google.com/books/about/Metodolog%C3%ADa_de_la_investigaci%C3%B3n_cuanti.html%3Fid%3DVzOjDwAAQBAJ" alt="Código QR — Ñaupas et al., Metodología de la investigación" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
