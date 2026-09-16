@@ -1,0 +1,253 @@
+/*
+  style.css — Plantilla OVA Seminario Proyecto de Investigación I (MDDCN)
+  Basado en la estructura del OVA de ejemplo (CINTIA), con identidad visual
+  adaptada a la Maestría en Didáctica de las Ciencias Naturales:
+  - Verdes tomados del logo de la Maestría (verde oscuro del texto/tronco,
+    verde claro de los acentos y hojas).
+  - Azul tomado de los libros del logo, como color informativo secundario.
+  - Sin el detalle temático "ARCHIVO" de las tarjetas de contenido del
+    ejemplo (no aplica a un curso de metodología de investigación).
+  Este archivo es común a las 3 unidades: solo cambia el contenido de
+  cada index.html, no la hoja de estilos.
+*/
+
+html { scroll-behavior: smooth; }
+
+#ova-embed {
+    --bg: #f4f9f2;
+    --surface: #ffffff;
+    --surface-soft: #eaf6e6;
+    --text: #2c3a30;
+    --heading: #14532d;
+    --line: #cfe6c8;
+    --accent: #5b9c46;
+    --accent-deep: #1b5e20;
+    --info: #2f5f8f;
+    --warm: #d9822e;
+    --warm-deep: #a85f1c;
+    --warm-soft: #faead2;
+    --accent-teal: #0e7c86;
+    --accent-teal-deep: #0b5f66;
+    --accent-plum: #9c3f6b;
+    --accent-plum-deep: #7a2f52;
+    --shadow: 0 12px 30px rgba(20, 83, 45, 0.14);
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(217, 130, 46, 0.14), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(91, 156, 70, 0.10), transparent 40%),
+        linear-gradient(135deg, #f7fbf5 0%, #f4f9f2 48%, #eef7ec 100%);
+}
+
+#ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+
+/* Paneles de contenido (una sección visible a la vez) */
+#ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+#ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+
+/* Sidebar */
+#ova-embed .sidebar { width: 264px; background: linear-gradient(180deg, #ffffff 0%, #e7f3e2 100%); box-shadow: 0 2px 18px rgba(20, 83, 45, 0.10); border-right: 1px solid var(--line); flex-shrink: 0; display: flex; flex-direction: column; padding: 18px 0 0; }
+#ova-embed .brand-shell { padding: 0 16px 14px; }
+#ova-embed .logo-orb { width: 140px; height: 140px; margin: 0 auto 12px; background: #ffffff; border-radius: 9999px; box-shadow: 0 8px 24px rgba(20, 83, 45, 0.22); border: 3px double var(--accent); display: flex; align-items: center; justify-content: center; padding: 10px; }
+#ova-embed .logo-orb img { width: 82%; height: 82%; object-fit: contain; }
+#ova-embed .brand-copy { text-align: center; }
+#ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: var(--heading); font-size: 1.02rem; line-height: 1.35; }
+#ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--warm-deep); }
+#ova-embed .sidebar-nav { margin-top: 8px; padding-bottom: 18px; }
+#ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 13px 22px; border-left: 4px solid transparent; color: #46543c; font-weight: 600; text-decoration: none; transition: all 0.25s ease; }
+#ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(20, 83, 45, 0.10); color: var(--heading); border-left-color: var(--accent); }
+
+/* Layout general */
+#ova-embed .layout { display: flex; min-height: 100vh; }
+#ova-embed .main { flex: 1; min-width: 0; padding: 28px; }
+#ova-embed .content-stage { position: relative; max-width: 1120px; margin: 0 auto; }
+
+/* Hero */
+#ova-embed .hero { background: linear-gradient(135deg, #14532d 0%, #1b5e20 55%, #5b9c46 100%); color: #fbfdf9; border-radius: 24px; padding: 34px; box-shadow: var(--shadow); border: 1px solid rgba(251, 253, 249, 0.28); }
+
+/* Tarjetas genéricas */
+#ova-embed .section-card { background: rgba(255, 255, 255, 0.96); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 1px 14px rgba(20, 83, 45, 0.07); padding: 28px; }
+#ova-embed .mini-card { background: rgba(255, 255, 255, 0.98); border: 1px solid var(--line); border-radius: 18px; padding: 20px; box-shadow: 0 1px 8px rgba(20, 83, 45, 0.05); }
+
+/* Botones */
+#ova-embed .btn-main { background: var(--heading); color: #fbfdf9; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid var(--accent); cursor: pointer; transition: background 0.25s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+#ova-embed .btn-main:hover { background: var(--accent-deep); }
+#ova-embed .btn-soft { background: #ffffff; color: #46543c; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid var(--line); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+#ova-embed .btn-danger-soft { background: #fff5f5; color: #b91c1c; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid #f3b4b4; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s ease; }
+#ova-embed .btn-danger-soft:hover { background: #fee2e2; }
+#ova-embed .local-save-status { font-size: 0.82rem; font-weight: 600; color: var(--accent-deep); min-height: 1.1em; }
+
+/* Ruta visual de paradas temáticas (Introducción) */
+#ova-embed .route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+#ova-embed .route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, var(--warm), var(--heading), var(--warm), transparent); opacity: 0.55; }
+#ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+#ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: #ffffff; border: 2px solid var(--warm); box-shadow: 0 8px 18px rgba(168, 95, 28, 0.16); display: flex; align-items: center; justify-content: center; color: var(--warm-deep); font-size: 1.3rem; font-weight: 800; }
+#ova-embed .route-stop h4 { margin: 0; color: var(--heading); font-weight: 800; font-size: 0.98rem; }
+#ova-embed .route-stop p { margin: 8px 0 0; color: #46543c; font-size: 0.84rem; line-height: 1.45; }
+
+/* Tarjetas de contenido (sección Contenido) — sin el sello "ARCHIVO" del ejemplo.
+   Son <details>/<summary> nativos: título + resumen siempre visibles, el
+   párrafo completo + Clave + Ejemplo se despliegan al hacer clic, para que
+   la sección no se sienta como un bloque denso de texto. */
+#ova-embed .content-grid { display: flex; flex-direction: column; gap: 14px; }
+#ova-embed .content-card { position: relative; background: rgba(255, 255, 255, 0.98); border: 1px solid var(--line); border-left: 7px solid var(--accent); border-radius: 20px; padding: 20px 22px; box-shadow: 0 10px 22px rgba(20, 83, 45, 0.07); }
+#ova-embed .content-card > summary { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; }
+#ova-embed .content-card > summary::-webkit-details-marker { display: none; }
+#ova-embed .content-summary-main { flex: 1; min-width: 0; }
+#ova-embed .content-code { display: inline-flex; align-items: center; gap: 8px; color: var(--warm-deep); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+#ova-embed .content-card h3 { color: var(--heading); font-size: 1.2rem; font-weight: 800; margin: 6px 0 0; }
+#ova-embed .content-teaser { margin: 6px 0 0; color: #56634b; font-size: 0.88rem; line-height: 1.4; }
+#ova-embed .content-chevron { color: var(--warm-deep); font-size: 0.95rem; margin-top: 8px; flex-shrink: 0; transition: transform 0.25s ease; }
+
+/* Color por tema en Contenido: cada núcleo temático con su propio acento, para que la sección no se vea monocroma */
+#ova-embed .content-card--1 { border-left-color: var(--accent); }
+#ova-embed .content-card--1 .content-code, #ova-embed .content-card--1 .content-chevron { color: var(--accent-deep); }
+#ova-embed .content-card--2 { border-left-color: var(--info); }
+#ova-embed .content-card--2 .content-code, #ova-embed .content-card--2 .content-chevron { color: var(--info); }
+#ova-embed .content-card--3 { border-left-color: var(--warm); }
+#ova-embed .content-card--3 .content-code, #ova-embed .content-card--3 .content-chevron { color: var(--warm-deep); }
+#ova-embed .content-card--4 { border-left-color: var(--accent-teal); }
+#ova-embed .content-card--4 .content-code, #ova-embed .content-card--4 .content-chevron { color: var(--accent-teal-deep); }
+#ova-embed .content-card--5 { border-left-color: var(--accent-plum); }
+#ova-embed .content-card--5 .content-code, #ova-embed .content-card--5 .content-chevron { color: var(--accent-plum-deep); }
+#ova-embed .content-card--rubrica { border-left-color: var(--accent-plum); }
+#ova-embed .content-card--rubrica .content-code, #ova-embed .content-card--rubrica .content-chevron { color: var(--accent-plum-deep); }
+
+/* Iconos de acento sueltos (mini-tarjetas de Objetivos, etc.) */
+#ova-embed .ic-accent { color: var(--accent-deep); }
+#ova-embed .ic-info { color: var(--info); }
+#ova-embed .ic-warm { color: var(--warm-deep); }
+#ova-embed .ic-teal { color: var(--accent-teal-deep); }
+#ova-embed .ic-plum { color: var(--accent-plum-deep); }
+#ova-embed .content-card[open] > summary .content-chevron { transform: rotate(180deg); }
+#ova-embed .content-card[open] > summary { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px dashed var(--line); }
+#ova-embed .content-body { animation: content-body-in 0.2s ease; }
+@keyframes content-body-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+#ova-embed .key-note { margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: rgba(20, 83, 45, 0.08); border: 1px solid rgba(20, 83, 45, 0.14); color: #2f4534; font-size: 0.9rem; }
+
+/* Códigos QR (Recursos y Bibliografía) */
+#ova-embed .qr-box { width: 92px; height: 92px; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 6px; overflow: hidden; }
+#ova-embed .qr-box img { width: 100%; height: 100%; }
+#ova-embed .ref-link { display: inline-flex; align-items: center; gap: 6px; color: var(--info); font-weight: 700; font-size: 0.85rem; text-decoration: none; }
+#ova-embed .ref-link:hover { text-decoration: underline; }
+
+/* Tabla de rúbrica (dentro de Actividad interactiva) */
+#ova-embed .rubric-table-wrap { overflow-x: auto; border-radius: 14px; border: 1px solid var(--line); }
+#ova-embed .rubric-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 0.82rem; }
+#ova-embed .rubric-table th { background: var(--surface-soft); color: var(--heading); font-weight: 800; text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--line); position: sticky; top: 0; }
+#ova-embed .rubric-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.4; }
+#ova-embed .rubric-table td:first-child { font-weight: 700; color: var(--heading); background: rgba(20, 83, 45, 0.04); }
+#ova-embed .rubric-table tbody tr:last-child td { border-bottom: none; }
+
+/* Bloque de actividad (bitácora) */
+#ova-embed .activity-ledger { position: relative; background: rgba(255, 255, 255, 0.98); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 10px 24px rgba(20, 83, 45, 0.08); padding: 28px; overflow: hidden; }
+#ova-embed .activity-ledger::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(91, 156, 70, 0.06) 1px, transparent 1px), linear-gradient(0deg, rgba(20, 83, 45, 0.035) 1px, transparent 1px); background-size: 22px 22px; opacity: 0.55; pointer-events: none; }
+#ova-embed .activity-ledger > * { position: relative; z-index: 1; }
+#ova-embed .ledger-heading { display: flex; align-items: flex-start; gap: 14px; }
+#ova-embed .ledger-icon { width: 50px; height: 50px; flex: 0 0 50px; border-radius: 999px; background: var(--surface-soft); border: 2px solid var(--accent); color: var(--heading); display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(20, 83, 45, 0.10); }
+#ova-embed .ledger-icon--pjo { border-color: var(--info); color: var(--info); }
+#ova-embed .purpose-note { margin-top: 18px; padding: 14px 16px; border-left: 5px solid var(--accent); border-radius: 14px; background: rgba(20, 83, 45, 0.06); color: var(--text); }
+#ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed rgba(20, 83, 45, 0.28); border-radius: 16px; background: rgba(234, 246, 230, 0.55); }
+
+/* Título del campo vs. instrucción de diligenciamiento: deben distinguirse a simple vista */
+#ova-embed .field-title { display: block; margin-top: 24px; font-weight: 800; font-size: 1.05rem; line-height: 1.3; color: var(--heading); }
+#ova-embed .field-title:first-child { margin-top: 0; }
+#ova-embed .field-hint { display: block; margin-top: 3px; margin-bottom: 2px; font-size: 0.85rem; font-style: italic; font-weight: 500; color: var(--warm-deep); }
+
+/* Selección visual de una sola opción ("choice-cards", ver script.js): el
+   <select> real queda oculto pero sigue en el DOM con su data-track, para
+   que guardar/restaurar/limpiar/exportar no necesiten saber que existen
+   estas tarjetas. */
+#ova-embed .choice-select-native { display: none; }
+#ova-embed .choice-cards { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+#ova-embed .choice-card { display: inline-flex; align-items: center; gap: 9px; border: 1.5px solid var(--line); background: #ffffff; border-radius: 14px; padding: 11px 18px; cursor: pointer; font-weight: 700; font-size: 0.92rem; color: var(--text); transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease; }
+#ova-embed .choice-card i.choice-icon { font-size: 1.05rem; color: var(--accent-deep); width: 1.1em; text-align: center; }
+#ova-embed .choice-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+#ova-embed .choice-card.selected { border-color: var(--heading); background: var(--surface-soft); color: var(--heading); }
+#ova-embed .choice-card.selected i.choice-icon { color: var(--heading); }
+#ova-embed .choice-card i.choice-check { display: none; font-size: 0.85rem; color: var(--heading); }
+#ova-embed .choice-card.selected i.choice-check { display: inline-block; }
+
+/* Checklist de chips de selección múltiple ("chip-multi", ver script.js):
+   el valor combinado se guarda en un <input type="hidden"> con data-track
+   (lista separada por comas), para exportarse como texto legible sin
+   tocar la lógica de exportación existente. */
+#ova-embed .chip-multi-native { display: none; }
+#ova-embed .chip-multi { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+#ova-embed .chip-toggle { display: inline-flex; align-items: center; gap: 6px; border: 1.5px solid var(--line); background: #ffffff; border-radius: 999px; padding: 8px 15px; cursor: pointer; font-weight: 700; font-size: 0.85rem; color: var(--text); transition: border-color 0.2s ease, background 0.2s ease; }
+#ova-embed .chip-toggle i { font-size: 0.85rem; color: var(--accent-deep); }
+#ova-embed .chip-toggle.selected { border-color: var(--heading); background: var(--heading); color: #ffffff; }
+#ova-embed .chip-toggle.selected i { color: #ffffff; }
+#ova-embed .chip-other-wrap { display: none; margin-top: 10px; max-width: 360px; }
+#ova-embed .chip-other-wrap.active { display: block; }
+#ova-embed .chip-other-wrap input { width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: #ffffff; font-size: 0.9rem; color: var(--text); }
+
+/* Lista dinámica de "agregar ítem" ("item-list", ver script.js): el
+   <textarea> real queda oculto, con un ítem por línea, para seguir siendo
+   compatible con guardar/restaurar/limpiar/exportar sin cambios. */
+#ova-embed .item-list-native { display: none; }
+#ova-embed .item-list-row { display: flex; gap: 8px; align-items: stretch; flex-wrap: wrap; margin-top: 10px; }
+#ova-embed .item-list-input { flex: 1 1 220px; min-width: 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: #ffffff; font-size: 0.9rem; color: var(--text); }
+#ova-embed .item-list-input:disabled { background: var(--surface-soft); color: #8a9a83; }
+#ova-embed .item-list-add { flex: 0 0 auto; white-space: nowrap; }
+#ova-embed .item-list-add:disabled { opacity: 0.45; cursor: not-allowed; }
+#ova-embed .item-list-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+#ova-embed .item-chip { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; border: 1.5px solid var(--accent); background: var(--surface-soft); color: var(--heading); border-radius: 12px; padding: 8px 10px 8px 14px; font-size: 0.85rem; font-weight: 600; }
+#ova-embed .item-chip > span { overflow-wrap: anywhere; }
+#ova-embed .item-remove, #ova-embed .row-list-remove { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 999px; border: none; background: rgba(20, 83, 45, 0.12); color: var(--heading); cursor: pointer; font-size: 0.75rem; }
+#ova-embed .item-remove:hover, #ova-embed .row-list-remove:hover { background: rgba(20, 83, 45, 0.22); }
+
+/* Mini-tabla de filas repetibles ("row-list", ver script.js). */
+#ova-embed .row-list-native { display: none; }
+#ova-embed .row-list-inputs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; align-items: stretch; }
+#ova-embed .row-list-col { flex: 1 1 150px; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: #ffffff; font-size: 0.85rem; color: var(--text); }
+#ova-embed .row-list-add { flex: 0 0 auto; white-space: nowrap; }
+#ova-embed .row-list-add:disabled { opacity: 0.45; cursor: not-allowed; }
+#ova-embed .row-list-table-wrap { margin-top: 12px; overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+#ova-embed .row-list-table-wrap.hidden { display: none; }
+#ova-embed .row-list-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+#ova-embed .row-list-table th { background: var(--surface-soft); color: var(--heading); font-weight: 800; text-align: left; padding: 9px 12px; white-space: nowrap; }
+#ova-embed .row-list-table td { padding: 9px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+#ova-embed .row-list-remove-cell { width: 32px; text-align: center; }
+
+/* Actividades por pasos (opcional, ver script.js): un paso visible a la
+   vez, con Anterior/Siguiente en vez de un formulario largo de una sola
+   vista. */
+#ova-embed .activity-step { display: none; }
+#ova-embed .activity-step.active { display: block; animation: content-body-in 0.2s ease; }
+#ova-embed .step-nav { margin-top: 22px; padding-top: 18px; border-top: 1px dashed rgba(20, 83, 45, 0.28); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+#ova-embed .step-indicator { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--warm-deep); }
+#ova-embed .step-prev-btn:disabled, #ova-embed .step-next-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Menú de exportación — position:fixed (no absolute) a propósito: así el
+   menú no queda recortado por el overflow:hidden de tarjetas como
+   .activity-ledger (necesario ahí para el patrón de fondo decorativo). La
+   posición real (top/left) se calcula en script.js al abrirlo. */
+#ova-embed .export-menu-wrap { position: relative; display: inline-flex; }
+#ova-embed .export-menu { position: fixed; min-width: 220px; background: #ffffff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 12px 24px rgba(20, 83, 45, 0.16); padding: 8px; z-index: 200; }
+#ova-embed .export-menu.hidden { display: none; }
+#ova-embed .export-option { width: 100%; display: flex; align-items: center; gap: 10px; border: 0; background: transparent; color: var(--text); font-weight: 700; text-align: left; padding: 10px 12px; border-radius: 12px; cursor: pointer; }
+#ova-embed .export-option:hover { background: rgba(20, 83, 45, 0.08); color: var(--heading); }
+
+#ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+#ova-embed .activity-section.hidden { display: none; }
+
+/* Autoevaluación (quiz) */
+#ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid var(--line); background: #ffffff; border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: var(--text); }
+#ova-embed .quiz-option.selected { border-color: var(--heading); background: var(--surface-soft); color: var(--heading); }
+
+/* Cabecera móvil */
+#ova-embed .mobile-header { display: none; }
+
+@media (max-width: 900px) {
+    #ova-embed .layout { display: block; }
+    #ova-embed .sidebar { display: none; }
+    #ova-embed .mobile-header { display: block; padding: 18px; background: #ffffff; box-shadow: 0 2px 14px rgba(20, 83, 45, 0.10); }
+    #ova-embed .main { padding: 18px; }
+    #ova-embed .hero { padding: 24px; }
+    #ova-embed .route { grid-template-columns: 1fr; }
+    #ova-embed .route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, var(--warm), var(--heading), var(--warm), transparent); }
+    #ova-embed .content-grid { grid-template-columns: 1fr; }
+}

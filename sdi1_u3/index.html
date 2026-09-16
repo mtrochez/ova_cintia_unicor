@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminario Proyecto de Investigación I - Unidad 3</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--
+  Unidad 3: Del papel a la práctica: diseñando y validando tus instrumentos
+  de investigación. Contenido de las 7 secciones tomado de
+  guia_unidad3_seminario_3.docx (aprobado por la docente). La Actividad
+  interactiva (sección 4) es una sola actividad, con dos bloques de campos
+  (Paso 1: ajuste del árbol de problemas / Paso 2: diseño y validación de
+  instrumentos) dentro del mismo formulario — no dos pestañas separadas —
+  + una pestaña de Rúbrica, tomada de "RÚBRICAS PARA EVALUAR EL ESTADO DE
+  LAS PROPUESTAS" (Tabla 3: criterios de metodología).
+-->
+<div id="ova-embed"
+     data-storage-key="ova_seminario1_u3_progress"
+     data-course-title="Seminario Proyecto de Investigación I"
+     data-unit-label="Unidad 3 - Del papel a la práctica: diseñando y validando tus instrumentos">
+
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="img/logo-maestria.jpeg" alt="Logo Maestría en Didáctica de las Ciencias Naturales"></div>
+            <div>
+                <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Seminario Proyecto de Investigación I</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="img/logo-maestria.jpeg" alt="Logo Maestría en Didáctica de las Ciencias Naturales"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                    <h1>Seminario Proyecto de Investigación I</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-compass"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-bullseye"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-scroll"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-feather-pointed"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-magnifying-glass-chart"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-folder-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-atlas"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+
+                <!-- 1. INTRODUCCIÓN -->
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-compass mr-2"></i>Unidad 3</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-4">Del papel a la práctica: diseñando y validando tus instrumentos de investigación</h2>
+                        <p class="text-lg leading-relaxed opacity-95">Con tu problema delimitado y tu marco referencial construido, llegas a esta unidad con una idea de investigación ya consolidada. Ahora el reto es traducirla en una ruta metodológica clara: elegir el paradigma y el método que mejor respondan a tu pregunta, y diseñar los instrumentos que te permitirán recoger la información en el campo.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-magnifying-glass mr-2 text-green-700"></i>Pregunta central</h3><p class="mt-2 text-slate-700">¿Qué ruta metodológica y qué instrumentos permiten recoger la información necesaria para responder tu pregunta de investigación?</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-timeline mr-2 text-green-700"></i>Enfoque</h3><p class="mt-2 text-slate-700">Diseño metodológico, partiendo de una idea de investigación ya consolidada: selección del paradigma y el método cualitativo, y diseño y validación de los instrumentos de recolección de datos.</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-chalkboard-user mr-2 text-green-700"></i>Producto esperado</h3><p class="mt-2 text-slate-700">Una propuesta de investigación finalizada, con alineación total y lógica entre el problema, la pregunta, los objetivos y la metodología, y con instrumentos de recolección de datos diseñados y validados.</p></div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta de la unidad</p>
+                        <h3 class="mt-3 text-2xl font-extrabold text-green-800">Del diseño metodológico a los instrumentos validados</h3>
+                        <div class="route">
+                            <div class="route-stop"><div class="route-node">1</div><h4>Paradigmas</h4><p>Bases metodológicas de la investigación educativa.</p></div>
+                            <div class="route-stop"><div class="route-node">2</div><h4>Métodos cualitativos</h4><p>Enfoques para comprender las realidades educativas.</p></div>
+                            <div class="route-stop"><div class="route-node">3</div><h4>Instrumentos y técnicas</h4><p>Del sistema de categorías a los instrumentos de recolección.</p></div>
+                            <div class="route-stop"><div class="route-node">4</div><h4>Diseño y validación</h4><p>Ajuste del árbol de problemas y talleres de construcción colectiva.</p></div>
+                            <div class="route-stop"><div class="route-node">5</div><h4>Matriz de consistencia</h4><p>Pregunta, objetivos, dimensiones e indicadores integrados.</p></div>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <h3 class="text-2xl font-extrabold text-green-800">Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed text-slate-700">Al finalizar esta unidad, el maestrante diferenciará los enfoques de investigación cualitativa orientados a una mayor comprensión de las realidades educativas —en particular de la educación en ciencias— y diseñará y validará instrumentos para la recolección de datos, considerando los elementos ontológicos, epistémicos y metodológicos que orientan el abordaje de sus categorías de estudio.</p>
+                    </div>
+                </section>
+
+                <!-- 2. OBJETIVOS -->
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivo de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Meta de la Unidad 3</h2>
+                        <p class="mt-5 text-slate-700 leading-relaxed text-lg">Diferenciar los enfoques de investigación cualitativa pertinentes para el estudio, y diseñar y validar los instrumentos de recolección de datos, en coherencia con el problema, la pregunta y los objetivos ya construidos.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-code-branch mr-2 ic-accent"></i>Diferenciar</h3><p class="mt-2">Los paradigmas y métodos de investigación cualitativa orientados a la comprensión de las realidades educativas.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-drafting-compass mr-2 ic-info"></i>Diseñar</h3><p class="mt-2">Instrumentos de recolección de datos coherentes con las categorías de estudio del proyecto.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-clipboard-check mr-2 ic-warm"></i>Validar</h3><p class="mt-2">Los instrumentos diseñados mediante juicio de expertos.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-hammer mr-2 ic-plum"></i>Construir</h3><p class="mt-2">La matriz de consistencia que integre la pregunta, los objetivos, las dimensiones y los indicadores del estudio.</p></div>
+                    </div>
+                </section>
+
+                <!-- 3. CONTENIDO -->
+                <section id="contenido" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Del diseño metodológico a los instrumentos</h2>
+                        <p class="mt-4 text-slate-700">A continuación se desarrollan los cinco núcleos temáticos de la unidad. Cada uno incluye una idea clave y un ejemplo aplicado al campo de la didáctica de las ciencias naturales.</p>
+                    </div>
+                    <div class="content-grid mt-6">
+                        <details class="content-card content-card--1">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-compass"></i> Tema 1</span>
+                                    <h3>Paradigmas de investigación cualitativa</h3>
+                                    <p class="content-teaser">Los supuestos ontológicos, epistémicos y metodológicos que orientan tu proyecto.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">Un paradigma de investigación es el conjunto de supuestos ontológicos, epistémicos y metodológicos que orientan la manera de comprender la realidad educativa. Reconocer el paradigma en el que se inscribe tu proyecto orienta las decisiones metodológicas posteriores.</p>
+                                <div class="key-note"><strong>Clave:</strong> el paradigma no se elige al final por conveniencia; debe ser coherente con la naturaleza del problema y la pregunta de investigación planteados desde la Unidad 1.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> un estudio interesado en comprender los significados que los estudiantes construyen sobre la biodiversidad se inscribe en un paradigma interpretativo, más que en uno orientado a medir y generalizar resultados.</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--2">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-diagram-project"></i> Tema 2</span>
+                                    <h3>Métodos de investigación cualitativa</h3>
+                                    <p class="content-teaser">Estudio de caso, investigación-acción, etnografía educativa: rutas distintas para tu pregunta.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">Los métodos cualitativos (estudio de caso, investigación-acción, etnografía educativa, entre otros) ofrecen rutas distintas para comprender las realidades educativas y de la educación en ciencias. La elección del método debe responder directamente a la pregunta de investigación.</p>
+                                <div class="key-note"><strong>Clave:</strong> cada método tiene fortalezas distintas: la investigación-acción es pertinente cuando se busca transformar una práctica; el estudio de caso, cuando se busca comprender en profundidad una situación particular.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> si la pregunta busca transformar las estrategias didácticas de un docente respecto a la biodiversidad, la investigación-acción educativa resulta un método coherente.</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--3">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-clipboard-list"></i> Tema 3</span>
+                                    <h3>Instrumentos y técnicas de recolección de información</h3>
+                                    <p class="content-teaser">De las categorías de estudio a las técnicas (entrevista, observación, grupo focal...).</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">A partir del sistema de categorías del estudio se seleccionan las técnicas (entrevista, observación, grupo focal, análisis documental) y se diseñan los instrumentos correspondientes (guion de entrevista, formato de observación, entre otros), asegurando que cada categoría tenga una forma clara de ser indagada en el campo.</p>
+                                <div class="key-note"><strong>Clave:</strong> un instrumento se construye a partir de las categorías y subcategorías del estudio, no al revés; el instrumento traduce la teoría en preguntas o criterios observables.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> para indagar la categoría "estrategias didácticas contextualizadas", un guion de entrevista a docentes podría incluir preguntas sobre los recursos que usan para enseñar biodiversidad en su contexto rural.</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--4">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-check-double"></i> Tema 4</span>
+                                    <h3>Diseño y validación de instrumentos</h3>
+                                    <p class="content-teaser">Juicio de expertos y ajuste del árbol de problemas de la Unidad 1.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">Todo instrumento diseñado debe pasar por un proceso de validación, típicamente mediante juicio de expertos: profesionales o pares con experiencia en el campo revisan el instrumento y lo evalúan según criterios como claridad, pertinencia y coherencia con las categorías de estudio. En esta unidad también se retoma y ajusta el árbol de problemas construido en la Unidad 1, a la luz de los avances metodológicos, y se realizan talleres de construcción colectiva para fortalecer la validez de los instrumentos.</p>
+                                <div class="key-note"><strong>Clave:</strong> la validación por juicio de expertos no es un trámite formal: sus observaciones deben traducirse en ajustes reales al instrumento antes de aplicarlo.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> un guion de entrevista revisado por tres expertos puede requerir reformular una pregunta ambigua sobre "prácticas pedagógicas" para hacerla más específica y comprensible para los docentes entrevistados.</p>
+                            </div>
+                        </details>
+                        <details class="content-card content-card--5">
+                            <summary>
+                                <div class="content-summary-main">
+                                    <span class="content-code"><i class="fa-solid fa-table-cells"></i> Tema 5</span>
+                                    <h3>Matriz de consistencia</h3>
+                                    <p class="content-teaser">Pregunta, objetivos, dimensiones e indicadores, alineados en un solo esquema.</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-down content-chevron"></i>
+                            </summary>
+                            <div class="content-body">
+                                <p class="leading-relaxed">La matriz de consistencia integra en un solo esquema la pregunta de investigación, los objetivos, las categorías o dimensiones y los indicadores del estudio, permitiendo verificar que exista una alineación lógica y total entre todos los elementos del proyecto.</p>
+                                <div class="key-note"><strong>Clave:</strong> la matriz de consistencia es la herramienta que evidencia si tu propuesta está verdaderamente alineada, o si hay objetivos o instrumentos que no responden a la pregunta planteada.</div>
+                                <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo:</strong> en la matriz, la categoría "comprensión del concepto de biodiversidad" debe tener un indicador medible u observable (por ejemplo, "identifica ejemplos de biodiversidad en su entorno") y debe conectarse directamente con uno de los objetivos específicos.</p>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- 4. ACTIVIDAD INTERACTIVA -->
+                <section id="actividad" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Actividades de la Unidad 3</h2>
+                        <p class="mt-4 text-slate-700 leading-relaxed">Los espacios académicos de esta unidad son dialógicos, interpretativos y argumentativos: además de conocer los avances de cada proceso investigativo, se valoran los lenguajes y comprensiones propios de la didáctica, de las categorías de estudio y de los procesos metodológicos — en este caso, el diseño y la validación de instrumentos.</p>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <button type="button" class="activity-subnav-btn btn-main" data-activity-section="activity-instrumentos">1. Ajuste del árbol y diseño de instrumentos</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="activity-rubrica">2. Rúbrica</button>
+                    </div>
+
+                    <div id="activity-instrumentos" class="activity-section activity-ledger mt-4" data-export-scope="instrumentos" data-export-title="Ajuste del árbol de problemas y diseño de instrumentos — Unidad 3">
+                        <div class="ledger-heading">
+                            <div class="ledger-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                            <div>
+                                <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividad</p>
+                                <h3 class="mt-2 text-2xl font-extrabold text-green-800">Ajuste del árbol de problemas y diseño de instrumentos</h3>
+                            </div>
+                        </div>
+                        <div class="purpose-note"><strong>Propósito:</strong> Revisar y ajustar el árbol de problemas de la Unidad 1 a la luz de tus avances, y diseñar un instrumento de recolección de datos con su matriz de consistencia y su tabla de validación por juicio de expertos.</div>
+
+                        <div class="field-panel">
+                            <div class="activity-steps">
+                                <div class="activity-step active" data-step="1">
+                                    <p class="field-title" style="margin-top:0;">Paso 1 — Ajuste del árbol de problemas</p>
+
+                                    <label class="field-title" for="problema-ajustado">Problema central (versión ajustada, si aplica)</label>
+                                    <textarea id="problema-ajustado" data-track maxlength="300" class="mt-2 w-full min-h-[90px] p-4 border rounded-xl bg-white resize-none" placeholder="Si tu problema cambió desde la Unidad 1, escribe aquí su versión ajustada..."></textarea>
+                                    <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="problema-ajustado">0/300</span>
+
+                                    <label class="field-title" for="cambios-justificacion">Cambios realizados y su justificación</label>
+                                    <p class="field-hint">Respecto a la versión inicial de la Unidad 1.</p>
+                                    <textarea id="cambios-justificacion" data-track maxlength="350" class="mt-2 w-full min-h-[100px] p-4 border rounded-xl bg-white resize-none"></textarea>
+                                    <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="cambios-justificacion">0/350</span>
+
+                                    <label class="field-title" for="coherencia-verificada">Coherencia verificada</label>
+                                    <p class="field-hint">Entre el problema, la pregunta, los objetivos y la metodología propuesta.</p>
+                                    <textarea id="coherencia-verificada" data-track maxlength="350" class="mt-2 w-full min-h-[100px] p-4 border rounded-xl bg-white resize-none"></textarea>
+                                    <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="coherencia-verificada">0/350</span>
+                                </div>
+                                <div class="activity-step" data-step="2">
+                                    <p class="field-title" style="margin-top:0;">Paso 2 — Taller de diseño y validación de instrumentos</p>
+
+                                    <label class="field-title" for="tecnica-recoleccion">Técnica de recolección seleccionada</label>
+                                    <p class="field-hint">Elige la técnica principal de tu instrumento.</p>
+                                    <div class="choice-cards" data-choice-for="tecnica-recoleccion">
+                                        <button type="button" class="choice-card" data-choice-value="Entrevista semiestructurada"><i class="fa-solid fa-comments choice-icon"></i><span>Entrevista</span><i class="fa-solid fa-circle-check choice-check"></i></button>
+                                        <button type="button" class="choice-card" data-choice-value="Observación (participante o no participante)"><i class="fa-solid fa-eye choice-icon"></i><span>Observación</span><i class="fa-solid fa-circle-check choice-check"></i></button>
+                                        <button type="button" class="choice-card" data-choice-value="Grupo focal"><i class="fa-solid fa-people-group choice-icon"></i><span>Grupo focal</span><i class="fa-solid fa-circle-check choice-check"></i></button>
+                                        <button type="button" class="choice-card" data-choice-value="Análisis documental"><i class="fa-solid fa-file-lines choice-icon"></i><span>Análisis documental</span><i class="fa-solid fa-circle-check choice-check"></i></button>
+                                        <button type="button" class="choice-card" data-choice-value="Otra"><i class="fa-solid fa-ellipsis choice-icon"></i><span>Otra</span><i class="fa-solid fa-circle-check choice-check"></i></button>
+                                    </div>
+                                    <select id="tecnica-recoleccion" data-track class="choice-select-native">
+                                        <option value=""></option>
+                                        <option value="Entrevista semiestructurada">Entrevista semiestructurada</option>
+                                        <option value="Observación (participante o no participante)">Observación (participante o no participante)</option>
+                                        <option value="Grupo focal">Grupo focal</option>
+                                        <option value="Análisis documental">Análisis documental</option>
+                                        <option value="Otra">Otra</option>
+                                    </select>
+
+                                    <label class="field-title" for="borrador-instrumento">Borrador del instrumento</label>
+                                    <p class="field-hint">Preguntas o criterios de observación. Si elegiste "Otra" técnica arriba, descríbela aquí.</p>
+                                    <textarea id="borrador-instrumento" data-track maxlength="500" class="mt-2 w-full min-h-[130px] p-4 border rounded-xl bg-white resize-none"></textarea>
+                                    <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="borrador-instrumento">0/500</span>
+
+                                    <label class="field-title" for="matriz-consistencia">Matriz de consistencia</label>
+                                    <p class="field-hint">Agrega una fila por cada pregunta/objetivo/categoría/indicador de tu instrumento.</p>
+                                    <div class="row-list" data-row-for="matriz-consistencia" data-row-cols="Pregunta,Objetivo,Categoría,Indicador" data-row-max="6">
+                                        <div class="row-list-inputs">
+                                            <input type="text" class="row-list-col" maxlength="120" placeholder="Pregunta">
+                                            <input type="text" class="row-list-col" maxlength="120" placeholder="Objetivo">
+                                            <input type="text" class="row-list-col" maxlength="80" placeholder="Categoría">
+                                            <input type="text" class="row-list-col" maxlength="80" placeholder="Indicador">
+                                            <button type="button" class="row-list-add btn-soft"><i class="fa-solid fa-plus"></i> Agregar fila</button>
+                                        </div>
+                                        <div class="row-list-table-wrap hidden">
+                                            <table class="row-list-table">
+                                                <thead><tr><th>Pregunta</th><th>Objetivo</th><th>Categoría</th><th>Indicador</th><th></th></tr></thead>
+                                                <tbody class="row-list-body"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <textarea id="matriz-consistencia" data-track class="row-list-native"></textarea>
+
+                                    <p class="field-title">Tabla de validación — nombre de los tres expertos</p>
+                                    <p class="field-hint">Nombre y área de cada experto que revisó el instrumento.</p>
+                                    <div class="mt-3 grid md:grid-cols-3 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-600" for="experto-1">Experto 1</label>
+                                            <input type="text" id="experto-1" data-track maxlength="80" class="mt-2 w-full p-3 border rounded-xl bg-white" placeholder="Nombre y área del experto 1">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-600" for="experto-2">Experto 2</label>
+                                            <input type="text" id="experto-2" data-track maxlength="80" class="mt-2 w-full p-3 border rounded-xl bg-white" placeholder="Nombre y área del experto 2">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-semibold text-slate-600" for="experto-3">Experto 3</label>
+                                            <input type="text" id="experto-3" data-track maxlength="80" class="mt-2 w-full p-3 border rounded-xl bg-white" placeholder="Nombre y área del experto 3">
+                                        </div>
+                                    </div>
+
+                                    <label class="field-title" for="criterios-validacion">Criterios de evaluación aplicados</label>
+                                    <p class="field-hint">Marca los criterios con los que los expertos revisaron el instrumento.</p>
+                                    <div class="chip-multi" data-choice-for="criterios-validacion">
+                                        <button type="button" class="chip-toggle" data-chip-value="Claridad"><i class="fa-solid fa-eye"></i> Claridad</button>
+                                        <button type="button" class="chip-toggle" data-chip-value="Pertinencia"><i class="fa-solid fa-bullseye"></i> Pertinencia</button>
+                                        <button type="button" class="chip-toggle" data-chip-value="Coherencia"><i class="fa-solid fa-link"></i> Coherencia</button>
+                                    </div>
+                                    <input type="hidden" id="criterios-validacion" data-track class="chip-multi-native">
+
+                                    <label class="field-title" for="ajustes-instrumento">Ajustes realizados al instrumento</label>
+                                    <p class="field-hint">A partir de la validación por juicio de expertos.</p>
+                                    <textarea id="ajustes-instrumento" data-track maxlength="350" class="mt-2 w-full min-h-[100px] p-4 border rounded-xl bg-white resize-none"></textarea>
+                                    <span class="mt-1 block text-sm font-semibold text-slate-500" data-counter-for="ajustes-instrumento">0/350</span>
+                                </div>
+                                <div class="step-nav">
+                                    <button type="button" class="btn-soft step-prev-btn"><i class="fa-solid fa-arrow-left"></i> Anterior</button>
+                                    <span class="step-indicator">Paso 1 de 2</span>
+                                    <button type="button" class="btn-main step-next-btn">Siguiente <i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 flex justify-between items-center gap-3 flex-wrap">
+                                <span class="local-save-status" data-status-for="instrumentos"></span>
+                                <div class="flex gap-2 flex-wrap">
+                                    <button type="button" class="btn-danger-soft local-clear-btn" data-clear-scope="instrumentos"><i class="fa-solid fa-eraser"></i> Limpiar</button>
+                                    <button type="button" class="btn-soft local-save-btn" data-status-target="instrumentos"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                                    <div class="export-menu-wrap">
+                                        <button type="button" class="btn-soft export-toggle" data-export-scope="instrumentos"><i class="fa-solid fa-file-export"></i>Exportar</button>
+                                        <div class="export-menu hidden">
+                                            <button type="button" class="export-option" data-export-format="word" data-export-scope="instrumentos"><i class="fa-solid fa-file-word"></i> Word</button>
+                                            <button type="button" class="export-option" data-export-format="pdf" data-export-scope="instrumentos"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-5 text-sm text-slate-600 leading-relaxed">Este ejercicio corresponde al trabajo independiente de la unidad: crea el borrador de tu instrumento y construye la tabla de validación para que sea evaluado por expertos, complementado con talleres de construcción colectiva en los que se socializan los avances.</p>
+                    </div>
+
+                    <div id="activity-rubrica" class="activity-section hidden mt-4">
+                        <div class="content-grid">
+                            <details class="content-card content-card--rubrica">
+                                <summary>
+                                    <div class="content-summary-main">
+                                        <span class="content-code"><i class="fa-solid fa-table-list"></i> Rúbrica</span>
+                                        <h3>Rúbrica de evaluación de esta unidad</h3>
+                                        <p class="content-teaser">Así se evalúa la coherencia y el detalle de tu diseño metodológico — revísala antes de entregar.</p>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down content-chevron"></i>
+                                </summary>
+                                <div class="content-body">
+                                    <p class="text-sm text-slate-600">Tomada de "Rúbricas para evaluar el estado de las propuestas" (criterios de metodología). Escala de 2 a 5, donde 5 es el nivel más alto.</p>
+                                    <div class="mt-4 rubric-table-wrap">
+                                        <table class="rubric-table">
+                                            <thead>
+                                                <tr><th>Criterio</th><th>Excelente (5)</th><th>Bueno (4)</th><th>Satisfactorio (3)</th><th>Deficiente (2)</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Coherencia metodológica con problema y objetivos</td><td>La metodología es claramente coherente y está bien alineada con el problema y los objetivos planteados en el estudio.</td><td>La metodología es adecuada y mayormente coherente con el problema y los objetivos, con algunas pequeñas inconsistencias.</td><td>La metodología es vaga o presenta inconsistencias en la relación con el problema y los objetivos.</td><td>La metodología está desconectada o no guarda coherencia con el problema y los objetivos del estudio.</td></tr>
+                                                <tr><td>Detalle y claridad del enfoque, tipo, fases, técnicas, instrumentos, población, muestra y ética</td><td>Describe detalladamente el paradigma, el enfoque y método y lo soporta de manera teórica y contextualmente.</td><td>Describe, aunque falta profundidad o claridad en el paradigma, el enfoque y el método.</td><td>Describe de forma básica o incompleta algunos elementos clave del paradigma, el enfoque y el método.</td><td>No presenta o presenta muy pobremente el paradigma, el enfoque y el método.</td></tr>
+                                                <tr><td>Uso de referentes teóricos para sustentar la metodología</td><td>Fundamenta la metodología con referentes teóricos relevantes y actualizados que apoyan claramente las elecciones metodológicas.</td><td>Utiliza referentes teóricos para sustentar la metodología, aunque con limitaciones en profundidad o actualidad.</td><td>Hace referencia superficial a teorías o utiliza fuentes que no sustentan bien la metodología.</td><td>No se usan referentes teóricos para sustentar la metodología o son irrelevantes.</td></tr>
+                                                <tr><td>Detalle y claridad de las fases, técnicas e instrumentos, población y muestra</td><td>Describe detalladamente las fases, técnicas e instrumentos (recolección y análisis), población, muestra y aspectos éticos, con claridad y precisión.</td><td>Describe, aunque falta profundidad o claridad en las fases, técnicas e instrumentos (recolección y análisis).</td><td>Hace referencia superficial a las fases, técnicas e instrumentos (recolección y análisis).</td><td>No presenta o presenta muy pobremente las fases, técnicas e instrumentos (recolección y análisis).</td></tr>
+                                                <tr><td>Medidas éticas</td><td>Describe detalladamente las consideraciones éticas que fundamentan la investigación.</td><td>Describe las consideraciones éticas que fundamentan la investigación.</td><td>Explicita las consideraciones éticas que fundamentan la investigación.</td><td>Falta explicitar las consideraciones éticas que fundamentan la investigación.</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. AUTOEVALUACIÓN -->
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Cuestionario de la Unidad 3</h2><p class="mt-4 text-slate-700">Responde las siguientes 10 preguntas para verificar tu comprensión de los contenidos de la unidad. Las preguntas están alineadas con los criterios de evaluación de la Unidad 3 y con los criterios transversales de la rúbrica del curso. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p></div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4"><h3 id="quiz-title" class="text-xl font-extrabold text-green-800">Pregunta 1</h3><span id="quiz-progress" class="text-sm font-bold text-slate-500">1/10</span></div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold text-slate-700"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3"><button id="quiz-prev" type="button" class="btn-soft">Anterior</button><button id="quiz-next" type="button" class="btn-main">Siguiente</button></div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl bg-green-50 border border-green-200">
+                            <h3 class="text-xl font-extrabold text-green-800">Autoevaluación completada</h3>
+                            <p class="mt-2 text-green-800 font-semibold">Puntaje: <span id="quiz-score">0</span>/10</p>
+                            <p id="quiz-feedback" class="mt-2 text-green-800"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                    <script type="application/json" id="quiz-data">
+                    [
+                        { "question": "¿Qué es un paradigma de investigación?", "options": ["Un sinónimo de técnica de recolección de datos.", "El cronograma de actividades del proyecto.", "El conjunto de supuestos ontológicos, epistémicos y metodológicos que orientan la comprensión de la realidad educativa.", "Un tipo de bibliografía citada en el marco teórico."], "correct": 2 },
+                        { "question": "¿Qué criterio debe guiar la elección del método de investigación cualitativa?", "options": ["El método usado por otro compañero del curso.", "La coherencia con la pregunta de investigación y la naturaleza del problema planteado.", "La preferencia personal del maestrante, sin relación con el problema.", "El método más corto de aplicar."], "correct": 1 },
+                        { "question": "¿Por qué un instrumento de recolección debe construirse a partir del sistema de categorías del estudio?", "options": ["Porque simplifica la redacción de la justificación.", "Porque reemplaza la necesidad de la pregunta de investigación.", "Porque las categorías no tienen relación con los instrumentos.", "Porque así se garantiza que cada categoría tenga una forma clara de ser indagada en el campo."], "correct": 3 },
+                        { "question": "¿Cuál es el propósito de la validación de instrumentos por juicio de expertos?", "options": ["Sustituir la necesidad de aplicar el instrumento.", "Evaluar la claridad, pertinencia y coherencia del instrumento antes de aplicarlo en campo.", "Reemplazar el marco teórico del proyecto.", "Aumentar la extensión del documento final."], "correct": 1 },
+                        { "question": "¿Qué elementos integra la matriz de consistencia?", "options": ["Únicamente el cronograma de actividades.", "Solo los datos personales del investigador.", "La pregunta de investigación, los objetivos, las categorías o dimensiones y los indicadores del estudio.", "Solo la bibliografía citada."], "correct": 2 },
+                        { "question": "Un maestrante diseña un instrumento sin relacionarlo con las categorías de su estudio. Esto afecta principalmente:", "options": ["El formato de citación bibliográfica.", "Solo la ortografía del documento.", "El número de páginas del proyecto.", "La estructuración de los instrumentos y la consolidación de la matriz de consistencia."], "correct": 3 },
+                        { "question": "¿Por qué es pertinente ajustar el árbol de problemas en esta unidad?", "options": ["Porque el árbol de problemas ya no es necesario en el proyecto.", "Porque los avances en el marco referencial y la definición metodológica pueden requerir precisar o afinar el problema inicial.", "Porque debe eliminarse toda relación con la Unidad 1.", "Porque reemplaza la necesidad de diseñar instrumentos."], "correct": 1 },
+                        { "question": "La postura crítica y reflexiva del maestrante (criterio transversal de la rúbrica) se evidencia en esta unidad principalmente cuando:", "options": ["Aplica el instrumento sin ninguna validación previa.", "Copia un instrumento ya publicado sin adaptarlo a su estudio.", "Incorpora y argumenta los ajustes sugeridos por el juicio de expertos en sus instrumentos.", "Ignora las observaciones de los expertos que validaron el instrumento."], "correct": 2 },
+                        { "question": "¿Qué evidencia la alineación total y lógica que se espera en la propuesta final de esta unidad?", "options": ["Que el documento tenga el mayor número posible de páginas.", "Que se citen todos los autores posibles en el marco teórico.", "Que el instrumento se aplique antes de ser validado.", "Que el problema, la pregunta, los objetivos y la metodología propuesta respondan de manera coherente entre sí."], "correct": 3 },
+                        { "question": "¿Cuál es el producto esperado al finalizar la Unidad 3, según las evidencias del plan de curso?", "options": ["Un árbol de problemas sin ningún ajuste desde la Unidad 1.", "Una propuesta de investigación finalizada, con diseño metodológico adecuado e instrumentos de recolección validados.", "Un estado del arte con revisión sistemática PRISMA.", "Un documento centrado exclusivamente en la justificación del estudio."], "correct": 1 }
+                    ]
+                    </script>
+                </section>
+
+                <!-- 6. RECURSOS (máximo 4) -->
+                <section id="recursos" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Materiales de apoyo</h2></div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-database mr-2 text-green-700"></i>Biblioteca Universidad de Córdoba</h3><p class="mt-2 text-slate-700">Bases de datos para consultar literatura sobre paradigmas y métodos de investigación cualitativa.</p><div class="mt-4"><a class="btn-main" href="https://biblioteca.unicordoba.edu.co/bases-de-datos/" target="_blank" rel="noopener">Abrir bases de datos</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://biblioteca.unicordoba.edu.co/bases-de-datos/" alt="Código QR — Biblioteca Universidad de Córdoba" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-video mr-2 text-green-700"></i>Cómo hacer el instrumento de validación de expertos</h3><p class="mt-2 text-slate-700">Tutorial audiovisual que ejemplifica la construcción del instrumento y la tabla de validación por juicio de expertos.</p><div class="mt-4"><a class="btn-main" href="https://www.youtube.com/watch?v=vXUWGk2rXlw" target="_blank" rel="noopener">Ver video</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.youtube.com/watch?v=vXUWGk2rXlw" alt="Código QR — video validación de instrumentos" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-book mr-2 text-green-700"></i>Scielo</h3><p class="mt-2 text-slate-700">Biblioteca científica electrónica útil para consultar estudios cualitativos aplicados a la educación en ciencias.</p><div class="mt-4"><a class="btn-main" href="https://www.scielo.org/es/" target="_blank" rel="noopener">Abrir Scielo</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.scielo.org/es/" alt="Código QR — Scielo" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500">Nota: los talleres de construcción colectiva y el formato de validación serán compartidos directamente por la docente en clase.</p>
+                </section>
+
+                <!-- 7. BIBLIOGRAFÍA -->
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card"><p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p><h2 class="mt-4 text-3xl font-extrabold text-green-800">Referencias orientadoras</h2></div>
+                    <div class="mt-6 space-y-4">
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Restrepo-Gómez, B. (2004). <em>La investigación-acción educativa y la construcción del saber pedagógico</em>. Educación y Educadores, 7, 45-55.</p><a class="ref-link mt-2" href="https://www.redalyc.org/articulo.oa?id=83400706" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.redalyc.org/articulo.oa?id=83400706" alt="Código QR — Restrepo-Gómez, La investigación-acción educativa" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Herr, K., &amp; Anderson, G. L. (2015). <em>The Action Research Dissertation. A Guide for Students and Faculty</em> (2.ª ed.). Thousand Oaks, California: Sage Publications.</p><a class="ref-link mt-2" href="https://www.sagepub.com/shop/buy-a-book/the-action-research-dissertation-2-239688" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.sagepub.com/shop/buy-a-book/the-action-research-dissertation-2-239688" alt="Código QR — Herr y Anderson, The Action Research Dissertation" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Ñaupas, H., Mejía, E., Novoa, E., &amp; Villagómez, A. (2014). <em>Metodología de la investigación. Cuantitativa-cualitativa y redacción de tesis</em>. Bogotá: Ediciones U.</p><a class="ref-link mt-2" href="https://books.google.com/books/about/Metodolog%C3%ADa_de_la_investigaci%C3%B3n_cuanti.html?id=VzOjDwAAQBAJ" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square mr-1"></i>Ver publicación</a></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://books.google.com/books/about/Metodolog%C3%ADa_de_la_investigaci%C3%B3n_cuanti.html%3Fid%3DVzOjDwAAQBAJ" alt="Código QR — Ñaupas et al., Metodología de la investigación" width="150" height="150" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
