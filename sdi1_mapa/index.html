@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mapa del curso — Seminario Proyecto de Investigación I</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  #ova-embed {
+    --bg: #f4f9f2;
+    --surface: #ffffff;
+    --surface-soft: #eef5ec;
+    --text: #374151;
+    --muted: #6b7280;
+    --heading: #14532d;
+    --accent: #5b9c46;
+    --accent-deep: #1b5e20;
+    --warm: #d9822e;
+    --warm-deep: #a85f1c;
+    --warm-soft: #faead2;
+    --info: #1d6fa5;
+    --info-soft: #e3eef7;
+    --teal: #0e7c86;
+    --teal-soft: #dff1f2;
+    --plum: #9c3f6b;
+    --plum-soft: #f6e6ee;
+    --line: #dfe7db;
+    --shadow-soft: 0 10px 26px rgba(20, 83, 45, 0.08);
+    --radius-xl: 20px;
+    --radius-lg: 14px;
+    --radius-md: 10px;
+
+    font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+  }
+
+  #ova-embed * { box-sizing: border-box; }
+
+  #ova-embed .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 22px 16px 40px;
+  }
+
+  #ova-embed .eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  /* Hero */
+  #ova-embed .hero {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    padding: 28px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #ova-embed .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(420px 220px at 8% -10%, rgba(217,130,46,0.12), transparent 60%),
+      radial-gradient(420px 260px at 100% 120%, rgba(91,156,70,0.14), transparent 60%);
+    pointer-events: none;
+  }
+
+  #ova-embed .hero-inner { position: relative; }
+
+  #ova-embed .hero h1 {
+    margin: 0;
+    color: var(--heading);
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    font-weight: 800;
+    line-height: 1.22;
+  }
+
+  #ova-embed .hero .sub {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  #ova-embed .hero p.lead {
+    margin: 16px 0 0;
+    max-width: 62ch;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  /* Section headers */
+  #ova-embed section.block { margin-top: 26px; }
+
+  #ova-embed .block-head { margin-bottom: 14px; }
+
+  #ova-embed .block-head h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--heading);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #ova-embed .block-head h2 i { color: var(--warm); font-size: 1rem; }
+
+  #ova-embed .block-head p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 13.5px;
+  }
+
+  /* Ruta del curso */
+  #ova-embed .route-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    padding: 20px 16px;
+  }
+
+  #ova-embed .route {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding: 6px 4px 10px;
+    scrollbar-width: thin;
+  }
+
+  #ova-embed .route-stop {
+    flex: 0 0 auto;
+    width: 178px;
+    min-height: 168px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 14px 14px 16px;
+  }
+
+  #ova-embed .route-stop .stop-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 9999px;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  }
+
+  #ova-embed .route-stop .stop-title {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--heading);
+    line-height: 1.3;
+    min-height: 2.6em;
+  }
+
+  #ova-embed .route-stop .stop-text {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-top: auto;
+  }
+
+  #ova-embed a.route-stop:hover {
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(20, 83, 45, 0.1);
+  }
+
+  #ova-embed .route-arrow {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--line);
+    font-size: 16px;
+  }
+
+  /* Tarjetas de acceso */
+  #ova-embed .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  @media (min-width: 760px) {
+    #ova-embed .card-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 1000px) {
+    #ova-embed .card-grid { grid-template-columns: 1fr 1fr 1fr; }
+    #ova-embed .card-grid .card-wide-row { grid-column: span 3; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 680px; margin: 0 auto; }
+  }
+
+  #ova-embed .access-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--accent);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #ova-embed .access-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+  }
+
+  #ova-embed .access-card .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  #ova-embed .access-card .icon-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  #ova-embed .access-card h3 {
+    margin: 2px 0 0;
+    font-size: 15.5px;
+    color: var(--heading);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  #ova-embed .access-card p.desc {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  #ova-embed .access-card .card-foot {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 6px;
+  }
+
+  #ova-embed .access-card .go-label {
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  #ova-embed .status-pill {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 9px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  #ova-embed .status-pill.is-pending { background: #eef2ef; color: var(--muted); }
+  #ova-embed .status-pill.is-progress { background: var(--surface-soft); color: var(--accent-deep); }
+
+  /* Colores por tarjeta */
+  #ova-embed .c-accent { border-left-color: var(--accent); }
+  #ova-embed .c-accent .icon-badge { background: var(--accent); }
+  #ova-embed .c-accent .go-label { color: var(--accent-deep); }
+
+  #ova-embed .c-info { border-left-color: var(--info); }
+  #ova-embed .c-info .icon-badge { background: var(--info); }
+  #ova-embed .c-info .go-label { color: var(--info); }
+
+  #ova-embed .c-warm { border-left-color: var(--warm); }
+  #ova-embed .c-warm .icon-badge { background: var(--warm); }
+  #ova-embed .c-warm .go-label { color: var(--warm-deep); }
+
+  #ova-embed .c-teal { border-left-color: var(--teal); }
+  #ova-embed .c-teal .icon-badge { background: var(--teal); }
+  #ova-embed .c-teal .go-label { color: var(--teal); }
+
+  #ova-embed .c-plum { border-left-color: var(--plum); }
+  #ova-embed .c-plum .icon-badge { background: var(--plum); }
+  #ova-embed .c-plum .go-label { color: var(--plum); }
+
+  /* stop numbers reusing same palette */
+  #ova-embed .stop-1 .stop-num { background: var(--accent); }
+  #ova-embed .stop-2 .stop-num { background: var(--info); }
+  #ova-embed .stop-3 .stop-num { background: var(--warm); }
+  #ova-embed .stop-4 .stop-num { background: var(--plum); }
+
+  #ova-embed .footer {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  #ova-embed .footer strong { color: var(--heading); }
+</style>
+</head>
+<body>
+<div id="ova-embed">
+  <div class="wrap">
+
+    <section class="hero" aria-label="Presentación del curso">
+      <div class="hero-inner">
+        <p class="eyebrow">Mapa del curso · Maestría en Didáctica de las Ciencias Naturales</p>
+        <h1>Seminario Proyecto de Investigación I</h1>
+        <p class="sub">Del vacío al problema, del problema al marco referencial, del marco referencial a la ruta metodológica.</p>
+        <p class="lead">Esta es la puerta de entrada al curso: desde aquí accedes a las tres unidades, a la rúbrica de evaluación de tu propuesta y a las referencias bibliográficas de apoyo. Cada unidad guarda tu avance automáticamente en tu propio navegador — puedes retomar donde quedaste sin perder lo escrito.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-label="Ruta del curso">
+      <div class="block-head">
+        <h2><i class="fa-solid fa-compass"></i> Ruta de tu propuesta de investigación</h2>
+        <p>El curso avanza en el mismo orden en que se construye una propuesta.</p>
+      </div>
+      <div class="route-card">
+        <div class="route">
+          <a class="route-stop stop-1" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_u1/index.html">
+            <div class="stop-num">1</div>
+            <div class="stop-title">Problema</div>
+            <div class="stop-text">Delimitación y justificación (U1).</div>
+          </a>
+          <div class="route-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <a class="route-stop stop-2" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_u2/index.html">
+            <div class="stop-num">2</div>
+            <div class="stop-title">Marco referencial</div>
+            <div class="stop-text">Antecedentes y marco teórico (U2).</div>
+          </a>
+          <div class="route-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <a class="route-stop stop-3" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_u3/index.html">
+            <div class="stop-num">3</div>
+            <div class="stop-title">Diseño metodológico</div>
+            <div class="stop-text">Método e instrumentos (U3).</div>
+          </a>
+          <div class="route-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <a class="route-stop stop-4" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_rubrica/index.html">
+            <div class="stop-num">4</div>
+            <div class="stop-title">Propuesta formulada</div>
+            <div class="stop-text">Revísala contra la rúbrica.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-label="Acceso a las unidades, rúbrica y referencias">
+      <div class="block-head">
+        <h2><i class="fa-solid fa-grip"></i> Accede al contenido del curso</h2>
+        <p>Las tres unidades, la rúbrica de evaluación y las referencias de apoyo.</p>
+      </div>
+      <div class="card-grid">
+
+        <a class="access-card c-accent" data-unit="u1" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_u1/index.html">
+          <div class="card-top">
+            <div class="icon-badge"><i class="fa-solid fa-compass"></i></div>
+            <span class="status-pill is-pending" data-status="u1">Sin iniciar</span>
+          </div>
+          <h3>Unidad 1 — Construcción y delimitación del objeto de estudio</h3>
+          <p class="desc">Árbol de problemas, pregunta de investigación, justificación y objetivos.</p>
+          <div class="card-foot"><span class="go-label">Abrir unidad <i class="fa-solid fa-arrow-right"></i></span></div>
+        </a>
+
+        <a class="access-card c-info" data-unit="u2" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_u2/index.html">
+          <div class="card-top">
+            <div class="icon-badge"><i class="fa-solid fa-layer-group"></i></div>
+            <span class="status-pill is-pending" data-status="u2">Sin iniciar</span>
+          </div>
+          <h3>Unidad 2 — Referentes teóricos y contextuales de la investigación</h3>
+          <p class="desc">Antecedentes, marco teórico y apoyo conceptual de PRISMA.</p>
+          <div class="card-foot"><span class="go-label">Abrir unidad <i class="fa-solid fa-arrow-right"></i></span></div>
+        </a>
+
+        <a class="access-card c-warm" data-unit="u3" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_u3/index.html">
+          <div class="card-top">
+            <div class="icon-badge"><i class="fa-solid fa-diagram-project"></i></div>
+            <span class="status-pill is-pending" data-status="u3">Sin iniciar</span>
+          </div>
+          <h3>Unidad 3 — Rutas metodológicas y validación de instrumentos</h3>
+          <p class="desc">Paradigmas, método, técnicas e instrumentos de recolección.</p>
+          <div class="card-foot"><span class="go-label">Abrir unidad <i class="fa-solid fa-arrow-right"></i></span></div>
+        </a>
+
+        <div class="card-wide-row">
+          <a class="access-card c-teal" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_rubrica/index.html">
+            <div class="card-top">
+              <div class="icon-badge"><i class="fa-solid fa-clipboard-check"></i></div>
+            </div>
+            <h3>Rúbrica de evaluación</h3>
+            <p class="desc">Los 4 criterios transversales del curso (Plan 088), con sus 4 niveles de desempeño.</p>
+            <div class="card-foot"><span class="go-label">Ver rúbrica <i class="fa-solid fa-arrow-right"></i></span></div>
+          </a>
+
+          <a class="access-card c-plum" href="https://mtrochez.github.io/ova_cintia_unicor/sdi1_ref/index.html">
+            <div class="card-top">
+              <div class="icon-badge"><i class="fa-solid fa-book-open"></i></div>
+            </div>
+            <h3>Referencias bibliográficas</h3>
+            <p class="desc">Lecturas curadas de apoyo, con buscador y filtro por tipo.</p>
+            <div class="card-foot"><span class="go-label">Ver referencias <i class="fa-solid fa-arrow-right"></i></span></div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="footer">
+      <strong>Seminario Proyecto de Investigación I</strong> · Maestría en Didáctica de las Ciencias Naturales · Universidad de Córdoba
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var keys = {
+    u1: 'ova_seminario1_u1_progress',
+    u2: 'ova_seminario1_u2_progress',
+    u3: 'ova_seminario1_u3_progress'
+  };
+
+  function hasProgress(raw) {
+    if (!raw) return false;
+    try {
+      var data = JSON.parse(raw);
+      if (data && typeof data === 'object') {
+        return Object.keys(data).some(function (k) {
+          var v = data[k];
+          if (Array.isArray(v)) return v.length > 0;
+          return v !== undefined && v !== null && String(v).trim().length > 0;
+        });
+      }
+    } catch (e) {
+      return String(raw).trim().length > 0;
+    }
+    return false;
+  }
+
+  try {
+    Object.keys(keys).forEach(function (unit) {
+      var pill = document.querySelector('.status-pill[data-status="' + unit + '"]');
+      if (!pill) return;
+      var raw = window.localStorage.getItem(keys[unit]);
+      if (hasProgress(raw)) {
+        pill.textContent = 'Con avance guardado';
+        pill.classList.remove('is-pending');
+        pill.classList.add('is-progress');
+      }
+    });
+  } catch (e) {
+    /* localStorage no disponible (ej. iframe con restricciones) — se deja el estado por defecto */
+  }
+})();
+</script>
+</body>
+</html>
