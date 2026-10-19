@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia y Epistemología de las Ciencias Naturales - Unidad 1</title>
+    <script>
+        tailwind.config = {
+            important: '#ova-embed',
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="ova-embed">
+    <div class="mobile-header">
+        <div class="flex items-center gap-4">
+            <div class="logo-orb" style="width:82px;height:82px;margin:0;"><img src="img/logo.webp" alt="Logo"></div>
+            <div>
+                <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                <h1 class="text-green-800 font-extrabold text-lg m-0">Historia y Epistemología</h1>
+            </div>
+        </div>
+        <select id="mobile-nav" class="mt-4 w-full rounded-xl border border-slate-300 bg-white p-3 font-semibold text-slate-700">
+            <option value="introduccion">Introducción</option>
+            <option value="objetivos">Objetivos</option>
+            <option value="contenido">Contenido</option>
+            <option value="actividad">Actividades</option>
+            <option value="evaluacion">Autoevaluación</option>
+            <option value="recursos">Recursos</option>
+            <option value="bibliografia">Bibliografía</option>
+        </select>
+    </div>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand-shell">
+                <div class="logo-orb"><img src="img/logo.webp" alt="Logo CINTIA"></div>
+                <div class="brand-copy">
+                    <p class="eyebrow">Maestría en Didáctica de las Ciencias Naturales</p>
+                    <h1>Historia y Epistemología de las Ciencias Naturales</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-target="introduccion"><i class="fa-solid fa-compass"></i> Introducción</a>
+                <a href="#" class="sidebar-link" data-target="objetivos"><i class="fa-solid fa-hourglass-half"></i> Objetivos</a>
+                <a href="#" class="sidebar-link" data-target="contenido"><i class="fa-solid fa-scroll"></i> Contenido</a>
+                <a href="#" class="sidebar-link" data-target="actividad"><i class="fa-solid fa-feather-pointed"></i> Actividades</a>
+                <a href="#" class="sidebar-link" data-target="evaluacion"><i class="fa-solid fa-magnifying-glass-chart"></i> Autoevaluación</a>
+                <a href="#" class="sidebar-link" data-target="recursos"><i class="fa-solid fa-folder-open"></i> Recursos</a>
+                <a href="#" class="sidebar-link" data-target="bibliografia"><i class="fa-solid fa-book-atlas"></i> Bibliografía</a>
+            </nav>
+        </aside>
+
+        <main class="main">
+            <div class="content-stage">
+                <section id="introduccion" class="content-pane active">
+                    <div class="hero">
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-90"><i class="fa-solid fa-compass mr-2"></i>Unidad 1</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mt-3 mb-2">Un recorrido histórico por las visiones de ciencia</h2>
+                        <p class="text-sm sm:text-base font-semibold uppercase tracking-wide opacity-90 mb-4">Empirismo · Falsacionismo · Paradigmas · Programas de Investigación Científica · Modelos y Modelización</p>
+                        <p class="text-lg leading-relaxed opacity-95">Esta unidad se aleja de la ciencia como conjunto de verdades acabadas para comprenderla como un proceso humano, histórico, falible y en constante transformación.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-3 gap-4">
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-magnifying-glass mr-2 text-amber-700"></i>Pregunta central</h3><p class="mt-2 text-slate-700">¿Qué imagen de ciencia proyectamos cuando enseñamos ciencias naturales?</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-scroll mr-2 text-amber-700"></i>Enfoque</h3><p class="mt-2 text-slate-700">Análisis epistemológico de teorías, modelos, rupturas, obstáculos y controversias científicas.</p></div>
+                        <div class="mini-card"><h3 class="text-green-800 font-bold text-lg"><i class="fa-solid fa-stamp mr-2 text-amber-700"></i>Producto esperado</h3><p class="mt-2 text-slate-700">Reconfiguración crítica de la imagen de ciencia en la práctica docente.</p></div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Ruta epistemológica</p>
+                        <h3 class="mt-3 text-2xl font-extrabold text-green-800">Un recorrido histórico por la imagen de ciencia</h3>
+                        <div class="epistemic-route">
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-eye"></i></div>
+                                <h4>Observación</h4>
+                                <p>La ciencia como lectura directa de los fenómenos.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-filter-circle-xmark"></i></div>
+                                <h4>Falsación</h4>
+                                <p>Popper y la crítica a la confirmación absoluta.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-hourglass-half"></i></div>
+                                <h4>Paradigmas</h4>
+                                <p>Kuhn y las revoluciones en la ciencia normal.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-shield-halved"></i></div>
+                                <h4>Programas</h4>
+                                <p>Lakatos: núcleo firme y cinturón protector.</p>
+                            </div>
+                            <div class="route-stop">
+                                <div class="route-node"><i class="fa-solid fa-diagram-project"></i></div>
+                                <h4>Modelización</h4>
+                                <p>La ciencia como construcción de representaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-card mt-6">
+                        <h3 class="text-2xl font-extrabold text-green-800">Propósito formativo</h3>
+                        <p class="mt-4 leading-relaxed text-slate-700">El maestrante cuestionará visiones ingenuas, neutrales o acumulativas de la ciencia, reconociendo que el conocimiento científico está atravesado por controversias, intereses sociales, cambios de paradigma y procesos de modelización.</p>
+                    </div>
+                </section>
+
+                <section id="objetivos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Objetivo de aprendizaje</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Meta de la Unidad 1</h2>
+                        <p class="mt-5 text-slate-700 leading-relaxed text-lg">Evaluar diversas corrientes epistemológicas —empirismo, falsacionismo, paradigmas y programas de investigación— para reconfigurar la imagen de ciencia en la práctica docente y promover nuevas formas de pensar en los educandos.</p>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-book-open-reader mr-2 text-amber-700"></i>Comprender</h3><p class="mt-2">Las diferencias entre observación, teoría, hipótesis, modelo, paradigma y ruptura epistemológica.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-landmark mr-2 text-amber-700"></i>Analizar</h3><p class="mt-2">Episodios históricos como la vida de Charles Darwin, Eddington y Einstein, el descubrimiento del VIH y los agujeros negros: al límite del conocimiento.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-comments mr-2 text-amber-700"></i>Problematizar</h3><p class="mt-2">La idea de ciencia neutral, lineal, acumulativa o desconectada de la cultura.</p></div>
+                        <div class="mini-card"><h3 class="font-bold text-green-800"><i class="fa-solid fa-feather-pointed mr-2 text-amber-700"></i>Diseñar</h3><p class="mt-2">Actividades de aula que humanicen la enseñanza de las ciencias naturales.</p></div>
+                    </div>
+                </section>
+
+                <section id="contenido" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Contenido desarrollado</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Ejes conceptuales</h2>
+                        <p class="mt-4 text-slate-700 leading-relaxed">Cada eje funciona como un expediente para interpretar cómo cambia la imagen de ciencia cuando se estudian sus controversias, rupturas y formas de representación.</p>
+                    </div>
+                    <div class="archive-grid mt-6">
+                        <article class="archive-card">
+                            <div class="archive-meta">
+                                <span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente A</span>
+                                <span class="archive-icon"><i class="fa-solid fa-eye"></i></span>
+                            </div>
+                            <h3>Empirismo y Falsacionismo</h3>
+                            <p class="mt-3 leading-relaxed">El empirismo clásico plantea que la ciencia inicia con observaciones puras. Popper cuestiona esta ilusión y propone que la ciencia avanza intentando refutar hipótesis.</p>
+                            <div class="key-note"><strong>Clave epistemológica:</strong> una teoría es científica si puede ser falsada.</div>
+                            <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo histórico de empirismo:</strong> los estudios de Darwin sobre la evolución a partir de observaciones sistemáticas.</p>
+                            <p class="mt-2 text-sm text-slate-600"><strong>Ejemplo histórico de falsacionismo:</strong> la corroboración de la teoría de la Relatividad de Albert Einstein por Eddington a través de un eclipse.</p>
+                        </article>
+                        <article class="archive-card">
+                            <div class="archive-meta">
+                                <span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente B</span>
+                                <span class="archive-icon"><i class="fa-solid fa-hourglass-half"></i></span>
+                            </div>
+                            <h3>Paradigmas y Revoluciones Científicas</h3>
+                            <p class="mt-3 leading-relaxed">Kuhn comprende la ciencia como una actividad organizada por paradigmas compartidos. Cuando las anomalías se acumulan, el paradigma entra en crisis.</p>
+                            <div class="key-note"><strong>Clave epistemológica:</strong> las revoluciones científicas transforman los marcos desde los cuales se interpreta el mundo.</div>
+                            <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo histórico:</strong> el descubrimiento del VIH por dos comunidades científicas distintas.</p>
+                        </article>
+                        <article class="archive-card">
+                            <div class="archive-meta">
+                                <span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente C</span>
+                                <span class="archive-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                            </div>
+                            <h3>Programas de Investigación</h3>
+                            <p class="mt-3 leading-relaxed">Lakatos plantea que las teorías poseen un núcleo firme protegido por hipótesis auxiliares. Las teorías no se abandonan de manera inmediata ante una anomalía.</p>
+                            <div class="key-note"><strong>Clave epistemológica:</strong> el conocimiento avanza entre defensa, ajuste y transformación de programas teóricos.</div>
+                            <p class="mt-3 text-sm text-slate-600"><strong>Mirada histórica:</strong> las teorías abandonadas también son peldaños necesarios para comprender la evolución del conocimiento.</p>
+                        </article>
+                        <article class="archive-card">
+                            <div class="archive-meta">
+                                <span class="archive-code"><i class="fa-solid fa-folder-open"></i> Expediente D</span>
+                                <span class="archive-icon"><i class="fa-solid fa-diagram-project"></i></span>
+                            </div>
+                            <h3>Modelos, Modelización y Realismo Científico</h3>
+                            <p class="mt-3 leading-relaxed">La ciencia no copia la realidad de manera transparente: construye modelos que representan, simplifican y permiten explicar fenómenos.</p>
+                            <div class="key-note"><strong>Clave epistemológica:</strong> un modelo no es la realidad, sino una representación útil para pensarla.</div>
+                            <p class="mt-3 text-sm text-slate-600"><strong>Ejemplo histórico:</strong> el atomismo de Demócrito como teoría antigua que tardó siglos en adquirir soporte experimental.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="actividad" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Actividades</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Actividades de la Unidad 1</h2>
+                        <p class="mt-4 text-slate-700 leading-relaxed">Las actividades promueven lectura crítica, análisis histórico y transposición didáctica para transformar la imagen de ciencia en el aula.</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2" role="tablist">
+                        <button type="button" class="activity-subnav-btn btn-main" data-activity-section="act-a1">Actividad 1</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="act-a2">Actividad 2</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="act-a3">Actividad 3</button>
+                        <button type="button" class="activity-subnav-btn btn-soft" data-activity-section="act-seg">Seguimiento</button>
+                    </div>
+                    <div id="act-a1" class="activity-section mt-6 space-y-5">
+                        <div class="activity-ledger">
+                            <div class="ledger-heading">
+                                <div class="ledger-icon"><i class="fa-solid fa-comments"></i></div>
+                                <div>
+                                    <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bitácora 1</p>
+                                    <h3 class="mt-2 text-2xl font-extrabold text-green-800">Foro de análisis: El mito del observador neutral</h3>
+                                </div>
+                            </div>
+                            <div class="purpose-note"><strong>Propósito:</strong> Argumentar por qué la visión de Pitágoras sobre los números no era una observación pura, sino una lente epistemológica.</div>
+                            <div class="field-panel">
+                                <label class="block font-bold text-slate-700" for="a1-text">Redacta tu intervención para el foro</label>
+                                <textarea id="a1-text" maxlength="1200" class="mt-3 w-full min-h-[180px] p-4 border rounded-xl bg-white resize-none" placeholder="Explica la relación entre observación, teoría y contexto cultural..."></textarea>
+                                <div class="mt-3 flex justify-between gap-3 flex-wrap">
+                                    <span class="text-sm font-semibold text-slate-500" data-counter-for="a1-text">0/1200</span>
+                                    <div class="flex flex-wrap gap-2">
+                                        <button type="button" class="btn-main" data-copy="a1-text">Copiar texto</button>
+                                        <div class="export-menu-wrap">
+                                            <button type="button" class="btn-soft export-toggle" data-export-scope="a1"><i class="fa-solid fa-file-export mr-2"></i>Exportar</button>
+                                            <div class="export-menu hidden">
+                                                <button type="button" class="export-option" data-export-format="word" data-export-scope="a1"><i class="fa-solid fa-file-word"></i> Word</button>
+                                                <button type="button" class="export-option" data-export-format="pdf" data-export-scope="a1"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="act-a2" class="activity-section hidden mt-6 space-y-5">
+                        <div class="activity-ledger">
+                            <div class="ledger-heading">
+                                <div class="ledger-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <div>
+                                    <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bitácora 2</p>
+                                    <h3 class="mt-2 text-2xl font-extrabold text-green-800">Mapeo de obstáculos epistemológicos</h3>
+                                </div>
+                            </div>
+                            <div class="purpose-note"><strong>Propósito:</strong> Identificar un obstáculo epistemológico en la historia de la física y explicar cómo su superación transformó un paradigma.</div>
+                            <div class="field-panel">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div><label class="block font-bold text-slate-700" for="a2-obstacle">Obstáculo seleccionado</label><input id="a2-obstacle" class="mt-2 w-full p-3 border rounded-xl" placeholder="Ej: horror vacui, calórico, geocentrismo"></div>
+                                    <div><label class="block font-bold text-slate-700" for="a2-author">Episodio o autor relacionado</label><input id="a2-author" class="mt-2 w-full p-3 border rounded-xl" placeholder="Ej: Aristóteles, Galileo, Copérnico"></div>
+                                </div>
+                                <label class="mt-5 block font-bold text-slate-700" for="a2-text">Análisis epistemológico</label>
+                                <textarea id="a2-text" maxlength="1300" class="mt-3 w-full min-h-[180px] p-4 border rounded-xl bg-white resize-none" placeholder="Describe el obstáculo, su contexto y la ruptura que permitió superarlo..."></textarea>
+                                <div class="mt-3 flex justify-between gap-3 flex-wrap">
+                                    <span class="text-sm font-semibold text-slate-500" data-counter-for="a2-text">0/1300</span>
+                                    <div class="flex flex-wrap gap-2">
+                                        <button type="button" class="btn-main" data-copy="a2-text">Copiar texto</button>
+                                        <div class="export-menu-wrap">
+                                            <button type="button" class="btn-soft export-toggle" data-export-scope="a2"><i class="fa-solid fa-file-export mr-2"></i>Exportar</button>
+                                            <div class="export-menu hidden">
+                                                <button type="button" class="export-option" data-export-format="word" data-export-scope="a2"><i class="fa-solid fa-file-word"></i> Word</button>
+                                                <button type="button" class="export-option" data-export-format="pdf" data-export-scope="a2"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="act-a3" class="activity-section hidden mt-6 space-y-5">
+                        <div class="activity-ledger">
+                            <div class="ledger-heading">
+                                <div class="ledger-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+                                <div>
+                                    <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bitácora 3</p>
+                                    <h3 class="mt-2 text-2xl font-extrabold text-green-800">Taller de transposición didáctica</h3>
+                                </div>
+                            </div>
+                            <div class="purpose-note"><strong>Propósito:</strong> Diseñar una actividad de aula basada en un episodio histórico para mostrar que la ciencia es una construcción colectiva y situada.</div>
+                            <div class="field-panel">
+                                <label class="block font-bold text-slate-700" for="a3-episode">Episodio histórico</label>
+                                <select id="a3-episode" class="mt-2 w-full p-3 border rounded-xl bg-white">
+                                    <option value="">Selecciona una opción</option>
+                                    <option>Juicio de Galileo</option>
+                                    <option>Corona de Arquímedes</option>
+                                    <option>Sistema ptolemaico y copernicano</option>
+                                    <option>Atomismo de Demócrito</option>
+                                    <option>Otro episodio</option>
+                                </select>
+                                <label class="mt-5 block font-bold text-slate-700" for="a3-text">Diseño de la actividad de aula</label>
+                                <textarea id="a3-text" maxlength="1500" class="mt-3 w-full min-h-[200px] p-4 border rounded-xl bg-white resize-none" placeholder="Incluye propósito, dinámica, preguntas orientadoras, evidencia de aprendizaje y cierre reflexivo..."></textarea>
+                                <div class="mt-3 flex justify-between gap-3 flex-wrap">
+                                    <span class="text-sm font-semibold text-slate-500" data-counter-for="a3-text">0/1500</span>
+                                    <div class="flex flex-wrap gap-2">
+                                        <button type="button" class="btn-main" data-copy="a3-text">Copiar texto</button>
+                                        <div class="export-menu-wrap">
+                                            <button type="button" class="btn-soft export-toggle" data-export-scope="a3"><i class="fa-solid fa-file-export mr-2"></i>Exportar</button>
+                                            <div class="export-menu hidden">
+                                                <button type="button" class="export-option" data-export-format="word" data-export-scope="a3"><i class="fa-solid fa-file-word"></i> Word</button>
+                                                <button type="button" class="export-option" data-export-format="pdf" data-export-scope="a3"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="act-seg" class="activity-section hidden mt-6 space-y-5">
+                        <div class="activity-ledger">
+                            <div class="ledger-heading">
+                                <div class="ledger-icon"><i class="fa-solid fa-floppy-disk"></i></div>
+                                <div>
+                                    <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Seguimiento</p>
+                                    <h3 class="mt-2 text-2xl font-extrabold text-green-800">Guardar y retomar avance</h3>
+                                </div>
+                            </div>
+                            <div class="purpose-note">El guardado es local en este navegador. No se envía información a ninguna plataforma.</div>
+                            <div class="mt-5 flex flex-wrap gap-3">
+                                <button id="save-progress" type="button" class="btn-main">Guardar</button>
+                                <button id="restore-progress" type="button" class="btn-soft">Restaurar</button>
+                                <button id="clear-progress" type="button" class="bg-red-500 text-white font-bold rounded-full py-2 px-5 border-0 cursor-pointer">Limpiar</button>
+                                <p id="save-status" class="font-semibold text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="section-card">
+                            <h3 class="text-xl font-extrabold text-green-800">Checklist de entrega</h3>
+                            <div class="mt-4 grid md:grid-cols-2 gap-3">
+                                <label class="mini-card"><input type="checkbox" id="check-foro"> Foro sobre observador neutral</label>
+                                <label class="mini-card"><input type="checkbox" id="check-mapa"> Mapeo de obstáculo epistemológico</label>
+                                <label class="mini-card"><input type="checkbox" id="check-taller"> Taller de transposición didáctica</label>
+                                <label class="mini-card"><input type="checkbox" id="check-lectura"> Lectura guía revisada</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evaluacion" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Autoevaluación</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Cuestionario de la Unidad 1</h2>
+                        <p class="mt-4 text-slate-700">Responde las 10 preguntas. Al finalizar podrás ver tu puntaje y revisar tus respuestas.</p>
+                    </div>
+                    <div class="section-card mt-6">
+                        <div id="quiz-box">
+                            <div class="flex justify-between items-center gap-4"><h3 id="quiz-title" class="text-xl font-extrabold text-green-800">Pregunta 1</h3><span id="quiz-progress" class="text-sm font-bold text-slate-500">1/10</span></div>
+                            <p id="quiz-text" class="mt-4 text-lg font-semibold text-slate-700"></p>
+                            <div id="quiz-options" class="mt-5 space-y-3"></div>
+                            <div class="mt-6 flex justify-between gap-3"><button id="quiz-prev" type="button" class="btn-soft">Anterior</button><button id="quiz-next" type="button" class="btn-main">Siguiente</button></div>
+                        </div>
+                        <div id="quiz-results" class="hidden mt-6 p-5 rounded-2xl bg-green-50 border border-green-200">
+                            <h3 class="text-xl font-extrabold text-green-800">Autoevaluación completada</h3>
+                            <p class="mt-2 text-green-800 font-semibold">Puntaje: <span id="quiz-score">0</span>/10</p>
+                            <p id="quiz-feedback" class="mt-2 text-green-800"></p>
+                            <div id="quiz-review" class="mt-5 space-y-3"></div>
+                            <button id="quiz-restart" type="button" class="btn-main mt-5">Reiniciar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="recursos" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Recursos</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Materiales de apoyo</h2>
+                    </div>
+                    <div class="mt-6 grid md:grid-cols-2 gap-4">
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-book-atlas text-amber-700"></i> Lectura base</h3><p class="mt-2 text-slate-700">Gamow, G. <em>Biografía de la Física</em>, capítulos 1 y 2.</p><div class="mt-4"><a class="btn-main" href="../Biografiadelafisica-GeorgeGamow.pdf" target="_blank" rel="noopener">Abrir lectura</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://archive.org/details/BiografiaDeLaFisicaGGamowBibliotecaCientificaSalvat0731987" alt="QR Gamow" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card flex flex-col sm:flex-row sm:items-center justify-between"><div><h3 class="font-bold text-green-800"><i class="fa-solid fa-circle-play text-amber-700"></i> Video-lección sugerida</h3><p class="mt-2 text-slate-700">Las lentes del científico: de Popper a Kuhn.</p><div class="mt-4"><a class="btn-main" href="https://www.youtube.com/watch?v=D44ilHJQj0U" target="_blank" rel="noopener">Abrir video</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.youtube.com/watch?v=D44ilHJQj0U" alt="QR Video" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                </section>
+
+                <section id="bibliografia" class="content-pane">
+                    <div class="section-card">
+                        <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Bibliografía</p>
+                        <h2 class="mt-4 text-3xl font-extrabold text-green-800">Referencias orientadoras</h2>
+                    </div>
+                    <div class="mt-6 space-y-4">
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Adúriz-Bravo, A. (2005). Una introducción a la naturaleza de la ciencia.</p><div class="mt-3"><a class="btn-main" href="https://rieoei.org/historico/documentos/rie42a07.pdf" target="_blank" rel="noopener">Abrir documento</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://rieoei.org/historico/documentos/rie42a07.pdf" alt="QR Adúriz-Bravo" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Chalmers, A. (1983). ¿Qué es esa cosa llamada ciencia?</p><div class="mt-3"><a class="btn-main" href="https://archive.org/details/chalmers-cap-12345-digitalizado" target="_blank" rel="noopener">Abrir documento</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://archive.org/details/chalmers-cap-12345-digitalizado" alt="QR Chalmers" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                        <div class="mini-card border-l-4 border-green-500 flex flex-col sm:flex-row sm:items-center justify-between"><div><p class="italic">Gamow, G. (1960). Biografía de la Física. Salvat.</p><div class="mt-3"><a class="btn-main" href="../Biografiadelafisica-GeorgeGamow.pdf" target="_blank" rel="noopener">Abrir documento</a></div></div><div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0"><div class="bg-green-50 border border-green-300 rounded flex items-center justify-center" style="width:2cm;height:2cm;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://archive.org/details/BiografiaDeLaFisicaGGamowBibliotecaCientificaSalvat0731987" alt="QR Gamow" class="max-w-full max-h-full object-contain" loading="lazy"></div></div></div>
+                    </div>
+                </section>
+
+                <footer class="mt-10 pb-10 text-center">
+                    <p class="text-slate-600 font-medium">Creado por:</p>
+                    <p class="text-green-800 font-bold text-lg">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+                    <p class="text-slate-500 text-sm">Universidad de Córdoba</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

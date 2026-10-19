@@ -1,0 +1,85 @@
+html { scroll-behavior: smooth; }
+#ova-embed {
+    --bg: #f6efe1;
+    --surface: #ffffff;
+    --surface-soft: #fff7e6;
+    --text: #3f3528;
+    --heading: #14532d;
+    --line: #d7b98a;
+    --accent: #b7791f;
+    --accent-deep: #166534;
+    --sepia: #6b4f2a;
+    --shadow: 0 12px 30px rgba(74, 50, 18, 0.16);
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(183, 121, 31, 0.16), transparent 34%),
+        linear-gradient(135deg, #fbf3df 0%, #f6efe1 48%, #eef5e8 100%);
+}
+#ova-embed *, #ova-embed *::before, #ova-embed *::after { box-sizing: border-box; }
+#ova-embed .content-pane { opacity: 0; transform: translateY(12px); pointer-events: none; position: absolute; left: 0; right: 0; top: 0; visibility: hidden; width: 100%; z-index: 0; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s; }
+#ova-embed .content-pane.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; visibility: visible; z-index: 1; transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s; }
+#ova-embed .sidebar { width: 264px; background: linear-gradient(180deg, #fffaf0 0%, #f4e6c6 100%); box-shadow: 0 2px 18px rgba(74, 50, 18, 0.14); border-right: 1px solid #d7b98a; flex-shrink: 0; display: flex; flex-direction: column; padding: 18px 0 0; }
+#ova-embed .brand-shell { padding: 0 16px 14px; }
+#ova-embed .logo-orb { width: 140px; height: 140px; margin: 0 auto 12px; background: #fffaf0; border-radius: 9999px; box-shadow: 0 8px 24px rgba(107, 79, 42, 0.28); border: 3px double #b7791f; display: flex; align-items: center; justify-content: center; padding: 10px; }
+#ova-embed .logo-orb img { width: 82%; height: 82%; object-fit: contain; }
+#ova-embed .brand-copy { text-align: center; }
+#ova-embed .brand-copy h1 { margin: 0; font-weight: 700; color: #14532d; font-size: 1.02rem; line-height: 1.35; }
+#ova-embed .eyebrow { margin: 0 0 8px; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: #7c5a24; }
+#ova-embed .sidebar-nav { margin-top: 8px; padding-bottom: 18px; }
+#ova-embed .sidebar-link { width: 100%; display: flex; align-items: center; gap: 12px; padding: 13px 22px; border-left: 4px solid transparent; color: #5f4a2f; font-weight: 600; text-decoration: none; transition: all 0.25s ease; }
+#ova-embed .sidebar-link:hover, #ova-embed .sidebar-link.active { background: rgba(20, 83, 45, 0.11); color: #14532d; border-left-color: #b7791f; }
+#ova-embed .layout { display: flex; min-height: 100vh; }
+#ova-embed .main { flex: 1; min-width: 0; padding: 28px; }
+#ova-embed .content-stage { position: relative; max-width: 1120px; margin: 0 auto; }
+#ova-embed .hero { background: linear-gradient(135deg, #14532d 0%, #6b4f2a 56%, #b7791f 100%); color: #fffaf0; border-radius: 24px; padding: 34px; box-shadow: var(--shadow); border: 1px solid rgba(255, 250, 240, 0.35); }
+#ova-embed .section-card { background: rgba(255, 250, 240, 0.94); border: 1px solid #d7b98a; border-radius: 22px; box-shadow: 0 1px 14px rgba(74, 50, 18, 0.08); padding: 28px; }
+#ova-embed .mini-card { background: rgba(255, 252, 244, 0.96); border: 1px solid #dcc395; border-radius: 18px; padding: 20px; box-shadow: 0 1px 8px rgba(74, 50, 18, 0.06); }
+#ova-embed .btn-main { background: #14532d; color: #fffaf0; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid #b7791f; cursor: pointer; transition: background 0.25s ease; }
+#ova-embed .btn-main:hover { background: #0f3f23; }
+#ova-embed .btn-soft { background: #fffaf0; color: #5f4a2f; font-weight: 700; border-radius: 999px; padding: 10px 20px; border: 1px solid #d7b98a; cursor: pointer; }
+#ova-embed .epistemic-route { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding: 22px; overflow: hidden; }
+#ova-embed .epistemic-route::before { content: ""; position: absolute; left: 8%; right: 8%; top: 76px; height: 3px; background: linear-gradient(90deg, transparent, #b7791f, #14532d, #b7791f, transparent); opacity: 0.55; }
+#ova-embed .route-stop { position: relative; z-index: 1; text-align: center; }
+#ova-embed .route-node { width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 999px; background: #fffaf0; border: 2px solid #b7791f; box-shadow: 0 8px 18px rgba(74, 50, 18, 0.13); display: flex; align-items: center; justify-content: center; color: #14532d; font-size: 1.25rem; }
+#ova-embed .route-stop h4 { margin: 0; color: #14532d; font-weight: 800; font-size: 0.98rem; }
+#ova-embed .route-stop p { margin: 8px 0 0; color: #5f4a2f; font-size: 0.84rem; line-height: 1.45; }
+#ova-embed .archive-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+#ova-embed .archive-card { position: relative; background: linear-gradient(135deg, rgba(255, 252, 244, 0.98), rgba(250, 239, 212, 0.92)); border: 1px solid #d7b98a; border-left: 7px solid #b7791f; border-radius: 20px; padding: 22px; box-shadow: 0 10px 22px rgba(74, 50, 18, 0.08); overflow: hidden; }
+#ova-embed .archive-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 18% 20%, rgba(107, 79, 42, 0.08) 0 1px, transparent 2px), radial-gradient(circle at 72% 65%, rgba(183, 121, 31, 0.06) 0 1px, transparent 2px), linear-gradient(90deg, rgba(107, 79, 42, 0.035) 1px, transparent 1px), linear-gradient(0deg, rgba(107, 79, 42, 0.025) 1px, transparent 1px); background-size: 28px 28px, 36px 36px, 18px 18px, 18px 18px; opacity: 0.65; pointer-events: none; }
+#ova-embed .archive-card::after { content: "ARCHIVO"; position: absolute; right: -18px; bottom: 18px; width: 142px; height: 142px; border-radius: 999px; border: 3px double rgba(123, 62, 36, 0.18); color: rgba(123, 62, 36, 0.19); display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; letter-spacing: 0.16em; transform: rotate(-18deg); background: radial-gradient(circle, rgba(123, 62, 36, 0.08), transparent 64%); }
+#ova-embed .archive-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; position: relative; z-index: 1; }
+#ova-embed .archive-code { display: inline-flex; align-items: center; gap: 8px; color: #7c5a24; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+#ova-embed .archive-icon { width: 42px; height: 42px; border-radius: 999px; background: #fff7e6; border: 1px solid #d7b98a; display: inline-flex; align-items: center; justify-content: center; color: #14532d; box-shadow: 0 6px 14px rgba(74, 50, 18, 0.08); }
+#ova-embed .archive-card h3 { position: relative; z-index: 1; color: #14532d; font-size: 1.25rem; font-weight: 800; margin: 0; }
+#ova-embed .archive-card p { position: relative; z-index: 1; }
+#ova-embed .key-note { margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: rgba(20, 83, 45, 0.08); border: 1px solid rgba(20, 83, 45, 0.14); color: #36523a; font-size: 0.9rem; }
+#ova-embed .activity-ledger { position: relative; background: linear-gradient(135deg, rgba(255, 252, 244, 0.98), rgba(248, 235, 204, 0.9)); border: 1px solid #d7b98a; border-radius: 22px; box-shadow: 0 10px 24px rgba(74, 50, 18, 0.09); padding: 28px; overflow: hidden; }
+#ova-embed .activity-ledger::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(183, 121, 31, 0.07) 1px, transparent 1px), linear-gradient(0deg, rgba(107, 79, 42, 0.04) 1px, transparent 1px); background-size: 22px 22px; opacity: 0.55; pointer-events: none; }
+#ova-embed .activity-ledger > * { position: relative; z-index: 1; }
+#ova-embed .ledger-heading { display: flex; align-items: flex-start; gap: 14px; }
+#ova-embed .ledger-icon { width: 50px; height: 50px; flex: 0 0 50px; border-radius: 999px; background: #fff7e6; border: 2px solid #b7791f; color: #14532d; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(74, 50, 18, 0.12); }
+#ova-embed .purpose-note { margin-top: 18px; padding: 14px 16px; border-left: 5px solid #b7791f; border-radius: 14px; background: rgba(20, 83, 45, 0.07); color: #3f3528; }
+#ova-embed .field-panel { margin-top: 18px; padding: 16px; border: 1px dashed rgba(123, 62, 36, 0.28); border-radius: 16px; background: rgba(255, 250, 240, 0.72); }
+#ova-embed .export-menu-wrap { position: relative; display: inline-flex; }
+#ova-embed .export-menu { position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px; background: #fffaf0; border: 1px solid #d7b98a; border-radius: 16px; box-shadow: 0 12px 24px rgba(74, 50, 18, 0.16); padding: 8px; z-index: 20; }
+#ova-embed .export-menu.hidden { display: none; }
+#ova-embed .export-option { width: 100%; display: flex; align-items: center; gap: 10px; border: 0; background: transparent; color: #3f3528; font-weight: 700; text-align: left; padding: 10px 12px; border-radius: 12px; cursor: pointer; }
+#ova-embed .export-option:hover { background: rgba(20, 83, 45, 0.09); color: #14532d; }
+#ova-embed textarea, #ova-embed input, #ova-embed select { font-family: inherit; }
+#ova-embed .activity-section.hidden { display: none; }
+#ova-embed .quiz-option { display: block; width: 100%; text-align: left; border: 1px solid #d7b98a; background: #fffaf0; border-radius: 14px; padding: 12px 14px; cursor: pointer; font-weight: 600; color: #3f3528; }
+#ova-embed .quiz-option.selected { border-color: #14532d; background: #edf6e7; color: #14532d; }
+#ova-embed .mobile-header { display: none; }
+@media (max-width: 900px) {
+    #ova-embed .layout { display: block; }
+    #ova-embed .sidebar { display: none; }
+    #ova-embed .mobile-header { display: block; padding: 18px; background: #fffaf0; box-shadow: 0 2px 14px rgba(74, 50, 18, 0.12); }
+    #ova-embed .main { padding: 18px; }
+    #ova-embed .hero { padding: 24px; }
+    #ova-embed .epistemic-route { grid-template-columns: 1fr; }
+    #ova-embed .epistemic-route::before { left: 50%; right: auto; top: 24px; bottom: 24px; width: 3px; height: auto; background: linear-gradient(180deg, transparent, #b7791f, #14532d, #b7791f, transparent); }
+    #ova-embed .archive-grid { grid-template-columns: 1fr; }
+}
